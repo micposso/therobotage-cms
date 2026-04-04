@@ -1,0 +1,57 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+/.vite
+.turbo
+
+# Production
+public/uploads/
+uploads/
+backend/uploads/
+
+# Logs
+logs/
+*.log
+pids/
+*.pid
+
+# Runtime files
+.env
+.env.*.local
+.env.local
+.env.test
+env.local
+
+# TypeScript
+*.tsbuildinfo
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+
+# Editor directories and files
+.vscode/
+.idea/
+*~
+*.swp
+
+# macOS
+.DS_Store
+
+# Misc
+.cache/
+parcel-cache/
+dist-*/
