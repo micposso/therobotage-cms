@@ -1,0 +1,65 @@
+.hero {
+  min-height: 100vh;
+  padding-top: var(--nav-height);
+  display: flex;
+  align-items: stretch;
+}
+
+.leftCol {
+  container-type: inline-size;
+  display: flex;
+  align-items: flex-start;
+  padding: var(--space-16) var(--space-8) var(--space-16) 0;
+}
+
+.lockupWrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.lockup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.lockupLine {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 31cqi, var(--text-2xl));
+  font-weight: 400;
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: clamp(1.125rem, 3.5cqi, 2rem);
+  color: var(--color-text);
+  line-height: 1.1;
+  margin-top: var(--space-8);
+}
+
+.rightCol {
+  padding: var(--space-16) 0 var(--space-16) 0;
+}
+
+/* ─── ROBOT colour pulse ─────────────────────────────────────────────────────── */
+@keyframes robotPulse {
+  0%   { color: var(--color-bg-sand-dark); }
+  50%  { color: var(--color-accent); }
+  100% { color: var(--color-bg-sand-dark); }
+}
+
+.robotPulse {
+  animation: robotPulse 4s ease-in-out infinite;
+}
+
+@media (max-width: 767px) {
+  .rightCol {
+    padding-top: var(--space-6);
+  }
+}

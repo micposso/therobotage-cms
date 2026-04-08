@@ -1,0 +1,155 @@
+.footer {
+  background: var(--color-bg-dark);
+  color: var(--color-text-inverse);
+  padding: var(--space-16) 0 var(--space-8);
+  border-top: 1px solid var(--color-border-strong);
+}
+
+/* ─── Top row ────────────────────────────────────────────────────────────────── */
+.topRow {
+  padding-bottom: var(--space-12);
+}
+
+/* Logo col */
+.logoCol {
+  margin-bottom: var(--space-10);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  color: var(--color-text-inverse);
+  display: block;
+  margin-bottom: var(--space-3);
+}
+
+.tagline {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  color: var(--color-footer-muted);
+  line-height: 1.7;
+  max-width: 260px;
+}
+
+/* Nav col */
+.navCol {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--space-10);
+}
+
+.colLabel {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-footer-muted);
+  margin-bottom: var(--space-4);
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.navLink {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  color: var(--color-text-inverse);
+  display: block;
+  width: fit-content;
+  transition: color var(--ease-default);
+}
+
+.navLink:hover {
+  color: var(--color-accent);
+}
+
+/* Social col */
+.socialCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: var(--space-10);
+}
+
+.socialLinks {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-inverse);
+  opacity: 0.7;
+  transition: color var(--ease-default), opacity var(--ease-default);
+}
+
+.socialLink:hover {
+  color: var(--color-accent);
+  opacity: 1;
+}
+
+/* ─── Divider ────────────────────────────────────────────────────────────────── */
+.divider {
+  border-top: 1px solid var(--color-footer-border);
+  margin-bottom: var(--space-8);
+}
+
+/* ─── Bottom row ─────────────────────────────────────────────────────────────── */
+.bottomRow {
+  padding: 0;
+}
+
+.legal {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  color: var(--color-footer-muted);
+}
+
+.legalRight {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-6);
+}
+
+.legalLink {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  color: var(--color-footer-muted);
+  transition: color var(--ease-default);
+}
+
+.legalLink:hover {
+  color: var(--color-text-inverse);
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .socialCol {
+    align-items: flex-start;
+  }
+
+  .socialLinks {
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+  .legalRight {
+    justify-content: flex-start;
+    margin-top: var(--space-3);
+  }
+}

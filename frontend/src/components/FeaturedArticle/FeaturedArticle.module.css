@@ -1,0 +1,130 @@
+/* ─── Carousel wrapper ───────────────────────────────────────────────────────── */
+.carousel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  height: 100%;
+}
+
+.track {
+  overflow: hidden;
+  flex: 1;
+}
+
+.slide {
+  width: 100%;
+}
+
+/* ─── Image ──────────────────────────────────────────────────────────────────── */
+.imageWrap {
+  background: var(--color-bg-dark);
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  position: relative;
+  border-radius: var(--radius-none);
+}
+
+/* ─── Content ────────────────────────────────────────────────────────────────── */
+.contentCol {
+  padding-left: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.date {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--color-text);
+  margin: var(--space-4) 0 var(--space-6);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0;
+  padding-bottom: 2px;
+  background: none;
+  color: var(--color-text);
+  border: none;
+  border-bottom: 2.5px solid var(--color-text);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color var(--ease-default), border-color var(--ease-default);
+  align-self: flex-start;
+}
+
+.cta:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.excerpt {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-align: justify;
+  margin-top: var(--space-6);
+  line-height: 1.8;
+}
+
+.divider {
+  border-bottom: 1px solid var(--color-border);
+  margin-top: var(--space-10);
+}
+
+/* ─── Square nav ─────────────────────────────────────────────────────────────── */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.navDot {
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--color-border-strong);
+  background: transparent;
+  border-radius: var(--radius-none);
+  cursor: pointer;
+  padding: 0;
+  transition: background var(--ease-default), border-color var(--ease-default);
+}
+
+.navDot:hover {
+  border-color: var(--color-text);
+}
+
+.navDotActive {
+  background: var(--color-text);
+  border-color: var(--color-text);
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .imageWrap {
+    aspect-ratio: 3 / 2;
+  }
+
+  .contentCol {
+    padding-left: 0;
+    padding-top: var(--space-6);
+  }
+}
