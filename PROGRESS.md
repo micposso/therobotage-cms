@@ -117,12 +117,63 @@
 
 ---
 
+## Session — 2026-04-06
+
+### HeroHomepage — Full Redesign
+`components/HeroHomepage/`
+
+**Layout**
+- Left panel fixed at `15vw`; right panel fills remaining `calc(100% - 15vw)`
+- `container-fluid` made flex column so ticker pins to bottom of hero
+- Ticker moved out of left column → full-width bottom bar spanning edge to edge
+
+**Left panel**
+- THE / ROBOT / AGE lockup moved to top of left column (above nav links)
+- Lockup size reduced: `clamp(1.5rem, 16cqi, --text-xl)`
+- Nav links stacked below the lockup
+- Each nav item expands a hover panel with a short section description (Framer Motion height animation)
+
+**Nav logo (`Nav/`)**
+- Matched lockup style: `font-weight: 400`, `letter-spacing: -0.02em`
+- "Robot" word pulses with same `robotPulse` keyframe as hero lockup
+
+**Right panel copy**
+- New content stack:
+  - Eyebrow: *For design, product, and marketing professionals.* — sans-serif (`--font-display`), orange (`--color-accent`), uppercase
+  - H1: *Robotics for All. Not just engineers.*
+  - Subtext: *Robotics is no longer a technical problem…*
+  - CTA block (bordered top): tagline + Join/Explore CTAs
+- Eyebrow moved inside `headlineCol` so it sits flush above h1, independent of image carousel height
+- Tagline + CTAs wrapped in `.ctaBlock` with `border-top: 1px solid var(--color-border)`, vertically centred via flex
+
+**Spacing tightened throughout right panel**
+- Eyebrow → H1: `2rem`
+- H1 → Subtext: `1rem`
+- Subtext → CTA block: `3rem`
+- Subtext and tagline unified at `--text-base` (1rem), then tagline upsized to `--text-md` (1.375rem)
+
+**Typography**
+- All muted copy (`--color-text-muted`) → `--color-text`; weights lifted from 300 → 400
+- Tagline: `--font-display`, `font-weight: 400`, `--text-md`
+- Subtext line-height tightened: `1.8` → `1.6`
+
+**Ticker**
+- Words darkened: `--color-text-muted` + `opacity: 0.55` → `--color-text`, `font-weight: 400`
+- Orange hover: `color: var(--color-accent)` with `250ms ease` transition
+
+**ArticleGrid (`components/ArticleGrid/`)**
+- Added section header: eyebrow *Latest* + headline *News & Updates*
+- Matching Certification-style animation (whileInView, staggered)
+- `border-top` added to section
+
+---
+
 ## Page Assembly (`app/page.tsx`)
 ```
 Nav
-HeroNews          ← display lockup + carousel
-ArticleGrid       ← 3 article cards
+HeroHomepage      ← 15vw brand/nav panel + right copy panel + full-width ticker
 Certification     ← RLP featured card + module cards
+ArticleGrid       ← section header + 3 article cards
 Summit            ← event section
 Footer
 ```
