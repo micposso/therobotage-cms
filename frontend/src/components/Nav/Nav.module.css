@@ -132,6 +132,11 @@
   color: var(--color-accent);
 }
 
+/* ─── Mobile-only logo ────────────────────────────────────────────────────────── */
+.logoMobile {
+  display: none;
+}
+
 /* ─── Responsive ──────────────────────────────────────────────────────────────── */
 @media (max-width: 767px) {
   /* On mobile the nav is always visible (shows hamburger) */
@@ -150,8 +155,21 @@
     display: flex;
   }
 
-  /* Hide logo unless scrolled past threshold */
+  /* Hide the animated desktop logo on mobile */
   .logo {
     display: none;
+  }
+
+  /* Show the always-on mobile logo */
+  .logoMobile {
+    display: block;
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+    text-decoration: none;
+    flex-shrink: 0;
+    margin-right: auto;
   }
 }

@@ -363,11 +363,20 @@
     display: none;
   }
 
+  /* Hide THE ROBOT AGE lockup on mobile (brand shown in nav) */
+  .lockup {
+    display: none;
+  }
+
   /* Headline row stacks */
   .headlineRow {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-6);
+  }
+
+  .headlineCol {
+    width: 100%;
   }
 
   /* Smaller circle on mobile */

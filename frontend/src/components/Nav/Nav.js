@@ -35,7 +35,12 @@ export default function Nav({ pinned = false }) {
         <div className="container-fluid">
           <div className={styles.inner}>
 
-            {/* Logo — visible on scroll */}
+            {/* Logo — always visible on mobile */}
+            <a href="/" className={styles.logoMobile}>
+              The <span className={styles.logoRobot}>Robot</span> Age
+            </a>
+
+            {/* Logo — visible on scroll (desktop) */}
             <AnimatePresence>
               {(scrolled || pinned) && (
                 <motion.a
