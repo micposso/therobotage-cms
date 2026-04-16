@@ -15,7 +15,7 @@ export const articles: Article[] = [
     category: 'RESEARCH',
     date: 'April 2, 2026',
     headline: 'The Human Readiness Framework: a scoring rubric for real-world robot deployment',
-    image: 'https://images.unsplash.com/photo-1561144257-e32e8506b5d7?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-0E_vhMVqL9g?w=1200&q=80',
     body: [
       'Most robot deployments fail not because the robot breaks — but because the humans around it weren\'t ready. The machine works. The context doesn\'t. This is the gap the Human Readiness Framework is designed to close.',
       'Developed through fieldwork across logistics, healthcare, and hospitality environments, the HRF is a scoring rubric that evaluates an organisation\'s readiness to deploy robotic systems along five dimensions: spatial legibility, staff orientation, process alignment, failure tolerance, and feedback loops.',

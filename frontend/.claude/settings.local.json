@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:unsplash.com)",
+      "WebFetch(domain:source.unsplash.com)",
+      "WebFetch(domain:webcache.googleusercontent.com)",
+      "WebFetch(domain:news.mit.edu)",
+      "WebFetch(domain:www.roboticstomorrow.com)"
+    ]
+  }
+}
