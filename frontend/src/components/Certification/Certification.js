@@ -110,6 +110,18 @@ export default function Certification() {
             >
               The REP credential is built for product designers, UX strategists, and business leaders who shape the spaces, systems, and decisions where humans and robots meet. No engineering background required.
             </motion.p>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 1 } : {}}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <Link href="/learn/rep" className={styles.headerCta}>
+                Get your REP credential
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
+            </motion.div>
           </div>
         </div>
 

@@ -201,7 +201,7 @@ export default function HeroHomepage() {
                 >
                   {eyebrowText}
                 </motion.p>
-                <h1 className={styles.headline}>{headline}</h1>
+                <h1 className={styles.headline}>Robotics for All.<br />Not just engineers.</h1>
               </div>
 
               {/* Right — rounded image carousel */}

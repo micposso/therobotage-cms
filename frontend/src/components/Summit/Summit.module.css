@@ -40,7 +40,6 @@
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: var(--color-text-on-sand);
-  opacity: 0.6;
   margin-bottom: var(--space-6);
 }
 

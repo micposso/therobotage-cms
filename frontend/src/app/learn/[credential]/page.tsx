@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import Nav from '@/components/Nav/Nav'
 import Footer from '@/components/Footer/Footer'
+import FoundingCohort from '@/components/FoundingCohort/FoundingCohort'
 import { getCertificationBySlug, getAllCertificationSlugs } from '@/lib/certifications'
 import styles from './CredentialPage.module.css'
 
@@ -76,6 +77,11 @@ export default async function CredentialPage({ params }: { params: Promise<{ cre
             <p className={styles.eyebrow}>Overview</p>
             <p className={styles.overviewText}>{cert.overview}</p>
           </section>
+
+          {/* ── Founding Cohort ─────────────────────────────────────────────── */}
+          {cert.slug === 'rep' && (
+            <FoundingCohort checkoutUrl="https://therobotage.lemonsqueezy.com/checkout" />
+          )}
 
           {/* ── Curriculum ──────────────────────────────────────────────────── */}
           <section className={styles.section}>

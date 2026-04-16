@@ -69,6 +69,10 @@
   color: var(--color-accent);
 }
 
+.certAbbr {
+  font-weight: 500;
+}
+
 /* Social col */
 .socialCol {
   display: flex;

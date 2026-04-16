@@ -1,8 +1,16 @@
 'use client'
 
+import Link from 'next/link'
+import { certifications } from '@/lib/certifications'
 import styles from './Footer.module.css'
 
-const NAV_LINKS = ['Research', 'Learn', 'Access', 'Connect', 'Summit']
+const NAV_LINKS = [
+  { label: 'Research', href: '/research' },
+  { label: 'Learn',    href: '/learn' },
+  { label: 'Access',   href: '/access' },
+  { label: 'Connect',  href: '/connect' },
+  { label: 'Summit',   href: '/summit' },
+]
 
 const SOCIAL_LINKS = [
   {
@@ -58,17 +66,29 @@ export default function Footer() {
           </div>
 
           {/* Nav links */}
-          <div className={`col-lg-4 ${styles.navCol}`}>
+          <div className={`col-lg-2 ${styles.navCol}`}>
             <span className={styles.colLabel}>Pages</span>
             <nav className={styles.navLinks}>
-              {NAV_LINKS.map((link) => (
-                <a key={link} href="#" className={styles.navLink}>{link}</a>
+              {NAV_LINKS.map(({ label, href }) => (
+                <Link key={label} href={href} className={styles.navLink}>{label}</Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* Certifications */}
+          <div className={`col-lg-3 ${styles.navCol}`}>
+            <span className={styles.colLabel}>Certifications</span>
+            <nav className={styles.navLinks}>
+              {certifications.map(({ abbr, slug, name }) => (
+                <Link key={abbr} href={`/learn/${slug}`} className={styles.navLink}>
+                  <span className={styles.certAbbr}>{abbr}</span> — {name}
+                </Link>
               ))}
             </nav>
           </div>
 
           {/* Social */}
-          <div className={`col-lg-4 ${styles.socialCol}`}>
+          <div className={`col-lg-3 ${styles.socialCol}`}>
             <span className={styles.colLabel}>Follow</span>
             <div className={styles.socialLinks}>
               {SOCIAL_LINKS.map(({ label, href, icon }) => (
@@ -100,8 +120,8 @@ export default function Footer() {
             </p>
           </div>
           <div className={`col-md-6 ${styles.legalRight}`}>
-            <a href="#" className={styles.legalLink}>Privacy Policy</a>
-            <a href="#" className={styles.legalLink}>Terms of Use</a>
+            <Link href="/privacy" className={styles.legalLink}>Privacy Policy</Link>
+            <Link href="/terms" className={styles.legalLink}>Terms of Use</Link>
           </div>
         </div>
 
