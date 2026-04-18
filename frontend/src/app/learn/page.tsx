@@ -17,7 +17,7 @@ export default function LearnPage() {
         eyebrow="Curriculum"
         title="Built for the people robots work beside."
         subtitle="Four credentials for designers, strategists, and leaders who need to work confidently in a world where robots are already deployed. No engineering background required."
-        imageSrc="/images/placeholder.jpg"
+        imageSrc="/images/learn.png"
       />
       <div className="container-fluid" style={{ paddingTop: 'var(--space-16)' }}>
         <FoundingCohort checkoutUrl="https://therobotage.lemonsqueezy.com/checkout" />

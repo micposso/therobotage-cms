@@ -39,7 +39,7 @@ export default function ConnectPage() {
         eyebrow="Connect"
         title="Let's talk."
         subtitle="Whether you're interested in the certification, the summit, a partnership, or just the work — we'd like to hear from you."
-        imageSrc="/images/placeholder.jpg"
+        imageSrc="/images/collab.png"
       />
       <section className={styles.section}>
         <div className="container-fluid">

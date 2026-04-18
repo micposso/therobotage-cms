@@ -16,7 +16,7 @@ export default function SummitPage() {
         eyebrow="The Robot Age Summit"
         title="Where the conversation happens."
         subtitle="A gathering for designers, strategists, and leaders who are shaping what human-robot experience actually looks like. Coming to New York City this fall."
-        imageSrc="/images/placeholder.jpg"
+        imageSrc="/images/collab.png"
       />
       <Summit />
       <Footer />

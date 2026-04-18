@@ -13,7 +13,7 @@ const LOCKUP_LINES = ['THE', 'ROBOT', 'AGE']
 const NAV_LINKS = [
   { label: 'Research',   href: '/research',   desc: 'Peer-reviewed robotics insights and industry reports.' },
   { label: 'Learn',      href: '/learn',       desc: 'Courses and curricula built for non-engineers.' },
-  { label: 'Access',     href: '/access',      desc: 'Tools, datasets, and hands-on sandboxes.' },
+  { label: 'Literacy',   href: '/robotics-literacy', desc: 'What robotic literacy means and why it matters.' },
   { label: 'Connect',    href: '/connect',     desc: 'A community of robotics-curious professionals.' },
   { label: 'Summit',     href: '/summit',      desc: 'Annual gathering of robotics leaders and practitioners.' },
   { label: 'Enterprise', href: '/enterprise',  desc: 'Deployment readiness education for organizations.' },

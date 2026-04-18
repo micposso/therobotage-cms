@@ -42,7 +42,7 @@ export default function EnterprisePage() {
         eyebrow="Enterprise"
         title="Deployment readiness starts with people."
         subtitle="Structured robotic literacy for operations, logistics, and facilities teams — built for organizations integrating robots into non-engineering environments."
-        imageSrc="/images/placeholder.jpg"
+        imageSrc="/images/face.png"
       />
 
       {/* Why this matters */}

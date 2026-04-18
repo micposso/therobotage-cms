@@ -51,7 +51,7 @@ export default function RoboticsLiteracyPage() {
         eyebrow="Robotics Literacy"
         title="Working with robots is a skill."
         subtitle="The people working closest to robots — product designers, operations leads, healthcare professionals — rarely have formal training for it. Robotics literacy closes that gap."
-        imageSrc="/images/placeholder.jpg"
+        imageSrc="/images/face.png"
       />
 
       {/* ── Definition ───────────────────────────────────────────────────────── */}
