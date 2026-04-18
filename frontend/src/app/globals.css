@@ -14,6 +14,10 @@
   --color-border-light:  rgba(245, 240, 232, 0.2);
   --color-footer-muted:  rgba(232, 228, 220, 0.4);
   --color-footer-border: rgba(232, 228, 220, 0.1);
+  --color-accent-grid:   rgba(232, 93, 36, 0.04);
+  --color-accent-glow:   rgba(232, 93, 36, 0.07);
+  --color-border-on-dark: rgba(255, 255, 255, 0.06);
+  --color-ticker-on-dark: rgba(245, 240, 232, 0.18);
 
   /* Typography */
   --font-display: 'IBM Plex Sans', sans-serif;
@@ -32,6 +36,7 @@
   --space-2:  0.5rem;
   --space-3:  0.75rem;
   --space-4:  1rem;
+  --space-5:  1.25rem;
   --space-6:  1.5rem;
   --space-8:  2rem;
   --space-10: 2.5rem;
@@ -125,4 +130,12 @@ img {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-text);
 }

@@ -1,0 +1,68 @@
+/* ─── Section / wrapper ──── */
+.section {
+  padding: var(--space-16) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.inner {
+  max-width: 560px;
+}
+
+/* ─── Content elements ──── */
+.intro {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.8;
+  margin-bottom: var(--space-8);
+  color: var(--color-text-muted);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 400px;
+}
+
+.input {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  background: none;
+  border: none;
+  border-bottom: 1.5px solid var(--color-border-strong);
+  padding: var(--space-3) 0;
+  color: var(--color-text);
+  outline: none;
+  width: 100%;
+  transition: border-color var(--ease-default);
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* ─── Interactive states ── */
+.input:focus {
+  border-bottom-color: var(--color-text);
+}
+
+/* ─── Submit button — Pattern A ── */
+.submitButton {
+  margin-top: var(--space-4);
+  display: inline-block;
+  padding: var(--space-4) var(--space-8);
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  border: none;
+  border-radius: var(--radius-none);
+  cursor: pointer;
+  transition: background var(--ease-default);
+}
+
+.submitButton:hover {
+  background: var(--color-text);
+}

@@ -88,7 +88,7 @@
   text-decoration: none;
   display: inline-block;
   padding: var(--space-4) var(--space-8);
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-none);
   transition: background var(--ease-default);
 }
 

@@ -16,6 +16,7 @@ export default function TermsPage() {
         eyebrow="Legal"
         title="Terms of Use"
         subtitle="The terms and conditions governing your use of The Robot Age platform."
+        imageSrc="/images/placeholder.jpg"
       />
       <section className={styles.content}>
         <div className="container-fluid">

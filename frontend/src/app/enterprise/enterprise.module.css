@@ -1,0 +1,218 @@
+/* ─── Shared ─────────────────────────────────────────────────────────────────── */
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-8);
+}
+
+/* ─── Why This Matters ──────────────────────────────────────────────────────── */
+.whySection {
+  padding: var(--space-20) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+@media (max-width: 767px) {
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    border-left: none !important;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .card:first-child {
+    border-top: none;
+  }
+}
+
+.card {
+  padding: var(--space-8);
+  border-left: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.card:first-child {
+  border-left: none;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-base);
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+.cardBody {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+/* ─── Walk Away With ────────────────────────────────────────────────────────── */
+.walkawaySection {
+  padding: var(--space-20) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.walkawayInner {
+  max-width: 720px;
+}
+
+.numberedList {
+  list-style: none;
+}
+
+.numberedItem {
+  display: flex;
+  gap: var(--space-6);
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.numberedItem:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.itemNumber {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  letter-spacing: 0.1em;
+  min-width: 2rem;
+  padding-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.itemText {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  line-height: 1.65;
+  color: var(--color-text);
+}
+
+/* ─── Form Section ──────────────────────────────────────────────────────────── */
+.formSection {
+  padding: var(--space-20) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.formInner {
+  max-width: 560px;
+}
+
+.formHeading {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.75rem, 4vw, 2.625rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+}
+
+.formSubheading {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-12);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.label {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text-muted);
+}
+
+.required {
+  color: var(--color-accent);
+  margin-left: 0.2em;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border-strong);
+  padding: var(--space-3) 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  outline: none;
+  transition: border-color var(--ease-default);
+  appearance: none;
+  border-radius: var(--radius-none);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--color-border-strong);
+}
+
+.input:focus,
+.textarea:focus {
+  border-bottom-color: var(--color-text);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: var(--space-24);
+  line-height: 1.6;
+}
+
+.submitButton {
+  align-self: flex-start;
+  margin-top: var(--space-4);
+  display: inline-block;
+  padding: var(--space-4) var(--space-8);
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  border: none;
+  border-radius: var(--radius-none);
+  cursor: pointer;
+  transition: background var(--ease-default);
+}
+
+.submitButton:hover {
+  background: var(--color-text);
+}

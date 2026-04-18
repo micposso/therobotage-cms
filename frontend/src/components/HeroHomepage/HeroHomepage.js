@@ -11,16 +11,17 @@ import styles from './HeroHomepage.module.css'
 const LOCKUP_LINES = ['THE', 'ROBOT', 'AGE']
 
 const NAV_LINKS = [
-  { label: 'Research', href: '/research', desc: 'Peer-reviewed robotics insights and industry reports.' },
-  { label: 'Learn',    href: '/learn',    desc: 'Courses and curricula built for non-engineers.' },
-  { label: 'Access',   href: '/access',   desc: 'Tools, datasets, and hands-on sandboxes.' },
-  { label: 'Connect',  href: '/connect',  desc: 'A community of robotics-curious professionals.' },
-  { label: 'Summit',   href: '/summit',   desc: 'Annual gathering of robotics leaders and practitioners.' },
+  { label: 'Research',   href: '/research',   desc: 'Peer-reviewed robotics insights and industry reports.' },
+  { label: 'Learn',      href: '/learn',       desc: 'Courses and curricula built for non-engineers.' },
+  { label: 'Access',     href: '/access',      desc: 'Tools, datasets, and hands-on sandboxes.' },
+  { label: 'Connect',    href: '/connect',     desc: 'A community of robotics-curious professionals.' },
+  { label: 'Summit',     href: '/summit',      desc: 'Annual gathering of robotics leaders and practitioners.' },
+  { label: 'Enterprise', href: '/enterprise',  desc: 'Deployment readiness education for organizations.' },
 ]
 
 const eyebrowText = 'For design, product, and marketing professionals.'
 
-const headline = 'Robotics for All. Not just engineers.'
+const headline = 'Robotics for All. Not just engineers'
 
 const subtext =
   'Robotic literacy isn\u2019t about code. It\u2019s about knowing enough to ask the right questions, make better decisions, and design for a world where robots are already here.'
@@ -234,12 +235,12 @@ export default function HeroHomepage() {
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 1.2 }}
             >
               <div className={styles.ctaRow}>
-                <Link href="/learn" className={styles.ctaPrimary}>
+                <Link href="/robotics-literacy" className={styles.ctaPrimary}>
                   What is Robotic Literacy?
                   <span className={styles.arrow} aria-hidden="true">→</span>
                 </Link>
-                <Link href="/research" className={styles.ctaGhost}>
-                  Explore the Research
+                <Link href="/learn" className={styles.ctaGhost}>
+                  Become Certified
                 </Link>
               </div>
             </motion.div>

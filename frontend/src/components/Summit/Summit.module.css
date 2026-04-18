@@ -175,6 +175,6 @@
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .headline {
-    font-size: 2.5rem;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
   }
 }

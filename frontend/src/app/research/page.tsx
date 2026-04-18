@@ -14,8 +14,9 @@ export default function ResearchPage() {
       <Nav pinned />
       <PageHero
         eyebrow="Research & Insights"
-        title="What we're learning."
+        title="What we're learning"
         subtitle="Original research, field observations, and critical perspectives on the human side of robotics — published for the people designing what comes next."
+        imageSrc="/images/hand.png"
       />
       <ArticleGrid />
       <Footer />

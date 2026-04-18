@@ -7,7 +7,7 @@ import styles from './Hero.module.css'
 // ─── Content ──────────────────────────────────────────────────────────────────
 const eyebrow = 'The Robot Age  ·  Robotic Literacy for All'
 
-const headlineWords = ['Robots', 'are', 'entering', 'every', 'field.']
+const headlineWords = ['Robots', 'are', 'entering', 'every', 'field']
 
 const subtext =
   'Design, strategy, healthcare, operations — the robot age is already reshaping how we work. The Robot Age builds the literacy to navigate it, for everyone.'
@@ -32,8 +32,10 @@ export default function Hero() {
       <div className={styles.radialGlow}  aria-hidden="true" />
 
       <div className={`container-fluid ${styles.content}`}>
-        <div className="row">
-          <div className="col-12">
+        <div className="row g-0 align-items-center">
+
+          {/* Copy column */}
+          <div className={`col-lg-6 ${styles.copyCol}`}>
 
             {/* Eyebrow */}
             <motion.p
@@ -50,7 +52,7 @@ export default function Hero() {
               {headlineWords.map((word, i) => (
                 <span key={word + i} className={styles.word}>
                   <motion.span
-                    className={word === 'field.' ? styles.wordAccent : undefined}
+                    className={word === 'field' ? styles.wordAccent : undefined}
                     initial={{ y: '110%' }}
                     animate={{ y: 0 }}
                     transition={{
@@ -63,6 +65,7 @@ export default function Hero() {
                   </motion.span>
                 </span>
               ))}
+              <span className={styles.colorSquare} aria-hidden="true" />
             </h1>
 
             {/* Subtext */}
@@ -92,6 +95,19 @@ export default function Hero() {
             </motion.div>
 
           </div>
+
+          {/* Image column */}
+          <div className={`col-lg-6 ${styles.imageCol}`}>
+            <motion.div
+              className={styles.imageWrap}
+              initial={{ opacity: 0, x: 80 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+            >
+              <img src="" alt="" className={styles.image} />
+            </motion.div>
+          </div>
+
         </div>
       </div>
 

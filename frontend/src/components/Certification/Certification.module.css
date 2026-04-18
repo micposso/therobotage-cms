@@ -151,18 +151,18 @@
 
 .trackName {
   font-family: var(--font-body);
-  font-size: var(--text-xs);
-  font-weight: 500;
+  font-size: var(--text-base);
+  font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--color-text);
 }
 
 .trackDescription {
   font-family: var(--font-body);
-  font-size: var(--text-xs);
-  font-weight: 300;
+  font-size: var(--text-base);
+  font-weight: 400;
   line-height: 1.7;
-  color: var(--color-text-muted);
+  color: var(--color-text);
 }
 
 /* ─── Featured card ──────────────────────────────────────────────────────────── */
@@ -183,7 +183,7 @@
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-2) var(--space-4);
-  border: 1px solid rgba(232, 228, 220, 0.2);
+  border: 1px solid var(--color-border-light);
   border-radius: var(--radius-pill);
   font-family: var(--font-body);
   font-weight: 300;
@@ -219,8 +219,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-6);
-  border-top: 1px solid rgba(232, 228, 220, 0.15);
-  border-bottom: 1px solid rgba(232, 228, 220, 0.15);
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
   padding: var(--space-8) 0;
   margin: var(--space-8) 0;
 }

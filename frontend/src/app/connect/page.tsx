@@ -1,6 +1,7 @@
 import Nav from '@/components/Nav/Nav'
 import PageHero from '@/components/PageHero/PageHero'
 import Footer from '@/components/Footer/Footer'
+import styles from './connect.module.css'
 
 export const metadata = {
   title: 'Connect — The Robot Age',
@@ -38,40 +39,15 @@ export default function ConnectPage() {
         eyebrow="Connect"
         title="Let's talk."
         subtitle="Whether you're interested in the certification, the summit, a partnership, or just the work — we'd like to hear from you."
+        imageSrc="/images/placeholder.jpg"
       />
-      <section style={{ padding: 'var(--space-16) 0' }}>
+      <section className={styles.section}>
         <div className="container-fluid">
-          <div style={{ maxWidth: 640 }}>
-            {channels.map((ch, i) => (
-              <div
-                key={ch.label}
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'baseline',
-                  padding: 'var(--space-6) 0',
-                  borderTop: i === 0 ? '1px solid var(--color-border-strong)' : '1px solid var(--color-border)',
-                  borderBottom: i === channels.length - 1 ? '1px solid var(--color-border-strong)' : 'none',
-                }}
-              >
-                <span style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-xs)', textTransform: 'uppercase', letterSpacing: '0.15em', color: 'var(--color-text-muted)', fontWeight: 300 }}>
-                  {ch.label}
-                </span>
-                <a
-                  href={ch.href}
-                  style={{
-                    fontFamily: 'var(--font-display)',
-                    fontSize: 'var(--text-md)',
-                    fontWeight: 400,
-                    color: 'var(--color-text)',
-                    textDecoration: 'none',
-                    borderBottom: '2.5px solid var(--color-text)',
-                    paddingBottom: 2,
-                    transition: 'color 200ms ease, border-color 200ms ease',
-                  }}
-                >
-                  {ch.value}
-                </a>
+          <div className={styles.inner}>
+            {channels.map((ch) => (
+              <div key={ch.label} className={styles.channelItem}>
+                <span className={styles.channelLabel}>{ch.label}</span>
+                <a href={ch.href} className={styles.channelLink}>{ch.value}</a>
               </div>
             ))}
           </div>

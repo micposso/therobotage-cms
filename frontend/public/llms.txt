@@ -1,0 +1,26 @@
+# The Robot Age
+
+> Robotic literacy education and certification for non-engineers.
+
+The Robot Age is an education platform that builds robotic literacy for designers, strategists, healthcare professionals, and business leaders — people who work alongside robots but don't build them.
+
+## What we offer
+
+- **Robotic literacy curriculum** — Structured learning for non-engineers entering robotic environments
+- **REP Certification** — Robotics Experience Practitioner, the foundational credential for anyone shaping the human side of robotics
+- **Research & Insights** — Original research and critical perspectives on human-robot interaction
+- **The Robot Age Summit** — Annual gathering for designers and leaders shaping human-robot experience
+- **Enterprise programs** — Deployment readiness education for organizations integrating robots
+
+## Key pages
+
+- /robotic-literacy — What robotic literacy is and why it matters
+- /learn — Full curriculum and certification tracks
+- /research — Articles and field observations
+- /summit — Annual summit information
+- /enterprise — Organizational programs
+- /access — Waitlist for the REP certification
+
+## Contact
+
+hello@therobotage.com

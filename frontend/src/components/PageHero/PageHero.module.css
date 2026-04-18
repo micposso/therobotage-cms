@@ -4,7 +4,34 @@
 }
 
 .inner {
-  max-width: 860px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.copy {
+  text-align: left;
+}
+
+/* ─── Placeholder image ──── */
+.imageCol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageWrap {
+  width: 500px;
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .eyebrow {
@@ -27,6 +54,20 @@
   margin-bottom: var(--space-8);
 }
 
+.colorSquare {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-left: 0.2em;
+  animation: colorCycle 2s steps(2, end) infinite;
+}
+
+@keyframes colorCycle {
+  0%   { background: var(--color-accent); }
+  50%  { background: var(--color-text-on-sand); }
+}
+
 .subtitle {
   font-family: var(--font-body);
   font-weight: 300;
@@ -34,4 +75,16 @@
   line-height: 1.6;
   color: var(--color-text-muted);
   max-width: 600px;
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+
+  .imageWrap {
+    width: 100%;
+    aspect-ratio: 5 / 4;
+  }
 }

@@ -16,6 +16,7 @@ export default function PrivacyPage() {
         eyebrow="Legal"
         title="Privacy Policy"
         subtitle="How we collect, use, and protect your information."
+        imageSrc="/images/placeholder.jpg"
       />
       <section className={styles.content}>
         <div className="container-fluid">

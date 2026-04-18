@@ -1,6 +1,7 @@
 import Nav from '@/components/Nav/Nav'
 import PageHero from '@/components/PageHero/PageHero'
 import Footer from '@/components/Footer/Footer'
+import styles from './access.module.css'
 
 export const metadata = {
   title: 'Access — The Robot Age',
@@ -15,64 +16,28 @@ export default function AccessPage() {
         eyebrow="Get Access"
         title="Be first in."
         subtitle="The Robotics Experience Practitioner certification is launching soon. Join the waitlist and we'll notify you when enrollment opens — along with early access offers and pre-launch resources."
+        imageSrc="/images/placeholder.jpg"
       />
-      <section style={{ padding: 'var(--space-16) 0', borderTop: '1px solid var(--color-border)' }}>
+      <section className={styles.section}>
         <div className="container-fluid">
-          <div style={{ maxWidth: 560 }}>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-sm)', lineHeight: 1.8, marginBottom: 'var(--space-8)', color: 'var(--color-text-muted)' }}>
+          <div className={styles.inner}>
+            <p className={styles.intro}>
               We&apos;re keeping the first cohort small. Leave your name and email and we&apos;ll be in touch before the public announcement.
             </p>
-            <form style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)', maxWidth: 400 }}>
+            <form className={styles.form}>
               <input
                 type="text"
                 placeholder="Your name"
-                style={{
-                  fontFamily: 'var(--font-body)',
-                  fontSize: 'var(--text-sm)',
-                  background: 'none',
-                  border: 'none',
-                  borderBottom: '1.5px solid var(--color-border-strong)',
-                  padding: 'var(--space-3) 0',
-                  color: 'var(--color-text)',
-                  outline: 'none',
-                  width: '100%',
-                }}
+                className={styles.input}
               />
               <input
                 type="email"
                 placeholder="Your email"
-                style={{
-                  fontFamily: 'var(--font-body)',
-                  fontSize: 'var(--text-sm)',
-                  background: 'none',
-                  border: 'none',
-                  borderBottom: '1.5px solid var(--color-border-strong)',
-                  padding: 'var(--space-3) 0',
-                  color: 'var(--color-text)',
-                  outline: 'none',
-                  width: '100%',
-                }}
+                className={styles.input}
               />
-              <div style={{ marginTop: 'var(--space-4)' }}>
-                <button
-                  type="submit"
-                  style={{
-                    fontFamily: 'var(--font-body)',
-                    fontSize: 'var(--text-xs)',
-                    fontWeight: 500,
-                    letterSpacing: '0.06em',
-                    color: 'var(--color-text)',
-                    background: 'none',
-                    border: 'none',
-                    padding: 0,
-                    paddingBottom: 2,
-                    borderBottom: '2.5px solid var(--color-text)',
-                    cursor: 'pointer',
-                  }}
-                >
-                  Join the Waitlist
-                </button>
-              </div>
+              <button type="submit" className={styles.submitButton}>
+                Join the Waitlist
+              </button>
             </form>
           </div>
         </div>

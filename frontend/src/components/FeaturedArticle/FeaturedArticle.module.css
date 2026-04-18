@@ -80,7 +80,7 @@
   font-weight: 300;
   font-size: var(--text-sm);
   color: var(--color-text-muted);
-  text-align: justify;
+  text-align: left;
   margin-top: var(--space-6);
   line-height: 1.8;
 }

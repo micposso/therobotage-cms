@@ -6,11 +6,12 @@ import Link from 'next/link'
 import styles from './Nav.module.css'
 
 const NAV_LINKS = [
-  { label: 'RESEARCH', href: '/research' },
-  { label: 'LEARN',    href: '/learn' },
-  { label: 'ACCESS',   href: '/access' },
-  { label: 'CONNECT',  href: '/connect' },
-  { label: 'SUMMIT',   href: '/summit' },
+  { label: 'RESEARCH',   href: '/research' },
+  { label: 'LEARN',      href: '/learn' },
+  { label: 'ACCESS',     href: '/access' },
+  { label: 'CONNECT',    href: '/connect' },
+  { label: 'SUMMIT',     href: '/summit' },
+  { label: 'ENTERPRISE', href: '/enterprise' },
 ]
 
 export default function Nav({ pinned = false }) {
