@@ -2,6 +2,7 @@ import Nav from '@/components/Nav/Nav'
 import PageHero from '@/components/PageHero/PageHero'
 import Certification from '@/components/Certification/Certification'
 import FoundingCohort from '@/components/FoundingCohort/FoundingCohort'
+import AboutInstructor from '@/components/AboutInstructor/AboutInstructor'
 import Footer from '@/components/Footer/Footer'
 
 export const metadata = {
@@ -23,6 +24,7 @@ export default function LearnPage() {
         <FoundingCohort checkoutUrl="https://therobotage.lemonsqueezy.com/checkout" />
       </div>
       <Certification />
+      <AboutInstructor />
       <Footer />
     </>
   )
