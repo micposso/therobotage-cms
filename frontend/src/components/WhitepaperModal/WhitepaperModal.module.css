@@ -1,0 +1,221 @@
+/* ─── Backdrop ───────────────────────────────────────────────────────────── */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--color-modal-backdrop);
+  z-index: 200;
+}
+
+/* ─── Card ───────────────────────────────────────────────────────────────── */
+.card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 201;
+  width: min(460px, calc(100vw - var(--space-8)));
+  background: var(--color-bg);
+  padding: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ─── Header / eyebrow ───────────────────────────────────────────────────── */
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+}
+
+/* ─── Content elements ───────────────────────────────────────────────────── */
+.description {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-8);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.label {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text-muted);
+}
+
+.input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border-strong);
+  padding: var(--space-3) 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  outline: none;
+  border-radius: var(--radius-none);
+  transition: border-color var(--ease-default);
+}
+
+.input::placeholder {
+  color: var(--color-border-strong);
+}
+
+.input:focus {
+  border-bottom-color: var(--color-text);
+}
+
+.errorMsg {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  letter-spacing: 0.04em;
+}
+
+/* ─── Interactive states ─────────────────────────────────────────────────── */
+.submitBtn {
+  align-self: flex-start;
+  display: inline-block;
+  padding: var(--space-4) var(--space-8);
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  border: none;
+  border-radius: var(--radius-none);
+  cursor: pointer;
+  transition: background var(--ease-default);
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: var(--color-text);
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.legalNote {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  opacity: 0.6;
+}
+
+/* ─── Close button ───────────────────────────────────────────────────────── */
+.closeBtn {
+  position: absolute;
+  top: var(--space-6);
+  right: var(--space-6);
+  background: none;
+  border: none;
+  padding: var(--space-2);
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: color var(--ease-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeBtn:hover {
+  color: var(--color-text);
+}
+
+/* ─── Success state ──────────────────────────────────────────────────────── */
+.success {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.successHeadline {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+}
+
+.successBody {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-8);
+}
+
+.closeAction {
+  align-self: flex-start;
+  display: inline-block;
+  padding-bottom: 2px;
+  background: none;
+  border: none;
+  border-bottom: 2.5px solid var(--color-text);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: color var(--ease-default), border-color var(--ease-default);
+}
+
+.closeAction:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .card {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    width: 100%;
+    padding: var(--space-8);
+  }
+}

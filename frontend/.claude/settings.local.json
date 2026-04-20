@@ -6,7 +6,9 @@
       "WebFetch(domain:source.unsplash.com)",
       "WebFetch(domain:webcache.googleusercontent.com)",
       "WebFetch(domain:news.mit.edu)",
-      "WebFetch(domain:www.roboticstomorrow.com)"
+      "WebFetch(domain:www.roboticstomorrow.com)",
+      "Bash(npx tsc *)",
+      "Bash(npm install *)"
     ]
   }
 }

@@ -1,0 +1,225 @@
+/* ─── Section/wrapper ──── */
+.section {
+  padding: var(--space-24) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ─── Header / eyebrow ─── */
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+
+/* ─── Content elements ─── */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 42%;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.625rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin-bottom: var(--space-8);
+}
+
+.abstract {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  max-width: 680px;
+  margin-bottom: var(--space-8);
+}
+
+.dimensionLabel {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-10);
+}
+
+.chip {
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-none);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+}
+
+.ctaGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  align-items: center;
+  margin-bottom: var(--space-8);
+}
+
+.ctaFilled {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-8);
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  border: none;
+  border-radius: var(--radius-none);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--ease-default);
+}
+
+.ctaFilled:hover {
+  background: var(--color-text);
+}
+
+.ctaUnderline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0;
+  padding-bottom: 2px;
+  background: none;
+  border: none;
+  border-bottom: 2.5px solid var(--color-text);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color var(--ease-default), border-color var(--ease-default);
+}
+
+.ctaUnderline:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.ctaUnderline:hover .arrow {
+  transform: translateX(4px);
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform var(--ease-default);
+}
+
+.citation {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+/* ─── Visual placeholder ─── */
+.visual {
+  background: var(--color-bg-dark);
+  aspect-ratio: 4 / 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  padding: var(--space-12);
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-8));
+}
+
+.schematicLabel {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-text-inverse);
+  opacity: 0.4;
+}
+
+.schematicGrid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.schematicRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.schematicDimName {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  color: var(--color-text-inverse);
+  opacity: 0.5;
+}
+
+.schematicBar {
+  height: 2px;
+  background: var(--color-border-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.schematicFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--color-accent);
+  opacity: 0.7;
+}
+
+/* ─── Interactive states ── */
+
+/* ─── Responsive ────────── */
+@media (max-width: 767px) {
+  .section {
+    padding: var(--space-16) 0;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .visual {
+    position: static;
+    aspect-ratio: 4 / 3;
+  }
+}

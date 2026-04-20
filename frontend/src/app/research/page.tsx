@@ -1,25 +1,37 @@
 import Nav from '@/components/Nav/Nav'
 import PageHero from '@/components/PageHero/PageHero'
-import ArticleGrid from '@/components/ArticleGrid/ArticleGrid'
+import ResearchHero from '@/components/research/ResearchHero'
+import FrameworkFeature from '@/components/research/FrameworkFeature'
+import InstrumentFeature from '@/components/research/InstrumentFeature'
+import RobotArchive from '@/components/research/RobotArchive'
+import FieldSignals from '@/components/research/FieldSignals'
+import ResearchFooter from '@/components/research/ResearchFooter'
 import Footer from '@/components/Footer/Footer'
+import styles from './page.module.css'
 
 export const metadata = {
   title: 'Research — The Robot Age',
-  description: 'What we\'re learning about humans, robots, and the spaces in between.',
+  description:
+    'Original frameworks, field observations, and critical perspectives on the human side of robotics deployment.',
 }
 
 export default function ResearchPage() {
   return (
-    <>
+    <div className={styles.page}>
       <Nav pinned />
       <PageHero
-        eyebrow="Research & Insights"
-        title="What we're learning"
+        eyebrow="Research"
+        title="What we're learning."
         subtitle="Original research, field observations, and critical perspectives on the human side of robotics — published for the people designing what comes next."
         imageSrc="/images/hand.png"
       />
-      <ArticleGrid />
+      <ResearchHero />
+      <FrameworkFeature />
+      <InstrumentFeature />
+      <RobotArchive />
+      <FieldSignals />
+      <ResearchFooter />
       <Footer />
-    </>
+    </div>
   )
 }

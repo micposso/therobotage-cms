@@ -236,23 +236,26 @@
 /* Right — rounded image container */
 .imageCol {
   flex-shrink: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .imageCarousel {
   position: relative;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
+  width: 500px;
+  aspect-ratio: 5 / 4;
   overflow: hidden;
-  background: var(--color-border);
-  flex-shrink: 0;
 }
 
 .imageSlide {
   position: absolute;
   inset: 0;
-  border-radius: inherit;
   overflow: hidden;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center;
 }
 
 /* ─── Subtext ─────────────────────────────────────────────────────────────────── */
@@ -399,8 +402,8 @@
   }
 
   .imageCarousel {
-    width: 180px;
-    height: 180px;
+    width: 100%;
+    aspect-ratio: 5 / 4;
   }
 
   .ctaRow {

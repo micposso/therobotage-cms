@@ -1,0 +1,52 @@
+/* ─── Section/wrapper ──── */
+.section {
+  padding: var(--space-24) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ─── Header / eyebrow ─── */
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-6);
+}
+
+/* ─── Content elements ─── */
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  max-width: 860px;
+  margin-bottom: var(--space-10);
+}
+
+.body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-md);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  max-width: 680px;
+}
+
+/* ─── Responsive ────────── */
+@media (max-width: 767px) {
+  .section {
+    padding: var(--space-16) 0;
+  }
+
+  .headline {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .body {
+    font-size: var(--text-sm);
+  }
+}

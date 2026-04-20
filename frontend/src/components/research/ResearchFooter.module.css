@@ -1,0 +1,70 @@
+/* ─── Section/wrapper ──── */
+.section {
+  padding: var(--space-24) 0;
+  background: var(--color-bg-sand-dark);
+  border-top: 1px solid var(--color-border-light);
+}
+
+/* ─── Header / eyebrow ─── */
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-text-on-sand);
+  opacity: 0.6;
+  margin-bottom: var(--space-6);
+}
+
+/* ─── Content elements ─── */
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.625rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-text-on-sand);
+  max-width: 720px;
+  margin-bottom: var(--space-8);
+}
+
+.body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  line-height: 1.8;
+  color: var(--color-text-on-sand);
+  opacity: 0.7;
+  max-width: 640px;
+  margin-bottom: var(--space-10);
+}
+
+.license {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  color: var(--color-text-on-sand);
+  opacity: 0.6;
+}
+
+.licenseLink {
+  color: var(--color-text-on-sand);
+  border-bottom: 1px solid var(--color-border-light);
+  text-decoration: none;
+  transition: color var(--ease-default), border-color var(--ease-default);
+}
+
+.licenseLink:hover {
+  color: var(--color-text-on-sand);
+  opacity: 1;
+  border-color: var(--color-text-on-sand);
+}
+
+/* ─── Responsive ────────── */
+@media (max-width: 767px) {
+  .section {
+    padding: var(--space-16) 0;
+  }
+}

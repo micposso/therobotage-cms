@@ -1,0 +1,179 @@
+/* ─── Section/wrapper ──── */
+.section {
+  padding: var(--space-20) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ─── Header / eyebrow ─── */
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+
+/* ─── Content elements ─── */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 38%;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.625rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin-bottom: var(--space-8);
+}
+
+.body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  max-width: 680px;
+  margin-bottom: var(--space-10);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0;
+  padding-bottom: 2px;
+  background: none;
+  border: none;
+  border-bottom: 2.5px solid var(--color-text);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color var(--ease-default), border-color var(--ease-default);
+}
+
+.cta:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.cta:hover .ctaArrow {
+  transform: translateX(4px);
+}
+
+.ctaArrow {
+  display: inline-block;
+  transition: transform var(--ease-default);
+}
+
+/* ─── Visual placeholder ─── */
+.profileVisual {
+  border: 1px solid var(--color-border);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.profileLabel {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text-muted);
+}
+
+.profileTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+.profileMeta {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 300;
+  color: var(--color-text-muted);
+  letter-spacing: 0.06em;
+}
+
+.dimensionList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.dimensionRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.dimensionMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.dimensionName {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+.dimensionScore {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  color: var(--color-accent);
+}
+
+.bar {
+  height: 3px;
+  background: var(--color-border);
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-none);
+}
+
+.barFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: var(--radius-none);
+}
+
+.profileNote {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 300;
+  color: var(--color-text-muted);
+  opacity: 0.6;
+  line-height: 1.6;
+}
+
+/* ─── Responsive ────────── */
+@media (max-width: 767px) {
+  .section {
+    padding: var(--space-16) 0;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

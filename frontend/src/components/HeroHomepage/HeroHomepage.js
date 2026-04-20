@@ -29,51 +29,19 @@ const subtext =
 const tagline = 'Robotic literacy isn\u2019t about code. It\u2019s about knowing enough to ask the right questions, make better decisions, and design for a world where robots are already here.'
 
 const HERO_IMAGES = [
-  'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80',
-  'https://images.unsplash.com/photo-1561144257-e32e8506b5d7?w=600&q=80',
-  'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=600&q=80',
-  'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80',
+  '/images/robot.png',
+  '/images/face.png',
+  '/images/hand.png',
+  '/images/collab.png',
+  '/images/people.png',
+  '/images/learn.png',
 ]
-
-const TICKER_ITEMS = [
-  'Industrial', 'Surgical', 'Collaborative',
-  'Autonomous', 'Social', 'Exoskeletal',
-  'Agricultural', 'Service',
-]
-
-const tickerTrack = [...TICKER_ITEMS, ...TICKER_ITEMS]
-
-// ─── Framer variants ──────────────────────────────────────────────────────────
-
-const lockupVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-}
-
-const lineVariants = {
-  hidden:  { y: 60, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] },
-  },
-}
 
 const imageVariants = {
   enter:  { x: '100%', opacity: 0 },
-  center: {
-    x: 0,
-    opacity: 1,
-    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
-  },
-  exit: {
-    x: '-30%',
-    opacity: 0,
-    transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] },
-  },
+  center: { x: 0, opacity: 1, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
+  exit:   { x: '-30%', opacity: 0, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } },
 }
-
-// ─── Image carousel ───────────────────────────────────────────────────────────
 
 function HeroImageCarousel() {
   const [index, setIndex] = useState(0)
@@ -101,14 +69,38 @@ function HeroImageCarousel() {
             src={HERO_IMAGES[index]}
             alt=""
             fill
-            sizes="25vw"
-            style={{ objectFit: 'cover' }}
+            sizes="500px"
+            className={styles.heroImage}
             priority={index === 0}
           />
         </motion.div>
       </AnimatePresence>
     </div>
   )
+}
+
+const TICKER_ITEMS = [
+  'Industrial', 'Surgical', 'Collaborative',
+  'Autonomous', 'Social', 'Exoskeletal',
+  'Agricultural', 'Service',
+]
+
+const tickerTrack = [...TICKER_ITEMS, ...TICKER_ITEMS]
+
+// ─── Framer variants ──────────────────────────────────────────────────────────
+
+const lockupVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
+}
+
+const lineVariants = {
+  hidden:  { y: 60, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] },
+  },
 }
 
 // ─── Nav item with hover panel ────────────────────────────────────────────────

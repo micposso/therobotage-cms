@@ -18,6 +18,7 @@
   --color-accent-glow:   rgba(232, 93, 36, 0.07);
   --color-border-on-dark: rgba(255, 255, 255, 0.06);
   --color-ticker-on-dark: rgba(245, 240, 232, 0.18);
+  --color-modal-backdrop: rgba(13, 13, 13, 0.72);
 
   /* Typography */
   --font-display: 'IBM Plex Sans', sans-serif;

@@ -1,0 +1,223 @@
+/* ─── Section/wrapper ─────────────────────────────────────────────────────── */
+.section {
+  padding: var(--space-24) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ─── Content column ─────────────────────────────────────────────────────── */
+.content {
+  padding-right: var(--space-16);
+}
+
+/* ─── Header / eyebrow ───────────────────────────────────────────────────── */
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-6);
+}
+
+.titleRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-8);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.75rem, 3.5vw, 2.625rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--color-text);
+}
+
+.versionTag {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border-strong);
+  padding: var(--space-1) var(--space-3);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ─── Content elements ───────────────────────────────────────────────────── */
+.abstract {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  max-width: 580px;
+  margin-bottom: var(--space-8);
+}
+
+.dimensions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+  margin-bottom: var(--space-10);
+}
+
+.chip {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text);
+  border: 1px solid var(--color-border-strong);
+  padding: var(--space-1) var(--space-4);
+}
+
+/* ─── Interactive states ─────────────────────────────────────────────────── */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-8);
+}
+
+.ctaRead {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding-bottom: 2px;
+  background: none;
+  border: none;
+  border-bottom: 2.5px solid var(--color-text);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color var(--ease-default), border-color var(--ease-default);
+}
+
+.ctaRead:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.ctaRead svg {
+  flex-shrink: 0;
+  transition: transform var(--ease-default);
+}
+
+.ctaRead:hover svg {
+  transform: translateX(4px);
+}
+
+.ctaDownload {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 2px;
+  transition: color var(--ease-default), border-color var(--ease-default);
+}
+
+.ctaDownload:hover {
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+.citation {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  opacity: 0.7;
+  border-left: 2px solid var(--color-border-strong);
+  padding-left: var(--space-4);
+  max-width: 520px;
+}
+
+/* ─── Visual column ──────────────────────────────────────────────────────── */
+.visualWrap {
+  padding-left: var(--space-8);
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-12));
+}
+
+.schematic {
+  width: 100%;
+  max-width: 290px;
+  display: block;
+}
+
+.schematicHeader {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  fill: var(--color-text-muted);
+}
+
+.schematicRule {
+  stroke: var(--color-border);
+  stroke-width: 1;
+}
+
+.schematicDim {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  fill: var(--color-text);
+  letter-spacing: 0.04em;
+}
+
+.schematicTrack {
+  fill: none;
+  stroke: var(--color-border);
+  stroke-width: 1;
+}
+
+.schematicDot {
+  fill: var(--color-accent);
+}
+
+.schematicFooter {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  fill: var(--color-text-muted);
+  opacity: 0.5;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .section {
+    padding: var(--space-16) 0;
+  }
+
+  .content {
+    padding-right: 0;
+    margin-bottom: var(--space-12);
+  }
+
+  .visualWrap {
+    padding-left: 0;
+    position: static;
+  }
+
+  .schematic {
+    max-width: 260px;
+  }
+}
