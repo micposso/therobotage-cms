@@ -5,7 +5,7 @@ import { Resend } from 'resend'
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 const FROM_ADDRESS = 'research@therobotage.com'
-const WHITEPAPER_URL = 'https://therobotage.com/downloads/ref-v1.pdf'
+const WHITEPAPER_URL = `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://therobotage.com'}/pdf/ref-v1.pdf`
 
 export async function sendWhitepaperEmail(
   prevState: { success: boolean; error?: string } | null,
