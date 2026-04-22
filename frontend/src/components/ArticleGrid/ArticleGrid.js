@@ -3,11 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import ArticleCard from '@/components/ArticleCard/ArticleCard'
-import { articles as allArticles } from '@/lib/articles'
 import styles from './ArticleGrid.module.css'
-
-const articles      = allArticles.slice(0, 3)
-const extraArticles = allArticles.slice(3)
 
 const containerVariants = {
   hidden: {},
@@ -16,8 +12,14 @@ const containerVariants = {
   },
 }
 
-export default function ArticleGrid() {
+/**
+ * @param {{ articles?: Array<{slug: string, category: string, date: string, headline: string, image: string, href?: string}> }} props
+ */
+export default function ArticleGrid({ articles = [] }) {
   const [expanded, setExpanded] = useState(false)
+
+  const initial = articles.slice(0, 3)
+  const extra   = articles.slice(3)
 
   return (
     <section className={styles.section}>
@@ -55,16 +57,16 @@ export default function ArticleGrid() {
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
         >
-          {articles.map((article) => (
-            <div key={article.id} className="col-md-4">
-              <ArticleCard article={article} />
+          {initial.map((article) => (
+            <div key={article.slug} className="col-md-4">
+              <ArticleCard article={article} href={article.href} />
             </div>
           ))}
         </motion.div>
 
         {/* ── Expanded row ────────────────────────────────────────────────── */}
         <AnimatePresence>
-          {expanded && (
+          {expanded && extra.length > 0 && (
             <motion.div
               className={`row g-4 ${styles.extraRow}`}
               variants={containerVariants}
@@ -72,9 +74,9 @@ export default function ArticleGrid() {
               animate="visible"
               exit="hidden"
             >
-              {extraArticles.map((article) => (
-                <div key={article.id} className="col-md-4">
-                  <ArticleCard article={article} />
+              {extra.map((article) => (
+                <div key={article.slug} className="col-md-4">
+                  <ArticleCard article={article} href={article.href} />
                 </div>
               ))}
             </motion.div>
@@ -82,14 +84,16 @@ export default function ArticleGrid() {
         </AnimatePresence>
 
         {/* ── View all button ─────────────────────────────────────────────── */}
-        <div className={styles.viewAllRow}>
-          <button
-            className={styles.viewAllBtn}
-            onClick={() => setExpanded((v) => !v)}
-          >
-            {expanded ? 'Show Less' : 'View All News'}
-          </button>
-        </div>
+        {extra.length > 0 && (
+          <div className={styles.viewAllRow}>
+            <button
+              className={styles.viewAllBtn}
+              onClick={() => setExpanded((v) => !v)}
+            >
+              {expanded ? 'Show Less' : 'View All News'}
+            </button>
+          </div>
+        )}
 
       </div>
     </section>

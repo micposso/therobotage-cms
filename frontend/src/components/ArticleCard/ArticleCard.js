@@ -14,10 +14,12 @@ const cardVariants = {
   },
 }
 
-export default function ArticleCard({ article }) {
+export default function ArticleCard({ article, href }) {
+  const cardHref = href ?? `/research/${article.slug}`
   return (
-    <Link href={`/research/${article.slug}`} className={styles.cardLink}>
+    <Link href={cardHref} className={styles.cardLink}>
       <motion.article className={styles.card} variants={cardVariants}>
+        {article.image && (
         <div className={styles.thumbnail}>
           <Image
             src={article.image}
@@ -27,6 +29,7 @@ export default function ArticleCard({ article }) {
             style={{ objectFit: 'cover' }}
           />
         </div>
+        )}
         <div className={styles.meta}>
           <span className={styles.category}>{article.category}</span>
           {article.date && <span className={styles.date}>{article.date}</span>}

@@ -5,6 +5,7 @@ import FrameworkFeature from '@/components/research/FrameworkFeature'
 import InstrumentFeature from '@/components/research/InstrumentFeature'
 import RobotArchive from '@/components/research/RobotArchive'
 import FieldSignals from '@/components/research/FieldSignals'
+import LatestNewsSection from '@/components/LatestNewsSection/LatestNewsSection'
 import ResearchFooter from '@/components/research/ResearchFooter'
 import Footer from '@/components/Footer/Footer'
 import styles from './page.module.css'
@@ -29,6 +30,7 @@ export default function ResearchPage() {
       <FrameworkFeature />
       <InstrumentFeature />
       <RobotArchive />
+      <LatestNewsSection />
       <FieldSignals />
       <ResearchFooter />
       <Footer />

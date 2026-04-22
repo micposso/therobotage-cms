@@ -1,0 +1,26 @@
+.section {
+  padding: var(--space-16) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.headerRow {
+  margin-bottom: var(--space-12);
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--color-text);
+}
