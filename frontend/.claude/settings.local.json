@@ -11,7 +11,10 @@
       "Bash(npm install *)",
       "Bash(pnpm add:*)",
       "Bash(node:*)",
-      "Bash(pnpm build:*)"
+      "Bash(pnpm build:*)",
+      "Bash(grep *)",
+      "Bash(sort -t: -k2 -n)",
+      "Bash(npm run *)"
     ]
   }
 }

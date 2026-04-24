@@ -43,8 +43,7 @@ export default function WhitepaperModal({ isOpen, onClose }: Props) {
             transition={{ duration: 0.2 }}
             onClick={onClose}
             aria-hidden="true"
-          />
-
+          >
           {/* Card */}
           <motion.div
             role="dialog"
@@ -55,6 +54,7 @@ export default function WhitepaperModal({ isOpen, onClose }: Props) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 16 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            onClick={(e) => e.stopPropagation()}
           >
             <button className={styles.closeBtn} onClick={onClose} aria-label="Close">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -65,13 +65,20 @@ export default function WhitepaperModal({ isOpen, onClose }: Props) {
 
             {state.success ? (
               <div className={styles.success}>
-                <p className={styles.eyebrow}>On its way</p>
+                <p className={styles.eyebrow}>Ready to download</p>
                 <h2 className={styles.successHeadline} id="modal-title">
-                  Check your inbox.
+                  Robot Experience Framework, v1.0
                 </h2>
                 <p className={styles.successBody}>
-                  We've sent the REF white paper to your email. If it doesn't arrive within a few minutes, check your spam folder.
+                  We've also sent a link to your email.
                 </p>
+                <a
+                  href="/pdf/href-therobotage-v2.pdf"
+                  download
+                  className={styles.downloadBtn}
+                >
+                  Download the white paper
+                </a>
                 <button className={styles.closeAction} onClick={onClose}>
                   Close
                 </button>
@@ -116,6 +123,7 @@ export default function WhitepaperModal({ isOpen, onClose }: Props) {
                 </p>
               </>
             )}
+          </motion.div>
           </motion.div>
         </>
       )}

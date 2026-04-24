@@ -1,0 +1,118 @@
+/* ─── Sidebar trigger (matches .sidebarLink appearance) ─────────────────────── */
+.trigger {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-left: 1px solid var(--color-accent);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 300;
+  color: var(--color-text);
+  padding: var(--space-2) 0 var(--space-2) var(--space-3);
+  transition: color var(--ease-default);
+}
+
+.trigger:hover {
+  color: var(--color-accent);
+}
+
+/* ─── Backdrop ───────────────────────────────────────────────────────────────── */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--color-modal-backdrop);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── Modal panel ────────────────────────────────────────────────────────────── */
+.modal {
+  background: var(--color-bg);
+  width: 100%;
+  max-width: 400px;
+  margin: var(--space-4);
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-6) var(--space-8);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.modalLabel {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text-muted);
+}
+
+.close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1;
+  padding: 0;
+  transition: color var(--ease-default);
+}
+
+.close:hover {
+  color: var(--color-text);
+}
+
+/* ─── Share options ──────────────────────────────────────────────────────────── */
+.options {
+  display: flex;
+  flex-direction: column;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  cursor: pointer;
+  padding: var(--space-5) var(--space-8);
+  transition: background var(--ease-default), color var(--ease-default);
+  text-align: left;
+}
+
+.option:last-child {
+  border-bottom: none;
+}
+
+.option:hover {
+  background: var(--color-accent-glow);
+}
+
+.option:hover .optionName,
+.option:hover .optionArrow {
+  color: var(--color-accent);
+}
+
+.optionName {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 300;
+  color: var(--color-text);
+  transition: color var(--ease-default);
+}
+
+.optionArrow {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  transition: color var(--ease-default);
+}

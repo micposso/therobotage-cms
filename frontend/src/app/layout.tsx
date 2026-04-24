@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans, IBM_Plex_Serif } from "next/font/google";
+import { WaitlistProvider } from "@/context/WaitlistContext";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
 import "./globals.css";
 
@@ -18,6 +19,7 @@ const ibmPlexSerif = IBM_Plex_Serif({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
   title: "The Robot Age",
   description: "Robotic literacy for non-engineers",
 };
@@ -38,7 +40,7 @@ export default function RootLayout({
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNSS5LF8" height="0" width="0" style={{ display: 'none', visibility: 'hidden' }} />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-        {children}
+        <WaitlistProvider>{children}</WaitlistProvider>
       </body>
     </html>
   );

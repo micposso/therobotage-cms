@@ -1,6 +1,7 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import type { NewsArticle as NewsArticleType } from '@/lib/news'
+import ShareButton from './ShareButton'
+import WaitlistModal from './WaitlistModal'
 import styles from './NewsArticle.module.css'
 
 interface Props {
@@ -12,17 +13,10 @@ export default function NewsArticle({ article }: Props) {
     <article className={styles.article}>
 
       {/* ── Header image with overlay ─────────────────────────────────────── */}
-      <div className={styles.hero}>
-        {article.headerImage && (
-          <Image
-            src={article.headerImage}
-            alt={article.title}
-            fill
-            priority
-            sizes="100vw"
-            style={{ objectFit: 'cover' }}
-          />
-        )}
+      <div
+        className={styles.hero}
+        style={article.headerImage ? { backgroundImage: `url(${article.headerImage})` } : undefined}
+      >
         <div className={styles.heroOverlay} />
         <div className={styles.heroContent}>
           <div className={styles.heroCategoryRow}>
@@ -37,25 +31,37 @@ export default function NewsArticle({ article }: Props) {
       </div>
 
       <div className="container-fluid">
+        <div className={styles.layout}>
 
-        {/* ── Excerpt ─────────────────────────────────────────────────────── */}
-        {article.excerpt && (
-          <p className={styles.excerpt}>{article.excerpt}</p>
-        )}
+          {/* ── Body ──────────────────────────────────────────────────────── */}
+          <div className={styles.content}>
+            <div
+              className={styles.markdown}
+              dangerouslySetInnerHTML={{ __html: article.content }}
+            />
+            <div className={styles.back}>
+              <Link href="/" className={styles.backLink}>
+                ← Back to News
+              </Link>
+            </div>
+          </div>
 
-        {/* ── Body ────────────────────────────────────────────────────────── */}
-        <div
-          className={styles.markdown}
-          dangerouslySetInnerHTML={{ __html: article.content }}
-        />
+          {/* ── Sidebar ───────────────────────────────────────────────────── */}
+          <aside className={styles.sidebar}>
+            <p className={styles.sidebarLabel}>Related</p>
+            <nav className={styles.sidebarNav}>
+              <Link href="/learn" className={styles.sidebarLink}>Get the REP credential</Link>
+              <Link href="/robotics-literacy" className={styles.sidebarLink}>What is robotic literacy?</Link>
+              <Link href="/summit" className={styles.sidebarLink}>Join the Summit</Link>
+              <ShareButton />
+            </nav>
+            <p className={styles.sidebarBlurb}>
+              The REP credential is built for the people who shape how robots land — not the engineers who build them.
+            </p>
+            <WaitlistModal />
+          </aside>
 
-        {/* ── Back link ───────────────────────────────────────────────────── */}
-        <div className={styles.back}>
-          <Link href="/" className={styles.backLink}>
-            ← Back to News
-          </Link>
         </div>
-
       </div>
     </article>
   )

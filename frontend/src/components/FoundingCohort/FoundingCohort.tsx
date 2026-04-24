@@ -1,10 +1,11 @@
+'use client'
+
+import { useWaitlist } from '@/context/WaitlistContext'
 import styles from './FoundingCohort.module.css'
 
-interface FoundingCohortProps {
-  checkoutUrl: string
-}
+export default function FoundingCohort() {
+  const { open } = useWaitlist()
 
-export default function FoundingCohort({ checkoutUrl }: FoundingCohortProps) {
   return (
     <section className={styles.block}>
       <div className={styles.grid}>
@@ -32,9 +33,9 @@ export default function FoundingCohort({ checkoutUrl }: FoundingCohortProps) {
             <span className={styles.priceMeta}>or two payments of $99</span>
           </div>
           <div className={styles.ctaRow}>
-            <a href={checkoutUrl} className={styles.cta}>
+            <button onClick={open} className={styles.cta}>
               Reserve Your Seat →
-            </a>
+            </button>
             <span className={styles.availability}>
               10 seats available · Founding rate ends when the cohort fills
             </span>

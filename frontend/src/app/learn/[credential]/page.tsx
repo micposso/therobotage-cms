@@ -80,7 +80,7 @@ export default async function CredentialPage({ params }: { params: Promise<{ cre
 
           {/* ── Founding Cohort ─────────────────────────────────────────────── */}
           {cert.slug === 'rep' && (
-            <FoundingCohort checkoutUrl="https://therobotage.lemonsqueezy.com/checkout" />
+            <FoundingCohort />
           )}
 
           {/* ── Curriculum ──────────────────────────────────────────────────── */}

@@ -21,7 +21,7 @@ export default function LearnPage() {
         imageSrc="/images/learn.png"
       />
       <div className="container-fluid" style={{ paddingTop: 'var(--space-16)' }}>
-        <FoundingCohort checkoutUrl="https://therobotage.lemonsqueezy.com/checkout" />
+        <FoundingCohort />
       </div>
       <Certification />
       <AboutInstructor />

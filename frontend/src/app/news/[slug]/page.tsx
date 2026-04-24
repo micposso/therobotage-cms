@@ -12,9 +12,24 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   const article = getNewsArticleBySlug(slug)
   if (!article) return {}
+
+  const ogImage = article.headerImage || null
+
   return {
     title: `${article.title} — The Robot Age`,
     description: article.excerpt,
+    openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      type: 'article',
+      ...(ogImage && { images: [{ url: ogImage, alt: article.title }] }),
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.excerpt,
+      ...(ogImage && { images: [ogImage] }),
+    },
   }
 }
 

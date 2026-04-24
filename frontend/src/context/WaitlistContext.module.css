@@ -1,4 +1,4 @@
-/* ─── Backdrop ───────────────────────────────────────────────────────────── */
+/* ─── Backdrop ───────────────────────────────────────────────────────────────── */
 .backdrop {
   position: fixed;
   inset: 0;
@@ -9,7 +9,7 @@
   justify-content: center;
 }
 
-/* ─── Card ───────────────────────────────────────────────────────────────── */
+/* ─── Card ───────────────────────────────────────────────────────────────────── */
 .card {
   position: relative;
   width: min(460px, calc(100vw - var(--space-8)));
@@ -20,7 +20,7 @@
   gap: 0;
 }
 
-/* ─── Header / eyebrow ───────────────────────────────────────────────────── */
+/* ─── Eyebrow / headline ─────────────────────────────────────────────────────── */
 .eyebrow {
   font-family: var(--font-body);
   font-weight: 300;
@@ -41,7 +41,6 @@
   margin-bottom: var(--space-4);
 }
 
-/* ─── Content elements ───────────────────────────────────────────────────── */
 .description {
   font-family: var(--font-body);
   font-weight: 300;
@@ -51,6 +50,7 @@
   margin-bottom: var(--space-8);
 }
 
+/* ─── Form ───────────────────────────────────────────────────────────────────── */
 .form {
   display: flex;
   flex-direction: column;
@@ -84,7 +84,6 @@
   font-size: var(--text-sm);
   color: var(--color-text);
   outline: none;
-  border-radius: var(--radius-none);
   transition: border-color var(--ease-default);
 }
 
@@ -104,10 +103,8 @@
   letter-spacing: 0.04em;
 }
 
-/* ─── Interactive states ─────────────────────────────────────────────────── */
 .submitBtn {
   align-self: flex-start;
-  display: inline-block;
   padding: var(--space-4) var(--space-8);
   background: var(--color-accent);
   color: var(--color-text-inverse);
@@ -116,7 +113,6 @@
   font-size: var(--text-xs);
   letter-spacing: 0.06em;
   border: none;
-  border-radius: var(--radius-none);
   cursor: pointer;
   transition: background var(--ease-default);
 }
@@ -139,7 +135,7 @@
   opacity: 0.6;
 }
 
-/* ─── Close button ───────────────────────────────────────────────────────── */
+/* ─── Close button ───────────────────────────────────────────────────────────── */
 .closeBtn {
   position: absolute;
   top: var(--space-6);
@@ -150,16 +146,13 @@
   cursor: pointer;
   color: var(--color-text-muted);
   transition: color var(--ease-default);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .closeBtn:hover {
   color: var(--color-text);
 }
 
-/* ─── Success state ──────────────────────────────────────────────────────── */
+/* ─── Success state ──────────────────────────────────────────────────────────── */
 .success {
   display: flex;
   flex-direction: column;
@@ -185,33 +178,12 @@
   margin-bottom: var(--space-8);
 }
 
-.downloadBtn {
-  align-self: flex-start;
-  display: inline-block;
-  padding: var(--space-4) var(--space-8);
-  background: var(--color-accent);
-  color: var(--color-text-inverse);
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: var(--text-xs);
-  letter-spacing: 0.06em;
-  text-decoration: none;
-  border-radius: var(--radius-none);
-  margin-bottom: var(--space-5);
-  transition: background var(--ease-default);
-}
-
-.downloadBtn:hover {
-  background: var(--color-text);
-}
-
 .closeAction {
   align-self: flex-start;
-  display: inline-block;
-  padding-bottom: 2px;
   background: none;
   border: none;
   border-bottom: 2.5px solid var(--color-text);
+  padding-bottom: 2px;
   font-family: var(--font-body);
   font-weight: 500;
   font-size: var(--text-xs);
@@ -226,7 +198,7 @@
   border-color: var(--color-accent);
 }
 
-/* ─── Responsive ─────────────────────────────────────────────────────────── */
+/* ─── Responsive ─────────────────────────────────────────────────────────────── */
 @media (max-width: 767px) {
   .backdrop {
     align-items: flex-end;
