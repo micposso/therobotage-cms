@@ -19,7 +19,7 @@ const ibmPlexSerif = IBM_Plex_Serif({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://therobotage.com'),
   title: "The Robot Age",
   description: "Robotic literacy for non-engineers",
   openGraph: {

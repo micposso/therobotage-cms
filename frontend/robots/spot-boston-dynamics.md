@@ -5,7 +5,7 @@ manufacturer: Boston Dynamics
 date: April 24, 2026
 excerpt: The four-legged robot that changed how industrial facilities think about autonomous inspection — and what it means to design a machine people actually trust.
 headerImage: /images/robots/spot-header.jpg
-thumbnailImage: /images/robots/spot-thumb.jpg
+thumbnailImage: /images/robots/rotw-august29.jpg
 author: The Robot Age Editorial Team
 ---
 

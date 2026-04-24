@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import Image from 'next/image'
 import Link from 'next/link'
 import styles from './RobotOfTheWeek.module.css'
 
@@ -18,6 +19,7 @@ const ROBOTS = [
     name: 'Boston Dynamics Spot',
     context: 'Industrial inspection — oil & gas platform',
     week: '2026 W15',
+    image: '/images/robots/rotw-august29.jpg',
     resProfile: [72, 68, 55, 44, 61],
     composite: 60.0,
   },
@@ -110,6 +112,17 @@ export default function RobotOfTheWeek() {
               variants={cardVariants}
             >
               <Link href={`/research/robots/${robot.slug}`} className={styles.card}>
+                {robot.image && (
+                  <div className={styles.cardImage}>
+                    <Image
+                      src={robot.image}
+                      alt={robot.name}
+                      fill
+                      sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 33vw"
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </div>
+                )}
                 <div className={styles.cardMeta}>
                   <span className={styles.cardWeek}>{robot.week}</span>
                 </div>

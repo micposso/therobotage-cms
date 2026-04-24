@@ -67,6 +67,22 @@
 }
 
 /* ─── Content elements ───────────────────────────────────────────────────── */
+.cardImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.cardImage img {
+  transition: transform var(--ease-slow);
+}
+
+.card:hover .cardImage img {
+  transform: scale(1.03);
+}
+
 .card {
   display: flex;
   flex-direction: column;
