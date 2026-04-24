@@ -8,6 +8,15 @@ export const metadata = {
   title: 'Enterprise — The Robot Age',
   description:
     'Deployment readiness education for organizations integrating robots into non-engineering operations.',
+  openGraph: {
+    title: 'Enterprise — The Robot Age',
+    description: 'Deployment readiness education for organizations integrating robots into non-engineering operations.',
+    images: [{ url: '/images/face.png', alt: 'The Robot Age' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/images/face.png'],
+  },
 }
 
 const WHY_CARDS = [

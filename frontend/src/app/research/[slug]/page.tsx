@@ -16,6 +16,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${article.headline} — The Robot Age`,
     description: article.body[0],
+    openGraph: {
+      title: article.headline,
+      description: article.body[0],
+      type: 'article',
+      ...(article.image && { images: [{ url: article.image, alt: article.headline }] }),
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.headline,
+      description: article.body[0],
+      ...(article.image && { images: [article.image] }),
+    },
   }
 }
 

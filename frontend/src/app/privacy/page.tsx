@@ -6,6 +6,15 @@ import styles from './privacy.module.css'
 export const metadata = {
   title: 'Privacy Policy — The Robot Age',
   description: 'How The Robot Age collects, uses, and protects your information.',
+  openGraph: {
+    title: 'Privacy Policy — The Robot Age',
+    description: 'How The Robot Age collects, uses, and protects your information.',
+    images: [{ url: '/images/home.png', alt: 'The Robot Age' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/images/home.png'],
+  },
 }
 
 export default function PrivacyPage() {

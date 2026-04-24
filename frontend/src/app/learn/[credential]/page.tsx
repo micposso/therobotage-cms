@@ -16,6 +16,17 @@ export async function generateMetadata({ params }: { params: Promise<{ credentia
   return {
     title: `${cert.abbr} — ${cert.name} — The Robot Age`,
     description: cert.description,
+    openGraph: {
+      title: `${cert.abbr} — ${cert.name}`,
+      description: cert.description,
+      images: [{ url: '/images/learn.png', alt: 'The Robot Age' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${cert.abbr} — ${cert.name}`,
+      description: cert.description,
+      images: ['/images/learn.png'],
+    },
   }
 }
 

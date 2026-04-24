@@ -7,6 +7,15 @@ import styles from './robotics-literacy.module.css'
 export const metadata = {
   title: 'Robotics Literacy — The Robot Age',
   description: 'The skill side of working with robots. Built for designers, operations leads, and business leaders — no engineering background required.',
+  openGraph: {
+    title: 'Robotics Literacy — The Robot Age',
+    description: 'The skill side of working with robots. Built for designers, operations leads, and business leaders — no engineering background required.',
+    images: [{ url: '/images/face.png', alt: 'The Robot Age' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/images/face.png'],
+  },
 }
 
 const PILLARS = [

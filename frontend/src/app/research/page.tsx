@@ -14,6 +14,15 @@ export const metadata = {
   title: 'Research — The Robot Age',
   description:
     'Original frameworks, field observations, and critical perspectives on the human side of robotics deployment.',
+  openGraph: {
+    title: 'Research — The Robot Age',
+    description: 'Original frameworks, field observations, and critical perspectives on the human side of robotics deployment.',
+    images: [{ url: '/images/hand.png', alt: 'The Robot Age' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/images/hand.png'],
+  },
 }
 
 export default function ResearchPage() {

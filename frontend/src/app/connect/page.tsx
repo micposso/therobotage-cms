@@ -6,6 +6,15 @@ import styles from './connect.module.css'
 export const metadata = {
   title: 'Connect — The Robot Age',
   description: 'Get in touch, follow the work, or join the community.',
+  openGraph: {
+    title: 'Connect — The Robot Age',
+    description: 'Get in touch, follow the work, or join the community.',
+    images: [{ url: '/images/collab.png', alt: 'The Robot Age' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/images/collab.png'],
+  },
 }
 
 const channels = [

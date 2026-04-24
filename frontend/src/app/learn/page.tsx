@@ -8,6 +8,15 @@ import Footer from '@/components/Footer/Footer'
 export const metadata = {
   title: 'Learn — The Robot Age',
   description: 'Credentials for the non-engineer who shapes what robots do in the world.',
+  openGraph: {
+    title: 'Learn — The Robot Age',
+    description: 'Credentials for the non-engineer who shapes what robots do in the world.',
+    images: [{ url: '/images/learn.png', alt: 'The Robot Age' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/images/learn.png'],
+  },
 }
 
 export default function LearnPage() {

@@ -6,6 +6,15 @@ import styles from './terms.module.css'
 export const metadata = {
   title: 'Terms of Use — The Robot Age',
   description: 'The terms and conditions governing use of The Robot Age platform.',
+  openGraph: {
+    title: 'Terms of Use — The Robot Age',
+    description: 'The terms and conditions governing use of The Robot Age platform.',
+    images: [{ url: '/images/home.png', alt: 'The Robot Age' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/images/home.png'],
+  },
 }
 
 export default function TermsPage() {

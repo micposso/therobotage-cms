@@ -22,6 +22,15 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
   title: "The Robot Age",
   description: "Robotic literacy for non-engineers",
+  openGraph: {
+    title: "The Robot Age",
+    description: "Robotic literacy for non-engineers",
+    images: [{ url: '/images/home.png', alt: 'The Robot Age' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/images/home.png'],
+  },
 };
 
 export default function RootLayout({

@@ -6,6 +6,15 @@ import styles from './access.module.css'
 export const metadata = {
   title: 'Access — The Robot Age',
   description: 'Join the waitlist for the REP certification.',
+  openGraph: {
+    title: 'Access — The Robot Age',
+    description: 'Join the waitlist for the REP certification.',
+    images: [{ url: '/images/learn.png', alt: 'The Robot Age' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/images/learn.png'],
+  },
 }
 
 export default function AccessPage() {

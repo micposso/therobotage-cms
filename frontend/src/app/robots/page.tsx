@@ -10,6 +10,15 @@ import styles from './page.module.css'
 export const metadata = {
   title: 'Robot of the Week — The Robot Age',
   description: 'One robot, every week. Field analysis of how each robot performs in real deployment — what it gets right, and where the experience breaks down.',
+  openGraph: {
+    title: 'Robot of the Week — The Robot Age',
+    description: 'One robot, every week. Field analysis of how each robot performs in real deployment — what it gets right, and where the experience breaks down.',
+    images: [{ url: '/images/robot.png', alt: 'The Robot Age' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/images/robot.png'],
+  },
 }
 
 export default function RobotsPage() {

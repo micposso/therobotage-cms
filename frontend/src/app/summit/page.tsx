@@ -6,6 +6,15 @@ import Footer from '@/components/Footer/Footer'
 export const metadata = {
   title: 'Summit — The Robot Age',
   description: 'A gathering for the people shaping human-robot experience.',
+  openGraph: {
+    title: 'Summit — The Robot Age',
+    description: 'A gathering for the people shaping human-robot experience.',
+    images: [{ url: '/images/people.png', alt: 'The Robot Age Summit' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/images/people.png'],
+  },
 }
 
 export default function SummitPage() {
