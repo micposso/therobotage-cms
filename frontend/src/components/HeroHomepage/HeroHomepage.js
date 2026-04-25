@@ -127,6 +127,7 @@ function HeroNavItem({ label, href, desc }) {
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
+/** @param {{ images: string[] }} props */
 export default function HeroHomepage({ images = [] }) {
   return (
     <section className={styles.hero}>
