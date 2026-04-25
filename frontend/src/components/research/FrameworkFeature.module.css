@@ -1,6 +1,6 @@
 /* ─── Section/wrapper ──── */
 .section {
-  padding: var(--space-24) 0;
+  padding: var(--space-12) 0;
   border-top: 1px solid var(--color-border);
 }
 
@@ -146,8 +146,8 @@
 
 /* ─── Visual placeholder ─── */
 .visual {
-  background: var(--color-bg-dark);
-  aspect-ratio: 4 / 5;
+  background: var(--color-tertiary);
+  aspect-ratio: 4 / 3;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -164,8 +164,7 @@
   font-size: var(--text-xs);
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: var(--color-text-inverse);
-  opacity: 0.4;
+  color: var(--color-white);
 }
 
 .schematicGrid {
@@ -186,12 +185,11 @@
   font-weight: 300;
   font-size: var(--text-xs);
   letter-spacing: 0.1em;
-  color: var(--color-text-inverse);
-  opacity: 0.5;
+  color: var(--color-white);
 }
 
 .schematicBar {
-  height: 2px;
+  height: 5px;
   background: var(--color-border-light);
   position: relative;
   overflow: hidden;
@@ -202,7 +200,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  background: var(--color-accent);
+  background: var(--color-fourth);
   opacity: 0.7;
 }
 
