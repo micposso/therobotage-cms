@@ -10,11 +10,11 @@ export const metadata = {
   openGraph: {
     title: 'Robotics Literacy — The Robot Age',
     description: 'The skill side of working with robots. Built for designers, operations leads, and business leaders — no engineering background required.',
-    images: [{ url: '/images/face.png', alt: 'The Robot Age' }],
+    images: [{ url: '/images/palm.png', alt: 'The Robot Age' }],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/images/face.png'],
+    images: ['/images/palm.png'],
   },
 }
 
@@ -60,7 +60,7 @@ export default function RoboticsLiteracyPage() {
         eyebrow="Robotics Literacy"
         title="Working with robots is a skill."
         subtitle="The people working closest to robots — product designers, operations leads, healthcare professionals — rarely have formal training for it. Robotics literacy closes that gap."
-        imageSrc="/images/face.png"
+        imageSrc="/images/palm.png"
       />
 
       {/* ── Definition ───────────────────────────────────────────────────────── */}

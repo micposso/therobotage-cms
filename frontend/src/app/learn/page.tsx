@@ -11,11 +11,11 @@ export const metadata = {
   openGraph: {
     title: 'Learn — The Robot Age',
     description: 'Credentials for the non-engineer who shapes what robots do in the world.',
-    images: [{ url: '/images/learn.png', alt: 'The Robot Age' }],
+    images: [{ url: '/images/human.png', alt: 'The Robot Age' }],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/images/learn.png'],
+    images: ['/images/human.png'],
   },
 }
 
@@ -25,9 +25,9 @@ export default function LearnPage() {
       <Nav pinned />
       <PageHero
         eyebrow="Curriculum"
-        title="Built for the people robots work beside."
+        title="Built for the people robots work beside"
         subtitle="Four credentials for designers, strategists, and leaders who need to work confidently in a world where robots are already deployed. No engineering background required."
-        imageSrc="/images/learn.png"
+        imageSrc="/images/human.png"
       />
       <div className="container-fluid" style={{ paddingTop: 'var(--space-16)' }}>
         <FoundingCohort />

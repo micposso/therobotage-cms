@@ -11,11 +11,11 @@ export const metadata = {
   openGraph: {
     title: 'Enterprise — The Robot Age',
     description: 'Deployment readiness education for organizations integrating robots into non-engineering operations.',
-    images: [{ url: '/images/face.png', alt: 'The Robot Age' }],
+    images: [{ url: '/images/robot.png', alt: 'The Robot Age' }],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/images/face.png'],
+    images: ['/images/robot.png'],
   },
 }
 
@@ -51,7 +51,7 @@ export default function EnterprisePage() {
         eyebrow="Enterprise"
         title="Deployment readiness starts with people."
         subtitle="Structured robotic literacy for operations, logistics, and facilities teams — built for organizations integrating robots into non-engineering environments."
-        imageSrc="/images/face.png"
+        imageSrc="/images/robot.png"
       />
 
       {/* Why this matters */}

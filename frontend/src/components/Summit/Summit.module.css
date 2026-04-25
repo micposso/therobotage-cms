@@ -1,5 +1,5 @@
 .section {
-  background: var(--color-bg-sand-dark);
+  background: var(--color-secondary);
   color: var(--color-text-on-sand);
   padding: var(--space-24) 0;
   position: relative;

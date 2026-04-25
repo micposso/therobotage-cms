@@ -9,11 +9,11 @@ export const metadata = {
   openGraph: {
     title: 'Summit — The Robot Age',
     description: 'A gathering for the people shaping human-robot experience.',
-    images: [{ url: '/images/people.png', alt: 'The Robot Age Summit' }],
+    images: [{ url: '/images/hand.png', alt: 'The Robot Age Summit' }],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/images/people.png'],
+    images: ['/images/hand.png'],
   },
 }
 
@@ -25,7 +25,7 @@ export default function SummitPage() {
         eyebrow="The Robot Age Summit"
         title="Where the conversation happens."
         subtitle="A gathering for designers, strategists, and leaders who are shaping what human-robot experience actually looks like. Coming to New York City this fall."
-        imageSrc="/images/people.png"
+        imageSrc="/images/hand.png"
       />
       <Summit />
       <Footer />

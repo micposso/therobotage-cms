@@ -8,10 +8,9 @@ interface PageHeroProps {
   title: string
   subtitle: string
   imageSrc?: string
-  imageAlt?: string
 }
 
-export default function PageHero({ eyebrow, title, subtitle, imageSrc = '', imageAlt = '' }: PageHeroProps) {
+export default function PageHero({ eyebrow, title, subtitle, imageSrc = '' }: PageHeroProps) {
   return (
     <section className={styles.hero}>
       <div className="container-fluid">
@@ -30,9 +29,10 @@ export default function PageHero({ eyebrow, title, subtitle, imageSrc = '', imag
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
           >
-            <div className={styles.imageWrap}>
-              <img src={imageSrc} alt={imageAlt} className={styles.image} />
-            </div>
+            <div
+              className={styles.imageWrap}
+              style={{ backgroundImage: imageSrc ? `url(${imageSrc})` : undefined }}
+            />
           </motion.div>
         </div>
       </div>

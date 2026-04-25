@@ -9,11 +9,11 @@ export const metadata = {
   openGraph: {
     title: 'Connect — The Robot Age',
     description: 'Get in touch, follow the work, or join the community.',
-    images: [{ url: '/images/collab.png', alt: 'The Robot Age' }],
+    images: [{ url: '/images/human.png', alt: 'The Robot Age' }],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/images/collab.png'],
+    images: ['/images/human.png'],
   },
 }
 
@@ -48,7 +48,7 @@ export default function ConnectPage() {
         eyebrow="Connect"
         title="Let's talk."
         subtitle="Whether you're interested in the certification, the summit, a partnership, or just the work — we'd like to hear from you."
-        imageSrc="/images/collab.png"
+        imageSrc="/images/human.png"
       />
       <section className={styles.section}>
         <div className="container-fluid">

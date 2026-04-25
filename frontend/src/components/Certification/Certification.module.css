@@ -167,7 +167,7 @@
 
 /* ─── Featured card ──────────────────────────────────────────────────────────── */
 .featuredCard {
-  background: var(--color-bg-dark);
+  background: var(--color-tertiary);
   color: var(--color-text-inverse);
   padding: var(--space-12);
   border-radius: var(--radius-none);
@@ -300,7 +300,7 @@
 }
 
 .statCard {
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-tertiary);
   border-top: none;
   border-right: none;
   padding: var(--space-6);
@@ -312,19 +312,19 @@
 
 .statCard:nth-child(1),
 .statCard:nth-child(2) {
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-tertiary);
 }
 
 .statCard:nth-child(2),
 .statCard:nth-child(4) {
-  border-right: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-tertiary);
 }
 
 .statValue {
   font-family: var(--font-display);
   font-size: clamp(2rem, 3.5vw, 2.75rem);
   font-weight: 400;
-  color: var(--color-accent);
+  color: var(--color-tertiary);
   line-height: 1;
 }
 

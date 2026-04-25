@@ -28,14 +28,6 @@ const subtext =
 
 const tagline = 'Robotic literacy isn\u2019t about code. It\u2019s about knowing enough to ask the right questions, make better decisions, and design for a world where robots are already here.'
 
-const HERO_IMAGES = [
-  '/images/robot.png',
-  '/images/face.png',
-  '/images/hand.png',
-  '/images/collab.png',
-  '/images/people.png',
-  '/images/learn.png',
-]
 
 const imageVariants = {
   enter:  { x: '100%', opacity: 0 },
@@ -43,16 +35,17 @@ const imageVariants = {
   exit:   { x: '-30%', opacity: 0, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } },
 }
 
-function HeroImageCarousel() {
+function HeroImageCarousel({ images }) {
   const [index, setIndex] = useState(0)
   const timerRef = useRef(null)
 
   useEffect(() => {
+    if (!images.length) return
     timerRef.current = setInterval(() => {
-      setIndex((i) => (i + 1) % HERO_IMAGES.length)
+      setIndex((i) => (i + 1) % images.length)
     }, 3500)
     return () => clearInterval(timerRef.current)
-  }, [])
+  }, [images.length])
 
   return (
     <div className={styles.imageCarousel}>
@@ -66,10 +59,10 @@ function HeroImageCarousel() {
           exit="exit"
         >
           <Image
-            src={HERO_IMAGES[index]}
+            src={images[index]}
             alt=""
             fill
-            sizes="500px"
+            sizes="651px"
             className={styles.heroImage}
             priority={index === 0}
           />
@@ -134,7 +127,7 @@ function HeroNavItem({ label, href, desc }) {
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
-export default function HeroHomepage() {
+export default function HeroHomepage({ images = [] }) {
   return (
     <section className={styles.hero}>
       <div className="container-fluid">
@@ -181,10 +174,10 @@ export default function HeroHomepage() {
           {/* ── Right col ─────────────────────────────────────────────────── */}
           <div className={`col-lg-7 ${styles.rightCol}`}>
 
-            {/* Two-column: headline left, image right */}
-            <div className={styles.headlineRow}>
+            {/* Side-by-side: headline 70% / carousel 30% */}
+            <div className={styles.contentRow}>
 
-              {/* Left — eyebrow + headline */}
+              {/* H1 container — 70% */}
               <div className={styles.headlineCol}>
                 <motion.p
                   className={styles.eyebrow}
@@ -195,29 +188,27 @@ export default function HeroHomepage() {
                   {eyebrowText}
                 </motion.p>
                 <h1 className={styles.headline}>Robotics for All.<br />Not just engineers.</h1>
+                <motion.p
+                  className={styles.subtext}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 1.1 }}
+                >
+                  {subtext}
+                </motion.p>
               </div>
 
-              {/* Right — rounded image carousel */}
+              {/* Carousel container — fills rest, carousel centered */}
               <motion.div
-                className={styles.imageCol}
+                className={styles.carouselCol}
                 initial={{ opacity: 0, x: 24 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
               >
-                <HeroImageCarousel />
+                <HeroImageCarousel images={images} />
               </motion.div>
 
             </div>
-
-            {/* Subtext */}
-            <motion.p
-              className={styles.subtext}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 1.1 }}
-            >
-              {subtext}
-            </motion.p>
 
             {/* Tagline + CTAs */}
             <motion.div
