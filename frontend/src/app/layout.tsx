@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans, IBM_Plex_Serif } from "next/font/google";
 import { WaitlistProvider } from "@/context/WaitlistContext";
+import HomepagePopup from "@/components/HomepagePopup/HomepagePopup";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
 import "./globals.css";
 
@@ -50,6 +51,7 @@ export default function RootLayout({
         </noscript>
         {/* End Google Tag Manager (noscript) */}
         <WaitlistProvider>{children}</WaitlistProvider>
+        <HomepagePopup />
       </body>
     </html>
   );

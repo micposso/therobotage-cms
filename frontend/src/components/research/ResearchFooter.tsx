@@ -26,7 +26,7 @@ export default function ResearchFooter() {
           animate={inView ? { y: 0, opacity: 1 } : {}}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         >
-          REF is free to use. We built it to be adopted, not protected.
+          HREF is free to use. We built it to be adopted, not protected.
         </motion.h2>
 
         <motion.p
@@ -35,7 +35,7 @@ export default function ResearchFooter() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.22 }}
         >
-          The Robot Experience Framework and the Robot Experience Score are published under CC BY-NC 4.0. That means any researcher, practitioner, or organization can use them, adapt them, and apply them to real deployments — as long as the use is non-commercial and the source is credited. If you are using REF in the field, we want to hear about it.
+          The Human-Robot Experience Framework (HREF) and the Robot Experience Score (RES) are published under CC BY-NC 4.0. That means any researcher, practitioner, or organization can use them, adapt them, and apply them to real deployments — as long as the use is non-commercial and the source is credited. If you are using HREF in the field, we want to hear about it.
         </motion.p>
 
         <motion.p

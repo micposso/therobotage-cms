@@ -8,9 +8,9 @@ import styles from './ResearchLicense.module.css'
 const LICENSE = {
   eyebrow: 'Open Framework',
   statement:
-    'REF is free to use.',
+    'HREF is free to use.',
   body:
-    'The Robot Experience Framework is published under Creative Commons Attribution–NonCommercial 4.0 International (CC BY-NC 4.0). You may use, adapt, and build on it for non-commercial research, design, and deployment work — with attribution to The Robot Age Research Group. If you are using REF in a deployment, we would like to hear about it.',
+    'The Human-Robot Experience Framework (HREF) is published under Creative Commons Attribution–NonCommercial 4.0 International (CC BY-NC 4.0). You may use, adapt, and build on it for non-commercial research, design, and deployment work — with attribution to Posso, M. / The Robot Age. If you are using HREF in a deployment, we would like to hear about it.',
   license: 'CC BY-NC 4.0',
   contactUrl: '/connect',
 }

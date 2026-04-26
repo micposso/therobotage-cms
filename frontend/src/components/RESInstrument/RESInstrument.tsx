@@ -11,7 +11,7 @@ const RES = {
   title: 'Robot Experience Score',
   acronym: 'RES',
   description:
-    'The Robot Experience Score translates REF into a repeatable assessment instrument. Each of the five framework dimensions is rated on a 0–100 scale from observed deployment behaviour. The composite score surfaces where a system performs and where it fails the humans around it.',
+    'The Robot Experience Score (RES) translates HREF into a repeatable assessment instrument. Each of the six framework dimensions is rated on a 0–100 scale from observed deployment behaviour. The composite score surfaces where a system performs and where it fails the humans around it.',
   rubricUrl: '/research/res-rubric',
   sampleProfile: {
     label: 'Sample profile',
@@ -19,6 +19,7 @@ const RES = {
     scores: [
       { dimension: 'Signal Clarity',       score: 76 },
       { dimension: 'Spatial Legibility',   score: 91 },
+      { dimension: 'Perceived Presence',   score: 58 },
       { dimension: 'Failure Transparency', score: 47 },
       { dimension: 'Interaction Fit',      score: 62 },
       { dimension: 'Recovery Design',      score: 38 },

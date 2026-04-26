@@ -7,7 +7,7 @@ import styles from './RobotArchive.module.css'
 
 // ─── Placeholder data ────────────────────────────────────────────────────────
 
-const DIMENSIONS = ['Signal Clarity', 'Spatial Legibility', 'Failure Transparency', 'Interaction Fit', 'Recovery Design']
+const DIMENSIONS = ['Signal Clarity', 'Spatial Legibility', 'Perceived Presence', 'Failure Transparency', 'Interaction Fit', 'Recovery Design']
 
 const ROBOTS = [
   {

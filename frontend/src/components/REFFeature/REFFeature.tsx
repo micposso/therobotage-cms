@@ -8,22 +8,23 @@ import styles from './REFFeature.module.css'
 // Placeholder — replace with Strapi fetch when available
 const REF = {
   eyebrow: 'The Framework',
-  title: 'Robot Experience Framework',
-  acronym: 'REF',
-  version: 'v1.0',
+  title: 'Human-Robot Experience Framework',
+  acronym: 'HREF',
+  version: 'v2.0',
   abstract:
-    'A structured vocabulary for evaluating how robotic systems communicate, fail, and recover in mixed human-robot environments. REF defines five dimensions for assessing the experiential quality of a deployment — developed through fieldwork across logistics, healthcare, and public-facing service contexts.',
+    'A structured vocabulary for evaluating the human side of consumer robotics. HREF defines six observable dimensions for assessing the experiential quality of a deployment — developed through fieldwork across logistics, healthcare, and public-facing service contexts.',
   dimensions: [
     { id: 'signal-clarity',       label: 'Signal Clarity' },
     { id: 'spatial-legibility',   label: 'Spatial Legibility' },
+    { id: 'perceived-presence',   label: 'Perceived Presence' },
     { id: 'failure-transparency', label: 'Failure Transparency' },
     { id: 'interaction-fit',      label: 'Interaction Fit' },
     { id: 'recovery-design',      label: 'Recovery Design' },
   ],
-  readUrl: '/research/ref',
-  downloadUrl: '/downloads/ref-v1.pdf',
+  readUrl: '/research/href',
+  downloadUrl: '/downloads/href-v1.pdf',
   citation:
-    'The Robot Age Research Group. Robot Experience Framework, v1.0. therobotage.com/research/ref. CC BY-NC 4.0.',
+    'Posso, M. (2026). The Human-Robot Experience Framework (HREF): A framework for evaluating the human side of consumer robotics (White Paper v2.0). The Robot Age. therobotage.com/research/href. CC BY-NC 4.0.',
 }
 
 const containerVariants = {
@@ -161,7 +162,7 @@ function REFSchematic({ dimensions }: { dimensions: Dimension[] }) {
 
       {/* Footer */}
       <text x="0" y={22 + dimensions.length * rowH + 22} className={styles.schematicFooter}>
-        REF v1.0
+        HREF v2.0
       </text>
       <text
         x="290"

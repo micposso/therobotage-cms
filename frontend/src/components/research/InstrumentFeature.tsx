@@ -13,6 +13,7 @@ const SAMPLE_PROFILE = {
   dimensions: [
     { name: 'Signal Clarity',       score: 74 },
     { name: 'Spatial Legibility',   score: 81 },
+    { name: 'Perceived Presence',   score: 65 },
     { name: 'Failure Transparency', score: 52 },
     { name: 'Interaction Fit',      score: 69 },
     { name: 'Recovery Design',      score: 47 },
@@ -47,7 +48,7 @@ export default function InstrumentFeature() {
               animate={inView ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
             >
-              REF applied. A scoring instrument built for field use.
+              HREF applied. A scoring instrument built for field use.
             </motion.h2>
 
             <motion.p
@@ -56,7 +57,7 @@ export default function InstrumentFeature() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             >
-              The Robot Experience Score translates the five REF dimensions into an observable, repeatable rubric. A trained evaluator can produce a dimensional profile for any deployed robot in a single session — no sensor data, no proprietary access, no engineering background required. The score surfaces where interaction design is functioning and where it is creating friction for the humans who work alongside the machine.
+              The Robot Experience Score (RES) translates the six HREF dimensions into an observable, repeatable rubric. A trained evaluator can produce a dimensional profile for any deployed robot in a single session — no sensor data, no proprietary access, no engineering background required. The score surfaces where interaction design is functioning and where it is creating friction for the humans who work alongside the machine.
             </motion.p>
 
             <motion.div

@@ -10,6 +10,7 @@ import styles from './FrameworkFeature.module.css'
 const DIMENSIONS = [
   { name: 'Signal Clarity',         fill: 82 },
   { name: 'Spatial Legibility',     fill: 74 },
+  { name: 'Perceived Presence',     fill: 70 },
   { name: 'Failure Transparency',   fill: 68 },
   { name: 'Interaction Fit',        fill: 79 },
   { name: 'Recovery Design',        fill: 61 },
@@ -35,7 +36,7 @@ export default function FrameworkFeature() {
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6 }}
             >
-              REF — Robot Experience Framework
+              HREF — Human-Robot Experience Framework
             </motion.p>
 
             <motion.h2
@@ -53,7 +54,7 @@ export default function FrameworkFeature() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             >
-              The Robot Experience Framework defines five observable dimensions of human-robot interaction quality. It was developed through field observation across logistics, healthcare, and hospitality environments — settings where robots operate alongside non-engineering staff without dedicated HRI support. REF is not a rating scale. It is a structured lens for identifying where interaction design is succeeding, where it is failing, and what failure modes are costing the deployment.
+              The Human-Robot Experience Framework defines six observable dimensions for evaluating the human side of consumer robotics. It was developed through field observation across logistics, healthcare, and hospitality environments — settings where robots operate alongside non-engineering staff without dedicated HRI support. HREF is not a rating scale. It is a structured lens for identifying where interaction design is succeeding, where it is failing, and what failure modes are costing the deployment.
             </motion.p>
 
             <motion.p
@@ -62,7 +63,7 @@ export default function FrameworkFeature() {
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Five dimensions
+              Six dimensions
             </motion.p>
 
             <motion.div
@@ -97,7 +98,7 @@ export default function FrameworkFeature() {
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.55 }}
             >
-              Cite as: The Robot Age. (2025). <em>Robot Experience Framework (REF), v1.0</em>. therobotage.com/research/ref. CC BY-NC 4.0.
+              Cite as: Posso, M. (2026). <em>The Human-Robot Experience Framework (HREF): A framework for evaluating the human side of consumer robotics</em> (White Paper v2.0). The Robot Age. therobotage.com/research/href. CC BY-NC 4.0.
             </motion.p>
           </div>
 
@@ -109,7 +110,7 @@ export default function FrameworkFeature() {
             transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             aria-hidden="true"
           >
-            <p className={styles.schematicLabel}>REF Dimensional Schema</p>
+            <p className={styles.schematicLabel}>HREF Dimensional Schema</p>
             <div className={styles.schematicGrid}>
               {DIMENSIONS.map(({ name, fill }) => (
                 <div key={name} className={styles.schematicRow}>

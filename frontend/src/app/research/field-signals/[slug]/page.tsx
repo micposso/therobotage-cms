@@ -60,10 +60,10 @@ export default async function FieldSignalPage({ params }: { params: Promise<{ sl
             </div>
 
             <aside className={styles.sidebar}>
-              <p className={styles.refDimTag}>REF Dimension</p>
+              <p className={styles.refDimTag}>HREF Dimension</p>
               <p className={styles.refDimLabel}>{essay.refDimension}</p>
               <p className={styles.sideNote}>
-                This essay is part of the Field Signals series examining the five REF dimensions in deployment contexts.
+                This essay is part of the Field Signals series examining the five HREF dimensions in deployment contexts.
               </p>
             </aside>
           </div>

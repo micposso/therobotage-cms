@@ -67,7 +67,7 @@ export default function WhitepaperModal({ isOpen, onClose }: Props) {
               <div className={styles.success}>
                 <p className={styles.eyebrow}>Ready to download</p>
                 <h2 className={styles.successHeadline} id="modal-title">
-                  Robot Experience Framework, v1.0
+                  Human-Robot Experience Framework, v2.0
                 </h2>
                 <p className={styles.successBody}>
                   We've also sent a link to your email.
@@ -87,7 +87,7 @@ export default function WhitepaperModal({ isOpen, onClose }: Props) {
               <>
                 <p className={styles.eyebrow}>Get the white paper</p>
                 <h2 className={styles.headline} id="modal-title">
-                  Robot Experience Framework, v1.0
+                  Human-Robot Experience Framework, v2.0
                 </h2>
                 <p className={styles.description}>
                   Enter your email and we'll send you a direct link. No newsletter. No follow-up sequence.

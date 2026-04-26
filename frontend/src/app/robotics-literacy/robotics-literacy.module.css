@@ -180,7 +180,7 @@
 .ctaSection {
   padding: var(--space-20) 0;
   border-top: 1px solid var(--color-border);
-  background: var(--color-bg-dark);
+  background: var(--color-tertiary);
 }
 
 .ctaInner {
@@ -223,8 +223,8 @@
   font-size: var(--text-xs);
   font-weight: 500;
   letter-spacing: 0.06em;
-  color: var(--color-text-inverse);
-  background: var(--color-accent);
+  color: var(--color-tertiary);
+  background: var(--color-white);
   padding: var(--space-3) var(--space-6);
   text-decoration: none;
   display: inline-block;
@@ -240,8 +240,9 @@
   font-size: var(--text-xs);
   font-weight: 400;
   letter-spacing: 0.06em;
-  color: var(--color-text-inverse);
-  background: var(--color-bg-sand-dark);
+  color: var(--color-white);
+  background: transparent;
+  border: 1px solid var(--color-white);
   padding: var(--space-3) var(--space-6);
   text-decoration: none;
   display: inline-block;
