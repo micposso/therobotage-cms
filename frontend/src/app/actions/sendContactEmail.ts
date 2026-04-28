@@ -3,7 +3,6 @@
 import { Resend } from 'resend'
 import { emailHtml, escapeHtml } from '@/lib/emailTemplate'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
 const FROM_ADDRESS = 'hello@therobotage.com'
 const ADMIN_ADDRESS = 'micposso@gmail.com'
 
@@ -25,6 +24,7 @@ export async function sendContactEmail(
   const safeMessage = escapeHtml(message).replace(/\n/g, '<br />')
 
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY)
     await Promise.all([
 
       // Confirmation to sender

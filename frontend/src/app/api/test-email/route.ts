@@ -2,10 +2,9 @@ import { Resend } from 'resend'
 import { NextResponse } from 'next/server'
 import { emailHtml } from '@/lib/emailTemplate'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-const WHITEPAPER_URL = `${process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'}/pdf/href-therobotage-v2.pdf`
-
 export async function GET() {
+  const resend = new Resend(process.env.RESEND_API_KEY)
+  const WHITEPAPER_URL = `${process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'}/pdf/href-therobotage-v2.pdf`
   if (process.env.NODE_ENV === 'production') {
     return NextResponse.json({ error: 'Not available in production.' }, { status: 403 })
   }

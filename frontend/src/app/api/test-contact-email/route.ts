@@ -2,9 +2,8 @@ import { Resend } from 'resend'
 import { NextResponse } from 'next/server'
 import { emailHtml } from '@/lib/emailTemplate'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export async function GET() {
+  const resend = new Resend(process.env.RESEND_API_KEY)
   if (process.env.NODE_ENV === 'production') {
     return NextResponse.json({ error: 'Not available in production.' }, { status: 403 })
   }

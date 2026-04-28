@@ -2,7 +2,6 @@
 
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
 const FROM_ADDRESS = 'research@therobotage.com'
 const ADMIN_ADDRESS = 'micposso@gmail.com'
 
@@ -17,6 +16,7 @@ export async function joinWaitlist(
   }
 
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY)
     await Promise.all([
       // Confirmation to the subscriber
       resend.emails.send({

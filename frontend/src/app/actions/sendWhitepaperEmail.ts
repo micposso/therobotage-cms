@@ -3,9 +3,7 @@
 import { Resend } from 'resend'
 import { emailHtml } from '@/lib/emailTemplate'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
 const FROM_ADDRESS = 'research@therobotage.com'
-const WHITEPAPER_URL = `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://therobotage.com'}/pdf/href-therobotage-v2.pdf`
 
 export async function sendWhitepaperEmail(
   prevState: { success: boolean; error?: string } | null,
@@ -18,6 +16,8 @@ export async function sendWhitepaperEmail(
   }
 
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY)
+    const WHITEPAPER_URL = `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://therobotage.com'}/pdf/href-therobotage-v2.pdf`
     await resend.emails.send({
       from: FROM_ADDRESS,
       to: email,
