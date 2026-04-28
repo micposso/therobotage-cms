@@ -3,7 +3,7 @@
 import { Resend } from 'resend'
 import { emailHtml, escapeHtml } from '@/lib/emailTemplate'
 
-const FROM_ADDRESS = 'hello@therobotage.com'
+const FROM_ADDRESS = process.env.EMAIL_FROM_HELLO ?? 'onboarding@resend.dev'
 const ADMIN_ADDRESS = 'micposso@gmail.com'
 
 export async function sendContactEmail(
@@ -31,6 +31,7 @@ export async function sendContactEmail(
       resend.emails.send({
         from: FROM_ADDRESS,
         to: email,
+        bcc: ADMIN_ADDRESS,
         subject: 'We received your message — The Robot Age',
         html: emailHtml(`
           <h1 style="font-family:Arial,sans-serif;font-weight:400;font-size:24px;letter-spacing:-0.02em;line-height:1.15;color:#0D0D0D;margin:0 0 20px;">

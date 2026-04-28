@@ -3,7 +3,7 @@
 import { Resend } from 'resend'
 import { emailHtml } from '@/lib/emailTemplate'
 
-const FROM_ADDRESS = 'research@therobotage.com'
+const FROM_ADDRESS = process.env.EMAIL_FROM_RESEARCH ?? 'onboarding@resend.dev'
 
 export async function sendWhitepaperEmail(
   prevState: { success: boolean; error?: string } | null,
@@ -21,6 +21,7 @@ export async function sendWhitepaperEmail(
     await resend.emails.send({
       from: FROM_ADDRESS,
       to: email,
+      bcc: 'micposso@gmail.com',
       subject: 'Human-Robot Experience Framework, v2.0 — your copy',
       html: emailHtml(`
         <h1 style="font-family:Arial,sans-serif;font-weight:400;font-size:24px;letter-spacing:-0.02em;line-height:1.15;color:#0D0D0D;margin:0 0 20px;">
