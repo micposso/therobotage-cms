@@ -1,27 +1,20 @@
-'use server'
-
 import { Resend } from 'resend'
+import { NextResponse } from 'next/server'
 import { emailHtml } from '@/lib/emailTemplate'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
-const FROM_ADDRESS = 'research@therobotage.com'
-const WHITEPAPER_URL = `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://therobotage.com'}/pdf/href-therobotage-v2.pdf`
+const WHITEPAPER_URL = `${process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'}/pdf/href-therobotage-v2.pdf`
 
-export async function sendWhitepaperEmail(
-  prevState: { success: boolean; error?: string } | null,
-  formData: FormData
-): Promise<{ success: boolean; error?: string }> {
-  const email = (formData.get('email') as string | null)?.trim()
-
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return { success: false, error: 'Please enter a valid email address.' }
+export async function GET() {
+  if (process.env.NODE_ENV === 'production') {
+    return NextResponse.json({ error: 'Not available in production.' }, { status: 403 })
   }
 
   try {
-    await resend.emails.send({
-      from: FROM_ADDRESS,
-      to: email,
-      subject: 'Human-Robot Experience Framework, v2.0 — your copy',
+    const { data, error } = await resend.emails.send({
+      from: 'onboarding@resend.dev',
+      to: 'micposso@gmail.com',
+      subject: '[Test] Human-Robot Experience Framework, v2.0 — your copy',
       html: emailHtml(`
         <h1 style="font-family:Arial,sans-serif;font-weight:400;font-size:24px;letter-spacing:-0.02em;line-height:1.15;color:#0D0D0D;margin:0 0 20px;">
           Human-Robot Experience<br/>Framework, v2.0
@@ -63,8 +56,10 @@ export async function sendWhitepaperEmail(
         </p>
       `),
     })
-    return { success: true }
-  } catch {
-    return { success: false, error: 'Something went wrong. Please try again.' }
+
+    if (error) return NextResponse.json({ ok: false, error }, { status: 500 })
+    return NextResponse.json({ ok: true, id: data?.id })
+  } catch (err) {
+    return NextResponse.json({ ok: false, error: String(err) }, { status: 500 })
   }
 }

@@ -49,7 +49,7 @@ function HeroImageCarousel({ images }) {
 
   return (
     <div className={styles.imageCarousel}>
-      <AnimatePresence mode="popLayout">
+      <AnimatePresence>
         <motion.div
           key={index}
           className={styles.imageSlide}

@@ -1,6 +1,7 @@
 import Nav from '@/components/Nav/Nav'
 import PageHero from '@/components/PageHero/PageHero'
 import Footer from '@/components/Footer/Footer'
+import ContactForm from '@/components/ContactForm/ContactForm'
 import styles from './connect.module.css'
 
 export const metadata = {
@@ -59,6 +60,14 @@ export default function ConnectPage() {
                 <a href={ch.href} className={styles.channelLink}>{ch.value}</a>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+      <section className={styles.formSection}>
+        <div className="container-fluid">
+          <div className={styles.inner}>
+            <p className={styles.formHeading}>Send us a message</p>
+            <ContactForm />
           </div>
         </div>
       </section>

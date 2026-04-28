@@ -85,12 +85,11 @@ export default function WhitepaperModal({ isOpen, onClose }: Props) {
               </div>
             ) : (
               <>
-                <p className={styles.eyebrow}>Get the white paper</p>
                 <h2 className={styles.headline} id="modal-title">
-                  Human-Robot Experience Framework, v2.0
+                  Learn the human experience of robotics.
                 </h2>
                 <p className={styles.description}>
-                  Enter your email and we'll send you a direct link. No newsletter. No follow-up sequence.
+                  The Human-Robot Experience Framework gives designers, product managers, and marketers a shared vocabulary for the moments that matter — how robots communicate, fail, and recover in the presence of people. Download v2.0 free.
                 </p>
 
                 <form action={action} className={styles.form} noValidate>
@@ -119,8 +118,15 @@ export default function WhitepaperModal({ isOpen, onClose }: Props) {
                 </form>
 
                 <p className={styles.legalNote}>
-                  CC BY-NC 4.0 — free to use with attribution.
+                  We'll send you the link and occasional updates from The Robot Age. Unsubscribe anytime.
                 </p>
+
+                <div className={styles.directDownload}>
+                  <a href="/pdf/href-therobotage-v2.pdf" download className={styles.directDownloadLink}>
+                    Download directly without email
+                  </a>
+                  <span className={styles.directDownloadNote}>CC BY-NC 4.0 — free to use with attribution.</span>
+                </div>
               </>
             )}
           </motion.div>

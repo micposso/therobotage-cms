@@ -14,7 +14,8 @@
       "Bash(pnpm build:*)",
       "Bash(grep *)",
       "Bash(sort -t: -k2 -n)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(python3 *)"
     ]
   }
 }
