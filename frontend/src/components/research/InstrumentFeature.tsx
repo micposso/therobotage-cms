@@ -34,10 +34,19 @@ export default function InstrumentFeature() {
           {/* ── Left: copy ─────────────────────────────────────────── */}
           <div>
             <motion.p
-              className={styles.eyebrow}
+              className={styles.sectionLabel}
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6 }}
+            >
+              02 — Instrument
+            </motion.p>
+
+            <motion.p
+              className={styles.eyebrow}
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 1 } : {}}
+              transition={{ duration: 0.6, delay: 0.05 }}
             >
               RES — Robot Experience Score
             </motion.p>
@@ -51,14 +60,15 @@ export default function InstrumentFeature() {
               HREF applied. A scoring instrument built for field use.
             </motion.h2>
 
-            <motion.p
+            <motion.div
               className={styles.body}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             >
-              The Robot Experience Score (RES) translates the six HREF dimensions into an observable, repeatable rubric. A trained evaluator can produce a dimensional profile for any deployed robot in a single session — no sensor data, no proprietary access, no engineering background required. The score surfaces where interaction design is functioning and where it is creating friction for the humans who work alongside the machine.
-            </motion.p>
+              <p>The Robot Experience Score translates the six HREF dimensions into a repeatable rubric. A trained evaluator can produce a dimensional profile for any consumer robot — drawing on public deployment footage, manufacturer materials, reviewer documentation, and direct observation where available.</p>
+              <p>The score surfaces where interaction design is functioning and where it is creating friction for the humans working alongside the machine. It is designed for practitioners, not engineers — no sensor data, no proprietary access, no technical background required.</p>
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0 }}
@@ -107,7 +117,7 @@ export default function InstrumentFeature() {
             </div>
 
             <p className={styles.profileNote}>
-              Placeholder data. Scores are illustrative only and do not represent an assessed deployment.
+              Sample profile for illustration. Methodology and source disclosure published with each scored deployment.
             </p>
           </motion.div>
 

@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import Link from 'next/link'
 import styles from './ResearchFooter.module.css'
 
 export default function ResearchFooter() {
@@ -35,14 +36,39 @@ export default function ResearchFooter() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.22 }}
         >
-          The Human-Robot Experience Framework (HREF) and the Robot Experience Score (RES) are published under CC BY-NC 4.0. That means any researcher, practitioner, or organization can use them, adapt them, and apply them to real deployments — as long as the use is non-commercial and the source is credited. If you are using HREF in the field, we want to hear about it.
+          HREF and RES are published under CC BY-NC 4.0. Any researcher, practitioner, or organization can use them, adapt them, and apply them to real deployments — as long as the use is non-commercial and the source is credited.
         </motion.p>
+
+        <motion.p
+          className={styles.body}
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+        >
+          If you are using HREF in the field, we want to hear about it.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <Link href="/connect" className={styles.cta}>
+            Get in touch
+            <span className={styles.ctaArrow} aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5"
+                  strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </span>
+          </Link>
+        </motion.div>
 
         <motion.p
           className={styles.license}
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.35 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
         >
           Licensed under{' '}
           <a

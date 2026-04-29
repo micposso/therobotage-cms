@@ -5,6 +5,17 @@
 }
 
 /* ─── Header / eyebrow ─── */
+.sectionLabel {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-text-muted);
+  opacity: 0.6;
+  margin-bottom: var(--space-2);
+}
+
 .eyebrow {
   font-family: var(--font-body);
   font-weight: 300;
@@ -43,6 +54,10 @@
   margin-bottom: var(--space-8);
 }
 
+.abstract p + p {
+  margin-top: var(--space-5);
+}
+
 .dimensionLabel {
   font-family: var(--font-body);
   font-weight: 300;
@@ -53,23 +68,53 @@
   margin-bottom: var(--space-4);
 }
 
-.chips {
+.dimensionsList {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3);
-  margin-bottom: var(--space-10);
+  flex-direction: column;
+  margin: 0 0 var(--space-10) 0;
+  padding: 0;
 }
 
-.chip {
-  display: inline-block;
-  padding: var(--space-2) var(--space-4);
-  border: 1px solid var(--color-border-strong);
-  border-radius: var(--radius-none);
-  font-family: var(--font-body);
-  font-weight: 400;
+.dimensionItem {
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dimensionItem:first-child {
+  border-top: 1px solid var(--color-border);
+}
+
+.dimensionIndex {
+  font-family: var(--font-display);
   font-size: var(--text-xs);
-  letter-spacing: 0.06em;
+  font-weight: 400;
+  color: var(--color-accent);
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-1);
+}
+
+.dimensionName {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-md);
+  letter-spacing: -0.01em;
   color: var(--color-text);
+  line-height: 1.2;
+  margin-bottom: var(--space-2);
+  transition: color var(--ease-default);
+}
+
+.dimensionItem:hover .dimensionName {
+  color: var(--color-accent);
+}
+
+.dimensionDesc {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin: 0;
 }
 
 .ctaGroup {

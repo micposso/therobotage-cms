@@ -8,12 +8,12 @@ import styles from './FrameworkFeature.module.css'
 // ─── Placeholder data ────────────────────────────────────────────────────────
 
 const DIMENSIONS = [
-  { name: 'Signal Clarity',         fill: 82 },
-  { name: 'Spatial Legibility',     fill: 74 },
-  { name: 'Perceived Presence',     fill: 70 },
-  { name: 'Failure Transparency',   fill: 68 },
-  { name: 'Interaction Fit',        fill: 79 },
-  { name: 'Recovery Design',        fill: 61 },
+  { name: 'Signal Clarity',       fill: 82, description: 'Whether the robot\'s intent and state are readable to the humans nearby.' },
+  { name: 'Spatial Legibility',   fill: 74, description: 'What the robot communicates about the space it occupies, and whether that signal matches the environment.' },
+  { name: 'Perceived Presence',   fill: 70, description: 'How the robot\'s voice, form, aesthetic, and emotional register are read by the people around it.' },
+  { name: 'Failure Transparency', fill: 68, description: 'Whether the robot can communicate why it has stopped, and to whom.' },
+  { name: 'Interaction Fit',      fill: 79, description: 'The gap between where the robot was designed to operate and where it actually does.' },
+  { name: 'Recovery Design',      fill: 61, description: 'What the robot does, and what it communicates, when the intended interaction fails.' },
 ]
 
 // ─── Component ───────────────────────────────────────────────────────────────
@@ -31,31 +31,32 @@ export default function FrameworkFeature() {
           {/* ── Left: copy ─────────────────────────────────────────── */}
           <div>
             <motion.p
-              className={styles.eyebrow}
+              className={styles.sectionLabel}
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6 }}
             >
+              01 — Framework
+            </motion.p>
+
+            <motion.p
+              className={styles.eyebrow}
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 1 } : {}}
+              transition={{ duration: 0.6, delay: 0.05 }}
+            >
               HREF — Human-Robot Experience Framework
             </motion.p>
 
-            <motion.h2
-              className={styles.headline}
-              initial={{ y: 40, opacity: 0 }}
-              animate={inView ? { y: 0, opacity: 1 } : {}}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            >
-              A framework for evaluating human-robot interaction in deployment conditions.
-            </motion.h2>
-
-            <motion.p
+            <motion.div
               className={styles.abstract}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
             >
-              The Human-Robot Experience Framework defines six observable dimensions for evaluating the human side of consumer robotics. It was developed through field observation across logistics, healthcare, and hospitality environments — settings where robots operate alongside non-engineering staff without dedicated HRI support. HREF is not a rating scale. It is a structured lens for identifying where interaction design is succeeding, where it is failing, and what failure modes are costing the deployment.
-            </motion.p>
+              <p>HREF defines six observable dimensions for evaluating the human side of consumer robotics. It was developed by synthesizing existing human-robot interaction research with structured analysis of consumer robotics deployed in logistics, healthcare, and hospitality contexts — environments where robots increasingly operate alongside non-engineering staff without dedicated HRI support.</p>
+              <p>It distills a literature base that has, until now, lacked a unified framework accessible to practitioners outside engineering. HREF is not a rating scale. It is a structured lens for identifying where interaction design is succeeding, where it is failing, and what those failure modes are costing the deployment.</p>
+            </motion.div>
 
             <motion.p
               className={styles.dimensionLabel}
@@ -63,19 +64,24 @@ export default function FrameworkFeature() {
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Six dimensions
+              The six dimensions
             </motion.p>
 
-            <motion.div
-              className={styles.chips}
-              initial={{ opacity: 0, y: 12 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.35 }}
-            >
-              {DIMENSIONS.map(({ name }) => (
-                <span key={name} className={styles.chip}>{name}</span>
+            <div className={styles.dimensionsList}>
+              {DIMENSIONS.map(({ name, description }, i) => (
+                <motion.div
+                  key={name}
+                  className={styles.dimensionItem}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.35 + i * 0.07 }}
+                >
+                  <p className={styles.dimensionIndex}>{String(i + 1).padStart(2, '0')}</p>
+                  <p className={styles.dimensionName}>{name}</p>
+                  <p className={styles.dimensionDesc}>{description}</p>
+                </motion.div>
               ))}
-            </motion.div>
+            </div>
 
             <motion.div
               initial={{ opacity: 0 }}
@@ -86,7 +92,7 @@ export default function FrameworkFeature() {
                 className={styles.ctaFilled}
                 onClick={() => setModalOpen(true)}
               >
-                Download white paper
+                Download white paper v2.0
               </button>
             </motion.div>
 

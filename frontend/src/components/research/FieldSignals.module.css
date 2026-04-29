@@ -9,6 +9,27 @@
   margin-bottom: var(--space-12);
 }
 
+.sectionLabel {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-text-muted);
+  opacity: 0.6;
+  margin-bottom: var(--space-6);
+}
+
+.body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  max-width: 680px;
+  margin-top: var(--space-6);
+}
+
 .eyebrow {
   font-family: var(--font-body);
   font-weight: 300;
