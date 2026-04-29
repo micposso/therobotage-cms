@@ -18,7 +18,7 @@ export async function sendWhitepaperEmail(
   try {
     const resend = new Resend(process.env.RESEND_API_KEY)
     const WHITEPAPER_URL = `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://therobotage.com'}/pdf/href-therobotage-v2.pdf`
-    await resend.emails.send({
+    const { error: sendError } = await resend.emails.send({
       from: FROM_ADDRESS,
       to: email,
       bcc: 'micposso@gmail.com',
@@ -64,8 +64,15 @@ export async function sendWhitepaperEmail(
         </p>
       `),
     })
+
+    if (sendError) {
+      console.error('sendWhitepaperEmail error:', sendError)
+      return { success: false, error: 'Something went wrong. Please try again.' }
+    }
+
     return { success: true }
-  } catch {
+  } catch (err) {
+    console.error('sendWhitepaperEmail exception:', err)
     return { success: false, error: 'Something went wrong. Please try again.' }
   }
 }

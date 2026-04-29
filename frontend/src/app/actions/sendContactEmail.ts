@@ -25,7 +25,7 @@ export async function sendContactEmail(
 
   try {
     const resend = new Resend(process.env.RESEND_API_KEY)
-    await Promise.all([
+    const [{ error: confirmError }, { error: adminError }] = await Promise.all([
 
       // Confirmation to sender
       resend.emails.send({
@@ -94,8 +94,14 @@ export async function sendContactEmail(
 
     ])
 
+    if (confirmError || adminError) {
+      console.error('sendContactEmail error:', confirmError ?? adminError)
+      return { success: false, error: 'Something went wrong. Please try again.' }
+    }
+
     return { success: true }
-  } catch {
+  } catch (err) {
+    console.error('sendContactEmail exception:', err)
     return { success: false, error: 'Something went wrong. Please try again.' }
   }
 }
