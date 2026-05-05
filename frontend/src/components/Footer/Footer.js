@@ -15,12 +15,12 @@ const NAV_LINKS = [
 const SOCIAL_LINKS = [
   {
     label: 'LinkedIn',
-    href: '#',
+    href: 'https://www.linkedin.com/company/therobotage/',
     icon: (
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-        <rect x="1" y="1" width="3.5" height="12" rx="0.5" fill="currentColor"/>
-        <rect x="1" y="1" width="12" height="3" rx="0.5" fill="currentColor"/>
-        <path d="M4.5 5.5h3.5v7M8 8.5A3 3 0 0 1 13 11v1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+        <rect x="1" y="4.5" width="2.5" height="8.5" fill="currentColor"/>
+        <circle cx="2.25" cy="2.25" r="1.25" fill="currentColor"/>
+        <path d="M5.5 4.5h2.5v1.2A3 3 0 0 1 13 8.5V13h-2.5V8.8a1 1 0 0 0-2 0V13H6V4.5z" fill="currentColor"/>
       </svg>
     ),
   },
@@ -122,6 +122,7 @@ export default function Footer() {
           <div className={`col-md-6 ${styles.legalRight}`}>
             <Link href="/privacy" className={styles.legalLink}>Privacy Policy</Link>
             <Link href="/terms" className={styles.legalLink}>Terms of Use</Link>
+            <Link href="/ai-statement" className={styles.legalLink}>Fair use of AI</Link>
           </div>
         </div>
 
