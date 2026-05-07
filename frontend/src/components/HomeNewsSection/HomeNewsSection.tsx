@@ -1,6 +1,7 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import ArticleCard from '@/components/ArticleCard/ArticleCard'
 import styles from './HomeNewsSection.module.css'
 
@@ -23,7 +24,10 @@ const containerVariants = {
 }
 
 export default function HomeNewsSection({ articles }: Props) {
-  const items = articles.slice(0, 3)
+  const [expanded, setExpanded] = useState(false)
+
+  const initial = articles.slice(0, 3)
+  const extra   = articles.slice(3)
 
   return (
     <section className={styles.section}>
@@ -49,10 +53,37 @@ export default function HomeNewsSection({ articles }: Props) {
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
         >
-          {items.map((article) => (
+          {initial.map((article) => (
             <ArticleCard key={article.slug} article={article} href={article.href} />
           ))}
         </motion.div>
+
+        <AnimatePresence>
+          {expanded && extra.length > 0 && (
+            <motion.div
+              className={styles.extraGrid}
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+            >
+              {extra.map((article) => (
+                <ArticleCard key={article.slug} article={article} href={article.href} />
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {extra.length > 0 && (
+          <div className={styles.viewAllRow}>
+            <button
+              className={styles.viewAllBtn}
+              onClick={() => setExpanded((v) => !v)}
+            >
+              {expanded ? 'Show less' : 'See all news'}
+            </button>
+          </div>
+        )}
 
       </div>
     </section>
