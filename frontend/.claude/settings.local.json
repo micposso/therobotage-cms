@@ -15,7 +15,9 @@
       "Bash(grep *)",
       "Bash(sort -t: -k2 -n)",
       "Bash(npm run *)",
-      "Bash(python3 *)"
+      "Bash(python3 *)",
+      "Bash(Get-ChildItem -Path \"C:\\\\dev\\\\therobotage-cms\\\\frontend\" -Directory)",
+      "Bash(Select-Object Name)"
     ]
   }
 }
