@@ -49,7 +49,7 @@ export default function EnterprisePage() {
 
       <PageHero
         eyebrow="Enterprise"
-        title="Deployment readiness starts with people."
+        title="Deployment readiness starts with people"
         subtitle="Structured robotic literacy for operations, logistics, and facilities teams — built for organizations integrating robots into non-engineering environments."
         imageSrc="/images/robot.png"
       />

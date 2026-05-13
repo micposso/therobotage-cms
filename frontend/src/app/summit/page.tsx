@@ -23,7 +23,7 @@ export default function SummitPage() {
       <Nav pinned />
       <PageHero
         eyebrow="The Robot Age Summit"
-        title="Where the conversation happens."
+        title="Where the conversation happens"
         subtitle="A gathering for designers, strategists, and leaders who are shaping what human-robot experience actually looks like. Coming to New York City this fall."
         imageSrc="/images/hand.png"
       />

@@ -1,0 +1,221 @@
+/* ─── Grid ────────────────────────────────────────────────────────────────── */
+.dimensionsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+/* ─── Card (button reset + grid cell) ────────────────────────────────────── */
+.dimensionCard {
+  appearance: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-6);
+  padding: var(--space-8);
+
+  border-right: none;
+  border-top: none;
+  border-left: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+
+  transition: background var(--ease-default);
+}
+
+.dimensionCard:hover {
+  background: var(--color-surface);
+}
+
+.dimensionCard:nth-child(1),
+.dimensionCard:nth-child(2),
+.dimensionCard:nth-child(3) {
+  border-top: 1px solid var(--color-border);
+}
+
+.dimensionCard:nth-child(1),
+.dimensionCard:nth-child(4) {
+  border-left: none;
+}
+
+/* ─── Card text column ────────────────────────────────────────────────────── */
+.dimensionCardText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.dimensionNumber {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  letter-spacing: 0.1em;
+}
+
+.dimensionTitle {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--text-md);
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.dimensionDescription {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ─── Card image ──────────────────────────────────────────────────────────── */
+.dimensionCardImageWrap {
+  flex-shrink: 0;
+  position: relative;
+  width: 140px;
+  aspect-ratio: 1 / 1;
+}
+
+.dimensionCardImage {
+  object-fit: cover;
+}
+
+/* ─── Modal overlay ───────────────────────────────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  /* rgba used intentionally — no design token exists for a semi-transparent scrim */
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+}
+
+/* ─── Modal box ───────────────────────────────────────────────────────────── */
+.modal {
+  background: var(--color-bg);
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+}
+
+/* ─── Close button ────────────────────────────────────────────────────────── */
+.closeButton {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  z-index: 1;
+  appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  color: var(--color-text-inverse);
+  line-height: 1;
+  padding: var(--space-2);
+  transition: opacity var(--ease-default);
+}
+
+.closeButton:hover {
+  opacity: 0.6;
+}
+
+/* ─── Modal image ─────────────────────────────────────────────────────────── */
+.modalImageWrap {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+.modalImage {
+  object-fit: cover;
+}
+
+/* ─── Modal content ───────────────────────────────────────────────────────── */
+.modalContent {
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.modalNumber {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  letter-spacing: 0.1em;
+}
+
+.modalTitle {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--text-lg);
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.modalBody {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .dimensionsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .dimensionCard {
+    padding: var(--space-6);
+    gap: var(--space-4);
+    border-left: none;
+    border-top: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .dimensionCard:first-child {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .dimensionCard:nth-child(n+2) {
+    border-top: none;
+  }
+
+  .dimensionCardImageWrap {
+    width: 80px;
+  }
+
+  .overlay {
+    padding: var(--space-4);
+    align-items: flex-end;
+  }
+
+  .modal {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modalContent {
+    padding: var(--space-6);
+  }
+}

@@ -47,7 +47,7 @@ export default function ConnectPage() {
       <Nav pinned />
       <PageHero
         eyebrow="Connect"
-        title="Let's talk."
+        title="Let's talk"
         subtitle="Whether you're interested in the certification, the summit, a partnership, or just the work — we'd like to hear from you."
         imageSrc="/images/human.png"
       />
