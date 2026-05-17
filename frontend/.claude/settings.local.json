@@ -19,7 +19,9 @@
       "Bash(Get-ChildItem -Path \"C:\\\\dev\\\\therobotage-cms\\\\frontend\" -Directory)",
       "Bash(Select-Object Name)",
       "Bash(Get-ChildItem -Path \"C:\\\\dev\\\\therobotage-cms\\\\frontend\\\\src\\\\app\\\\learn\" -Recurse -Force)",
-      "Bash(Select-Object FullName)"
+      "Bash(Select-Object FullName)",
+      "Bash(Get-ChildItem -Path \"C:\\\\dev\\\\therobotage-cms\\\\frontend\" -Recurse -Filter \"page.tsx\")",
+      "Bash(Select-Object -ExpandProperty FullName)"
     ]
   }
 }
