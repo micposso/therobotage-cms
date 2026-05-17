@@ -1,8 +1,9 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import styles from './Nav.module.css'
 
 const NAV_LINKS = [
@@ -15,8 +16,12 @@ const NAV_LINKS = [
 ]
 
 export default function Nav({ pinned = false }) {
-  const [scrolled, setScrolled]   = useState(false)
-  const [menuOpen, setMenuOpen]   = useState(false)
+  const [scrolled, setScrolled]       = useState(false)
+  const [menuOpen, setMenuOpen]       = useState(false)
+  const [searchOpen, setSearchOpen]   = useState(false)
+  const searchInputRef                = useRef(null)
+  const mobileSearchInputRef          = useRef(null)
+  const router                        = useRouter()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40)
@@ -29,6 +34,37 @@ export default function Nav({ pinned = false }) {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
+
+  // Focus search input when it opens
+  useEffect(() => {
+    if (searchOpen) searchInputRef.current?.focus()
+  }, [searchOpen])
+
+  // Close search on Escape
+  useEffect(() => {
+    if (!searchOpen) return
+    const onKey = (e) => { if (e.key === 'Escape') setSearchOpen(false) }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [searchOpen])
+
+  function handleDesktopSearch(e) {
+    e.preventDefault()
+    const q = searchInputRef.current?.value?.trim()
+    if (q) {
+      setSearchOpen(false)
+      router.push(`/search?q=${encodeURIComponent(q)}`)
+    }
+  }
+
+  function handleMobileSearch(e) {
+    e.preventDefault()
+    const q = mobileSearchInputRef.current?.value?.trim()
+    if (q) {
+      setMenuOpen(false)
+      router.push(`/search?q=${encodeURIComponent(q)}`)
+    }
+  }
 
   return (
     <>
@@ -58,13 +94,56 @@ export default function Nav({ pinned = false }) {
             </AnimatePresence>
 
             {/* Desktop links */}
-            <ul className={`${styles.links} ${scrolled ? styles.linksScrolled : ''}`}>
+            <ul className={`${styles.links} ${scrolled ? styles.linksScrolled : ''} ${searchOpen ? styles.linksHidden : ''}`}>
               {NAV_LINKS.map(({ label, href }) => (
                 <li key={label}>
                   <Link href={href} className={styles.link}>{label}</Link>
                 </li>
               ))}
             </ul>
+
+            {/* Desktop search */}
+            <div className={styles.searchWrap}>
+              <AnimatePresence>
+                {searchOpen && (
+                  <motion.form
+                    onSubmit={handleDesktopSearch}
+                    className={styles.searchForm}
+                    initial={{ opacity: 0, width: 0 }}
+                    animate={{ opacity: 1, width: '220px' }}
+                    exit={{ opacity: 0, width: 0 }}
+                    transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    <input
+                      ref={searchInputRef}
+                      type="text"
+                      name="q"
+                      placeholder="Search…"
+                      className={styles.searchInput}
+                      aria-label="Search"
+                    />
+                  </motion.form>
+                )}
+              </AnimatePresence>
+
+              <button
+                className={`${styles.searchBtn} ${searchOpen ? styles.searchBtnActive : ''}`}
+                onClick={() => setSearchOpen((o) => !o)}
+                aria-label={searchOpen ? 'Close search' : 'Open search'}
+              >
+                {searchOpen ? (
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <line x1="2" y1="2" x2="14" y2="14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                    <line x1="14" y1="2" x2="2" y2="14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                ) : (
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <circle cx="6.5" cy="6.5" r="4.5" stroke="currentColor" strokeWidth="1.5" />
+                    <path d="M10 10l4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                )}
+              </button>
+            </div>
 
             {/* Hamburger */}
             <button
@@ -100,6 +179,24 @@ export default function Nav({ pinned = false }) {
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
+            {/* Mobile search */}
+            <form onSubmit={handleMobileSearch} className={styles.mobileSearchForm}>
+              <input
+                ref={mobileSearchInputRef}
+                type="text"
+                name="q"
+                placeholder="Search…"
+                className={styles.mobileSearchInput}
+                aria-label="Search"
+              />
+              <button type="submit" className={styles.mobileSearchBtn} aria-label="Search">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <circle cx="6.5" cy="6.5" r="4.5" stroke="currentColor" strokeWidth="1.5" />
+                  <path d="M10 10l4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                </svg>
+              </button>
+            </form>
+
             <nav className={styles.mobileLinks}>
               {NAV_LINKS.map(({ label, href }, i) => (
                 <motion.div

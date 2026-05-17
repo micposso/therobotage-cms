@@ -27,7 +27,7 @@ export default function ResearchFooter() {
           animate={inView ? { y: 0, opacity: 1 } : {}}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         >
-          HREF is free to use. We built it to be adopted, not protected.
+          RXD is free to use. We built it to be adopted, not protected.
         </motion.h2>
 
         <motion.p
@@ -36,7 +36,7 @@ export default function ResearchFooter() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.22 }}
         >
-          HREF and RES are published under CC BY-NC 4.0. Any researcher, practitioner, or organization can use them, adapt them, and apply them to real deployments — as long as the use is non-commercial and the source is credited.
+          RXD and RES are published under CC BY-NC 4.0. Any researcher, practitioner, or organization can use them, adapt them, and apply them to real deployments — as long as the use is non-commercial and the source is credited.
         </motion.p>
 
         <motion.p
@@ -45,7 +45,7 @@ export default function ResearchFooter() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
         >
-          If you are using HREF in the field, we want to hear about it.
+          If you are using RXD in the field, we want to hear about it.
         </motion.p>
 
         <motion.div

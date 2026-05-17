@@ -11,7 +11,7 @@ const RES = {
   title: 'Robot Experience Score',
   acronym: 'RES',
   description:
-    'The Robot Experience Score (RES) translates HREF into a repeatable assessment instrument. Each of the six framework dimensions is rated on a 0–100 scale from observed deployment behaviour. The composite score surfaces where a system performs and where it fails the humans around it.',
+    'The Robot Experience Score (RES) translates RXD into a repeatable assessment instrument. Each of the six framework dimensions is rated on a 0–100 scale from observed deployment behaviour. The composite score surfaces where a system performs and where it fails the humans around it.',
   rubricUrl: '/research/res-rubric',
   sampleProfile: {
     label: 'Sample profile',

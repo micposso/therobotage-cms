@@ -40,9 +40,9 @@ export default async function CurriculumPage({ params }: { params: Promise<{ cre
       title: 'What Is Human Robotics Experience?',
       format: 'Live Zoom · Wednesday 7pm ET',
       dimensions: 'All six (introduction)',
-      description: 'The opening session introduces the Human Robotics Experience Framework and the idea that robotics is a human experience problem, not just an engineering one. You will meet Reachy Mini — a social humanoid desktop robot from Pollen Robotics and Hugging Face — and see the six HREF dimensions applied live. No code. No prerequisites.',
+      description: 'The opening session introduces the Robot Experience Design framework and the idea that robotics is a human experience problem, not just an engineering one. You will meet Reachy Mini — a social humanoid desktop robot from Pollen Robotics and Hugging Face — and see the six RXD dimensions applied live. No code. No prerequisites.',
       topics: [
-        'What HREF is and why it exists',
+        'What RXD is and why it exists',
         'The six dimensions: Signal Clarity, Spatial Legibility, Perceived Presence, Failure Transparency, Interaction Fit, Recovery Design',
         'How the Robot Experience Score (RES) works as a scoring instrument',
         'Live demonstration: scoring Reachy Mini across all six dimensions',
@@ -121,14 +121,14 @@ export default async function CurriculumPage({ params }: { params: Promise<{ cre
       description: 'The final self-paced week synthesises all six dimensions across real deployment verticals — retail, hospitality, healthcare, education, public space. You will write an interaction specification for Reachy Mini. TRA runs your spec on the actual robot and returns footage. You then document the gap between what you designed and what you observed.',
       topics: [
         'Recovery Design as a system, not an afterthought',
-        'Full HREF synthesis: how the six dimensions interact in real deployments',
+        'Full RXD synthesis: how the six dimensions interact in real deployments',
         'Writing an interaction specification: structured prompts, expected behaviour, success criteria',
-        'Vertical deep dives: how HREF applies differently across industries',
+        'Vertical deep dives: how RXD applies differently across industries',
         'Observing vs. specifying: what the gap between your design and the robot\'s behaviour reveals',
       ],
       deliverable: 'Interaction spec + observation report — write a structured interaction scenario for Reachy Mini. TRA runs it and sends you the footage. Document the gap between your spec and the observed behaviour. This is the direct preparation for the Week 6 capstone.',
       outcomes: [
-        'Synthesise all six HREF dimensions into a single deployment evaluation',
+        'Synthesise all six RXD dimensions into a single deployment evaluation',
         'Write a testable interaction specification for a social robot',
         'Analyse the gap between designed intent and observed robot behaviour',
       ],
@@ -138,17 +138,17 @@ export default async function CurriculumPage({ params }: { params: Promise<{ cre
       title: 'Capstone: Robot Readiness Audit',
       format: 'Capstone submission · peer review',
       dimensions: 'All six',
-      description: 'The final deliverable. TRA provides a standardised Reachy Mini session — video footage plus an interaction log. You complete a full Robot Readiness Audit: a scored RES across all six HREF dimensions with written rationale for each score. Submit your RRA, receive cohort feedback, and earn the REP credential and badge.',
+      description: 'The final deliverable. TRA provides a standardised Reachy Mini session — video footage plus an interaction log. You complete a full Robot Readiness Audit: a scored RES across all six RXD dimensions with written rationale for each score. Submit your RRA, receive cohort feedback, and earn the REP credential and badge.',
       topics: [
         'RRA methodology: how to structure a professional audit',
         'Scoring discipline: calibrating your RES against the rubric',
         'Writing the rationale: evidence-based scoring, not opinion',
         'Peer review: reading and giving feedback on a colleague\'s audit',
       ],
-      deliverable: 'Completed Robot Readiness Audit (RRA) — full RES scoring across all six HREF dimensions with written rationale. Passing threshold earns the REP credential and Credential.net badge.',
+      deliverable: 'Completed Robot Readiness Audit (RRA) — full RES scoring across all six RXD dimensions with written rationale. Passing threshold earns the REP credential and Credential.net badge.',
       outcomes: [
         'Conduct a complete Robot Readiness Audit on a real robot platform',
-        'Score all six HREF dimensions using the RES instrument with evidence-based rationale',
+        'Score all six RXD dimensions using the RES instrument with evidence-based rationale',
         'Communicate audit findings to a professional audience',
       ],
     },
@@ -172,8 +172,8 @@ export default async function CurriculumPage({ params }: { params: Promise<{ cre
       a: 'The REP credential and a digital badge issued via Credential.net. It is shareable on LinkedIn and verifiable by employers.',
     },
     {
-      q: 'What is the HREF white paper?',
-      a: 'The Human Robotics Experience Framework white paper is the published research document that defines the six dimensions and the scoring methodology. It is available on the Research page and provides the theoretical foundation for everything taught in the REP programme.',
+      q: 'What is the RXD white paper?',
+      a: 'The Robot Experience Design white paper is the published research document that defines the six dimensions and the scoring methodology. It is available on the Research page and provides the theoretical foundation for everything taught in the REP programme.',
     },
     {
       q: 'Can my employer pay for this?',
@@ -197,7 +197,7 @@ export default async function CurriculumPage({ params }: { params: Promise<{ cre
             <p className={styles.label}>{cert.abbr} · Curriculum</p>
             <h1 className={styles.title}>Six weeks. Six dimensions. One framework.</h1>
             <p className={styles.subhead}>
-              The REP programme walks you through the Human Robotics Experience Framework dimension by dimension — from how robots signal intent to how they recover from failure. Every week builds on the last. Every deliverable is scoped to a real robot.
+              The REP programme walks you through the Robot Experience Design framework dimension by dimension — from how robots signal intent to how they recover from failure. Every week builds on the last. Every deliverable is scoped to a real robot.
             </p>
             <div className={styles.actions}>
               <a href="https://learn.therobotage.com" className={styles.cta}>
@@ -223,15 +223,15 @@ export default async function CurriculumPage({ params }: { params: Promise<{ cre
             <div className={styles.audienceGrid}>
               <div className={styles.audienceCard}>
                 <h3 className={styles.audienceCardTitle}>Product Designers &amp; UX Strategists</h3>
-                <p className={styles.audienceCardBody}>You design the interfaces, environments, and interactions where robots meet people. HREF gives you a structured evaluation method for those moments.</p>
+                <p className={styles.audienceCardBody}>You design the interfaces, environments, and interactions where robots meet people. RXD gives you a structured evaluation method for those moments.</p>
               </div>
               <div className={styles.audienceCard}>
                 <h3 className={styles.audienceCardTitle}>Operations &amp; Deployment Leads</h3>
-                <p className={styles.audienceCardBody}>You manage the rollout. You see what breaks. HREF gives you the language to diagnose experience failures and design recovery protocols.</p>
+                <p className={styles.audienceCardBody}>You manage the rollout. You see what breaks. RXD gives you the language to diagnose experience failures and design recovery protocols.</p>
               </div>
               <div className={styles.audienceCard}>
                 <h3 className={styles.audienceCardTitle}>Business Leaders &amp; Strategists</h3>
-                <p className={styles.audienceCardBody}>You approve the budget. HREF gives you a scoring instrument to evaluate deployment readiness before signing off — not after.</p>
+                <p className={styles.audienceCardBody}>You approve the budget. RXD gives you a scoring instrument to evaluate deployment readiness before signing off — not after.</p>
               </div>
             </div>
           </section>
@@ -240,13 +240,13 @@ export default async function CurriculumPage({ params }: { params: Promise<{ cre
           <section className={styles.section}>
             <p className={styles.eyebrow}>Programme structure</p>
             <p className={styles.structureIntro}>
-              Week 1 is live on Zoom. Weeks 2 through 5 are self-paced with one scoped deliverable each. Week 6 is the capstone — a full Robot Readiness Audit scored against all six HREF dimensions. You submit it, get cohort feedback, and earn the REP credential.
+              Week 1 is live on Zoom. Weeks 2 through 5 are self-paced with one scoped deliverable each. Week 6 is the capstone — a full Robot Readiness Audit scored against all six RXD dimensions. You submit it, get cohort feedback, and earn the REP credential.
             </p>
             <div className={styles.scheduleTable}>
               <div className={styles.scheduleHeader}>
                 <span className={styles.scheduleCol}>Week</span>
                 <span className={styles.scheduleCol}>Format</span>
-                <span className={styles.scheduleColWide}>HREF Dimension(s)</span>
+                <span className={styles.scheduleColWide}>RXD Dimension(s)</span>
               </div>
               {[
                 { week: '1', format: 'Live Zoom', dimensions: 'All six (overview)' },
@@ -254,7 +254,7 @@ export default async function CurriculumPage({ params }: { params: Promise<{ cre
                 { week: '3', format: 'Self-paced + deliverable', dimensions: 'Perceived Presence' },
                 { week: '4', format: 'Self-paced + deliverable', dimensions: 'Interaction Fit · Failure Transparency' },
                 { week: '5', format: 'Self-paced + deliverable', dimensions: 'Recovery Design' },
-                { week: '6', format: 'Capstone submission', dimensions: 'Full HREF (all six)' },
+                { week: '6', format: 'Capstone submission', dimensions: 'Full RXD (all six)' },
               ].map((row) => (
                 <div key={row.week} className={styles.scheduleRow}>
                   <span className={styles.scheduleCol}>{row.week}</span>
@@ -318,8 +318,8 @@ export default async function CurriculumPage({ params }: { params: Promise<{ cre
               {[
                 'Describe the architecture and behaviour of a robotic system in plain language — no engineering jargon required',
                 'Identify the moments where human-robot interaction is most likely to break down',
-                'Apply the Human Robotics Experience Framework to evaluate any consumer robot deployment',
-                'Score a robot across all six HREF dimensions using the Robot Experience Score',
+                'Apply the Robot Experience Design framework to evaluate any consumer robot deployment',
+                'Score a robot across all six RXD dimensions using the Robot Experience Score',
                 'Design communication, escalation, and recovery protocols for mixed human-robot environments',
                 'Conduct a professional Robot Readiness Audit',
                 'Earn the REP credential and badge — issued via Credential.net, shareable on LinkedIn',
@@ -351,16 +351,16 @@ export default async function CurriculumPage({ params }: { params: Promise<{ cre
           {/* ── The framework ─────────────────────────────────────────────────── */}
           <section className={styles.section}>
             <p className={styles.eyebrow}>The framework behind the curriculum</p>
-            <h2 className={styles.sectionHeadline}>Human Robotics Experience Framework (HREF)</h2>
+            <h2 className={styles.sectionHeadline}>Robot Experience Design (RXD)</h2>
             <p className={styles.sectionBody}>
-              HREF is the original research framework developed by The Robot Age. It defines six dimensions for evaluating how humans experience robots — not how robots are engineered, but how they show up in human environments. The REP curriculum teaches you to apply it. The Robot Experience Score (RES) is the scored instrument. The Robot Readiness Audit (RRA) is the professional application.
+              RXD is the original research framework developed by The Robot Age. It defines six dimensions for evaluating how humans experience robots — not how robots are engineered, but how they show up in human environments. The REP curriculum teaches you to apply it. The Robot Experience Score (RES) is the scored instrument. The Robot Readiness Audit (RRA) is the professional application.
             </p>
             <div className={`${styles.pills} ${styles.pillsMargin}`}>
               {['Signal Clarity', 'Spatial Legibility', 'Perceived Presence', 'Failure Transparency', 'Interaction Fit', 'Recovery Design'].map((dim) => (
                 <span key={dim} className={styles.pill}>{dim}</span>
               ))}
             </div>
-            <a href="/research/href" className={styles.frameworkLink}>Read the HREF White Paper →</a>
+            <a href="/rxd" className={styles.frameworkLink}>Read the RXD White Paper →</a>
           </section>
 
           {/* ── Founding Cohort CTA ───────────────────────────────────────────── */}

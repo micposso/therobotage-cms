@@ -45,7 +45,7 @@ export default function FrameworkFeature() {
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.05 }}
             >
-              HREF — Human-Robot Experience Framework
+              RXD — Robot Experience Design
             </motion.p>
 
             <motion.div
@@ -54,8 +54,8 @@ export default function FrameworkFeature() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
             >
-              <p>HREF defines six observable dimensions for evaluating the human side of consumer robotics. It was developed by synthesizing existing human-robot interaction research with structured analysis of consumer robotics deployed in logistics, healthcare, and hospitality contexts — environments where robots increasingly operate alongside non-engineering staff without dedicated HRI support.</p>
-              <p>It distills a literature base that has, until now, lacked a unified framework accessible to practitioners outside engineering. HREF is not a rating scale. It is a structured lens for identifying where interaction design is succeeding, where it is failing, and what those failure modes are costing the deployment.</p>
+              <p>RXD defines six observable dimensions for evaluating the human side of consumer robotics. It was developed by synthesizing existing human-robot interaction research with structured analysis of consumer robotics deployed in logistics, healthcare, and hospitality contexts — environments where robots increasingly operate alongside non-engineering staff without dedicated HRI support.</p>
+              <p>It distills a literature base that has, until now, lacked a unified framework accessible to practitioners outside engineering. RXD is not a rating scale. It is a structured lens for identifying where interaction design is succeeding, where it is failing, and what those failure modes are costing the deployment.</p>
             </motion.div>
 
             <motion.p
@@ -104,7 +104,7 @@ export default function FrameworkFeature() {
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.55 }}
             >
-              Cite as: Posso, M. (2026). <em>The Human-Robot Experience Framework (HREF): A framework for evaluating the human side of consumer robotics</em> (White Paper v2.0). The Robot Age. therobotage.com/research/href. CC BY-NC 4.0.
+              Cite as: Posso, M. (2026). <em>Robot Experience Design (RXD): A framework for evaluating the human side of consumer robotics</em> (White Paper v2.0). The Robot Age. therobotage.com/rxd. CC BY-NC 4.0.
             </motion.p>
           </div>
 
@@ -116,7 +116,7 @@ export default function FrameworkFeature() {
             transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             aria-hidden="true"
           >
-            <p className={styles.schematicLabel}>HREF Dimensional Schema</p>
+            <p className={styles.schematicLabel}>RXD Dimensional Schema</p>
             <div className={styles.schematicGrid}>
               {DIMENSIONS.map(({ name, fill }) => (
                 <div key={name} className={styles.schematicRow}>

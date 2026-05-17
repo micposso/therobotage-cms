@@ -8,11 +8,11 @@ import styles from './REFFeature.module.css'
 // Placeholder — replace with Strapi fetch when available
 const REF = {
   eyebrow: 'The Framework',
-  title: 'Human-Robot Experience Framework',
-  acronym: 'HREF',
+  title: 'Robot Experience Design',
+  acronym: 'RXD',
   version: 'v2.0',
   abstract:
-    'A structured vocabulary for evaluating the human side of consumer robotics. HREF defines six observable dimensions for assessing the experiential quality of a deployment — developed through fieldwork across logistics, healthcare, and public-facing service contexts.',
+    'A structured vocabulary for evaluating the human side of consumer robotics. RXD defines six observable dimensions for assessing the experiential quality of a deployment — developed through fieldwork across logistics, healthcare, and public-facing service contexts.',
   dimensions: [
     { id: 'signal-clarity',       label: 'Signal Clarity' },
     { id: 'spatial-legibility',   label: 'Spatial Legibility' },
@@ -21,10 +21,10 @@ const REF = {
     { id: 'interaction-fit',      label: 'Interaction Fit' },
     { id: 'recovery-design',      label: 'Recovery Design' },
   ],
-  readUrl: '/research/href',
-  downloadUrl: '/downloads/href-v1.pdf',
+  readUrl: '/rxd',
+  downloadUrl: '/pdf/rxd-therobotage-v2.pdf',
   citation:
-    'Posso, M. (2026). The Human-Robot Experience Framework (HREF): A framework for evaluating the human side of consumer robotics (White Paper v2.0). The Robot Age. therobotage.com/research/href. CC BY-NC 4.0.',
+    'Posso, M. (2026). Robot Experience Design (RXD): A framework for evaluating the human side of consumer robotics (White Paper v2.0). The Robot Age. therobotage.com/rxd. CC BY-NC 4.0.',
 }
 
 const containerVariants = {
@@ -162,7 +162,7 @@ function REFSchematic({ dimensions }: { dimensions: Dimension[] }) {
 
       {/* Footer */}
       <text x="0" y={22 + dimensions.length * rowH + 22} className={styles.schematicFooter}>
-        HREF v2.0
+        RXD v2.0
       </text>
       <text
         x="290"

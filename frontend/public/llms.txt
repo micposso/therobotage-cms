@@ -1,26 +1,153 @@
 # The Robot Age
 
-> Robotic literacy education and certification for non-engineers.
+> Robotic literacy education, research, and certification for non-engineers — designers, strategists, product managers, and leaders who work alongside robots but don't build them.
 
-The Robot Age is an education platform that builds robotic literacy for designers, strategists, healthcare professionals, and business leaders — people who work alongside robots but don't build them.
+The Robot Age is an education and research platform founded by Mike Posso. It prepares non-engineering professionals for consumer robotics through original research frameworks, certification programmes, field observation essays, and practitioner-focused content. The platform is grounded in active graduate research at SUNY Polytechnic Institute.
 
-## What we offer
+---
 
-- **Robotic literacy curriculum** — Structured learning for non-engineers entering robotic environments
-- **REP Certification** — Robotics Experience Practitioner, the foundational credential for anyone shaping the human side of robotics
-- **Research & Insights** — Original research and critical perspectives on human-robot interaction
-- **The Robot Age Summit** — Annual gathering for designers and leaders shaping human-robot experience
-- **Enterprise programs** — Deployment readiness education for organizations integrating robots
+## Core Framework
 
-## Key pages
+### Robot Experience Design (RXD)
+URL: /rxd
 
-- /robotic-literacy — What robotic literacy is and why it matters
-- /learn — Full curriculum and certification tracks
-- /research — Articles and field observations
-- /summit — Annual summit information
-- /enterprise — Organizational programs
-- /access — Waitlist for the REP certification
+RXD is the original research framework developed by The Robot Age. It defines six observable dimensions for evaluating how humans experience robots in real deployment environments — not how robots are engineered, but how they show up for the people around them.
+
+**The six dimensions:**
+1. Signal Clarity — Can the user understand what the robot is communicating?
+2. Spatial Legibility — Can the user predict where the robot will move?
+3. Perceived Presence — Does the robot's voice, form, and aesthetic produce a coherent identity?
+4. Failure Transparency — When something goes wrong, does the robot make the problem legible?
+5. Interaction Fit — Does the interaction model match the context and the user's expectations?
+6. Recovery Design — Can the user (or the robot) get back on track after a breakdown?
+
+The RXD white paper (v2.0) is free to download at /pdf/rxd-therobotage-v2.pdf. Licensed CC BY-NC 4.0.
+
+Citation: Posso, M. (2026). Robot Experience Design (RXD): A framework for evaluating the human side of consumer robotics (White Paper v2.0). The Robot Age. therobotage.com/rxd. CC BY-NC 4.0.
+
+---
+
+## Research
+
+URL: /research
+
+Original frameworks, field observations, and critical perspectives on the human side of robotics deployment. All research is published under CC BY-NC 4.0.
+
+### Robot Experience Score (RES)
+A scoring instrument that translates the six RXD dimensions into a repeatable rubric. Evaluators can produce a dimensional profile for any consumer robot — rated on a 0–100 scale — drawing on observed deployment behaviour.
+
+### Field Signals
+URL: /research/field-signals
+
+A series of editorial essays examining the six RXD dimensions in real deployment contexts. Each essay is grounded in field observation across logistics, healthcare, and hospitality environments.
+
+Published essays:
+- /research/field-signals/failure-transparency-costs — "Failure transparency is not a UX nice-to-have. It is a deployment cost." (Failure Transparency)
+- /research/field-signals/spatial-legibility-hospitals — "Spatial legibility in hospital corridors." (Spatial Legibility)
+- /research/field-signals/recovery-design-gap — "The recovery design gap: what happens after the interaction breaks down." (Recovery Design)
+- /research/field-signals/interaction-fit-mismatch — "Interaction Fit: when the robot's behavioral model does not match the environment." (Interaction Fit)
+
+### Research Articles
+URL: /research
+
+Original articles examining consumer robotics, human-robot interaction, and deployment practice. Topics include: deployment readiness, signal design, the Familiar companion robot, Hugging Face's Reachy Mini platform, NASA Lunabotics, and more.
+
+---
+
+## News
+URL: /news (individual articles at /news/[slug])
+
+Current events, product launches, and industry analysis at the intersection of robotics and non-engineering practice. Coverage includes: consumer robots, enterprise deployments, academic research, and policy.
+
+---
+
+## Certifications
+URL: /learn
+
+Four credential tracks built for non-engineers. No engineering background required for any track.
+
+### REP — Robotics Experience Practitioner (Live)
+URL: /learn/rep | Curriculum: /learn/rep/curriculum
+The foundational credential. Six weeks, six RXD dimensions, one live capstone. Covers human-robot interaction, designing around failure, and evaluating real deployments using the Robot Experience Score. Format: hybrid — one live Zoom session plus self-paced modules with scoped deliverables each week. Capstone: a full Robot Readiness Audit scored across all six RXD dimensions.
+
+### RPDP — Robotics Product Design Practitioner (Coming Soon)
+URL: /learn/rpdp
+For product designers and design leads. Covers safety signaling, proxemics, error state design, and physical touchpoints between humans and robotic systems.
+
+### RSP — Robotics Strategy Practitioner (Coming Soon)
+URL: /learn/rsp
+For operations leads and executives. Covers vendor evaluation, deployment readiness assessment, change management, and ROI framing.
+
+### RXR — Robotic Experience Researcher (Coming Soon)
+URL: /learn/rxr
+For UX researchers and service designers. Covers observation methods, study design in physical robotic environments, and synthesising findings for mixed teams.
+
+---
+
+## Robot of the Week
+URL: /robots
+
+Weekly field analysis of consumer robot platforms. Each profile is structured around the six RXD dimensions: Signal Clarity, Spatial Legibility, Perceived Presence, Failure Transparency, Interaction Fit, and Recovery Design.
+
+---
+
+## The Robot Age Summit
+URL: /summit
+
+An annual gathering for designers, strategists, researchers, and leaders shaping human-robot experience. Coming to New York City. The call for speakers is open.
+
+---
+
+## Enterprise
+URL: /enterprise
+
+Deployment readiness education for organizations integrating robots into their workforce. Custom programmes for operations, product, and leadership teams.
+
+---
+
+## Robotic Literacy
+URL: /robotics-literacy
+
+An explanation of what robotic literacy means, why it matters now, and how The Robot Age approaches it — building the vocabulary and mental models that non-engineers need to work confidently alongside robots.
+
+---
+
+## Search
+URL: /search?q={query}
+
+Full-text search across all site content: research articles, news, field signals essays, certifications, and static pages.
+
+---
+
+## About
+
+**Founder:** Mike Posso — product engineering leader and graduate researcher at SUNY Polytechnic Institute.
+
+**Mission:** Prepare non-engineering professionals for consumer robotics through original research, structured credentials, and practitioner-focused content.
+
+**License:** All research frameworks (RXD, RES) published under Creative Commons BY-NC 4.0. Use, adapt, and build on them for non-commercial purposes with attribution.
+
+---
 
 ## Contact
 
-hello@therobotage.com
+- General: hello@therobotage.com
+- Press: press@therobotage.com
+- Summit: summit@therobotage.com
+- Connect page: /connect
+
+## Key pages
+
+- / — Homepage
+- /rxd — Robot Experience Design framework and white paper
+- /research — Research hub (frameworks, instruments, field signals, articles)
+- /learn — Certification tracks
+- /learn/rep — REP credential overview
+- /learn/rep/curriculum — Full six-week curriculum detail
+- /robotics-literacy — What robotic literacy means
+- /robots — Robot of the Week archive
+- /summit — Annual summit
+- /enterprise — Organizational programs
+- /access — Waitlist for certification
+- /connect — Contact
+- /search — Site search

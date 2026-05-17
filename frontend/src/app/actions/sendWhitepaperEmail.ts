@@ -17,15 +17,15 @@ export async function sendWhitepaperEmail(
 
   try {
     const resend = new Resend(process.env.RESEND_API_KEY)
-    const WHITEPAPER_URL = `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://therobotage.com'}/pdf/href-therobotage-v2.pdf`
+    const WHITEPAPER_URL = `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://therobotage.com'}/pdf/rxd-therobotage-v2.pdf`
     const { error: sendError } = await resend.emails.send({
       from: FROM_ADDRESS,
       to: email,
       bcc: 'micposso@gmail.com',
-      subject: 'Human-Robot Experience Framework, v2.0 — your copy',
+      subject: 'Robot Experience Design, v2.0 — your copy',
       html: emailHtml(`
         <h1 style="font-family:Arial,sans-serif;font-weight:400;font-size:24px;letter-spacing:-0.02em;line-height:1.15;color:#0D0D0D;margin:0 0 20px;">
-          Human-Robot Experience<br/>Framework, v2.0
+          Robot Experience<br/>Design, v2.0
         </h1>
 
         <p style="font-family:Georgia,serif;font-size:15px;line-height:1.75;color:#2A2A28;margin:0 0 16px;">

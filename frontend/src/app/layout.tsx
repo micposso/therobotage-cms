@@ -22,16 +22,25 @@ const ibmPlexSerif = IBM_Plex_Serif({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://therobotage.com'),
-  title: "The Robot Age",
-  description: "Robotic literacy for non-engineers",
+  title: {
+    default: "The Robot Age",
+    template: "%s — The Robot Age",
+  },
+  description: "Robotic literacy education, research, and certification for designers, strategists, and leaders who work alongside robots.",
   openGraph: {
     title: "The Robot Age",
-    description: "Robotic literacy for non-engineers",
+    description: "Robotic literacy education, research, and certification for designers, strategists, and leaders who work alongside robots.",
     images: [{ url: '/images/home.png', alt: 'The Robot Age' }],
+    siteName: "The Robot Age",
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
     card: 'summary_large_image',
     images: ['/images/home.png'],
+  },
+  alternates: {
+    canonical: 'https://therobotage.com',
   },
 };
 

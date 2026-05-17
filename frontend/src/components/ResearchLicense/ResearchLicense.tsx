@@ -8,9 +8,9 @@ import styles from './ResearchLicense.module.css'
 const LICENSE = {
   eyebrow: 'Open Framework',
   statement:
-    'HREF is free to use.',
+    'RXD is free to use.',
   body:
-    'The Human-Robot Experience Framework (HREF) is published under Creative Commons Attribution–NonCommercial 4.0 International (CC BY-NC 4.0). You may use, adapt, and build on it for non-commercial research, design, and deployment work — with attribution to Posso, M. / The Robot Age. If you are using HREF in a deployment, we would like to hear about it.',
+    'The Robot Experience Design (RXD) framework is published under Creative Commons Attribution–NonCommercial 4.0 International (CC BY-NC 4.0). You may use, adapt, and build on it for non-commercial research, design, and deployment work — with attribution to Posso, M. / The Robot Age. If you are using RXD in a deployment, we would like to hear about it.',
   license: 'CC BY-NC 4.0',
   contactUrl: '/connect',
 }

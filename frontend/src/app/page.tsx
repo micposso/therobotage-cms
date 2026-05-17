@@ -8,21 +8,37 @@ import Summit from '@/components/Summit/Summit'
 import Footer from '@/components/Footer/Footer'
 import { getAllNewsArticles } from '@/lib/news'
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'EducationalOrganization',
-  name: 'The Robot Age',
-  url: 'https://therobotage.com',
-  description: 'Robotic literacy education and certification for designers, strategists, and leaders who work alongside robots.',
-  sameAs: ['https://linkedin.com/company/therobotage'],
-  offers: {
-    '@type': 'Course',
-    name: 'Robotics Experience Practitioner (REP)',
-    description: 'The foundational credential for non-engineers shaping the human side of robotics.',
-    url: 'https://therobotage.com/learn',
-    provider: { '@type': 'Organization', name: 'The Robot Age' },
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'EducationalOrganization',
+    name: 'The Robot Age',
+    url: 'https://therobotage.com',
+    description: 'Robotic literacy education and certification for designers, strategists, and leaders who work alongside robots.',
+    sameAs: ['https://linkedin.com/company/therobotage'],
+    offers: {
+      '@type': 'Course',
+      name: 'Robotics Experience Practitioner (REP)',
+      description: 'The foundational credential for non-engineers shaping the human side of robotics.',
+      url: 'https://therobotage.com/learn',
+      provider: { '@type': 'Organization', name: 'The Robot Age' },
+    },
   },
-}
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'The Robot Age',
+    url: 'https://therobotage.com',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://therobotage.com/search?q={search_term_string}',
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  },
+]
 
 function getHeroImages(): string[] {
   const dir = path.join(process.cwd(), 'public', 'images')

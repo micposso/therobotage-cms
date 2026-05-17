@@ -4,7 +4,7 @@ import { emailHtml } from '@/lib/emailTemplate'
 
 export async function GET() {
   const resend = new Resend(process.env.RESEND_API_KEY)
-  const WHITEPAPER_URL = `${process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'}/pdf/href-therobotage-v2.pdf`
+  const WHITEPAPER_URL = `${process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'}/pdf/rxd-therobotage-v2.pdf`
   if (process.env.NODE_ENV === 'production') {
     return NextResponse.json({ error: 'Not available in production.' }, { status: 403 })
   }
@@ -13,10 +13,10 @@ export async function GET() {
     const { data, error } = await resend.emails.send({
       from: 'onboarding@resend.dev',
       to: 'micposso@gmail.com',
-      subject: '[Test] Human-Robot Experience Framework, v2.0 — your copy',
+      subject: '[Test] Robot Experience Design, v2.0 — your copy',
       html: emailHtml(`
         <h1 style="font-family:Arial,sans-serif;font-weight:400;font-size:24px;letter-spacing:-0.02em;line-height:1.15;color:#0D0D0D;margin:0 0 20px;">
-          Human-Robot Experience<br/>Framework, v2.0
+          Robot Experience<br/>Design, v2.0
         </h1>
 
         <p style="font-family:Georgia,serif;font-size:15px;line-height:1.75;color:#2A2A28;margin:0 0 16px;">

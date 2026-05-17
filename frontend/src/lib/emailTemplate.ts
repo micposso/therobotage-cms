@@ -52,7 +52,7 @@ export function waitlistConfirmationHtml(): string {
     </h1>
 
     <p style="font-family:Georgia,serif;font-size:15px;line-height:1.75;color:#2A2A28;margin:0 0 16px;">
-      Registration for the <strong>HREF Certification</strong> isn't open yet — but when it is, you'll hear before anyone else.
+      Registration for the <strong>RXD Certification</strong> isn't open yet — but when it is, you'll hear before anyone else.
     </p>
 
     <p style="font-family:Georgia,serif;font-size:15px;line-height:1.75;color:#2A2A28;margin:0 0 32px;">
@@ -62,10 +62,10 @@ export function waitlistConfirmationHtml(): string {
     <hr style="border:none;border-top:1px solid #e0e0e0;margin:0 0 32px;" />
 
     <p style="font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:0.15em;color:#9b5152;margin:0 0 14px;">
-      About the HREF Certification
+      About the RXD Certification
     </p>
     <p style="font-family:Georgia,serif;font-size:15px;line-height:1.75;color:#2A2A28;margin:0 0 16px;">
-      The Human-Robot Experience Framework (HREF) Certification is built for designers, product managers, strategists, and operations leads who work in environments where robots are already deployed. No engineering background required.
+      The Robot Experience Design (RXD) Certification is built for designers, product managers, strategists, and operations leads who work in environments where robots are already deployed. No engineering background required.
     </p>
     <p style="font-family:Georgia,serif;font-size:15px;line-height:1.75;color:#2A2A28;margin:0 0 16px;">
       Four credential tracks cover the decisions that matter most when humans and robots share a space — from experience design and change management to policy and deployment strategy. You'll finish with a credential that reflects the work you actually do, and the vocabulary to do it with confidence.

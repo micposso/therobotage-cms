@@ -67,13 +67,13 @@ export default function WhitepaperModal({ isOpen, onClose }: Props) {
               <div className={styles.success}>
                 <p className={styles.eyebrow}>Ready to download</p>
                 <h2 className={styles.successHeadline} id="modal-title">
-                  Human-Robot Experience Framework, v2.0
+                  Robot Experience Design, v2.0
                 </h2>
                 <p className={styles.successBody}>
                   We've also sent a link to your email.
                 </p>
                 <a
-                  href="/pdf/href-therobotage-v2.pdf"
+                  href="/pdf/rxd-therobotage-v2.pdf"
                   download
                   className={styles.downloadBtn}
                 >
@@ -89,7 +89,7 @@ export default function WhitepaperModal({ isOpen, onClose }: Props) {
                   Learn the human experience of robotics.
                 </h2>
                 <p className={styles.description}>
-                  The Human-Robot Experience Framework gives designers, product managers, and marketers a shared vocabulary for the moments that matter — how robots communicate, fail, and recover in the presence of people. Download v2.0 free.
+                  Robot Experience Design gives designers, product managers, and marketers a shared vocabulary for the moments that matter — how robots communicate, fail, and recover in the presence of people. Download v2.0 free.
                 </p>
 
                 <form action={action} className={styles.form} noValidate>
@@ -122,7 +122,7 @@ export default function WhitepaperModal({ isOpen, onClose }: Props) {
                 </p>
 
                 <div className={styles.directDownload}>
-                  <a href="/pdf/href-therobotage-v2.pdf" download className={styles.directDownloadLink}>
+                  <a href="/pdf/rxd-therobotage-v2.pdf" download className={styles.directDownloadLink}>
                     Download directly without email
                   </a>
                   <span className={styles.directDownloadNote}>CC BY-NC 4.0 — free to use with attribution.</span>

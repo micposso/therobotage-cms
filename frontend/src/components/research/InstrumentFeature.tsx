@@ -57,7 +57,7 @@ export default function InstrumentFeature() {
               animate={inView ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
             >
-              HREF applied. A scoring instrument built for field use.
+              RXD applied. A scoring instrument built for field use.
             </motion.h2>
 
             <motion.div
@@ -66,7 +66,7 @@ export default function InstrumentFeature() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             >
-              <p>The Robot Experience Score translates the six HREF dimensions into a repeatable rubric. A trained evaluator can produce a dimensional profile for any consumer robot — drawing on public deployment footage, manufacturer materials, reviewer documentation, and direct observation where available.</p>
+              <p>The Robot Experience Score translates the six RXD dimensions into a repeatable rubric. A trained evaluator can produce a dimensional profile for any consumer robot — drawing on public deployment footage, manufacturer materials, reviewer documentation, and direct observation where available.</p>
               <p>The score surfaces where interaction design is functioning and where it is creating friction for the humans working alongside the machine. It is designed for practitioners, not engineers — no sensor data, no proprietary access, no technical background required.</p>
             </motion.div>
 

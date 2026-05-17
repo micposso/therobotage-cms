@@ -23,7 +23,7 @@ export async function joinWaitlist(
       from: FROM_ADDRESS,
       to: email,
       bcc: ADMIN_ADDRESS,
-      subject: "You're first in line — HREF Certification",
+      subject: "You're first in line — RXD Certification",
       html: waitlistConfirmationHtml(),
     })
 
