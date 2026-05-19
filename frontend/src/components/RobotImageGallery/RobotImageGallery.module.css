@@ -1,0 +1,183 @@
+/* ─── Thumbnail grid — always 5 across on desktop ────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-4);
+}
+
+.thumb {
+  all: unset;
+  display: block;
+  cursor: pointer;
+}
+
+.thumbImage {
+  aspect-ratio: 4 / 3;
+  position: relative;
+  overflow: hidden;
+  background: var(--color-border);
+}
+
+/* expand icon overlay — visible on hover */
+.thumbOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(13, 13, 13, 0);
+  color: var(--color-text-inverse);
+  opacity: 0;
+  transition: opacity var(--ease-default), background var(--ease-default);
+}
+
+.thumb:hover .thumbOverlay {
+  opacity: 1;
+  background: rgba(13, 13, 13, 0.45);
+}
+
+/* Caption below thumbnail */
+.thumbCaption {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+  margin-top: var(--space-3);
+}
+
+/* ─── Lightbox backdrop ───────────────────────────────────────────────────── */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--color-modal-backdrop);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8);
+}
+
+/* ─── Lightbox panel ──────────────────────────────────────────────────────── */
+.lightbox {
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.lightboxImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--color-bg-dark);
+}
+
+.lightboxFooter {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+.lightboxCaption {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--color-text-inverse);
+  margin: 0;
+  flex: 1;
+}
+
+.lightboxCounter {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--color-footer-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ─── Close button ────────────────────────────────────────────────────────── */
+.closeBtn {
+  position: absolute;
+  top: calc(-1 * var(--space-10));
+  right: 0;
+  background: none;
+  border: none;
+  color: var(--color-text-inverse);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: var(--space-2);
+  opacity: 0.7;
+  transition: opacity var(--ease-default);
+}
+
+.closeBtn:hover {
+  opacity: 1;
+}
+
+/* ─── Prev / next arrows ──────────────────────────────────────────────────── */
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--color-text-inverse);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: var(--space-3);
+  opacity: 0.6;
+  transition: opacity var(--ease-default);
+  z-index: 1;
+}
+
+.navBtn:hover {
+  opacity: 1;
+}
+
+.navPrev {
+  left: calc(-1 * var(--space-12));
+}
+
+.navNext {
+  right: calc(-1 * var(--space-12));
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+
+  /* 5th item sits alone in the 3rd row, column 1 — matches 2-2-1 */
+
+  .backdrop {
+    padding: var(--space-4);
+    align-items: flex-end;
+  }
+
+  .lightbox {
+    max-width: 100%;
+  }
+
+  .navPrev {
+    left: var(--space-2);
+  }
+
+  .navNext {
+    right: var(--space-2);
+  }
+
+  .closeBtn {
+    top: calc(-1 * var(--space-8));
+  }
+}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, IBM_Plex_Serif } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Serif, DM_Serif_Display, Outfit } from "next/font/google";
 import { WaitlistProvider } from "@/context/WaitlistContext";
 import HomepagePopup from "@/components/HomepagePopup/HomepagePopup";
 import CookieBanner from "@/components/CookieBanner/CookieBanner";
@@ -17,6 +17,20 @@ const ibmPlexSerif = IBM_Plex_Serif({
   subsets: ["latin"],
   weight: ["300", "400"],
   variable: "--font-body",
+  display: "swap",
+});
+
+const dmSerifDisplay = DM_Serif_Display({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-res-display",
+  display: "swap",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["300", "400"],
+  variable: "--font-res-body",
   display: "swap",
 });
 
@@ -48,7 +62,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${ibmPlexSans.variable} ${ibmPlexSerif.variable}`}>
+    <html lang="en" className={`${ibmPlexSans.variable} ${ibmPlexSerif.variable} ${dmSerifDisplay.variable} ${outfit.variable}`}>
       <head>
         {process.env.NODE_ENV === 'production' && <>
           {/* GTM Consent Mode defaults — must run before GTM loads */}

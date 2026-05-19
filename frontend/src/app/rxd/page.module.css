@@ -54,6 +54,50 @@
   border-top: 1px solid var(--color-border);
 }
 
+/* ─── Robot Grid Section ──────────────────────────────────────────────────── */
+.robotGridSection {
+  padding: var(--space-16) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.robotGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+.robotCardLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.robotCard {
+  border-top: 1px solid var(--color-border-strong);
+  padding-top: var(--space-4);
+}
+
+.robotCardThumb {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: var(--space-4);
+}
+
+.robotCardTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin: 0;
+  transition: color var(--ease-default);
+}
+
+.robotCardLink:hover .robotCardTitle {
+  color: var(--color-accent);
+}
+
 /* ─── Practitioners Section ───────────────────────────────────────────────── */
 .practitionersSection {
   padding: var(--space-20) 0;
@@ -213,7 +257,17 @@
 }
 
 /* ─── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 1023px) {
+  .robotGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 767px) {
+  .robotGrid {
+    grid-template-columns: 1fr;
+  }
+
   .earlyCtaSection {
     padding: var(--space-6) 0;
   }

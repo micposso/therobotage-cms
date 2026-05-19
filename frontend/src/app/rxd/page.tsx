@@ -1,8 +1,16 @@
+import Image from 'next/image'
+import Link from 'next/link'
 import Nav from '@/components/Nav/Nav'
 import PageHero from '@/components/PageHero/PageHero'
 import Footer from '@/components/Footer/Footer'
 import RxdDimensionsGrid from './RxdDimensionsGrid'
 import styles from './page.module.css'
+
+const ROBOT_PLACEHOLDERS = [
+  { id: 1, slug: 'robot-profile-01', title: 'Robot Name One',   image: '/images/hand.png' },
+  { id: 2, slug: 'robot-profile-02', title: 'Robot Name Two',   image: '/images/hand.png' },
+  { id: 3, slug: 'robot-profile-03', title: 'Robot Name Three', image: '/images/hand.png' },
+]
 
 export const metadata = {
   title: 'RXD — Robot Experience Design | The Robot Age',
@@ -57,6 +65,30 @@ export default function RxdPage() {
         <div className="container-fluid">
           <h2 className={styles.sectionHeadline}>The six dimensions of<br />Robot Experience Design</h2>
           <RxdDimensionsGrid />
+        </div>
+      </section>
+
+      {/* Robot grid */}
+      <section className={styles.robotGridSection}>
+        <div className="container-fluid">
+          <div className={styles.robotGrid}>
+            {ROBOT_PLACEHOLDERS.map((robot) => (
+              <Link key={robot.id} href={`/robots/${robot.slug}`} className={styles.robotCardLink}>
+                <div className={styles.robotCard}>
+                  <div className={styles.robotCardThumb}>
+                    <Image
+                      src={robot.image}
+                      alt={robot.title}
+                      fill
+                      sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </div>
+                  <h3 className={styles.robotCardTitle}>{robot.title}</h3>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

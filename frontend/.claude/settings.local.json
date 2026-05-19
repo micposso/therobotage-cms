@@ -22,7 +22,8 @@
       "Bash(Select-Object FullName)",
       "Bash(Get-ChildItem -Path \"C:\\\\dev\\\\therobotage-cms\\\\frontend\" -Recurse -Filter \"page.tsx\")",
       "Bash(Select-Object -ExpandProperty FullName)",
-      "Bash(npx next *)"
+      "Bash(npx next *)",
+      "PowerShell(New-Item *)"
     ]
   }
 }

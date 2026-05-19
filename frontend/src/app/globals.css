@@ -25,6 +25,16 @@
   --color-footer-border: rgba(232, 228, 220, 0.1);
   --color-accent-grid: rgba(232, 93, 36, 0.04);
   --color-accent-glow: rgba(232, 93, 36, 0.07);
+
+  /* RES Score Card — burnt orange palette */
+  --res-orange:        #e85d24;
+  --res-orange-fill:   rgba(232, 93, 36, 0.18);
+  --res-grid-line:     rgba(13, 13, 13, 0.09);
+  --res-bar-1:         #b8b4ae;
+  --res-bar-2:         #cac6be;
+  --res-bar-3:         #928f89;
+  --res-bar-4:         #c8652e;
+  --res-bar-5:         #e85d24;
   --color-border-on-dark: rgba(255, 255, 255, 0.06);
   --color-ticker-on-dark: rgba(245, 240, 232, 0.18);
   --color-modal-backdrop: rgba(13, 13, 13, 0.72);
