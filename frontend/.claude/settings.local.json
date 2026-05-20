@@ -23,7 +23,8 @@
       "Bash(Get-ChildItem -Path \"C:\\\\dev\\\\therobotage-cms\\\\frontend\" -Recurse -Filter \"page.tsx\")",
       "Bash(Select-Object -ExpandProperty FullName)",
       "Bash(npx next *)",
-      "PowerShell(New-Item *)"
+      "PowerShell(New-Item *)",
+      "WebFetch(domain:therobotage.com)"
     ]
   }
 }
