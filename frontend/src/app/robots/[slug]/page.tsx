@@ -6,6 +6,8 @@ import Footer from '@/components/Footer/Footer'
 import RobotImageGallery from '@/components/RobotImageGallery/RobotImageGallery'
 import RxdScoreModule from './RxdScoreModule'
 import { getRobotProfile, getAllRobotProfileSlugs } from '@/lib/robot-profiles'
+import { getScoreBySlug } from '@/lib/scores'
+import RobotSpecStrip from '@/components/RobotSpecStrip/RobotSpecStrip'
 import styles from './page.module.css'
 
 export async function generateStaticParams() {
@@ -16,19 +18,28 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   const robot = getRobotProfile(slug)
   if (!robot) return {}
+  const score = getScoreBySlug(slug)
+  const scoreLabel = score ? ` RXD ${score.compositeScore.toFixed(2)} / 5.0 — ${score.tier}.` : ''
+  const description = `${robot.description}${scoreLabel}`
+  const title = score
+    ? `${robot.title} — RXD ${score.compositeScore.toFixed(2)} / 5.0`
+    : `${robot.title} — Robot Profile`
   return {
-    title: `${robot.title} — Robot Profile — The Robot Age`,
-    description: robot.description,
+    title,
+    description,
+    alternates: {
+      canonical: `https://therobotage.com/robots/${slug}`,
+    },
     openGraph: {
-      title: robot.title,
-      description: robot.description,
-      images: [{ url: robot.image, alt: robot.title }],
+      title,
+      description,
+      type: 'article',
+      siteName: 'The Robot Age',
     },
     twitter: {
       card: 'summary_large_image',
-      title: robot.title,
-      description: robot.description,
-      images: [robot.image],
+      title,
+      description,
     },
   }
 }
@@ -37,6 +48,7 @@ export default async function RobotProfilePage({ params }: { params: Promise<{ s
   const { slug } = await params
   const robot = getRobotProfile(slug)
   if (!robot) notFound()
+  const score = getScoreBySlug(slug)
 
   return (
     <>
@@ -47,14 +59,30 @@ export default async function RobotProfilePage({ params }: { params: Promise<{ s
         title={robot.title}
         subtitle={robot.description}
         imageSrc={robot.image}
+        images={[robot.image, ...robot.gallery.map((g) => g.src)].filter(Boolean)}
+        roundImage
       />
+
+      <RobotSpecStrip robot={robot} />
 
       {/* Overview */}
       <section className={styles.overviewSection}>
         <div className="container-fluid">
-          <div className={styles.overviewInner}>
-            <p className={styles.eyebrow}>Overview</p>
-            <p className={styles.overviewBody}>{robot.overview}</p>
+          <div className={styles.overviewLayout}>
+            <div>
+              <p className={styles.eyebrow}>Overview</p>
+              <p className={styles.overviewBody}>{robot.overview}</p>
+            </div>
+            {score && (
+              <div className={styles.scorePanel}>
+                <p className={styles.scorePanelEyebrow}>RXD Score</p>
+                <div>
+                  <span className={styles.scorePanelNumber}>{score.compositeScore.toFixed(2)}</span>
+                  <span className={styles.scorePanelMax}> / 5.0</span>
+                </div>
+                <p className={styles.scorePanelTier}>{score.tier}</p>
+              </div>
+            )}
           </div>
         </div>
       </section>

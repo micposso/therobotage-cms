@@ -4,13 +4,8 @@ import Nav from '@/components/Nav/Nav'
 import PageHero from '@/components/PageHero/PageHero'
 import Footer from '@/components/Footer/Footer'
 import RxdDimensionsGrid from './RxdDimensionsGrid'
+import { getAllRobotProfiles } from '@/lib/robot-profiles'
 import styles from './page.module.css'
-
-const ROBOT_PLACEHOLDERS = [
-  { id: 1, slug: 'robot-profile-01', title: 'Robot Name One',   image: '/images/hand.png' },
-  { id: 2, slug: 'robot-profile-02', title: 'Robot Name Two',   image: '/images/hand.png' },
-  { id: 3, slug: 'robot-profile-03', title: 'Robot Name Three', image: '/images/hand.png' },
-]
 
 export const metadata = {
   title: 'RXD — Robot Experience Design | The Robot Age',
@@ -32,6 +27,8 @@ export const metadata = {
 }
 
 export default function RxdPage() {
+  const robots = getAllRobotProfiles()
+
   return (
     <>
       <Nav pinned />
@@ -72,8 +69,8 @@ export default function RxdPage() {
       <section className={styles.robotGridSection}>
         <div className="container-fluid">
           <div className={styles.robotGrid}>
-            {ROBOT_PLACEHOLDERS.map((robot) => (
-              <Link key={robot.id} href={`/robots/${robot.slug}`} className={styles.robotCardLink}>
+            {robots.map((robot) => (
+              <Link key={robot.slug} href={`/robots/${robot.slug}`} className={styles.robotCardLink}>
                 <div className={styles.robotCard}>
                   <div className={styles.robotCardThumb}>
                     <Image

@@ -1,3 +1,7 @@
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+
 export interface GalleryItem {
   src: string
   alt: string
@@ -15,101 +19,69 @@ export interface RobotProfile {
   title: string
   manufacturer: string
   category: string
+  type: string
+  country: string
+  priceRange: string
+  yearIntroduced: number
+  autonomy: string
+  industry: string
   description: string
   image: string
   overview: string
-  deploymentBoxes: [DeploymentBox, DeploymentBox]
+  deploymentBoxes: DeploymentBox[]
   gallery: GalleryItem[]
 }
 
-const PLACEHOLDER_GALLERY: GalleryItem[] = [
-  {
-    src: '/images/hand.png',
-    alt: 'Robot in operational context',
-    caption: 'Operational environment — placeholder caption describing what is shown here.',
-  },
-  {
-    src: '/images/hand.png',
-    alt: 'User interaction moment',
-    caption: 'User interaction — placeholder caption describing the interaction being observed.',
-  },
-  {
-    src: '/images/hand.png',
-    alt: 'System detail',
-    caption: 'System detail — placeholder caption describing a specific component or behavior.',
-  },
-  {
-    src: '/images/hand.png',
-    alt: 'Environment overview',
-    caption: 'Deployment environment — placeholder caption describing the physical space.',
-  },
-  {
-    src: '/images/hand.png',
-    alt: 'Failure or edge case',
-    caption: 'Edge case or failure state — placeholder caption describing what was observed.',
-  },
-]
+const PROFILES_DIR = path.join(process.cwd(), 'robots-profiles')
 
-const PLACEHOLDER_DEPLOYMENT: [DeploymentBox, DeploymentBox] = [
-  {
-    label: 'Operational Context',
-    title: 'Where and how this robot works',
-    body: 'Placeholder describing the physical environment, the user population, shift patterns, and the workflow this robot is designed to support. This box will contain field-observed operational detail.',
-  },
-  {
-    label: 'Friction Points',
-    title: 'Where the experience breaks down',
-    body: 'Placeholder describing observed friction, edge cases, user workarounds, and failure modes encountered during field observation. This box captures the gap between intended and actual use.',
-  },
-]
+function getProfileFiles(): string[] {
+  if (!fs.existsSync(PROFILES_DIR)) return []
+  return fs.readdirSync(PROFILES_DIR).filter(
+    (f) => f.endsWith('.md') && !f.startsWith('_')
+  )
+}
 
-export const ROBOT_PROFILES: RobotProfile[] = [
-  {
-    slug: 'robot-profile-01',
-    title: 'Robot Name One',
-    manufacturer: 'Manufacturer One',
-    category: 'Robot Profile',
-    description: 'Placeholder description for this robot. A brief summary of what this robot does and where it operates.',
-    image: '/images/hand.png',
-    overview:
-      'Overview content placeholder. This section will cover what this robot is, who makes it, and what problem it solves. Field observations, deployment context, and the human experience of interacting with it will be detailed here.',
-    deploymentBoxes: PLACEHOLDER_DEPLOYMENT,
-    gallery: PLACEHOLDER_GALLERY,
-  },
-  {
-    slug: 'robot-profile-02',
-    title: 'Robot Name Two',
-    manufacturer: 'Manufacturer Two',
-    category: 'Robot Profile',
-    description: 'Placeholder description for this robot. A brief summary of what this robot does and where it operates.',
-    image: '/images/hand.png',
-    overview:
-      'Overview content placeholder. This section will cover what this robot is, who makes it, and what problem it solves. Field observations, deployment context, and the human experience of interacting with it will be detailed here.',
-    deploymentBoxes: PLACEHOLDER_DEPLOYMENT,
-    gallery: PLACEHOLDER_GALLERY,
-  },
-  {
-    slug: 'robot-profile-03',
-    title: 'Robot Name Three',
-    manufacturer: 'Manufacturer Three',
-    category: 'Robot Profile',
-    description: 'Placeholder description for this robot. A brief summary of what this robot does and where it operates.',
-    image: '/images/hand.png',
-    overview:
-      'Overview content placeholder. This section will cover what this robot is, who makes it, and what problem it solves. Field observations, deployment context, and the human experience of interacting with it will be detailed here.',
-    deploymentBoxes: PLACEHOLDER_DEPLOYMENT,
-    gallery: PLACEHOLDER_GALLERY,
-  },
-]
+function parseProfile(file: string): RobotProfile {
+  const raw = fs.readFileSync(path.join(PROFILES_DIR, file), 'utf-8')
+  const { data, content } = matter(raw)
+  return {
+    slug: data.slug as string,
+    title: data.title as string,
+    manufacturer: (data.manufacturer ?? '') as string,
+    category: (data.category ?? 'Robot Profile') as string,
+    type: (data.type ?? '') as string,
+    country: (data.country ?? '') as string,
+    priceRange: (data.priceRange ?? '') as string,
+    yearIntroduced: (data.yearIntroduced ?? 0) as number,
+    autonomy: (data.autonomy ?? '') as string,
+    industry: (data.industry ?? '') as string,
+    description: (data.description ?? '') as string,
+    image: (data.image ?? '/images/hand.png') as string,
+    overview: content.trim(),
+    deploymentBoxes: (data.deploymentBoxes ?? []) as DeploymentBox[],
+    gallery: (data.gallery ?? []) as GalleryItem[],
+  }
+}
 
 export function getAllRobotProfiles(): RobotProfile[] {
-  return ROBOT_PROFILES
+  return getProfileFiles().map(parseProfile)
 }
 
 export function getAllRobotProfileSlugs(): string[] {
-  return ROBOT_PROFILES.map((r) => r.slug)
+  return getProfileFiles()
+    .map((f) => {
+      const raw = fs.readFileSync(path.join(PROFILES_DIR, f), 'utf-8')
+      const { data } = matter(raw)
+      return data.slug as string
+    })
+    .filter(Boolean)
 }
 
 export function getRobotProfile(slug: string): RobotProfile | undefined {
-  return ROBOT_PROFILES.find((r) => r.slug === slug)
+  for (const file of getProfileFiles()) {
+    const raw = fs.readFileSync(path.join(PROFILES_DIR, file), 'utf-8')
+    const { data } = matter(raw)
+    if (data.slug === slug) return parseProfile(file)
+  }
+  return undefined
 }

@@ -24,7 +24,8 @@
       "Bash(Select-Object -ExpandProperty FullName)",
       "Bash(npx next *)",
       "PowerShell(New-Item *)",
-      "WebFetch(domain:therobotage.com)"
+      "WebFetch(domain:therobotage.com)",
+      "Bash(Select-String \"news\")"
     ]
   }
 }

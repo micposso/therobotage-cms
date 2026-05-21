@@ -1,0 +1,86 @@
+/* ─── Strip wrapper ─────────────────────────────────────────────────────────── */
+.strip {
+  border-top: 1px solid var(--color-border-strong);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ─── Inner flex row ────────────────────────────────────────────────────────── */
+.inner {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+/* ─── Individual spec items ─────────────────────────────────────────────────── */
+.item {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-6) var(--space-6);
+  border-right: 1px solid var(--color-border);
+}
+
+.item:first-child {
+  padding-left: 0;
+}
+
+.item:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+/* ─── Labels and values ─────────────────────────────────────────────────────── */
+.label {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text-muted);
+}
+
+.value {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+/* ─── Responsive ────────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .item {
+    flex: unset;
+    min-width: unset;
+    padding: var(--space-5) var(--space-4);
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .item:first-child {
+    padding-left: var(--space-4);
+  }
+
+  .item:last-child {
+    border-right: 1px solid var(--color-border);
+    padding-right: var(--space-4);
+  }
+
+  /* Remove right border from last column in each row */
+  .item:nth-child(3n) {
+    border-right: none;
+  }
+
+  /* Remove bottom border from last row — handles 1, 2, or 3 items in final row */
+  .item:last-child,
+  .item:nth-last-child(2):nth-child(3n+1),
+  .item:nth-last-child(3):nth-child(3n+1),
+  .item:nth-last-child(2):nth-child(3n+2) {
+    border-bottom: none;
+  }
+}

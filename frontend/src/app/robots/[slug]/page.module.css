@@ -15,8 +15,11 @@
   border-top: 1px solid var(--color-border);
 }
 
-.overviewInner {
-  max-width: 720px;
+.overviewLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: start;
 }
 
 .overviewBody {
@@ -25,6 +28,52 @@
   font-size: var(--text-md);
   line-height: 1.75;
   color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ─── Score panel (right column of overview) ──────────────────────────────── */
+.scorePanel {
+  border-left: 1px solid var(--color-border);
+  padding-left: var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.scorePanelEyebrow {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.scorePanelNumber {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 10vw, 9rem);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--color-text);
+}
+
+.scorePanelMax {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: var(--color-text-muted);
+}
+
+.scorePanelTier {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
   margin: 0;
 }
 
@@ -191,6 +240,17 @@
 
 /* ─── Responsive ──────────────────────────────────────────────────────────── */
 @media (max-width: 767px) {
+  .overviewLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .scorePanel {
+    border-left: none;
+    border-top: 1px solid var(--color-border);
+    padding-left: 0;
+    padding-top: var(--space-10);
+  }
+
   .overviewSection,
   .scoreSection,
   .gallerySection,
