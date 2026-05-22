@@ -1,3 +1,6 @@
+'use client'
+
+import { useRef, useState, useEffect } from 'react'
 import styles from './RESScoreCard.module.css'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -71,6 +74,42 @@ function barColor(score: number): string {
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export default function RESScoreCard({ score }: Props) {
+  const barsRef = useRef<HTMLDivElement>(null)
+  const [animated, setAnimated] = useState(false)
+  const [displayScores, setDisplayScores] = useState(score.dimensions.map(() => 0))
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+
+  useEffect(() => {
+    const el = barsRef.current
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          observer.disconnect()
+          setAnimated(true)
+
+          const targets = score.dimensions.map((d) => d.score)
+          const duration = 800
+          const start = performance.now()
+
+          function tick(now: number) {
+            const progress = Math.min((now - start) / duration, 1)
+            const eased = 1 - Math.pow(1 - progress, 3)
+            setDisplayScores(targets.map((t) => Math.round(eased * t * 10) / 10))
+            if (progress < 1) requestAnimationFrame(tick)
+          }
+
+          requestAnimationFrame(tick)
+        }
+      },
+      { threshold: 0.2 },
+    )
+
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [score.dimensions])
+
   const radarPoints = score.dimensions
     .map((d, i) => pt(ANGLES[i], (d.score / 5) * MAX_R).join(','))
     .join(' ')
@@ -115,6 +154,13 @@ export default function RESScoreCard({ score }: Props) {
                 textAnchor={anchor(i)}
                 dominantBaseline="middle"
                 className={styles.axisLabel}
+                style={{
+                  fill: hoveredIndex === i ? 'var(--color-red)' : undefined,
+                  cursor: 'pointer',
+                  transition: 'fill 0.15s ease',
+                }}
+                onMouseEnter={() => setHoveredIndex(i)}
+                onMouseLeave={() => setHoveredIndex(null)}
               >
                 <tspan x={lx} dy="-0.65em">{line1}</tspan>
                 <tspan x={lx} dy="1.3em">{line2}</tspan>
@@ -131,17 +177,32 @@ export default function RESScoreCard({ score }: Props) {
       </div>
 
       {/* ── Right: bars ── */}
-      <div className={styles.bars}>
+      <div className={styles.bars} ref={barsRef}>
         {score.dimensions.map((dim, i) => (
-          <div key={i} className={styles.barRow}>
+          <div
+            key={i}
+            className={styles.barRow}
+            onMouseEnter={() => setHoveredIndex(i)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
             <div className={styles.barHeader}>
-              <span className={styles.barName}>{DIMENSION_NAMES[i]}</span>
-              <span className={styles.barScore}>{dim.score}&thinsp;/&thinsp;5</span>
+              <span
+                className={styles.barName}
+                style={{
+                  color: hoveredIndex === i ? 'var(--color-red)' : undefined,
+                  transition: 'color 0.15s ease',
+                }}
+              >{DIMENSION_NAMES[i]}</span>
+              <span className={styles.barScore}>{displayScores[i].toFixed(1)}&thinsp;/&thinsp;5</span>
             </div>
             <div className={styles.barTrack}>
               <div
                 className={styles.barFill}
-                style={{ width: `${(dim.score / 5) * 100}%`, background: barColor(dim.score) }}
+                style={{
+                  width: animated ? `${(dim.score / 5) * 100}%` : '0%',
+                  background: barColor(dim.score),
+                  transition: `width 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${i * 90}ms`,
+                }}
               />
             </div>
             <p className={styles.barSummary}>{dim.summary}</p>

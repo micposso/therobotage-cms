@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Nav from '@/components/Nav/Nav'
 import PageHero from '@/components/PageHero/PageHero'
 import Certification from '@/components/Certification/Certification'
@@ -34,6 +35,17 @@ export default function LearnPage() {
       </div>
       <Certification />
       <AboutInstructor />
+
+      <section style={{ padding: 'var(--space-16) 0', borderTop: '1px solid var(--color-border)' }}>
+        <div className="container-fluid">
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-xs)', fontWeight: 300, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--color-text-muted)', marginBottom: 'var(--space-4)' }}>Also in Learn</p>
+          <Link href="/robotics-literacy" style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-3)', fontFamily: 'var(--font-display)', fontSize: 'clamp(1.125rem, 2vw, 1.5rem)', fontWeight: 400, color: 'var(--color-text)', textDecoration: 'none' }}>
+            Robotics Literacy — the skill side of working with robots
+            <span style={{ fontSize: '1.25em', lineHeight: 1 }}>→</span>
+          </Link>
+        </div>
+      </section>
+
       <Footer />
     </>
   )

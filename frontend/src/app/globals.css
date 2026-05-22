@@ -35,6 +35,7 @@
   --res-bar-3:         #928f89;
   --res-bar-4:         #c8652e;
   --res-bar-5:         #e85d24;
+  --color-red: #dc2626;
   --color-border-on-dark: rgba(255, 255, 255, 0.06);
   --color-ticker-on-dark: rgba(245, 240, 232, 0.18);
   --color-modal-backdrop: rgba(13, 13, 13, 0.72);
@@ -45,7 +46,7 @@
 
   --text-xs: 0.75rem;
   --text-sm: 0.9375rem;
-  --text-base: 1rem;
+  --text-base: 1.0625rem;
   --text-md: 1.375rem;
   --text-lg: 2.625rem;
   --text-xl: 7rem;
@@ -123,7 +124,7 @@ body {
 body {
   font-family: var(--font-body);
   font-weight: 300;
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   line-height: 1.7;
   position: relative;
 }

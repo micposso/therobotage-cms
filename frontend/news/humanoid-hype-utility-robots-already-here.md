@@ -4,8 +4,8 @@ title: "The eight-hour humanoid shift is impressive. The robots already doing th
 category: OPINION
 date: May 20, 2026
 excerpt: Autonomous utility robots already operate in 350+ warehouses and millions of homes. Humanoids get the headlines — purpose-built machines get the work done.
-headerImage: https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80
-thumbnailImage: https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80
+headerImage: /images/news/Helix-02.jpeg
+thumbnailImage: /images/news/Helix-02.jpeg
 author: The Robot Age Editorial Team
 ---
 
@@ -16,6 +16,8 @@ Figure AI livestreamed its Helix 02 humanoid robots working an eight-hour wareho
 The Helix 02 livestream showed genuine capability. The robots ran three neural networks simultaneously — one for language and planning, one for vision-to-motion, one for real-time balance — all on onboard compute with no cloud connection. When a unit detected an issue, it walked itself to a maintenance area and called a replacement from the fleet. No human in the loop. By the time the stream ended, the robots had processed over 33,000 packages across more than 60 hours.
 
 That is a technical milestone. It is not, however, a warehouse milestone. Autonomous mobile robots have been running full shifts in warehouses for years — and they do not need legs to do it.
+
+![Helix 02 from Figure Rototics](/images/news/figure_03.png)
 
 ---
 

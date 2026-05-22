@@ -11,12 +11,11 @@ import styles from './HeroHomepage.module.css'
 const LOCKUP_LINES = ['THE', 'ROBOT', 'AGE']
 
 const NAV_LINKS = [
-  { label: 'Research',   href: '/research',   desc: 'Peer-reviewed robotics insights and industry reports.' },
-  { label: 'Learn',      href: '/learn',       desc: 'Courses and curricula built for non-engineers.' },
-  { label: 'Literacy',   href: '/robotics-literacy', desc: 'What robotic literacy means and why it matters.' },
-  { label: 'Connect',    href: '/connect',     desc: 'A community of robotics-curious professionals.' },
-  { label: 'Summit',     href: '/summit',      desc: 'Annual gathering of robotics leaders and practitioners.' },
-  { label: 'Enterprise', href: '/enterprise',  desc: 'Deployment readiness education for organizations.' },
+  { label: 'Research',      href: '/research',   desc: 'Peer-reviewed robotics insights and industry reports.' },
+  { label: 'Robots',        href: '/robots',     desc: 'Scored robot profiles evaluated through the RXD framework.' },
+  { label: 'RXD Framework', href: '/rxd',        desc: 'A six-dimension model for evaluating robot interactions.' },
+  { label: 'Learn',         href: '/learn',      desc: 'Courses and curricula built for non-engineers.' },
+  { label: 'Enterprise',    href: '/enterprise', desc: 'Deployment readiness education for organizations.' },
 ]
 
 const eyebrowText = 'For design, product, and marketing professionals.'

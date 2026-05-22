@@ -7,12 +7,11 @@ import { useRouter } from 'next/navigation'
 import styles from './Nav.module.css'
 
 const NAV_LINKS = [
-  { label: 'RESEARCH',   href: '/research' },
-  { label: 'LEARN',      href: '/learn' },
-  { label: 'LITERACY',   href: '/robotics-literacy' },
-  { label: 'CONNECT',    href: '/connect' },
-  { label: 'SUMMIT',     href: '/summit' },
-  { label: 'ENTERPRISE', href: '/enterprise' },
+  { label: 'RESEARCH',      href: '/research' },
+  { label: 'ROBOTS',        href: '/robots' },
+  { label: 'RXD FRAMEWORK', href: '/rxd' },
+  { label: 'LEARN',         href: '/learn' },
+  { label: 'ENTERPRISE',    href: '/enterprise' },
 ]
 
 export default function Nav({ pinned = false }) {

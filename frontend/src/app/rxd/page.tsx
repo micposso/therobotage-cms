@@ -5,6 +5,7 @@ import PageHero from '@/components/PageHero/PageHero'
 import Footer from '@/components/Footer/Footer'
 import RxdDimensionsGrid from './RxdDimensionsGrid'
 import { getAllRobotProfiles } from '@/lib/robot-profiles'
+import { getScoreBySlug } from '@/lib/scores'
 import styles from './page.module.css'
 
 export const metadata = {
@@ -27,14 +28,14 @@ export const metadata = {
 }
 
 export default function RxdPage() {
-  const robots = getAllRobotProfiles()
+  const robots = getAllRobotProfiles().map((r) => ({ ...r, score: getScoreBySlug(r.slug) }))
 
   return (
     <>
       <Nav pinned />
 
       <PageHero
-        eyebrow="Robot Experience Design"
+        eyebrow="Robot Experience Design (RXD)"
         title="Robots are entering homes, classrooms, and workplaces."
         subtitle="A six-dimension model for evaluating robot interactions the way users actually experience them — built for practitioners, not engineers."
         imageSrc="/images/hand.png"
@@ -82,6 +83,19 @@ export default function RxdPage() {
                     />
                   </div>
                   <h3 className={styles.robotCardTitle}>{robot.title}</h3>
+                  {robot.manufacturer && (
+                    <p className={styles.robotCardManufacturer}>{robot.manufacturer}</p>
+                  )}
+                  {robot.score ? (
+                    <div className={styles.robotCardScore}>
+                      <span className={styles.robotCardScoreValue}>
+                        {robot.score.compositeScore.toFixed(1)}<span className={styles.robotCardScoreMax}>&thinsp;/&thinsp;5</span>
+                      </span>
+                      <span className={styles.robotCardScoreTier}>{robot.score.tier}</span>
+                    </div>
+                  ) : (
+                    <p className={styles.robotCardManufacturer}>Score pending</p>
+                  )}
                 </div>
               </Link>
             ))}
