@@ -89,6 +89,21 @@ export default async function CredentialPage({ params }: { params: Promise<{ cre
             <p className={styles.overviewText}>{cert.overview}</p>
           </section>
 
+          {/* ── Framework ───────────────────────────────────────────────────── */}
+          <section className={styles.section}>
+            <p className={styles.eyebrow}>Built on</p>
+            <p className={styles.frameworkName}>Robot Experience Design (RXD)</p>
+            <p className={styles.frameworkText}>
+              Every module, deliverable, and capstone in the REP programme maps directly to the six dimensions of the RXD framework — the original research framework developed by The Robot Age for evaluating how humans experience robots in real environments.
+            </p>
+            <div className={styles.pills}>
+              {['Signal Clarity', 'Spatial Legibility', 'Perceived Presence', 'Failure Transparency', 'Interaction Fit', 'Recovery Design'].map((dim) => (
+                <span key={dim} className={styles.pill}>{dim}</span>
+              ))}
+            </div>
+            <a href="/rxd" className={styles.frameworkLink}>Read the RXD White Paper →</a>
+          </section>
+
           {/* ── Founding Cohort ─────────────────────────────────────────────── */}
           {cert.slug === 'rep' && (
             <FoundingCohort />
@@ -113,6 +128,9 @@ export default async function CredentialPage({ params }: { params: Promise<{ cre
                 </div>
               ))}
             </div>
+            <a href={`/learn/${credential}/curriculum`} className={styles.curriculumLink}>
+              See full week-by-week curriculum →
+            </a>
           </section>
 
           {/* ── Outcomes ────────────────────────────────────────────────────── */}
