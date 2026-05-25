@@ -1,0 +1,40 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-text);
+  cursor: pointer;
+  padding-bottom: 1px;
+  width: fit-content;
+}
+
+.label:hover { opacity: 0.7; }
+
+.uploading {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  color: #991b1b;
+  margin: 0;
+}

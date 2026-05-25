@@ -1,0 +1,128 @@
+.layout {
+  display: flex;
+  min-height: calc(100vh - var(--nav-height));
+}
+
+.main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: var(--space-8);
+  padding: var(--space-10) var(--space-8);
+  max-width: calc(100% - var(--sidebar-width));
+}
+
+.content {
+  max-width: var(--content-max);
+}
+
+.weekMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.weekLabel {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+
+.format {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-8) 0;
+}
+
+.section {
+  margin-bottom: var(--space-8);
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.outcomes {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  padding-left: var(--space-5);
+}
+
+.body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-text);
+  margin-bottom: var(--space-8);
+}
+
+.resources {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.resources li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+}
+
+.resources a {
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+.resourceType {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.coach {
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-4));
+  height: calc(100vh - var(--nav-height) - var(--space-8));
+}
+
+@media (max-width: 767px) {
+  .main {
+    grid-template-columns: 1fr;
+    padding: var(--space-6) var(--space-4);
+    max-width: 100%;
+  }
+  .coach { position: static; height: auto; }
+}

@@ -1,0 +1,119 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.dimension {
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dimLabel {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+}
+
+.dimDesc {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.scoreRow {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.scoreBtn {
+  width: 44px;
+  height: 44px;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.scoreBtnActive {
+  background: var(--color-text);
+  color: var(--color-surface);
+  border-color: var(--color-text);
+}
+
+.scoreBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.rationale {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-2) 0;
+  resize: vertical;
+  outline: none;
+  background: transparent;
+}
+
+.rationale:focus { border-color: var(--color-accent); }
+.rationale:disabled { color: var(--color-text-muted); cursor: not-allowed; }
+
+.summary {}
+.summaryLabel {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+}
+
+.error {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  color: #991b1b;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.saveBtn {
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--color-text);
+  background: none;
+  border: 1px solid var(--color-border);
+  padding: var(--space-3) var(--space-5);
+  cursor: pointer;
+}
+.saveBtn:hover { border-color: var(--color-text); }
+.saveBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.submitBtn {
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-surface);
+  background: var(--color-text);
+  border: none;
+  padding: var(--space-3) var(--space-6);
+  cursor: pointer;
+}
+.submitBtn:hover:not(:disabled) { opacity: 0.85; }
+.submitBtn:disabled { opacity: 0.4; cursor: not-allowed; }

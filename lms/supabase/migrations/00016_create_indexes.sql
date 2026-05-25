@@ -1,0 +1,12 @@
+create index idx_enrollments_user on public.enrollments(user_id);
+create index idx_enrollments_cohort on public.enrollments(cohort_id);
+create index idx_week_progress_enrollment on public.week_progress(enrollment_id);
+create index idx_submissions_enrollment on public.submissions(enrollment_id);
+create index idx_submissions_status on public.submissions(status);
+create index idx_submissions_due_date on public.submissions(due_date) where status = 'draft';
+create index idx_submission_files_submission on public.submission_files(submission_id);
+create index idx_coach_messages_conversation on public.coach_messages(conversation_id);
+create index idx_rag_chunks_course_week on public.rag_chunks(course_slug, week_number);
+create index idx_credentials_user on public.credentials(user_id);
+create index idx_robot_footage_enrollment on public.robot_footage(enrollment_id);
+create index idx_peer_reviews_reviewer on public.peer_reviews(reviewer_enrollment_id);

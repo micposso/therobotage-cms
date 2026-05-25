@@ -1,0 +1,88 @@
+.loading {
+  font-family: var(--font-display);
+  color: var(--color-text-muted);
+}
+
+.back {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin-bottom: var(--space-6);
+  display: block;
+}
+
+.back:hover { color: var(--color-text); }
+
+.page {
+  max-width: 720px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-8);
+}
+
+.student {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.badges {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.content {
+  margin-bottom: var(--space-8);
+  padding: var(--space-5);
+  background: var(--color-surface-2);
+}
+
+.contentLabel {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.contentBody {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.existingFeedback {
+  padding: var(--space-4);
+  border-left: 3px solid var(--color-border);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+}
+
+.feedbackLabel {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-2) 0;
+}

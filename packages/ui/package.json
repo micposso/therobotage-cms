@@ -1,0 +1,16 @@
+{
+  "name": "@therobotage/ui",
+  "version": "0.1.0",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./Nav": "./src/components/Nav/Nav.js",
+    "./Footer": "./src/components/Footer/Footer.js",
+    "./lib/certifications": "./src/lib/certifications.ts"
+  },
+  "peerDependencies": {
+    "framer-motion": ">=12",
+    "next": ">=16",
+    "react": ">=19"
+  }
+}

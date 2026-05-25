@@ -1,0 +1,22 @@
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.locked      { background: var(--color-surface-2); color: var(--color-text-muted); }
+.available   { background: var(--color-surface-2); color: var(--color-text); }
+.inprogress  { background: #e8f0fe; color: #1a56db; }
+.submitted   { background: #fef3c7; color: #92400e; }
+.revisionrequested { background: #fee2e2; color: #991b1b; }
+.complete    { background: #d1fae5; color: #065f46; }
+.draft       { background: var(--color-surface-2); color: var(--color-text-muted); }
+.approved    { background: #d1fae5; color: #065f46; }
+.passed      { background: #d1fae5; color: #065f46; }
+.late        { background: #fee2e2; color: #991b1b; }

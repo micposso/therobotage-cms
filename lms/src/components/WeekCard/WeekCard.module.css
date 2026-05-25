@@ -1,0 +1,72 @@
+.card {
+  padding: var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.card.locked {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.weekLabel {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin: 0 0 var(--space-1) 0;
+}
+
+.title a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.title a:hover {
+  color: var(--color-accent);
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.meta {
+  display: flex;
+  gap: var(--space-3);
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.deliverable {
+  margin-top: var(--space-3);
+}
+
+.submitLink {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.submitLink:hover {
+  text-decoration: underline;
+}

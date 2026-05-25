@@ -1,0 +1,161 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  z-index: 100;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 var(--container-gutter);
+  gap: var(--space-8);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  text-decoration: none;
+  flex-shrink: 0;
+  margin-right: auto;
+}
+
+@keyframes robotPulse {
+  0%   { color: var(--color-bg-sand-dark); }
+  50%  { color: var(--color-accent); }
+  100% { color: var(--color-bg-sand-dark); }
+}
+
+.logoRobot {
+  animation: robotPulse 4s ease-in-out infinite;
+}
+
+.cohort {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.progress {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+/* ─── User avatar ─────────────────────────────────────────────────────────────── */
+.userWrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-pill);
+  background: var(--color-border-strong);
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-xs);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--ease-default);
+}
+
+.avatar:hover {
+  background: var(--color-border-strong);
+}
+
+/* ─── Dropdown ────────────────────────────────────────────────────────────────── */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + var(--space-2));
+  right: 0;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.dropdownLink {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+  padding: var(--space-3) var(--space-4);
+  display: block;
+  transition: background var(--ease-default);
+}
+
+.dropdownLink:hover {
+  background: var(--color-locked);
+}
+
+.dropdownDivider {
+  border-top: 1px solid var(--color-border);
+  margin: var(--space-1) 0;
+}
+
+.dropdownSignOut {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  padding: var(--space-3) var(--space-4);
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: color var(--ease-default);
+  width: 100%;
+}
+
+.dropdownSignOut:hover {
+  color: var(--color-text);
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .cohort {
+    display: none;
+  }
+
+  .progress {
+    display: none;
+  }
+
+  .inner {
+    gap: var(--space-4);
+  }
+}
