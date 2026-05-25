@@ -1,9 +1,52 @@
 'use client'
 
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import styles from './page.module.css'
 
+type Mode = 'signin' | 'signup'
+
 export default function SignInForm() {
+  const router = useRouter()
+  const [mode, setMode] = useState<Mode>('signin')
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState<string | null>(null)
+  const [loading, setLoading] = useState(false)
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    setError(null)
+    setLoading(true)
+
+    const supabase = createClient()
+
+    if (mode === 'signin') {
+      const { error } = await supabase.auth.signInWithPassword({ email, password })
+      if (error) {
+        setError(error.message)
+        setLoading(false)
+        return
+      }
+    } else {
+      const { error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: { data: { full_name: name } },
+      })
+      if (error) {
+        setError(error.message)
+        setLoading(false)
+        return
+      }
+    }
+
+    router.push('/dashboard')
+    router.refresh()
+  }
+
   async function handleGoogleSignIn() {
     const supabase = createClient()
     await supabase.auth.signInWithOAuth({
@@ -15,8 +58,62 @@ export default function SignInForm() {
     })
   }
 
+  function toggleMode() {
+    setMode(mode === 'signin' ? 'signup' : 'signin')
+    setError(null)
+  }
+
   return (
-    <div className={styles.form}>
+    <form className={styles.form} onSubmit={handleSubmit} noValidate>
+      {mode === 'signup' && (
+        <>
+          <label className={styles.label} htmlFor="name">Full name</label>
+          <input
+            id="name"
+            className={styles.input}
+            type="text"
+            autoComplete="name"
+            required
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </>
+      )}
+
+      <label className={styles.label} htmlFor="email">Email</label>
+      <input
+        id="email"
+        className={styles.input}
+        type="email"
+        autoComplete="email"
+        required
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+
+      <label className={styles.label} htmlFor="password">Password</label>
+      <input
+        id="password"
+        className={styles.input}
+        type="password"
+        autoComplete={mode === 'signin' ? 'current-password' : 'new-password'}
+        required
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+
+      {error && <p className={styles.error}>{error}</p>}
+
+      <button className={styles.submit} type="submit" disabled={loading}>
+        {loading ? 'Please wait...' : mode === 'signin' ? 'Sign in' : 'Create account'}
+      </button>
+
+      {mode === 'signin' && (
+        <a className={styles.forgot} href="/forgot-password">Forgot password?</a>
+      )}
+
+      <div className={styles.divider}>or</div>
+
       <button className={styles.googleBtn} onClick={handleGoogleSignIn} type="button">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
           <path d="M17.64 9.2a10.34 10.34 0 0 0-.164-1.84H9v3.48h4.844a4.14 4.14 0 0 1-1.796 2.716v2.258h2.908c1.702-1.567 2.684-3.875 2.684-6.614Z" fill="#4285F4"/>
@@ -26,6 +123,13 @@ export default function SignInForm() {
         </svg>
         Continue with Google
       </button>
-    </div>
+
+      <p className={styles.toggle}>
+        {mode === 'signin' ? "Don't have an account? " : 'Already have an account? '}
+        <button type="button" className={styles.toggleBtn} onClick={toggleMode}>
+          {mode === 'signin' ? 'Create one' : 'Sign in'}
+        </button>
+      </p>
+    </form>
   )
 }

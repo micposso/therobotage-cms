@@ -1,7 +1,9 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { createClient } from '@/lib/supabase/client'
 import styles from './LMSNav.module.css'
 
 type LMSNavProps = {
@@ -17,7 +19,15 @@ export default function LMSNav({
   totalWeeks = 6,
   userName = '',
 }: LMSNavProps) {
+  const router = useRouter()
   const [menuOpen, setMenuOpen] = useState(false)
+
+  async function handleSignOut() {
+    const supabase = createClient()
+    await supabase.auth.signOut()
+    router.push('/signin')
+    router.refresh()
+  }
 
   const initials = userName
     .split(' ')
@@ -66,7 +76,7 @@ export default function LMSNav({
                   Credentials
                 </Link>
                 <div className={styles.dropdownDivider} />
-                <button className={styles.dropdownSignOut}>
+                <button className={styles.dropdownSignOut} onClick={handleSignOut}>
                   Sign out
                 </button>
               </div>
