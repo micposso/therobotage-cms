@@ -12,7 +12,7 @@ values (
 
 -- ─── Seed: Founding Cohort ─────────────────────────────────
 -- Adjust start dates as needed for local testing.
-insert into public.cohorts (id, course_id, name, start_date, week_start_dates, status, max_seats, is_founding)
+insert into public.cohorts (id, course_id, name, start_date, week_start_dates, status, max_seats)
 values (
   'b1000000-0000-0000-0000-000000000001',
   'a1000000-0000-0000-0000-000000000001',
@@ -27,8 +27,7 @@ values (
     '2025-02-10'::date
   ],
   'active',
-  10,
-  true
+  10
 ) on conflict do nothing;
 
 
