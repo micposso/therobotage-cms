@@ -25,7 +25,6 @@ RUN cd lms && npm run build
 
 # ── Stage 3: runtime ───────────────────────────────────────────────────────────
 FROM node:22-alpine AS runner
-WORKDIR /app
 
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
@@ -35,12 +34,16 @@ ENV HOSTNAME=0.0.0.0
 RUN addgroup --system --gid 1001 nodejs \
  && adduser  --system --uid 1001 nextjs
 
-# standalone output contains a self-contained server.js + minimal node_modules
-COPY --from=builder --chown=nextjs:nodejs /repo/lms/.next/standalone ./
-# static assets and public dir must sit next to server.js
-COPY --from=builder --chown=nextjs:nodejs /repo/lms/.next/static ./.next/static
-COPY --from=builder --chown=nextjs:nodejs /repo/lms/public ./public
+# In a monorepo, Next.js standalone nests the app under its workspace path:
+#   standalone/lms/server.js  (not standalone/server.js)
+# So we copy the full standalone tree and work from the nested lms/ dir.
+COPY --from=builder --chown=nextjs:nodejs /repo/lms/.next/standalone /app
 
+# Static assets and public must sit next to server.js (inside lms/)
+COPY --from=builder --chown=nextjs:nodejs /repo/lms/.next/static /app/lms/.next/static
+COPY --from=builder --chown=nextjs:nodejs /repo/lms/public /app/lms/public
+
+WORKDIR /app/lms
 USER nextjs
 EXPOSE 3000
 CMD ["node", "server.js"]
