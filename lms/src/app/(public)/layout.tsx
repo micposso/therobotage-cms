@@ -1,5 +1,5 @@
-import Nav from '@therobotage/ui/Nav'
-import Footer from '@therobotage/ui/Footer'
+import Nav from '@/components/Nav/Nav'
+import Footer from '@/components/Footer/Footer'
 
 const marketingUrl = process.env.NEXT_PUBLIC_MARKETING_URL ?? 'https://therobotage.com'
 

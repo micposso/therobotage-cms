@@ -13,7 +13,6 @@
     "@react-email/components": "^1.0.12",
     "@supabase/ssr": "^0.10.3",
     "@supabase/supabase-js": "^2.106.1",
-    "@therobotage/ui": "*",
     "bootstrap": "^5.3.8",
     "framer-motion": "^12.38.0",
     "next": "16.2.6",

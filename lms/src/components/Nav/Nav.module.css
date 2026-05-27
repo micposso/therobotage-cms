@@ -1,0 +1,300 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  opacity: 0;
+  pointer-events: none;
+  transition: background var(--ease-default), border-color var(--ease-default), opacity var(--ease-default);
+}
+
+.scrolled,
+.pinned {
+  background: var(--color-bg);
+  border-bottom-color: var(--color-border);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  text-decoration: none;
+  flex-shrink: 0;
+  margin-right: auto;
+}
+
+@keyframes robotPulse {
+  0%   { color: var(--color-bg-sand-dark); }
+  50%  { color: var(--color-accent); }
+  100% { color: var(--color-bg-sand-dark); }
+}
+
+.logoRobot {
+  animation: robotPulse 4s ease-in-out infinite;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  list-style: none;
+}
+
+.linksScrolled {
+  margin-left: auto;
+}
+
+.link {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  position: relative;
+  padding-bottom: var(--space-1);
+}
+
+.link::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: var(--color-text);
+  width: 0;
+  transition: width 300ms ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+/* ─── Optional CTA ───────────────────────────────────────────────────────────── */
+.cta {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+  padding-bottom: 2px;
+  border-bottom: 2.5px solid var(--color-text);
+  transition: color var(--ease-default), border-color var(--ease-default);
+  flex-shrink: 0;
+  margin-left: var(--space-6);
+}
+
+.cta:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* ─── Desktop search ──────────────────────────────────────────────────────────── */
+.searchWrap {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-left: var(--space-6);
+  overflow: hidden;
+}
+
+.searchForm {
+  overflow: hidden;
+}
+
+.searchInput {
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-border-strong);
+  outline: none;
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  color: var(--color-text);
+  padding: var(--space-1) var(--space-2) var(--space-1) 0;
+  width: 100%;
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.6;
+}
+
+.searchBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-2);
+  transition: color var(--ease-default);
+  flex-shrink: 0;
+}
+
+.searchBtn:hover,
+.searchBtnActive {
+  color: var(--color-text);
+}
+
+.linksHidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ─── Hamburger ───────────────────────────────────────────────────────────────── */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text);
+  padding: var(--space-2);
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+}
+
+/* ─── Mobile full-screen menu ─────────────────────────────────────────────────── */
+.mobileMenu {
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-10) var(--space-8) var(--space-12);
+  overflow-y: auto;
+}
+
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.mobileLink {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color var(--ease-default);
+}
+
+.mobileLink:hover {
+  color: var(--color-accent);
+}
+
+/* ─── Mobile-only logo ────────────────────────────────────────────────────────── */
+.logoMobile {
+  display: none;
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .nav {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    background: var(--color-bg);
+    border-bottom-color: var(--color-border);
+  }
+
+  .links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .searchWrap {
+    display: none;
+  }
+
+  .logoMobile {
+    display: block;
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+    text-decoration: none;
+    flex-shrink: 0;
+    margin-right: auto;
+  }
+}
+
+/* ─── Mobile search form ──────────────────────────────────────────────────────── */
+.mobileSearchForm {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  border-bottom: 1px solid var(--color-border-strong);
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-8);
+  width: 100%;
+  max-width: 320px;
+}
+
+.mobileSearchInput {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+  padding: var(--space-1) 0;
+}
+
+.mobileSearchInput::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.6;
+}
+
+.mobileSearchBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  padding: var(--space-1);
+  transition: color var(--ease-default);
+  flex-shrink: 0;
+}
+
+.mobileSearchBtn:hover {
+  color: var(--color-accent);
+}
