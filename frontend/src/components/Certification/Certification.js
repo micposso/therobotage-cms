@@ -141,7 +141,7 @@ export default function Certification() {
                 <span className={styles.badge}>REP — Robotics Experience Practitioner</span>
                 <h3 className={styles.cardName}>Practitioner Track</h3>
                 <p className={styles.cardDescription}>
-                  A four-week hybrid program covering the human side of robotics — how robots perceive and act, where human-robot interaction breaks down, how to design around failure, and how to evaluate a real deployment with confidence. Culminates in a Robot Readiness Audit and your REP credential.
+                  A six-week hybrid programme covering the human side of robotics — how robots signal intent, where human-robot interaction breaks down, how to design around failure, and how to evaluate a real deployment with confidence. Culminates in a Robot Readiness Audit and your REP credential.
                 </p>
               </div>
 
@@ -149,21 +149,21 @@ export default function Certification() {
               <div className={styles.specsGrid} ref={specsRef}>
                 <div className={styles.specItem}>
                   <span className={styles.specValue}>
-                    <CountUp target={4} suffix=" Weeks" isActive={specsInView} />
+                    <CountUp target={6} suffix=" Weeks" isActive={specsInView} />
                   </span>
                   <span className={styles.specLabel}>Duration</span>
                 </div>
                 <div className={styles.specItem}>
                   <span className={styles.specValue}>
-                    <CountUp target={12} suffix=" Hours" isActive={specsInView} />
+                    <CountUp target={15} suffix=" Hours" isActive={specsInView} />
                   </span>
                   <span className={styles.specLabel}>Total learning</span>
                 </div>
                 <div className={styles.specItem}>
                   <span className={styles.specValue}>
-                    <CountUp target={2} suffix=" Live" isActive={specsInView} />
+                    <CountUp target={1} suffix=" Live" isActive={specsInView} />
                   </span>
-                  <span className={styles.specLabel}>Group sessions</span>
+                  <span className={styles.specLabel}>Zoom kick-off</span>
                 </div>
               </div>
 
