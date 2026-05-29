@@ -70,7 +70,7 @@ export default function Nav({ pinned = false, baseUrl = '', cta = null }) {
 
             {/* Logo — always visible on mobile */}
             <a href={`${baseUrl}/`} className={styles.logoMobile}>
-              The <span className={styles.logoRobot}>Robot</span> Age
+              The<span className={styles.logoRobot}>Robot</span>Age
             </a>
 
             {/* Logo — visible on scroll (desktop) */}
@@ -84,7 +84,7 @@ export default function Nav({ pinned = false, baseUrl = '', cta = null }) {
                   exit={{ opacity: 0, x: -12 }}
                   transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  The <span className={styles.logoRobot}>Robot</span> Age
+                  The<span className={styles.logoRobot}>Robot</span>Age
                 </motion.a>
               )}
             </AnimatePresence>

@@ -36,7 +36,7 @@ const SOCIAL_LINKS = [
   },
   {
     label: 'Instagram',
-    href: '#',
+    href: 'https://www.instagram.com/roboticsliteracy/',
     icon: (
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
         <rect x="1" y="1" width="12" height="12" rx="3.5" stroke="currentColor" strokeWidth="1.3"/>
@@ -72,6 +72,7 @@ export default function Footer({ baseUrl = '' }) {
               {NAV_LINKS.map(({ label, href }) => (
                 <a key={label} href={`${baseUrl}${href}`} className={styles.navLink}>{label}</a>
               ))}
+              <a href="https://learn.therobotage.com" className={styles.navLink}>Sign in</a>
             </nav>
           </div>
 
