@@ -45,6 +45,45 @@ export function emailHtml(content: string): string {
 </html>`
 }
 
+export function workshopWaitlistHtml(firstName: string): string {
+  return emailHtml(`
+    <h1 style="font-family:Arial,sans-serif;font-weight:400;font-size:24px;letter-spacing:-0.02em;line-height:1.15;color:#0D0D0D;margin:0 0 20px;">
+      You're on the list, ${firstName}.
+    </h1>
+
+    <p style="font-family:Georgia,serif;font-size:15px;line-height:1.75;color:#2A2A28;margin:0 0 16px;">
+      The RXD Free Workshop is currently full — but we've added you to the waitlist.
+    </p>
+
+    <p style="font-family:Georgia,serif;font-size:15px;line-height:1.75;color:#2A2A28;margin:0 0 32px;">
+      If a spot opens up, we'll reach out to you directly with everything you need to join. In the meantime, explore the RXD framework to get a head start on the vocabulary and concepts we'll cover.
+    </p>
+
+    <table cellpadding="0" cellspacing="0" style="margin:0 0 40px;">
+      <tr>
+        <td style="background:#9b5152;">
+          <a href="https://therobotage.com/rxd"
+             style="display:inline-block;padding:14px 28px;font-family:Arial,sans-serif;font-size:12px;font-weight:500;letter-spacing:0.08em;color:#ffffff;text-decoration:none;">
+            Explore the RXD framework →
+          </a>
+        </td>
+      </tr>
+    </table>
+
+    <hr style="border:none;border-top:1px solid #e0e0e0;margin:0 0 32px;" />
+
+    <p style="font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:0.15em;color:#9b5152;margin:0 0 14px;">
+      About the workshop
+    </p>
+    <p style="font-family:Georgia,serif;font-size:15px;line-height:1.75;color:#2A2A28;margin:0 0 16px;">
+      The workshop is a live 45-minute session designed for non-engineers — Designers, Product Managers, UX Designers, Strategists, and Project Managers who work in environments where robots are already deployed.
+    </p>
+    <p style="font-family:Georgia,serif;font-size:15px;line-height:1.75;color:#2A2A28;margin:0;">
+      You'll leave with a clear understanding of the RXD framework, hands-on practice scoring a real robot case, and vocabulary to communicate confidently about robot experience to any stakeholder.
+    </p>
+  `)
+}
+
 export function waitlistConfirmationHtml(): string {
   return emailHtml(`
     <h1 style="font-family:Arial,sans-serif;font-weight:400;font-size:24px;letter-spacing:-0.02em;line-height:1.15;color:#0D0D0D;margin:0 0 20px;">

@@ -5,18 +5,18 @@ import WorkshopForm from './WorkshopForm'
 import styles from './workshop.module.css'
 
 export const metadata = {
-  title: 'Product & UX Design for the Robot Age — Free Workshop',
+  title: "Product & UX Design for a World With Robots — Free Workshop",
   description:
-    'You don’t need a $50k humanoid to start designing robot experiences. Three live Zoom sessions covering robotics basics, the RXD framework, and a scored case study on Reachy Mini.',
+    "You don’t need a $50k humanoid to start designing robot experiences. Three live Zoom sessions covering robotics basics, the RXD framework, and a scored case study on Reachy Mini.",
   openGraph: {
-    title: 'Product & UX Design for the Robot Age — Free Workshop',
+    title: "Product & UX Design for a World With Robots — Free Workshop",
     description:
-      'Three live Zoom sessions covering robotics basics, the RXD framework, and a scored case study on Reachy Mini.',
-    images: [{ url: '/images/hand.png', alt: 'The Robot Age' }],
+      "Three live Zoom sessions covering robotics basics, the RXD framework, and a scored case study on Reachy Mini.",
+    images: [{ url: "/images/hand.png", alt: "The Robot Age" }],
   },
   twitter: {
-    card: 'summary_large_image',
-    images: ['/images/hand.png'],
+    card: "summary_large_image",
+    images: ["/images/hand.png"],
   },
 }
 
@@ -27,7 +27,7 @@ export default function RxdFreeWorkshopPage() {
 
       <PageHero
         eyebrow="Free Workshop"
-        title="Product & UX Design for the Robot Age"
+        title="Product & UX Design for a World With Robots"
         subtitle="You don’t need a $50k humanoid to start designing robot experiences. You need the right lens. Three live Zoom sessions. Robotics basics, the RXD framework in practice, and a scored case study on Reachy Mini — the expressive desktop robot that went viral after CES. Everything you need to design and evaluate human-robot experiences with confidence."
         imageSrc="/images/hand.png"
       />

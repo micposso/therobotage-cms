@@ -4,7 +4,7 @@ import { useActionState } from 'react'
 import { sendWorkshopEmail } from '@/app/actions/sendWorkshopEmail'
 import styles from './workshop.module.css'
 
-const initialState = { success: false, error: undefined as string | undefined }
+const initialState = { success: false, waitlisted: false, error: undefined as string | undefined }
 
 const PROFESSIONS = [
   'Student',
@@ -32,6 +32,17 @@ export default function WorkshopForm() {
   const [state, action, pending] = useActionState(sendWorkshopEmail, initialState)
 
   if (state.success) {
+    if (state.waitlisted) {
+      return (
+        <div className={styles.success}>
+          <p className={styles.successEyebrow}>You&rsquo;re on the waitlist</p>
+          <p className={styles.successHeading}>This free workshop is full.</p>
+          <p className={styles.successText}>
+            We&rsquo;ve added you to the waitlist. If a spot opens up, we&rsquo;ll reach out to you directly. Check your inbox for a confirmation — and your spam folder if you don&rsquo;t see it within a few minutes.
+          </p>
+        </div>
+      )
+    }
     return (
       <div className={styles.success}>
         <p className={styles.successEyebrow}>You&rsquo;re registered</p>
