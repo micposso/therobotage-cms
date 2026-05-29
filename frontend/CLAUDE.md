@@ -9,6 +9,10 @@ All colors, spacing, and typography must reference CSS custom properties defined
 in `src/app/globals.css` via `var(--token-name)`. Never hardcode hex values,
 raw pixel/rem values, or font-family strings in component CSS or inline styles.
 
+## String literals
+
+Always use straight quotes (`"` or `'`) in `.ts` and `.tsx` files. Curly/smart quotes (`'`, `'`, `"`, `"`) inside JS string literals break the Turbopack parser. If a string contains an apostrophe, wrap it in double quotes: `"don't"`. Curly quotes are only acceptable inside JSX text content as HTML entities (`&rsquo;`, `&ldquo;`, etc.).
+
 ## References
 
 Before any UI or copy work, read:
