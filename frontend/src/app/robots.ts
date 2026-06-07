@@ -1,6 +1,13 @@
 import type { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
+  // Staging (SITE_NOINDEX=true): block every crawler from the entire site.
+  if (process.env.SITE_NOINDEX === "true") {
+    return {
+      rules: [{ userAgent: "*", disallow: "/" }],
+    }
+  }
+
   return {
     rules: [
       {
