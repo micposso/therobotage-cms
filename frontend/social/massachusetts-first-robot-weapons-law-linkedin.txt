@@ -1,0 +1,9 @@
+Massachusetts just voted 155-1 to ban weaponized robots. It's the first time a U.S. state has put a hard legal line around what robots are allowed to do.
+
+The bill bans mounting weapons on robots and drones, and bans using a robot to threaten, harass, or physically restrain a person. It also forces police to get a warrant before sending a robot onto private property or using one to track someone. The striking part is who's backing it: Boston Dynamics, MassRobotics, and the ACLU all lined up behind the same bill.
+
+The provisions matter, but the precedent matters more. There is now a vetted, finished piece of robot legislation sitting in the public record — and 49 other states can copy it. For anyone who designs, buys, or deploys robots, the question for the rest of the country isn't whether to regulate. It's how fast.
+
+Read the full piece on The Robot Age: https://therobotage.com/news/massachusetts-first-robot-weapons-law
+
+#Robotics #AI #RobotLaw #HRI #PublicPolicy #ProductDesign
