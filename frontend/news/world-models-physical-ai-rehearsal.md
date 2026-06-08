@@ -4,8 +4,8 @@ title: "World models are robotics' new rehearsal space."
 category: RESEARCH
 date: June 8, 2026
 excerpt: World models are turning physical AI from demo capability into rehearsed behavior. The deployment test is still human legibility.
-headerImage: /images/news/figure_03.png
-thumbnailImage: /images/news/figure_03.png
+headerImage: /images/news/world-models-physical-ai-rehearsal-header.png
+thumbnailImage: /images/news/world-models-physical-ai-rehearsal-thumb.png
 author: The Robot Age Editorial Team
 ---
 
