@@ -36,7 +36,7 @@
   --pad:64px;            /* slide inner padding */
 }
 
-*{box-sizing:border-box; margin:0; padding:0}
+*{box-sizing:border-box; margin:0; padding:0}.
 html,body{background:#bbb}
 
 /* each slide is a fixed 1080x1080 square */
@@ -54,12 +54,21 @@ html,body{background:#bbb}
 /* shared bits */
 .kicker{font-family:var(--display); font-weight:700; font-size:15px; letter-spacing:.22em; text-transform:uppercase; color:var(--muted)}
 .wordmark{font-family:var(--display); font-weight:700; font-size:20px; color:var(--ink); letter-spacing:-.01em}
+.wordmark img{display:block; height:64px; width:auto}
 .badge{font-family:var(--display); font-weight:700; font-size:14px; letter-spacing:.14em; color:var(--white); background:var(--red); padding:11px 18px; text-transform:uppercase}
 .footer{position:absolute; left:var(--pad); bottom:48px; font-family:var(--display); font-weight:700; font-size:16px; color:var(--muted)}
 .topbar{display:flex; justify-content:space-between; align-items:center}
+.topbar.grouped{justify-content:flex-start; gap:22px}
+
+/* persistent co-brand mark, top-right of every slide */
+.brandmark{position:absolute; top:var(--pad); right:var(--pad); display:flex; align-items:center; gap:14px; z-index:5}
+.brandmark .am{height:36px; display:flex; align-items:center}
+.brandmark .am img{display:block; height:36px; width:auto}
+.brandmark .rm{width:50px; height:50px; border-radius:50%; overflow:hidden; flex:0 0 auto; background:var(--ink) url("reachy.png") center/cover no-repeat; background-position-x:-15px}
+.brandmark.light .am img{filter:invert(1) brightness(1.7)}
 
 /* ---------- SLIDE 1 — COVER ---------- */
-.cover h1{font-family:var(--display); font-weight:700; font-size:78px; line-height:1.02; letter-spacing:-.02em; margin-top:150px}
+.cover h1{font-family:var(--display); font-weight:400; font-size:70px; line-height:1.02; letter-spacing:-.02em; margin-top:150px}
 .cover h1 .b{color:var(--red); display:block}
 .cover .sub{font-family:var(--body); font-weight:400; font-size:29px; line-height:1.4; color:var(--muted); max-width:560px; margin-top:40px}
 .localpill{display:inline-block; font-family:var(--display); font-weight:700; font-size:19px; letter-spacing:.12em; color:var(--on-sand); background:var(--green); padding:16px 26px; margin-top:54px; text-transform:uppercase}
@@ -68,23 +77,12 @@ html,body{background:#bbb}
 .ondevice{font-family:var(--display); font-weight:700; font-size:15px; letter-spacing:.2em; color:var(--muted); margin-top:22px; text-transform:uppercase}
 
 /* cover art, right side */
-.art{position:absolute; right:var(--pad); top:170px; width:330px}
-.agentmail-logo{background:var(--ink); color:var(--bg); display:flex; align-items:center; gap:14px; padding:20px 24px; font-family:var(--display); font-weight:700; font-size:24px; width:max-content; margin-left:auto}
-.agentmail-logo .env{width:42px; height:30px; border:2px solid var(--bg); position:relative}
-.agentmail-logo .env::after{content:""; position:absolute; inset:0; border-top:2px solid var(--bg); transform-origin:top left; transform:rotate(11deg); width:100%}
-/* vector reachy */
-.reachy{position:relative; width:230px; margin:46px auto 0}
-.reachy .ant{position:absolute; width:3px; height:54px; background:var(--red); top:-44px}
-.reachy .ant.l{left:74px; transform:rotate(-16deg)}
-.reachy .ant.r{right:74px; transform:rotate(16deg)}
-.reachy .ant .tip{position:absolute; top:-9px; left:-7px; width:17px; height:17px; border-radius:50%; background:var(--red)}
-.reachy .head{background:var(--ink); height:150px; display:flex; align-items:center; justify-content:center}
-.reachy .face{background:var(--bg); width:150px; height:84px; display:flex; align-items:center; justify-content:center; gap:34px}
-.reachy .eye{width:26px; height:26px; border-radius:50%; background:var(--ink)}
-.reachy .neck{width:46px; height:40px; background:var(--muted); margin:0 auto}
-.reachy .base{width:0; height:0; border-left:40px solid transparent; border-right:40px solid transparent; border-top:96px solid var(--sand); margin:0 auto; transform:scaleY(1)}
-.reachy .base-wrap{width:230px; height:96px; background:var(--sand); clip-path:polygon(26% 0, 74% 0, 100% 100%, 0% 100%); margin:0 auto}
-.reachy .cap{font-family:var(--display); font-weight:700; font-size:16px; color:var(--muted); text-align:center; margin-top:18px}
+.art{position:absolute; right:var(--pad); top:170px; width:330px; display:flex; flex-direction:column; align-items:center}
+.agentmail-logo{width:100%}
+.agentmail-logo img{display:block; width:100%; height:auto}
+/* reachy photo in rounded circle */
+.reachy{width:300px; height:300px; border-radius:50%; overflow:hidden; margin-top:56px; box-shadow:0 24px 60px rgba(13,13,13,.18); background:var(--ink) url("reachy.png") center/cover no-repeat;     background-position-x: -92px;}
+.reachy-cap{font-family:var(--display); font-weight:700; font-size:16px; color:var(--muted); text-align:center; margin-top:18px; letter-spacing:.06em}
 
 /* ---------- content slides ---------- */
 .h-lg{font-family:var(--display); font-weight:700; font-size:60px; line-height:1.04; letter-spacing:-.02em; margin-top:60px}
@@ -138,40 +136,38 @@ html,body{background:#bbb}
 <!-- ============ SLIDE 1 — COVER ============ -->
 <section class="slide cover">
   <div class="topbar">
-    <div class="wordmark">TheRobotAge</div>
+    <div class="wordmark"><img src="tra-logo.png" alt="The Robot Age"></div>
     <div class="badge">Part I of III</div>
   </div>
 
   <div class="art">
-    <div class="agentmail-logo"><span class="env"></span>AgentMail</div>
-    <div class="reachy">
-      <div class="ant l"><span class="tip"></span></div>
-      <div class="ant r"><span class="tip"></span></div>
-      <div class="head"><div class="face"><span class="eye"></span><span class="eye"></span></div></div>
-      <div class="neck"></div>
-      <div class="base-wrap"></div>
-      <div class="cap">Reachy Mini</div>
-    </div>
+    <div class="agentmail-logo"><img src="agentmail-logo-landscape-light.svg" alt="AgentMail"></div>
+    <div class="reachy" role="img" aria-label="Reachy Mini"></div>
+    <div class="reachy-cap">Reachy Mini</div>
   </div>
 
   <h1>From robot to<span class="b">autonomous agent</span></h1>
   <p class="sub">How voice and AgentMail turn a desktop robot into an assistant that reads, decides, and acts.</p>
 
-  <div><span class="localpill">100% Local Models</span></div>
+  <div class="ondevice">Running 100% on-device</div>
   <div class="pills">
-    <span class="pill">Ollama</span>
-    <span class="pill">faster-whisper</span>
+    <span class="pill">Qwen3:4B</span>
     <span class="pill">Piper TTS</span>
+    <span class="pill">faster-whisper</span>
+    <span class="pill">webrtcvad</span>
     <span class="pill">openWakeWord</span>
     <span class="pill">AgentMail</span>
     <span class="pill">Reachy Mini SDK</span>
   </div>
-  <div class="ondevice">Running 100% on-device</div>
 </section>
 
 <!-- ============ SLIDE 2 — SETUP ============ -->
 <section class="slide">
-  <div class="topbar"><div class="wordmark">TheRobotAge</div></div>
+  <div class="topbar"><div class="wordmark"><img src="tra-logo.png" alt="The Robot Age"></div></div>
+  <div class="brandmark">
+    <div class="am"><img src="agentmail-logo-landscape-light.svg" alt="AgentMail"></div>
+    <div class="rm" role="img" aria-label="Reachy Mini"></div>
+  </div>
   <h2 class="h-lg">The instinct is to plug<br>robots into our tools.</h2>
   <p class="lede">A desktop robot lands on your desk. It has a voice, a camera, embodied intelligence running entirely on local models. The first thing everyone reaches for:</p>
   <div class="quote">&ldquo;Reachy, here&rsquo;s access to my inbox.&rdquo;</div>
@@ -179,7 +175,11 @@ html,body{background:#bbb}
 
 <!-- ============ SLIDE 3 — CONFLICT ============ -->
 <section class="slide">
-  <div class="topbar"><div class="wordmark">TheRobotAge</div></div>
+  <div class="topbar"><div class="wordmark"><img src="tra-logo.png" alt="The Robot Age"></div></div>
+  <div class="brandmark">
+    <div class="am"><img src="agentmail-logo-landscape-light.svg" alt="AgentMail"></div>
+    <div class="rm" role="img" aria-label="Reachy Mini"></div>
+  </div>
   <h2 class="h-lg red">But access is not identity.</h2>
   <p class="lede">A robot reading your inbox is a feature hiding inside your account. That creates problems before it creates value:</p>
   <div class="cards">
@@ -191,7 +191,11 @@ html,body{background:#bbb}
 
 <!-- ============ SLIDE 4 — RESOLUTION ============ -->
 <section class="slide">
-  <div class="topbar"><div class="wordmark">TheRobotAge</div></div>
+  <div class="topbar"><div class="wordmark"><img src="tra-logo.png" alt="The Robot Age"></div></div>
+  <div class="brandmark">
+    <div class="am"><img src="agentmail-logo-landscape-light.svg" alt="AgentMail"></div>
+    <div class="rm" role="img" aria-label="Reachy Mini"></div>
+  </div>
   <h2 class="h-lg">Give the robot its<br>own inbox.</h2>
   <p class="lede">AgentMail is email built for agents, not people. So Reachy gets its own address. Now it is not a feature inside your account. It is an entity that acts on its own behalf.</p>
   <div class="shift">
@@ -202,7 +206,11 @@ html,body{background:#bbb}
 
 <!-- ============ SLIDE 5 — PART II TEASER ============ -->
 <section class="slide dark">
-  <div class="topbar"><div class="kicker">Next</div><div class="badge">Part II of III</div></div>
+  <div class="topbar grouped"><div class="kicker">Next</div><div class="badge">Part II of III</div></div>
+  <div class="brandmark light">
+    <div class="am"><img src="agentmail-logo-landscape-light.svg" alt="AgentMail"></div>
+    <div class="rm" role="img" aria-label="Reachy Mini"></div>
+  </div>
   <h2 class="teaser-h">Now that it has<br>an inbox&hellip;</h2>
   <p class="teaser-q">can it decide what to do with it?</p>
   <p class="teaser-p">Part II: reading, judging, and knowing when to escalate. How an inbox becomes a decision.</p>
@@ -211,6 +219,10 @@ html,body{background:#bbb}
 
 <!-- ============ SLIDE 6 — CTA ============ -->
 <section class="slide">
+  <div class="brandmark light">
+    <div class="am"><img src="agentmail-logo-landscape-light.svg" alt="AgentMail"></div>
+    <div class="rm" role="img" aria-label="Reachy Mini"></div>
+  </div>
   <div class="cta-card">
     <h2>Design for a world<br>with robots.</h2>
     <p class="desc">A free 3-session workshop for designers, PMs, and strategists. Live and demo-led. No robotics background needed.</p>

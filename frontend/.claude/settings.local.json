@@ -48,7 +48,10 @@
       "Bash(ls frontend/node_modules/puppeteer)",
       "Read(//c/Program Files \\(x86\\)/Microsoft/Edge/Application/**)",
       "Read(//c/Program Files \\(x86\\)/Google/Chrome/Application/**)",
-      "Read(//c/Program Files/Google/Chrome/Application/**)"
+      "Read(//c/Program Files/Google/Chrome/Application/**)",
+      "Bash(find . -ipath \"*agentmail*\" -not -path \"*/node_modules/*\")",
+      "Bash(find . -type d -iname \"slides\" -not -path \"*/node_modules/*\")",
+      "Bash(find . -iname \"part1.html\" -not -path \"*/node_modules/*\")"
     ]
   }
 }
