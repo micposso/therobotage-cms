@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef, useState, useEffect } from 'react'
+import Image from 'next/image'
 import styles from './RESScoreCard.module.css'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -58,6 +59,15 @@ const DIMENSION_NAMES = [
   'Recovery Design',
 ]
 
+const DIMENSION_ICONS = [
+  '/images/signal-icon.png',
+  '/images/legibility-icon.png',
+  '/images/robot.png',
+  '/images/failure-icon.png',
+  '/images/hand.png',
+  '/images/recovery-icon.png',
+]
+
 function anchor(i: number): 'middle' | 'start' | 'end' {
   if (i === 0 || i === 3) return 'middle'
   if (i === 1 || i === 2) return 'start'
@@ -67,8 +77,9 @@ function anchor(i: number): 'middle' | 'start' | 'end' {
 // ─── Bar fill ─────────────────────────────────────────────────────────────────
 
 function barColor(score: number): string {
-  const s = Math.max(1, Math.min(5, Math.round(score)))
-  return `var(--res-bar-${s})`
+  if (score < 2.5) return 'var(--res-bar-3)'      // low — gray
+  if (score < 4) return 'var(--res-orange)'        // medium — orange
+  return 'var(--color-tertiary)'                   // mostly positive — green
 }
 
 // ─── Component ────────────────────────────────────────────────────────────────
@@ -195,15 +206,24 @@ export default function RESScoreCard({ score }: Props) {
               >{DIMENSION_NAMES[i]}</span>
               <span className={styles.barScore}>{displayScores[i].toFixed(1)}&thinsp;/&thinsp;5</span>
             </div>
-            <div className={styles.barTrack}>
-              <div
-                className={styles.barFill}
-                style={{
-                  width: animated ? `${(dim.score / 5) * 100}%` : '0%',
-                  background: barColor(dim.score),
-                  transition: `width 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${i * 90}ms`,
-                }}
+            <div className={styles.barBody}>
+              <Image
+                src={DIMENSION_ICONS[i]}
+                alt=""
+                width={24}
+                height={24}
+                className={styles.barIcon}
               />
+              <div className={styles.barTrack}>
+                <div
+                  className={styles.barFill}
+                  style={{
+                    width: animated ? `${(dim.score / 5) * 100}%` : '0%',
+                    background: barColor(dim.score),
+                    transition: `width 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${i * 90}ms`,
+                  }}
+                />
+              </div>
             </div>
             <p className={styles.barSummary}>{dim.summary}</p>
           </div>

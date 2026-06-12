@@ -130,13 +130,27 @@
   letter-spacing: -0.02em;
 }
 
+.barBody {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.barIcon {
+  flex-shrink: 0;
+  display: block;
+  width: var(--space-6);
+  height: var(--space-6);
+  object-fit: contain;
+}
+
 .barTrack {
-  width: 100%;
+  flex: 1;
   height: 10px;
   background: var(--color-border);
   border-radius: 3px;
   overflow: hidden;
-  margin-bottom: var(--space-3);
 }
 
 .barFill {

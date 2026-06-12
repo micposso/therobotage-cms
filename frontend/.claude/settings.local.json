@@ -51,7 +51,10 @@
       "Read(//c/Program Files/Google/Chrome/Application/**)",
       "Bash(find . -ipath \"*agentmail*\" -not -path \"*/node_modules/*\")",
       "Bash(find . -type d -iname \"slides\" -not -path \"*/node_modules/*\")",
-      "Bash(find . -iname \"part1.html\" -not -path \"*/node_modules/*\")"
+      "Bash(find . -iname \"part1.html\" -not -path \"*/node_modules/*\")",
+      "WebFetch(domain:www.unitree.com)",
+      "mcp__Claude_Preview__preview_start",
+      "PowerShell(taskkill /PID 37496 /F)"
     ]
   }
 }
