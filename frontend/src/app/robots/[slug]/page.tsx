@@ -70,7 +70,7 @@ export default async function RobotProfilePage({ params }: { params: Promise<{ s
         <div className="container-fluid">
           <div className={styles.overviewLayout}>
             <div>
-              <p className={styles.eyebrow}>Overview</p>
+              <p className={`${styles.eyebrow} ${styles.sectionEyebrow}`}>Overview</p>
               <p className={styles.overviewBody}>{robot.overview}</p>
             </div>
             {score && (
@@ -94,7 +94,7 @@ export default async function RobotProfilePage({ params }: { params: Promise<{ s
       {robot.gallery.length > 0 && (
         <section className={styles.gallerySection}>
           <div className="container-fluid">
-            <p className={styles.eyebrow}>Field Images</p>
+            <p className={`${styles.eyebrow} ${styles.sectionEyebrow}`}>Field Images</p>
             <RobotImageGallery items={robot.gallery} />
           </div>
         </section>
@@ -103,7 +103,7 @@ export default async function RobotProfilePage({ params }: { params: Promise<{ s
       {/* Deployment context */}
       <section className={styles.deploymentSection}>
         <div className="container-fluid">
-          <p className={styles.eyebrow}>Deployment Context</p>
+          <p className={`${styles.eyebrow} ${styles.sectionEyebrow}`}>Deployment Context</p>
           <div className={styles.deploymentGrid}>
             {robot.deploymentBoxes.map((box) => (
               <div key={box.label} className={styles.deploymentBox}>

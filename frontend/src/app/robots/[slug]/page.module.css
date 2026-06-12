@@ -9,6 +9,12 @@
   margin-bottom: var(--space-6);
 }
 
+/* Larger variant for section subheadlines (Field Images, Deployment Context) */
+.sectionEyebrow {
+  font-size: var(--text-md);
+  letter-spacing: 0.12em;
+}
+
 /* ─── Overview Section ────────────────────────────────────────────────────── */
 .overviewSection {
   padding: var(--space-20) 0;

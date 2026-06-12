@@ -28,7 +28,19 @@ deploymentBoxes:
     title: Small motion, strong attribution
     body: >-
       Even with limited degrees of freedom, users project significant intent onto the robot. Antenna movement and head orientation alone were sufficient for observers to attribute curiosity, acknowledgment, and attentiveness — consistent with findings in low-DoF social robotics research. The "Pixar lamp" effect is real: timing and direction of motion matter more than mechanical complexity. When the robot speaks and looks toward the user simultaneously, perceived presence jumps noticeably.
-gallery: []
+gallery:
+  - src: /images/robots/reachy-mini/gf-01.jpg
+    alt: "Five Reachy Mini units in different colorways lined up on a table"
+    caption: "One body, five colorways. The hardware is fixed — what it becomes is up to the developer."
+  - src: /images/robots/reachy-mini/gf-03.jpg
+    alt: "Reachy Mini on a desk beside a developer working at a laptop"
+    caption: "Its native habitat: a developer's desk, wired to a host and a Python session."
+  - src: /images/robots/reachy-mini/gf-04.jpg
+    alt: "Close-up of Reachy Mini's head and antennae in warm low light"
+    caption: "Two cameras, two antennae, six degrees of freedom — enough motion to read as curious."
+  - src: /images/robots/reachy-mini/gf-02.jpg
+    alt: "Reachy Mini standing on a desk next to a patterned mug"
+    caption: "At 28 cm it is a desktop presence, not a mobile one. It sits, it watches, it gestures."
 ---
 
 Reachy Mini is a compact, open-source desktop robot built by Pollen Robotics and brought into the Hugging Face ecosystem following the company's 2025 acquisition. At 28 cm tall and starting at $299, it is the most accessible entry point into embodied AI development — a physical interface for LLMs, voice agents, and multimodal AI workflows. Its six-degree-of-freedom head, rotating base, wide-angle camera, and four-microphone array give AI models a body to inhabit. Two versions exist: the Lite, wired and requiring a host computer, and the Wireless, which runs a Raspberry Pi 5 onboard and operates on battery. The human experience of interacting with Reachy Mini is largely what the developer makes it — but the platform's openness, deep Hugging Face ecosystem integration, and explicitly AI-native SDK make it one of the most consequential developer robotics launches in years.
