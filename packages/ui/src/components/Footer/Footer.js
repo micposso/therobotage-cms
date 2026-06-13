@@ -5,11 +5,12 @@ import { certifications } from '../../lib/certifications'
 import styles from './Footer.module.css'
 
 const NAV_LINKS = [
-  { label: 'Research', href: '/research' },
-  { label: 'Learn',    href: '/learn' },
-  { label: 'Access',   href: '/access' },
-  { label: 'Connect',  href: '/connect' },
-  { label: 'Summit',   href: '/summit' },
+  { label: 'Research',      href: '/research' },
+  { label: 'Learn',         href: '/learn' },
+  { label: 'RXD Scorecard', href: '/rxd-scorecard' },
+  { label: 'Access',        href: '/access' },
+  { label: 'Connect',       href: '/connect' },
+  { label: 'Summit',        href: '/summit' },
 ]
 
 const SOCIAL_LINKS = [
