@@ -58,7 +58,9 @@
       "WebFetch(domain:shop.unitree.com)",
       "WebFetch(domain:robotsguide.com)",
       "WebFetch(domain:huggingface.co)",
-      "WebFetch(domain:thegadgetflow.com)"
+      "WebFetch(domain:thegadgetflow.com)",
+      "Read(//c/dev/therobotage-cms/packages/**)",
+      "Read(//c/dev/therobotage-cms/**)"
     ]
   }
 }
