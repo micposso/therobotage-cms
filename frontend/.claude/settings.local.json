@@ -54,7 +54,11 @@
       "Bash(find . -iname \"part1.html\" -not -path \"*/node_modules/*\")",
       "WebFetch(domain:www.unitree.com)",
       "mcp__Claude_Preview__preview_start",
-      "PowerShell(taskkill /PID 37496 /F)"
+      "PowerShell(taskkill /PID 37496 /F)",
+      "WebFetch(domain:shop.unitree.com)",
+      "WebFetch(domain:robotsguide.com)",
+      "WebFetch(domain:huggingface.co)",
+      "WebFetch(domain:thegadgetflow.com)"
     ]
   }
 }
