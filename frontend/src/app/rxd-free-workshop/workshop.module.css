@@ -301,6 +301,26 @@
   cursor: not-allowed;
 }
 
+.disclaimer {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin-top: var(--space-2);
+}
+
+.disclaimerLink {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  transition: color var(--ease-default);
+}
+
+.disclaimerLink:hover {
+  color: var(--color-accent);
+}
+
 /* ─── Success State ────────────────────────────────────────────────────────── */
 .success {
   display: flex;
