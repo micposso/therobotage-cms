@@ -1,0 +1,634 @@
+{
+  "_meta": {
+    "description": "Frontier AI labs building open-source and commercial LLMs, plus advanced voice/audio/music model labs.",
+    "compiled": "2026-06-19",
+    "notes": "Nationality is best-effort and inferred from biography/birthplace where not formally documented. 'release_type' = open-weight, commercial, or both. CEO is listed where it diverges from founders.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/DeepSeek",
+      "https://en.wikipedia.org/wiki/Moonshot_AI",
+      "https://en.wikipedia.org/wiki/Z.ai",
+      "https://en.wikipedia.org/wiki/MiniMax_(company)",
+      "https://en.wikipedia.org/wiki/01.AI",
+      "https://en.wikipedia.org/wiki/StepFun",
+      "https://en.wikipedia.org/wiki/Baichuan",
+      "https://en.wikipedia.org/wiki/Baidu",
+      "https://qz.com/china-six-tigers-ai-startup-zhipu-moonshot-minimax-01ai-1851768509",
+      "https://en.wikipedia.org/wiki/Mistral_AI",
+      "https://en.wikipedia.org/wiki/Cohere",
+      "https://en.wikipedia.org/wiki/AI21_Labs",
+      "https://en.wikipedia.org/wiki/ElevenLabs",
+      "https://en.wikipedia.org/wiki/Stability_AI",
+      "https://en.wikipedia.org/wiki/OpenAI",
+      "https://en.wikipedia.org/wiki/Anthropic",
+      "https://en.wikipedia.org/wiki/Google_DeepMind",
+      "https://en.wikipedia.org/wiki/XAI_(company)",
+      "https://www.delltechnologiescapital.com/resources/cartesia-voice-ai",
+      "https://www.wbur.org/news/2026/02/26/cambridge-suno-ai-music-startup-udio-massachusetts",
+      "https://www.musicbusinessworldwide.com/udio-ceo-andrew-sanchez-on-walled-gardens-in-ai-music-warner-suno/"
+    ]
+  },
+  "frontier_ai_labs": {
+    "united_states": [
+      {
+        "lab": "OpenAI",
+        "country": "USA",
+        "state": "California",
+        "city": "San Francisco",
+        "founded": 2015,
+        "founders": [
+          {"name": "Sam Altman", "nationality": "American"},
+          {"name": "Elon Musk", "nationality": "South African / American / Canadian"},
+          {"name": "Ilya Sutskever", "nationality": "Russian-Israeli-Canadian"},
+          {"name": "Greg Brockman", "nationality": "American"}
+        ],
+        "ceo": {"name": "Sam Altman", "nationality": "American"},
+        "models": ["GPT-5", "GPT-4o", "o-series", "gpt-oss (open)"],
+        "release_type": "both"
+      },
+      {
+        "lab": "Anthropic",
+        "country": "USA",
+        "state": "California",
+        "city": "San Francisco",
+        "founded": 2021,
+        "founders": [
+          {"name": "Dario Amodei", "nationality": "American"},
+          {"name": "Daniela Amodei", "nationality": "American"},
+          {"name": "Jared Kaplan", "nationality": "American"},
+          {"name": "Tom Brown", "nationality": "American"}
+        ],
+        "ceo": {"name": "Dario Amodei", "nationality": "American"},
+        "models": ["Claude (Opus, Sonnet, Haiku)"],
+        "release_type": "commercial"
+      },
+      {
+        "lab": "Google DeepMind",
+        "country": "USA / UK",
+        "state": "California (Google) / London (DeepMind)",
+        "city": "Mountain View / London",
+        "founded": 2010,
+        "founders": [
+          {"name": "Demis Hassabis", "nationality": "British"},
+          {"name": "Shane Legg", "nationality": "New Zealander"},
+          {"name": "Mustafa Suleyman", "nationality": "British"}
+        ],
+        "ceo": {"name": "Demis Hassabis", "nationality": "British"},
+        "models": ["Gemini", "Gemma (open)"],
+        "release_type": "both"
+      },
+      {
+        "lab": "Meta AI (FAIR)",
+        "country": "USA",
+        "state": "California",
+        "city": "Menlo Park",
+        "founded": 2013,
+        "founders": [
+          {"name": "Mark Zuckerberg (Meta founder)", "nationality": "American"},
+          {"name": "Yann LeCun (FAIR founding director)", "nationality": "French-American"}
+        ],
+        "ceo": {"name": "Mark Zuckerberg (Meta CEO)", "nationality": "American"},
+        "models": ["Llama series"],
+        "release_type": "open-weight"
+      },
+      {
+        "lab": "xAI",
+        "country": "USA",
+        "state": "California / Texas",
+        "city": "Palo Alto (HQ), Memphis (compute)",
+        "founded": 2023,
+        "founders": [
+          {"name": "Elon Musk", "nationality": "South African / American / Canadian"},
+          {"name": "Igor Babuschkin", "nationality": "German"},
+          {"name": "Greg Yang", "nationality": "American"}
+        ],
+        "ceo": {"name": "Elon Musk", "nationality": "South African / American / Canadian"},
+        "models": ["Grok series"],
+        "release_type": "both"
+      },
+      {
+        "lab": "Microsoft AI",
+        "country": "USA",
+        "state": "Washington",
+        "city": "Redmond",
+        "founded": 2024,
+        "founders": [{"name": "Microsoft division (led by Mustafa Suleyman)", "nationality": "n/a"}],
+        "ceo": {"name": "Mustafa Suleyman (CEO of Microsoft AI)", "nationality": "British"},
+        "models": ["Phi (open)", "MAI in-house models"],
+        "release_type": "both"
+      },
+      {
+        "lab": "Amazon AGI",
+        "country": "USA",
+        "state": "Washington",
+        "city": "Seattle",
+        "founded": 2023,
+        "founders": [{"name": "Amazon (Rohit Prasad leads AGI team)", "nationality": "n/a"}],
+        "ceo": {"name": "Andy Jassy (Amazon CEO)", "nationality": "American"},
+        "models": ["Nova series"],
+        "release_type": "commercial"
+      },
+      {
+        "lab": "NVIDIA (research / Nemotron)",
+        "country": "USA",
+        "state": "California",
+        "city": "Santa Clara",
+        "founded": 1993,
+        "founders": [
+          {"name": "Jensen Huang", "nationality": "Taiwanese-American"},
+          {"name": "Chris Malachowsky", "nationality": "American"},
+          {"name": "Curtis Priem", "nationality": "American"}
+        ],
+        "ceo": {"name": "Jensen Huang", "nationality": "Taiwanese-American"},
+        "models": ["Nemotron (open)"],
+        "release_type": "open-weight"
+      },
+      {
+        "lab": "Reka AI",
+        "country": "USA",
+        "state": "California",
+        "city": "Sunnyvale",
+        "founded": 2022,
+        "founders": [
+          {"name": "Dani Yogatama", "nationality": "Indonesian"},
+          {"name": "Yi Tay", "nationality": "Singaporean"},
+          {"name": "Mikel Artetxe", "nationality": "Spanish (Basque)"},
+          {"name": "Cyprien de Masson d'Autume", "nationality": "French"}
+        ],
+        "ceo": {"name": "Dani Yogatama", "nationality": "Indonesian"},
+        "models": ["Reka Core, Flash, Edge"],
+        "release_type": "both"
+      },
+      {
+        "lab": "Allen Institute for AI (Ai2)",
+        "country": "USA",
+        "state": "Washington",
+        "city": "Seattle",
+        "founded": 2014,
+        "founders": [{"name": "Paul Allen", "nationality": "American"}],
+        "ceo": {"name": "Ali Farhadi", "nationality": "Iranian-American"},
+        "models": ["OLMo, Molmo, Tulu (fully open)"],
+        "release_type": "open-weight"
+      },
+      {
+        "lab": "Perplexity AI",
+        "country": "USA",
+        "state": "California",
+        "city": "San Francisco",
+        "founded": 2022,
+        "founders": [
+          {"name": "Aravind Srinivas", "nationality": "Indian-American"},
+          {"name": "Denis Yarats", "nationality": "n/a"},
+          {"name": "Johnny Ho", "nationality": "American"},
+          {"name": "Andy Konwinski", "nationality": "American"}
+        ],
+        "ceo": {"name": "Aravind Srinivas", "nationality": "Indian-American"},
+        "models": ["Sonar (in-house, built on open models)"],
+        "release_type": "both"
+      },
+      {
+        "lab": "Together AI",
+        "country": "USA",
+        "state": "California",
+        "city": "San Francisco",
+        "founded": 2022,
+        "founders": [
+          {"name": "Vipul Ved Prakash", "nationality": "Indian-American"},
+          {"name": "Ce Zhang", "nationality": "Chinese"},
+          {"name": "Chris Re", "nationality": "American"},
+          {"name": "Percy Liang", "nationality": "American"}
+        ],
+        "ceo": {"name": "Vipul Ved Prakash", "nationality": "Indian-American"},
+        "models": ["RedPajama, hosting/fine-tuning of open models"],
+        "release_type": "open-weight"
+      },
+      {
+        "lab": "Liquid AI",
+        "country": "USA",
+        "state": "Massachusetts",
+        "city": "Cambridge",
+        "founded": 2023,
+        "founders": [
+          {"name": "Ramin Hasani", "nationality": "Austrian-Iranian"},
+          {"name": "Mathias Lechner", "nationality": "Austrian"},
+          {"name": "Daniela Rus", "nationality": "Romanian-American"},
+          {"name": "Alexander Amini", "nationality": "American"}
+        ],
+        "ceo": {"name": "Ramin Hasani", "nationality": "Austrian-Iranian"},
+        "models": ["Liquid Foundation Models (LFMs)"],
+        "release_type": "both"
+      },
+      {
+        "lab": "Writer",
+        "country": "USA",
+        "state": "California",
+        "city": "San Francisco",
+        "founded": 2020,
+        "founders": [
+          {"name": "May Habib", "nationality": "Lebanese-Canadian-American"},
+          {"name": "Waseem Alshikh", "nationality": "Syrian"}
+        ],
+        "ceo": {"name": "May Habib", "nationality": "Lebanese-Canadian-American"},
+        "models": ["Palmyra series (enterprise LLMs)"],
+        "release_type": "commercial"
+      }
+    ],
+    "canada": [
+      {
+        "lab": "Cohere",
+        "country": "Canada",
+        "state": "Ontario",
+        "city": "Toronto",
+        "founded": 2019,
+        "founders": [
+          {"name": "Aidan Gomez", "nationality": "Canadian-British"},
+          {"name": "Nick Frosst", "nationality": "Canadian"},
+          {"name": "Ivan Zhang", "nationality": "Canadian"}
+        ],
+        "ceo": {"name": "Aidan Gomez", "nationality": "Canadian-British"},
+        "models": ["Command series", "Aya (open, multilingual)"],
+        "release_type": "both"
+      }
+    ],
+    "europe": [
+      {
+        "lab": "Mistral AI",
+        "country": "France",
+        "state": "Ile-de-France",
+        "city": "Paris",
+        "founded": 2023,
+        "founders": [
+          {"name": "Arthur Mensch", "nationality": "French"},
+          {"name": "Guillaume Lample", "nationality": "French"},
+          {"name": "Timothee Lacroix", "nationality": "French"}
+        ],
+        "ceo": {"name": "Arthur Mensch", "nationality": "French"},
+        "models": ["Mistral, Mixtral, Magistral, Large"],
+        "release_type": "both"
+      },
+      {
+        "lab": "Stability AI",
+        "country": "UK",
+        "state": "England",
+        "city": "London",
+        "founded": 2019,
+        "founders": [
+          {"name": "Emad Mostaque (resigned 2024)", "nationality": "British-Bangladeshi"},
+          {"name": "Cyrus Hodes", "nationality": "French"}
+        ],
+        "ceo": {"name": "Prem Akkaraju", "nationality": "American"},
+        "models": ["Stable Diffusion (image), Stable Audio (audio)"],
+        "release_type": "open-weight"
+      },
+      {
+        "lab": "Black Forest Labs",
+        "country": "Germany",
+        "state": "Bavaria",
+        "city": "Freiburg",
+        "founded": 2024,
+        "founders": [
+          {"name": "Robin Rombach", "nationality": "German"},
+          {"name": "Andreas Blattmann", "nationality": "German"},
+          {"name": "Patrick Esser", "nationality": "German"}
+        ],
+        "ceo": {"name": "Robin Rombach", "nationality": "German"},
+        "models": ["FLUX (image generation)"],
+        "release_type": "both"
+      },
+      {
+        "lab": "Aleph Alpha",
+        "country": "Germany",
+        "state": "Baden-Wurttemberg",
+        "city": "Heidelberg",
+        "founded": 2019,
+        "founders": [
+          {"name": "Jonas Andrulis", "nationality": "German"},
+          {"name": "Samuel Weinbach", "nationality": "German"}
+        ],
+        "ceo": {"name": "Jonas Andrulis", "nationality": "German"},
+        "models": ["Luminous, Pharia"],
+        "release_type": "both"
+      }
+    ],
+    "israel": [
+      {
+        "lab": "AI21 Labs",
+        "country": "Israel",
+        "state": "Tel Aviv District",
+        "city": "Tel Aviv",
+        "founded": 2017,
+        "founders": [
+          {"name": "Yoav Shoham", "nationality": "Israeli"},
+          {"name": "Ori Goshen", "nationality": "Israeli"},
+          {"name": "Amnon Shashua", "nationality": "Israeli"}
+        ],
+        "ceo": {"name": "Ori Goshen & Yoav Shoham (co-CEOs)", "nationality": "Israeli"},
+        "models": ["Jamba", "Jurassic"],
+        "release_type": "both"
+      }
+    ],
+    "china": [
+      {
+        "lab": "DeepSeek",
+        "country": "China",
+        "state": "Zhejiang",
+        "city": "Hangzhou",
+        "founded": 2023,
+        "founders": [{"name": "Liang Wenfeng", "nationality": "Chinese"}],
+        "ceo": {"name": "Liang Wenfeng", "nationality": "Chinese"},
+        "models": ["DeepSeek-V3", "DeepSeek-R1"],
+        "release_type": "open-weight"
+      },
+      {
+        "lab": "Moonshot AI (Kimi)",
+        "country": "China",
+        "state": "Beijing",
+        "city": "Beijing",
+        "founded": 2023,
+        "founders": [
+          {"name": "Yang Zhilin", "nationality": "Chinese"},
+          {"name": "Zhou Xinyu", "nationality": "Chinese"},
+          {"name": "Wu Yuxin", "nationality": "Chinese"}
+        ],
+        "ceo": {"name": "Yang Zhilin", "nationality": "Chinese"},
+        "models": ["Kimi, Kimi K2"],
+        "release_type": "both"
+      },
+      {
+        "lab": "Zhipu AI (Z.ai)",
+        "country": "China",
+        "state": "Beijing",
+        "city": "Beijing",
+        "founded": 2019,
+        "founders": [
+          {"name": "Tang Jie", "nationality": "Chinese"},
+          {"name": "Li Juanzi", "nationality": "Chinese"}
+        ],
+        "ceo": {"name": "Zhang Peng", "nationality": "Chinese"},
+        "models": ["GLM, ChatGLM"],
+        "release_type": "both"
+      },
+      {
+        "lab": "Alibaba (Qwen / Tongyi)",
+        "country": "China",
+        "state": "Zhejiang",
+        "city": "Hangzhou",
+        "founded": 1999,
+        "founders": [{"name": "Jack Ma (Alibaba founder)", "nationality": "Chinese"}],
+        "ceo": {"name": "Eddie Wu (Alibaba CEO)", "nationality": "Chinese"},
+        "models": ["Qwen series (open)"],
+        "release_type": "open-weight"
+      },
+      {
+        "lab": "Baidu",
+        "country": "China",
+        "state": "Beijing",
+        "city": "Beijing",
+        "founded": 2000,
+        "founders": [
+          {"name": "Robin Li (Li Yanhong)", "nationality": "Chinese"},
+          {"name": "Eric Xu (Xu Yong)", "nationality": "Chinese"}
+        ],
+        "ceo": {"name": "Robin Li", "nationality": "Chinese"},
+        "models": ["ERNIE (Wenxin) series"],
+        "release_type": "both"
+      },
+      {
+        "lab": "MiniMax",
+        "country": "China",
+        "state": "Shanghai",
+        "city": "Shanghai",
+        "founded": 2021,
+        "founders": [
+          {"name": "Yan Junjie", "nationality": "Chinese"},
+          {"name": "Yang Bin", "nationality": "Chinese"},
+          {"name": "Zhou Yucong", "nationality": "Chinese"}
+        ],
+        "ceo": {"name": "Yan Junjie", "nationality": "Chinese"},
+        "models": ["MiniMax / abab series, Hailuo (video)"],
+        "release_type": "both"
+      },
+      {
+        "lab": "01.AI (Lingyi Wanwu)",
+        "country": "China",
+        "state": "Beijing",
+        "city": "Beijing",
+        "founded": 2023,
+        "founders": [{"name": "Kai-Fu Lee", "nationality": "Taiwanese"}],
+        "ceo": {"name": "Kai-Fu Lee", "nationality": "Taiwanese"},
+        "models": ["Yi series"],
+        "release_type": "both"
+      },
+      {
+        "lab": "Baichuan AI",
+        "country": "China",
+        "state": "Beijing",
+        "city": "Beijing",
+        "founded": 2023,
+        "founders": [{"name": "Wang Xiaochuan", "nationality": "Chinese"}],
+        "ceo": {"name": "Wang Xiaochuan", "nationality": "Chinese"},
+        "models": ["Baichuan series"],
+        "release_type": "both"
+      },
+      {
+        "lab": "StepFun",
+        "country": "China",
+        "state": "Shanghai",
+        "city": "Shanghai",
+        "founded": 2023,
+        "founders": [
+          {"name": "Jiang Daxin", "nationality": "Chinese"},
+          {"name": "Zhu Yibo", "nationality": "Chinese"},
+          {"name": "Jiao Binxing", "nationality": "Chinese"}
+        ],
+        "ceo": {"name": "Jiang Daxin", "nationality": "Chinese"},
+        "models": ["Step series"],
+        "release_type": "both"
+      },
+      {
+        "lab": "Tencent (Hunyuan)",
+        "country": "China",
+        "state": "Guangdong",
+        "city": "Shenzhen",
+        "founded": 1998,
+        "founders": [{"name": "Ma Huateng (Pony Ma, Tencent founder)", "nationality": "Chinese"}],
+        "ceo": {"name": "Ma Huateng (Pony Ma)", "nationality": "Chinese"},
+        "models": ["Hunyuan series (some open)"],
+        "release_type": "both"
+      },
+      {
+        "lab": "ByteDance (Doubao / Seed)",
+        "country": "China",
+        "state": "Beijing",
+        "city": "Beijing",
+        "founded": 2012,
+        "founders": [{"name": "Zhang Yiming (ByteDance founder)", "nationality": "Chinese"}],
+        "ceo": {"name": "Liang Rubo (ByteDance CEO)", "nationality": "Chinese"},
+        "models": ["Doubao, Seed series"],
+        "release_type": "commercial"
+      }
+    ],
+    "india": [
+      {
+        "lab": "Sarvam AI",
+        "country": "India",
+        "state": "Karnataka",
+        "city": "Bengaluru",
+        "founded": 2023,
+        "founders": [
+          {"name": "Vivek Raghavan", "nationality": "Indian"},
+          {"name": "Pratyush Kumar", "nationality": "Indian"}
+        ],
+        "ceo": {"name": "Vivek Raghavan", "nationality": "Indian"},
+        "models": ["Sarvam (Indic-language LLMs)"],
+        "release_type": "both"
+      },
+      {
+        "lab": "Krutrim (Ola)",
+        "country": "India",
+        "state": "Karnataka",
+        "city": "Bengaluru",
+        "founded": 2023,
+        "founders": [{"name": "Bhavish Aggarwal", "nationality": "Indian"}],
+        "ceo": {"name": "Bhavish Aggarwal", "nationality": "Indian"},
+        "models": ["Krutrim (multilingual Indic LLMs)"],
+        "release_type": "both"
+      }
+    ],
+    "east_asia_ex_china": [
+      {
+        "lab": "SB Intuitions (SoftBank)",
+        "country": "Japan",
+        "state": "Tokyo",
+        "city": "Tokyo",
+        "founded": 2023,
+        "founders": [{"name": "SoftBank subsidiary (Masayoshi Son, SoftBank founder)", "nationality": "Japanese"}],
+        "ceo": {"name": "Hironobu Tamba", "nationality": "Japanese"},
+        "models": ["Sarashina (Japanese LLMs)"],
+        "release_type": "both"
+      },
+      {
+        "lab": "Naver (HyperCLOVA X)",
+        "country": "South Korea",
+        "state": "Gyeonggi",
+        "city": "Seongnam",
+        "founded": 1999,
+        "founders": [{"name": "Lee Hae-jin (Naver founder)", "nationality": "South Korean"}],
+        "ceo": {"name": "Choi Soo-yeon (Naver CEO)", "nationality": "South Korean"},
+        "models": ["HyperCLOVA X (Korean LLMs)"],
+        "release_type": "both"
+      },
+      {
+        "lab": "Upstage",
+        "country": "South Korea",
+        "state": "Gyeonggi",
+        "city": "Yongin",
+        "founded": 2020,
+        "founders": [
+          {"name": "Kim Sung-hun", "nationality": "South Korean"},
+          {"name": "Lee Hwalsuk", "nationality": "South Korean"},
+          {"name": "Park Eun-jung", "nationality": "South Korean"}
+        ],
+        "ceo": {"name": "Kim Sung-hun", "nationality": "South Korean"},
+        "models": ["Solar series (open)"],
+        "release_type": "open-weight"
+      }
+    ],
+    "voice_audio_music_labs": [
+      {
+        "lab": "ElevenLabs",
+        "country": "UK / USA",
+        "state": "London (HQ), New York",
+        "city": "London",
+        "founded": 2022,
+        "founders": [
+          {"name": "Mati Staniszewski", "nationality": "Polish"},
+          {"name": "Piotr Dabkowski", "nationality": "Polish"}
+        ],
+        "ceo": {"name": "Mati Staniszewski", "nationality": "Polish"},
+        "models": ["Multilingual TTS, voice cloning, voice agents"],
+        "release_type": "commercial",
+        "domain": "voice"
+      },
+      {
+        "lab": "Cartesia",
+        "country": "USA",
+        "state": "California",
+        "city": "San Francisco / Daly City",
+        "founded": 2023,
+        "founders": [
+          {"name": "Karan Goel", "nationality": "Indian-American"},
+          {"name": "Albert Gu", "nationality": "American"},
+          {"name": "Arjun Desai", "nationality": "American"},
+          {"name": "Brandon Yang", "nationality": "American"},
+          {"name": "Christopher Re", "nationality": "American"}
+        ],
+        "ceo": {"name": "Karan Goel", "nationality": "Indian-American"},
+        "models": ["Sonic (TTS), Ink (STT) — SSM/Mamba architecture"],
+        "release_type": "both",
+        "domain": "voice"
+      },
+      {
+        "lab": "Hume AI",
+        "country": "USA",
+        "state": "New York",
+        "city": "New York City",
+        "founded": 2021,
+        "founders": [{"name": "Alan Cowen", "nationality": "American"}],
+        "ceo": {"name": "Alan Cowen", "nationality": "American"},
+        "models": ["EVI (Empathic Voice Interface), Octave TTS"],
+        "release_type": "commercial",
+        "domain": "voice (emotional)"
+      },
+      {
+        "lab": "PlayAI (Play.ht)",
+        "country": "USA",
+        "state": "California",
+        "city": "San Francisco",
+        "founded": 2016,
+        "founders": [
+          {"name": "Mahmoud Felfel", "nationality": "Egyptian"},
+          {"name": "Hammad Syed", "nationality": "Pakistani"}
+        ],
+        "ceo": {"name": "Mahmoud Felfel", "nationality": "Egyptian"},
+        "models": ["PlayHT TTS, PlayDialog"],
+        "release_type": "commercial",
+        "domain": "voice"
+      },
+      {
+        "lab": "Suno",
+        "country": "USA",
+        "state": "Massachusetts",
+        "city": "Cambridge",
+        "founded": 2022,
+        "founders": [
+          {"name": "Mikey Shulman", "nationality": "American"},
+          {"name": "Georg Kucsko", "nationality": "Austrian"},
+          {"name": "Martin Camacho", "nationality": "American"},
+          {"name": "Keenan Freyberg", "nationality": "American"}
+        ],
+        "ceo": {"name": "Mikey Shulman", "nationality": "American"},
+        "models": ["Suno (text-to-music / song generation)"],
+        "release_type": "commercial",
+        "domain": "music"
+      },
+      {
+        "lab": "Udio",
+        "country": "USA",
+        "state": "New York",
+        "city": "New York City",
+        "founded": 2023,
+        "founders": [
+          {"name": "David Ding", "nationality": "British"},
+          {"name": "Andrew Sanchez", "nationality": "American"},
+          {"name": "Conor Durkan", "nationality": "Irish"},
+          {"name": "Charlie Nash", "nationality": "British"},
+          {"name": "Yaroslav Ganin", "nationality": "Russian"}
+        ],
+        "ceo": {"name": "Andrew Sanchez (CEO), David Ding (co-founder)", "nationality": "American / British"},
+        "models": ["Udio (text-to-music)"],
+        "release_type": "commercial",
+        "domain": "music"
+      }
+    ]
+  }
+}

@@ -182,22 +182,36 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
       }
     }
 
-    // Eyebrow + date
+    // Eyebrow (spelled-out framework name) + date. Auto-fit the eyebrow so it
+    // never collides with the right-aligned date.
+    const eyebrowText = 'RXD — THE ROBOT EXPERIENCE FRAMEWORK SCORE'
+    const dateText = data.date.toUpperCase()
     setFont(400, 24, 'b')
+    letter('0.12em')
+    const dateW = ctx.measureText(dateText).width
+    let ebSize = 22
+    letter('0.16em')
+    setFont(400, ebSize, 'b')
+    while (ctx.measureText(eyebrowText).width > innerW - dateW - 48 && ebSize > 12) {
+      ebSize -= 1
+      setFont(400, ebSize, 'b')
+    }
     if (paint) {
-      letter('0.2em')
+      letter('0.16em')
+      setFont(400, ebSize, 'b')
       ctx.fillStyle = C.accent
       ctx.textAlign = 'left'
-      ctx.fillText('RXD AUDIT', PAD, y + 24)
+      ctx.fillText(eyebrowText, PAD, y + 22)
+      setFont(400, 24, 'b')
       ctx.fillStyle = C.inkBody
       ctx.globalAlpha = 0.55
       ctx.textAlign = 'right'
       letter('0.12em')
-      ctx.fillText(data.date.toUpperCase(), CARD_W - PAD, y + 24)
+      ctx.fillText(dateText, CARD_W - PAD, y + 22)
       ctx.globalAlpha = 1
       ctx.textAlign = 'left'
-      letter('0px')
     }
+    letter('0px')
     y += 56
 
     // Robot name
@@ -262,8 +276,9 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
     }
     letter('0px')
 
-    // Composite numbers
-    y += 64
+    // Composite numbers. The average is set at 130px, whose ascent reaches well
+    // above its baseline — reserve enough room so it never overlaps the verdict.
+    y += 150
     if (paint) {
       // average
       setFont(400, 130, 'd')
