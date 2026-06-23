@@ -61,7 +61,12 @@
       "WebFetch(domain:thegadgetflow.com)",
       "Read(//c/dev/therobotage-cms/packages/**)",
       "Read(//c/dev/therobotage-cms/**)",
-      "PowerShell(npx tsc --noEmit -p tsconfig.json 2>&1 | Select-Object -First 20)"
+      "PowerShell(npx tsc --noEmit -p tsconfig.json 2>&1 | Select-Object -First 20)",
+      "WebFetch(domain:www.robot.com)",
+      "WebFetch(domain:www.unite.ai)",
+      "Bash(command -v magick)",
+      "Bash(command -v ffmpeg)",
+      "Read(//c/Users/micpo/Desktop/**)"
     ]
   }
 }

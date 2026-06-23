@@ -1,0 +1,9 @@
+Most companies racing to build humanoid robots have never kept one running in a building they don't own. Robot.com has run more than 500 robots and 2.5 million real-world tasks. On June 22 it launched a humanoid on the back of that.
+
+R-noid is a wheeled humanoid built for the work that burns people out: packing orders, loading boxes, prepping workstations. No legs. A holonomic base skips the cost of bipedal balance and spends it on the arms that actually do the job. It runs Physical Intelligence's manipulation models at roughly 70% autonomy, with teleoperators covering the rest while the model fine-tunes on each facility.
+
+The hard part of deployment is the part no demo reel shows: the maintenance schedule, the remote-operations desk, the data pipeline, the eight-to-twelve-week cadence of a rollout that holds. Robot.com (formerly Kiwibot) spent eight years building that apparatus running delivery robots. Founder Felipe Chavez moved from Medellin to Silicon Valley a decade ago with no contacts and no strong English to start it. His standard for R-noid is the one the whole field is about to be measured against: robots today, not someday.
+
+Read the full piece on The Robot Age: https://therobotage.com/news/robot-com-r-noid-field-experience
+
+#Robotics #HumanoidRobots #ServiceRobots #AI #ProductDesign
