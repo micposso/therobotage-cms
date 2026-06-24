@@ -1,11 +1,11 @@
-The next robot safety fight in the US will happen state by state.
+Insurance may matter more than regulation in the next phase of robot deployment.
 
 NVIDIA's new Halos for Robotics matters because most states do not yet have a clear playbook for humanoids, construction robots, or commercial service robots working around people. States have rules for sidewalk delivery robots and autonomous vehicles, but workplace robots still sit inside a patchwork of OSHA, state-plan enforcement, voluntary standards, insurance, and local permitting.
 
-That gap is where Halos gets interesting. Its combination of AI compute, external sensors, outside-in perception, safety software, and inspection could become the kind of evidence states ask for before robots enter construction sites, warehouses, factories, hospitals, and public-facing commercial spaces.
+The missing layer is insurance. Workers compensation and commercial general liability carriers already shape workplace safety through underwriting, risk-control guidance, training expectations, claims data, and premium pressure. If robots introduce new bodily injury, property damage, cyber-physical, or product-liability exposure, insurers will ask for proof long before many legislatures write robot-specific rules.
 
-The practical question is no longer whether a robot can perform a task in a demo. It is what the robot can prove to regulators, insurers, workers, and operations teams before it enters someone else's workplace.
+That is where Halos gets interesting. Its combination of AI compute, external sensors, outside-in perception, safety software, and inspection could become the kind of evidence carriers, regulators, workers, and operations teams ask for before robots enter someone else's workplace.
 
 Read the full piece on The Robot Age: https://therobotage.com/news/nvidia-halos-robot-safety
 
-#Robotics #PhysicalAI #RobotSafety #StatePolicy #IndustrialAutomation #HRI
+#Robotics #PhysicalAI #RobotSafety #Insurance #IndustrialAutomation #HRI
