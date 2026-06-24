@@ -322,11 +322,25 @@
 /* ─── Responsive ─────────────────────────────────────────────────────────────── */
 @media (max-width: 767px) {
   .hero {
-    aspect-ratio: 4 / 1;
+    aspect-ratio: auto;
+    min-height: clamp(420px, 72svh, 620px);
+    background-attachment: scroll;
+    background-position: center center;
   }
 
   .heroContent {
-    padding: var(--space-8) var(--space-4);
+    padding: var(--space-16) var(--space-4) var(--space-8);
+  }
+
+  .heroCategoryRow {
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+
+  .heroHeadline {
+    font-size: clamp(2rem, 10vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
   }
 
   .layout {
