@@ -1,0 +1,11 @@
+Robot safety is becoming infrastructure.
+
+NVIDIA's new Halos for Robotics is more than another physical AI announcement. It gives robot makers a shared safety stack that connects AI compute, external sensors, safety software, outside-in perception, and inspection before robots enter factories, warehouses, and logistics floors.
+
+That matters because humanoids and mobile robots are moving into mixed human-robot environments where onboard sensing is not enough. Halos brings together IGX Thor, Holoscan Sensor Bridge, Halos OS, the open source Outside-In Safety Blueprint, and an ANAB-accredited inspection path for functional and AI safety.
+
+Agility Robotics is the first public test case, integrating parts of Halos into Digit's safe human-detection system as it works toward standards including IEC 61508, ISO 13849, and ISO/IEC TR 5469. The real story is not a safer demo. It is a more auditable path to deployment.
+
+Read the full piece on The Robot Age: https://therobotage.com/news/nvidia-halos-robot-safety
+
+#Robotics #PhysicalAI #HumanoidRobots #RobotSafety #IndustrialAutomation #HRI
