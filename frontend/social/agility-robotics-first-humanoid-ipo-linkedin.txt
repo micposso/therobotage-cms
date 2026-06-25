@@ -1,0 +1,11 @@
+The first US humanoid-robot IPO is also the smallest bet in the room.
+
+Agility Robotics is going public at a $2.5 billion valuation under the ticker AGLT — the first company on a US exchange built entirely to make and sell humanoids. It is listing on evidence, not a pitch deck: more than 65,000 operating hours logged by its Digit robot, over $300 million in orders, and live deployments at Schaeffler in South Carolina and GXO in Georgia.
+
+The contrast around it is the real story. Figure AI sits at a $39 billion private valuation on the strength of a single BMW production line. China's Unitree already cleared its Shanghai listing at roughly $6.2 billion — and unlike either US company, it is profitable, shipping more than 5,500 humanoids in 2025 at around 60% margins. Three companies, the same machine, priced from $2.5B to $39B.
+
+The question is no longer whether humanoids can work on a factory floor. It is whether public markets will reward proof over narrative in a year of trillion-dollar AI IPOs.
+
+Read the full piece on The Robot Age: https://therobotage.com/news/agility-robotics-first-humanoid-ipo
+
+#Robotics #HumanoidRobots #AI #IPO #EmbodiedAI
