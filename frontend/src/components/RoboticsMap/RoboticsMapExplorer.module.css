@@ -105,155 +105,68 @@
 
 .mapPanel {
   overflow: hidden;
+  position: relative;
 }
 
-.worldMap {
-  position: relative;
+.leafletMap,
+.mapLoading,
+.emptyMap {
   width: 100%;
   min-height: 620px;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  background:
-    linear-gradient(rgba(13, 13, 13, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(13, 13, 13, 0.045) 1px, transparent 1px),
-    radial-gradient(circle at 52% 54%, rgba(155, 81, 82, 0.12), transparent 34%),
-    linear-gradient(135deg, rgba(13, 13, 13, 0.04), rgba(255, 255, 255, 0.56));
-  background-size: 48px 48px, 48px 48px, 100% 100%, 100% 100%;
 }
 
-.worldMap::before {
-  content: '';
-  position: absolute;
-  inset: 7% 5%;
-  border: 1px solid rgba(13, 13, 13, 0.1);
-  border-radius: 50%;
-  opacity: 0.5;
-}
-
-.landMass {
-  position: absolute;
-  background: rgba(77, 98, 71, 0.22);
-  border: 1px solid rgba(77, 98, 71, 0.2);
-  filter: saturate(0.95);
-}
-
-.northAmerica {
-  left: 7%;
-  top: 17%;
-  width: 25%;
-  height: 28%;
-  border-radius: 58% 42% 46% 54% / 48% 58% 42% 52%;
-  transform: rotate(-10deg);
-}
-
-.southAmerica {
-  left: 27%;
-  top: 49%;
-  width: 12%;
-  height: 31%;
-  border-radius: 46% 54% 60% 40% / 38% 42% 58% 62%;
-  transform: rotate(16deg);
-}
-
-.europe {
-  left: 47%;
-  top: 21%;
-  width: 13%;
-  height: 17%;
-  border-radius: 52% 48% 45% 55% / 45% 46% 54% 55%;
-  transform: rotate(8deg);
-}
-
-.africa {
-  left: 48%;
-  top: 39%;
-  width: 15%;
-  height: 30%;
-  border-radius: 48% 52% 55% 45% / 35% 42% 58% 65%;
-  transform: rotate(-4deg);
-}
-
-.asia {
-  left: 58%;
-  top: 19%;
-  width: 31%;
-  height: 32%;
-  border-radius: 52% 48% 48% 52% / 42% 42% 58% 58%;
-  transform: rotate(5deg);
-}
-
-.australia {
-  left: 77%;
-  top: 64%;
-  width: 12%;
-  height: 12%;
-  border-radius: 60% 40% 54% 46% / 45% 50% 50% 55%;
-  transform: rotate(7deg);
-}
-
-.pin {
-  position: absolute;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  max-width: 170px;
-  border: 0;
-  background: transparent;
-  color: var(--color-text);
-  cursor: pointer;
-  font: inherit;
-  padding: 0;
-  text-align: left;
-  transform: translate(-9px, -9px);
-}
-
-.pinDot {
-  width: 18px;
-  height: 18px;
-  border: 2px solid rgba(255, 255, 255, 0.88);
-  border-radius: 50%;
-  background: var(--color-accent);
-  box-shadow: 0 0 0 4px rgba(155, 81, 82, 0.18);
-  flex: 0 0 auto;
-  transition: transform var(--ease-default), box-shadow var(--ease-default);
-}
-
-.pinLabel {
-  max-width: 140px;
-  background: rgba(234, 234, 234, 0.82);
-  border: 1px solid var(--color-border);
-  color: var(--color-text);
+.leafletMap {
   font-family: var(--font-display);
-  font-size: 0.72rem;
-  line-height: 1.1;
-  padding: 0.28rem 0.42rem;
-  opacity: 0;
-  transform: translateX(-4px);
-  transition: opacity var(--ease-default), transform var(--ease-default);
+  z-index: 1;
 }
 
-.pin:hover .pinDot,
-.pin:focus-visible .pinDot,
-.pinActive .pinDot {
-  transform: scale(1.25);
-  box-shadow: 0 0 0 8px rgba(155, 81, 82, 0.18);
-}
-
-.pin:hover .pinLabel,
-.pin:focus-visible .pinLabel,
-.pinActive .pinLabel {
-  opacity: 1;
-  transform: translateX(0);
-}
-
+.mapLoading,
 .emptyMap {
-  position: absolute;
-  inset: 0;
   display: grid;
   place-items: center;
   color: var(--color-text-muted);
   font-family: var(--font-display);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.leafletPin,
+.leafletPinActive {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.92);
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 5px rgba(155, 81, 82, 0.2);
+}
+
+.leafletPinActive {
+  width: 24px;
+  height: 24px;
+  background: var(--color-text);
+  box-shadow: 0 0 0 8px rgba(155, 81, 82, 0.2);
+}
+
+.popup {
+  display: grid;
+  gap: 0.18rem;
+  min-width: 180px;
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+.popup strong {
+  font-weight: 500;
+}
+
+.popup span {
+  color: var(--color-text-muted);
+}
+
+.emptyMap {
+  min-height: 620px;
 }
 
 .detailPanel {
@@ -376,7 +289,9 @@
 
   .mapPanel,
   .detailPanel,
-  .worldMap {
+  .leafletMap,
+  .mapLoading,
+  .emptyMap {
     min-height: 520px;
   }
 }
@@ -397,16 +312,10 @@
   }
 
   .mapPanel,
-  .worldMap {
+  .leafletMap,
+  .mapLoading,
+  .emptyMap {
     min-height: 430px;
-  }
-
-  .worldMap {
-    aspect-ratio: 4 / 5;
-  }
-
-  .pinLabel {
-    display: none;
   }
 
   .detailPanel {

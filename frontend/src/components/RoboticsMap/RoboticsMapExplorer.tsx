@@ -1,6 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
+import dynamic from 'next/dynamic'
 import type { RoboticsCompany } from '@/lib/robotics-map'
 import styles from './RoboticsMapExplorer.module.css'
 
@@ -38,13 +39,10 @@ const foundedRanges = [
   { label: '2019+', value: '2019-plus' },
 ]
 
-function projectX(longitude: number) {
-  return ((longitude + 180) / 360) * 100
-}
-
-function projectY(latitude: number) {
-  return ((90 - latitude) / 180) * 100
-}
+const RoboticsLeafletMap = dynamic(() => import('./RoboticsLeafletMap'), {
+  ssr: false,
+  loading: () => <div className={styles.mapLoading}>Loading map...</div>,
+})
 
 function matchesFoundedRange(founded: number | null, range: string) {
   if (range === 'all') return true
@@ -166,37 +164,15 @@ export default function RoboticsMapExplorer({ companies, facets }: Props) {
 
       <div className={styles.mapGrid}>
         <div className={styles.mapPanel}>
-          <div className={styles.worldMap} aria-label="World map with robotics company locations">
-            <div className={`${styles.landMass} ${styles.northAmerica}`} />
-            <div className={`${styles.landMass} ${styles.southAmerica}`} />
-            <div className={`${styles.landMass} ${styles.europe}`} />
-            <div className={`${styles.landMass} ${styles.africa}`} />
-            <div className={`${styles.landMass} ${styles.asia}`} />
-            <div className={`${styles.landMass} ${styles.australia}`} />
-
-            {filteredCompanies.map((company) => (
-              <button
-                key={company.id}
-                type="button"
-                className={`${styles.pin} ${selectedCompany?.id === company.id ? styles.pinActive : ''}`}
-                style={{
-                  left: `${projectX(company.longitude)}%`,
-                  top: `${projectY(company.latitude)}%`,
-                }}
-                onClick={() => setSelectedId(company.id)}
-                aria-label={`Select ${company.name} in ${company.city}`}
-              >
-                <span className={styles.pinDot} />
-                <span className={styles.pinLabel}>{company.name}</span>
-              </button>
-            ))}
-
-            {filteredCompanies.length === 0 && (
-              <div className={styles.emptyMap}>
-                No companies match those filters.
-              </div>
-            )}
-          </div>
+          {filteredCompanies.length > 0 ? (
+            <RoboticsLeafletMap
+              companies={filteredCompanies}
+              selectedId={selectedCompany?.id ?? ''}
+              onSelect={setSelectedId}
+            />
+          ) : (
+            <div className={styles.emptyMap}>No companies match those filters.</div>
+          )}
         </div>
 
         <aside className={styles.detailPanel} aria-live="polite">
