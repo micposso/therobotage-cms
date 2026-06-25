@@ -11,6 +11,10 @@ type Facets = {
   companyTypes: string[]
   sectors: string[]
   robotTypes: string[]
+  maturity: string[]
+  commercialProof: string[]
+  ecosystemRoles: string[]
+  buyerSectors: string[]
 }
 
 type Props = {
@@ -18,7 +22,7 @@ type Props = {
   facets: Facets
 }
 
-type FilterKey = 'query' | 'region' | 'country' | 'companyType' | 'sector' | 'robotType' | 'founded'
+type FilterKey = 'query' | 'region' | 'country' | 'companyType' | 'sector' | 'robotType' | 'maturity' | 'commercialProof' | 'ecosystemRole' | 'founded'
 
 type Filters = Record<FilterKey, string>
 
@@ -29,6 +33,9 @@ const initialFilters: Filters = {
   companyType: 'all',
   sector: 'all',
   robotType: 'all',
+  maturity: 'all',
+  commercialProof: 'all',
+  ecosystemRole: 'all',
   founded: 'all',
 }
 
@@ -69,9 +76,24 @@ export default function RoboticsMapExplorer({ companies, facets }: Props) {
         company.status,
         company.funding,
         company.businessModel,
+        company.intelligence.maturity,
+        company.intelligence.commercialProof,
+        company.intelligence.deployments.evidence,
+        company.intelligence.sourceNotes,
         ...company.sector,
         ...company.robotTypes,
         ...company.robots,
+        ...company.intelligence.ecosystemRoles,
+        ...company.intelligence.buyerSectors,
+        ...company.intelligence.revenueModel,
+        ...company.intelligence.products.flatMap((product) => [
+          product.name,
+          product.category,
+          product.status,
+          product.notes,
+          ...product.targetUseCases,
+          ...product.targetCustomers,
+        ]),
       ].join(' ').toLowerCase()
 
       return (
@@ -81,6 +103,9 @@ export default function RoboticsMapExplorer({ companies, facets }: Props) {
         (filters.companyType === 'all' || company.companyType === filters.companyType) &&
         (filters.sector === 'all' || company.sector.includes(filters.sector)) &&
         (filters.robotType === 'all' || company.robotTypes.includes(filters.robotType)) &&
+        (filters.maturity === 'all' || company.intelligence.maturity === filters.maturity) &&
+        (filters.commercialProof === 'all' || company.intelligence.commercialProof === filters.commercialProof) &&
+        (filters.ecosystemRole === 'all' || company.intelligence.ecosystemRoles.includes(filters.ecosystemRole)) &&
         matchesFoundedRange(company.founded, filters.founded)
       )
     })
@@ -100,9 +125,16 @@ export default function RoboticsMapExplorer({ companies, facets }: Props) {
         company.country,
         company.region,
         company.companyType,
+        company.status,
+        company.funding,
+        company.businessModel,
+        company.intelligence.maturity,
+        company.intelligence.commercialProof,
         ...company.sector,
         ...company.robotTypes,
         ...company.robots,
+        ...company.intelligence.ecosystemRoles,
+        ...company.intelligence.buyerSectors,
       ].join(' ').toLowerCase()
 
       return (
@@ -112,6 +144,9 @@ export default function RoboticsMapExplorer({ companies, facets }: Props) {
         (nextFilters.companyType === 'all' || company.companyType === nextFilters.companyType) &&
         (nextFilters.sector === 'all' || company.sector.includes(nextFilters.sector)) &&
         (nextFilters.robotType === 'all' || company.robotTypes.includes(nextFilters.robotType)) &&
+        (nextFilters.maturity === 'all' || company.intelligence.maturity === nextFilters.maturity) &&
+        (nextFilters.commercialProof === 'all' || company.intelligence.commercialProof === nextFilters.commercialProof) &&
+        (nextFilters.ecosystemRole === 'all' || company.intelligence.ecosystemRoles.includes(nextFilters.ecosystemRole)) &&
         matchesFoundedRange(company.founded, nextFilters.founded)
       )
     })
@@ -143,6 +178,9 @@ export default function RoboticsMapExplorer({ companies, facets }: Props) {
         <FilterSelect label="Company type" value={filters.companyType} onChange={(value) => updateFilter('companyType', value)} options={facets.companyTypes} />
         <FilterSelect label="Sector" value={filters.sector} onChange={(value) => updateFilter('sector', value)} options={facets.sectors} />
         <FilterSelect label="Robot type" value={filters.robotType} onChange={(value) => updateFilter('robotType', value)} options={facets.robotTypes} />
+        <FilterSelect label="Maturity" value={filters.maturity} onChange={(value) => updateFilter('maturity', value)} options={facets.maturity} />
+        <FilterSelect label="Commercial proof" value={filters.commercialProof} onChange={(value) => updateFilter('commercialProof', value)} options={facets.commercialProof} />
+        <FilterSelect label="Ecosystem role" value={filters.ecosystemRole} onChange={(value) => updateFilter('ecosystemRole', value)} options={facets.ecosystemRoles} />
         <label className={styles.selectLabel}>
           <span>Founded</span>
           <select value={filters.founded} onChange={(event) => updateFilter('founded', event.target.value)} className={styles.select}>
@@ -197,11 +235,45 @@ export default function RoboticsMapExplorer({ companies, facets }: Props) {
                   <dt>Robots</dt>
                   <dd>{selectedCompany.robots.join(', ')}</dd>
                 </div>
+                <div>
+                  <dt>Maturity</dt>
+                  <dd>{selectedCompany.intelligence.maturity}</dd>
+                </div>
+                <div>
+                  <dt>Proof</dt>
+                  <dd>{selectedCompany.intelligence.commercialProof}</dd>
+                </div>
+                <div>
+                  <dt>Confidence</dt>
+                  <dd>{selectedCompany.intelligence.sourceConfidence}</dd>
+                </div>
               </dl>
 
               <div className={styles.tagGroup}>
                 {selectedCompany.sector.map((sector) => <span key={sector}>{sector}</span>)}
                 {selectedCompany.robotTypes.map((type) => <span key={type}>{type}</span>)}
+                {selectedCompany.intelligence.ecosystemRoles.map((role) => <span key={role}>{role}</span>)}
+              </div>
+
+              <div className={styles.signalPanel}>
+                <div>
+                  <span className={styles.signalValue}>{selectedCompany.intelligence.robotAgeSignal.overall ?? 'TBD'}</span>
+                  <span className={styles.signalLabel}>Robot Age Signal</span>
+                </div>
+                <p>{selectedCompany.intelligence.robotAgeSignal.notes}</p>
+              </div>
+
+              <div className={styles.businessBlock}>
+                <h3>Products</h3>
+                <ul className={styles.insightList}>
+                  {selectedCompany.intelligence.products.map((product) => (
+                    <li key={product.name}>
+                      <strong>{product.name}</strong>
+                      <span>{product.category} · {product.status}</span>
+                      <p>{product.notes}</p>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               <div className={styles.businessBlock}>
@@ -215,6 +287,31 @@ export default function RoboticsMapExplorer({ companies, facets }: Props) {
               <div className={styles.businessBlock}>
                 <h3>Model</h3>
                 <p>{selectedCompany.businessModel}</p>
+              </div>
+              <div className={styles.businessBlock}>
+                <h3>Deployment evidence</h3>
+                <p>{selectedCompany.intelligence.deployments.evidence}</p>
+              </div>
+              <div className={styles.businessBlock}>
+                <h3>Revenue model</h3>
+                <ul className={styles.compactList}>
+                  {selectedCompany.intelligence.revenueModel.map((model) => <li key={model}>{model}</li>)}
+                </ul>
+              </div>
+              <div className={styles.businessBlock}>
+                <h3>Timeline scaffold</h3>
+                <ul className={styles.timelineList}>
+                  {selectedCompany.intelligence.timeline.map((event) => (
+                    <li key={`${event.date}-${event.label}`}>
+                      <span>{event.date}</span>
+                      <p>{event.label}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className={styles.businessBlock}>
+                <h3>Source notes</h3>
+                <p>{selectedCompany.intelligence.sourceNotes}</p>
               </div>
 
               <a href={selectedCompany.website} className={styles.companyLink} target="_blank" rel="noreferrer">

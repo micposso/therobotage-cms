@@ -1,4 +1,4 @@
-export type RoboticsCompany = {
+export type RoboticsCompanyBase = {
   id: string
   name: string
   country: string
@@ -18,7 +18,67 @@ export type RoboticsCompany = {
   website: string
 }
 
-export const roboticsMapCompanies: RoboticsCompany[] = [
+export type RoboticsProduct = {
+  name: string
+  category: string
+  status: 'Concept' | 'Prototype' | 'Pilot' | 'Commercial' | 'Research platform' | 'Internal program'
+  targetUseCases: string[]
+  targetCustomers: string[]
+  notes: string
+}
+
+export type RoboticsFundingRound = {
+  date: string
+  round: string
+  amount: string
+  valuation: string
+  investors: string[]
+  sourceStatus: 'Placeholder' | 'Needs research' | 'Verified'
+}
+
+export type RoboticsTimelineEvent = {
+  date: string
+  label: string
+  category: 'Founded' | 'Funding' | 'Product' | 'Deployment' | 'Partnership' | 'IPO' | 'Acquisition' | 'Research'
+  sourceStatus: 'Placeholder' | 'Needs research' | 'Verified'
+}
+
+export type RoboticsIntelligence = {
+  maturity: 'Research' | 'Startup' | 'Growth' | 'Public' | 'Acquired' | 'Corporate program'
+  commercialProof: 'Concept' | 'Demo' | 'Pilot' | 'Paid deployment' | 'Scaled deployment' | 'Public market'
+  ecosystemRoles: string[]
+  buyerSectors: string[]
+  products: RoboticsProduct[]
+  knownCustomers: string[]
+  deployments: {
+    stage: 'Demo' | 'Pilot' | 'Paid deployment' | 'Scaled deployment' | 'Unknown'
+    evidence: string
+    locations: string[]
+  }
+  revenueModel: string[]
+  businessRisks: string[]
+  opportunities: string[]
+  fundingRounds: RoboticsFundingRound[]
+  timeline: RoboticsTimelineEvent[]
+  sourceConfidence: 'Low' | 'Medium' | 'High'
+  sourceNotes: string
+  lastResearched: string | null
+  robotAgeSignal: {
+    overall: number | null
+    deploymentProof: number | null
+    productMaturity: number | null
+    fundingStrength: number | null
+    strategicPosition: number | null
+    hriRelevance: number | null
+    notes: string
+  }
+}
+
+export type RoboticsCompany = RoboticsCompanyBase & {
+  intelligence: RoboticsIntelligence
+}
+
+const roboticsMapCompanyBase: RoboticsCompanyBase[] = [
   {
     id: 'agility-robotics',
     name: 'Agility Robotics',
@@ -344,10 +404,121 @@ export const roboticsMapCompanies: RoboticsCompany[] = [
   },
 ]
 
+function inferMaturity(company: RoboticsCompanyBase): RoboticsIntelligence['maturity'] {
+  if (company.companyType === 'Public company') return 'Public'
+  if (company.companyType === 'Subsidiary') return 'Acquired'
+  if (company.companyType === 'Corporate robotics program') return 'Corporate program'
+  if (company.status.toLowerCase().includes('public') || company.status.toLowerCase().includes('ipo')) return 'Growth'
+  if ((company.founded ?? 0) >= 2022) return 'Startup'
+  return 'Growth'
+}
+
+function inferCommercialProof(company: RoboticsCompanyBase): RoboticsIntelligence['commercialProof'] {
+  const text = `${company.status} ${company.latestSignal} ${company.businessModel}`.toLowerCase()
+  if (text.includes('public') || text.includes('ipo') || text.includes('listing')) return 'Public market'
+  if (text.includes('commercial') || text.includes('customers') || text.includes('orders') || text.includes('revenue')) return 'Scaled deployment'
+  if (text.includes('deployment') || text.includes('deployed') || text.includes('production')) return 'Paid deployment'
+  if (text.includes('pilot')) return 'Pilot'
+  if (text.includes('demo')) return 'Demo'
+  return 'Concept'
+}
+
+function inferEcosystemRoles(company: RoboticsCompanyBase) {
+  const roles = ['Robot OEM']
+  if (company.sector.some((sector) => sector.toLowerCase().includes('ai')) || company.robotTypes.some((type) => type.toLowerCase().includes('ai'))) {
+    roles.push('Embodied AI platform')
+  }
+  if (company.sector.some((sector) => sector.toLowerCase().includes('developer') || sector.toLowerCase().includes('open-source'))) {
+    roles.push('Developer ecosystem')
+  }
+  if (company.robotTypes.some((type) => type.toLowerCase().includes('inspection'))) {
+    roles.push('Inspection automation')
+  }
+  if (company.sector.some((sector) => sector.toLowerCase().includes('foundation'))) {
+    roles.push('Robotics software layer')
+  }
+  return roles
+}
+
+function defaultIntelligence(company: RoboticsCompanyBase): RoboticsIntelligence {
+  const commercialProof = inferCommercialProof(company)
+  const maturity = inferMaturity(company)
+  const primaryRobotType = company.robotTypes[0] ?? 'Robot platform'
+
+  return {
+    maturity,
+    commercialProof,
+    ecosystemRoles: inferEcosystemRoles(company),
+    buyerSectors: company.sector,
+    products: company.robots.map((robot) => ({
+      name: robot,
+      category: primaryRobotType,
+      status: commercialProof === 'Concept' || commercialProof === 'Demo' ? 'Pilot' : 'Commercial',
+      targetUseCases: company.sector,
+      targetCustomers: company.sector,
+      notes: 'Placeholder product record. Needs deeper product research, pricing, availability, and buyer persona details.',
+    })),
+    knownCustomers: [],
+    deployments: {
+      stage: commercialProof === 'Concept' || commercialProof === 'Public market' ? 'Unknown' : commercialProof,
+      evidence: company.latestSignal,
+      locations: [company.city],
+    },
+    revenueModel: [company.businessModel],
+    businessRisks: ['Needs research: unit economics, deployment reliability, service costs, and buyer adoption friction.'],
+    opportunities: ['Needs research: strongest target verticals, partnership channels, and near-term market expansion paths.'],
+    fundingRounds: [
+      {
+        date: 'Needs research',
+        round: company.companyType,
+        amount: company.funding,
+        valuation: company.funding,
+        investors: [],
+        sourceStatus: 'Needs research',
+      },
+    ],
+    timeline: [
+      {
+        date: company.founded ? String(company.founded) : 'Needs research',
+        label: 'Company founded',
+        category: 'Founded',
+        sourceStatus: company.founded ? 'Verified' : 'Needs research',
+      },
+      {
+        date: 'Needs research',
+        label: company.latestSignal,
+        category: 'Research',
+        sourceStatus: 'Needs research',
+      },
+    ],
+    sourceConfidence: 'Medium',
+    sourceNotes: 'First-pass structured model. Business intelligence fields are scaffolded for later source-backed research.',
+    lastResearched: null,
+    robotAgeSignal: {
+      overall: null,
+      deploymentProof: null,
+      productMaturity: null,
+      fundingStrength: null,
+      strategicPosition: null,
+      hriRelevance: null,
+      notes: 'Score model scaffold. Populate after source-backed research and calibration.',
+    },
+  }
+}
+
+export const roboticsMapCompanies: RoboticsCompany[] = roboticsMapCompanyBase.map((company) => ({
+  ...company,
+  intelligence: defaultIntelligence(company),
+}))
+
 export const roboticsMapFacets = {
   regions: Array.from(new Set(roboticsMapCompanies.map((company) => company.region))).sort(),
   countries: Array.from(new Set(roboticsMapCompanies.map((company) => company.country))).sort(),
   companyTypes: Array.from(new Set(roboticsMapCompanies.map((company) => company.companyType))).sort(),
   sectors: Array.from(new Set(roboticsMapCompanies.flatMap((company) => company.sector))).sort(),
   robotTypes: Array.from(new Set(roboticsMapCompanies.flatMap((company) => company.robotTypes))).sort(),
+  maturity: Array.from(new Set(roboticsMapCompanies.map((company) => company.intelligence.maturity))).sort(),
+  commercialProof: Array.from(new Set(roboticsMapCompanies.map((company) => company.intelligence.commercialProof))).sort(),
+  ecosystemRoles: Array.from(new Set(roboticsMapCompanies.flatMap((company) => company.intelligence.ecosystemRoles))).sort(),
+  buyerSectors: Array.from(new Set(roboticsMapCompanies.flatMap((company) => company.intelligence.buyerSectors))).sort(),
 }

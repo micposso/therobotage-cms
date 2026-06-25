@@ -28,7 +28,7 @@ export default function RoboticsMapPage() {
             <p className={styles.eyebrow}>Robotics company atlas</p>
             <h1 className={styles.title}>Where the robot economy is taking shape.</h1>
             <p className={styles.subtitle}>
-              Filter robotics companies by location, business model, sector, robot form factor, and commercial signal. The same dataset powers the public API at <code>/api/robotics-map</code>.
+              Filter robotics companies by geography, product category, customer sector, maturity, commercial proof, and ecosystem role. The same market-intelligence model powers the public API at <code>/api/robotics-map</code>.
             </p>
           </header>
           <RoboticsMapExplorer companies={roboticsMapCompanies} facets={roboticsMapFacets} />
