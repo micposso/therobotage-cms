@@ -59,57 +59,62 @@ function matchesFoundedRange(founded: number | null, range: string) {
   return founded >= 2019
 }
 
+function buildHaystack(company: RoboticsCompany) {
+  return [
+    company.name,
+    company.city,
+    company.country,
+    company.region,
+    company.companyType,
+    company.status,
+    company.funding,
+    company.businessModel,
+    company.intelligence.maturity,
+    company.intelligence.commercialProof,
+    company.intelligence.deployments.evidence,
+    company.intelligence.sourceNotes,
+    ...company.sector,
+    ...company.robotTypes,
+    ...company.robots,
+    ...company.intelligence.ecosystemRoles,
+    ...company.intelligence.buyerSectors,
+    ...company.intelligence.revenueModel,
+    ...company.intelligence.products.flatMap((product) => [
+      product.name,
+      product.category,
+      product.status,
+      product.notes,
+      ...product.targetUseCases,
+      ...product.targetCustomers,
+    ]),
+  ].join(' ').toLowerCase()
+}
+
+function matchesFilters(company: RoboticsCompany, filters: Filters) {
+  const query = filters.query.trim().toLowerCase()
+
+  return (
+    (!query || buildHaystack(company).includes(query)) &&
+    (filters.region === 'all' || company.region === filters.region) &&
+    (filters.country === 'all' || company.country === filters.country) &&
+    (filters.companyType === 'all' || company.companyType === filters.companyType) &&
+    (filters.sector === 'all' || company.sector.includes(filters.sector)) &&
+    (filters.robotType === 'all' || company.robotTypes.includes(filters.robotType)) &&
+    (filters.maturity === 'all' || company.intelligence.maturity === filters.maturity) &&
+    (filters.commercialProof === 'all' || company.intelligence.commercialProof === filters.commercialProof) &&
+    (filters.ecosystemRole === 'all' || company.intelligence.ecosystemRoles.includes(filters.ecosystemRole)) &&
+    matchesFoundedRange(company.founded, filters.founded)
+  )
+}
+
 export default function RoboticsMapExplorer({ companies, facets }: Props) {
   const [filters, setFilters] = useState<Filters>(initialFilters)
   const [selectedId, setSelectedId] = useState(companies[0]?.id ?? '')
 
-  const filteredCompanies = useMemo(() => {
-    const query = filters.query.trim().toLowerCase()
-
-    return companies.filter((company) => {
-      const haystack = [
-        company.name,
-        company.city,
-        company.country,
-        company.region,
-        company.companyType,
-        company.status,
-        company.funding,
-        company.businessModel,
-        company.intelligence.maturity,
-        company.intelligence.commercialProof,
-        company.intelligence.deployments.evidence,
-        company.intelligence.sourceNotes,
-        ...company.sector,
-        ...company.robotTypes,
-        ...company.robots,
-        ...company.intelligence.ecosystemRoles,
-        ...company.intelligence.buyerSectors,
-        ...company.intelligence.revenueModel,
-        ...company.intelligence.products.flatMap((product) => [
-          product.name,
-          product.category,
-          product.status,
-          product.notes,
-          ...product.targetUseCases,
-          ...product.targetCustomers,
-        ]),
-      ].join(' ').toLowerCase()
-
-      return (
-        (!query || haystack.includes(query)) &&
-        (filters.region === 'all' || company.region === filters.region) &&
-        (filters.country === 'all' || company.country === filters.country) &&
-        (filters.companyType === 'all' || company.companyType === filters.companyType) &&
-        (filters.sector === 'all' || company.sector.includes(filters.sector)) &&
-        (filters.robotType === 'all' || company.robotTypes.includes(filters.robotType)) &&
-        (filters.maturity === 'all' || company.intelligence.maturity === filters.maturity) &&
-        (filters.commercialProof === 'all' || company.intelligence.commercialProof === filters.commercialProof) &&
-        (filters.ecosystemRole === 'all' || company.intelligence.ecosystemRoles.includes(filters.ecosystemRole)) &&
-        matchesFoundedRange(company.founded, filters.founded)
-      )
-    })
-  }, [companies, filters])
+  const filteredCompanies = useMemo(
+    () => companies.filter((company) => matchesFilters(company, filters)),
+    [companies, filters],
+  )
 
   const selectedCompany = filteredCompanies.find((company) => company.id === selectedId) ?? filteredCompanies[0]
 
@@ -117,40 +122,7 @@ export default function RoboticsMapExplorer({ companies, facets }: Props) {
     const nextFilters = { ...filters, [key]: value }
     setFilters(nextFilters)
 
-    const nextQuery = nextFilters.query.trim().toLowerCase()
-    const nextVisible = companies.find((company) => {
-      const haystack = [
-        company.name,
-        company.city,
-        company.country,
-        company.region,
-        company.companyType,
-        company.status,
-        company.funding,
-        company.businessModel,
-        company.intelligence.maturity,
-        company.intelligence.commercialProof,
-        ...company.sector,
-        ...company.robotTypes,
-        ...company.robots,
-        ...company.intelligence.ecosystemRoles,
-        ...company.intelligence.buyerSectors,
-      ].join(' ').toLowerCase()
-
-      return (
-        (!nextQuery || haystack.includes(nextQuery)) &&
-        (nextFilters.region === 'all' || company.region === nextFilters.region) &&
-        (nextFilters.country === 'all' || company.country === nextFilters.country) &&
-        (nextFilters.companyType === 'all' || company.companyType === nextFilters.companyType) &&
-        (nextFilters.sector === 'all' || company.sector.includes(nextFilters.sector)) &&
-        (nextFilters.robotType === 'all' || company.robotTypes.includes(nextFilters.robotType)) &&
-        (nextFilters.maturity === 'all' || company.intelligence.maturity === nextFilters.maturity) &&
-        (nextFilters.commercialProof === 'all' || company.intelligence.commercialProof === nextFilters.commercialProof) &&
-        (nextFilters.ecosystemRole === 'all' || company.intelligence.ecosystemRoles.includes(nextFilters.ecosystemRole)) &&
-        matchesFoundedRange(company.founded, nextFilters.founded)
-      )
-    })
-
+    const nextVisible = companies.find((company) => matchesFilters(company, nextFilters))
     setSelectedId(nextVisible?.id ?? '')
   }
 
