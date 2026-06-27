@@ -15,7 +15,12 @@
       "Bash(PORT=3100 npm run dev)",
       "Bash(curl -s http://localhost:3100/signin)",
       "Bash(kill %1 %2)",
-      "Bash(node -e \"console.log\\(require\\('next/package.json'\\).version\\)\")"
+      "Bash(node -e \"console.log\\(require\\('next/package.json'\\).version\\)\")",
+      "Bash(xargs -I{} echo \"Errors in RoboticsMapExplorer.tsx: {}\")",
+      "Bash(npm install *)",
+      "Bash(git rm *)",
+      "Bash(git restore *)",
+      "Bash(git check-ignore *)"
     ]
   }
 }

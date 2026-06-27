@@ -114,6 +114,84 @@ visible focus, `aria-live` progress, `prefers-reduced-motion` honored (bar/arrow
 transitions disabled), single-column layout with non-sticky sidebars under 992px,
 16px inputs to prevent iOS zoom. Usable in a live Zoom screen-share.
 
+### Robotics Map — `/robotics-map`
+
+An interactive world map and filterable directory of the robotics companies The
+Robot Age tracks, backed by a structured market-intelligence data model. The same
+model is served verbatim from a public JSON API at `/api/robotics-map`, so the
+page and the API never drift.
+
+**Files**
+- `src/lib/robotics-map.ts` — the single source of truth. Exports the
+  `RoboticsCompany` types, the hand-authored `roboticsMapCompanyBase[]` records,
+  the `defaultIntelligence()` scaffolding layer, the assembled
+  `roboticsMapCompanies` array, and the derived `roboticsMapFacets` (the
+  deduplicated, sorted option lists that drive every filter dropdown). Add or edit
+  companies **here only** — the page, the detail panel, the facets, and the API all
+  read from this one module.
+- `src/app/robotics-map/page.tsx` — server shell. `metadata` (incl. OpenGraph /
+  Twitter), `<Nav pinned />`, header copy, mounts `<RoboticsMapExplorer>` with the
+  companies + facets as props, `<Footer />`. Standard page pattern.
+- `src/app/robotics-map/page.module.css` — page chrome (header/eyebrow/title).
+- `src/components/RoboticsMap/RoboticsMapExplorer.tsx` — `'use client'`. The
+  filtering + state shell: search box, the facet `<select>`s, the founded-year
+  range filter, the results count, the API link, and the right-hand company detail
+  panel. Owns `filters` and `selectedId` state.
+- `src/components/RoboticsMap/RoboticsLeafletMap.tsx` — `'use client'`. The Leaflet
+  map itself, **loaded via `next/dynamic` with `ssr: false`** (Leaflet touches
+  `window`, so it must never render on the server). Renders one marker per visible
+  company and `flyTo`s the selected one.
+- `src/components/RoboticsMap/RoboticsMapExplorer.module.css` — all styles for both
+  components, design-token only (incl. the `.leafletPin` / `.leafletPinActive`
+  marker classes injected into Leaflet `divIcon` HTML).
+- `src/app/api/robotics-map/route.ts` — `force-static` GET handler returning
+  `{ schemaVersion, updatedAt, count, facets, companies }`.
+
+**Data model (`robotics-map.ts`)** — each company is a `RoboticsCompanyBase`
+(identity, location + `latitude`/`longitude`, `companyType`, `sector[]`,
+`robotTypes[]`, `robots[]`, `founded`, `status`, `funding`, `latestSignal`,
+`businessModel`, `website`) extended with an `intelligence: RoboticsIntelligence`
+block. The intelligence block is **scaffolding for later source-backed research**,
+not verified data: `defaultIntelligence()` *infers* `maturity`,
+`commercialProof`, and `ecosystemRoles` from the base fields via keyword
+heuristics (`inferMaturity` / `inferCommercialProof` / `inferEcosystemRoles`), and
+seeds `products`, `fundingRounds`, `timeline`, risks/opportunities, and the
+`robotAgeSignal` scorecard with placeholder records carrying explicit
+`sourceStatus: 'Needs research'` / `sourceConfidence` / null-score markers. When
+you research a company for real, replace these placeholders and flip the status
+fields — do not silently leave "Needs research" text in shipped copy.
+
+**Filtering** — `RoboticsMapExplorer` filters in a `useMemo` over a lowercased
+`haystack` (free-text search) plus exact-match facet filters: region, country,
+company type, sector, robot type, maturity, commercial proof, ecosystem role, and
+a bucketed founded-year range (`matchesFoundedRange`). The map shows only the
+filtered set; the summary bar reads "N of M companies visible"; **Reset** restores
+`initialFilters`. On any filter change, `updateFilter` recomputes the first still-
+visible company and selects it so the detail panel never strands a now-hidden
+company.
+
+**Map (`RoboticsLeafletMap`)** — `react-leaflet` `MapContainer` on the CARTO
+`light_all` tile layer, constrained to world `maxBounds`, zoom 2–8. Markers are
+HTML `divIcon`s styled by the CSS-module pin classes (active marker gets a
+distinct class). Selecting a marker calls `onSelect`; the `MapSelection` child
+`flyTo`s the selected company. Leaflet's stylesheet is imported **once globally**
+in `src/app/layout.tsx` (`import "leaflet/dist/leaflet.css"`) — do not re-import it
+per component. `leaflet` + `react-leaflet` (+ `@types/leaflet`) are the only
+dependencies this feature adds.
+
+**Detail panel** — the right-hand `aria-live` aside renders the selected company:
+metrics grid (founded / type / robots / maturity / proof / confidence), sector +
+robot-type + ecosystem-role tags, the `robotAgeSignal.overall` score (or `TBD`),
+products, business signal / funding, "why it matters", model, deployment evidence,
+revenue model, the timeline scaffold, and source notes, ending in an external link
+to the company site.
+
+**Editing companies** — to add a company, append a `RoboticsCompanyBase` literal
+to `roboticsMapCompanyBase` (real `latitude`/`longitude` are required for the
+marker). Facets, filters, the map, the detail panel, and the API update
+automatically. When the underlying records change, bump `schemaVersion` /
+`updatedAt` in `route.ts` so API consumers can tell.
+
 ## Agents
 
 | Agent                    | When to use                                           |
