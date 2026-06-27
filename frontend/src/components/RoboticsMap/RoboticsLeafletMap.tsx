@@ -17,12 +17,30 @@ const bounds: L.LatLngBoundsExpression = [
   [72, 170],
 ]
 
-function createMarkerIcon(isActive: boolean) {
+const proofClassByStage: Record<RoboticsCompany['intelligence']['commercialProof'], string> = {
+  Concept: styles.pinConcept,
+  Demo: styles.pinDemo,
+  Pilot: styles.pinPilot,
+  'Paid deployment': styles.pinPaid,
+  'Scaled deployment': styles.pinScaled,
+  'Public market': styles.pinPublic,
+}
+
+function createMarkerIcon(company: RoboticsCompany, isActive: boolean) {
+  const score = company.intelligence.robotAgeSignal.overall
+  const scoreClass = score && score >= 80 ? styles.pinScoreHigh : score && score >= 65 ? styles.pinScoreMedium : styles.pinScoreLow
+  const classes = [
+    styles.leafletPin,
+    proofClassByStage[company.intelligence.commercialProof],
+    scoreClass,
+    isActive ? styles.leafletPinActive : '',
+  ].filter(Boolean).join(' ')
+
   return L.divIcon({
     className: '',
-    html: `<span class="${isActive ? styles.leafletPinActive : styles.leafletPin}"></span>`,
-    iconSize: [22, 22],
-    iconAnchor: [11, 11],
+    html: `<span class="${classes}"><span>${score ?? ''}</span></span>`,
+    iconSize: isActive ? [34, 34] : [28, 28],
+    iconAnchor: isActive ? [17, 17] : [14, 14],
     popupAnchor: [0, -12],
   })
 }
@@ -63,7 +81,7 @@ export default function RoboticsLeafletMap({ companies, selectedId, onSelect }: 
         <Marker
           key={company.id}
           position={[company.latitude, company.longitude]}
-          icon={createMarkerIcon(company.id === selectedId)}
+          icon={createMarkerIcon(company, company.id === selectedId)}
           eventHandlers={{
             click: () => onSelect(company.id),
           }}
