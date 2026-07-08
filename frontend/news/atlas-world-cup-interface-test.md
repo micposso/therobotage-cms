@@ -29,6 +29,33 @@ That is where the World Cup appearance becomes more than a marketing moment. Hum
 
 Boston Dynamics positions [Atlas](https://bostondynamics.com/products/atlas/) as an enterprise humanoid for industrial work, especially material handling. The product page lists barcode scanning, workflow integrations, autonomous navigation to a charging station, self-swappable batteries, four hours of battery life, 56 degrees of freedom, a 2.3-meter reach, and load capacity up to 50 kg instant or 30 kg sustained. It also says Atlas is taking its first steps into a Hyundai customer facility for field testing on real-world sequencing tasks.
 
+<aside class="spec-card">
+  <figure class="spec-card-media">
+    <img src="/images/news/atlas-world-cup-interface-test-thumb.jpg" alt="Atlas delivering the ceremonial match ball at the FIFA World Cup 2026 Round of 16 match" />
+    <figcaption>Atlas at FIFA World Cup 2026. Image: Hyundai Motor Group / Boston Dynamics</figcaption>
+  </figure>
+  <div class="spec-card-body">
+    <p class="spec-card-eyebrow">Technical robot profile</p>
+    <h3 class="spec-card-name">Atlas</h3>
+    <p class="spec-card-maker">Boston Dynamics · Waltham, Massachusetts</p>
+    <p class="spec-card-desc">A full-size enterprise humanoid built for industrial material handling, workflow integration, and human-scale workstations.</p>
+    <dl class="spec-card-specs">
+      <div><dt>Form</dt><dd>Electric humanoid robot</dd></div>
+      <div><dt>Primary use case</dt><dd>Material handling and sequencing tasks</dd></div>
+      <div><dt>Height</dt><dd>1.9 m / 6.2 ft</dd></div>
+      <div><dt>Weight</dt><dd>90 kg / 198 lb</dd></div>
+      <div><dt>Reach</dt><dd>2.3 m / 7.5 ft</dd></div>
+      <div><dt>Degrees of freedom</dt><dd>56</dd></div>
+      <div><dt>Payload</dt><dd>50 kg instant / 30 kg sustained</dd></div>
+      <div><dt>Battery life</dt><dd>4 hours; autonomous battery swap</dd></div>
+      <div><dt>Sensing</dt><dd>Tactile sensing and 360-degree camera view</dd></div>
+      <div><dt>Durability</dt><dd>IP67; -20 to 40 C operating range</dd></div>
+      <div><dt>Software integration</dt><dd>Barcode scanning, workflow integrations, Orbit fleet oversight</dd></div>
+      <div><dt>Deployment status</dt><dd>Hyundai facility field testing for real-world sequencing tasks</dd></div>
+    </dl>
+  </div>
+</aside>
+
 That makes the World Cup activation a public-facing version of the same core problem. In the stadium, Atlas had to move a ball, perform a social script, and share space with humans under broadcast pressure. In a plant, the tasks will be less theatrical but more consequential: part sequencing, machine tending, order building, handoffs, charging, escalation, and fleet oversight.
 
 ## Brand trust is part of deployment readiness
