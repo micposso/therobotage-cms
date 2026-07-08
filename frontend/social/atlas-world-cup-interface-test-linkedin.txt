@@ -1,0 +1,11 @@
+Atlas handing off a World Cup match ball was more than a halftime stunt.
+
+Hyundai brought Boston Dynamics' Atlas into the FIFA World Cup 2026 Round of 16 match at New York/New Jersey Stadium, where it performed football-inspired movements and delivered the ceremonial ball to the referee. The official release framed it as the first humanoid integration into a live FIFA World Cup match environment.
+
+The design signal is bigger than the spectacle. Atlas had to make its motion readable in a live setting: path, pause, handoff, posture, exit. That same legibility problem follows humanoids into factories, warehouses, hospitals, and public corridors. Capability matters, but people also need to understand what the robot is about to do.
+
+The factory story was hiding under the halftime story. Boston Dynamics positions Atlas for enterprise material handling, with workflow integrations, self-swappable batteries, 56 degrees of freedom, and Hyundai field testing on sequencing tasks. The public demo was a trust rehearsal for industrial deployment.
+
+Read the full piece on The Robot Age: https://therobotage.com/news/atlas-world-cup-interface-test
+
+#Robotics #HumanoidRobots #HRI #ProductDesign #PhysicalAI
