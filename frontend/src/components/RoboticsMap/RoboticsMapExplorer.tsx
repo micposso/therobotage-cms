@@ -22,9 +22,10 @@ type Props = {
   facets: Facets
 }
 
-type FilterKey = 'query' | 'region' | 'country' | 'companyType' | 'sector' | 'robotType' | 'maturity' | 'commercialProof' | 'ecosystemRole' | 'founded'
+type FilterKey = 'query' | 'region' | 'country' | 'companyType' | 'sector' | 'robotType' | 'maturity' | 'commercialProof' | 'ecosystemRole' | 'buyerSector' | 'founded'
 
 type Filters = Record<FilterKey, string>
+type DetailTab = 'overview' | 'products' | 'deployments' | 'funding' | 'sources'
 
 const initialFilters: Filters = {
   query: '',
@@ -36,6 +37,7 @@ const initialFilters: Filters = {
   maturity: 'all',
   commercialProof: 'all',
   ecosystemRole: 'all',
+  buyerSector: 'all',
   founded: 'all',
 }
 
@@ -50,6 +52,23 @@ const RoboticsLeafletMap = dynamic(() => import('./RoboticsLeafletMap'), {
   ssr: false,
   loading: () => <div className={styles.mapLoading}>Loading map...</div>,
 })
+
+const detailTabs: { id: DetailTab; label: string }[] = [
+  { id: 'overview', label: 'Overview' },
+  { id: 'products', label: 'Products' },
+  { id: 'deployments', label: 'Deployments' },
+  { id: 'funding', label: 'Funding' },
+  { id: 'sources', label: 'Sources' },
+]
+
+const proofOrder: Record<RoboticsCompany['intelligence']['commercialProof'], number> = {
+  Concept: 1,
+  Demo: 2,
+  Pilot: 3,
+  'Paid deployment': 4,
+  'Scaled deployment': 5,
+  'Public market': 6,
+}
 
 function matchesFoundedRange(founded: number | null, range: string) {
   if (range === 'all') return true
@@ -103,13 +122,45 @@ function matchesFilters(company: RoboticsCompany, filters: Filters) {
     (filters.maturity === 'all' || company.intelligence.maturity === filters.maturity) &&
     (filters.commercialProof === 'all' || company.intelligence.commercialProof === filters.commercialProof) &&
     (filters.ecosystemRole === 'all' || company.intelligence.ecosystemRoles.includes(filters.ecosystemRole)) &&
+    (filters.buyerSector === 'all' || company.intelligence.buyerSectors.includes(filters.buyerSector)) &&
     matchesFoundedRange(company.founded, filters.founded)
   )
+}
+
+function getSignalScore(company: RoboticsCompany) {
+  return company.intelligence.robotAgeSignal.overall ?? 0
+}
+
+function sortBySignal(a: RoboticsCompany, b: RoboticsCompany) {
+  return getSignalScore(b) - getSignalScore(a) || proofOrder[b.intelligence.commercialProof] - proofOrder[a.intelligence.commercialProof] || a.name.localeCompare(b.name)
+}
+
+function getRegionSummary(companies: RoboticsCompany[]) {
+  return Object.entries(
+    companies.reduce<Record<string, { count: number; topScore: number }>>((summary, company) => {
+      const current = summary[company.region] ?? { count: 0, topScore: 0 }
+      summary[company.region] = {
+        count: current.count + 1,
+        topScore: Math.max(current.topScore, getSignalScore(company)),
+      }
+      return summary
+    }, {}),
+  )
+    .map(([region, value]) => ({ region, ...value }))
+    .sort((a, b) => b.count - a.count || b.topScore - a.topScore)
+}
+
+function getProofSummary(companies: RoboticsCompany[]) {
+  return companies.reduce<Record<string, number>>((summary, company) => {
+    summary[company.intelligence.commercialProof] = (summary[company.intelligence.commercialProof] ?? 0) + 1
+    return summary
+  }, {})
 }
 
 export default function RoboticsMapExplorer({ companies, facets }: Props) {
   const [filters, setFilters] = useState<Filters>(initialFilters)
   const [selectedId, setSelectedId] = useState(companies[0]?.id ?? '')
+  const [activeTab, setActiveTab] = useState<DetailTab>('overview')
 
   const filteredCompanies = useMemo(
     () => companies.filter((company) => matchesFilters(company, filters)),
@@ -117,6 +168,14 @@ export default function RoboticsMapExplorer({ companies, facets }: Props) {
   )
 
   const selectedCompany = filteredCompanies.find((company) => company.id === selectedId) ?? filteredCompanies[0]
+  const leaderboard = useMemo(() => [...filteredCompanies].sort(sortBySignal).slice(0, 6), [filteredCompanies])
+  const regionSummary = useMemo(() => getRegionSummary(filteredCompanies), [filteredCompanies])
+  const proofSummary = useMemo(() => getProofSummary(filteredCompanies), [filteredCompanies])
+  const scaledDeployments = proofSummary['Scaled deployment'] ?? 0
+  const paidDeployments = proofSummary['Paid deployment'] ?? 0
+  const averageSignal = filteredCompanies.length
+    ? Math.round(filteredCompanies.reduce((sum, company) => sum + getSignalScore(company), 0) / filteredCompanies.length)
+    : 0
 
   function updateFilter(key: FilterKey, value: string) {
     const nextFilters = { ...filters, [key]: value }
@@ -153,6 +212,7 @@ export default function RoboticsMapExplorer({ companies, facets }: Props) {
         <FilterSelect label="Maturity" value={filters.maturity} onChange={(value) => updateFilter('maturity', value)} options={facets.maturity} />
         <FilterSelect label="Commercial proof" value={filters.commercialProof} onChange={(value) => updateFilter('commercialProof', value)} options={facets.commercialProof} />
         <FilterSelect label="Ecosystem role" value={filters.ecosystemRole} onChange={(value) => updateFilter('ecosystemRole', value)} options={facets.ecosystemRoles} />
+        <FilterSelect label="Buyer sector" value={filters.buyerSector} onChange={(value) => updateFilter('buyerSector', value)} options={facets.buyerSectors} />
         <label className={styles.selectLabel}>
           <span>Founded</span>
           <select value={filters.founded} onChange={(event) => updateFilter('founded', event.target.value)} className={styles.select}>
@@ -169,11 +229,57 @@ export default function RoboticsMapExplorer({ companies, facets }: Props) {
 
       <div className={styles.summaryBar}>
         <span>{filteredCompanies.length} of {companies.length} companies visible</span>
+        <span>{paidDeployments + scaledDeployments} with paid or scaled proof</span>
+        <span>{averageSignal || 'TBD'} average Robot Age Signal</span>
         <a href="/api/robotics-map" className={styles.apiLink}>Open JSON API</a>
+      </div>
+
+      <div className={styles.intelligenceStrip} aria-label="Robotics map intelligence summary">
+        <div className={styles.regionDensity}>
+          <span className={styles.sectionKicker}>Regional density</span>
+          <div className={styles.regionPills}>
+            {regionSummary.map((region) => (
+              <button
+                key={region.region}
+                type="button"
+                className={filters.region === region.region ? styles.regionPillActive : styles.regionPill}
+                onClick={() => updateFilter('region', filters.region === region.region ? 'all' : region.region)}
+              >
+                <strong>{region.count}</strong>
+                <span>{region.region}</span>
+                <small>Top {region.topScore || 'TBD'}</small>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className={styles.leaderboard}>
+          <span className={styles.sectionKicker}>Robot Age leaderboard</span>
+          <ol>
+            {leaderboard.map((company) => (
+              <li key={company.id}>
+                <button
+                  type="button"
+                  className={company.id === selectedCompany?.id ? styles.leaderboardButtonActive : styles.leaderboardButton}
+                  onClick={() => setSelectedId(company.id)}
+                >
+                  <span>{company.name}</span>
+                  <strong>{company.intelligence.robotAgeSignal.overall ?? 'TBD'}</strong>
+                  <small>{company.intelligence.commercialProof}</small>
+                </button>
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
 
       <div className={styles.mapGrid}>
         <div className={styles.mapPanel}>
+          <div className={styles.mapLegend} aria-label="Map marker legend">
+            <span><i className={styles.legendScaled} />Scaled/public</span>
+            <span><i className={styles.legendPaid} />Paid</span>
+            <span><i className={styles.legendPilot} />Pilot/demo</span>
+          </div>
           {filteredCompanies.length > 0 ? (
             <RoboticsLeafletMap
               companies={filteredCompanies}
@@ -192,6 +298,21 @@ export default function RoboticsMapExplorer({ companies, facets }: Props) {
                 <p className={styles.detailEyebrow}>{selectedCompany.city}, {selectedCompany.country}</p>
                 <h2 className={styles.detailTitle}>{selectedCompany.name}</h2>
                 <p className={styles.detailStatus}>{selectedCompany.status}</p>
+              </div>
+
+              <div className={styles.detailTabs} role="tablist" aria-label="Company intelligence sections">
+                {detailTabs.map((tab) => (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={activeTab === tab.id}
+                    className={activeTab === tab.id ? styles.detailTabActive : styles.detailTab}
+                    onClick={() => setActiveTab(tab.id)}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
               </div>
 
               <dl className={styles.metrics}>
@@ -235,56 +356,11 @@ export default function RoboticsMapExplorer({ companies, facets }: Props) {
                 <p>{selectedCompany.intelligence.robotAgeSignal.notes}</p>
               </div>
 
-              <div className={styles.businessBlock}>
-                <h3>Products</h3>
-                <ul className={styles.insightList}>
-                  {selectedCompany.intelligence.products.map((product) => (
-                    <li key={product.name}>
-                      <strong>{product.name}</strong>
-                      <span>{product.category} · {product.status}</span>
-                      <p>{product.notes}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className={styles.businessBlock}>
-                <h3>Business signal</h3>
-                <p>{selectedCompany.funding}</p>
-              </div>
-              <div className={styles.businessBlock}>
-                <h3>Why it matters</h3>
-                <p>{selectedCompany.latestSignal}</p>
-              </div>
-              <div className={styles.businessBlock}>
-                <h3>Model</h3>
-                <p>{selectedCompany.businessModel}</p>
-              </div>
-              <div className={styles.businessBlock}>
-                <h3>Deployment evidence</h3>
-                <p>{selectedCompany.intelligence.deployments.evidence}</p>
-              </div>
-              <div className={styles.businessBlock}>
-                <h3>Revenue model</h3>
-                <ul className={styles.compactList}>
-                  {selectedCompany.intelligence.revenueModel.map((model) => <li key={model}>{model}</li>)}
-                </ul>
-              </div>
-              <div className={styles.businessBlock}>
-                <h3>Timeline scaffold</h3>
-                <ul className={styles.timelineList}>
-                  {selectedCompany.intelligence.timeline.map((event) => (
-                    <li key={`${event.date}-${event.label}`}>
-                      <span>{event.date}</span>
-                      <p>{event.label}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className={styles.businessBlock}>
-                <h3>Source notes</h3>
-                <p>{selectedCompany.intelligence.sourceNotes}</p>
-              </div>
+              {activeTab === 'overview' && <OverviewTab company={selectedCompany} />}
+              {activeTab === 'products' && <ProductsTab company={selectedCompany} />}
+              {activeTab === 'deployments' && <DeploymentsTab company={selectedCompany} />}
+              {activeTab === 'funding' && <FundingTab company={selectedCompany} />}
+              {activeTab === 'sources' && <SourcesTab company={selectedCompany} />}
 
               <a href={selectedCompany.website} className={styles.companyLink} target="_blank" rel="noreferrer">
                 Visit company site
@@ -296,6 +372,136 @@ export default function RoboticsMapExplorer({ companies, facets }: Props) {
         </aside>
       </div>
     </section>
+  )
+}
+
+function OverviewTab({ company }: { company: RoboticsCompany }) {
+  return (
+    <>
+      <div className={styles.businessBlock}>
+        <h3>Why it matters</h3>
+        <p>{company.latestSignal}</p>
+      </div>
+      <div className={styles.businessBlock}>
+        <h3>Business model</h3>
+        <p>{company.businessModel}</p>
+      </div>
+      <div className={styles.businessBlock}>
+        <h3>Buyer sectors</h3>
+        <ul className={styles.compactList}>
+          {company.intelligence.buyerSectors.map((sector) => <li key={sector}>{sector}</li>)}
+        </ul>
+      </div>
+      <div className={styles.businessBlock}>
+        <h3>Opportunities</h3>
+        <ul className={styles.compactList}>
+          {company.intelligence.opportunities.map((opportunity) => <li key={opportunity}>{opportunity}</li>)}
+        </ul>
+      </div>
+    </>
+  )
+}
+
+function ProductsTab({ company }: { company: RoboticsCompany }) {
+  return (
+    <div className={styles.businessBlock}>
+      <h3>Products</h3>
+      <ul className={styles.insightList}>
+        {company.intelligence.products.map((product) => (
+          <li key={product.name}>
+            <strong>{product.name}</strong>
+            <span>{product.category} · {product.status}</span>
+            <p>{product.notes}</p>
+            <small>{product.targetUseCases.join(', ')}</small>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+function DeploymentsTab({ company }: { company: RoboticsCompany }) {
+  return (
+    <>
+      <div className={styles.businessBlock}>
+        <h3>Deployment evidence</h3>
+        <p>{company.intelligence.deployments.evidence}</p>
+      </div>
+      <div className={styles.businessBlock}>
+        <h3>Deployment locations</h3>
+        <ul className={styles.compactList}>
+          {company.intelligence.deployments.locations.map((location) => <li key={location}>{location}</li>)}
+        </ul>
+      </div>
+      <div className={styles.businessBlock}>
+        <h3>Known customers</h3>
+        <ul className={styles.compactList}>
+          {company.intelligence.knownCustomers.map((customer) => <li key={customer}>{customer}</li>)}
+        </ul>
+      </div>
+      <div className={styles.businessBlock}>
+        <h3>Risks</h3>
+        <ul className={styles.compactList}>
+          {company.intelligence.businessRisks.map((risk) => <li key={risk}>{risk}</li>)}
+        </ul>
+      </div>
+    </>
+  )
+}
+
+function FundingTab({ company }: { company: RoboticsCompany }) {
+  return (
+    <>
+      <div className={styles.businessBlock}>
+        <h3>Business signal</h3>
+        <p>{company.funding}</p>
+      </div>
+      <div className={styles.businessBlock}>
+        <h3>Funding rounds</h3>
+        <ul className={styles.timelineList}>
+          {company.intelligence.fundingRounds.map((round) => (
+            <li key={`${round.date}-${round.round}`}>
+              <span>{round.date} · {round.round}</span>
+              <p>{round.amount} {round.valuation !== 'Unknown' ? `at ${round.valuation}` : ''}</p>
+              <small>{round.investors.join(', ')} · {round.sourceStatus}</small>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className={styles.businessBlock}>
+        <h3>Revenue model</h3>
+        <ul className={styles.compactList}>
+          {company.intelligence.revenueModel.map((model) => <li key={model}>{model}</li>)}
+        </ul>
+      </div>
+    </>
+  )
+}
+
+function SourcesTab({ company }: { company: RoboticsCompany }) {
+  return (
+    <>
+      <div className={styles.businessBlock}>
+        <h3>Timeline scaffold</h3>
+        <ul className={styles.timelineList}>
+          {company.intelligence.timeline.map((event) => (
+            <li key={`${event.date}-${event.label}`}>
+              <span>{event.date} · {event.category}</span>
+              <p>{event.label}</p>
+              <small>{event.sourceStatus}</small>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className={styles.businessBlock}>
+        <h3>Source notes</h3>
+        <p>{company.intelligence.sourceNotes}</p>
+      </div>
+      <div className={styles.businessBlock}>
+        <h3>Last researched</h3>
+        <p>{company.intelligence.lastResearched ?? 'Not yet researched'}</p>
+      </div>
+    </>
   )
 }
 
