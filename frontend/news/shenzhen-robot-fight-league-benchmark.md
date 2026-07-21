@@ -11,11 +11,11 @@ author: The Robot Age Editorial Team
 
 The world's first full-scale humanoid robot fighting league opened in Shenzhen on July 16, and the spinning kicks are the least interesting thing about it. Every robot in the ring is the same robot. What separates the winners is the software that keeps them standing.
 
-EngineAI's Ultimate Robot Knock-out Legend (URKL) puts 32 finalist teams — pulled from more than 60 entrants, including Tsinghua, Zhejiang, Stanford, and UC Berkeley — on the standardized T800 humanoid, competing for a 10-million-yuan prize pool (about US$1.48 million) and a ten-kilogram gold belt. Same body, different brain. EngineAI calls it "standardized hardware, differentiated algorithms."
+EngineAI's Ultimate Robot Knock-out Legend (URKL) puts 32 finalist teams on the standardized T800 humanoid, competing for a 10-million-yuan prize pool (about US$1.48 million) and a ten-kilogram gold belt. The field is international — narrowed from more than 60 entrants worldwide, with Chinese programs like Tsinghua and Zhejiang and Hong Kong University fighting alongside American schools including Stanford and UC Berkeley. Same body, different brain. EngineAI calls it "standardized hardware, differentiated algorithms."
 
 <aside class="spec-card">
   <figure class="spec-card-media">
-    <img src="/images/news/shenzhen-robot-fight-league-benchmark-t800.jpg" alt="The EngineAI T800, a full-size humanoid robot, standing in a combat-ready stance under warm directional light" />
+    <img src="/images/news/shenzhen-robot-fight-league-benchmark-t800.jpg" alt="The EngineAI T800, a full-size humanoid robot in olive-green armored plating, walking through a boxing gym" />
     <figcaption>The T800, EngineAI's full-size humanoid and URKL's standardized platform. Image: EngineAI</figcaption>
   </figure>
   <div class="spec-card-body">
@@ -37,6 +37,8 @@ EngineAI's Ultimate Robot Knock-out Legend (URKL) puts 32 finalist teams — pul
 </aside>
 
 That single design choice is what sets URKL apart from the robot combat that has run on cable television since the late 1990s. BattleBots and its descendants field wheeled machines built to shred each other, each driven by a human holding a controller. URKL takes away the wheels and most of the human. The T800 walks on two legs and runs its own balance and targeting during the bout — judges score motion control, balance algorithms, and perception, not who wired up the bigger weapon.
+
+The rulebook keeps every fighter equal where it counts. Teams write their own motion, balance, and perception software, and they are allowed to add custom armor and engineering optimizations to survive the impacts. What they cannot do is change the machine underneath: every robot starts from an identical T800 — the same frame, the same joints, the same sensors — and no team may swap in a stronger chassis or a different body. A win has to come from better code, not a bigger hardware budget.
 
 ## Why a robotics company builds a fight club
 
