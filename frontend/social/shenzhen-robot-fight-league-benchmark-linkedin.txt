@@ -1,0 +1,11 @@
+The world's first humanoid robot fighting league just opened in Shenzhen, and every robot in the ring is identical.
+
+EngineAI's URKL puts 32 teams — from Tsinghua to Stanford to UC Berkeley — on the same T800 humanoid, competing for a 10-million-yuan prize and a ten-kilogram gold belt. Standardized hardware, differentiated algorithms. The winner is not decided by who built a better robot. It is decided by whose software keeps the robot standing.
+
+That is what separates URKL from the remote-controlled robot combat that has aired since the 1990s. Those were wheeled machines built to destroy, driven by a human with a controller. URKL fields bipedal humanoids running their own balance and perception during the bout. A fight is a brutal benchmark — it stress-tests the exact skills a humanoid needs on a warehouse floor: staying upright after a hit, recovering from a stumble, failing without falling apart.
+
+EngineAI is open-sourcing the tournament's core code so the whole field can harvest what breaks. For anyone deploying humanoids into real spaces, the question was never whether a robot can throw a punch. It is whether it can take one and stand back up.
+
+Read the full piece on The Robot Age: https://therobotage.com/news/shenzhen-robot-fight-league-benchmark
+
+#Robotics #AI #HumanoidRobots #EmbodiedAI #Deployment

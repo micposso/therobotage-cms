@@ -1,0 +1,524 @@
+export type RoboticsCompanyBase = {
+  id: string
+  name: string
+  country: string
+  city: string
+  region: string
+  latitude: number
+  longitude: number
+  companyType: 'Public company' | 'Private company' | 'Subsidiary' | 'Corporate robotics program'
+  sector: string[]
+  robotTypes: string[]
+  robots: string[]
+  founded: number | null
+  status: string
+  funding: string
+  latestSignal: string
+  businessModel: string
+  website: string
+}
+
+export type RoboticsProduct = {
+  name: string
+  category: string
+  status: 'Concept' | 'Prototype' | 'Pilot' | 'Commercial' | 'Research platform' | 'Internal program'
+  targetUseCases: string[]
+  targetCustomers: string[]
+  notes: string
+}
+
+export type RoboticsFundingRound = {
+  date: string
+  round: string
+  amount: string
+  valuation: string
+  investors: string[]
+  sourceStatus: 'Placeholder' | 'Needs research' | 'Verified'
+}
+
+export type RoboticsTimelineEvent = {
+  date: string
+  label: string
+  category: 'Founded' | 'Funding' | 'Product' | 'Deployment' | 'Partnership' | 'IPO' | 'Acquisition' | 'Research'
+  sourceStatus: 'Placeholder' | 'Needs research' | 'Verified'
+}
+
+export type RoboticsIntelligence = {
+  maturity: 'Research' | 'Startup' | 'Growth' | 'Public' | 'Acquired' | 'Corporate program'
+  commercialProof: 'Concept' | 'Demo' | 'Pilot' | 'Paid deployment' | 'Scaled deployment' | 'Public market'
+  ecosystemRoles: string[]
+  buyerSectors: string[]
+  products: RoboticsProduct[]
+  knownCustomers: string[]
+  deployments: {
+    stage: 'Demo' | 'Pilot' | 'Paid deployment' | 'Scaled deployment' | 'Unknown'
+    evidence: string
+    locations: string[]
+  }
+  revenueModel: string[]
+  businessRisks: string[]
+  opportunities: string[]
+  fundingRounds: RoboticsFundingRound[]
+  timeline: RoboticsTimelineEvent[]
+  sourceConfidence: 'Low' | 'Medium' | 'High'
+  sourceNotes: string
+  lastResearched: string | null
+  robotAgeSignal: {
+    overall: number | null
+    deploymentProof: number | null
+    productMaturity: number | null
+    fundingStrength: number | null
+    strategicPosition: number | null
+    hriRelevance: number | null
+    notes: string
+  }
+}
+
+export type RoboticsCompany = RoboticsCompanyBase & {
+  intelligence: RoboticsIntelligence
+}
+
+const roboticsMapCompanyBase: RoboticsCompanyBase[] = [
+  {
+    id: 'agility-robotics',
+    name: 'Agility Robotics',
+    country: 'United States',
+    city: 'Salem, Oregon',
+    region: 'North America',
+    latitude: 44.9429,
+    longitude: -123.0351,
+    companyType: 'Private company',
+    sector: ['Logistics', 'Manufacturing', 'Humanoids'],
+    robotTypes: ['Bipedal humanoid', 'Material handling'],
+    robots: ['Digit'],
+    founded: 2015,
+    status: 'Announced SPAC deal to list under AGLT',
+    funding: '$2.5B announced SPAC valuation; roughly $620M expected gross proceeds',
+    latestSignal: 'Digit has logged production deployments in logistics and manufacturing sites.',
+    businessModel: 'Enterprise robot sales and fleet deployment for repetitive warehouse and factory work.',
+    website: 'https://agilityrobotics.com',
+  },
+  {
+    id: 'boston-dynamics',
+    name: 'Boston Dynamics',
+    country: 'United States',
+    city: 'Waltham, Massachusetts',
+    region: 'North America',
+    latitude: 42.3765,
+    longitude: -71.2356,
+    companyType: 'Subsidiary',
+    sector: ['Industrial inspection', 'Logistics', 'Humanoids'],
+    robotTypes: ['Quadruped', 'Humanoid', 'Mobile manipulation'],
+    robots: ['Spot', 'Stretch', 'Atlas'],
+    founded: 1992,
+    status: 'Owned by Hyundai Motor Group',
+    funding: 'Acquired by Hyundai in a deal valuing the company around $1.1B',
+    latestSignal: 'Electric Atlas is being positioned for industrial work, while Spot and Stretch are commercial products.',
+    businessModel: 'Robot hardware, software, service, and enterprise deployments in industrial environments.',
+    website: 'https://bostondynamics.com',
+  },
+  {
+    id: 'figure-ai',
+    name: 'Figure AI',
+    country: 'United States',
+    city: 'San Jose, California',
+    region: 'North America',
+    latitude: 37.3382,
+    longitude: -121.8863,
+    companyType: 'Private company',
+    sector: ['Humanoids', 'Manufacturing', 'General-purpose AI'],
+    robotTypes: ['Humanoid', 'Embodied AI'],
+    robots: ['Figure 02', 'Figure 03'],
+    founded: 2022,
+    status: 'Private; high-valuation humanoid startup',
+    funding: 'Reported $1B+ Series C at a $39B post-money valuation',
+    latestSignal: 'Factory work with BMW remains the highest-profile deployment proof point.',
+    businessModel: 'General-purpose humanoid labor platform for industrial and eventually broader work.',
+    website: 'https://www.figure.ai',
+  },
+  {
+    id: 'apptronik',
+    name: 'Apptronik',
+    country: 'United States',
+    city: 'Austin, Texas',
+    region: 'North America',
+    latitude: 30.2672,
+    longitude: -97.7431,
+    companyType: 'Private company',
+    sector: ['Humanoids', 'Logistics', 'Manufacturing'],
+    robotTypes: ['Humanoid', 'Modular actuator platform'],
+    robots: ['Apollo'],
+    founded: 2016,
+    status: 'Scaling Apollo pilots and enterprise partnerships',
+    funding: 'Nearly $1B total capital after 2026 Series A extension rounds',
+    latestSignal: 'Backers include Google, Mercedes-Benz, B Capital, John Deere, AT&T Ventures, and QIA.',
+    businessModel: 'Commercial humanoid deployments for logistics, retail, and industrial workflows.',
+    website: 'https://apptronik.com',
+  },
+  {
+    id: 'tesla-optimus',
+    name: 'Tesla Optimus',
+    country: 'United States',
+    city: 'Austin, Texas',
+    region: 'North America',
+    latitude: 30.2223,
+    longitude: -97.6171,
+    companyType: 'Corporate robotics program',
+    sector: ['Humanoids', 'Automotive manufacturing', 'Consumer robotics'],
+    robotTypes: ['Humanoid'],
+    robots: ['Optimus'],
+    founded: 2021,
+    status: 'Internal robotics program within Tesla',
+    funding: 'Funded through Tesla; no standalone venture round',
+    latestSignal: 'Optimus remains central to Tesla robotics demos and long-term automation strategy.',
+    businessModel: 'Internal factory automation first, with consumer and commercial ambitions later.',
+    website: 'https://www.tesla.com/AI',
+  },
+  {
+    id: 'unitree-robotics',
+    name: 'Unitree Robotics',
+    country: 'China',
+    city: 'Hangzhou, Zhejiang',
+    region: 'Asia',
+    latitude: 30.2741,
+    longitude: 120.1551,
+    companyType: 'Private company',
+    sector: ['Humanoids', 'Quadrupeds', 'Developer robots'],
+    robotTypes: ['Humanoid', 'Quadruped'],
+    robots: ['G1', 'H1', 'Go2', 'B2'],
+    founded: 2016,
+    status: 'Cleared for STAR Market IPO process',
+    funding: 'Reported IPO target near $6.2B valuation with roughly $600M raise',
+    latestSignal: 'One of the highest-volume humanoid and quadruped robot makers globally.',
+    businessModel: 'Lower-cost robot hardware for developers, labs, education, and industrial users.',
+    website: 'https://www.unitree.com',
+  },
+  {
+    id: 'ubtech',
+    name: 'UBTECH Robotics',
+    country: 'China',
+    city: 'Shenzhen, Guangdong',
+    region: 'Asia',
+    latitude: 22.5431,
+    longitude: 114.0579,
+    companyType: 'Public company',
+    sector: ['Humanoids', 'Education', 'Industrial service'],
+    robotTypes: ['Humanoid', 'Service robot'],
+    robots: ['Walker S', 'Walker X', 'Cruzr'],
+    founded: 2012,
+    status: 'Public on Hong Kong Stock Exchange',
+    funding: 'Public listing completed in Hong Kong; pre-IPO backers included Tencent-linked capital',
+    latestSignal: 'Walker S has been aimed at automotive and industrial use cases.',
+    businessModel: 'Humanoid, education, and service robot systems for enterprise and institutions.',
+    website: 'https://www.ubtrobot.com',
+  },
+  {
+    id: 'fourier-intelligence',
+    name: 'Fourier Intelligence',
+    country: 'China',
+    city: 'Shanghai',
+    region: 'Asia',
+    latitude: 31.2304,
+    longitude: 121.4737,
+    companyType: 'Private company',
+    sector: ['Humanoids', 'Healthcare', 'Rehabilitation'],
+    robotTypes: ['Humanoid', 'Rehabilitation robot'],
+    robots: ['GR-1', 'ExoMotus'],
+    founded: 2015,
+    status: 'Commercial rehabilitation robotics company expanding into humanoids',
+    funding: 'Venture-backed; exact current total varies by source',
+    latestSignal: 'GR-1 positions the company in general-purpose humanoids alongside its rehab base.',
+    businessModel: 'Healthcare robotics revenue base with humanoid platform expansion.',
+    website: 'https://www.fftai.com',
+  },
+  {
+    id: 'neura-robotics',
+    name: 'NEURA Robotics',
+    country: 'Germany',
+    city: 'Metzingen',
+    region: 'Europe',
+    latitude: 48.5369,
+    longitude: 9.2839,
+    companyType: 'Private company',
+    sector: ['Cognitive robotics', 'Industrial automation', 'Humanoids'],
+    robotTypes: ['Collaborative robot', 'Humanoid', 'Mobile robot'],
+    robots: ['4NE-1', 'MAiRA', 'MiPA'],
+    founded: 2019,
+    status: 'Scaling cognitive robotics portfolio',
+    funding: 'Venture-backed, including large European growth rounds',
+    latestSignal: 'Positions sensors, AI, and safe collaboration as a full-stack robot platform.',
+    businessModel: 'Robot hardware and cognitive robotics platform for industry and service environments.',
+    website: 'https://neura-robotics.com',
+  },
+  {
+    id: 'anybotics',
+    name: 'ANYbotics',
+    country: 'Switzerland',
+    city: 'Zurich',
+    region: 'Europe',
+    latitude: 47.3769,
+    longitude: 8.5417,
+    companyType: 'Private company',
+    sector: ['Industrial inspection', 'Energy', 'Infrastructure'],
+    robotTypes: ['Quadruped', 'Autonomous inspection'],
+    robots: ['ANYmal'],
+    founded: 2016,
+    status: 'Commercial inspection robot deployments',
+    funding: 'Over $130M raised after Series B and 2024 extension financing',
+    latestSignal: 'ANYmal targets energy, chemicals, utilities, and heavy industrial inspection.',
+    businessModel: 'Inspection robot systems, software, and enterprise service for hazardous assets.',
+    website: 'https://www.anybotics.com',
+  },
+  {
+    id: 'one-x-technologies',
+    name: '1X Technologies',
+    country: 'United States',
+    city: 'Palo Alto, California',
+    region: 'North America',
+    latitude: 37.4419,
+    longitude: -122.143,
+    companyType: 'Private company',
+    sector: ['Humanoids', 'Home robotics', 'General-purpose AI'],
+    robotTypes: ['Humanoid', 'Android'],
+    robots: ['NEO', 'EVE'],
+    founded: 2014,
+    status: 'OpenAI-backed humanoid company focused on home and general-purpose work',
+    funding: '$100M Series B announced in 2024; additional fundraising reported afterward',
+    latestSignal: 'NEO is positioned for domestic tasks and consumer-facing humanoid adoption.',
+    businessModel: 'Humanoid platform for homes and workplaces, with software-heavy autonomy development.',
+    website: 'https://www.1x.tech',
+  },
+  {
+    id: 'sanctuary-ai',
+    name: 'Sanctuary AI',
+    country: 'Canada',
+    city: 'Vancouver, British Columbia',
+    region: 'North America',
+    latitude: 49.2827,
+    longitude: -123.1207,
+    companyType: 'Private company',
+    sector: ['Humanoids', 'General-purpose AI', 'Industrial pilots'],
+    robotTypes: ['Humanoid', 'Dexterous manipulation'],
+    robots: ['Phoenix'],
+    founded: 2018,
+    status: 'Developing Phoenix and Carbon AI control system',
+    funding: 'Reported total funding around $140M after Canadian government-backed investment',
+    latestSignal: 'Eighth-generation Phoenix is framed around dexterity and high-quality robot data capture.',
+    businessModel: 'General-purpose humanoid robotics and embodied AI software for labor tasks.',
+    website: 'https://sanctuary.ai',
+  },
+  {
+    id: 'fauna-robotics',
+    name: 'Fauna Robotics',
+    country: 'United States',
+    city: 'New York, New York',
+    region: 'North America',
+    latitude: 40.7128,
+    longitude: -74.006,
+    companyType: 'Private company',
+    sector: ['Social robotics', 'Humanoids', 'Research platforms'],
+    robotTypes: ['Small humanoid', 'Social robot'],
+    robots: ['Sprout'],
+    founded: 2024,
+    status: 'New York robotics startup building approachable humanoid platforms',
+    funding: 'Early-stage; acquisition reports circulated in 2026 but official details vary',
+    latestSignal: 'Sprout is designed in New York City and assembled in America for human spaces.',
+    businessModel: 'Research, education, entertainment, retail, and hospitality robotics platform.',
+    website: 'https://faunarobotics.com',
+  },
+  {
+    id: 'hugging-face',
+    name: 'Hugging Face',
+    country: 'United States',
+    city: 'New York, New York',
+    region: 'North America',
+    latitude: 40.7128,
+    longitude: -74.006,
+    companyType: 'Private company',
+    sector: ['Social robotics', 'Developer robots', 'Open-source AI'],
+    robotTypes: ['Desktop social robot', 'Developer robot'],
+    robots: ['Reachy Mini'],
+    founded: 2016,
+    status: 'Open-source AI platform expanding into approachable robotics hardware',
+    funding: 'Venture-backed AI platform; reported $4.5B valuation after 2023 Series D',
+    latestSignal: 'Reachy Mini is positioned as an expressive companion robot for human interaction, creative coding, and AI experimentation.',
+    businessModel: 'Open-source robotics hardware and software ecosystem connected to Hugging Face models, spaces, and community apps.',
+    website: 'https://huggingface.co',
+  },
+  {
+    id: 'elliq-intuition-robotics',
+    name: 'ElliQ / Intuition Robotics',
+    country: 'United States',
+    city: 'New York, New York',
+    region: 'North America',
+    latitude: 40.7128,
+    longitude: -74.006,
+    companyType: 'Private company',
+    sector: ['Social robotics', 'Eldercare', 'Consumer health'],
+    robotTypes: ['Companion robot', 'Social robot'],
+    robots: ['ElliQ'],
+    founded: 2016,
+    status: 'Commercial social companion robot deployed with aging agencies and consumers',
+    funding: 'Venture-backed; commercial and public-sector distribution partnerships',
+    latestSignal: 'ElliQ is used in US aging programs and is designed to reduce loneliness and support older adults aging at home.',
+    businessModel: 'Companion robot hardware plus subscription and partner deployment model for older adults, caregivers, and agencies.',
+    website: 'https://elliq.com',
+  },
+  {
+    id: 'collaborative-robotics',
+    name: 'Collaborative Robotics',
+    country: 'United States',
+    city: 'Santa Clara, California',
+    region: 'North America',
+    latitude: 37.3541,
+    longitude: -121.9552,
+    companyType: 'Private company',
+    sector: ['Logistics', 'Service robotics', 'Human-robot collaboration'],
+    robotTypes: ['Mobile manipulator', 'Collaborative robot'],
+    robots: ['Cobot'],
+    founded: 2022,
+    status: 'Building practical robots for human environments',
+    funding: 'Reported $100M Series B and more than $140M total funding',
+    latestSignal: 'Focuses on robots that can operate around people in logistics and service settings.',
+    businessModel: 'Enterprise robot deployments for material movement and task support.',
+    website: 'https://www.co.bot',
+  },
+  {
+    id: 'skild-ai',
+    name: 'Skild AI',
+    country: 'United States',
+    city: 'Pittsburgh, Pennsylvania',
+    region: 'North America',
+    latitude: 40.4406,
+    longitude: -79.9959,
+    companyType: 'Private company',
+    sector: ['Robotics foundation models', 'Embodied AI', 'Robot intelligence'],
+    robotTypes: ['Robotics AI platform'],
+    robots: ['General-purpose robotics brain'],
+    founded: 2023,
+    status: 'Foundation-model layer for robots rather than a single robot OEM',
+    funding: '$300M Series A at reported $1.5B valuation',
+    latestSignal: 'Targets a general-purpose brain that can transfer across robot bodies and tasks.',
+    businessModel: 'Robotics AI software and foundation models for robot developers and enterprises.',
+    website: 'https://www.skild.ai',
+  },
+]
+
+function inferMaturity(company: RoboticsCompanyBase): RoboticsIntelligence['maturity'] {
+  if (company.companyType === 'Public company') return 'Public'
+  if (company.companyType === 'Subsidiary') return 'Acquired'
+  if (company.companyType === 'Corporate robotics program') return 'Corporate program'
+  if (company.status.toLowerCase().includes('public') || company.status.toLowerCase().includes('ipo')) return 'Growth'
+  if ((company.founded ?? 0) >= 2022) return 'Startup'
+  return 'Growth'
+}
+
+function inferCommercialProof(company: RoboticsCompanyBase): RoboticsIntelligence['commercialProof'] {
+  const text = `${company.status} ${company.latestSignal} ${company.businessModel}`.toLowerCase()
+  if (text.includes('public') || text.includes('ipo') || text.includes('listing')) return 'Public market'
+  if (text.includes('commercial') || text.includes('customers') || text.includes('orders') || text.includes('revenue')) return 'Scaled deployment'
+  if (text.includes('deployment') || text.includes('deployed') || text.includes('production')) return 'Paid deployment'
+  if (text.includes('pilot')) return 'Pilot'
+  if (text.includes('demo')) return 'Demo'
+  return 'Concept'
+}
+
+function inferEcosystemRoles(company: RoboticsCompanyBase) {
+  const roles = ['Robot OEM']
+  if (company.sector.some((sector) => sector.toLowerCase().includes('ai')) || company.robotTypes.some((type) => type.toLowerCase().includes('ai'))) {
+    roles.push('Embodied AI platform')
+  }
+  if (company.sector.some((sector) => sector.toLowerCase().includes('developer') || sector.toLowerCase().includes('open-source'))) {
+    roles.push('Developer ecosystem')
+  }
+  if (company.robotTypes.some((type) => type.toLowerCase().includes('inspection'))) {
+    roles.push('Inspection automation')
+  }
+  if (company.sector.some((sector) => sector.toLowerCase().includes('foundation'))) {
+    roles.push('Robotics software layer')
+  }
+  return roles
+}
+
+function defaultIntelligence(company: RoboticsCompanyBase): RoboticsIntelligence {
+  const commercialProof = inferCommercialProof(company)
+  const maturity = inferMaturity(company)
+  const primaryRobotType = company.robotTypes[0] ?? 'Robot platform'
+
+  return {
+    maturity,
+    commercialProof,
+    ecosystemRoles: inferEcosystemRoles(company),
+    buyerSectors: company.sector,
+    products: company.robots.map((robot) => ({
+      name: robot,
+      category: primaryRobotType,
+      status: commercialProof === 'Concept' || commercialProof === 'Demo' ? 'Pilot' : 'Commercial',
+      targetUseCases: company.sector,
+      targetCustomers: company.sector,
+      notes: 'Placeholder product record. Needs deeper product research, pricing, availability, and buyer persona details.',
+    })),
+    knownCustomers: [],
+    deployments: {
+      stage: commercialProof === 'Concept' || commercialProof === 'Public market' ? 'Unknown' : commercialProof,
+      evidence: company.latestSignal,
+      locations: [company.city],
+    },
+    revenueModel: [company.businessModel],
+    businessRisks: ['Needs research: unit economics, deployment reliability, service costs, and buyer adoption friction.'],
+    opportunities: ['Needs research: strongest target verticals, partnership channels, and near-term market expansion paths.'],
+    fundingRounds: [
+      {
+        date: 'Needs research',
+        round: company.companyType,
+        amount: company.funding,
+        valuation: company.funding,
+        investors: [],
+        sourceStatus: 'Needs research',
+      },
+    ],
+    timeline: [
+      {
+        date: company.founded ? String(company.founded) : 'Needs research',
+        label: 'Company founded',
+        category: 'Founded',
+        sourceStatus: company.founded ? 'Verified' : 'Needs research',
+      },
+      {
+        date: 'Needs research',
+        label: company.latestSignal,
+        category: 'Research',
+        sourceStatus: 'Needs research',
+      },
+    ],
+    sourceConfidence: 'Medium',
+    sourceNotes: 'First-pass structured model. Business intelligence fields are scaffolded for later source-backed research.',
+    lastResearched: null,
+    robotAgeSignal: {
+      overall: null,
+      deploymentProof: null,
+      productMaturity: null,
+      fundingStrength: null,
+      strategicPosition: null,
+      hriRelevance: null,
+      notes: 'Score model scaffold. Populate after source-backed research and calibration.',
+    },
+  }
+}
+
+export const roboticsMapCompanies: RoboticsCompany[] = roboticsMapCompanyBase.map((company) => ({
+  ...company,
+  intelligence: defaultIntelligence(company),
+}))
+
+export const roboticsMapFacets = {
+  regions: Array.from(new Set(roboticsMapCompanies.map((company) => company.region))).sort(),
+  countries: Array.from(new Set(roboticsMapCompanies.map((company) => company.country))).sort(),
+  companyTypes: Array.from(new Set(roboticsMapCompanies.map((company) => company.companyType))).sort(),
+  sectors: Array.from(new Set(roboticsMapCompanies.flatMap((company) => company.sector))).sort(),
+  robotTypes: Array.from(new Set(roboticsMapCompanies.flatMap((company) => company.robotTypes))).sort(),
+  maturity: Array.from(new Set(roboticsMapCompanies.map((company) => company.intelligence.maturity))).sort(),
+  commercialProof: Array.from(new Set(roboticsMapCompanies.map((company) => company.intelligence.commercialProof))).sort(),
+  ecosystemRoles: Array.from(new Set(roboticsMapCompanies.flatMap((company) => company.intelligence.ecosystemRoles))).sort(),
+  buyerSectors: Array.from(new Set(roboticsMapCompanies.flatMap((company) => company.intelligence.buyerSectors))).sort(),
+}

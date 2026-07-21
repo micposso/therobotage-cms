@@ -60,3 +60,6 @@ coverage/
 .cache/
 parcel-cache/
 dist-*/
+
+# Claude Code worktrees (embedded git repos, machine-local)
+**/.claude/worktrees/

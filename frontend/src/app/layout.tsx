@@ -3,6 +3,7 @@ import { IBM_Plex_Sans, IBM_Plex_Serif, DM_Serif_Display, Outfit } from "next/fo
 import { WaitlistProvider } from "@/context/WaitlistContext";
 import HomepagePopup from "@/components/HomepagePopup/HomepagePopup";
 import CookieBanner from "@/components/CookieBanner/CookieBanner";
+import "leaflet/dist/leaflet.css";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
 import "./globals.css";
 
