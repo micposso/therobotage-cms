@@ -1,0 +1,11 @@
+The hardest part of delivery automation may be the short walk from the van to the door.
+
+Boston Dynamics is testing Spot as a last-mile delivery assistant for what it calls the "porch gap": the final 50 feet where driveways, steps, curbs, pets, sprinklers, snow, and customer preferences make automation messy. The demo is deliberately practical. A driver loads two boxes onto a conveyor payload, Spot walks to the porch, places the package, and returns to the van.
+
+The useful question is not whether a robot can carry a box. It is whether it can fit into the rhythm of delivery work without creating new friction for the driver, the customer, or the street around it. Boston Dynamics says the goal is a pilot where Spot works with a driver to deliver 200 packages a day, five days a week.
+
+That makes this less a stunt than a deployment-readiness test. The robot has to handle terrain, package care, route memory, handoff timing, and teleoperator fallback in the open world.
+
+Read the full piece on The Robot Age: https://therobotage.com/news/spot-porch-gap-delivery
+
+#Robotics #AI #ServiceRobots #LastMileDelivery #HumanRobotInteraction
