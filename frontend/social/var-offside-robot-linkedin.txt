@@ -1,10 +1,10 @@
-VAR is not literally a robot. It is something more interesting: robotics as infrastructure.
+Did a robot call offside at the World Cup?
 
-FIFA's semi-automated offside system has no arms, legs, or wheels. It senses the field through 12 roof cameras, tracks up to 29 points per player at 50 Hz, reads the ball through a 500 Hz sensor, and sends decision support to human referees.
+The answer is no if "robot" means a conventional ISO-defined machine that performs locomotion, manipulation, or positioning. The answer gets more interesting if we look at VAR as robotic infrastructure: 12 stadium-mounted cameras, 29 player data points, 50 measurements per second, and a ball sensor transmitting at 500 Hz.
 
-That makes VAR a useful case study in machine-readable environments. The stadium becomes the body: cameras act as eyes, the connected ball supplies timing data, software estimates state, and officials become the action layer.
+That is the real question the article poses. The football pitch is becoming machine-readable. Cameras become the eyes, the connected ball supplies timing data, software estimates state, and officials become the action layer.
 
-Football is already training humans to play under sensor-assisted precision.
+The future of sport may not be robots replacing referees. It may be humans playing inside robotic perception systems.
 Read the full piece on The Robot Age: https://therobotage.com/news/var-offside-robot
 
 #Robotics #AI #SportsTech #FootballTechnology #HumanRobotInteraction
