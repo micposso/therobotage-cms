@@ -4,8 +4,8 @@ title: "Did a robot help erase 17 World Cup goals?"
 category: OPINION
 date: July 24, 2026
 excerpt: "At the 2026 World Cup, 17 goals ruled offside reopened the robot question: when does machine perception become part of the game?"
-headerImage: /images/news/var-offside-robot-header.jpg
-thumbnailImage: /images/news/var-offside-robot-thumb.jpg
+headerImage: /images/news/var-offside-robot-referee-header.jpg
+thumbnailImage: /images/news/var-offside-robot-referee-thumb.jpg
 author: The Robot Age Editorial Team
 ---
 
