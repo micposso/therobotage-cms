@@ -1,15 +1,15 @@
 ---
 slug: var-offside-robot
-title: "Did a robot call offside at the World Cup?"
+title: "Did a robot help erase 17 World Cup goals?"
 category: OPINION
 date: July 24, 2026
-excerpt: "VAR may not be a robot under ISO. It still asks the real question: when does robotic infrastructure start acting in sport?"
+excerpt: "At the 2026 World Cup, 17 goals ruled offside reopened the robot question: when does machine perception become part of the game?"
 headerImage: /images/news/var-offside-robot-header.jpg
 thumbnailImage: /images/news/var-offside-robot-thumb.jpg
 author: The Robot Age Editorial Team
 ---
 
-Did a robot call offside at the World Cup? The honest answer is no if "robot" means a conventional ISO-defined machine that performs locomotion, manipulation, or positioning. The more interesting answer is maybe, if "robot" now includes the distributed sensing and decision-support infrastructure that makes a football pitch machine-readable.
+Did a robot help erase 17 World Cup goals? The honest answer is no if "robot" means a conventional ISO-defined machine that performs locomotion, manipulation, or positioning. The more interesting answer is maybe, if "robot" now includes the distributed sensing and decision-support infrastructure that makes a football pitch machine-readable.
 
 ## A robot is not just the shape
 
@@ -23,6 +23,8 @@ That distinction is the article's premise, not a loophole. VAR is not a secret h
 
 VAR is often described as video review, but FIFA's semi-automated offside technology is closer to a field-scale perception system. At Qatar 2022, FIFA said the setup used [12 dedicated tracking cameras](https://inside.fifa.com/innovation/world-cup-2022/semi-automated-offside-technology) mounted under the stadium roof to follow the ball and up to 29 data points on each player, 50 times per second. The cameras are fixed around the stadium rather than roaming through it, but their combined view lets the system watch the pitch as a single instrument. The official Al Rihla match ball added an inertial measurement unit inside the ball, sending data to the video operation room 500 times per second.
 
+At the 2026 World Cup, that infrastructure became more visible. [TechRadar reported](https://www.techradar.com/tech/exclusive-the-emotion-is-doubled-its-not-reduced-the-worlds-most-famous-referee-insists-var-hasnt-killed-the-joy-of-world-cup-goal-celebrations) that VAR itself was run by Hawk-Eye Innovations on Lenovo workstations, while FIFA and Lenovo used player-scanning and AI systems around the tournament's officiating stack. Collina's own defense of the system was revealing: technology could help with offside and goal-line decisions, but it still could not assess pushing, pulling, or other contact by itself.
+
 That matters because offside is not judged when the attacker receives the ball. It is judged at the instant the ball is played by a teammate. The hard problem is synchronization: where was every relevant body part at the exact kick point? The ball sensor narrows the kick moment. The cameras reconstruct player positions. Artificial intelligence combines the two streams and proposes an offside alert for officials to verify.
 
 ## Humans still own the decision
@@ -33,9 +35,9 @@ That distinction is important. The [IFAB VAR protocol](https://www.theifab.com/l
 
 ## The numbers changed the sport's emotional rhythm
 
-In Argentina's 2022 opener against Saudi Arabia, the eventual champions had [three first-half goals ruled out for offside](https://www.foxsports.com/stories/soccer/world-cup-highlights-saudi-arabia-stuns-argentina-messi-in-historic-upset) and were caught offside seven times in the first half. That is the hook: did a robot call those offsides? For the tightest calls, human vision had effectively been supplemented by a stadium-scale perception system tracking players and the ball hundreds of times per second.
+The 2026 number is the hook, but it needs careful wording. The Canadian Premier League, while explaining its FIFA-backed daylight offside trial, said [17 goals disallowed for offside](https://www.cplsoccer.com/news/how-daylight-offside-rule-would-have-changed-the-world-cup) at the World Cup up to the Round of 32 would more than likely have stood under the daylight rule. That is not an official FIFA full-tournament count of VAR interventions. It is still the clearest published number around the offside controversy: 17 celebrated goals turned into no-goals because the player was measured offside under the current law.
 
-Across Qatar 2022, ESPN's match-by-match VAR log counted [25 overturns](https://www.espn.com/soccer/story/_/id/37634070/var-review-every-decision-world-cup-analysed), including 10 that led to disallowed goals, plus two recommended overturns rejected by referees. Those are not all semi-automated offside decisions, and they should not be treated as a single machine scorecard. But they show the operational reality: goals are no longer social facts when the ball hits the net. They are provisional events until the sensing system, replay officials, and referee converge.
+Other reporting shows how the number lived on the field. The [Los Angeles Times](https://www.latimes.com/sports/soccer/story/2026-07-12/how-var-became-2026-world-cups-biggest-villain) described more than 100 VAR interventions through the end of the Round of 16 and cited Iran's Shoja Khalilzadeh being ruled a toe offside on a goal that would have changed the knockout picture. [Peoples Gazette](https://gazettengr.com/2026-world-cup-goals-ruled-offside-by-var-in-first-round/) separately listed first-round goals overturned for offside after VAR review, including Algeria against Argentina, Spain against Saudi Arabia, Iran against Belgium, and Iran against Egypt.
 
 ## Sensor-assisted precision creates a human compliance problem
 
