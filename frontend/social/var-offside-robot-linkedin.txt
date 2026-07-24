@@ -1,0 +1,10 @@
+Did a robot help erase 17 World Cup goals?
+
+That is the sharper question behind FIFA's semi-automated offside debate. A Canadian Premier League analysis said 17 goals disallowed for offside at the 2026 World Cup up to the Round of 32 would likely have stood under the daylight offside rule.
+
+That does not mean VAR is literally a robot. It means football is now played inside robotic infrastructure: stadium-mounted cameras, connected ball data, state-estimation software, and human officials acting on machine-readable evidence.
+
+The future of sport may not be robots replacing referees. It may be humans learning to perform under robotic perception.
+Read the full piece on The Robot Age: https://therobotage.com/news/var-offside-robot
+
+#Robotics #AI #SportsTech #FootballTechnology #HumanRobotInteraction
