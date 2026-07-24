@@ -1,0 +1,10 @@
+A "robot" called seven Argentina offsides in one half of World Cup football.
+
+FIFA's semi-automated offside system is not a robot with a body. It is a distributed machine: 12 roof cameras, up to 29 player data points, 50 measurements per second, and a ball sensor transmitting at 500 Hz. Humans still validate the call, but the sport now plays inside a machine-readable field.
+
+That changes training. Strikers are no longer only timing runs against the assistant referee's eye. They are timing body lean, pass-release frames, and acceleration patterns against a system precise enough to erase a goal by a shoulder or boot.
+
+Sports are not becoming less human. They are becoming human performances under machine precision.
+Read the full piece on The Robot Age: https://therobotage.com/news/var-offside-robot
+
+#Robotics #AI #SportsTech #FootballTechnology #HumanRobotInteraction
