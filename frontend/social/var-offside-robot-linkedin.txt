@@ -1,10 +1,10 @@
-A "robot" called seven Argentina offsides in one half of World Cup football.
+VAR forces football to answer a basic robotics question: does a machine need a body to act in the world?
 
-FIFA's semi-automated offside system is not a robot with a body. It is a distributed machine: 12 roof cameras, up to 29 player data points, 50 measurements per second, and a ball sensor transmitting at 500 Hz. Humans still validate the call, but the sport now plays inside a machine-readable field.
+FIFA's semi-automated offside system has no arms, legs, or wheels. But it senses the field through 12 roof cameras, tracks up to 29 points per player at 50 Hz, reads the ball through a 500 Hz sensor, and acts through human referees.
 
-That changes training. Strikers are no longer only timing runs against the assistant referee's eye. They are timing body lean, pass-release frames, and acceleration patterns against a system precise enough to erase a goal by a shoulder or boot.
+That makes VAR a useful case study in embodied AI without a humanoid body. The system does not replace the referee. It changes what players, coaches, and officials have to comply with: machine precision.
 
-Sports are not becoming less human. They are becoming human performances under machine precision.
+The next generation of footballers may train not only for the offside law, but for the machine's version of the law.
 Read the full piece on The Robot Age: https://therobotage.com/news/var-offside-robot
 
 #Robotics #AI #SportsTech #FootballTechnology #HumanRobotInteraction
