@@ -1,15 +1,15 @@
 ---
 slug: var-offside-robot
-title: "VAR and the robot question in football"
+title: "Did a robot call offside at the World Cup?"
 category: OPINION
 date: July 24, 2026
-excerpt: "VAR is not literally a robot. It shows how robotics is becoming infrastructure: sensing, computation, and human action."
+excerpt: "VAR may not be a robot under ISO. It still asks the real question: when does robotic infrastructure start acting in sport?"
 headerImage: /images/news/var-offside-robot-header.jpg
 thumbnailImage: /images/news/var-offside-robot-thumb.jpg
 author: The Robot Age Editorial Team
 ---
 
-VAR is not literally a robot, but it shows how robotics is becoming infrastructure. FIFA's semi-automated offside system has no arms, legs, or wheels. It senses the field, estimates player and ball position, prompts human officials, and changes the conditions under which human athletes play.
+Did a robot call offside at the World Cup? The honest answer is no if "robot" means a conventional ISO-defined machine that performs locomotion, manipulation, or positioning. The more interesting answer is maybe, if "robot" now includes the distributed sensing and decision-support infrastructure that makes a football pitch machine-readable.
 
 ## A robot is not just the shape
 
@@ -17,9 +17,11 @@ The popular image of a robot is a visible machine: a humanoid, a warehouse arm, 
 
 VAR fails the conventional ISO test. The current robotics definition centers locomotion, manipulation, or positioning; VAR primarily senses, computes, visualizes, and communicates. Human officials perform the consequential action. That makes VAR better understood as a distributed cyber-physical perception and decision-support system, using capabilities familiar to autonomous robotics: sensing, state estimation, temporal synchronization, and human-machine interaction.
 
+That distinction is the article's premise, not a loophole. VAR is not a secret humanoid referee hiding in the video room. It is a case study in robotics becoming environmental: the stadium becomes the body, the camera network becomes the eyes, the connected ball supplies timing data, software estimates state, and officials become the action layer.
+
 ## VAR is a sensing machine for the pitch
 
-VAR is often described as video review, but FIFA's semi-automated offside technology is closer to a field-scale perception system. At Qatar 2022, FIFA said the setup used [12 dedicated tracking cameras](https://inside.fifa.com/innovation/world-cup-2022/semi-automated-offside-technology) mounted under the stadium roof to follow the ball and up to 29 data points on each player, 50 times per second. The official Al Rihla match ball added an inertial measurement unit inside the ball, sending data to the video operation room 500 times per second.
+VAR is often described as video review, but FIFA's semi-automated offside technology is closer to a field-scale perception system. At Qatar 2022, FIFA said the setup used [12 dedicated tracking cameras](https://inside.fifa.com/innovation/world-cup-2022/semi-automated-offside-technology) mounted under the stadium roof to follow the ball and up to 29 data points on each player, 50 times per second. The cameras are fixed around the stadium rather than roaming through it, but their combined view lets the system watch the pitch as a single instrument. The official Al Rihla match ball added an inertial measurement unit inside the ball, sending data to the video operation room 500 times per second.
 
 That matters because offside is not judged when the attacker receives the ball. It is judged at the instant the ball is played by a teammate. The hard problem is synchronization: where was every relevant body part at the exact kick point? The ball sensor narrows the kick moment. The cameras reconstruct player positions. Artificial intelligence combines the two streams and proposes an offside alert for officials to verify.
 
@@ -31,7 +33,7 @@ That distinction is important. The [IFAB VAR protocol](https://www.theifab.com/l
 
 ## The numbers changed the sport's emotional rhythm
 
-In Argentina's 2022 opener against Saudi Arabia, the eventual champions had [three first-half goals ruled out for offside](https://www.foxsports.com/stories/soccer/world-cup-highlights-saudi-arabia-stuns-argentina-messi-in-historic-upset) and were caught offside seven times in the first half. For the tightest calls, human vision had effectively been supplemented by a stadium-scale perception system tracking players and the ball hundreds of times per second.
+In Argentina's 2022 opener against Saudi Arabia, the eventual champions had [three first-half goals ruled out for offside](https://www.foxsports.com/stories/soccer/world-cup-highlights-saudi-arabia-stuns-argentina-messi-in-historic-upset) and were caught offside seven times in the first half. That is the hook: did a robot call those offsides? For the tightest calls, human vision had effectively been supplemented by a stadium-scale perception system tracking players and the ball hundreds of times per second.
 
 Across Qatar 2022, ESPN's match-by-match VAR log counted [25 overturns](https://www.espn.com/soccer/story/_/id/37634070/var-review-every-decision-world-cup-analysed), including 10 that led to disallowed goals, plus two recommended overturns rejected by referees. Those are not all semi-automated offside decisions, and they should not be treated as a single machine scorecard. But they show the operational reality: goals are no longer social facts when the ball hits the net. They are provisional events until the sensing system, replay officials, and referee converge.
 
