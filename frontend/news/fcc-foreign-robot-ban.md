@@ -39,12 +39,4 @@ Those are not only legal questions. They are user-experience questions, safety q
 
 The lesson for US robotics companies is also uncomfortable. A ban can protect domestic manufacturers from low-cost competition, but it does not manufacture parts, field technicians, maintenance programs, safety evidence, or buyer confidence. If domestic robots are more expensive, harder to source, or less mature, teams will need stronger proof that the extra constraint creates better deployments rather than slower ones.
 
-## The article section should watch this story
-
-The FCC decision gives The Robot Age a story worth tracking because it joins three threads that usually get discussed separately: national security, embodied AI, and field readiness. The question is not whether foreign robots are good or bad. The useful question is what a robot has to prove before it is trusted in a real environment.
-
-That proof will need to be more concrete than a spec sheet. It should include operating domains, data boundaries, remote-access rules, update controls, incident procedures, service plans, human handoff points, and evidence that the robot behaves safely when people do ordinary human things around it.
-
-The next phase of robotics will not be decided by capability demos alone. It will be decided by which companies can make the robot, secure the robot, explain the robot, service the robot, insure the robot, and keep people willing to work near it.
-
 *Header and card images: The Robot Age / AI-generated editorial artwork.*
