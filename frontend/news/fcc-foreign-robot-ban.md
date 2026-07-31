@@ -39,6 +39,6 @@ Those are not only legal questions. They are user-experience questions, safety q
 
 The lesson for US robotics companies is also uncomfortable. A ban can protect domestic manufacturers from low-cost competition, but it does not manufacture parts, field technicians, maintenance programs, safety evidence, or buyer confidence. If domestic robots are more expensive, harder to source, or less mature, teams will need stronger proof that the extra constraint creates better deployments rather than slower ones.
 
-The companies that win this phase will not be the ones with the most impressive launch video. They will be the ones that can make robots feel boringly dependable once they leave the demo floor: authorized, secure, serviceable, explainable, and safe enough for people to keep working beside them.
+The point of the ban is not simply that some foreign robots may be kept out of the US market. It is that robotics is moving from impressive hardware demos into critical infrastructure, private spaces, and everyday work. The companies that matter in this next phase will be the ones that can prove their robots are not only capable, but authorized, secure, serviceable, explainable, and safe enough for people to trust in the real world.
 
 *Header and card images: The Robot Age / AI-generated editorial artwork.*
