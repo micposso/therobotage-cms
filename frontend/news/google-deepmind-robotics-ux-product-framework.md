@@ -21,6 +21,8 @@ Gemini Robotics 2 changes that dynamic.
 
 DeepMind describes the model as an embodied reasoning system that understands the physical world, plans multi-step tasks, coordinates multiple robots, communicates with people, and delegates motor execution to lower-level vision-language-action models. In the [Gemini API developer docs](https://ai.google.dev/gemini-api/docs/robotics-overview), Google describes Gemini Robotics ER as a model for visual understanding, spatial reasoning, temporal reasoning, tool orchestration, and long-horizon planning.
 
+Access also reveals the shape of the market. Google says Gemini Robotics ER 2 is available through AI Studio, while Gemini Robotics 2 and Gemini Robotics On-Device 2 are available to [early-access partners through an application form](https://docs.google.com/forms/d/1sM5GqcVMWv-KmKY3TOMpVtQ-lDFeAftQ-d9xQn92jCE/viewform?ts=67cef986&edit_requested=true). That split matters because it separates the designable reasoning layer from the deeper motor-control models that still require closer hardware partnerships.
+
 That is a robotics architecture, but it also exposes a product architecture.
 
 The shift is subtle but important. Instead of designing around robot hardware, teams can begin designing around robot behavior.
