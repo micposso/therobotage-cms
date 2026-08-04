@@ -4,8 +4,8 @@ title: "Google DeepMind is not turning robotics into a UX framework. It is expos
 category: ANALYSIS
 date: August 4, 2026
 excerpt: "Gemini Robotics 2 is not a product design framework, but it exposes the design surfaces product managers, UX researchers, service designers, and operations teams need to build robotic experiences."
-headerImage: /images/news/figure_03.png
-thumbnailImage: /images/news/figure_03.png
+headerImage: /images/news/google-deepmind-robotics-ux-framework-header.png
+thumbnailImage: /images/news/google-deepmind-robotics-ux-framework-header.png
 author: The Robot Age Editorial Team
 ---
 
