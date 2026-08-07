@@ -154,12 +154,12 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
       ctx.fillStyle = C.photoBg
       ctx.fillRect(PAD, y, innerW, PHOTO_H)
       if (data.photo) {
-        // cover-fit the image into the tile
+        // contain-fit the image into the tile so tall robots are fully visible
         const iw = data.photo.naturalWidth
         const ih = data.photo.naturalHeight
-        const scaleCover = Math.max(innerW / iw, PHOTO_H / ih)
-        const dw = iw * scaleCover
-        const dh = ih * scaleCover
+        const scaleContain = Math.min(innerW / iw, PHOTO_H / ih)
+        const dw = iw * scaleContain
+        const dh = ih * scaleContain
         const dx = PAD + (innerW - dw) / 2
         const dy = y + (PHOTO_H - dh) / 2
         ctx.save()

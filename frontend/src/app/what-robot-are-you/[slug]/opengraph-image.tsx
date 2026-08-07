@@ -180,8 +180,9 @@ export default async function Image({
               width: '100%',
               height: '100%',
               backgroundColor: BG,
-              backgroundSize: 'cover',
+              backgroundSize: 'contain',
               backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
               border: `3px solid ${ORANGE}`,
               ...(imageCss ? { backgroundImage: imageCss } : {}),
             }}
