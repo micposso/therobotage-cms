@@ -33,9 +33,9 @@ interface ResultViewProps {
 }
 
 /* ─── Canvas card renderer ────────────────────────────────────────────────── */
-const CARD_W = 1080
-const PAD = 72
-const PHOTO_H = 460
+const CARD_W = 1200
+const PAD = 78
+const PHOTO_H = 620
 
 function cssVar(name: string): string {
   return getComputedStyle(document.documentElement).getPropertyValue(name).trim()
@@ -64,12 +64,13 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
   const display = cssVar('--font-display') || 'sans-serif'
   const body = cssVar('--font-body') || 'serif'
   const C = {
-    bg: cssVar('--color-bg-dark') || '#0D0D0D',
-    ink: cssVar('--color-text-on-sand') || '#F5F0E8',
-    inkBody: cssVar('--color-text-inverse') || '#E8E4DC',
+    bg: cssVar('--color-text-on-sand') || '#F5F0E8',
+    ink: cssVar('--color-text') || '#0D0D0D',
+    inkBody: cssVar('--color-text-muted') || '#2A2A28',
     accent: cssVar('--res-orange') || '#e85d24',
-    line: cssVar('--color-border-light') || 'rgba(245,240,232,0.2)',
-    track: 'rgba(232,228,220,0.14)',
+    line: cssVar('--color-border') || 'rgba(13,13,13,0.12)',
+    photoBg: cssVar('--color-bg') || '#EAEAEA',
+    track: 'rgba(13,13,13,0.10)',
   }
 
   const setFont = (weight: number, size: number, fam: 'd' | 'b') =>
@@ -107,14 +108,14 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
     let y = PAD
 
     // Eyebrow row: archetype (left) + brand (right)
-    setFont(400, 22, 'b')
+    setFont(400, 26, 'b')
     if (paint) {
       letter('0.16em')
       ctx.fillStyle = C.accent
       ctx.textAlign = 'left'
       ctx.fillText(data.archetype.toUpperCase(), PAD, y + 20)
       ctx.fillStyle = C.inkBody
-      ctx.globalAlpha = 0.5
+      ctx.globalAlpha = 0.58
       ctx.textAlign = 'right'
       letter('0.12em')
       ctx.fillText('WHAT ROBOT ARE YOU?', CARD_W - PAD, y + 20)
@@ -122,14 +123,14 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
       letter('0px')
       ctx.textAlign = 'left'
     }
-    y += 56
+    y += 64
 
     // Robot name
-    setFont(500, 66, 'd')
+    setFont(500, 82, 'd')
     letter('-0.02em')
     const nameLines = wrap(data.name, innerW, 2)
     for (const ln of nameLines) {
-      y += 68
+      y += 84
       if (paint) {
         ctx.fillStyle = C.ink
         ctx.fillText(ln, PAD, y)
@@ -138,11 +139,11 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
     letter('0px')
 
     // Maker
-    setFont(400, 24, 'b')
-    y += 40
+    setFont(400, 30, 'b')
+    y += 48
     if (paint) {
       ctx.fillStyle = C.inkBody
-      ctx.globalAlpha = 0.55
+      ctx.globalAlpha = 0.68
       ctx.fillText(data.maker, PAD, y)
       ctx.globalAlpha = 1
     }
@@ -150,7 +151,7 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
     // Photo tile
     y += 28
     if (paint) {
-      ctx.fillStyle = 'rgba(232,228,220,0.05)'
+      ctx.fillStyle = C.photoBg
       ctx.fillRect(PAD, y, innerW, PHOTO_H)
       if (data.photo) {
         // cover-fit the image into the tile
@@ -180,14 +181,14 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
         letter('0px')
       }
       ctx.strokeStyle = C.accent
-      ctx.lineWidth = 2
+      ctx.lineWidth = 3
       ctx.strokeRect(PAD + 1, y + 1, innerW - 2, PHOTO_H - 2)
     }
     y += PHOTO_H + 56
 
     // Stat bars
     data.bars.forEach((bar) => {
-      setFont(400, 24, 'b')
+      setFont(400, 30, 'b')
       if (paint) {
         letter('0.08em')
         ctx.fillStyle = C.inkBody
@@ -197,15 +198,15 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
         ctx.globalAlpha = 1
         letter('0px')
       }
-      y += 18
-      const barH = 14
+      y += 22
+      const barH = 18
       if (paint) {
         ctx.fillStyle = C.track
         ctx.fillRect(PAD, y, innerW, barH)
         ctx.fillStyle = C.accent
         ctx.fillRect(PAD, y, innerW * Math.max(0.02, bar.value), barH)
       }
-      y += barH + 30
+      y += barH + 34
     })
 
     // Divider
@@ -221,7 +222,7 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
     y += 48
 
     // Why you matched
-    setFont(400, 22, 'b')
+    setFont(400, 28, 'b')
     if (paint) {
       letter('0.16em')
       ctx.fillStyle = C.accent
@@ -229,11 +230,11 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
       letter('0px')
     }
     y += 16
-    setFont(400, 34, 'd')
+    setFont(400, 44, 'd')
     letter('-0.01em')
     const reasonLines = wrap(data.reason, innerW, 3)
     for (const ln of reasonLines) {
-      y += 44
+      y += 54
       if (paint) {
         ctx.fillStyle = C.ink
         ctx.fillText(ln, PAD, y)
@@ -259,7 +260,7 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
       let rowH = 0
       rowSpecs.forEach((spec, col) => {
         const x = PAD + col * colW
-        setFont(400, 18, 'b')
+        setFont(400, 22, 'b')
         if (paint) {
           letter('0.12em')
           ctx.fillStyle = C.inkBody
@@ -268,11 +269,11 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
           ctx.globalAlpha = 1
           letter('0px')
         }
-        setFont(400, 25, 'd')
+        setFont(400, 32, 'd')
         const valLines = wrap(spec.value, colW - 24, 2)
         let vy = y
         for (const ln of valLines) {
-          vy += 32
+          vy += 40
           if (paint) {
             ctx.fillStyle = C.ink
             ctx.fillText(ln, x, vy)
@@ -293,7 +294,7 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
       ctx.stroke()
     }
     y += 48
-    setFont(600, 30, 'd')
+    setFont(600, 36, 'd')
     if (paint) {
       letter('-0.01em')
       ctx.fillStyle = C.ink
@@ -301,7 +302,7 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
       ctx.fillText('TheRobotAge', PAD, y)
       letter('0px')
     }
-    setFont(400, 20, 'b')
+    setFont(400, 24, 'b')
     if (paint) {
       ctx.fillStyle = C.accent
       ctx.textAlign = 'right'

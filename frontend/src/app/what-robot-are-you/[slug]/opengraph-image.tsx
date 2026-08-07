@@ -7,7 +7,10 @@ export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 export const alt = 'What Robot Are You? — robot match card'
 
-const SAND = '#E8E4DC'
+const SAND = '#F5F0E8'
+const INK = '#0D0D0D'
+const MUTED = '#2A2A28'
+const BG = '#EAEAEA'
 const ORANGE = '#e85d24'
 
 export default async function Image({
@@ -25,8 +28,8 @@ export default async function Image({
           style={{
             width: '100%',
             height: '100%',
-            background: '#0D0D0D',
-            color: SAND,
+            background: SAND,
+            color: INK,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -55,18 +58,11 @@ export default async function Image({
     // no image yet — fall through to placeholder
   }
 
-  const specs = [
-    robot.specs.height,
-    robot.specs.weight,
-    robot.specs.notable,
-    robot.specs.price,
-  ]
-
   return new ImageResponse(
     (
       <div
         style={{
-          background: '#0D0D0D',
+          background: SAND,
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -83,7 +79,7 @@ export default async function Image({
             flexDirection: 'column',
             justifyContent: 'space-between',
             flex: 1,
-            padding: '56px 64px',
+            padding: '48px 58px',
           }}
         >
           {/* Eyebrow */}
@@ -115,8 +111,8 @@ export default async function Image({
             </div>
             <div
               style={{
-                color: '#F5F0E8',
-                fontSize: robot.name.length > 16 ? 56 : 68,
+                color: INK,
+                fontSize: robot.name.length > 16 ? 60 : 72,
                 fontWeight: 600,
                 lineHeight: 0.95,
                 letterSpacing: '-0.025em',
@@ -124,19 +120,20 @@ export default async function Image({
             >
               {robot.name}
             </div>
-            <div style={{ color: 'rgba(232,228,220,0.4)', fontSize: 18, letterSpacing: '0.04em' }}>
+            <div style={{ color: MUTED, opacity: 0.7, fontSize: 22, letterSpacing: '0.04em' }}>
               {robot.maker}
             </div>
           </div>
 
           {/* Stat bars */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10, width: 440 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12, width: 470 }}>
             {bars.map((bar) => (
               <div key={bar.label} style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
                 <span
                   style={{
-                    color: 'rgba(232,228,220,0.75)',
-                    fontSize: 13,
+                    color: MUTED,
+                    opacity: 0.78,
+                    fontSize: 15,
                     letterSpacing: '0.06em',
                     textTransform: 'uppercase',
                     width: 150,
@@ -144,28 +141,20 @@ export default async function Image({
                 >
                   {bar.label}
                 </span>
-                <div style={{ display: 'flex', flex: 1, height: 10, background: 'rgba(232,228,220,0.14)' }}>
+                <div style={{ display: 'flex', flex: 1, height: 12, background: 'rgba(13,13,13,0.10)' }}>
                   <div style={{ width: `${Math.max(2, Math.round(bar.value * 100))}%`, background: ORANGE }} />
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Footer: specs line + wordmark */}
+          {/* Footer: wordmark */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14, width: 560 }}>
-            <div style={{ display: 'flex', gap: 14, fontSize: 13, color: 'rgba(232,228,220,0.4)' }}>
-              {specs.slice(0, 3).map((s, i) => (
-                <span key={i} style={{ display: 'flex' }}>
-                  {i > 0 ? '·  ' : ''}
-                  {s}
-                </span>
-              ))}
-            </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 18 }}>
-              <span style={{ color: '#F5F0E8', fontSize: 20, fontWeight: 600, letterSpacing: '-0.01em' }}>
+              <span style={{ color: INK, fontSize: 24, fontWeight: 600, letterSpacing: '-0.01em' }}>
                 TheRobotAge
               </span>
-              <span style={{ color: 'rgba(232,228,220,0.3)', fontSize: 15 }}>
+              <span style={{ color: MUTED, opacity: 0.62, fontSize: 17 }}>
                 Take the 2-minute quiz →
               </span>
             </div>
@@ -176,11 +165,11 @@ export default async function Image({
         <div
           style={{
             display: 'flex',
-            width: 420,
+            width: 470,
             flexShrink: 0,
             alignItems: 'center',
             justifyContent: 'center',
-            padding: '56px 56px 56px 0',
+            padding: '34px 46px 34px 0',
           }}
         >
           <div
@@ -190,18 +179,19 @@ export default async function Image({
               justifyContent: 'center',
               width: '100%',
               height: '100%',
-              backgroundColor: 'rgba(232,228,220,0.05)',
+              backgroundColor: BG,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              border: `2px solid ${ORANGE}`,
+              border: `3px solid ${ORANGE}`,
               ...(imageCss ? { backgroundImage: imageCss } : {}),
             }}
           >
             {!imageCss && (
               <span
                 style={{
-                  color: 'rgba(232,228,220,0.4)',
-                  fontSize: 15,
+                  color: MUTED,
+                  opacity: 0.55,
+                  fontSize: 18,
                   letterSpacing: '0.14em',
                   textTransform: 'uppercase',
                 }}
