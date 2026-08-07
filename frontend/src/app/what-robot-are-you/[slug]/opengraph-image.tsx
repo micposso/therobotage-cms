@@ -10,7 +10,7 @@ export const alt = 'What Robot Are You? — robot match card'
 const SAND = '#F5F0E8'
 const INK = '#0D0D0D'
 const MUTED = '#2A2A28'
-const BG = '#EAEAEA'
+const BG = SAND
 const ORANGE = '#e85d24'
 
 export default async function Image({

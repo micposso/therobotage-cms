@@ -69,7 +69,7 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
     inkBody: cssVar('--color-text-muted') || '#2A2A28',
     accent: cssVar('--res-orange') || '#e85d24',
     line: cssVar('--color-border') || 'rgba(13,13,13,0.12)',
-    photoBg: cssVar('--color-bg') || '#EAEAEA',
+    photoBg: cssVar('--color-text-on-sand') || '#F5F0E8',
     track: 'rgba(13,13,13,0.10)',
   }
 
