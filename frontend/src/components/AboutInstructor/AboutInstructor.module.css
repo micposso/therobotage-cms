@@ -17,6 +17,7 @@
 }
 
 .imageWrap {
+  position: relative;
   width: 100%;
   aspect-ratio: 5 / 4;
   overflow: hidden;
@@ -71,4 +72,3 @@
     grid-template-columns: 1fr;
   }
 }
-

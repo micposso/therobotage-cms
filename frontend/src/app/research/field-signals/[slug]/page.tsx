@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import Link from 'next/link'
 import Nav from '@/components/Nav/Nav'
 import Footer from '@/components/Footer/Footer'
 import { getFieldSignalBySlug, getAllFieldSignalSlugs } from '@/lib/fieldSignals'
@@ -70,9 +71,9 @@ export default async function FieldSignalPage({ params }: { params: Promise<{ sl
 
           {/* Back link */}
           <div className={styles.back}>
-            <a href="/research" className={styles.backLink}>
+            <Link href="/research" className={styles.backLink}>
               ← Back to Research
-            </a>
+            </Link>
           </div>
 
         </div>

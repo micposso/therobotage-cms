@@ -46,13 +46,13 @@ export default function TermsPage() {
             <p>All content on this platform — including text, graphics, course materials, and certifications — is the property of The Robot Age and is protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works without our express written permission.</p>
 
             <h2>5. User Conduct</h2>
-            <p>You agree not to use the platform in any way that is unlawful, harmful, or offensive, or that interferes with other users' access to the platform. We reserve the right to terminate access for any user who violates these terms.</p>
+            <p>You agree not to use the platform in any way that is unlawful, harmful, or offensive, or that interferes with other users&apos; access to the platform. We reserve the right to terminate access for any user who violates these terms.</p>
 
             <h2>6. Certifications</h2>
             <p>Credentials issued by The Robot Age are awarded upon successful completion of program requirements. Credentials remain the property of The Robot Age and may be revoked if obtained through misrepresentation or fraudulent means.</p>
 
             <h2>7. Disclaimer</h2>
-            <p>The materials on The Robot Age platform are provided on an "as is" basis. The Robot Age makes no warranties, expressed or implied, and hereby disclaims all other warranties including implied warranties of merchantability or fitness for a particular purpose.</p>
+            <p>The materials on The Robot Age platform are provided on an &quot;as is&quot; basis. The Robot Age makes no warranties, expressed or implied, and hereby disclaims all other warranties including implied warranties of merchantability or fitness for a particular purpose.</p>
 
             <h2>8. Limitation of Liability</h2>
             <p>In no event shall The Robot Age or its principals be liable for any damages arising out of the use or inability to use the materials on this platform, even if The Robot Age has been notified of the possibility of such damage.</p>

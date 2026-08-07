@@ -20,12 +20,8 @@ const NAV_LINKS = [
 
 const eyebrowText = 'For design, product, and marketing professionals.'
 
-const headline = 'Robotics for All. Not just engineers'
-
 const subtext =
   'Robotic literacy isn\u2019t about code. It\u2019s about knowing enough to ask the right questions, make better decisions, and design for a world where robots are already here.'
-
-const tagline = 'Robotic literacy isn\u2019t about code. It\u2019s about knowing enough to ask the right questions, make better decisions, and design for a world where robots are already here.'
 
 
 const imageVariants = {

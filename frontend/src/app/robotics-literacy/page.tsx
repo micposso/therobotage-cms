@@ -109,7 +109,7 @@ export default function RoboticsLiteracyPage() {
       <section className={styles.forSection}>
         <div className="container-fluid">
           <div className={styles.forInner}>
-            <p className={styles.eyebrow}>Who it's for</p>
+            <p className={styles.eyebrow}>Who it&apos;s for</p>
             <h2 className={styles.forHeadline}>People whose jobs changed before their training did.</h2>
             <ol className={styles.forList}>
               {FOR_WHOM.map((item, i) => (
@@ -128,9 +128,9 @@ export default function RoboticsLiteracyPage() {
         <div className="container-fluid">
           <div className={styles.ctaInner}>
             <p className={styles.eyebrow}>Get certified</p>
-            <h2 className={styles.ctaHeadline}>Credential the skills you're already using.</h2>
+            <h2 className={styles.ctaHeadline}>Credential the skills you&apos;re already using.</h2>
             <p className={styles.ctaSubtext}>
-              The REP certification was designed for practitioners who needed it but couldn't find it. Four tracks, no engineering prerequisites, built around what actually happens in mixed human-robot environments.
+              The REP certification was designed for practitioners who needed it but couldn&apos;t find it. Four tracks, no engineering prerequisites, built around what actually happens in mixed human-robot environments.
             </p>
             <div className={styles.ctaRow}>
               <Link href="/learn" className={styles.ctaPrimary}>

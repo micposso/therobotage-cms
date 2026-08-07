@@ -70,7 +70,7 @@ export default function WhitepaperModal({ isOpen, onClose }: Props) {
                   Robot Experience Design, v2.0
                 </h2>
                 <p className={styles.successBody}>
-                  We've also sent a link to your email.
+                  We&apos;ve also sent a link to your email.
                 </p>
                 <a
                   href="/pdf/rxd-therobotage-v2.pdf"
@@ -118,7 +118,7 @@ export default function WhitepaperModal({ isOpen, onClose }: Props) {
                 </form>
 
                 <p className={styles.legalNote}>
-                  We'll send you the link and occasional updates from The Robot Age. Unsubscribe anytime.
+                  We&apos;ll send you the link and occasional updates from The Robot Age. Unsubscribe anytime.
                 </p>
 
                 <div className={styles.directDownload}>

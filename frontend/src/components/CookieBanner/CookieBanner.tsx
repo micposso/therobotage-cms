@@ -48,14 +48,18 @@ export default function CookieBanner() {
   const [marketing, setMarketing] = useState(false)
 
   useEffect(() => {
+    const revealBanner = () => {
+      requestAnimationFrame(() => setVisible(true))
+    }
+
     try {
       const stored = localStorage.getItem(CONSENT_KEY)
-      if (!stored) { setVisible(true); return }
+      if (!stored) { revealBanner(); return }
       const prefs: ConsentPrefs = JSON.parse(stored)
-      if (prefs.version !== CONSENT_VERSION) { setVisible(true); return }
+      if (prefs.version !== CONSENT_VERSION) { revealBanner(); return }
       updateGTMConsent(prefs.analytics, prefs.marketing)
     } catch {
-      setVisible(true)
+      revealBanner()
     }
   }, [])
 

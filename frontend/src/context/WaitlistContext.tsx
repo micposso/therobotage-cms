@@ -64,10 +64,10 @@ export function WaitlistProvider({ children }: { children: React.ReactNode }) {
 
               {state.success ? (
                 <div className={styles.success}>
-                  <p className={styles.eyebrow}>You're on the list.</p>
-                  <h2 className={styles.successHeadline} id="waitlist-title">We'll reach you first.</h2>
+                  <p className={styles.eyebrow}>You&apos;re on the list.</p>
+                  <h2 className={styles.successHeadline} id="waitlist-title">We&apos;ll reach you first.</h2>
                   <p className={styles.successBody}>
-                    Before the public announcement, you'll hear about the cohort schedule, founding-member pricing, and direct access to the instructor. Nothing in the meantime.
+                    Before the public announcement, you&apos;ll hear about the cohort schedule, founding-member pricing, and direct access to the instructor. Nothing in the meantime.
                   </p>
                   <button className={styles.closeAction} onClick={() => setIsOpen(false)}>
                     Close
@@ -80,7 +80,7 @@ export function WaitlistProvider({ children }: { children: React.ReactNode }) {
                     The first cohort runs May 2026.
                   </h2>
                   <p className={styles.description}>
-                    Certification dates are being confirmed now. Leave your email and we'll reach you before the public announcement — with the schedule, founding-member pricing, and direct access to the instructor.
+                    Certification dates are being confirmed now. Leave your email and we&apos;ll reach you before the public announcement — with the schedule, founding-member pricing, and direct access to the instructor.
                   </p>
 
                   <form action={action} className={styles.form} noValidate>
@@ -106,7 +106,7 @@ export function WaitlistProvider({ children }: { children: React.ReactNode }) {
                     </button>
                   </form>
 
-                  <p className={styles.legalNote}>No noise. Just the announcement when it's ready.</p>
+                  <p className={styles.legalNote}>No noise. Just the announcement when it&apos;s ready.</p>
                 </>
               )}
             </motion.div>

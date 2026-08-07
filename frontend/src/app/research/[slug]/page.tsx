@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
+import Link from 'next/link'
 import Nav from '@/components/Nav/Nav'
 import Footer from '@/components/Footer/Footer'
 import { getArticleBySlug, getAllSlugs } from '@/lib/articles'
@@ -74,9 +75,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
           {/* Back link */}
           <div className={styles.back}>
-            <a href="/research" className={styles.backLink}>
+            <Link href="/research" className={styles.backLink}>
               ← Back to Research
-            </a>
+            </Link>
           </div>
 
         </div>
