@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/next-script-for-ga */
 import type { Metadata } from "next";
 import { IBM_Plex_Sans, IBM_Plex_Serif, DM_Serif_Display, Outfit } from "next/font/google";
 import { WaitlistProvider } from "@/context/WaitlistContext";

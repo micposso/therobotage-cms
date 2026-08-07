@@ -14,7 +14,7 @@ export default function ContactForm() {
       <div className={styles.success}>
         <p className={styles.successEyebrow}>Message sent</p>
         <p className={styles.successText}>
-          We'll get back to you within a few business days.
+          We&apos;ll get back to you within a few business days.
         </p>
       </div>
     )

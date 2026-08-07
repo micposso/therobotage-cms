@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import Link from 'next/link'
 import Nav from '@/components/Nav/Nav'
 import Footer from '@/components/Footer/Footer'
 import FoundingCohort from '@/components/FoundingCohort/FoundingCohort'
@@ -135,7 +136,7 @@ export default async function CredentialPage({ params }: { params: Promise<{ cre
 
           {/* ── Outcomes ────────────────────────────────────────────────────── */}
           <section className={styles.section}>
-            <p className={styles.eyebrow}>What you'll be able to do</p>
+            <p className={styles.eyebrow}>What you&apos;ll be able to do</p>
             <ul className={styles.outcomeList}>
               {cert.outcomes.map((outcome, i) => (
                 <li key={i} className={styles.outcomeItem}>
@@ -148,7 +149,7 @@ export default async function CredentialPage({ params }: { params: Promise<{ cre
 
           {/* ── Back ────────────────────────────────────────────────────────── */}
           <div className={styles.back}>
-            <a href="/learn" className={styles.backLink}>← Back to Curriculum</a>
+            <Link href="/learn" className={styles.backLink}>← Back to Curriculum</Link>
           </div>
 
         </div>

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Nav from '@/components/Nav/Nav'
 import Footer from '@/components/Footer/Footer'
 import { runSearch } from '@/lib/searchIndex'
@@ -68,7 +69,7 @@ export default async function SearchPage({
           {query && results.length === 0 && (
             <section className={styles.emptyState}>
               <p className={styles.emptyBody}>
-                Nothing matched that search. Try a different keyword — or browse <a href="/research" className={styles.emptyLink}>Research</a>, <a href="/learn" className={styles.emptyLink}>Learn</a>, or <a href="/rxd" className={styles.emptyLink}>RXD</a>.
+                Nothing matched that search. Try a different keyword — or browse <Link href="/research" className={styles.emptyLink}>Research</Link>, <Link href="/learn" className={styles.emptyLink}>Learn</Link>, or <Link href="/rxd" className={styles.emptyLink}>RXD</Link>.
               </p>
             </section>
           )}

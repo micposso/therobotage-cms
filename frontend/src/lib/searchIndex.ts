@@ -113,5 +113,9 @@ export async function runSearch(query: string): Promise<SearchResult[]> {
 
   return candidates
     .sort((a, b) => b._score - a._score)
-    .map(({ _score: _, ...r }) => r)
+    .map((candidate) => {
+      const { _score, ...result } = candidate
+      void _score
+      return result
+    })
 }
