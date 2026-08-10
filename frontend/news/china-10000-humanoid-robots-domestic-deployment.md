@@ -1,6 +1,6 @@
 ---
 slug: china-10000-humanoid-robots-domestic-deployment
-title: "China's robot target is a deployment test."
+title: "Robotics is national policy now."
 category: NEWS
 date: August 10, 2026
 excerpt: "China's 10,000 humanoid target puts pressure where robotics gets real: deployment, service, safety, and domestic demand."
