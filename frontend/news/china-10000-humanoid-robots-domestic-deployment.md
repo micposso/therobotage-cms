@@ -19,7 +19,9 @@ The United States has no matching national deployment target. It has strong comp
 
 This is the gap. China is asking whether humanoids can be put to work at scale. The U.S. is asking how to organize its robotics response. Both questions matter, but they produce different learning loops. A commission can clarify priorities. A field deployment tells product teams which grippers break, which tasks need redesign, which workers need orientation, and which buyers reorder.
 
-The U.S. ban on foreign-made advanced robots changes the incentives. The [Associated Press reported](https://apnews.com/article/china-us-humanoid-robots-ban-tech-c9f5e3c94d91d00eff3b61b141fab366) that new restrictions on foreign-made humanoids and related systems are aimed largely at China. The security concern is clear: a connected robot is a mobile sensor platform with cameras, microphones, mapping, network access, remote updates, and physical agency.
+## The robot ban cuts both ways
+
+The U.S. ban on foreign-made advanced robots changes the incentive map. The [Associated Press reported](https://apnews.com/article/china-us-humanoid-robots-ban-tech-c9f5e3c94d91d00eff3b61b141fab366) that new restrictions on foreign-made humanoids and related systems are aimed largely at China. The security concern is clear: a connected robot is a mobile sensor platform with cameras, microphones, mapping, network access, remote updates, and physical agency.
 
 Blocking Chinese robots may protect sensitive American environments. It may also push Chinese firms deeper into their home market. If U.S. buyers become harder to reach, Chinese companies can design around Chinese factories, Chinese logistics networks, Chinese hospitals, Chinese public procurement, and Chinese service teams. That narrows the brief and brings the manufacturer closer to the deployment site.
 
