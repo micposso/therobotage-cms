@@ -192,12 +192,81 @@ marker). Facets, filters, the map, the detail panel, and the API update
 automatically. When the underlying records change, bump `schemaVersion` /
 `updatedAt` in `route.ts` so API consumers can tell.
 
+### Job Board — `/jobs`
+
+A US-only robotics job board. This is the **first database-backed feature on the
+marketing site** — everything else here reads markdown from disk at build time.
+
+**Authoring flow.** Markdown is the source of truth; Supabase is a serving replica.
+
+```
+jobs/<slug>.md  --(npm run jobs:publish)-->  Supabase  -->  /jobs, /jobs/[slug]
+```
+
+Never hand-edit rows in the Supabase dashboard — the next publish run overwrites them and
+git stops describing what is live. Edit the markdown and re-run.
+
+- `npm run jobs:check` — validate only, exits 1 on any error
+- `npm run jobs:publish:dry` — validate and print the change plan, write nothing
+- `npm run jobs:publish` — validate, upsert, then call `/api/revalidate-jobs`
+
+`scripts/publish-jobs.mjs` aborts the whole run on any validation error. A partial
+publish would make git and the database disagree, which is the failure this design
+exists to prevent. Deleting a job file **archives** the row rather than deleting it, so
+`job_alert_sends` audit rows survive and inbound links still resolve.
+
+**Files**
+- `jobs/taxonomy.json` — role families, seniorities, employment types, remote types, and
+  the 50 states plus DC. Read by both `src/lib/jobsTaxonomy.ts` and the publish script,
+  so the TypeScript UI and the Node validator cannot drift. A change here needs a
+  matching migration.
+- `jobs/_companies.yml` — company registry. A job's `company:` key must exist here.
+- `src/lib/jobs.ts` — data layer. Everything reads the `public_jobs` view, never the
+  `jobs` table. `getLiveJobs()` is the single cached query behind the index, the detail
+  pages, the sitemap and site search.
+- `src/lib/jobFilters.ts` — URL to state to predicate, in one module shared by the
+  explorer and the alert form.
+- `src/lib/supabase/{read,admin}.ts` — anon reads vs service role. Both are `server-only`.
+- `lms/supabase/migrations/00018`–`00021` — schema, RLS, and the `public_jobs` view.
+
+**Caching.** `/jobs` is statically prerendered with `revalidate = 900` and
+**deliberately does not read `searchParams`** — doing so would opt it into full dynamic
+rendering, since this project does not set `cacheComponents`. Filtering happens
+client-side in `JobBoardExplorer`, which reads the URL via `useSearchParams` and so
+**must stay inside a `<Suspense>` boundary** or `next build` fails on that route. The
+data layer uses `unstable_cache` (not `use cache`, which requires `cacheComponents`).
+
+`generateStaticParams` on `/jobs/[slug]` and the job query in `sitemap()` both run at
+**build** time. Both are wrapped so a Supabase outage degrades the job board rather than
+failing the deploy for the entire site.
+
+**Job alerts.** Weekly digest at `/api/cron/job-alerts`, guarded by `CRON_SECRET` and
+triggered by `.github/workflows/job-alerts.yml` (Railway has no Vercel Cron). The route
+guards on `JOB_ALERT_SEND_DAY`, and `job_alert_sends` has a unique
+`(subscriber_id, job_id)` constraint, so a re-run can never send the same job twice.
+Sends are **claimed before delivery**, so a crash costs a missed job rather than a
+duplicate email. Use `?dryRun=1` to inspect a digest without sending.
+
+Bulk email uses `bulkEmailHtml()` in `src/lib/emailTemplate.ts`, which adds the postal
+address and unsubscribe block CAN-SPAM requires. `emailHtml()` is untouched — four
+transactional senders depend on its exact output. The unsubscribe **GET** at
+`/jobs/alerts/unsubscribe` renders a confirmation page and mutates nothing, because mail
+scanners prefetch every link in an email; the RFC 8058 one-click POST lives at
+`/api/jobs/alerts/unsubscribe`.
+
+**Structured data.** `/jobs/[slug]` emits `JobPosting` JSON-LD, which is what makes
+listings eligible for the Google Jobs box. `title` must stay the bare job title,
+`directApply` stays `false` (we link out), expired pages drop the markup and go
+`noindex`, and list pages emit `ItemList` — never `JobPosting`.
+
 ## Agents
 
 | Agent                    | When to use                                           |
 |---|---|
 | `page-builder`           | Creating any new page, route, or page section         |
 | `content-writer`         | Writing or revising any visible copy, headlines, CTAs |
+| `article-writer`         | Writing a news article into `news/`                   |
+| `job-writer`             | Adding a job listing to `jobs/`                       |
 | `design-system-enforcer` | Final check before any UI change is considered done   |
 
 Always run `design-system-enforcer` on new or modified UI files before

@@ -45,6 +45,37 @@ export function emailHtml(content: string): string {
 </html>`
 }
 
+// Bulk (non-transactional) email wrapper.
+//
+// emailHtml() above is used by four transactional senders and its footer carries no
+// physical postal address. CAN-SPAM requires one on commercial bulk mail, along with a
+// conspicuous unsubscribe, so recurring sends like the weekly job digest use this
+// wrapper instead. emailHtml() itself is deliberately left unchanged.
+export function bulkEmailHtml(
+  content: string,
+  options: { unsubscribeUrl: string; preferencesUrl?: string; reason?: string }
+): string {
+  const address =
+    process.env.MAILING_ADDRESS ?? 'The Robot Age, United States'
+  const reason =
+    options.reason ?? 'You are receiving this because you subscribed to robotics job alerts at therobotage.com.'
+
+  const footer = `
+    <hr style="border:none;border-top:1px solid #e0e0e0;margin:32px 0 20px;" />
+    <p style="font-family:Georgia,serif;font-size:11px;color:#aaa;line-height:1.7;margin:0 0 8px;">
+      ${reason}
+    </p>
+    <p style="font-family:Georgia,serif;font-size:11px;color:#aaa;line-height:1.7;margin:0 0 8px;">
+      ${escapeHtml(address)}
+    </p>
+    <p style="font-family:Georgia,serif;font-size:11px;color:#aaa;line-height:1.7;margin:0;">
+      ${options.preferencesUrl ? `<a href="${options.preferencesUrl}" style="color:#9b5152;">Update your preferences</a> &nbsp;·&nbsp; ` : ''}<a href="${options.unsubscribeUrl}" style="color:#9b5152;">Unsubscribe</a>
+    </p>
+  `
+
+  return emailHtml(`${content}${footer}`)
+}
+
 export function workshopWaitlistHtml(firstName: string): string {
   return emailHtml(`
     <h1 style="font-family:Arial,sans-serif;font-weight:400;font-size:24px;letter-spacing:-0.02em;line-height:1.15;color:#0D0D0D;margin:0 0 20px;">

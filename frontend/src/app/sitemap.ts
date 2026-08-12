@@ -4,15 +4,20 @@ import { getAllRobots } from '@/lib/robots'
 import { articles } from '@/lib/articles'
 import { fieldSignals } from '@/lib/fieldSignals'
 import { certifications } from '@/lib/certifications'
+import { getLiveJobs } from '@/lib/jobsQueries'
 
 const BASE = 'https://therobotage.com'
+
+// Jobs come from Supabase, so this file is no longer purely static. Regenerate on the
+// same cadence as the job cache rather than freezing at build time.
+export const revalidate = 900
 
 function parseDate(dateStr: string): Date {
   const d = new Date(dateStr)
   return isNaN(d.getTime()) ? new Date() : d
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date()
 
   // ── Static pages ──────────────────────────────────────────────────────────
@@ -27,6 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/connect`,                lastModified: now,  changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE}/access`,                 lastModified: now,  changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/robots`,                 lastModified: now,  changeFrequency: 'weekly',  priority: 0.7 },
+    { url: `${BASE}/jobs`,                   lastModified: now,  changeFrequency: 'daily',   priority: 0.9 },
     { url: `${BASE}/privacy`,                lastModified: now,  changeFrequency: 'yearly',  priority: 0.2 },
     { url: `${BASE}/terms`,                  lastModified: now,  changeFrequency: 'yearly',  priority: 0.2 },
     { url: `${BASE}/ai-statement`,           lastModified: now,  changeFrequency: 'yearly',  priority: 0.2 },
@@ -82,6 +88,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
+  // ── Job listings (Supabase) ───────────────────────────────────────────────
+  // A Supabase outage must not fail the build for the entire site, so this degrades to
+  // no job entries rather than throwing.
+  let jobPages: MetadataRoute.Sitemap = []
+  try {
+    jobPages = (await getLiveJobs()).map((job) => ({
+      url: `${BASE}/jobs/${job.slug}`,
+      lastModified: parseDate(job.postedAt),
+      changeFrequency: 'daily' as const,
+      priority: 0.7,
+    }))
+  } catch (error) {
+    console.error('sitemap: failed to load jobs', error)
+  }
+
   return [
     ...staticPages,
     ...certPages,
@@ -89,5 +110,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...researchPages,
     ...fieldSignalPages,
     ...robotPages,
+    ...jobPages,
   ]
 }
