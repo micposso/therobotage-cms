@@ -76,7 +76,7 @@
 .heroHeadline {
   font-family: var(--font-display);
   font-size: clamp(var(--text-lg), 5.5vw, calc(var(--text-lg) * 1.6));
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.05;
   letter-spacing: 0;
   color: var(--color-white);
