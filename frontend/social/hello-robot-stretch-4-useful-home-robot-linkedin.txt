@@ -1,0 +1,9 @@
+While the rest of robotics chases the humanoid attention cycle, Hello Robot is making a quieter bet. Its new Stretch 4 is a wheeled mobile manipulator: a tall lift, a telescoping arm, a simple gripper, and a sensor head that reads as expressive without pretending to be a face. It is available now at $29,950, open source through ROS 2, calibrated out of the box, and docks to charge itself.
+
+The core idea is that embodiment is not a costume, it is a liability surface. Every degree of freedom adds control complexity, pinch points, maintenance, and user expectations. Stretch narrows the body to what actually matters indoors: mobility, reach, perception, contact, and recovery. The question it poses to anyone designing or buying robots is not whether a home robot should look human, but how little body it needs to be genuinely useful.
+
+For product and operations teams, the sharper lesson is autonomy. Hello Robot treats human-in-the-loop control as intentional, not as a failure to reach full automation. A robot that navigates to a room on its own, then hands precise manipulation back to a person, is a more honest system in a space full of pets, clutter, and shifting preferences. Autonomy does not have to be binary, and the real design work is making the handoffs legible.
+
+Read the full piece on The Robot Age: https://therobotage.com/news/hello-robot-stretch-4-useful-home-robot
+
+#HomeRobotics #EmbodiedAI #ProductDesign #HumanRobotInteraction #MobileManipulation #AssistiveTechnology
