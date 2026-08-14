@@ -1,0 +1,84 @@
+# Company registry for the job board.
+#
+# Every job markdown file references a key from this file in its `company:` field. The
+# publish script upserts these into the companies table before any job is written, so a
+# typo here surfaces as a validation error rather than a broken foreign key.
+#
+# Keys are lowercase-hyphenated and become the company slug.
+#
+# size_bucket must be one of: 1-10, 11-50, 51-200, 201-500, 501-1000, 1000+
+# hq_state must be a 2-letter US code (or omitted for companies headquartered abroad).
+#
+# ─────────────────────────────────────────────────────────────────────────────
+# EVERYTHING BELOW IS SAMPLE DATA.
+#
+# These companies are invented. They exist so the job board UI can be developed and
+# tested locally before real listings are written. Every blurb is prefixed "Sample data"
+# and every website points at example.com, so a sample can never be mistaken for a real
+# employer. `npm run jobs:publish` refuses to push any sample-*.md file unless you pass
+# --allow-samples. Delete this block and the sample-*.md files before going live.
+# ─────────────────────────────────────────────────────────────────────────────
+
+kestrel-dynamics:
+  name: Kestrel Dynamics
+  website: https://example.com
+  blurb: Sample data. Sunnyvale developer of bipedal platforms for warehouse and light manufacturing work.
+  hq_city: Sunnyvale
+  hq_state: CA
+  size_bucket: 201-500
+
+ironwood-robotics:
+  name: Ironwood Robotics
+  website: https://example.com
+  blurb: Sample data. Pittsburgh manipulation company building dexterous arms for unstructured environments.
+  hq_city: Pittsburgh
+  hq_state: PA
+  size_bucket: 51-200
+
+northgate-autonomy:
+  name: Northgate Autonomy
+  website: https://example.com
+  blurb: Sample data. Boston autonomy stack vendor selling perception and planning software to robot builders.
+  hq_city: Boston
+  hq_state: MA
+  size_bucket: 51-200
+
+meridian-field-systems:
+  name: Meridian Field Systems
+  website: https://example.com
+  blurb: Sample data. Houston field robotics operator running inspection fleets across energy infrastructure.
+  hq_city: Houston
+  hq_state: TX
+  size_bucket: 501-1000
+
+palisade-automation:
+  name: Palisade Automation
+  website: https://example.com
+  blurb: Sample data. Fremont manufacturer of mobile manipulators for high-mix, low-volume production lines.
+  hq_city: Fremont
+  hq_state: CA
+  size_bucket: 201-500
+
+tidewater-manipulation:
+  name: Tidewater Manipulation
+  website: https://example.com
+  blurb: Sample data. Ann Arbor hardware group designing compliant actuators and the firmware that drives them.
+  hq_city: Ann Arbor
+  hq_state: MI
+  size_bucket: 11-50
+
+blackpine-robotics:
+  name: Blackpine Robotics
+  website: https://example.com
+  blurb: Sample data. Austin robotics manufacturer moving its first product from pilot builds into volume production.
+  hq_city: Austin
+  hq_state: TX
+  size_bucket: 51-200
+
+third-coast-robotics:
+  name: Third Coast Robotics
+  website: https://example.com
+  blurb: Sample data. Distributed team building teleoperation tooling and the data pipeline behind autonomy training.
+  hq_city: Chicago
+  hq_state: IL
+  size_bucket: 11-50

@@ -1,0 +1,61 @@
+name: Weekly job alerts
+
+# frontend/ deploys to Railway, so Vercel Cron is not available. GitHub Actions is free,
+# version-controlled, portable if the host changes, and re-runnable by hand from the
+# Actions tab.
+#
+# The endpoint also guards on JOB_ALERT_SEND_DAY, so an extra or mistimed run is
+# harmless, and job_alert_sends has a unique (subscriber_id, job_id) constraint, so a
+# re-run can never send the same job to the same person twice.
+#
+# Required repository secrets:
+#   CRON_SECRET  - must match the value set on the Railway frontend service
+#   SITE_URL     - e.g. https://therobotage.com
+
+on:
+  schedule:
+    # 14:00 UTC on Tuesdays. GitHub's scheduler can drift 5-15 minutes under load,
+    # which does not matter for a weekly digest.
+    - cron: '0 14 * * 2'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Compute the digest without sending anything'
+        type: boolean
+        default: false
+      force:
+        description: 'Bypass the send-day guard'
+        type: boolean
+        default: false
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger job alert digest
+        env:
+          SITE_URL: ${{ secrets.SITE_URL }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          FORCE: ${{ inputs.force }}
+        run: |
+          set -euo pipefail
+
+          query=""
+          [ "${DRY_RUN:-false}" = "true" ] && query="?dryRun=1"
+          if [ "${FORCE:-false}" = "true" ]; then
+            if [ -n "$query" ]; then query="${query}&force=1"; else query="?force=1"; fi
+          fi
+
+          echo "Calling ${SITE_URL}/api/cron/job-alerts${query}"
+          response=$(curl -fsS \
+            -H "Authorization: Bearer ${CRON_SECRET}" \
+            "${SITE_URL}/api/cron/job-alerts${query}")
+
+          echo "$response"
+          # Fail the run if the endpoint reported failures, so a silent delivery
+          # problem does not look like a green build.
+          echo "$response" | grep -q '"failures":\[\]' || {
+            echo "Digest reported failures"
+            exit 1
+          }

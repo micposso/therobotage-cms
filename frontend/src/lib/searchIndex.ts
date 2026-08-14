@@ -2,9 +2,10 @@ import { articles } from './articles'
 import { fieldSignals } from './fieldSignals'
 import { certifications } from './certifications'
 import { getAllNewsArticles } from './news'
+import { getJobCards } from './jobsQueries'
 
 export interface SearchResult {
-  type: 'News' | 'Field Signal' | 'Certification' | 'Research' | 'Page'
+  type: 'News' | 'Field Signal' | 'Certification' | 'Research' | 'Page' | 'Job'
   title: string
   excerpt: string
   url: string
@@ -103,6 +104,28 @@ export async function runSearch(query: string): Promise<SearchResult[]> {
     const moduleText = c.modules.map((m) => `${m.title} ${m.description}`).join(' ')
     const s = titleScore(query, c.name) + score(query, [c.description, c.overview, moduleText])
     if (s > 0) candidates.push({ type: 'Certification', title: c.name, excerpt: c.description, url: `/learn/${c.slug}`, tag: c.abbr, _score: s })
+  }
+
+  // Job listings. Search must keep working if Supabase is unreachable, so this block
+  // degrades to no job results rather than failing the whole query.
+  try {
+    for (const job of await getJobCards()) {
+      const s =
+        titleScore(query, job.title) +
+        score(query, [job.companyName, job.summary, job.roleFamilyLabel, ...job.tags])
+      if (s > 0) {
+        candidates.push({
+          type: 'Job',
+          title: `${job.title} — ${job.companyName}`,
+          excerpt: job.summary,
+          url: `/jobs/${job.slug}`,
+          tag: job.roleFamilyLabel,
+          _score: s,
+        })
+      }
+    }
+  } catch (error) {
+    console.error('search: failed to load jobs', error)
   }
 
   // Static pages

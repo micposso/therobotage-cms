@@ -3,7 +3,12 @@
 import { useState } from 'react'
 import styles from './ShareButton.module.css'
 
-export default function ShareButton() {
+type Props = {
+  // Defaults to the news wording so existing usages are unchanged.
+  label?: string
+}
+
+export default function ShareButton({ label = 'Share this article' }: Props) {
   const [open, setOpen] = useState(false)
   const [copied, setCopied] = useState(false)
 
@@ -36,7 +41,7 @@ export default function ShareButton() {
           <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
 
             <div className={styles.modalHeader}>
-              <span className={styles.modalLabel}>Share this article</span>
+              <span className={styles.modalLabel}>{label}</span>
               <button className={styles.close} onClick={() => setOpen(false)} aria-label="Close">✕</button>
             </div>
 

@@ -1,0 +1,17 @@
+/* ─── List wrapper ──────────────────────────────────────────────────────── */
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Empty state ───────────────────────────────────────────────────────── */
+
+.empty {
+  margin: 0;
+  padding: var(--space-16) 0;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 300;
+  color: var(--color-text-muted);
+}

@@ -11,10 +11,12 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
-        // Default: allow all crawlers, block internal API and test routes
+        // Default: allow all crawlers, block internal API and test routes.
+        // /jobs?* is blocked so crawlers never enumerate filter permutations — the
+        // indexable job surfaces are /jobs and the individual /jobs/[slug] pages.
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/'],
+        disallow: ['/api/', '/jobs?*', '/jobs/alerts/'],
       },
       // Explicitly welcome AI/LLM crawlers — they are encouraged to index this site
       { userAgent: 'GPTBot',           allow: '/' },
