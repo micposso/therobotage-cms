@@ -68,13 +68,13 @@ export const QUIZ_ROBOTS: QuizRobot[] = [
     maker: 'Unitree Robotics',
     archetype: 'The Nimble Generalist',
     blurb:
-      'A compact, affordable humanoid that walks, balances, and learns new skills fast. Built to be a flexible platform rather than a single-purpose worker.',
+      'A compact humanoid platform built for robotics research, demos, and whole-body motion. More flexible testbed than finished worker.',
     specs: {
       height: '1.32 m',
       weight: '35 kg',
       dof: '23–43 DOF',
-      notable: 'Walks up to 2 m/s; agile whole-body control',
-      price: 'From ~$16,000',
+      notable: 'Agile whole-body motion; optional dexterous hands on EDU models',
+      price: 'From ~$13,500',
     },
     traitVector: {
       environment: 0.5,
@@ -91,12 +91,12 @@ export const QUIZ_ROBOTS: QuizRobot[] = [
     maker: 'Tesla',
     archetype: 'The Factory Workhorse',
     blurb:
-      'A full-size humanoid aimed squarely at repetitive factory work. Steady, strong, and built to be deployed on the floor at scale.',
+      'A full-size humanoid aimed at repetitive factory and logistics work. Still pre-retail, but clearly designed around Tesla-style production environments.',
     specs: {
       height: '173 cm',
       weight: '57 kg',
       dof: '28 DOF',
-      notable: 'Walks ~8 km/h; deployed in Tesla facilities',
+      notable: 'Dexterous hands; trained and tested in Tesla facilities',
       price: 'Not yet retail',
     },
     traitVector: {
@@ -114,12 +114,12 @@ export const QUIZ_ROBOTS: QuizRobot[] = [
     maker: 'Figure',
     archetype: 'The AI-Native Operator',
     blurb:
-      'A humanoid designed from the ground up around AI — gram-level tactile hands and speech-to-speech interaction, built for mass production on the BotQ line.',
+      'A humanoid redesigned around Figure’s Helix AI system, with tactile fingertips, palm cameras, wireless charging, and softer materials for home use.',
     specs: {
       height: 'Adult humanoid',
       weight: 'Not disclosed',
-      dof: 'Dexterous hands',
-      notable: 'Gram-level tactile sensing; speech-to-speech; BotQ mass production',
+      dof: 'Not disclosed',
+      notable: 'Tactile fingertips; palm cameras; wireless charging; BotQ production plan',
       price: 'Not yet retail',
     },
     traitVector: {
@@ -133,17 +133,17 @@ export const QUIZ_ROBOTS: QuizRobot[] = [
   },
   {
     slug: 'atlas',
-    name: 'Atlas (electric)',
+    name: 'Atlas',
     maker: 'Boston Dynamics',
     archetype: 'The Athlete',
     blurb:
-      'The all-electric Atlas moves in ways no other humanoid can — 360-degree rotational joints and a hot-swap battery. Pure range of motion and physical capability.',
+      'Boston Dynamics’ next-generation humanoid, built for industrial handling and extreme whole-body mobility. The important part is not that it is electric; it is how freely it moves.',
     specs: {
-      height: 'Adult humanoid',
-      weight: '~50 kg payload capable',
+      height: '1.9 m',
+      weight: '~90 kg',
       dof: '56 DOF',
-      notable: '360° rotational joints; 50 kg payload; hot-swap battery',
-      price: 'Not retail (commercial pilots)',
+      notable: 'Fully rotational joints; 50 kg instant payload; self-swappable battery',
+      price: 'Commercial pilots only',
     },
     traitVector: {
       environment: 0.8,
@@ -160,13 +160,13 @@ export const QUIZ_ROBOTS: QuizRobot[] = [
     maker: 'Unitree Robotics',
     archetype: 'The Loyal Scout',
     blurb:
-      'An agile, affordable quadruped that goes almost anywhere — stairs, trails, rough ground. Fast, sure-footed, and eager to follow.',
+      'A compact quadruped with strong terrain mobility for demos, inspection, education, and research. It is agile and accessible, but still a legged robot that needs supervision.',
     specs: {
       height: 'Quadruped',
-      weight: '~15 kg',
+      weight: 'About 15 kg',
       dof: '12 DOF',
-      notable: 'Highly agile; climbs stairs and rough terrain',
-      price: 'From ~$1,600',
+      notable: '4D LiDAR; stair and rough-terrain mobility',
+      price: 'From ~$1,600–$2,800',
     },
     traitVector: {
       environment: 0.5,
@@ -183,13 +183,13 @@ export const QUIZ_ROBOTS: QuizRobot[] = [
     maker: 'Pollen Robotics',
     archetype: 'The Communicator',
     blurb:
-      'A small, expressive desktop robot that notices you and reacts — a moving head, antennas, voice, and a wide-angle camera. It reads the room; it does not have arms and does not pick things up.',
+      'A small, open-source desktop robot for human interaction, creative coding, and AI experiments. It is expressive and social; it does not have arms and does not pick things up.',
     specs: {
       height: '28 cm',
       weight: '1.5 kg',
       dof: '6-DOF head + 9 servos',
-      notable: 'Wide-angle camera; expressive head and antennas; no arms',
-      price: 'From $299',
+      notable: 'Camera, microphones, speaker, expressive head and antennas; no arms',
+      price: '$399 Lite / $499 wireless',
     },
     traitVector: {
       environment: 0.2,
@@ -206,13 +206,13 @@ export const QUIZ_ROBOTS: QuizRobot[] = [
     maker: '1X Technologies',
     archetype: 'The Domestic',
     blurb:
-      'A home humanoid with an onboard language model, designed to help around the house and hold a conversation while it does. Built for living rooms, not factories.',
+      'A soft-bodied home humanoid designed for domestic help, conversation, and safe operation around people. It is a real preorder product, but broad home autonomy is still the hard part.',
     specs: {
-      height: 'Adult humanoid',
-      weight: 'Lightweight (home-safe design)',
-      dof: 'Full-body humanoid',
-      notable: 'Onboard LLM; designed for domestic tasks',
-      price: '~$20,000 or $499/mo',
+      height: '5 ft 6 in',
+      weight: '66 lb',
+      dof: 'Hands 22x2; arms 7x2; legs 6x2',
+      notable: 'Home-focused mobility, visual intelligence, memory, and conversation',
+      price: '$20,000 or $499/mo',
     },
     traitVector: {
       environment: 0.05,
@@ -229,12 +229,12 @@ export const QUIZ_ROBOTS: QuizRobot[] = [
     maker: 'Agility Robotics',
     archetype: 'The Operator',
     blurb:
-      'A warehouse-logistics biped that is actually deployed commercially, moving totes and boxes on a robots-as-a-service model. Heads-down, reliable, on the clock.',
+      'A warehouse-logistics biped built for repetitive material handling in spaces designed around people. Less social companion, more shift worker.',
     specs: {
       height: '~1.75 m',
       weight: '~65 kg',
-      dof: 'Full-body biped',
-      notable: 'Commercially deployed for logistics (RaaS)',
+      dof: 'Full-body biped with arms',
+      notable: '35 lb carrying capacity; 4-hour battery; logistics deployments',
       price: 'Robots-as-a-service',
     },
     traitVector: {
@@ -252,13 +252,13 @@ export const QUIZ_ROBOTS: QuizRobot[] = [
     maker: 'Hello Robot',
     archetype: 'The Helper',
     blurb:
-      'A mobile manipulator built for assistance and independence — a wheeled base, a telescoping mast, and a single dexterous arm. Quiet, patient, and focused on helping one person at a time.',
+      'A mobile manipulator built for assistance, research, and practical indoor work — a wheeled base, telescoping lift, and single arm instead of a humanoid body.',
     specs: {
-      height: 'Telescoping mast',
-      weight: '~24.5 kg',
-      dof: 'Mobile base + lift + arm + wrist',
-      notable: 'Wheeled base + telescoping mast + single dexterous arm (Stretch 3)',
-      price: '$24,950',
+      height: '1.6 m',
+      weight: '~46 kg',
+      dof: '9 DOF + gripper',
+      notable: 'Omnidirectional base; telescoping arm; configurable wrist and gripper',
+      price: '$29,950',
     },
     traitVector: {
       environment: 0.25,
