@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { label: 'ROBOTS',        href: '/robots' },
   { label: 'RXD FRAMEWORK', href: '/rxd' },
   { label: 'LEARN',         href: '/learn' },
+  { label: 'JOBS',          href: '/jobs' },
   { label: 'ENTERPRISE',    href: '/enterprise' },
 ]
 
