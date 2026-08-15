@@ -32,22 +32,30 @@ function supabaseConfigured(): boolean {
   return Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_PUBLISHABLE_KEY)
 }
 
+async function getMarkdownJobs(includeSamples = false): Promise<JobDetail[]> {
+  const { getLocalJobs } = await import('./jobsLocal')
+  return getLocalJobs({ includeSamples })
+}
+
 export const getLiveJobs = unstable_cache(
   async (): Promise<JobDetail[]> => {
-    // Development fallback: read the markdown in jobs/ directly so the board is
-    // testable before credentials exist. Never active in production, where an
-    // unconfigured Supabase must surface as an error rather than silently serving
-    // whatever markdown happens to be in the deployment.
     if (!supabaseConfigured()) {
+      const local = await getMarkdownJobs(process.env.NODE_ENV !== 'production')
+      if (local.length > 0) {
+        console.warn(
+          `[jobs] Supabase not configured - serving ${local.length} listing(s) from jobs/*.md.`
+        )
+        return local
+      }
+
       if (process.env.NODE_ENV === 'production') {
         throw new Error(
           'Supabase is not configured. Set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_PUBLISHABLE_KEY.'
         )
       }
-      const { getLocalJobs } = await import('./jobsLocal')
-      const local = getLocalJobs()
+
       console.warn(
-        `[jobs] Supabase not configured - serving ${local.length} listing(s) from jobs/*.md (development only).`
+        `[jobs] Supabase not configured - serving ${local.length} listing(s) from jobs/*.md.`
       )
       return local
     }
@@ -58,6 +66,12 @@ export const getLiveJobs = unstable_cache(
       .order('posted_at', { ascending: false })
 
     if (error) {
+      const local = await getMarkdownJobs(false)
+      if (local.length > 0) {
+        console.error(`Failed to load jobs from Supabase; serving markdown fallback`, error)
+        return local
+      }
+
       throw new Error(`Failed to load jobs: ${error.message}`)
     }
 
@@ -135,4 +149,3 @@ export async function getExpiredJobBySlug(slug: string): Promise<JobDetail | und
     company_blurb: row.companies.blurb,
   })
 }
-
