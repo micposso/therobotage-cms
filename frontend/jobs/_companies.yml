@@ -9,6 +9,49 @@
 # size_bucket must be one of: 1-10, 11-50, 51-200, 201-500, 501-1000, 1000+
 # hq_state must be a 2-letter US code (or omitted for companies headquartered abroad).
 #
+# Real employers
+# ─────────────────────────────────────────────────────────────────────────────
+
+amazon-robotics:
+  name: Amazon Robotics
+  website: https://amazon.jobs/amazon-robotics
+  blurb: Amazon's robotics organization designs the automation systems, service workflows, and human-facing tools used across fulfillment operations.
+  hq_city: North Reading
+  hq_state: MA
+  size_bucket: 1000+
+
+fauna-robotics:
+  name: Fauna Robotics
+  website: https://faunarobotics.com
+  blurb: Amazon-owned robotics team building safe, expressive robots for everyday human spaces.
+  hq_city: New York
+  hq_state: NY
+  size_bucket: 51-200
+
+agility:
+  name: Agility
+  website: https://www.agilityrobotics.com
+  blurb: U.S. humanoid robotics company behind Digit and Arc, focused on deployed warehouse and manufacturing automation.
+  hq_city: Salem
+  hq_state: OR
+  size_bucket: 501-1000
+
+intrinsic:
+  name: Intrinsic
+  website: https://www.intrinsic.ai
+  blurb: Alphabet robotics software company building AI-enabled automation tools for industrial robotics and manufacturing.
+  hq_city: Mountain View
+  hq_state: CA
+  size_bucket: 201-500
+
+skydio:
+  name: Skydio
+  website: https://www.skydio.com
+  blurb: U.S. autonomous drone company building aircraft, docks, and software for public safety, inspection, defense, and field operations.
+  hq_city: San Mateo
+  hq_state: CA
+  size_bucket: 501-1000
+
 # ─────────────────────────────────────────────────────────────────────────────
 # EVERYTHING BELOW IS SAMPLE DATA.
 #
