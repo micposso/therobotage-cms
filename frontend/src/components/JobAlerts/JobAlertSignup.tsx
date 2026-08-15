@@ -33,10 +33,10 @@ export default function JobAlertSignup({ source, defaultRoleFamily, defaultState
     return (
       <div className={styles.panel}>
         <p className={styles.eyebrow}>Job alerts</p>
-        <h2 className={styles.headline}>Check your inbox.</h2>
+        <h2 className={styles.headline}>{state.title ?? 'Check your inbox.'}</h2>
         <p className={styles.body}>
-          Confirmation is on its way. Every Tuesday you will get the roles posted that
-          week that match what you asked for, and nothing when there is no match.
+          {state.body ??
+            'Confirmation is on its way. Every Tuesday you will get the roles posted that week that match what you asked for, and nothing when there is no match.'}
         </p>
       </div>
     )
