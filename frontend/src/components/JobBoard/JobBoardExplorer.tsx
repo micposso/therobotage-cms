@@ -286,7 +286,7 @@ export default function JobBoardExplorer({
 
       <JobList jobs={paginatedJobs} />
 
-      {pageCount > 1 && (
+      {visibleJobs.length > 0 && (
         <nav className={styles.pagination} aria-label="Job board pagination">
           <button
             type="button"
