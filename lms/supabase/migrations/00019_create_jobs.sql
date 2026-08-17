@@ -67,13 +67,7 @@ create table public.jobs (
   -- unchanged rows instead of rewriting every job on every run.
   content_hash text not null,
 
-  search_vector tsvector generated always as (
-    setweight(to_tsvector('english', coalesce(title, '')), 'A') ||
-    setweight(to_tsvector('english', coalesce(company_name, '')), 'A') ||
-    setweight(to_tsvector('english', coalesce(summary, '')), 'B') ||
-    setweight(to_tsvector('english', coalesce(city, '')), 'C') ||
-    setweight(to_tsvector('english', array_to_string(tags, ' ')), 'C')
-  ) stored,
+  search_vector tsvector not null default ''::tsvector,
 
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now(),
@@ -95,3 +89,25 @@ create table public.jobs (
     ),
   constraint jobs_expiry_after_post check (expires_at > posted_at)
 );
+
+create function public.set_jobs_search_vector()
+returns trigger
+language plpgsql
+as $$
+begin
+  new.search_vector :=
+    setweight(to_tsvector('english', coalesce(new.title, '')), 'A') ||
+    setweight(to_tsvector('english', coalesce(new.company_name, '')), 'A') ||
+    setweight(to_tsvector('english', coalesce(new.summary, '')), 'B') ||
+    setweight(to_tsvector('english', coalesce(new.city, '')), 'C') ||
+    setweight(to_tsvector('english', array_to_string(new.tags, ' ')), 'C');
+
+  return new;
+end;
+$$;
+
+create trigger set_jobs_search_vector_before_write
+before insert or update of title, company_name, summary, city, tags
+on public.jobs
+for each row
+execute function public.set_jobs_search_vector();
