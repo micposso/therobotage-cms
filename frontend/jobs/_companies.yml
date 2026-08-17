@@ -52,6 +52,142 @@ skydio:
   hq_state: CA
   size_bucket: 501-1000
 
+ambi-robotics:
+  name: Ambi Robotics
+  website: https://www.ambirobotics.com
+  blurb: Berkeley robotics company building AI-powered parcel-sorting systems for warehouse and logistics operations.
+  hq_city: Berkeley
+  hq_state: CA
+  size_bucket: 51-200
+
+amp:
+  name: AMP
+  website: https://ampsortation.com
+  blurb: Colorado automation company using AI and robotics to sort recyclable materials and operate recycling infrastructure.
+  hq_city: Louisville
+  hq_state: CO
+  size_bucket: 201-500
+
+apptronik:
+  name: Apptronik
+  website: https://apptronik.com
+  blurb: Austin humanoid robotics company building general-purpose robots for industrial and commercial work.
+  hq_city: Austin
+  hq_state: TX
+  size_bucket: 201-500
+
+bear-robotics:
+  name: Bear Robotics
+  website: https://www.bearrobotics.ai
+  blurb: Hospitality robotics company building autonomous service robots for restaurants, hotels, and public spaces.
+  hq_city: Redwood City
+  hq_state: CA
+  size_bucket: 201-500
+
+boston-dynamics:
+  name: Boston Dynamics
+  website: https://bostondynamics.com
+  blurb: Massachusetts robotics company behind Spot, Stretch, and Atlas, with work spanning mobile manipulation and humanoids.
+  hq_city: Waltham
+  hq_state: MA
+  size_bucket: 501-1000
+
+chef-robotics:
+  name: Chef Robotics
+  website: https://www.chefrobotics.ai
+  blurb: San Francisco physical AI company building robotic food assembly systems for commercial food production.
+  hq_city: San Francisco
+  hq_state: CA
+  size_bucket: 51-200
+
+collaborative-robotics:
+  name: Collaborative Robotics
+  website: https://www.co.bot
+  blurb: Santa Clara robotics company building collaborative robots designed to work in human environments.
+  hq_city: Santa Clara
+  hq_state: CA
+  size_bucket: 51-200
+
+dexterity:
+  name: Dexterity
+  website: https://dexterity.ai
+  blurb: Redwood City robotics company building intelligent manipulation systems for logistics, warehousing, and supply chain work.
+  hq_city: Redwood City
+  hq_state: CA
+  size_bucket: 201-500
+
+dusty-robotics:
+  name: Dusty Robotics
+  website: https://www.dustyrobotics.com
+  blurb: Mountain View construction robotics company building automated layout tools for job sites.
+  hq_city: Mountain View
+  hq_state: CA
+  size_bucket: 51-200
+
+figure-ai:
+  name: Figure
+  website: https://www.figure.ai
+  blurb: San Jose humanoid robotics company developing general-purpose robots and embodied AI systems.
+  hq_city: San Jose
+  hq_state: CA
+  size_bucket: 201-500
+
+gecko-robotics:
+  name: Gecko Robotics
+  website: https://www.geckorobotics.com
+  blurb: Pittsburgh robotics company using wall-climbing robots and AI to inspect and maintain critical infrastructure.
+  hq_city: Pittsburgh
+  hq_state: PA
+  size_bucket: 201-500
+
+graymatter-robotics:
+  name: GrayMatter Robotics
+  website: https://graymatter-robotics.com
+  blurb: Carson robotics company building AI-powered robotic cells for sanding, polishing, and surface finishing.
+  hq_city: Carson
+  hq_state: CA
+  size_bucket: 51-200
+
+nuro:
+  name: Nuro
+  website: https://www.nuro.ai
+  blurb: Mountain View autonomy company developing AI-first driving systems for delivery and mobility platforms.
+  hq_city: Mountain View
+  hq_state: CA
+  size_bucket: 501-1000
+
+pickle-robot:
+  name: Pickle Robot
+  website: https://www.picklerobot.com
+  blurb: Boston-area robotics company building truck unloading and warehouse automation systems.
+  hq_city: Charlestown
+  hq_state: MA
+  size_bucket: 51-200
+
+serve-robotics:
+  name: Serve Robotics
+  website: https://www.serverobotics.com
+  blurb: Sidewalk delivery robotics company deploying autonomous robots for last-mile delivery in U.S. cities.
+  hq_city: Redwood City
+  hq_state: CA
+  size_bucket: 51-200
+
+shield-ai:
+  name: Shield AI
+  website: https://shield.ai
+  blurb: Defense autonomy company building AI pilots and autonomous aircraft systems.
+  hq_city: San Diego
+  hq_state: CA
+  size_bucket: 501-1000
+
+zipline:
+  name: Zipline
+  website: https://www.zipline.com
+  blurb: South San Francisco robotics and autonomy company operating automated drone delivery systems.
+  hq_city: South San Francisco
+  hq_state: CA
+  size_bucket: 1000+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # EVERYTHING BELOW IS SAMPLE DATA.
 #

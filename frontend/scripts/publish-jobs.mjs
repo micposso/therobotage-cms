@@ -5,6 +5,7 @@
 //   npm run jobs:check         validate only, exit 1 on any error
 //   npm run jobs:publish:dry   validate and print the change plan, write nothing
 //   npm run jobs:publish       validate and write
+//   npm run jobs:publish -- --skip-samples   publish real listings only
 //   npm run jobs:publish -- --prune   additionally hard-delete draft rows
 //
 // The markdown files are the source of truth. Supabase is a serving replica: every row
@@ -37,6 +38,7 @@ const CHECK_ONLY = args.includes('--check')
 const DRY_RUN = args.includes('--dry-run')
 const PRUNE = args.includes('--prune')
 const ALLOW_SAMPLES = args.includes('--allow-samples')
+const SKIP_SAMPLES = args.includes('--skip-samples')
 
 // sample-*.md files are placeholder listings for invented companies, used to develop the
 // UI locally. Publishing them would put fabricated jobs in front of real job seekers and
@@ -162,6 +164,10 @@ function loadCompanies() {
   }
 
   return companies
+}
+
+function isSampleCompany(company) {
+  return typeof company.blurb === 'string' && company.blurb.startsWith('Sample data.')
 }
 
 // ── Validate one job file ────────────────────────────────────────────────────
@@ -376,7 +382,10 @@ async function main() {
   loadDotEnvLocal()
 
   const taxonomy = loadTaxonomy()
-  const companies = loadCompanies()
+  const loadedCompanies = loadCompanies()
+  const companies = SKIP_SAMPLES
+    ? new Map([...loadedCompanies.entries()].filter(([, company]) => !isSampleCompany(company)))
+    : loadedCompanies
 
   if (!fs.existsSync(JOBS_DIR)) {
     console.error(`No jobs directory at ${JOBS_DIR}`)
@@ -388,6 +397,7 @@ async function main() {
   const files = fs
     .readdirSync(JOBS_DIR)
     .filter((f) => f.endsWith('.md') && !f.startsWith('_'))
+    .filter((f) => !SKIP_SAMPLES || !f.startsWith(SAMPLE_PREFIX))
     .sort()
 
   const seenSlugs = new Set()
@@ -417,7 +427,7 @@ async function main() {
   if (CHECK_ONLY) return
 
   const samples = parsed.filter((p) => p.file.startsWith(SAMPLE_PREFIX))
-  if (samples.length && !ALLOW_SAMPLES && !DRY_RUN) {
+  if (samples.length && !ALLOW_SAMPLES && !SKIP_SAMPLES && !DRY_RUN) {
     console.error(
       `\nRefusing to publish ${samples.length} sample listing${samples.length === 1 ? '' : 's'}:\n`
     )

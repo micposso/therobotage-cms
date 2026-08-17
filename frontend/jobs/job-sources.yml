@@ -1,0 +1,105 @@
+# Nightly source list for robotics jobs suitable for The Robot Age.
+#
+# The cron job scans these company career pages for US-based roles in:
+# UX, product design, HRI, product management, user research, robotics research,
+# robot learning, autonomy research, and closely related product/research roles.
+
+- company: Agility Robotics
+  key: agility
+  hq: Salem, OR
+  careers_url: https://www.agilityrobotics.com/careers
+
+- company: Amazon Robotics / Fauna
+  key: amazon-robotics
+  hq: North Reading, MA
+  careers_url: https://amazon.jobs/en/teams/amazon-robotics
+
+- company: Ambi Robotics
+  key: ambi-robotics
+  hq: Berkeley, CA
+  careers_url: https://www.ambirobotics.com/careers/
+
+- company: AMP
+  key: amp
+  hq: Louisville, CO
+  careers_url: https://job-boards.greenhouse.io/ampsortation
+
+- company: Apptronik
+  key: apptronik
+  hq: Austin, TX
+  careers_url: https://apptronik.com/careers/job-listings
+
+- company: Bear Robotics
+  key: bear-robotics
+  hq: Redwood City, CA
+  careers_url: https://www.bearrobotics.ai/careers
+
+- company: Boston Dynamics
+  key: boston-dynamics
+  hq: Waltham, MA
+  careers_url: https://bostondynamics.wd1.myworkdayjobs.com/Boston_Dynamics
+
+- company: Chef Robotics
+  key: chef-robotics
+  hq: San Francisco, CA
+  careers_url: https://www.chefrobotics.ai/careers
+
+- company: Collaborative Robotics
+  key: collaborative-robotics
+  hq: Santa Clara, CA
+  careers_url: https://jobs.ashbyhq.com/cobot
+
+- company: Dexterity
+  key: dexterity
+  hq: Redwood City, CA
+  careers_url: https://jobs.lever.co/dexterity
+
+- company: Dusty Robotics
+  key: dusty-robotics
+  hq: Mountain View, CA
+  careers_url: https://www.dustyrobotics.com/careers
+
+- company: Figure
+  key: figure-ai
+  hq: San Jose, CA
+  careers_url: https://job-boards.greenhouse.io/figureai
+
+- company: Gecko Robotics
+  key: gecko-robotics
+  hq: Pittsburgh, PA
+  careers_url: https://jobs.ashbyhq.com/gecko-robotics
+
+- company: GrayMatter Robotics
+  key: graymatter-robotics
+  hq: Carson, CA
+  careers_url: https://jobs.ashbyhq.com/graymatter-robotics
+
+- company: Nuro
+  key: nuro
+  hq: Mountain View, CA
+  careers_url: https://www.nuro.ai/careers
+
+- company: Pickle Robot
+  key: pickle-robot
+  hq: Charlestown, MA
+  careers_url: https://jobs.lever.co/picklerobot
+
+- company: Serve Robotics
+  key: serve-robotics
+  hq: Redwood City, CA
+  careers_url: https://jobs.ashbyhq.com/serverobotics
+
+- company: Shield AI
+  key: shield-ai
+  hq: San Diego, CA
+  careers_url: https://jobs.lever.co/shieldai
+
+- company: Skydio
+  key: skydio
+  hq: San Mateo, CA
+  careers_url: https://www.skydio.com/careers
+
+- company: Zipline
+  key: zipline
+  hq: South San Francisco, CA
+  careers_url: https://www.zipline.com/careers
