@@ -47,6 +47,8 @@ const ALLOWED = {
 
 type Option = { value: string; label: string }
 
+const JOBS_PER_PAGE = 6
+
 // Single-select controls, matching the filter bar on /robotics-map. The URL format and
 // matcher both accept comma-separated lists so that a link generated elsewhere (an alert
 // preference link, say) still filters correctly on first render; the controls themselves
@@ -89,6 +91,11 @@ function toOptions(values: string[], labels: Record<string, string>): Option[] {
     .sort((a, b) => a.label.localeCompare(b.label))
 }
 
+function pageFromParams(params: URLSearchParams): number {
+  const page = Number(params.get('page'))
+  return Number.isInteger(page) && page > 1 ? page : 1
+}
+
 export default function JobBoardExplorer({
   jobs,
   facets,
@@ -102,12 +109,26 @@ export default function JobBoardExplorer({
   const [filters, setFilters] = useState<JobFilters>(() =>
     filtersFromParams(searchParams, ALLOWED)
   )
+  const [page, setPage] = useState(() => pageFromParams(searchParams))
+
+  function replaceUrl(next: JobFilters, nextPage: number) {
+    const query = filtersToQueryString(next)
+    const params = new URLSearchParams(query)
+    if (nextPage > 1) params.set('page', String(nextPage))
+    const queryString = params.toString()
+    // replace, not push: ten filter clicks should not mean ten back-button presses.
+    router.replace(queryString ? `${basePath}?${queryString}` : basePath, { scroll: false })
+  }
 
   function applyFilters(next: JobFilters) {
     setFilters(next)
-    const query = filtersToQueryString(next)
-    // replace, not push: ten filter clicks should not mean ten back-button presses.
-    router.replace(query ? `${basePath}?${query}` : basePath, { scroll: false })
+    setPage(1)
+    replaceUrl(next, 1)
+  }
+
+  function applyPage(nextPage: number) {
+    setPage(nextPage)
+    replaceUrl(filters, nextPage)
   }
 
   function updateMulti(key: 'role' | 'level' | 'state' | 'remote' | 'type', value: string) {
@@ -122,6 +143,13 @@ export default function JobBoardExplorer({
     () => jobs.filter((job) => matchesFilters(job, filters)),
     [jobs, filters]
   )
+  const pageCount = Math.max(1, Math.ceil(visibleJobs.length / JOBS_PER_PAGE))
+  const currentPage = Math.min(page, pageCount)
+  const pageStart = (currentPage - 1) * JOBS_PER_PAGE
+  const pageEnd = pageStart + JOBS_PER_PAGE
+  const paginatedJobs = visibleJobs.slice(pageStart, pageEnd)
+  const shownStart = visibleJobs.length === 0 ? 0 : pageStart + 1
+  const shownEnd = Math.min(pageEnd, visibleJobs.length)
 
   const activeCount = activeFilterCount(filters)
 
@@ -244,6 +272,11 @@ export default function JobBoardExplorer({
         <span>
           {visibleJobs.length} of {jobs.length} open {jobs.length === 1 ? 'role' : 'roles'}
         </span>
+        {visibleJobs.length > 0 && (
+          <span>
+            Showing {shownStart}-{shownEnd}
+          </span>
+        )}
         {activeCount > 0 && (
           <span>
             {activeCount} {activeCount === 1 ? 'filter' : 'filters'} applied
@@ -251,7 +284,46 @@ export default function JobBoardExplorer({
         )}
       </div>
 
-      <JobList jobs={visibleJobs} />
+      <JobList jobs={paginatedJobs} />
+
+      {pageCount > 1 && (
+        <nav className={styles.pagination} aria-label="Job board pagination">
+          <button
+            type="button"
+            className={styles.pageButton}
+            onClick={() => applyPage(currentPage - 1)}
+            disabled={currentPage === 1}
+          >
+            Previous
+          </button>
+
+          <div className={styles.pageNumbers}>
+            {Array.from({ length: pageCount }, (_, index) => {
+              const pageNumber = index + 1
+              return (
+                <button
+                  type="button"
+                  key={pageNumber}
+                  className={styles.pageNumber}
+                  aria-current={currentPage === pageNumber ? 'page' : undefined}
+                  onClick={() => applyPage(pageNumber)}
+                >
+                  {pageNumber}
+                </button>
+              )
+            })}
+          </div>
+
+          <button
+            type="button"
+            className={styles.pageButton}
+            onClick={() => applyPage(currentPage + 1)}
+            disabled={currentPage === pageCount}
+          >
+            Next
+          </button>
+        </nav>
+      )}
     </div>
   )
 }
