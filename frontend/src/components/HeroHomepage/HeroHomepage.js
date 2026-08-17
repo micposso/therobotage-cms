@@ -15,6 +15,7 @@ const NAV_LINKS = [
   { label: 'Robots',        href: '/robots',     desc: 'Scored robot profiles evaluated through the RXD framework.' },
   { label: 'RXD Framework', href: '/rxd',        desc: 'A six-dimension model for evaluating robot interactions.' },
   { label: 'Learn',         href: '/learn',      desc: 'Courses and curricula built for non-engineers.' },
+  { label: 'Jobs',          href: '/jobs',       desc: 'Curated robotics roles for product, design, strategy, and human-facing work.' },
   { label: 'Enterprise',    href: '/enterprise', desc: 'Deployment readiness education for organizations.' },
 ]
 

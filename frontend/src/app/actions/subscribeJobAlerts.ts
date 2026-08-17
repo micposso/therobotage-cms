@@ -16,13 +16,15 @@ import {
 
 const FROM_ADDRESS = process.env.EMAIL_FROM_JOBS ?? 'onboarding@resend.dev'
 const ADMIN_ADDRESS = process.env.JOB_ALERT_ADMIN_EMAIL
+const FALLBACK_SIGNUP_RECIPIENT =
+  process.env.JOB_ALERT_ADMIN_EMAIL ?? process.env.EMAIL_FROM_HELLO ?? 'hello@therobotage.com'
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://therobotage.com'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const MIN_FILL_MS = 2000
 const RATE_LIMIT_PER_HOUR = 3
 
-type State = { success: boolean; error?: string }
+type State = { success: boolean; error?: string; title?: string; body?: string }
 
 function pickAllowed(formData: FormData, field: string, allowed: readonly string[]): string[] {
   return formData
@@ -40,6 +42,101 @@ function describeFilters(roles: string[], levels: string[], states: string[], re
   if (remoteOnly) parts.push('Remote roles only')
 
   return parts.join(' · ')
+}
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
+
+function manualSignupHtml({
+  email,
+  filterSummary,
+  source,
+}: {
+  email: string
+  filterSummary: string
+  source: string | null
+}) {
+  return `
+    <div style="font-family: Arial, sans-serif; line-height: 1.5; color: #111;">
+      <h1 style="font-size: 20px;">Job alert signup fallback</h1>
+      <p>The Supabase signup path failed, so this lead was captured by email.</p>
+      <ul>
+        <li><strong>Email:</strong> ${escapeHtml(email)}</li>
+        <li><strong>Filters:</strong> ${escapeHtml(filterSummary)}</li>
+        <li><strong>Source:</strong> ${escapeHtml(source ?? 'unknown')}</li>
+      </ul>
+    </div>
+  `
+}
+
+function fallbackConfirmationHtml() {
+  return `
+    <div style="font-family: Arial, sans-serif; line-height: 1.5; color: #111;">
+      <h1 style="font-size: 20px;">We received your robotics job alert signup.</h1>
+      <p>Thanks for signing up. The Robot Age is finishing the job alert system, and we will add you to the weekly robotics jobs list once it is connected.</p>
+      <p>In the meantime, you can browse current roles at <a href="${escapeHtml(SITE_URL)}/jobs">${escapeHtml(SITE_URL)}/jobs</a>.</p>
+    </div>
+  `
+}
+
+async function captureManualSignup({
+  email,
+  filterSummary,
+  source,
+}: {
+  email: string
+  filterSummary: string
+  source: string | null
+}): Promise<boolean> {
+  if (!process.env.RESEND_API_KEY) return false
+
+  const resend = new Resend(process.env.RESEND_API_KEY)
+  const { error: adminError } = await resend.emails.send({
+    from: FROM_ADDRESS,
+    to: FALLBACK_SIGNUP_RECIPIENT,
+    subject: 'Manual robotics job alert signup',
+    html: manualSignupHtml({ email, filterSummary, source }),
+  })
+
+  if (adminError) {
+    console.error('Job alert fallback capture error:', adminError)
+    return false
+  }
+
+  const { error: confirmError } = await resend.emails.send({
+    from: FROM_ADDRESS,
+    to: email,
+    subject: 'We received your robotics job alert signup',
+    html: fallbackConfirmationHtml(),
+  })
+
+  if (confirmError) {
+    console.error('Job alert fallback confirmation error:', confirmError)
+  }
+
+  return true
+}
+
+async function fallbackSuccess(
+  email: string,
+  filterSummary: string,
+  source: string | null
+): Promise<State | null> {
+  const captured = await captureManualSignup({ email, filterSummary, source })
+  if (!captured) return null
+
+  return {
+    success: true,
+    title: 'We received it.',
+    body:
+      'Your signup was captured. We are finishing the alert system and will add you to the weekly robotics jobs list once it is connected.',
+  }
 }
 
 export async function subscribeJobAlerts(
@@ -68,6 +165,7 @@ export async function subscribeJobAlerts(
   const states = pickAllowed(formData, 'states', STATE_CODES)
   const remoteOnly = formData.get('remote_only') === 'on'
   const source = (formData.get('source') as string | null)?.slice(0, 80) ?? null
+  const filterSummary = describeFilters(roleFamilies, seniorities, states, remoteOnly)
 
   try {
     const db = getSupabaseAdmin()
@@ -119,6 +217,9 @@ export async function subscribeJobAlerts(
 
     if (error || !subscriber) {
       console.error('subscribeJobAlerts upsert error:', error)
+      const fallback = await fallbackSuccess(email, filterSummary, source)
+      if (fallback) return fallback
+
       return { success: false, error: 'Something went wrong. Please try again.' }
     }
 
@@ -136,7 +237,7 @@ export async function subscribeJobAlerts(
       ...(ADMIN_ADDRESS && { bcc: ADMIN_ADDRESS }),
       subject: 'Your robotics job alerts are on',
       html: jobAlertWelcomeHtml({
-        filterSummary: describeFilters(roleFamilies, seniorities, states, remoteOnly),
+        filterSummary,
         browseUrl,
         unsubscribeToken: subscriber.unsubscribe_token,
       }),
@@ -150,6 +251,9 @@ export async function subscribeJobAlerts(
     return { success: true }
   } catch (err) {
     console.error('subscribeJobAlerts error:', err)
+    const fallback = await fallbackSuccess(email, filterSummary, source)
+    if (fallback) return fallback
+
     return { success: false, error: 'Something went wrong. Please try again.' }
   }
 }

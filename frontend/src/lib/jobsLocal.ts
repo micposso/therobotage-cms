@@ -7,15 +7,15 @@ import yaml from 'js-yaml'
 import { mapPublicJobRow, type JobDetail, type PublicJobRow } from './jobs'
 import { roleFamilyLabel, stateByCode } from './jobsTaxonomy'
 
-// Development-only fallback.
+// Markdown fallback.
 //
-// The job board reads Supabase. Before the project is provisioned (or on a machine
-// without credentials) that leaves /jobs empty and untestable, so this reads the same
-// markdown files the publish script reads and produces the same JobDetail shape.
+// The job board reads Supabase first. Before the project is provisioned (or on a
+// machine without credentials) that leaves /jobs empty and untestable, so this reads
+// the same markdown files the publish script reads and produces the same JobDetail
+// shape.
 //
-// Guarded on NODE_ENV: this must never activate in production, where an unconfigured
-// Supabase should surface as an error rather than silently serving whatever markdown
-// happens to be in the deployment. See getLiveJobs in lib/jobsQueries.ts for the switch.
+// In production it is also a resilience fallback, but only for real listings. Sample
+// files are local UI fixtures and must never be shown to job seekers.
 
 const JOBS_DIR = path.join(process.cwd(), 'jobs')
 const COMPANIES_PATH = path.join(JOBS_DIR, '_companies.yml')
@@ -44,15 +44,17 @@ function toIso(value: unknown, fallback: Date): string {
   return fallback.toISOString()
 }
 
-export function getLocalJobs(): JobDetail[] {
+export function getLocalJobs(options: { includeSamples?: boolean } = {}): JobDetail[] {
   if (!fs.existsSync(JOBS_DIR)) return []
 
   const companies = loadCompanies()
   const now = new Date()
+  const includeSamples = options.includeSamples ?? process.env.NODE_ENV !== 'production'
 
   const files = fs
     .readdirSync(JOBS_DIR)
     .filter((file) => file.endsWith('.md') && !file.startsWith('_'))
+    .filter((file) => includeSamples || !file.startsWith('sample-'))
 
   const jobs: JobDetail[] = []
 
