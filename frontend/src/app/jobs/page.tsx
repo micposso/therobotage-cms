@@ -3,7 +3,6 @@ import Nav from '@/components/Nav/Nav'
 import PageHero from '@/components/PageHero/PageHero'
 import Footer from '@/components/Footer/Footer'
 import JobBoardExplorer from '@/components/JobBoard/JobBoardExplorer'
-import JobAlertSignup from '@/components/JobAlerts/JobAlertSignup'
 import { buildJobListJsonLd, getJobFacets, type JobCard } from '@/lib/jobs'
 import { getJobCards } from '@/lib/jobsQueries'
 import styles from './jobs.module.css'
@@ -18,9 +17,9 @@ import styles from './jobs.module.css'
 // useSearchParams so filtered views stay shareable.
 export const revalidate = 900
 
-const TITLE = 'Robotics Jobs — The Robot Age'
+const TITLE = 'Robotics Product, Design and UX Jobs — The Robot Age'
 const DESCRIPTION =
-  'Open robotics roles across the United States. Filter by discipline, seniority, state, and work mode.'
+  'Open product, design, UX research, and marketing roles at US robotics companies. Not an engineering board. Filter by discipline, seniority, state, and work mode.'
 
 export const metadata = {
   title: TITLE,
@@ -58,8 +57,9 @@ export default async function JobsPage() {
       <Nav pinned />
       <PageHero
         eyebrow="Jobs"
-        title="Robotics roles worth reading about."
-        subtitle="Open positions across the United States, sorted by what the work actually is rather than what the title claims. Every listing is read and categorized before it goes up."
+        title="Product and design roles worth reading about."
+        subtitle="Product, design, UX research, and marketing roles at US robotics companies — not an engineering board. Every listing is read and categorized before it goes up."
+        imageSrc="/images/human.png"
       />
 
       <section className={styles.section}>
@@ -75,9 +75,6 @@ export default async function JobsPage() {
               <JobBoardExplorer jobs={jobs} facets={facets} />
             </Suspense>
           )}
-
-          {/* Post-value, never gating: the board is fully usable without this. */}
-          <JobAlertSignup source="jobs-index" />
         </div>
       </section>
 

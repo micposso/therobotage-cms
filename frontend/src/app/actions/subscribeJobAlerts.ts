@@ -3,7 +3,7 @@
 import crypto from 'node:crypto'
 import { headers } from 'next/headers'
 import { Resend } from 'resend'
-import { getSupabaseAdmin } from '@/lib/supabase/admin'
+import { getSupabaseJobsService } from '@/lib/supabase/admin'
 import { jobAlertWelcomeHtml } from '@/lib/jobAlertEmail'
 import {
   ROLE_FAMILY_LABELS,
@@ -168,7 +168,7 @@ export async function subscribeJobAlerts(
   const filterSummary = describeFilters(roleFamilies, seniorities, states, remoteOnly)
 
   try {
-    const db = getSupabaseAdmin()
+    const db = getSupabaseJobsService()
     const headerList = await headers()
 
     // Rate limit keyed on a hashed IP. DB-backed rather than an in-memory Map so it

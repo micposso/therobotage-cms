@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { JobCard as JobCardData } from '@/lib/jobs'
-import { formatLocation, formatSalary } from '@/lib/jobs'
+import { PLACEHOLDER_LOGO_URL, formatLocation, formatSalary } from '@/lib/jobs'
 import { EMPLOYMENT_TYPE_LABELS, SENIORITY_LABELS } from '@/lib/jobsTaxonomy'
 import styles from './JobCard.module.css'
 
@@ -15,6 +15,13 @@ export default function JobCard({ job }: Props) {
 
   return (
     <Link href={`/jobs/${job.slug}`} className={styles.card}>
+      <div
+        className={styles.logo}
+        style={{ backgroundImage: `url(${job.companyLogoUrl ?? PLACEHOLDER_LOGO_URL})` }}
+        role="img"
+        aria-label={`${job.companyName} logo`}
+      />
+
       <div className={styles.main}>
         <p className={styles.company}>{job.companyName}</p>
         <h3 className={styles.title}>{job.title}</h3>

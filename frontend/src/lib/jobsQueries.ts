@@ -1,10 +1,10 @@
 import { unstable_cache } from 'next/cache'
 import { getSupabaseRead } from './supabase/read'
-import { getSupabaseAdmin } from './supabase/admin'
+import { getSupabaseJobsService } from './supabase/admin'
+import { mapPublicJobRowWithLogo } from './companyLogos'
 import {
   JOBS_CACHE_TAG,
   JOBS_REVALIDATE_SECONDS,
-  mapPublicJobRow,
   toJobCard,
   type JobCard,
   type JobDetail,
@@ -75,7 +75,7 @@ export const getLiveJobs = unstable_cache(
       throw new Error(`Failed to load jobs: ${error.message}`)
     }
 
-    return (data as PublicJobRow[]).map(mapPublicJobRow)
+    return (data as PublicJobRow[]).map(mapPublicJobRowWithLogo)
   },
   ['live-jobs'],
   { tags: [JOBS_CACHE_TAG], revalidate: JOBS_REVALIDATE_SECONDS }
@@ -119,7 +119,7 @@ type ExpiredJobRow = Omit<
 }
 
 export async function getExpiredJobBySlug(slug: string): Promise<JobDetail | undefined> {
-  const { data, error } = await getSupabaseAdmin()
+  const { data, error } = await getSupabaseJobsService()
     .from('jobs')
     .select(
       `id, slug, title, summary, description_html, role_family, seniority,
@@ -137,7 +137,7 @@ export async function getExpiredJobBySlug(slug: string): Promise<JobDetail | und
 
   const row = data as unknown as ExpiredJobRow
 
-  return mapPublicJobRow({
+  return mapPublicJobRowWithLogo({
     ...row,
     role_family_label: row.job_role_families.label,
     state_name: row.us_states?.name ?? null,

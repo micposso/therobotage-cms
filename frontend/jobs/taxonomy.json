@@ -1,19 +1,12 @@
 {
   "_comment": "Single source of truth for job-board enums. Imported by src/lib/jobsTaxonomy.ts and read directly by scripts/publish-jobs.mjs, so the TypeScript UI and the Node validator can never disagree. Any change here must be matched by a migration in lms/supabase/migrations/.",
 
+  "_roleFamiliesNote": "The board is scoped to the human/product side of robotics only — no engineering, hardware, or technical research families. See frontend/CLAUDE.md Job Board section.",
   "roleFamilies": [
-    { "slug": "perception-ml", "label": "Perception and Machine Learning", "blurb": "Sensing, state estimation, and the learned models that turn raw sensor data into decisions." },
-    { "slug": "controls-motion", "label": "Controls and Motion Planning", "blurb": "Whole-body control, trajectory planning, navigation, and the math that makes machines move safely." },
-    { "slug": "software-platform", "label": "Software and Platform", "blurb": "Fleet management, cloud infrastructure, simulation, and the tooling the rest of the stack runs on." },
-    { "slug": "mechanical-hardware", "label": "Mechanical and Hardware", "blurb": "Actuators, structures, thermal, and the physical design of the machine itself." },
-    { "slug": "embedded-electrical", "label": "Embedded and Electrical", "blurb": "Firmware, motor drivers, power systems, and board-level design." },
-    { "slug": "manufacturing-test", "label": "Manufacturing, Quality and Test", "blurb": "Bringing a robot from one working unit to a repeatable production line." },
-    { "slug": "field-deployment", "label": "Field Deployment and Service", "blurb": "Installing, commissioning, and keeping robots running at customer sites." },
-    { "slug": "teleoperation-data", "label": "Teleoperation and Data Operations", "blurb": "Remote operation, data collection, annotation, and the human labor behind autonomy." },
-    { "slug": "product-design-hri", "label": "Product, Design and HRI", "blurb": "Product management, interaction design, and the human side of robot experience." },
-    { "slug": "research-scientist", "label": "Research Scientist", "blurb": "Publishing research roles at the frontier of robot learning and manipulation." },
-    { "slug": "sales-bd", "label": "Sales and Business Development", "blurb": "Selling robots and robot-shaped services into industrial and commercial buyers." },
-    { "slug": "operations-ga", "label": "Operations and Administration", "blurb": "Supply chain, finance, people, legal, and the functions that keep a robotics company running." }
+    { "slug": "product", "label": "Product", "blurb": "Product management for machines people have to work alongside — roadmap, strategy, and the tradeoffs between what a robot can do and what it should do." },
+    { "slug": "design-ux", "label": "Design and UX", "blurb": "Product design, UX design, interaction design, and creative — the visual, spatial, and behavioral choices that decide whether a robot is legible to the people near it." },
+    { "slug": "user-research", "label": "User Research", "blurb": "UX research and user research — studying how people actually perceive, trust, and work alongside robots, in the field and in the lab." },
+    { "slug": "marketing", "label": "Marketing", "blurb": "Product marketing, brand, and creative marketing — positioning and storytelling for machines that have to earn trust in person, not just on a spec sheet." }
   ],
 
   "seniorities": [

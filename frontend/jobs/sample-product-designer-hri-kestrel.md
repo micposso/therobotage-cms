@@ -2,7 +2,7 @@
 slug: sample-product-designer-hri-kestrel
 title: Product Designer, Human-Robot Interaction
 company: kestrel-dynamics
-role_family: product-design-hri
+role_family: design-ux
 seniority: senior
 employment_type: full-time
 remote_type: remote-us

@@ -1,6 +1,6 @@
 import Nav from '@/components/Nav/Nav'
 import Footer from '@/components/Footer/Footer'
-import { getSupabaseAdmin } from '@/lib/supabase/admin'
+import { getSupabaseJobsService } from '@/lib/supabase/admin'
 import UnsubscribeConfirm from './UnsubscribeConfirm'
 import styles from './unsubscribe.module.css'
 
@@ -35,7 +35,7 @@ export default async function UnsubscribePage({
 
   if (token && UUID_RE.test(token)) {
     try {
-      const { data } = await getSupabaseAdmin()
+      const { data } = await getSupabaseJobsService()
         .from('job_alert_subscribers')
         .select('email')
         .eq('unsubscribe_token', token)

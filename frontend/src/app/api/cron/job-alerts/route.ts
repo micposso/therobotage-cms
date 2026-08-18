@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import crypto from 'node:crypto'
 import { Resend } from 'resend'
-import { getSupabaseAdmin } from '@/lib/supabase/admin'
+import { getSupabaseJobsService } from '@/lib/supabase/admin'
 import { mapPublicJobRow, toJobCard, type JobCard, type PublicJobRow } from '@/lib/jobs'
 import {
   jobAlertDigestHtml,
@@ -80,7 +80,7 @@ export async function GET(request: Request) {
     return NextResponse.json({ ok: true, skipped: 'not send day', sendDay })
   }
 
-  const db = getSupabaseAdmin()
+  const db = getSupabaseJobsService()
   const digestId = crypto.randomUUID()
   const since = new Date(Date.now() - LOOKBACK_DAYS * 24 * 60 * 60 * 1000).toISOString()
 

@@ -2,7 +2,7 @@
 slug: senior-product-marketing-manager-agility
 title: Senior Product Marketing Manager
 company: agility
-role_family: product-design-hri
+role_family: marketing
 seniority: senior
 employment_type: full-time
 remote_type: remote-us

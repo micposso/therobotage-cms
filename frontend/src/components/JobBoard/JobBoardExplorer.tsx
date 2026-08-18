@@ -31,7 +31,7 @@ type Props = {
   jobs: JobCardData[]
   facets: JobFacets
   basePath?: string
-  // Locked facets come from an SEO landing route (/jobs/roles/perception-ml). They are
+  // Locked facets come from an SEO landing route (/jobs/roles/design-ux). They are
   // applied to the data but not shown as adjustable controls.
   lockedRole?: string
   lockedState?: string
@@ -172,7 +172,7 @@ export default function JobBoardExplorer({
             className={styles.searchInput}
             value={filters.q}
             onChange={(event) => updateSingle('q', event.target.value)}
-            placeholder="Perception, ROS 2, Boston..."
+            placeholder="Product design, UX research, Boston..."
           />
         </label>
 

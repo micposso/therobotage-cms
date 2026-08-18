@@ -2,7 +2,7 @@
 slug: product-designer-manufacturing-defense-gecko
 title: Product Designer, Manufacturing and Defense
 company: gecko-robotics
-role_family: product-design-hri
+role_family: design-ux
 seniority: mid
 employment_type: full-time
 remote_type: onsite

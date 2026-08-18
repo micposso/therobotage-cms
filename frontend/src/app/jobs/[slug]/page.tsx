@@ -6,7 +6,6 @@ import Footer from '@/components/Footer/Footer'
 import ShareButton from '@/components/NewsArticle/ShareButton'
 import JobMetaStrip from '@/components/JobBoard/JobMetaStrip'
 import RelatedJobs from '@/components/JobBoard/RelatedJobs'
-import JobAlertSignup from '@/components/JobAlerts/JobAlertSignup'
 import {
   buildJobPostingJsonLd,
   getRelatedJobs,
@@ -168,16 +167,6 @@ export default async function JobDetailPage({ params }: { params: Promise<{ slug
       </section>
 
       <RelatedJobs jobs={related} />
-
-      <section className={styles.alertSection}>
-        <div className="container-fluid">
-          <JobAlertSignup
-            source={`job-detail:${job.slug}`}
-            defaultRoleFamily={job.roleFamily}
-            defaultState={job.stateCode ?? undefined}
-          />
-        </div>
-      </section>
 
       {!expired && (
         <script

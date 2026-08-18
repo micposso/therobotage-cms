@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { getSupabaseAdmin } from '@/lib/supabase/admin'
+import { getSupabaseJobsService } from '@/lib/supabase/admin'
 
 // RFC 8058 one-click unsubscribe endpoint, referenced by the List-Unsubscribe-Post
 // header on every digest. Gmail and Yahoo require this for bulk senders.
@@ -24,7 +24,7 @@ export async function POST(request: Request) {
   }
 
   try {
-    await getSupabaseAdmin()
+    await getSupabaseJobsService()
       .from('job_alert_subscribers')
       .update({
         status: 'unsubscribed',

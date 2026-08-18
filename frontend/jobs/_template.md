@@ -1,16 +1,16 @@
 ---
 # Required fields
-slug: senior-perception-engineer-figure    # lowercase-hyphenated; the filename must be <slug>.md
-title: Senior Perception Engineer          # bare job title only, no company name
+slug: senior-product-designer-figure       # lowercase-hyphenated; the filename must be <slug>.md
+title: Senior Product Designer             # bare job title only, no company name
 company: figure                            # must be a key in _companies.yml
-role_family: perception-ml                 # see taxonomy.json -> roleFamilies
+role_family: design-ux                     # see taxonomy.json -> roleFamilies (UX/product/design/research/marketing only -- no engineering)
 seniority: senior                          # intern | entry | mid | senior | staff | lead | director-plus
 employment_type: full-time                 # full-time | part-time | contract | internship | temporary
 remote_type: onsite                        # onsite | hybrid | remote-us
 state: CA                                  # 2-letter code; required unless remote_type is remote-us
 city: Sunnyvale                            # required unless remote_type is remote-us
 posted_at: 2026-08-12
-apply_url: https://example.com/careers/senior-perception-engineer
+apply_url: https://example.com/careers/senior-product-designer
 summary: One sentence, under 180 characters, saying what this person will actually own.
 
 # Optional
@@ -19,7 +19,7 @@ salary_min: 180000
 salary_max: 260000
 salary_period: year                        # year | hour
 apply_email: careers@example.com           # apply_url OR apply_email is required
-tags: [ROS 2, sensor fusion, C++, SLAM]
+tags: [interaction design, HRI, design systems, prototyping]
 source_url: https://example.com/careers    # where the listing was found
 status: published                          # published | draft | closed
 ---

@@ -11,6 +11,10 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://therobotage.com'
 export const JOBS_CACHE_TAG = 'jobs'
 export const JOBS_REVALIDATE_SECONDS = 900
 
+// Shown whenever a company has no matching file in public/logos/ (see
+// lib/companyLogos.ts for the matching rule).
+export const PLACEHOLDER_LOGO_URL = '/logos/placeholder.jpg'
+
 export type JobDetail = {
   id: string
   slug: string

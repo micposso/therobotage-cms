@@ -2,7 +2,7 @@
 slug: principal-product-manager-physical-ai-dexterity
 title: Principal Product Manager, Physical AI - Retail and 3PL Applications
 company: dexterity
-role_family: product-design-hri
+role_family: product
 seniority: staff
 employment_type: full-time
 remote_type: onsite

@@ -4,7 +4,8 @@ import path from 'node:path'
 import matter from 'gray-matter'
 import { marked } from 'marked'
 import yaml from 'js-yaml'
-import { mapPublicJobRow, type JobDetail, type PublicJobRow } from './jobs'
+import type { JobDetail, PublicJobRow } from './jobs'
+import { mapPublicJobRowWithLogo } from './companyLogos'
 import { roleFamilyLabel, stateByCode } from './jobsTaxonomy'
 
 // Markdown fallback.
@@ -113,7 +114,7 @@ export function getLocalJobs(options: { includeSamples?: boolean } = {}): JobDet
       company_blurb: company.blurb ?? null,
     }
 
-    jobs.push(mapPublicJobRow(row))
+    jobs.push(mapPublicJobRowWithLogo(row))
   }
 
   return jobs.sort(

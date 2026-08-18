@@ -197,6 +197,17 @@ automatically. When the underlying records change, bump `schemaVersion` /
 A US-only robotics job board. This is the **first database-backed feature on the
 marketing site** — everything else here reads markdown from disk at build time.
 
+**Scope is the moat.** The board covers only the human/product side of robotics —
+product management, product design, UX design, user research, and marketing (role
+families `product`, `design-ux`, `user-research`, `marketing` in `jobs/taxonomy.json`).
+It is deliberately **not** an engineering board: no perception/ML, controls, embedded,
+mechanical, manufacturing, field service, technical research, sales, or ops listings.
+That restriction is the entire differentiation from a generic robotics-jobs aggregator
+and is enforced at the taxonomy level, not by convention — `job-writer` refuses
+out-of-scope source listings before writing a file, and `scripts/publish-jobs.mjs`
+rejects any `role_family` not in `taxonomy.json`. Do not add a technical role family back
+without the user explicitly asking for a scope change.
+
 **Authoring flow.** Markdown is the source of truth; Supabase is a serving replica.
 
 ```
@@ -226,8 +237,22 @@ exists to prevent. Deleting a job file **archives** the row rather than deleting
   pages, the sitemap and site search.
 - `src/lib/jobFilters.ts` — URL to state to predicate, in one module shared by the
   explorer and the alert form.
-- `src/lib/supabase/{read,admin}.ts` — anon reads vs service role. Both are `server-only`.
-- `lms/supabase/migrations/00018`–`00021` — schema, RLS, and the `public_jobs` view.
+- `src/lib/supabase/read.ts` — anon/publishable key (`getSupabaseRead`), RLS-limited to live
+  listings. `src/lib/supabase/admin.ts` — `getSupabaseJobsService()`, the `jobs_alert_service`
+  Postgres role. Both are `server-only`.
+- `lms/supabase/migrations/00018`–`00022` — schema, RLS, the `public_jobs` view, and the
+  `jobs_alert_service` role.
+
+**Supabase project.** Deliberately shares the LMS's Supabase project rather than a separate
+one — the job board schema lives in `lms/supabase/migrations/`. `getSupabaseJobsService()`
+does **not** use this project's `SUPABASE_SERVICE_ROLE_KEY`: that key bypasses RLS on every
+table, including LMS enrollments, submissions and credentials, which is far more blast
+radius than a public signup form and a cron endpoint should have. It authenticates instead
+as `jobs_alert_service` (migration `00022`), a role with no `bypassrls` and grants on
+nothing but `jobs`, `companies`, the taxonomy tables, `job_alert_subscribers` and
+`job_alert_sends`. The frontend Railway service should hold `SUPABASE_JOBS_SERVICE_KEY`
+only — never `SUPABASE_SERVICE_ROLE_KEY`, which exists solely for local/CI runs of
+`scripts/publish-jobs.mjs` (it writes `jobs`/`companies` directly and isn't deployed).
 
 **Caching.** `/jobs` is statically prerendered with `revalidate = 900` and
 **deliberately does not read `searchParams`** — doing so would opt it into full dynamic

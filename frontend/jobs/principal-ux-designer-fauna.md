@@ -2,7 +2,7 @@
 slug: principal-ux-designer-fauna
 title: Principal UX Designer, Fauna
 company: fauna-robotics
-role_family: product-design-hri
+role_family: design-ux
 seniority: staff
 employment_type: full-time
 remote_type: onsite

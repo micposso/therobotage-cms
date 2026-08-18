@@ -1,6 +1,6 @@
 'use server'
 
-import { getSupabaseAdmin } from '@/lib/supabase/admin'
+import { getSupabaseJobsService } from '@/lib/supabase/admin'
 
 type State = { success: boolean; error?: string }
 
@@ -17,7 +17,7 @@ export async function unsubscribeJobAlerts(
   }
 
   try {
-    const { error } = await getSupabaseAdmin()
+    const { error } = await getSupabaseJobsService()
       .from('job_alert_subscribers')
       .update({
         status: 'unsubscribed',
@@ -49,7 +49,7 @@ export async function resubscribeJobAlerts(
   }
 
   try {
-    const { error } = await getSupabaseAdmin()
+    const { error } = await getSupabaseJobsService()
       .from('job_alert_subscribers')
       .update({
         status: 'active',

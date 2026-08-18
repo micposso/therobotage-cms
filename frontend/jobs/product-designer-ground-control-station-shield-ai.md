@@ -2,7 +2,7 @@
 slug: product-designer-ground-control-station-shield-ai
 title: Product Designer, Ground Control Station
 company: shield-ai
-role_family: product-design-hri
+role_family: design-ux
 seniority: mid
 employment_type: full-time
 remote_type: onsite

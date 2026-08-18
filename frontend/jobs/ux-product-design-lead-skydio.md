@@ -2,7 +2,7 @@
 slug: ux-product-design-lead-skydio
 title: UX Product Design Lead
 company: skydio
-role_family: product-design-hri
+role_family: design-ux
 seniority: lead
 employment_type: full-time
 remote_type: onsite

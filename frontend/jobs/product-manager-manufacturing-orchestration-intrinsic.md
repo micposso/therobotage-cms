@@ -2,7 +2,7 @@
 slug: product-manager-manufacturing-orchestration-intrinsic
 title: Product Manager, Manufacturing Orchestration and Observability
 company: intrinsic
-role_family: product-design-hri
+role_family: product
 seniority: senior
 employment_type: full-time
 remote_type: hybrid

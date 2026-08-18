@@ -3,8 +3,8 @@ import type { JobCard } from './jobs'
 // One module owns URL <-> state <-> predicate for the job board, so the client
 // explorer, the SEO landing routes and the alert-preference form cannot drift apart.
 //
-// Multi-select facets encode as comma-separated values (?role=perception-ml,controls-motion)
-// rather than repeated params: shorter, pasteable, and trivially split.
+// Multi-select facets encode as comma-separated values (?role=product,design-ux) rather
+// than repeated params: shorter, pasteable, and trivially split.
 
 export type JobFilters = {
   q: string
