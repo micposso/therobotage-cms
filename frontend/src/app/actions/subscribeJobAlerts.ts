@@ -96,31 +96,36 @@ async function captureManualSignup({
 }): Promise<boolean> {
   if (!process.env.RESEND_API_KEY) return false
 
-  const resend = new Resend(process.env.RESEND_API_KEY)
-  const { error: adminError } = await resend.emails.send({
-    from: FROM_ADDRESS,
-    to: FALLBACK_SIGNUP_RECIPIENT,
-    subject: 'Manual robotics job alert signup',
-    html: manualSignupHtml({ email, filterSummary, source }),
-  })
+  try {
+    const resend = new Resend(process.env.RESEND_API_KEY)
+    const { error: adminError } = await resend.emails.send({
+      from: FROM_ADDRESS,
+      to: FALLBACK_SIGNUP_RECIPIENT,
+      subject: 'Manual robotics job alert signup',
+      html: manualSignupHtml({ email, filterSummary, source }),
+    })
 
-  if (adminError) {
-    console.error('Job alert fallback capture error:', adminError)
+    if (adminError) {
+      console.error('Job alert fallback capture error:', adminError)
+      return false
+    }
+
+    const { error: confirmError } = await resend.emails.send({
+      from: FROM_ADDRESS,
+      to: email,
+      subject: 'We received your robotics job alert signup',
+      html: fallbackConfirmationHtml(),
+    })
+
+    if (confirmError) {
+      console.error('Job alert fallback confirmation error:', confirmError)
+    }
+
+    return true
+  } catch (error) {
+    console.error('Job alert fallback send error:', error)
     return false
   }
-
-  const { error: confirmError } = await resend.emails.send({
-    from: FROM_ADDRESS,
-    to: email,
-    subject: 'We received your robotics job alert signup',
-    html: fallbackConfirmationHtml(),
-  })
-
-  if (confirmError) {
-    console.error('Job alert fallback confirmation error:', confirmError)
-  }
-
-  return true
 }
 
 async function fallbackSuccess(
@@ -136,6 +141,48 @@ async function fallbackSuccess(
     title: 'We received it.',
     body:
       'Your signup was captured. We are finishing the alert system and will add you to the weekly robotics jobs list once it is connected.',
+  }
+}
+
+async function sendWelcomeEmail({
+  email,
+  filterSummary,
+  browseUrl,
+  unsubscribeToken,
+}: {
+  email: string
+  filterSummary: string
+  browseUrl: string
+  unsubscribeToken: string
+}): Promise<boolean> {
+  if (!process.env.RESEND_API_KEY) {
+    console.error('Job alert welcome email skipped: RESEND_API_KEY is not configured.')
+    return false
+  }
+
+  try {
+    const resend = new Resend(process.env.RESEND_API_KEY)
+    const { error: sendError } = await resend.emails.send({
+      from: FROM_ADDRESS,
+      to: email,
+      ...(ADMIN_ADDRESS && { bcc: ADMIN_ADDRESS }),
+      subject: 'Your robotics job alerts are on',
+      html: jobAlertWelcomeHtml({
+        filterSummary,
+        browseUrl,
+        unsubscribeToken,
+      }),
+    })
+
+    if (sendError) {
+      console.error('Job alert welcome email error:', sendError)
+      return false
+    }
+
+    return true
+  } catch (error) {
+    console.error('Job alert welcome email send error:', error)
+    return false
   }
 }
 
@@ -230,22 +277,20 @@ export async function subscribeJobAlerts(
     if (remoteOnly) params.set('remote', 'remote-us')
     const browseUrl = `${SITE_URL}/jobs${params.toString() ? `?${params}` : ''}`
 
-    const resend = new Resend(process.env.RESEND_API_KEY)
-    const { error: sendError } = await resend.emails.send({
-      from: FROM_ADDRESS,
-      to: email,
-      ...(ADMIN_ADDRESS && { bcc: ADMIN_ADDRESS }),
-      subject: 'Your robotics job alerts are on',
-      html: jobAlertWelcomeHtml({
-        filterSummary,
-        browseUrl,
-        unsubscribeToken: subscriber.unsubscribe_token,
-      }),
+    const sentWelcome = await sendWelcomeEmail({
+      email,
+      filterSummary,
+      browseUrl,
+      unsubscribeToken: subscriber.unsubscribe_token,
     })
 
-    if (sendError) {
-      // The subscription itself succeeded, so do not fail the user-facing flow.
-      console.error('Job alert welcome email error:', sendError)
+    if (!sentWelcome) {
+      return {
+        success: true,
+        title: "You're on the list.",
+        body:
+          'Your signup was saved. The welcome email could not be sent right now, but weekly alerts will use these preferences.',
+      }
     }
 
     return { success: true }
