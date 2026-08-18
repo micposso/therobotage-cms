@@ -2,7 +2,7 @@
 slug: senior-product-designer-gecko-robotics
 title: Senior Product Designer
 company: gecko-robotics
-role_family: product-design-hri
+role_family: design-ux
 seniority: senior
 employment_type: full-time
 remote_type: onsite

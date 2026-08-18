@@ -2,7 +2,7 @@
 slug: product-manager-ai-ml-foundation-models-shield-ai
 title: Product Manager, AI/ML and Foundation Models
 company: shield-ai
-role_family: product-design-hri
+role_family: product
 seniority: senior
 employment_type: full-time
 remote_type: hybrid
