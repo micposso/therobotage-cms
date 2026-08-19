@@ -7,7 +7,7 @@ seniority: staff
 employment_type: full-time
 remote_type: remote-us
 posted_at: 2026-06-19
-expires_at: 2026-08-18
+expires_at: 2026-10-18
 apply_url: https://jobs.lever.co/shieldai/b98fe442-0cf9-4901-b1d7-8b2c9d82d878
 tags: [product design, agentic AI, autonomy tooling, user research, design systems]
 source_url: https://jobs.lever.co/shieldai/b98fe442-0cf9-4901-b1d7-8b2c9d82d878
