@@ -20,6 +20,14 @@ amazon-robotics:
   hq_state: MA
   size_bucket: 1000+
 
+applied-intuition:
+  name: Applied Intuition
+  website: https://www.applied.co
+  blurb: Silicon Valley physical AI company building autonomy, simulation, and operating-system software for vehicles, drones, defense systems, and industrial machines.
+  hq_city: Sunnyvale
+  hq_state: CA
+  size_bucket: 1000+
+
 fauna-robotics:
   name: Fauna Robotics
   website: https://faunarobotics.com
@@ -148,6 +156,14 @@ graymatter-robotics:
   hq_state: CA
   size_bucket: 51-200
 
+kodiak:
+  name: Kodiak
+  website: https://kodiak.ai
+  blurb: Mountain View autonomous trucking company building self-driving software for commercial freight and public-sector ground vehicles.
+  hq_city: Mountain View
+  hq_state: CA
+  size_bucket: 201-500
+
 nuro:
   name: Nuro
   website: https://www.nuro.ai
@@ -155,6 +171,14 @@ nuro:
   hq_city: Mountain View
   hq_state: CA
   size_bucket: 501-1000
+
+path-robotics:
+  name: Path Robotics
+  website: https://path-robotics.com
+  blurb: Columbus robotics company building AI-driven robotic welding systems for industrial production environments.
+  hq_city: Columbus
+  hq_state: OH
+  size_bucket: 201-500
 
 pickle-robot:
   name: Pickle Robot
@@ -179,6 +203,14 @@ shield-ai:
   hq_city: San Diego
   hq_state: CA
   size_bucket: 501-1000
+
+treeswift:
+  name: Treeswift
+  website: https://www.treeswift.com
+  blurb: New York physical AI company building field-work software and sensing systems for utilities, vegetation management, and infrastructure operations.
+  hq_city: New York
+  hq_state: NY
+  size_bucket: 11-50
 
 zipline:
   name: Zipline

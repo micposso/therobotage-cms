@@ -9,6 +9,11 @@
   hq: Salem, OR
   careers_url: https://www.agilityrobotics.com/careers
 
+- company: Applied Intuition
+  key: applied-intuition
+  hq: Sunnyvale, CA
+  careers_url: https://jobs.ashbyhq.com/applied
+
 - company: Amazon Robotics / Fauna
   key: amazon-robotics
   hq: North Reading, MA
@@ -74,10 +79,20 @@
   hq: Carson, CA
   careers_url: https://jobs.ashbyhq.com/graymatter-robotics
 
+- company: Kodiak
+  key: kodiak
+  hq: Mountain View, CA
+  careers_url: https://job-boards.greenhouse.io/kodiak
+
 - company: Nuro
   key: nuro
   hq: Mountain View, CA
   careers_url: https://www.nuro.ai/careers
+
+- company: Path Robotics
+  key: path-robotics
+  hq: Columbus, OH
+  careers_url: https://job-boards.greenhouse.io/pathrobotics
 
 - company: Pickle Robot
   key: pickle-robot
@@ -98,6 +113,11 @@
   key: skydio
   hq: San Mateo, CA
   careers_url: https://www.skydio.com/careers
+
+- company: Treeswift
+  key: treeswift
+  hq: New York, NY
+  careers_url: https://jobs.ashbyhq.com/treeswift
 
 - company: Zipline
   key: zipline
