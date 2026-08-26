@@ -8,12 +8,12 @@ employment_type: full-time
 remote_type: remote-us
 posted_at: 2026-08-15
 expires_at: 2026-10-14
-apply_url: https://www.agilityrobotics.com/careers
+apply_url: https://www.agilityrobotics.com/about/job-post?gh_jid=6014580004
 salary_min: 133000
 salary_max: 208000
 salary_period: year
 tags: [product marketing, strategy, GTM, humanoids, automation]
-source_url: https://applyall.com/jobs/us/senior-product-marketing-manager-at-agilityrobotics-jc_dd70315246afc7c9bc96302a
+source_url: https://www.agilityrobotics.com/about/job-post?gh_jid=6014580004
 status: published
 summary: Own positioning, messaging, and go-to-market strategy for Agility's Digit humanoid, Arc software, and automation portfolio.
 ---
