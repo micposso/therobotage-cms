@@ -7,7 +7,7 @@
 - company: Agility Robotics
   key: agility
   hq: Salem, OR
-  careers_url: https://www.agilityrobotics.com/careers
+  careers_url: https://boards.greenhouse.io/agilityrobotics
 
 - company: Applied Intuition
   key: applied-intuition
@@ -22,7 +22,7 @@
 - company: Ambi Robotics
   key: ambi-robotics
   hq: Berkeley, CA
-  careers_url: https://www.ambirobotics.com/careers/
+  careers_url: https://jobs.lever.co/ambirobotics
 
 - company: AMP
   key: amp
@@ -32,12 +32,12 @@
 - company: Apptronik
   key: apptronik
   hq: Austin, TX
-  careers_url: https://apptronik.com/careers/job-listings
+  careers_url: https://boards.greenhouse.io/apptronik
 
 - company: Bear Robotics
   key: bear-robotics
   hq: Redwood City, CA
-  careers_url: https://www.bearrobotics.ai/careers
+  careers_url: https://bear-robotics.breezy.hr/
 
 - company: Boston Dynamics
   key: boston-dynamics
@@ -47,7 +47,7 @@
 - company: Chef Robotics
   key: chef-robotics
   hq: San Francisco, CA
-  careers_url: https://www.chefrobotics.ai/careers
+  careers_url: https://jobs.lever.co/ChefRobotics
 
 - company: Collaborative Robotics
   key: collaborative-robotics
@@ -62,7 +62,7 @@
 - company: Dusty Robotics
   key: dusty-robotics
   hq: Mountain View, CA
-  careers_url: https://www.dustyrobotics.com/careers
+  careers_url: https://boards.greenhouse.io/dustyrobotics
 
 - company: Figure
   key: figure-ai
@@ -87,7 +87,7 @@
 - company: Nuro
   key: nuro
   hq: Mountain View, CA
-  careers_url: https://www.nuro.ai/careers
+  careers_url: https://boards.greenhouse.io/nuro
 
 - company: Path Robotics
   key: path-robotics
@@ -112,7 +112,7 @@
 - company: Skydio
   key: skydio
   hq: San Mateo, CA
-  careers_url: https://www.skydio.com/careers
+  careers_url: https://jobs.ashbyhq.com/skydio
 
 - company: Treeswift
   key: treeswift
