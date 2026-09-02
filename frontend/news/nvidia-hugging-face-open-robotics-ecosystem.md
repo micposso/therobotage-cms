@@ -27,6 +27,29 @@ It is a robot for interaction literacy. Voice agents are easy to demo in a brows
 
 [Microduck](https://pollen-robotics.com/microduck/blog/introducing-microduck/) is a different bet. It is a 25 cm, sub-800g biped robot built around reinforcement learning, simulation-to-real transfer, and shareable robot behaviors. It costs $399 on preorder, uses 15 motors, has a camera, a small depth sensor, two IMUs, and an articulated beak that can act like a tiny gripper.
 
+<aside class="spec-card">
+  <figure class="spec-card-media">
+    <img src="/images/news/microduck-pollen-official.webp" alt="Microduck, a small white-and-orange biped robot from Pollen Robotics, standing in a product render" />
+    <figcaption>Microduck, Pollen Robotics' small open-source biped robot for physical AI experiments. Image: Pollen Robotics</figcaption>
+  </figure>
+  <div class="spec-card-body">
+    <p class="spec-card-eyebrow">Open biped platform</p>
+    <h3 class="spec-card-name">Microduck</h3>
+    <p class="spec-card-maker">Pollen Robotics · Hugging Face</p>
+    <p class="spec-card-desc">A palm-scale biped designed for reinforcement learning, simulation-to-real transfer, shared robot behaviors, and low-cost experimentation with physical AI.</p>
+    <dl class="spec-card-specs">
+      <div><dt>Height</dt><dd>25 cm</dd></div>
+      <div><dt>Weight</dt><dd>Under 800 g</dd></div>
+      <div><dt>Actuation</dt><dd>15 motors</dd></div>
+      <div><dt>Sensing</dt><dd>Camera, depth sensor, 2 IMUs</dd></div>
+      <div><dt>Interaction</dt><dd>Articulated beak gripper, individual audio identity</dd></div>
+      <div><dt>Behaviors</dt><dd>Walk, sit, crouch, recover, roller-skate</dd></div>
+      <div><dt>Software</dt><dd>Open robot control, simulation, RL, sim-to-real tools</dd></div>
+      <div><dt>Price</dt><dd>$399 preorder before tax and shipping</dd></div>
+    </dl>
+  </div>
+</aside>
+
 Microduck can walk, sit, crouch, recover from many falls, roller-skate, follow a laser dot, react to its surroundings, and carry small objects. Those behaviors sound playful, but the platform logic is serious. Cheap bipedal hardware makes failure affordable. If a policy is bad, a tiny robot falls on the floor. That is very different from damaging an expensive humanoid or needing a full research lab to test a locomotion idea.
 
 Pollen is explicit about the stack: robot control, simulation, reinforcement learning, and sim-to-real are meant to be open. Microduck is not just a small robot. It is a small distribution mechanism for physical AI experiments.
