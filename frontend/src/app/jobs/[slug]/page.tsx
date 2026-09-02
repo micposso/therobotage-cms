@@ -6,6 +6,7 @@ import Footer from '@/components/Footer/Footer'
 import ShareButton from '@/components/NewsArticle/ShareButton'
 import JobMetaStrip from '@/components/JobBoard/JobMetaStrip'
 import RelatedJobs from '@/components/JobBoard/RelatedJobs'
+import JobAlertSignup from '@/components/JobAlerts/JobAlertSignup'
 import {
   buildJobPostingJsonLd,
   getRelatedJobs,
@@ -161,6 +162,12 @@ export default async function JobDetailPage({ params }: { params: Promise<{ slug
                 Applications are handled by {job.companyName}. The Robot Age does not
                 collect applications or take a fee.
               </p>
+
+              <JobAlertSignup
+                source={`job-detail:${job.slug}`}
+                defaultRoleFamily={job.roleFamily}
+                defaultState={job.stateCode ?? undefined}
+              />
             </aside>
           </div>
         </div>

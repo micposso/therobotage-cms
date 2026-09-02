@@ -4,7 +4,7 @@ import crypto from 'node:crypto'
 import { headers } from 'next/headers'
 import { Resend } from 'resend'
 import { getSupabaseJobsService } from '@/lib/supabase/admin'
-import { jobAlertWelcomeHtml } from '@/lib/jobAlertEmail'
+import { getJobAlertFromAddress, jobAlertWelcomeHtml } from '@/lib/jobAlertEmail'
 import {
   ROLE_FAMILY_LABELS,
   ROLE_FAMILY_SLUGS,
@@ -14,7 +14,7 @@ import {
   STATE_NAMES,
 } from '@/lib/jobsTaxonomy'
 
-const FROM_ADDRESS = process.env.EMAIL_FROM_JOBS ?? 'onboarding@resend.dev'
+const FROM_ADDRESS = getJobAlertFromAddress()
 const ADMIN_ADDRESS = process.env.JOB_ALERT_ADMIN_EMAIL
 const FALLBACK_SIGNUP_RECIPIENT =
   process.env.JOB_ALERT_ADMIN_EMAIL ?? process.env.EMAIL_FROM_HELLO ?? 'hello@therobotage.com'

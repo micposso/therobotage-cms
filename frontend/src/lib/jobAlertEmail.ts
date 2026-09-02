@@ -3,12 +3,19 @@ import { formatLocation, formatSalary, type JobCard } from './jobs'
 import { REMOTE_TYPE_LABELS, SENIORITY_LABELS } from './jobsTaxonomy'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://therobotage.com'
+const VERIFIED_JOBS_FROM_ADDRESS = 'jobs@send.therobotage.com'
 
 const HEADING =
   'font-family:Arial,sans-serif;font-weight:400;font-size:24px;letter-spacing:-0.02em;line-height:1.15;color:#0D0D0D;margin:0 0 20px;'
 const BODY = 'font-family:Georgia,serif;font-size:15px;line-height:1.75;color:#2A2A28;'
 const EYEBROW =
   'font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:0.15em;color:#9b5152;'
+
+export function getJobAlertFromAddress(): string {
+  const configured = process.env.EMAIL_FROM_JOBS?.trim()
+  if (!configured || configured === 'jobs@therobotage.com') return VERIFIED_JOBS_FROM_ADDRESS
+  return configured
+}
 
 export function jobUrl(slug: string, campaign: string): string {
   return `${SITE_URL}/jobs/${slug}?utm_source=digest&utm_medium=email&utm_campaign=${campaign}`
