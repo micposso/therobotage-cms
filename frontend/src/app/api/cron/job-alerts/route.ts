@@ -4,6 +4,7 @@ import { Resend } from 'resend'
 import { getSupabaseJobsService } from '@/lib/supabase/admin'
 import { mapPublicJobRow, toJobCard, type JobCard, type PublicJobRow } from '@/lib/jobs'
 import {
+  getJobAlertFromAddress,
   jobAlertDigestHtml,
   jobAlertDigestSubject,
   oneClickUnsubscribeUrl,
@@ -30,7 +31,7 @@ const MAX_JOBS_PER_DIGEST = 12
 const SUBSCRIBER_PAGE_SIZE = 500
 const RESEND_BATCH_SIZE = 100
 
-const FROM_ADDRESS = process.env.EMAIL_FROM_JOBS ?? 'onboarding@resend.dev'
+const FROM_ADDRESS = getJobAlertFromAddress()
 
 type Subscriber = {
   id: string
@@ -104,7 +105,10 @@ export async function GET(request: Request) {
   }
 
   const jobIds = candidates.map((job) => job.id)
-  const resend = new Resend(process.env.RESEND_API_KEY)
+  if (!dryRun && !process.env.RESEND_API_KEY) {
+    return NextResponse.json({ error: 'Resend is not configured' }, { status: 500 })
+  }
+  const resend = dryRun ? null : new Resend(process.env.RESEND_API_KEY)
 
   let subscribersSeen = 0
   let skippedEmpty = 0
@@ -184,7 +188,7 @@ export async function GET(request: Request) {
         continue
       }
 
-      const { error: sendError } = await resend.batch.send(
+      const { error: sendError } = await resend!.batch.send(
         batch.map(({ subscriber, matches }) => ({
           from: FROM_ADDRESS,
           to: subscriber.email,

@@ -31,8 +31,8 @@ That is why the falls mattered. In robotics, failure is not an embarrassment to 
 
 <aside class="spec-card">
   <figure class="spec-card-media">
-    <img src="/images/news/humanoid-olympics-not-about-sports-header.png" alt="Editorial illustration of humanoid robots sprinting and stumbling inside a robotics competition arena" />
-    <figcaption>Generated editorial image for The Robot Age.</figcaption>
+    <img src="/images/news/ultra.png" alt="Tiangong Ultra / Tien Kung Ultra humanoid robot competing at the World Humanoid Robot Games" />
+    <figcaption>Tiangong Ultra / Tien Kung Ultra at the World Humanoid Robot Games.</figcaption>
   </figure>
   <div class="spec-card-body">
     <p class="spec-card-eyebrow">Competition signal</p>

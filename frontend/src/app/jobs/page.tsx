@@ -3,6 +3,7 @@ import Nav from '@/components/Nav/Nav'
 import PageHero from '@/components/PageHero/PageHero'
 import Footer from '@/components/Footer/Footer'
 import JobBoardExplorer from '@/components/JobBoard/JobBoardExplorer'
+import JobAlertSignup from '@/components/JobAlerts/JobAlertSignup'
 import { buildJobListJsonLd, getJobFacets, type JobCard } from '@/lib/jobs'
 import { getJobCards } from '@/lib/jobsQueries'
 import styles from './jobs.module.css'
@@ -64,6 +65,8 @@ export default async function JobsPage() {
 
       <section className={styles.section}>
         <div className="container-fluid">
+          <JobAlertSignup source="jobs-index" />
+
           {failed ? (
             <p className={styles.notice}>
               The job board is temporarily unavailable. Please try again shortly.

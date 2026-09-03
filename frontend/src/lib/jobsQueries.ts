@@ -29,7 +29,10 @@ import {
 // True only when Supabase has not been configured. In production that is an error; in
 // development it is the normal state before the project is provisioned.
 function supabaseConfigured(): boolean {
-  return Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_PUBLISHABLE_KEY)
+  return Boolean(
+    process.env.NEXT_PUBLIC_SUPABASE_URL &&
+      (process.env.SUPABASE_PUBLISHABLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY)
+  )
 }
 
 async function getMarkdownJobs(includeSamples = false): Promise<JobDetail[]> {
