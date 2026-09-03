@@ -6,7 +6,7 @@ import {
   subscribeToWebMcpActivity,
   type WebMcpActivityStatus,
 } from '@/webmcp/activity'
-import { registerTheRobotAgeTools } from '@/webmcp/tools'
+import { registerTheRobotAgeTools, WEBMCP_TOOL_NAMES } from '@/webmcp/tools'
 import styles from './WebMCPActivity.module.css'
 
 type Availability = 'checking' | 'available' | 'unsupported' | 'failed'
@@ -79,7 +79,7 @@ export default function WebMCPActivity() {
         <div className={styles.availability} role="status" aria-live="polite">
           <span className={styles.statusMark} aria-hidden="true" />
           <span>{availabilityLabel}</span>
-          <strong>{toolCount}/4</strong>
+          <strong>{toolCount}/{WEBMCP_TOOL_NAMES.length}</strong>
         </div>
       </div>
 

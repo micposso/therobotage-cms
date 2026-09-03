@@ -90,10 +90,32 @@ try {
 const events = await execute('list_events')
 const details = await execute('get_event_details', { eventId: 'summit' })
 const missing = await execute('get_event_details', { eventId: 'does-not-exist' })
+const search = await execute('search_site', { query: 'robot design', limit: 3 })
+const robots = await execute('list_robot_profiles')
+const robot = robots.robots?.[0]
+  ? await execute('get_robot_profile', { slug: robots.robots[0].slug })
+  : null
+const jobs = await execute('list_jobs', { query: 'product', limit: 3 })
+const job = jobs.jobs?.[0]
+  ? await execute('get_job_details', { slug: jobs.jobs[0].slug })
+  : null
 const activity = await evaluate(`({
   panelText: document.querySelector('[aria-labelledby="webmcp-activity-title"]')?.textContent,
   entries: [...document.querySelectorAll('[aria-labelledby="webmcp-activity-title"] li')].map((item) => item.textContent)
 })`, 'activity')
 
-console.log(JSON.stringify({ support, tools, overview, events, details, missing, activity }, null, 2))
+console.log(JSON.stringify({
+  support,
+  tools,
+  overview,
+  events,
+  details,
+  missing,
+  search,
+  robots,
+  robot,
+  jobs,
+  job,
+  activity,
+}, null, 2))
 socket.close()
