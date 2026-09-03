@@ -2,31 +2,10 @@
 
 import { useActionState } from 'react'
 import { sendWorkshopEmail } from '@/app/actions/sendWorkshopEmail'
+import { WORKSHOP_HEARD_OPTIONS, WORKSHOP_PROFESSIONS } from '@/lib/events'
 import styles from './workshop.module.css'
 
 const initialState = { success: false, waitlisted: false, error: undefined as string | undefined }
-
-const PROFESSIONS = [
-  'Student',
-  'Product Manager',
-  'UX Designer',
-  'Operations Lead',
-  'Strategist',
-  'Researcher',
-  'HR Professional',
-  'Facilities Manager',
-  'Other',
-]
-
-const HEARD_OPTIONS = [
-  'Social media',
-  'Word of mouth',
-  'The Robot Age newsletter',
-  'Search (Google, etc.)',
-  'A colleague or friend',
-  'LinkedIn',
-  'Other',
-]
 
 export default function WorkshopForm() {
   const [state, action, pending] = useActionState(sendWorkshopEmail, initialState)
@@ -105,7 +84,7 @@ export default function WorkshopForm() {
         </label>
         <select id="ws-profession" name="profession" required className={styles.select}>
           <option value="">Select one</option>
-          {PROFESSIONS.map((p) => (
+          {WORKSHOP_PROFESSIONS.map((p) => (
             <option key={p} value={p}>{p}</option>
           ))}
         </select>
@@ -117,7 +96,7 @@ export default function WorkshopForm() {
         </label>
         <select id="ws-heard" name="heard" required className={styles.select}>
           <option value="">Select one</option>
-          {HEARD_OPTIONS.map((h) => (
+          {WORKSHOP_HEARD_OPTIONS.map((h) => (
             <option key={h} value={h}>{h}</option>
           ))}
         </select>

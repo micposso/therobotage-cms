@@ -2,30 +2,10 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { summitEvent } from '@/lib/events'
 import styles from './Summit.module.css'
 
-const tracks = [
-  {
-    number: '01',
-    title: 'Product Design & HRI',
-    description: 'Designing interfaces for embodied systems',
-  },
-  {
-    number: '02',
-    title: 'Ethics & Responsibility',
-    description: 'Accountability frameworks for real-world deployment',
-  },
-  {
-    number: '03',
-    title: 'Access & Equity',
-    description: "Who benefits from the robot age — and who doesn't",
-  },
-  {
-    number: '04',
-    title: 'Business & Strategy',
-    description: 'Operationalizing robotics across industries',
-  },
-]
+const tracks = summitEvent.tracks ?? []
 
 const trackContainerVariants = {
   hidden: {},
@@ -54,7 +34,7 @@ export default function Summit() {
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              New York City — Fall 2026
+              {summitEvent.location.name} — {summitEvent.dates[0].date}
             </motion.p>
 
             <motion.h2
@@ -63,7 +43,7 @@ export default function Summit() {
               animate={inView ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
-              The Robot Age Summit
+              {summitEvent.title}
             </motion.h2>
 
             <motion.p
@@ -72,9 +52,7 @@ export default function Summit() {
               animate={inView ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
             >
-              A one-day gathering for product designers, UX strategists, and
-              business leaders navigating the age of embodied AI. Four tracks.
-              Real robots. No hype.
+              {summitEvent.summary}
             </motion.p>
 
             <motion.div

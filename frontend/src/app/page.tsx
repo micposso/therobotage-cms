@@ -7,6 +7,7 @@ import Certification from '@/components/Certification/Certification'
 import Summit from '@/components/Summit/Summit'
 import Footer from '@/components/Footer/Footer'
 import { getAllNewsArticles } from '@/lib/news'
+import { siteOverview } from '@/lib/site'
 
 const jsonLd = [
   {
@@ -14,7 +15,7 @@ const jsonLd = [
     '@type': 'EducationalOrganization',
     name: 'The Robot Age',
     url: 'https://therobotage.com',
-    description: 'Robotic literacy education and certification for designers, strategists, and leaders who work alongside robots.',
+    description: siteOverview.summary,
     sameAs: ['https://linkedin.com/company/therobotage'],
     offers: {
       '@type': 'Course',
@@ -51,10 +52,10 @@ export async function generateMetadata() {
   const firstImage = getHeroImages()[0] ?? '/images/robot.png'
   return {
     title: 'The Robot Age',
-    description: 'Robotic literacy education and certification for designers, strategists, and leaders who work alongside robots.',
+    description: siteOverview.summary,
     openGraph: {
       title: 'The Robot Age',
-      description: 'Robotic literacy education and certification for designers, strategists, and leaders who work alongside robots.',
+      description: siteOverview.summary,
       images: [{ url: firstImage, alt: 'The Robot Age' }],
     },
     twitter: {

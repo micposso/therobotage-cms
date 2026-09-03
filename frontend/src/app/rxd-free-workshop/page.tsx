@@ -3,6 +3,8 @@ import PageHero from '@/components/PageHero/PageHero'
 import Footer from '@/components/Footer/Footer'
 import WorkshopForm from './WorkshopForm'
 import styles from './workshop.module.css'
+import { Fragment } from 'react'
+import { workshopEvent } from '@/lib/events'
 
 export const metadata = {
   title: "Product & UX Design for a World With Robots — Free Workshop",
@@ -27,31 +29,24 @@ export default function RxdFreeWorkshopPage() {
 
       <PageHero
         eyebrow="Free Workshop"
-        title="Product & UX Design for a World With Robots"
-        subtitle="You don’t need a $50k humanoid to start designing robot experiences. You need the right lens. Three live Zoom sessions. Robotics basics, the RXD framework in practice, and a scored case study on Reachy Mini — the expressive desktop robot that went viral after CES. Everything you need to design and evaluate human-robot experiences with confidence."
+        title={workshopEvent.title}
+        subtitle={workshopEvent.description}
         imageSrc="/images/hand.png"
       />
 
       <section className={styles.datesSection}>
         <div className="container-fluid">
           <div className={styles.datesGrid}>
-            <div className={styles.dateItem}>
-              <span className={styles.dateSession}>Session 01</span>
-              <span className={styles.dateDay}>Tuesday, June 16</span>
-              <span className={styles.dateTime}>7:00 &ndash; 7:45 pm</span>
-            </div>
-            <span className={styles.dateSep} aria-hidden="true">&rarr;</span>
-            <div className={styles.dateItem}>
-              <span className={styles.dateSession}>Session 02</span>
-              <span className={styles.dateDay}>Tuesday, June 23</span>
-              <span className={styles.dateTime}>7:00 &ndash; 7:45 pm</span>
-            </div>
-            <span className={styles.dateSep} aria-hidden="true">&rarr;</span>
-            <div className={styles.dateItem}>
-              <span className={styles.dateSession}>Session 03</span>
-              <span className={styles.dateDay}>Tuesday, June 30</span>
-              <span className={styles.dateTime}>7:00 &ndash; 7:45 pm</span>
-            </div>
+            {workshopEvent.dates.map((session, index) => (
+              <Fragment key={session.label}>
+                {index > 0 && <span className={styles.dateSep} aria-hidden="true">&rarr;</span>}
+                <div className={styles.dateItem}>
+                  <span className={styles.dateSession}>{session.label}</span>
+                  <span className={styles.dateDay}>{session.date}</span>
+                  {session.time && <span className={styles.dateTime}>{session.time}</span>}
+                </div>
+              </Fragment>
+            ))}
           </div>
         </div>
       </section>
@@ -74,38 +69,29 @@ export default function RxdFreeWorkshopPage() {
               </p>
 
               <ul className={styles.bullets}>
-                <li className={styles.bullet}>
-                  The six dimensions of robot experience design and why each one matters
-                </li>
-                <li className={styles.bullet}>
-                  How to apply RXD scoring to any robot you&rsquo;re evaluating or designing for
-                </li>
-                <li className={styles.bullet}>
-                  Vocabulary to communicate robot behavior clearly to non-technical stakeholders
-                </li>
-                <li className={styles.bullet}>
-                  A live scoring exercise on a real robot, ending in your own Robot Readiness Audit
-                </li>
+                {workshopEvent.learningOutcomes?.map((outcome) => (
+                  <li key={outcome} className={styles.bullet}>{outcome}</li>
+                ))}
               </ul>
 
               <div className={styles.meta}>
                 <div className={styles.metaItem}>
                   <span className={styles.metaLabel}>Format</span>
-                  <span className={styles.metaValue}>Three live sessions &middot; 45 min each &middot; online</span>
+                  <span className={styles.metaValue}>{workshopEvent.format}</span>
                 </div>
                 <div className={styles.metaItem}>
                   <span className={styles.metaLabel}>Cost</span>
-                  <span className={styles.metaValue}>Free</span>
+                  <span className={styles.metaValue}>{workshopEvent.cost}</span>
                 </div>
                 <div className={styles.metaItem}>
                   <span className={styles.metaLabel}>Who it&rsquo;s for</span>
                   <span className={styles.metaValue}>
-                    Designers, Product Managers, UX Designers, Strategists, Project Managers
+                    {workshopEvent.audience.join(', ')}
                   </span>
                 </div>
                 <div className={styles.metaItem}>
                   <span className={styles.metaLabel}>Prerequisites</span>
-                  <span className={styles.metaValue}>No technical background required</span>
+                  <span className={styles.metaValue}>{workshopEvent.prerequisites}</span>
                 </div>
               </div>
             </div>

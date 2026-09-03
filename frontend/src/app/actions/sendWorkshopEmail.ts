@@ -3,6 +3,7 @@
 import fs from 'fs'
 import { Resend } from 'resend'
 import { emailHtml, workshopWaitlistHtml, escapeHtml } from '@/lib/emailTemplate'
+import { WORKSHOP_HEARD_OPTIONS, WORKSHOP_PROFESSIONS } from '@/lib/events'
 
 const FROM_ADDRESS  = process.env.EMAIL_FROM_HELLO ?? 'onboarding@resend.dev'
 const ADMIN_ADDRESS = 'micposso@gmail.com'
@@ -69,8 +70,10 @@ export async function sendWorkshopEmail(
   if (!lastName)   return { success: false, error: 'Please enter your last name.' }
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
     return { success: false, error: 'Please enter a valid email address.' }
-  if (!profession) return { success: false, error: 'Please select your profession.' }
-  if (!heard)      return { success: false, error: 'Please tell us how you heard about this workshop.' }
+  if (!profession || !WORKSHOP_PROFESSIONS.some((option) => option === profession))
+    return { success: false, error: 'Please select your profession.' }
+  if (!heard || !WORKSHOP_HEARD_OPTIONS.some((option) => option === heard))
+    return { success: false, error: 'Please tell us how you heard about this workshop.' }
 
   const normalizedEmail = email.toLowerCase()
   if (getRegistry().has(normalizedEmail) || getWaitlist().has(normalizedEmail)) {
@@ -126,7 +129,7 @@ export async function sendWorkshopEmail(
       ])
 
       if (confirmError || adminError) {
-        console.error('sendWorkshopEmail waitlist error:', confirmError ?? adminError)
+        console.error('sendWorkshopEmail waitlist delivery failed')
         return { success: false, error: 'Something went wrong. Please try again.' }
       }
 
@@ -206,15 +209,15 @@ export async function sendWorkshopEmail(
       ])
 
       if (confirmError || adminError) {
-        console.error('sendWorkshopEmail error:', confirmError ?? adminError)
+        console.error('sendWorkshopEmail delivery failed')
         return { success: false, error: 'Something went wrong. Please try again.' }
       }
 
       persistEmail(normalizedEmail)
       return { success: true, waitlisted: false }
     }
-  } catch (err) {
-    console.error('sendWorkshopEmail exception:', err)
+  } catch {
+    console.error('sendWorkshopEmail encountered an unexpected error')
     return { success: false, error: 'Something went wrong. Please try again.' }
   }
 }

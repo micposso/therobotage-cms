@@ -4,6 +4,8 @@ import { IBM_Plex_Sans, IBM_Plex_Serif, DM_Serif_Display, Outfit } from "next/fo
 import { WaitlistProvider } from "@/context/WaitlistContext";
 import HomepagePopup from "@/components/HomepagePopup/HomepagePopup";
 import CookieBanner from "@/components/CookieBanner/CookieBanner";
+import WebMCPActivity from "@/components/WebMCPActivity/WebMCPActivity";
+import { siteOverview } from "@/lib/site";
 import "leaflet/dist/leaflet.css";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
 import "./globals.css";
@@ -42,10 +44,10 @@ export const metadata: Metadata = {
     default: "The Robot Age",
     template: "%s — The Robot Age",
   },
-  description: "Robotic literacy education, research, and certification for designers, strategists, and leaders who work alongside robots.",
+  description: siteOverview.summary,
   openGraph: {
     title: "The Robot Age",
-    description: "Robotic literacy education, research, and certification for designers, strategists, and leaders who work alongside robots.",
+    description: siteOverview.summary,
     images: [{ url: '/images/home.png', alt: 'The Robot Age' }],
     siteName: "The Robot Age",
     locale: "en_US",
@@ -86,6 +88,7 @@ export default function RootLayout({
           </noscript>
         )}
         <WaitlistProvider>{children}</WaitlistProvider>
+        <WebMCPActivity />
         <HomepagePopup />
         <CookieBanner />
       </body>
