@@ -22,6 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // ── Static pages ──────────────────────────────────────────────────────────
   const staticPages: MetadataRoute.Sitemap = [
+    { url: `${BASE}/live-robot-lab`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: BASE,                             lastModified: now,  changeFrequency: 'weekly',  priority: 1.0 },
     { url: `${BASE}/research`,               lastModified: now,  changeFrequency: 'weekly',  priority: 0.9 },
     { url: `${BASE}/learn`,                  lastModified: now,  changeFrequency: 'weekly',  priority: 0.9 },
