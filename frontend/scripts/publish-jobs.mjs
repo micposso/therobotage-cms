@@ -12,6 +12,9 @@
 // is reproducible from git, which is why "never hand-edit rows in the dashboard" is a
 // rule this script can actually enforce.
 //
+// The public board is intentionally curated: a publish run de-dupes listings and keeps
+// at most 30 live postings visible, archiving the older overflow rows in Supabase.
+//
 // Nothing is written unless every file passes validation. A partial publish would make
 // git and the database disagree, which is the one failure this design exists to avoid.
 
@@ -31,6 +34,8 @@ const COMPANIES_PATH = path.join(JOBS_DIR, '_companies.yml')
 
 const DEFAULT_EXPIRY_DAYS = 60
 const MAX_EXPIRY_DAYS = 180
+const MAX_LIVE_JOBS = 30
+const MAX_LIVE_JOBS_PER_COMPANY = 4
 const SIZE_BUCKETS = ['1-10', '11-50', '51-200', '201-500', '501-1000', '1000+']
 
 const args = process.argv.slice(2)
@@ -61,8 +66,8 @@ function warn(file, field, message) {
 
 // ── Environment ──────────────────────────────────────────────────────────────
 
-function loadDotEnvLocal() {
-  const envPath = path.join(ROOT, '.env.local')
+function loadDotEnvFile(filename) {
+  const envPath = path.join(ROOT, filename)
   if (!fs.existsSync(envPath)) return
 
   for (const line of fs.readFileSync(envPath, 'utf8').split('\n')) {
@@ -81,6 +86,11 @@ function loadDotEnvLocal() {
     }
     process.env[key] = value
   }
+}
+
+function loadDotEnvLocal() {
+  loadDotEnvFile('.env')
+  loadDotEnvFile('.env.local')
 }
 
 // ── Validation primitives ────────────────────────────────────────────────────
@@ -110,6 +120,125 @@ function canonicalJson(value) {
   if (Array.isArray(value)) return `[${value.map(canonicalJson).join(',')}]`
   const keys = Object.keys(value).sort()
   return `{${keys.map((k) => `${JSON.stringify(k)}:${canonicalJson(value[k])}`).join(',')}}`
+}
+
+function normalizeText(value) {
+  return String(value ?? '')
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim()
+    .replace(/\s+/g, ' ')
+}
+
+function normalizeApplyUrl(value) {
+  if (!value) return ''
+
+  try {
+    const url = new URL(value)
+    const params = [...url.searchParams.entries()]
+      .filter(([key]) => !key.toLowerCase().startsWith('utm_'))
+      .filter(([key]) => !['gh_src', 'source', 'ref', 'referrer'].includes(key.toLowerCase()))
+      .sort(([a], [b]) => a.localeCompare(b))
+
+    url.search = ''
+    for (const [key, val] of params) url.searchParams.append(key, val)
+    url.hash = ''
+    return `${url.origin}${url.pathname.replace(/\/+$/, '')}${url.search}`.toLowerCase()
+  } catch {
+    return normalizeText(value)
+  }
+}
+
+function dedupeKeyForJob(fm) {
+  const applyUrl = normalizeApplyUrl(fm.apply_url)
+  if (applyUrl) return `url:${applyUrl}`
+
+  return titleCompanyLocationKey(fm)
+}
+
+function titleCompanyLocationKey(fm) {
+  return [
+    'title-company-location',
+    normalizeText(fm.company),
+    normalizeText(fm.title),
+    normalizeText(fm.city),
+    normalizeText(fm.state),
+  ].join(':')
+}
+
+function publishRank(a, b) {
+  const postedDelta = toDate(b.fm.posted_at).getTime() - toDate(a.fm.posted_at).getTime()
+  if (postedDelta) return postedDelta
+  return a.file.localeCompare(b.file)
+}
+
+function chooseUnique(jobs, keyForJob) {
+  const groups = new Map()
+  for (const job of jobs) {
+    const key = keyForJob(job)
+    const group = groups.get(key) ?? []
+    group.push(job)
+    groups.set(key, group)
+  }
+
+  const duplicateGroups = [...groups.values()].filter((group) => group.length > 1)
+  const winners = [...groups.values()]
+    .map((group) => [...group].sort(publishRank)[0])
+    .sort(publishRank)
+  const dropped = duplicateGroups.flatMap((group) => [...group].sort(publishRank).slice(1))
+
+  return { winners, duplicateGroups, dropped }
+}
+
+function planLiveJobs(parsed) {
+  const now = new Date()
+  const candidates = []
+
+  for (const job of parsed) {
+    if (job.file.startsWith(SAMPLE_PREFIX)) continue
+    const status = job.fm.status ?? 'published'
+    if (status !== 'published') continue
+
+    const postedAt = toDate(job.fm.posted_at)
+    const expiresAt = job.fm.expires_at ? toDate(job.fm.expires_at) : addDays(postedAt, DEFAULT_EXPIRY_DAYS)
+    if (expiresAt <= now) continue
+
+    candidates.push(job)
+  }
+
+  const urlDeduped = chooseUnique(candidates, (job) => dedupeKeyForJob(job.fm))
+  const titleDeduped = chooseUnique(urlDeduped.winners, (job) => titleCompanyLocationKey(job.fm))
+  const deduped = titleDeduped.winners
+  const duplicateSlugs = new Set([
+    ...urlDeduped.dropped.map((job) => job.fm.slug),
+    ...titleDeduped.dropped.map((job) => job.fm.slug),
+  ])
+  const duplicateGroupCount = urlDeduped.duplicateGroups.length + titleDeduped.duplicateGroups.length
+
+  const companyCounts = new Map()
+  const selected = []
+  const overflow = []
+
+  for (const job of deduped) {
+    const count = companyCounts.get(job.fm.company) ?? 0
+    if (selected.length < MAX_LIVE_JOBS && count < MAX_LIVE_JOBS_PER_COMPANY) {
+      selected.push(job)
+      companyCounts.set(job.fm.company, count + 1)
+    } else {
+      overflow.push(job)
+    }
+  }
+
+  return {
+    selectedSlugs: new Set(selected.map((job) => job.fm.slug)),
+    duplicateSlugs,
+    overflowSlugs: new Set(overflow.map((job) => job.fm.slug)),
+    selectedCount: selected.length,
+    duplicateGroupCount,
+    duplicateDropCount: duplicateSlugs.size,
+    overflowCount: overflow.length,
+  }
 }
 
 // ── Load taxonomy and companies ──────────────────────────────────────────────
@@ -419,9 +548,15 @@ async function main() {
     process.exit(1)
   }
 
+  const livePlan = planLiveJobs(parsed)
+
   console.log(
     `Validated ${parsed.length} job${parsed.length === 1 ? '' : 's'} and ${companies.size} compan${companies.size === 1 ? 'y' : 'ies'}` +
       (warnings.length ? ` (${warnings.length} warning${warnings.length === 1 ? '' : 's'})` : '')
+  )
+  console.log(
+    `Live board plan: publish ${livePlan.selectedCount}/${MAX_LIVE_JOBS} · de-dupe ${livePlan.duplicateDropCount}` +
+      ` from ${livePlan.duplicateGroupCount} group${livePlan.duplicateGroupCount === 1 ? '' : 's'} · archive overflow ${livePlan.overflowCount}`
   )
 
   if (CHECK_ONLY) return
@@ -499,6 +634,10 @@ async function main() {
     }
 
     const row = buildJobRow(fm, body, company.id, company.name)
+    if ((fm.status ?? 'published') === 'published' && !livePlan.selectedSlugs.has(row.slug)) {
+      row.status = 'archived'
+      row.expires_at = new Date().toISOString()
+    }
     const prior = existing.get(row.slug)
 
     // content_hash lets an unchanged job be skipped entirely, so a routine publish run
@@ -522,7 +661,12 @@ async function main() {
   if (DRY_RUN) {
     console.log('\nDry run - no writes performed.\n')
     for (const { row, isNew } of toWrite) {
-      console.log(`  ${isNew ? 'create' : 'update'}  ${row.slug}`)
+      const reason = livePlan.duplicateSlugs.has(row.slug)
+        ? ' duplicate'
+        : livePlan.overflowSlugs.has(row.slug)
+          ? ' overflow'
+          : ''
+      console.log(`  ${isNew ? 'create' : 'update'}  ${row.slug}${row.status === 'archived' ? ` -> archive${reason}` : ''}`)
     }
     for (const slug of toArchive) console.log(`  archive ${slug}`)
     console.log(
