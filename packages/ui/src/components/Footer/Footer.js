@@ -13,6 +13,7 @@ const NAV_LINKS = [
   { label: 'Access',        href: '/access' },
   { label: 'Connect',       href: '/connect' },
   { label: 'Summit',        href: '/summit' },
+  { label: 'Live Robot Lab', href: '/live-robot-lab#request-live-robot-lab' },
 ]
 
 const SOCIAL_LINKS = [

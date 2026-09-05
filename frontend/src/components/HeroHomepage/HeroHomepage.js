@@ -17,6 +17,7 @@ const NAV_LINKS = [
   { label: 'Learn',         href: '/learn',      desc: 'Courses and curricula built for non-engineers.' },
   { label: 'Jobs',          href: '/jobs',       desc: 'Curated robotics roles for product, design, strategy, and human-facing work.' },
   { label: 'Enterprise',    href: '/enterprise', desc: 'Deployment readiness education for organizations.' },
+  { label: 'Live Robot Lab', href: '/live-robot-lab#request-live-robot-lab', desc: 'Hands-on robotics experiences for schools, organizations, and events.' },
 ]
 
 const eyebrowText = 'For design, product, and marketing professionals.'
@@ -221,6 +222,9 @@ export default function HeroHomepage({ images = [] }) {
                 </Link>
                 <Link href="/learn" className={styles.ctaGhost}>
                   Become Certified
+                </Link>
+                <Link href="/live-robot-lab#request-live-robot-lab" className={styles.ctaGhost}>
+                  Request a Live Robot Lab
                 </Link>
               </div>
             </motion.div>
