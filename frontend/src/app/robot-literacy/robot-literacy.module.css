@@ -1,0 +1,32 @@
+/* Composition only. Layout, typography, controls and responsive behavior are
+   inherited from Live Robot Lab; no new breakpoints or scales. */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+.selected {
+  text-decoration: underline;
+  text-underline-offset: var(--space-1);
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.details dt {
+  font-family: var(--font-display);
+  font-weight: 500;
+}
+.moduleContent {
+  padding: 0 var(--space-2) var(--space-6);
+}
+.interestGroup {
+  border: 0;
+  min-width: 0;
+  margin-bottom: var(--space-8);
+}
+.interestGroup legend {
+  margin-bottom: var(--space-4);
+}
