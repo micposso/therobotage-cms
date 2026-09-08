@@ -3,7 +3,7 @@
 ## Navigation (Header)
 - Research → /research
 - Learn → /learn
-- Literacy → /robotics-literacy
+- Literacy → /robot-literacy
 - Connect → /connect
 - Summit → /summit
 - Enterprise → /enterprise
@@ -22,7 +22,7 @@
 **Ticker (animated):** Industrial · Surgical · Collaborative · Autonomous · Social · Exoskeletal · Agricultural · Service
 
 **CTAs:**
-- What is Robotic Literacy? → /robotics-literacy
+- What is Robot Literacy? → /robot-literacy
 - Become Certified → /learn
 
 ---
@@ -33,7 +33,7 @@
 |---|---|
 | Research → /research | Original frameworks and field analysis |
 | Learn → /learn | Certification curriculum |
-| Literacy → /robotics-literacy | What robotic literacy means |
+| Literacy → /robot-literacy | What robot literacy means |
 | Connect → /connect | Get in touch |
 | Summit → /summit | Annual gathering |
 | Enterprise → /enterprise | Team and org programs |

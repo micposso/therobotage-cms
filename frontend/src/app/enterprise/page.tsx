@@ -35,7 +35,7 @@ const WHY_CARDS = [
 ]
 
 const WALKAWAY_ITEMS = [
-  'A clear map of which roles need what level of robotic literacy — and why.',
+  'A clear map of which roles need what level of robot literacy — and why.',
   'Practical frameworks for assessing and closing knowledge gaps on your team.',
   'Language for communicating robot capabilities and limits to non-technical stakeholders.',
   'A deployment readiness baseline your organization can revisit as the fleet grows.',
@@ -50,7 +50,7 @@ export default function EnterprisePage() {
       <PageHero
         eyebrow="Enterprise"
         title="Deployment readiness starts with people"
-        subtitle="Structured robotic literacy for operations, logistics, and facilities teams — built for organizations integrating robots into non-engineering environments."
+        subtitle="Structured robot literacy for operations, logistics, and facilities teams — built for organizations integrating robots into non-engineering environments."
         imageSrc="/images/robot.png"
       />
 

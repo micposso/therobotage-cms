@@ -216,8 +216,8 @@ export default function HeroHomepage({ images = [] }) {
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 1.2 }}
             >
               <div className={styles.ctaRow}>
-                <Link href="/robotics-literacy" className={styles.ctaPrimary}>
-                  What is Robotic Literacy?
+                <Link href="/robot-literacy" className={styles.ctaPrimary}>
+                  What is Robot Literacy?
                   <span className={styles.arrow} aria-hidden="true">→</span>
                 </Link>
                 <Link href="/learn" className={styles.ctaGhost}>

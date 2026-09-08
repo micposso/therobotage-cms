@@ -581,7 +581,7 @@ export default function ResultView({
                       className={styles.consentBox}
                     />
                     <span className={styles.consentText}>
-                      Send me occasional emails from The Robot Age about robotics literacy. You can
+                      Send me occasional emails from The Robot Age about robot literacy. You can
                       unsubscribe anytime. (Optional — your card is sent either way.)
                     </span>
                   </label>

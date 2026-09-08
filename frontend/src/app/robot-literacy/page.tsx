@@ -2,14 +2,14 @@ import Link from 'next/link'
 import Nav from '@/components/Nav/Nav'
 import PageHero from '@/components/PageHero/PageHero'
 import Footer from '@/components/Footer/Footer'
-import styles from './robotics-literacy.module.css'
+import styles from './robot-literacy.module.css'
 
 export const metadata = {
-  title: 'Robotics Literacy — The Robot Age',
-  description: 'The skill side of working with robots. Built for designers, operations leads, and business leaders — no engineering background required.',
+  title: 'Robot Literacy — The Robot Age',
+  description: 'The experience side of working with robots. Built for designers, operations leads, and business leaders — no engineering background required.',
   openGraph: {
-    title: 'Robotics Literacy — The Robot Age',
-    description: 'The skill side of working with robots. Built for designers, operations leads, and business leaders — no engineering background required.',
+    title: 'Robot Literacy — The Robot Age',
+    description: 'The experience side of working with robots. Built for designers, operations leads, and business leaders — no engineering background required.',
     images: [{ url: '/images/palm.png', alt: 'The Robot Age' }],
   },
   twitter: {
@@ -51,15 +51,15 @@ const FOR_WHOM = [
   { role: 'Business decision-makers', desc: 'Evaluating proposals without fluency in what they\'re buying.' },
 ]
 
-export default function RoboticsLiteracyPage() {
+export default function RobotLiteracyPage() {
   return (
     <>
       <Nav pinned />
 
       <PageHero
-        eyebrow="Robotics Literacy"
-        title="Working with robots is a skill"
-        subtitle="The people working closest to robots — product designers, operations leads, healthcare professionals — rarely have formal training for it. Robotics literacy closes that gap."
+        eyebrow="Robot Literacy"
+        title="Working with robots is a human skill"
+        subtitle="Robotics is the science of building robots. Robot literacy is the practice of understanding how they behave, how they change environments, and how people experience them."
         imageSrc="/images/palm.png"
       />
 
@@ -68,7 +68,7 @@ export default function RoboticsLiteracyPage() {
         <div className="container-fluid">
           <div className={styles.definitionInner}>
             <blockquote className={styles.definition}>
-              Understanding what a robot can and cannot do, recognizing how it changes the environments it enters, and communicating clearly about it — without ever needing to build one.
+              Understanding what a robot can and cannot do, recognizing how it changes the environments it enters, and communicating clearly about the experience it creates — without ever needing to build one.
             </blockquote>
           </div>
         </div>

@@ -69,7 +69,7 @@ Auto-generated at `/sitemap.xml`. Includes:
 |---|---|---|
 | Homepage | 1.0 | weekly |
 | /research, /learn, /rxd | 0.9 | weekly / monthly |
-| /robotics-literacy, /summit | 0.8 | monthly |
+| /robot-literacy, /summit | 0.8 | monthly |
 | /enterprise, /access, /robots | 0.7 | monthly |
 | /connect | 0.6 | monthly |
 | All news articles | 0.7 | yearly |
@@ -101,7 +101,7 @@ Plain-text file at `/llms.txt` following the emerging LLM indexing standard. Con
 - Research articles index
 - News section
 - All 4 certification tracks (REP, RPDP, RSP, RXR) with URLs and descriptions
-- Robot of the Week, Summit, Enterprise, Robotic Literacy, Search
+- Robot of the Week, Summit, Enterprise, Robot Literacy, Search
 - Contact emails and key page URL inventory
 
 Update `public/llms.txt` whenever new sections, routes, or major content areas are added.

@@ -7,7 +7,7 @@ Enterprise
 Deployment readiness starts with people
 
 ## Subtitle
-Structured robotic literacy for operations, logistics, and facilities teams — built for organisations integrating robots into non-engineering environments.
+Structured robot literacy for operations, logistics, and facilities teams — built for organisations integrating robots into non-engineering environments.
 
 ---
 
@@ -26,7 +26,7 @@ One-off briefings don't build lasting literacy. Structured programmes do.
 
 ## What You'll Walk Away With
 
-1. A clear map of which roles need what level of robotic literacy
+1. A clear map of which roles need what level of robot literacy
 2. Practical frameworks for assessing and closing knowledge gaps
 3. Language for communicating robot capabilities and limits across teams
 4. A deployment readiness baseline your organisation can act on

@@ -22,9 +22,9 @@ const articles = [
   },
   {
     date: 'FEB, 2026',
-    headline: 'RLP Module 1.1 is live: foundations of robotic literacy for practitioners',
+    headline: 'RLP Module 1.1 is live: foundations of robot literacy for practitioners',
     excerpt:
-      'The first module of the Robotic Literacy Practitioner program is now open. Covering perception systems, decision logic, and human-robot dynamics — built for non-engineers.',
+      'The first module of the Robot Literacy Practitioner program is now open. Covering perception systems, decision logic, and human-robot dynamics — built for non-engineers.',
     image: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=800&q=80',
   },
 ]
