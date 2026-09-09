@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import styles from './HeroHomepage.module.css'
+import LearnMenu from '@therobotage/ui/LearnMenu'
 
 // ─── Content ──────────────────────────────────────────────────────────────────
 
@@ -17,7 +18,6 @@ const NAV_LINKS = [
   { label: 'Learn',         href: '/learn',      desc: 'Courses and curricula built for non-engineers.' },
   { label: 'Jobs',          href: '/jobs',       desc: 'Curated robotics roles for product, design, strategy, and human-facing work.' },
   { label: 'Enterprise',    href: '/enterprise', desc: 'Deployment readiness education for organizations.' },
-  { label: 'Live Robot Lab', href: '/live-robot-lab#request-live-robot-lab', desc: 'Hands-on robotics experiences for schools, organizations, and events.' },
 ]
 
 const eyebrowText = 'For design, product, and marketing professionals.'
@@ -162,7 +162,9 @@ export default function HeroHomepage({ images = [] }) {
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
                 {NAV_LINKS.map(({ label, href, desc }) => (
-                  <HeroNavItem key={label} label={label} href={href} desc={desc} />
+                  label === 'Learn'
+                    ? <LearnMenu key={label} inline triggerClassName={styles.heroNavLink} />
+                    : <HeroNavItem key={label} label={label} href={href} desc={desc} />
                 ))}
               </motion.nav>
 

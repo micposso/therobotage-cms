@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
+import { useEffect, useState, useSyncExternalStore } from 'react'
 import {
   getWebMcpActivitySnapshot,
   subscribeToWebMcpActivity,
@@ -13,7 +13,6 @@ type Availability = 'checking' | 'available' | 'unsupported' | 'failed'
 
 const EMPTY_HISTORY: ReturnType<typeof getWebMcpActivitySnapshot> = []
 const CONTROLLER_KEY = '__theRobotAgeWebMcpController'
-const AUTO_COLLAPSE_DELAY_MS = 6_000
 
 function statusLabel(status: WebMcpActivityStatus) {
   return status.charAt(0).toUpperCase() + status.slice(1)
@@ -22,8 +21,7 @@ function statusLabel(status: WebMcpActivityStatus) {
 export default function WebMCPActivity() {
   const [availability, setAvailability] = useState<Availability>('checking')
   const [toolCount, setToolCount] = useState(0)
-  const [expanded, setExpanded] = useState(true)
-  const manuallyToggled = useRef(false)
+  const [expanded, setExpanded] = useState(false)
   const history = useSyncExternalStore(
     subscribeToWebMcpActivity,
     getWebMcpActivitySnapshot,
@@ -65,14 +63,6 @@ export default function WebMCPActivity() {
     }
   }, [])
 
-  useEffect(() => {
-    const timeout = window.setTimeout(() => {
-      if (!manuallyToggled.current) setExpanded(false)
-    }, AUTO_COLLAPSE_DELAY_MS)
-
-    return () => window.clearTimeout(timeout)
-  }, [])
-
   const availabilityLabel = {
     checking: 'Checking browser support',
     available: toolCount ? 'WebMCP available' : 'Registering tools',
@@ -84,7 +74,6 @@ export default function WebMCPActivity() {
   )
 
   function toggleExpanded() {
-    manuallyToggled.current = true
     setExpanded((current) => !current)
   }
 
@@ -111,13 +100,13 @@ export default function WebMCPActivity() {
             type="button"
             aria-expanded={expanded}
             aria-controls="webmcp-activity-details"
-            aria-label={expanded ? 'Minimize browser agent activity' : 'Expand browser agent activity'}
+            aria-label={expanded ? 'Minimize WebMCP browser agent activity' : 'Expand WebMCP browser agent activity'}
             title={expanded ? 'Minimize activity' : 'Expand activity'}
             onClick={toggleExpanded}
           >
-            <svg viewBox="0 0 16 16" aria-hidden="true">
+            {expanded ? <svg viewBox="0 0 16 16" aria-hidden="true">
               <path d="M3.5 6.25 8 10.75l4.5-4.5" />
-            </svg>
+            </svg> : <span>WebMCP</span>}
           </button>
         </div>
       </div>

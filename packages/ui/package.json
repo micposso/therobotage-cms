@@ -5,6 +5,7 @@
   "exports": {
     ".": "./src/index.ts",
     "./Nav": "./src/components/Nav/Nav.js",
+    "./LearnMenu": "./src/components/Nav/LearnMenu.js",
     "./Footer": "./src/components/Footer/Footer.js",
     "./lib/certifications": "./src/lib/certifications.ts"
   },
