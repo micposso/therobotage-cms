@@ -12,6 +12,10 @@ import type { Redirect } from 'next/dist/lib/load-custom-routes'
  * For external destinations use a full URL as the destination.
  */
 const redirects: Redirect[] = [
+  // ── Robot literacy page ─────────────────────────────────────────────────
+  // Old naming leaned toward the technical field; the new URL centers the human experience.
+  { source: '/robotics-literacy', destination: '/robot-literacy', permanent: true },
+
   // ── RXD framework page ───────────────────────────────────────────────────
   // Old short URL shared in early LinkedIn outreach
   { source: '/href', destination: '/rxd', permanent: true },

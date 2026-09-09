@@ -52,7 +52,7 @@ export async function sendWhitepaperEmail(
           About The Robot Age
         </p>
         <p style="font-family:Georgia,serif;font-size:15px;line-height:1.75;color:#2A2A28;margin:0 0 16px;">
-          The Robot Age is a robotic literacy platform for designers, product managers, marketers, and operations leads who work in environments where robots are already deployed. The premise is straightforward: you don't need to understand how robots are built to make better decisions about how they're used, designed around, and introduced to the people who work beside them.
+          The Robot Age is a robot literacy platform for designers, product managers, marketers, and operations leads who work in environments where robots are already deployed. The premise is straightforward: you don't need to understand how robots are built to make better decisions about how they're used, designed around, and introduced to the people who work beside them.
         </p>
         <p style="font-family:Georgia,serif;font-size:15px;line-height:1.75;color:#2A2A28;margin:0 0 32px;">
           The credentials, frameworks, and research we publish are built for non-engineers — to give you the vocabulary and mental models to do your job well in a workplace that has changed.

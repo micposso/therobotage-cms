@@ -51,7 +51,7 @@ export default function NewsArticle({ article }: Props) {
             <p className={styles.sidebarLabel}>Related</p>
             <nav className={styles.sidebarNav}>
               <Link href="/learn" className={styles.sidebarLink}>Get the REP credential</Link>
-              <Link href="/robotics-literacy" className={styles.sidebarLink}>What is robotic literacy?</Link>
+              <Link href="/robot-literacy" className={styles.sidebarLink}>What is robot literacy?</Link>
               <Link href="/summit" className={styles.sidebarLink}>Join the Summit</Link>
               <ShareButton />
             </nav>

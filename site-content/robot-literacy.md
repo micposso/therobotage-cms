@@ -1,19 +1,19 @@
-# Robotics Literacy — /robotics-literacy
+# Robot Literacy — /robot-literacy
 
 ## Eyebrow
-Robotics Literacy
+Robot Literacy
 
 ## H1
-Working with robots is a skill
+Working with robots is a human skill
 
 ## Subtitle
-The people working closest to robots — product designers, operations leads, healthcare professionals — rarely have formal training for it. Robotics literacy closes that gap.
+Robotics is the science of building robots. Robot literacy is the practice of understanding how they behave, how they change environments, and how people experience them.
 
 ---
 
 ## Definition
 
-> Understanding what a robot can and cannot do, recognising how it changes the environments it enters, and communicating clearly about it — without ever needing to build one.
+> Understanding what a robot can and cannot do, recognising how it changes the environments it enters, and communicating clearly about the experience it creates — without ever needing to build one.
 
 ---
 
@@ -28,7 +28,7 @@ The people working closest to robots — product designers, operations leads, he
 
 ---
 
-## Three Pillars of Robotic Literacy
+## Three Pillars of Robot Literacy
 
 1. **Understand capability** — Know what robots can and cannot do in real-world conditions.
 2. **Design for coexistence** — Create environments, workflows, and products that work alongside robots.

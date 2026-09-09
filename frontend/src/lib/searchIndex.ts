@@ -33,9 +33,9 @@ const STATIC_PAGES: SearchResult[] = [
   },
   {
     type: 'Page',
-    title: 'Robotic Literacy',
-    excerpt: 'What robotic literacy means, why it matters, and how The Robot Age approaches it.',
-    url: '/robotics-literacy',
+    title: 'Robot Literacy',
+    excerpt: 'What robot literacy means, why it matters, and how The Robot Age approaches the experience side of working with robots.',
+    url: '/robot-literacy',
   },
   {
     type: 'Page',

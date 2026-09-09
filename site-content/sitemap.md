@@ -22,7 +22,7 @@ therobotage.com
 │   │   │   └── /learn/rep/curriculum
 │   │   ├── /learn/rpdp
 │   │   ├── /learn/rsp
-│   │   └── → /robotics-literacy           ← linked from Learn page footer callout
+│   │   └── → /robot-literacy              ← linked from Learn page footer callout
 │   │
 │   ├── /connect
 │   │
@@ -98,10 +98,10 @@ Pages with no incoming links from the main navigation or any other in-site link:
 | Route | How it's reached | Risk |
 |---|---|---|
 | `/rxd` | In main nav; also linked from `/learn/[credential]/curriculum` and `/research` | ✅ No longer an orphan |
-| `/robotics-literacy` | Removed from main nav; linked from `/learn` page footer callout | Low — reachable via Learn |
+| `/robot-literacy` | Removed from main nav; linked from `/learn` page footer callout | Low — reachable via Learn |
 | `/robots` | Not in main nav; only referenced from within the Research page robot archive section | Medium — hard to find |
 | `/news/[slug]` | No `/news` index page; articles only surfaced via homepage grid and Research page | Medium — no browseable news archive |
-| `/access` | Linked from CTAs on /robotics-literacy, /learn/[credential]; not in main nav | Low — reachable via CTAs |
+| `/access` | Linked from CTAs on /robot-literacy, /learn/[credential]; not in main nav | Low — reachable via CTAs |
 | `/privacy` | Footer only | Low — expected pattern for legal |
 | `/terms` | Footer only | Low — expected pattern for legal |
 | `/ai-statement` | Footer only | Low — expected pattern for legal |

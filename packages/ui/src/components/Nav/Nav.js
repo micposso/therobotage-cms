@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import styles from './Nav.module.css'
+import LearnMenu from './LearnMenu'
 
 const NAV_LINKS = [
   { label: 'RESEARCH',      href: '/research' },
@@ -94,7 +95,9 @@ export default function Nav({ pinned = false, baseUrl = '', cta = null }) {
             <ul className={`${styles.links} ${scrolled ? styles.linksScrolled : ''} ${searchOpen ? styles.linksHidden : ''}`}>
               {NAV_LINKS.map(({ label, href }) => (
                 <li key={label}>
-                  <a href={`${baseUrl}${href}`} className={styles.link}>{label}</a>
+                  {label === 'LEARN'
+                    ? <LearnMenu baseUrl={baseUrl} triggerClassName={styles.link} />
+                    : <a href={`${baseUrl}${href}`} className={styles.link}>{label}</a>}
                 </li>
               ))}
             </ul>
@@ -151,6 +154,8 @@ export default function Nav({ pinned = false, baseUrl = '', cta = null }) {
             <button
               className={styles.hamburger}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={menuOpen}
+              aria-controls="site-mobile-menu"
               onClick={() => setMenuOpen((o) => !o)}
             >
               {menuOpen ? (
@@ -175,6 +180,7 @@ export default function Nav({ pinned = false, baseUrl = '', cta = null }) {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
+            id="site-mobile-menu"
             className={styles.mobileMenu}
             initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -207,13 +213,13 @@ export default function Nav({ pinned = false, baseUrl = '', cta = null }) {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1], delay: i * 0.06 }}
                 >
-                  <a
+                  {label === 'LEARN' ? <LearnMenu baseUrl={baseUrl} inline triggerClassName={styles.mobileLink} onNavigate={() => setMenuOpen(false)} /> : <a
                     href={`${baseUrl}${href}`}
                     className={styles.mobileLink}
                     onClick={() => setMenuOpen(false)}
                   >
                     {label}
-                  </a>
+                  </a>}
                 </motion.div>
               ))}
             </nav>

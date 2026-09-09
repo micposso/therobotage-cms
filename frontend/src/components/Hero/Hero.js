@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import styles from './Hero.module.css'
 
 // ─── Content ──────────────────────────────────────────────────────────────────
-const eyebrow = 'The Robot Age  ·  Robotic Literacy for All'
+const eyebrow = 'The Robot Age  ·  Robot Literacy for All'
 
 const headlineWords = ['Robots', 'are', 'entering', 'every', 'field']
 

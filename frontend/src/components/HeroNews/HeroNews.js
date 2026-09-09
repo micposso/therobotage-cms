@@ -58,7 +58,7 @@ export default function HeroNews() {
                   </motion.span>
                 ))}
               </motion.div>
-              <p className={styles.subtitle}>robotics literacy for all</p>
+              <p className={styles.subtitle}>robot literacy for all</p>
             </div>
           </div>
 

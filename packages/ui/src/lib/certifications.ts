@@ -83,7 +83,7 @@ export const certifications: Certification[] = [
     status: 'Coming Soon',
     description: 'For product designers and design leads building interfaces, flows, and physical touchpoints between humans and robotic systems. Safety signaling, proxemics, error states, edge-case design.',
     audience: 'Product designers, interaction designers, design leads, and UX practitioners working on products or environments that include robotic systems.',
-    overview: 'The RPDP credential is for designers who need to go deeper than robotic literacy into the practical craft of designing for robots. It covers the specific design challenges that emerge when your user is sharing a space with a machine that moves, perceives, and acts — and what it means to design that experience well.',
+    overview: 'The RPDP credential is for designers who need to go deeper than robot literacy into the practical craft of designing for robots. It covers the specific design challenges that emerge when your user is sharing a space with a machine that moves, perceives, and acts — and what it means to design that experience well.',
     format: 'Five-week hybrid programme. Four self-paced modules followed by a design critique and portfolio review.',
     duration: '5 weeks · 15 hours total · 2 live critique sessions',
     modules: [
