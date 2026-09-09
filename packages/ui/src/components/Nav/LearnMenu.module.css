@@ -1,0 +1,37 @@
+.menu { position: relative; }
+.trigger { cursor: pointer; width: fit-content; }
+.trigger:focus-visible,
+.links a:focus-visible { outline: 2px solid currentColor; outline-offset: var(--space-1); }
+.links {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  width: 18rem;
+  max-width: calc(100vw - var(--space-8));
+  padding: var(--space-3);
+  margin: 0;
+  list-style: none;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-strong);
+}
+.links a {
+  display: block;
+  padding: var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: var(--color-text);
+}
+.links a:hover { text-decoration: underline; text-underline-offset: var(--space-1); }
+.inline .links {
+  position: static;
+  width: auto;
+  max-width: none;
+  border: 0;
+  border-left: 1px solid var(--color-border-strong);
+  background: transparent;
+  margin-top: var(--space-3);
+  padding: 0 0 0 var(--space-3);
+}
+.inline .links a { padding: var(--space-2) 0; min-height: var(--space-10); }

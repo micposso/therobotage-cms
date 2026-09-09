@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import type { ReactNode } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import styles from './PageHero.module.css'
@@ -12,6 +13,7 @@ interface PageHeroProps {
   imageSrc?: string
   images?: string[]
   roundImage?: boolean
+  children?: ReactNode
 }
 
 export default function PageHero({
@@ -21,6 +23,7 @@ export default function PageHero({
   imageSrc = '',
   images,
   roundImage = false,
+  children,
 }: PageHeroProps) {
   const slides = images && images.length > 0 ? images : imageSrc ? [imageSrc] : []
   const [index, setIndex] = useState(0)
@@ -44,6 +47,7 @@ export default function PageHero({
               <span className={styles.colorSquare} aria-hidden="true" />
             </h1>
             <p className={styles.subtitle}>{subtitle}</p>
+            {children}
           </div>
           <motion.div
             className={styles.imageCol}

@@ -30,3 +30,167 @@
 .interestGroup legend {
   margin-bottom: var(--space-4);
 }
+.heroBody {
+  max-width: 600px;
+  margin-top: var(--space-6);
+}
+.heroBody p {
+  margin-bottom: var(--space-4);
+}
+
+/* Page-local composition. Shared controls, containers, grids and scales stay intact. */
+.page .progression {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-8);
+  list-style: none;
+  padding: 0;
+  margin: var(--space-12) 0 0;
+}
+.progression a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: var(--space-2);
+  font-family: var(--font-display);
+  text-align: center;
+  transition: color var(--ease-default);
+}
+.progression a:hover { color: var(--color-accent); }
+.progressionImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+.progressionImage img { object-fit: contain; }
+.progressionImage figure { padding: var(--space-2); }
+.progressionImage figure p { font-size: var(--text-xs); }
+.progression strong {
+  font-size: clamp(var(--text-md), 4.5vw, var(--text-xl));
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.progression a > span { font-size: var(--text-sm); }
+.progressionDescription {
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+.progressionQuestions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+.progressionConcepts {
+  display: block;
+  margin-top: var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  line-height: 1.5;
+  color: var(--color-accent);
+}
+.comparison {
+  border-top: 1px solid var(--color-border-strong);
+  padding-top: var(--space-8);
+}
+.frameworkArea { scroll-margin-top: calc(var(--nav-height) + var(--space-6)); }
+.frameworkImage { margin-top: var(--space-8); }
+.frameworkStack article { padding: var(--space-10) 0; }
+.page .frameworkStack h3 {
+  font-size: clamp(var(--text-lg), 5.8vw, var(--text-xl));
+  color: var(--color-accent);
+  line-height: 1.05;
+}
+.page .signature, .page .scenarioStatement {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  line-height: 1.25;
+  max-width: 24ch;
+  margin-bottom: var(--space-6);
+}
+.topics { margin-bottom: var(--space-8); }
+.example {
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+  background: var(--color-bg);
+  border-left: var(--space-1) solid var(--color-accent);
+}
+.details { font-size: var(--text-sm); }
+.details dd { margin: var(--space-2) 0 0; }
+.scenarioQuestions { display: grid; gap: var(--space-6); }
+.scenarioQuestions dt {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  margin-bottom: var(--space-2);
+}
+.scenarioQuestions dd { margin: 0; }
+.page .filter {
+  background: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-border-strong);
+  padding: var(--space-3) var(--space-4);
+}
+.page .filter:hover, .page .filter.selected {
+  background: var(--color-text);
+  color: var(--color-text-inverse);
+}
+.page .decisionGuide { max-width: none; }
+.page .decisionGuide details { border-color: var(--color-border-light); }
+.decisionLabel {
+  display: inline;
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-2);
+}
+.decisionGuide summary > span:last-child { display: block; margin-top: var(--space-2); }
+.audience > div {
+  border-top: 1px solid var(--color-border-strong);
+  padding: var(--space-6) 0;
+}
+.audience dt { font-family: var(--font-display); font-size: var(--text-md); font-weight: 400; }
+.audience dd { margin: 0; }
+.learningPath {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: center;
+  font-family: var(--font-display);
+  margin-bottom: var(--space-10);
+}
+.learningPath span { color: var(--color-accent); }
+.signup { display: flex; flex-wrap: wrap; gap: var(--space-6); align-items: end; }
+.signup > div { flex: 1 1 16rem; }
+.page .unavailable:disabled { cursor: not-allowed; background: var(--color-text-muted); }
+.closingPrelude { display: grid; gap: var(--space-3); margin-bottom: var(--space-8); }
+.closingPrelude p { font-family: var(--font-display); font-size: var(--text-md); }
+.canStatement { font-family: var(--font-display); font-size: clamp(2rem, 3.8vw, 3.25rem); line-height: 1.12; margin-bottom: var(--space-4); }
+@media (max-width: 767px) {
+  .page .progression {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    margin-top: var(--space-8);
+  }
+  .page .heroCopy { gap: var(--space-4); }
+  .page .signature, .page .scenarioStatement { font-size: var(--text-md); }
+  .frameworkStack article { padding: var(--space-8) 0; }
+  .learningPath { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 479px) {
+  .page .progression { gap: var(--space-6); }
+  .progression strong { font-size: var(--text-md); }
+  .progression a > span { font-size: var(--text-xs); }
+}
