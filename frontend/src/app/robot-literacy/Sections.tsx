@@ -6,6 +6,7 @@ import VerticalStackedCards from '@/components/VerticalStackedCards/VerticalStac
 import { Section } from '@/app/live-robot-lab/Sections'
 import { applications, audiences, decisions, faqs, framework } from './framework-content'
 import { PartnershipLink } from './Interactive'
+import RobotLiteracyVideo from './RobotLiteracyVideo'
 import styles from '@/app/live-robot-lab/live-robot-lab.module.css'
 import local from './robot-literacy.module.css'
 
@@ -73,6 +74,7 @@ export function RobotLiteracyFrameworkSummary() {
   return <section id="framework" className={styles.section}>
     <div className={styles.container}>
       <FrameworkProgression />
+      <RobotLiteracyVideo />
     </div>
   </section>
 }

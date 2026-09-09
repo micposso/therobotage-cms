@@ -102,6 +102,41 @@
   line-height: 1.5;
   color: var(--color-accent);
 }
+.literacyVideoShell {
+  width: min(100%, 960px);
+  margin: var(--space-16) auto 0;
+  padding: var(--space-2);
+  background:
+    linear-gradient(135deg, var(--color-primary), rgba(183, 146, 91, 0.28)),
+    var(--color-primary);
+  border: 1px solid rgba(155, 81, 82, 0.32);
+}
+.literacyVideoPlayer {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--color-bg-dark);
+  border: 1px solid rgba(155, 81, 82, 0.48);
+  --media-control-background: rgba(155, 81, 82, 0.94);
+  --media-control-hover-background: var(--color-tertiary);
+  --media-control-padding: var(--space-3);
+  --media-button-icon-color: var(--color-primary);
+  --media-range-track-background: rgba(236, 217, 210, 0.36);
+  --media-range-bar-color: var(--color-fourth);
+  --media-range-thumb-background: var(--color-primary);
+  --media-text-color: var(--color-primary);
+}
+.literacyVideoMedia {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--color-bg-dark);
+}
+.literacyVideoControls {
+  width: 100%;
+}
 .comparison {
   border-top: 1px solid var(--color-border-strong);
   padding-top: var(--space-8);
@@ -186,6 +221,8 @@
   }
   .page .heroCopy { gap: var(--space-4); }
   .page .signature, .page .scenarioStatement { font-size: var(--text-md); }
+  .literacyVideoShell { margin-top: var(--space-10); }
+  .literacyVideoPlayer { --media-control-padding: var(--space-2); }
   .frameworkStack article { padding: var(--space-8) 0; }
   .learningPath { flex-direction: column; align-items: flex-start; }
 }
