@@ -70,10 +70,11 @@ export function RobotLiteracyBridge() {
 }
 
 export function RobotLiteracyFrameworkSummary() {
-  return <Section id="framework" title="READ → RELATE → COEXIST" eyebrow="The Robot Literacy Framework">
-    <p className={styles.intro}>A simple framework for making sense of robots.</p>
-    <FrameworkProgression />
-  </Section>
+  return <section id="framework" className={styles.section}>
+    <div className={styles.container}>
+      <FrameworkProgression />
+    </div>
+  </section>
 }
 
 export function RobotLiteracyApplications() {
