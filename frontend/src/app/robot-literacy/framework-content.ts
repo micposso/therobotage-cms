@@ -1,4 +1,4 @@
-export const definition = 'Robot Literacy is the ability to understand what robots can do, how humans and robots should interact, and what changes when robots become part of society.'
+export const definition = 'The Robot Age’s Robot Literacy framework is a practical framework for understanding what robots can do, how humans and robots should interact, and what changes when robots become part of society.'
 
 export const framework = [
   {
@@ -6,12 +6,12 @@ export const framework = [
     scale: 'Understand the robot',
     question: 'Understand the robot.',
     headerQuestions: [],
-    description: 'What can it do? What can it sense? How autonomous is it? What data does it collect? Where are its limits?',
+    description: 'What can it do? What can it sense? How autonomous is it? What data does it collect or transmit? Where are its limits?',
     topics: ['Capabilities', 'Sensing', 'Autonomy', 'Data', 'Limitations'],
     example: 'A delivery robot pauses at a crossing. Is it waiting for a clear path, following a rule, or waiting for help from a remote operator? The pause alone does not tell you.',
     deeper: [
       ['Look beyond appearances', 'Cameras capture images; microphones capture sound; LiDAR uses light to estimate distances. Other sensors may measure depth, location or contact. A visible sensor is a clue, not proof of what the robot understands or records.'],
-      ['Ask who is in control', 'A robot may follow fixed rules, use AI to interpret a situation, act independently within limits, or be controlled remotely. Human supervision and autonomy can coexist. Ask which tasks it can do on its own and when a person steps in.'],
+      ['Ask who is in control', 'A robot may follow fixed rules, use AI to read a situation, act independently within limits, or be controlled remotely. Human supervision and autonomy can coexist. Ask which tasks it can do on its own and when a person steps in.'],
       ['Follow the information', 'What might it know about you? Is sensor information recorded, stored or transmitted elsewhere? What can it miss? Ask the operator what happens when sensing, connectivity or movement fails.'],
     ],
   },
@@ -20,7 +20,7 @@ export const framework = [
     scale: 'Interact with robots',
     question: 'Interact with robots.',
     headerQuestions: [],
-    description: 'How should robots behave around people? How should people behave around robots? What creates trust, healthy boundaries and responsible interaction?',
+    description: 'How should robots behave around people? How should people behave around robots? What creates trust, healthy boundaries, clear communication and responsible interaction?',
     principle: '',
     topics: ['Trust', 'Communication', 'Boundaries', 'Human control', 'Responsibility'],
     example: 'Someone blocks a delivery robot for fun; another person helps it find a clear route. Both actions affect the people waiting for it and everyone sharing the sidewalk.',
@@ -40,7 +40,7 @@ export const framework = [
     example: 'A hospital introduces a supply-delivery robot. Its route, sensors and operating rules affect patients, visitors, cleaners and clinicians—not just the team that ordered it.',
     deeper: [
       ['Privacy includes bystanders', 'Cameras, microphones, location systems, LiDAR, depth and environmental sensors may gather information about people who never chose to interact. What is sensed, recorded and stored? Is processing local or remote? Who owns the data and can access it? Is it sent to another organization over a wireless connection? Can a bystander opt out?'],
-      ['Culture & representation', 'Robots are designed within culture and interpreted through culture. Appearance, gender, voice, language and racial representation can reinforce stereotypes. Does the design suggest authority, servitude, military power or caregiving? How might cultural symbolism and social expectations change its meaning across communities?'],
+      ['Culture & representation', 'Robots are designed within culture and understood through culture. Appearance, gender, voice, language and racial representation can reinforce stereotypes. Does the design suggest authority, servitude, military power or caregiving? How might cultural symbolism and social expectations change its meaning across communities?'],
       ['Work is more than job replacement', 'Which tasks are automated and which jobs change? Who supervises and maintains the robot? Can it augment workers? Who benefits from productivity, what new roles emerge, and who picks up the work when automation fails?'],
       ['Accessibility & inclusion', 'Can a wheelchair user pass safely? Can a blind person understand its movement or someone who cannot hear receive its warnings? Does it support different speech patterns, languages, bodies and behaviors? Ask whether it creates access or a new barrier.'],
       ['Governance & accountability', 'Who owns, operates, supervises and maintains it? Who controls its data, can stop it and remains responsible if something goes wrong? What rules govern its behavior, and who investigates an incident? These questions matter to communities and policymakers as well as operators.'],
@@ -53,7 +53,7 @@ export const applications = [
   {
     audience: 'For Schools',
     title: 'Prepare students to understand robots, not simply use them.',
-    description: 'Robot Literacy gives educators and students a shared language for discussing capabilities, sensing, privacy, appropriate interaction, human responsibility and the role robots may play in society.',
+    description: 'The Robot Age’s Robot Literacy framework gives educators and students a shared language for discussing robots beyond coding or robotics engineering: capabilities, sensing, privacy, appropriate interaction, human responsibility and the role robots may play in society.',
     questions: ['What does this robot actually understand?', 'What information can it collect?', 'How should children interact with it?', 'When should a teacher or other human remain in control?'],
     cta: 'Experience the Live Robot Lab',
     href: '/live-robot-lab',
@@ -61,7 +61,7 @@ export const applications = [
   {
     audience: 'For Organizations',
     title: 'Make better decisions about when, where and how robots should be deployed.',
-    description: 'Robot Literacy helps leaders, workers, designers and technology teams examine capabilities, human interaction, workflow changes, privacy, accessibility, risk and accountability before treating robotics as simply a technology purchase.',
+    description: 'The Robot Age’s Robot Literacy framework helps leaders, workers, designers and technology teams examine capabilities, human interaction, workflow changes, privacy, accessibility, risk and accountability before treating robotics as simply a technology purchase or engineering concern.',
     questions: ['Should a robot perform this task?', 'How will employees or customers interact with it?', 'What happens when it fails?', 'Who remains responsible?'],
     cta: 'Explore Robot Literacy Consulting',
     href: '#inquiry',
@@ -69,9 +69,9 @@ export const applications = [
   {
     audience: 'For Individuals & Society',
     title: 'Build the knowledge needed to live and work alongside robots.',
-    description: 'Robot Literacy gives professionals, students and the public a way to examine robots entering workplaces, public spaces and everyday life while understanding questions involving privacy, employment, accessibility, governance and human responsibility.',
+    description: 'The Robot Age’s Robot Literacy framework gives professionals, students and the public a way to examine robots entering workplaces, public spaces and everyday life without needing to code or build robots, while understanding questions involving privacy, employment, accessibility, governance and human responsibility.',
     questions: ['What should I know when I encounter a robot?', 'What can it perceive about me?', 'How could robots change my profession?', 'What rules and expectations should society develop?'],
-    cta: 'Earn the Robot Literacy Certification',
+    cta: 'Build Your Robot Literacy',
     href: '/learn/rep',
   },
 ] as const
@@ -116,7 +116,7 @@ export const audiences = [
 ] as const
 
 export const faqs = [
-  ['What is Robot Literacy?', `${definition} The Robot Age organizes this evolving educational framework into READ, RELATE and COEXIST.`],
+  ['What is Robot Literacy?', `${definition} The Robot Age organizes its evolving educational framework into READ, RELATE and COEXIST.`],
   ['Is Robot Literacy a robotics engineering course?', 'No. It focuses on understanding robots in everyday life and making informed judgments about them. You can explore sensors and autonomy without designing hardware or studying engineering.'],
   ['Do I need programming experience?', 'No. Start with observation and plain-language questions. The framework is for the general public as well as students, educators, professionals, designers, technologists and policymakers.'],
   ['How is Robot Literacy different from AI literacy?', 'AI literacy helps people understand intelligent digital systems. Robot Literacy extends that understanding into physical environments, where sensing, movement and interaction can affect bodies, shared spaces and people who never chose to use the system.'],
@@ -126,6 +126,6 @@ export const faqs = [
   ['Can Robot Literacy be taught in schools?', 'Yes. Observation, discussion and supervised activities can introduce the framework at different ages. Educators can connect it to digital literacy, design, citizenship and critical thinking, with suitable privacy and supervision arrangements.'],
   ['Is Robot Literacy appropriate for companies?', 'Yes. Teams can use it to examine workflows, human interaction, accessibility, privacy and accountability before and during a deployment. It supports informed decisions across technical and nontechnical roles.'],
   ['Can The Robot Age run an in-person program?', 'Yes. Live Robot Lab and workshops offer opportunities to observe and interact with real robots. Use the organization inquiry form to discuss location, audience, availability and program scope.'],
-  ['What robots are used?', 'Programs feature Unitree Go2 Pro and Reachy Mini. The framework is hardware-agnostic: its questions also apply to humanoids, autonomous mobile robots, cobots, social robots and future systems.'],
+  ['What robots are used?', 'Programs feature Unitree Go2 Pro and Reachy Mini. The Robot Age’s Robot Literacy framework is hardware-agnostic: its questions also apply to humanoids, quadrupeds, social robots, autonomous mobile robots, cobots and emerging robotic systems.'],
   ['Can organizations partner with The Robot Age?', 'Yes. We welcome conversations about curriculum, research, workshops and real-world learning with educators, institutions and robotics organizations. Select Curriculum Partnership in the inquiry form to start a conversation.'],
 ] as const

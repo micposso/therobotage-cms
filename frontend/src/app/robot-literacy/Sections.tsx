@@ -25,7 +25,7 @@ export function LiteracyActions() {
 
 export function FrameworkProgression() {
   return <ol className={local.progression} aria-label="Robot Literacy framework areas">
-    {framework.map((area) => <li key={area.title}>
+    {framework.map((area) => <li id={area.title.toLowerCase()} key={area.title}>
       <a href={`#${area.title.toLowerCase()}`}>
         <strong>{area.title}</strong>
         <span>{area.scale}</span>
@@ -48,6 +48,10 @@ export function FrameworkProgression() {
   </ol>
 }
 
+function FrameworkVersionLabel() {
+  return <p className={styles.meta}>The Robot Age Robot Literacy Framework — Version 1.0 · September 2026</p>
+}
+
 export function RobotLiteracyHero() {
   return <>
     <PageHero
@@ -57,7 +61,7 @@ export function RobotLiteracyHero() {
       imageSrc="/images/society-family-sm.png"
     >
       <div className={local.heroBody}>
-        <p>Robot Literacy is a practical framework for understanding what robots can do, how humans and robots should interact, and what changes when robots become part of society.</p>
+        <p>The Robot Age’s Robot Literacy framework helps people understand what robots can do, how humans and robots should interact, and what changes when robots become part of everyday life.</p>
       </div>
       <LiteracyActions />
     </PageHero>
@@ -73,6 +77,7 @@ export function RobotLiteracyBridge() {
 export function RobotLiteracyFrameworkSummary() {
   return <section id="framework" className={styles.section}>
     <div className={styles.container}>
+      <FrameworkVersionLabel />
       <FrameworkProgression />
       <RobotLiteracyVideo />
     </div>
@@ -98,11 +103,11 @@ export function RobotLiteracyApplications() {
 export function RobotLiteracyLearningFormats() {
   return <Section title="Turn understanding into experience." eyebrow="Ways to learn">
     <VerticalStackedCards cards={[
-      { title: 'Robot Literacy Certification', description: 'A structured learning path for people who want to demonstrate foundational understanding of robots, human–robot interaction and the societal implications of robotics.', cta: <Link className={styles.textLink} href="/learn/rep">Explore Certification ↗</Link> },
+      { title: 'Build Your Robot Literacy', description: 'A structured learning path for people who want to develop foundational knowledge of robots, human–robot interaction and the societal implications of robotics.', cta: <Link className={styles.textLink} href="/learn/rep">Explore the Robotics Experience Practitioner Certification ↗</Link> },
       { title: 'Live Robot Lab', description: 'Hands-on experiences with real robots. Observe behavior, ask questions and practice READ, RELATE and COEXIST with physical robotic systems.', cta: <a className={styles.textLink} href="/live-robot-lab">Explore Live Robot Lab ↗</a> },
       { title: 'Corporate Consulting & Workshops', description: 'Programs for companies, universities and organizations applying Robot Literacy to workforce readiness, robot deployment, customer experience, governance and responsible adoption.', cta: <a className={styles.textLink} href="#inquiry">Discuss a Program</a> },
     ]} />
-    <p className={styles.meta}>Robot Literacy is hardware-agnostic and can be applied across humanoids, quadrupeds, social robots, autonomous mobile robots, cobots and emerging robotic systems.</p>
+    <p className={styles.meta}>The Robot Age’s Robot Literacy framework is hardware-agnostic and can be applied across humanoids, quadrupeds, social robots, autonomous mobile robots, cobots and emerging robotic systems.</p>
     <p className={styles.meta}><PartnershipLink>Discuss a curriculum partnership ↗</PartnershipLink></p>
   </Section>
 }
@@ -117,7 +122,7 @@ export function RobotLiteracyFinalStatement() {
 export function PhysicalIntelligenceSection() {
   return <Section title="Intelligence is becoming physical." eyebrow="01 / Why Robot Literacy">
     <div className={styles.twoGrid}>
-      <p className={styles.intro}>As robots move into schools, workplaces, hospitals, homes and public spaces, people need more than technical knowledge. They need to interpret behavior, understand limitations, protect privacy and decide when and how robots should be used.</p>
+      <p className={styles.intro}>As robots move into schools, workplaces, hospitals, homes and public spaces, people need more than technical knowledge. They need to read behavior, understand limitations, protect privacy and decide when and how robots should be used.</p>
       <p className={styles.intro}>AI literacy often begins with software. Robots can also perceive environments, move through shared spaces, manipulate objects and interact with people. Their actions can have physical consequences.</p>
     </div>
     <div className={`${styles.twoGrid} ${local.comparison}`}>
@@ -130,7 +135,8 @@ export function PhysicalIntelligenceSection() {
 
 export function LiteracyFramework() {
   return <Section id="framework" title="Three areas. One way to make sense of robots." eyebrow="02 / The Robot Literacy Framework">
-    <p className={styles.intro}>Understand the robot. Interact with robots. Learn how to live with robots.</p>
+    <p className={styles.intro}>Learn to read a robot before deciding how to relate to it. Understand the robot. Interact with robots. Learn how to live with robots.</p>
+    <FrameworkVersionLabel />
     <div className={local.frameworkStack}>{framework.map((area, index) => <div id={area.title.toLowerCase()} key={area.title} className={local.frameworkArea}>
       <VerticalStackedCards cards={[{
         title: area.title, eyebrow: `0${index + 1} / ${area.scale}`,
@@ -194,10 +200,9 @@ export function LearningFormats() {
   return <Section title="Turn understanding into experience." eyebrow="08 / Ways to learn">
     <p className={local.learningPath}>Robot Literacy Framework <span aria-hidden="true">↓</span> Learning experiences <span aria-hidden="true">↓</span> Real-world application</p>
     <VerticalStackedCards cards={[
-      { title: 'Robot Literacy Series', description: 'Free videos, articles and educational resources to explore at your own pace.', cta: <a className={styles.textLink} href="/robotics-literacy">Explore the Series ↗</a> },
-      { title: 'Live Robot Lab', description: 'Hands-on experiences with real robots. Observe behavior, ask questions and practice responsible interaction.', cta: <a className={styles.textLink} href="/live-robot-lab">Explore Live Robot Lab ↗</a> },
-      { title: 'Workshops & Training', description: 'Programs for schools, universities and organizations, connecting the framework to the questions in your setting.', cta: <a className={styles.textLink} href="#inquiry">Discuss a Workshop</a> },
-      { title: 'Curriculum Partnerships', description: 'Collaborations with educators, institutions and robotics organizations to develop learning materials and real-world activities.', cta: <PartnershipLink>Discuss a Partnership</PartnershipLink> },
+      { title: 'Build Your Robot Literacy', description: 'A structured learning path for people who want to develop foundational knowledge of robots, human–robot interaction and the societal implications of robotics.', cta: <Link className={styles.textLink} href="/learn/rep">Explore the Robotics Experience Practitioner Certification ↗</Link> },
+      { title: 'Live Robot Lab', description: 'Hands-on experiences with real robots. Observe behavior, ask questions and practice READ, RELATE and COEXIST with physical robotic systems.', cta: <a className={styles.textLink} href="/live-robot-lab">Explore Live Robot Lab ↗</a> },
+      { title: 'Corporate Consulting & Workshops', description: 'Programs for companies, universities and organizations applying Robot Literacy to workforce readiness, robot deployment, customer experience, governance and responsible adoption.', cta: <a className={styles.textLink} href="#inquiry">Discuss a Program</a> },
     ]} />
   </Section>
 }
@@ -207,10 +212,10 @@ export function ProgramRobots() {
     <div className={styles.twoGrid}>
       {[
         { name: 'Unitree Go2 Pro', image: '/images/robots/unitree-go2-pro/shop-01.png', alt: 'Gray four-legged Unitree Go2 Pro robot.', copy: 'Explore movement, sensing, shared space and the difference between autonomy and human control.' },
-        { name: 'Reachy Mini', image: '/images/robots/reachy-mini/hero.png', alt: 'White tabletop Reachy Mini robot with two antennas.', copy: 'Explore communication, expression, trust and how people interpret social robot behavior.' },
+        { name: 'Reachy Mini', image: '/images/robots/reachy-mini/hero.png', alt: 'White tabletop Reachy Mini robot with two antennas.', copy: 'Explore communication, expression, trust and how people read social robot behavior.' },
       ].map((robot) => <article key={robot.name}><div className={styles.robotImage}><Image src={robot.image} alt={robot.alt} fill sizes="(max-width: 767px) 100vw, 50vw" /></div><h3>{robot.name}</h3><p>{robot.copy}</p></article>)}
     </div>
-    <div className={styles.bring}><h3>Hardware-agnostic by design</h3><p className={styles.intro}>Robot Literacy is not tied to one manufacturer or robot form. The framework is designed to apply across humanoids, quadrupeds, social robots, autonomous mobile robots, cobots and future robotic systems.</p></div>
+    <div className={styles.bring}><h3>Hardware-agnostic by design</h3><p className={styles.intro}>The Robot Age’s Robot Literacy framework is hardware-agnostic and can be applied across humanoids, quadrupeds, social robots, autonomous mobile robots, cobots and emerging robotic systems.</p></div>
   </Section>
 }
 
@@ -233,8 +238,8 @@ export function LiteracyClosing() {
     <p className={styles.eyebrow}>14 / The next literacy</p>
     <div className={local.closingPrelude}><p>We learned how to use computers.</p><p>We learned how to navigate the internet.</p><p>We are learning how to work with AI.</p></div>
     <h2>Now we need to learn how to live with robots.</h2>
-    <p className={styles.intro}>Robot Literacy prepares people not simply to use robots, but to understand them, interact with them responsibly and make informed decisions about the role they should play in our world.</p>
+    <p className={styles.intro}>The Robot Age’s Robot Literacy framework prepares people not simply to use robots, but to understand them, interact with them responsibly and make informed decisions about the role they should play in our world.</p>
     <LiteracyActions />
-    <div className={styles.brand}><p>READ → RELATE → COEXIST</p><p>Understand the robot. Interact with robots. Live with robots.</p></div>
+    <div className={styles.brand}><p>READ → RELATE → COEXIST</p><p>Preparing people and organizations for a world with robots.</p></div>
   </div></section>
 }
