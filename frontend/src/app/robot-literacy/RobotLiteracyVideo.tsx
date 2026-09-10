@@ -13,7 +13,7 @@ import {
 } from 'media-chrome/react'
 import local from './robot-literacy.module.css'
 
-const videoSrc = '/videos/robot-literacy-v1.mp4'
+const videoSrc = 'https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/videos/robot-literacy/robot-literacy-v1.mp4'
 const posterSrc = '/images/robot-literacy-poster.png'
 
 export default function RobotLiteracyVideo() {
