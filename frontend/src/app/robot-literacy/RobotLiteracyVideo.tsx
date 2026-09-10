@@ -1,5 +1,6 @@
 'use client'
 
+import { useRef, useState } from 'react'
 import {
   MediaControlBar,
   MediaController,
@@ -12,23 +13,44 @@ import {
 } from 'media-chrome/react'
 import local from './robot-literacy.module.css'
 
-const videoSrc = '/videos/robot-literacy.mp4'
-const posterSrc = '/images/society-family-sm.png'
+const videoSrc = '/videos/robot-literacy-v1.mp4'
+const posterSrc = '/images/robot-literacy-poster.png'
 
 export default function RobotLiteracyVideo() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [isPlaying, setIsPlaying] = useState(false)
+
+  const playVideo = () => {
+    void videoRef.current?.play()
+  }
+
   return (
     <div className={local.literacyVideoShell}>
       <MediaController className={local.literacyVideoPlayer}>
         <video
+          ref={videoRef}
           slot="media"
           className={local.literacyVideoMedia}
           src={videoSrc}
           poster={posterSrc}
           preload="none"
           playsInline
+          onPlay={() => setIsPlaying(true)}
+          onPause={() => setIsPlaying(false)}
+          onEnded={() => setIsPlaying(false)}
           suppressHydrationWarning
           aria-label="Robot Literacy framework video"
         />
+        {!isPlaying && (
+          <button
+            type="button"
+            className={local.literacyVideoPlayOverlay}
+            onClick={playVideo}
+            aria-label="Play Robot Literacy framework video"
+          >
+            <span aria-hidden="true" />
+          </button>
+        )}
         <MediaControlBar className={local.literacyVideoControls}>
           <MediaPlayButton />
           <MediaTimeRange />

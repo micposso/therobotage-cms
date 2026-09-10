@@ -20,10 +20,10 @@ const NAV_LINKS = [
   { label: 'Enterprise',    href: '/enterprise', desc: 'Deployment readiness education for organizations.' },
 ]
 
-const eyebrowText = 'For design, product, and marketing professionals.'
+const eyebrowText = 'Preparing everyone for a world with robots.'
 
 const subtext =
-  'Robotic literacy isn\u2019t about code. It\u2019s about knowing enough to ask the right questions, make better decisions, and design for a world where robots are already here.'
+  'Robots are moving into our homes, workplaces, schools, hospitals, and public spaces. The Robot Age helps people understand what that means and how to prepare.'
 
 
 const imageVariants = {
@@ -187,7 +187,7 @@ export default function HeroHomepage({ images = [] }) {
                 >
                   {eyebrowText}
                 </motion.p>
-                <h1 className={styles.headline}>Robotics for All.<br />Not just engineers.</h1>
+                <h1 className={styles.headline}>Robots for all.</h1>
                 <motion.p
                   className={styles.subtext}
                   initial={{ opacity: 0, y: 12 }}
