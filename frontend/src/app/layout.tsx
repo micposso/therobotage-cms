@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/next-script-for-ga */
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, IBM_Plex_Serif, DM_Serif_Display, Outfit } from "next/font/google";
+import localFont from "next/font/local";
+import { IBM_Plex_Serif, DM_Serif_Display, Outfit } from "next/font/google";
 import { WaitlistProvider } from "@/context/WaitlistContext";
 import HomepagePopup from "@/components/HomepagePopup/HomepagePopup";
 import CookieBanner from "@/components/CookieBanner/CookieBanner";
@@ -10,10 +11,15 @@ import "leaflet/dist/leaflet.css";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
 import "./globals.css";
 
-const ibmPlexSans = IBM_Plex_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  variable: "--font-display",
+const fairview = localFont({
+  src: "../../public/fonts/Fairview_Regular.otf",
+  variable: "--font-display-source",
+  display: "swap",
+});
+
+const fairviewSmallCaps = localFont({
+  src: "../../public/fonts/Fairview_SmallCaps.otf",
+  variable: "--font-display-smallcaps-source",
   display: "swap",
 });
 
@@ -66,7 +72,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${ibmPlexSans.variable} ${ibmPlexSerif.variable} ${dmSerifDisplay.variable} ${outfit.variable}`}>
+    <html lang="en" className={`${fairview.variable} ${fairviewSmallCaps.variable} ${ibmPlexSerif.variable} ${dmSerifDisplay.variable} ${outfit.variable}`}>
       <head>
         {process.env.NODE_ENV === 'production' && <>
           {/* GTM Consent Mode defaults — must run before GTM loads */}

@@ -32,6 +32,15 @@ export default function LearnMenu({ baseUrl = '', inline = false, triggerClassNa
         event.currentTarget.open = false
         event.currentTarget.querySelector('summary')?.focus()
       }
+    }}
+    onMouseEnter={(event) => {
+      event.currentTarget.open = true
+    }}
+    onMouseLeave={(event) => {
+      event.currentTarget.open = false
+    }}
+    onFocus={(event) => {
+      event.currentTarget.open = true
     }}>
     <summary className={`${styles.trigger} ${triggerClassName}`}>LEARN</summary>
     <ul className={styles.links}>

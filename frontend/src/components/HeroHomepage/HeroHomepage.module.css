@@ -53,7 +53,7 @@
 
 .heroNavLink {
   font-family: var(--font-display);
-  font-size: var(--text-sm);
+  font-size: var(--text-md);
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -77,11 +77,12 @@
 }
 
 .heroNavLink:hover {
-  color: var(--color-text);
+  color: var(--color-accent);
 }
 
 .heroNavLink:hover::after {
   width: 100%;
+  background: var(--color-accent);
 }
 
 .heroNavPanel {
@@ -89,8 +90,8 @@
 }
 
 .heroNavDesc {
-  font-family: var(--font-body);
-  font-size: var(--text-xs);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: var(--text-base);
   font-weight: 300;
   line-height: 1.6;
   color: var(--color-text);
@@ -212,10 +213,10 @@
 
 .headline {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 14cqi, 5.5rem);
+  font-size: clamp(3rem, 18cqi, 9.5rem);
   font-weight: 400;
   line-height: 0.95;
-  color: var(--color-text);
+  color: var(--color-accent);
   margin: 0;
 }
 

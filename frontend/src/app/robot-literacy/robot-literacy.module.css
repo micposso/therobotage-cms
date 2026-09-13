@@ -102,82 +102,6 @@
   line-height: 1.5;
   color: var(--color-accent);
 }
-.literacyVideoShell {
-  width: min(100%, 960px);
-  margin: var(--space-16) auto 0;
-  padding: var(--space-2);
-  background:
-    linear-gradient(135deg, var(--color-primary), rgba(183, 146, 91, 0.28)),
-    var(--color-primary);
-  border: 1px solid rgba(155, 81, 82, 0.32);
-}
-.literacyVideoPlayer {
-  position: relative;
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  background: var(--color-bg-dark);
-  border: 1px solid rgba(155, 81, 82, 0.48);
-  --media-control-background: rgba(155, 81, 82, 0.94);
-  --media-control-hover-background: var(--color-tertiary);
-  --media-control-padding: var(--space-3);
-  --media-button-icon-color: var(--color-primary);
-  --media-range-track-background: rgba(236, 217, 210, 0.36);
-  --media-range-bar-color: var(--color-fourth);
-  --media-range-thumb-background: var(--color-primary);
-  --media-text-color: var(--color-primary);
-}
-.literacyVideoMedia {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background: var(--color-bg-dark);
-}
-.literacyVideoControls {
-  width: 100%;
-}
-.literacyVideoPlayOverlay {
-  position: absolute;
-  inset: 0 0 3.75rem;
-  z-index: 2;
-  display: grid;
-  place-items: center;
-  width: 100%;
-  border: 0;
-  background: linear-gradient(180deg, rgba(18, 16, 15, 0.08), rgba(18, 16, 15, 0.32));
-  cursor: pointer;
-}
-.literacyVideoPlayOverlay::before {
-  content: "";
-  position: absolute;
-  width: 5.5rem;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: rgba(236, 217, 210, 0.92);
-  box-shadow: 0 1rem 3rem rgba(18, 16, 15, 0.34);
-  transition: transform var(--ease-default), background var(--ease-default);
-}
-.literacyVideoPlayOverlay span {
-  position: relative;
-  z-index: 1;
-  width: 0;
-  height: 0;
-  margin-left: 0.35rem;
-  border-top: 1rem solid transparent;
-  border-bottom: 1rem solid transparent;
-  border-left: 1.55rem solid var(--color-accent);
-}
-.literacyVideoPlayOverlay:hover::before,
-.literacyVideoPlayOverlay:focus-visible::before {
-  background: var(--color-primary);
-  transform: scale(1.06);
-}
-.literacyVideoPlayOverlay:focus-visible {
-  outline: 3px solid var(--color-fourth);
-  outline-offset: -6px;
-}
 .comparison {
   border-top: 1px solid var(--color-border-strong);
   padding-top: var(--space-8);
@@ -251,29 +175,6 @@
 .signup { display: flex; flex-wrap: wrap; gap: var(--space-6); align-items: end; }
 .signup > div { flex: 1 1 16rem; }
 .page .unavailable:disabled { cursor: not-allowed; background: var(--color-text-muted); }
-.featuredPartnerCard {
-  background: var(--color-bg);
-  border-top-color: var(--color-accent);
-  padding-right: var(--space-6);
-  padding-left: var(--space-6);
-}
-.partnerCardContent {
-  display: grid;
-  gap: var(--space-8);
-}
-.questionGrid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-6);
-  margin-bottom: var(--space-10);
-}
-.questionCard {
-  padding: var(--space-6) 0;
-  border-top: 1px solid var(--color-border-light);
-}
-.questionCard h3 {
-  max-width: 28ch;
-}
 .closingPrelude { display: grid; gap: var(--space-3); margin-bottom: var(--space-8); }
 .closingPrelude p { font-family: var(--font-display); font-size: var(--text-md); }
 .canStatement { font-family: var(--font-display); font-size: clamp(2rem, 3.8vw, 3.25rem); line-height: 1.12; margin-bottom: var(--space-4); }
@@ -285,21 +186,8 @@
   }
   .page .heroCopy { gap: var(--space-4); }
   .page .signature, .page .scenarioStatement { font-size: var(--text-md); }
-  .literacyVideoShell { margin-top: var(--space-10); }
-  .literacyVideoPlayer { --media-control-padding: var(--space-2); }
-  .literacyVideoPlayOverlay::before { width: 4.5rem; }
-  .literacyVideoPlayOverlay span {
-    border-top-width: 0.8rem;
-    border-bottom-width: 0.8rem;
-    border-left-width: 1.25rem;
-  }
   .frameworkStack article { padding: var(--space-8) 0; }
   .learningPath { flex-direction: column; align-items: flex-start; }
-  .questionGrid { grid-template-columns: 1fr; }
-  .featuredPartnerCard {
-    padding-right: 0;
-    padding-left: 0;
-  }
 }
 @media (max-width: 479px) {
   .page .progression { gap: var(--space-6); }

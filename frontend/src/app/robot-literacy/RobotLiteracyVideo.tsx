@@ -14,7 +14,7 @@ import {
 import local from './robot-literacy.module.css'
 
 const videoSrc = 'https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/videos/robot-literacy/robot-literacy-v1.mp4'
-const posterSrc = '/images/robot-literacy-poster.png'
+const posterSrc = '/videos/robot-literacy-poster.png'
 
 export default function RobotLiteracyVideo() {
   const videoRef = useRef<HTMLVideoElement>(null)

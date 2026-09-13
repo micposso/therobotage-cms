@@ -59,14 +59,15 @@ All tokens are defined in `src/app/globals.css` under `:root`. Every CSS value i
 
 ### 1.2 Typography
 
-Two typefaces. No others.
+Two primary font families. Use only the tokens below; `--font-display-smallcaps` is the small-caps variant of Fairview.
 
 | Token | Value | Loaded weights | When to use |
 |---|---|---|---|
-| `--font-display` | `'IBM Plex Sans', sans-serif` | 300, 400, 500 | Headings, card titles, stat values, nav links, logo, form input text (user-typed) |
+| `--font-display` | `Fairview`, fallback `'IBM Plex Sans', sans-serif` | 400 | Headings, card titles, stat values, nav links, logo, form input text (user-typed) |
+| `--font-display-smallcaps` | `Fairview SmallCaps`, fallback `--font-display` | 400 | Small-caps display treatments when needed |
 | `--font-body` | `'IBM Plex Serif', serif` | 300, 400 | Eyebrows, body copy, subtitles, labels, meta, buttons, footer |
 
-Both fonts are loaded in `src/app/layout.tsx` via `next/font/google` and injected as CSS variables. Do not import them anywhere else.
+Fonts are loaded in `src/app/layout.tsx` via `next/font/local` for Fairview and `next/font/google` for IBM Plex Serif. Do not import them anywhere else.
 
 **Type scale.**
 

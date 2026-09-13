@@ -48,7 +48,7 @@
   letter-spacing: -0.02em;
 }
 .page h1 {
-  font-size: clamp(var(--text-lg), 5.8vw, 5rem);
+  font-size: clamp(3rem, 9vw, 9.5rem);
   line-height: 1.04;
   margin-bottom: var(--space-6);
 }

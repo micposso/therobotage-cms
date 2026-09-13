@@ -64,11 +64,12 @@
 .link {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: var(--text-xs);
+  font-size: var(--text-base);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-text);
   position: relative;
+  transition: color var(--ease-default);
   padding-bottom: var(--space-1);
 }
 
@@ -81,8 +82,13 @@
   transition: width 300ms ease;
 }
 
+.link:hover {
+  color: var(--color-accent);
+}
+
 .link:hover::after {
   width: 100%;
+  background: var(--color-accent);
 }
 
 /* ─── Desktop search ──────────────────────────────────────────────────────────── */
@@ -105,7 +111,7 @@
   outline: none;
   font-family: var(--font-display);
   font-weight: 300;
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   letter-spacing: 0.04em;
   color: var(--color-text);
   padding: var(--space-1) var(--space-2) var(--space-1) 0;
