@@ -65,7 +65,7 @@ export default function Footer({ baseUrl = '' }) {
           <div className={`col-lg-4 ${styles.logoCol}`}>
             <a href={`${baseUrl}/`} className={styles.logo}>The Robot Age</a>
             <p className={styles.tagline}>
-              Robotic literacy for the people who design the future.
+              Preparing people and organizations for a world with robots.
             </p>
           </div>
 
