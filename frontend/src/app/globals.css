@@ -94,6 +94,10 @@
   --grid-dot-color: rgba(13, 13, 13, 0.18);
   --grid-dot-size: 1px;
   --grid-gap: 28px;
+  --hero-dot-color: rgba(13, 13, 13, 0.16);
+  --hero-dot-color-alt: rgba(155, 81, 82, 0.18);
+  --hero-dot-size: 1px;
+  --hero-dot-gap: 28px;
 }
 
 /* ─── Reset ────────────────────────────────────────────────────────────────── */
@@ -175,4 +179,30 @@ p {
 :where(a, button)[class*="Cta"],
 :where(a, button)[class*="button"] {
   clip-path: var(--cta-corner-clip);
+}
+
+@keyframes heroDotPulse {
+  0%, 100% {
+    opacity: 0.28;
+    background-position:
+      0 0,
+      calc(var(--hero-dot-gap) / 2) calc(var(--hero-dot-gap) / 2),
+      var(--hero-dot-gap) var(--hero-dot-gap);
+  }
+  45% {
+    opacity: 0.72;
+  }
+  70% {
+    opacity: 0.46;
+    background-position:
+      calc(var(--hero-dot-gap) / 2) 0,
+      0 calc(var(--hero-dot-gap) / 2),
+      calc(var(--hero-dot-gap) * 1.5) calc(var(--hero-dot-gap) * 0.5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *::before {
+    animation-name: none !important;
+  }
 }

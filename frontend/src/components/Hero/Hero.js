@@ -95,17 +95,6 @@ export default function Hero() {
             </motion.div>
 
           </div>
-
-          {/* Image column */}
-          <div className={`col-lg-6 ${styles.imageCol}`}>
-            <motion.div
-              className={styles.imageWrap}
-              initial={{ opacity: 0, x: 80 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-            />
-          </div>
-
         </div>
       </div>
 

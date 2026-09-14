@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import type { ReactNode } from 'react'
 import {
   agenda,
@@ -64,18 +63,6 @@ export function LiveRobotLabHero() {
             </a>
           </div>
         </div>
-        <figure className={styles.heroFigure}>
-          <div className={styles.heroImage}>
-            <Image
-              src="/images/robots/unitree-go2-pro/shop-01.png"
-              alt="Unitree Go2 Pro, one of the two robots you can meet at Live Robot Lab."
-              fill
-              sizes="(max-width: 767px) 100vw, 50vw"
-              preload
-            />
-          </div>
-          <figcaption>Featuring Reachy Mini + Unitree Go2 Pro</figcaption>
-        </figure>
       </div>
     </section>
   )
