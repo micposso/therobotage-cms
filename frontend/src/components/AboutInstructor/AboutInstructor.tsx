@@ -37,7 +37,7 @@ export default function AboutInstructor() {
             transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
           >
             <div className={styles.imageWrap}>
-              <Image src="/images/instructor.png" alt="Michael Posso" fill sizes="(max-width: 767px) 100vw, 50vw" className={styles.image} />
+              <Image src="/brand/instructor.png" alt="Michael Posso" fill sizes="(max-width: 424px) calc(100vw - 64px), 360px" className={styles.image} />
             </div>
           </motion.div>
 

@@ -19,6 +19,7 @@
 .imageWrap {
   position: relative;
   width: 100%;
+  max-width: 360px;
   aspect-ratio: 5 / 4;
   overflow: hidden;
 }
@@ -27,7 +28,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .eyebrow {
