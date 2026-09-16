@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/next-script-for-ga */
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { IBM_Plex_Serif, DM_Serif_Display, Outfit } from "next/font/google";
+import { IBM_Plex_Sans, DM_Serif_Display, Outfit } from "next/font/google";
 import { WaitlistProvider } from "@/context/WaitlistContext";
 import HomepagePopup from "@/components/HomepagePopup/HomepagePopup";
 import CookieBanner from "@/components/CookieBanner/CookieBanner";
@@ -23,10 +23,11 @@ const fairviewSmallCaps = localFont({
   display: "swap",
 });
 
-const ibmPlexSerif = IBM_Plex_Serif({
+const ibmPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
   weight: ["300", "400"],
   variable: "--font-body",
+  fallback: ["sans-serif"],
   display: "swap",
 });
 
@@ -72,7 +73,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${fairview.variable} ${fairviewSmallCaps.variable} ${ibmPlexSerif.variable} ${dmSerifDisplay.variable} ${outfit.variable}`}>
+    <html lang="en" className={`${fairview.variable} ${fairviewSmallCaps.variable} ${ibmPlexSans.variable} ${dmSerifDisplay.variable} ${outfit.variable}`}>
       <head>
         {process.env.NODE_ENV === 'production' && <>
           {/* GTM Consent Mode defaults — must run before GTM loads */}

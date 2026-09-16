@@ -43,7 +43,7 @@
   /* Typography */
   --font-display: var(--font-display-source), 'IBM Plex Sans', sans-serif;
   --font-display-smallcaps: var(--font-display-smallcaps-source), var(--font-display);
-  --font-body: 'IBM Plex Serif', serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
 
   --text-xs: 0.75rem;
   --text-sm: 0.9375rem;
