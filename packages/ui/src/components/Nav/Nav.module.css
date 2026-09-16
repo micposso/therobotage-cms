@@ -40,14 +40,10 @@
   margin-right: auto;
 }
 
-@keyframes robotPulse {
-  0%   { color: var(--color-bg-sand-dark); }
-  50%  { color: var(--color-accent); }
-  100% { color: var(--color-bg-sand-dark); }
-}
-
-.logoRobot {
-  animation: robotPulse 4s ease-in-out infinite;
+.logoImage {
+  display: block;
+  width: 90px;
+  height: auto;
 }
 
 .links {
