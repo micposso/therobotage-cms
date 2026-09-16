@@ -5,23 +5,6 @@
   border-bottom: 1px solid var(--color-border);
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(circle, var(--hero-dot-color) var(--hero-dot-size), transparent calc(var(--hero-dot-size) + 0.5px)),
-    radial-gradient(circle, var(--hero-dot-color-alt) var(--hero-dot-size), transparent calc(var(--hero-dot-size) + 0.5px)),
-    radial-gradient(circle, var(--hero-dot-color) var(--hero-dot-size), transparent calc(var(--hero-dot-size) + 0.5px));
-  background-size:
-    var(--hero-dot-gap) var(--hero-dot-gap),
-    calc(var(--hero-dot-gap) * 2) calc(var(--hero-dot-gap) * 2),
-    calc(var(--hero-dot-gap) * 3) calc(var(--hero-dot-gap) * 3);
-  animation: heroDotPulse 9s ease-in-out infinite;
-}
-
 .hero :global(.container-fluid) {
   position: relative;
   z-index: 1;
@@ -29,14 +12,43 @@
 
 .inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
   gap: var(--space-16);
   align-items: center;
 }
 
 .copy {
+  min-width: 0;
   text-align: left;
   max-width: 1100px;
+}
+
+.imageCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.imageWrap {
+  position: relative;
+  width: min(100%, 456px);
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.imageWrapRound {
+  border-radius: 50%;
+}
+
+.imageSlide {
+  position: absolute;
+  inset: 0;
+}
+
+.image {
+  object-fit: cover;
 }
 
 /* ─── Placeholder image ──── */
@@ -56,6 +68,7 @@
   font-weight: 400;
   line-height: 0.95;
   letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
   color: var(--color-text);
   margin-bottom: var(--space-8);
 }

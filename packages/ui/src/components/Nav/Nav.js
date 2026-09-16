@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import styles from './Nav.module.css'
 import LearnMenu from './LearnMenu'
@@ -72,7 +73,7 @@ export default function Nav({ pinned = false, baseUrl = '', cta = null }) {
 
             {/* Logo — always visible on mobile */}
             <a href={`${baseUrl}/`} className={styles.logoMobile}>
-              The<span className={styles.logoRobot}>Robot</span>Age
+              <Image src={`${baseUrl}/brand/tra-logo.svg`} alt="The Robot Age" width={90} height={36} className={styles.logoImage} unoptimized />
             </a>
 
             {/* Logo — visible on scroll (desktop) */}
@@ -86,7 +87,7 @@ export default function Nav({ pinned = false, baseUrl = '', cta = null }) {
                   exit={{ opacity: 0, x: -12 }}
                   transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  The<span className={styles.logoRobot}>Robot</span>Age
+                  <Image src={`${baseUrl}/brand/tra-logo.svg`} alt="The Robot Age" width={90} height={36} className={styles.logoImage} unoptimized />
                 </motion.a>
               )}
             </AnimatePresence>
