@@ -4,8 +4,8 @@ title: "Digit 5 shows why humanoid design is really trust design"
 category: OPINION
 date: September 16, 2026
 excerpt: Agility's new humanoid is not only a production update. Digit 5 shows how head shape, legibility, and bipedal motion shape what humans believe a robot can do.
-headerImage: /images/news/agility-robotics-first-humanoid-ipo-header.jpg
-thumbnailImage: /images/news/agility-robotics-first-humanoid-ipo-thumb.jpg
+headerImage: /images/news/digit-5-humanoid-form-trust-header.jpg
+thumbnailImage: /images/news/digit-5-humanoid-form-trust-header.jpg
 author: The Robot Age Editorial Team
 ---
 
@@ -33,14 +33,14 @@ They also raise the standard for trust.
 
 Humans are expert readers of bipedal motion. A wheeled autonomous mobile robot can move awkwardly and still feel like equipment. A humanoid that hesitates, wobbles, recovers slowly, or places a foot strangely can feel vulnerable or unsafe even if it is technically functioning. We do not only see motion; we read balance, effort, confidence, and risk.
 
-That makes Digit 5's lower body central to the experience story. Its legs are not just mobility hardware. They are a trust interface. Smooth gait says competence. Stable posture says safety. Controlled foot placement says the robot belongs around people and assets. The reverse-knee silhouette also helps Digit avoid direct human imitation while still signaling a body built for human-scale spaces. It is humanoid enough to be understood, but mechanical enough to remain clearly a machine.
+That makes Digit 5's lower body central to the experience story. Its legs are not just mobility hardware. They are a trust interface. Smooth gait says competence. Stable posture says safety. Controlled foot placement says the robot belongs around people and assets. The move away from the older backward-bending leg silhouette toward a more human-readable stance changes the signal: Digit 5 looks less like a novel mechanism and more like an industrial body designed to lift, squat, pause, and share space.
 
 That boundary matters. The wrong humanoid design can fall into expectation mismatch: it looks like it should move with human grace, reason with human judgment, and recover with human improvisation. Digit's best design move is that it does not chase realism. It chases workplace readability.
 
 <aside class="spec-card">
   <figure class="spec-card-media">
-    <img src="/images/news/agility-digit-flagship.jpg" alt="Agility Robotics Digit shown in a studio portrait with a compact head, teal torso, arms, and reverse-knee legs" />
-    <figcaption>Digit, Agility's humanoid platform. Image: Agility Robotics</figcaption>
+    <img src="/images/news/digit-5-humanoid-form-trust-header.jpg" alt="Agility Robotics Digit 5 shown from the front with a compact head, teal torso, industrial arms, and redesigned bipedal legs" />
+    <figcaption>Digit 5, Agility's fifth-generation humanoid platform. Image: Agility Robotics</figcaption>
   </figure>
   <div class="spec-card-body">
     <p class="spec-card-eyebrow">Technical profile</p>
@@ -51,7 +51,7 @@ That boundary matters. The wrong humanoid design can fall into expectation misma
       <div><dt>Form factor</dt><dd>Bipedal industrial humanoid</dd></div>
       <div><dt>Primary role</dt><dd>Material handling in warehouses, factories, and logistics sites</dd></div>
       <div><dt>Design signal</dt><dd>Non-face head for attention, sensing, and orientation legibility</dd></div>
-      <div><dt>Mobility signal</dt><dd>Reverse-knee legs for human-scale spaces without direct human mimicry</dd></div>
+      <div><dt>Mobility signal</dt><dd>Redesigned bipedal legs for lifting, squatting, and human-scale work zones</dd></div>
       <div><dt>Fleet system</dt><dd>Agility Arc for deployment, monitoring, and workflow management</dd></div>
       <div><dt>Safety frame</dt><dd>Cooperatively safe work near people and assets</dd></div>
       <div><dt>Operating history</dt><dd>Built on 65,000+ hours of Digit field operation</dd></div>
@@ -88,4 +88,4 @@ That is where RXD becomes practical. Readability asks whether workers can interp
 
 Digit 5's most important upgrade may not be what it can lift. It may be what it communicates. In the robot age, form is not decoration. Form is how humans decide whether a machine belongs beside them.
 
-*Header and card images: Agility Robotics.*
+*Header and card image: Agility Robotics.*
