@@ -25,10 +25,10 @@
 
 .category {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-xs);
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.08em;
   color: var(--color-text-muted);
 }
 
@@ -41,7 +41,7 @@
 
 .headline {
   font-family: var(--font-display);
-  font-size: var(--text-md);
+  font-size: var(--text-lg);
   font-weight: 400;
   line-height: 1.2;
   color: var(--color-text);

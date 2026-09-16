@@ -14,8 +14,8 @@
   margin: 0 0 var(--space-4);
   font-family: var(--font-body);
   font-size: var(--text-xs);
-  font-weight: 300;
-  letter-spacing: 0.15em;
+  font-weight: 400;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-text-muted);
 }
@@ -23,9 +23,9 @@
 .headline {
   margin: 0 0 var(--space-5);
   font-family: var(--font-display);
-  font-size: var(--text-lg);
-  font-weight: 300;
-  line-height: 1.1;
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--color-text);
 }
@@ -34,7 +34,7 @@
   margin: 0 0 var(--space-8);
   font-family: var(--font-body);
   font-size: var(--text-base);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.7;
   color: var(--color-text-muted);
 }
@@ -55,9 +55,9 @@
   color: var(--color-text-inverse);
   cursor: pointer;
   font-family: var(--font-display);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: background var(--ease-default), color var(--ease-default);
 }
@@ -73,7 +73,7 @@
   font-family: var(--font-display);
   font-size: var(--text-xs);
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: border-color var(--ease-default), color var(--ease-default);
 }
@@ -85,7 +85,7 @@
   font-family: var(--font-display);
   font-size: var(--text-xs);
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-accent);
 }

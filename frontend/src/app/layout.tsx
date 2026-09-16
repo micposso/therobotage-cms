@@ -25,7 +25,7 @@ const fairviewSmallCaps = localFont({
 
 const ibmPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
-  weight: ["300", "400"],
+  weight: ["300", "400", "500"],
   variable: "--font-body",
   fallback: ["sans-serif"],
   display: "swap",

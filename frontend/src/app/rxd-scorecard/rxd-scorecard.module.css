@@ -6,10 +6,10 @@
 
 .eyebrow {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-xs);
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.08em;
   color: var(--color-accent);
   margin-bottom: var(--space-4);
 }
@@ -32,10 +32,10 @@
 
 .label {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-xs);
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.08em;
   color: var(--color-text-muted);
 }
 
@@ -45,22 +45,29 @@
   border: none;
   border-bottom: 1px solid var(--color-border-strong);
   padding: var(--space-3) 0;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: 400;
-  font-size: var(--text-md);
+  font-size: var(--text-sm);
   color: var(--color-text);
   outline: none;
   border-radius: var(--radius-none);
   transition: border-color var(--ease-default);
+  line-height: 1.5;
 }
 
 .input::placeholder {
   color: var(--color-text-muted);
-  opacity: 0.5;
+  opacity: 1;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.5;
 }
 
 .input:focus {
   border-bottom-color: var(--color-accent);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.5;
 }
 
 /* ─── Score layout (dimensions + sticky summary) ─────────────────────────── */
@@ -78,10 +85,10 @@
   align-items: center;
   gap: var(--space-3);
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-xs);
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   color: var(--color-text-muted);
   margin-bottom: var(--space-8);
 }
@@ -137,7 +144,7 @@
 .dimTitle {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: var(--text-md);
+  font-size: var(--text-lg);
   letter-spacing: -0.01em;
   line-height: 1.2;
   color: var(--color-text);
@@ -145,7 +152,7 @@
 
 .dimDef {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-sm);
   line-height: 1.6;
   color: var(--color-text-muted);
@@ -219,7 +226,7 @@
 
 .dimBarEmpty {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-xs);
   letter-spacing: 0.04em;
   color: var(--color-text-muted);
@@ -236,7 +243,7 @@
   border-radius: var(--radius-none);
   padding: var(--space-3) var(--space-4);
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-sm);
   line-height: 1.6;
   color: var(--color-text);
@@ -268,10 +275,10 @@
 
 .summaryEyebrow {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-xs);
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.08em;
   color: var(--res-orange);
   margin-bottom: var(--space-4);
 }
@@ -292,15 +299,15 @@
 
 .summaryAvgMax {
   font-family: var(--font-display);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-md);
   color: var(--color-text-inverse);
-  opacity: 0.6;
+  opacity: 1;
 }
 
 .summaryTotal {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-sm);
   color: var(--color-text-inverse);
   opacity: 0.7;
@@ -326,7 +333,7 @@
 
 .summaryBarLabel {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-xs);
   color: var(--color-text-inverse);
   opacity: 0.85;
@@ -363,10 +370,10 @@
 
 .progress {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-xs);
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   color: var(--color-text-inverse);
   opacity: 0.7;
   margin-bottom: var(--space-4);
@@ -379,7 +386,7 @@
   color: var(--color-text-inverse);
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   letter-spacing: 0.06em;
   border: none;
   border-radius: var(--radius-none);
@@ -407,11 +414,11 @@
 
 .generateHint {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-xs);
   line-height: 1.5;
   color: var(--color-text-inverse);
-  opacity: 0.6;
+  opacity: 1;
   margin-top: var(--space-3);
 }
 
@@ -430,9 +437,9 @@
 .auditHeadline {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(1.75rem, 3.5vw, 2.625rem);
+  font-size: var(--text-xl);
   letter-spacing: -0.02em;
-  line-height: 1.1;
+  line-height: 1.2;
   color: var(--color-text);
   margin-bottom: var(--space-8);
 }
@@ -460,7 +467,7 @@
   color: var(--color-text-inverse);
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   letter-spacing: 0.06em;
   border: none;
   border-radius: var(--radius-none);
@@ -485,7 +492,7 @@
   color: var(--color-text);
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   letter-spacing: 0.06em;
   border: 1px solid var(--color-border-strong);
   border-radius: var(--radius-none);
@@ -507,7 +514,7 @@
   border-bottom: 2.5px solid var(--color-text);
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   letter-spacing: 0.06em;
   color: var(--color-text);
   cursor: pointer;
@@ -528,10 +535,10 @@
 
 .formEyebrow {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-xs);
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.08em;
   color: var(--color-accent);
   margin-bottom: var(--space-3);
 }
@@ -553,7 +560,7 @@
 
 .leadSub {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-sm);
   line-height: 1.6;
   color: var(--color-text-muted);
@@ -572,22 +579,29 @@
   border: none;
   border-bottom: 1px solid var(--color-border-strong);
   padding: var(--space-3) 0;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: 400;
   font-size: var(--text-sm);
   color: var(--color-text);
   outline: none;
   border-radius: var(--radius-none);
   transition: border-color var(--ease-default);
+  line-height: 1.5;
 }
 
 .leadInput::placeholder {
   color: var(--color-text-muted);
-  opacity: 0.5;
+  opacity: 1;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.5;
 }
 
 .leadInput:focus {
   border-bottom-color: var(--color-accent);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.5;
 }
 
 .leadSubmit {
@@ -616,7 +630,7 @@
 
 .leadSuccessText {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-sm);
   line-height: 1.7;
   color: var(--color-text-muted);
@@ -624,7 +638,7 @@
 
 .errorMsg {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-xs);
   letter-spacing: 0.04em;
   color: var(--color-accent);
@@ -643,7 +657,7 @@
   border-bottom: 2.5px solid var(--color-text);
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   letter-spacing: 0.06em;
   color: var(--color-text);
   transition: color var(--ease-default), border-color var(--ease-default);
@@ -698,7 +712,9 @@
   .input,
   .notes,
   .leadInput {
-    font-size: 1rem;
+    font-size: var(--text-sm);
+    font-family: var(--font-body);
+    line-height: 1.5;
   }
 
   .scoreBtn {

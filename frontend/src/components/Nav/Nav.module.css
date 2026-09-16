@@ -62,15 +62,16 @@
 }
 
 .link {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: 400;
-  font-size: var(--text-base);
-  letter-spacing: 0.12em;
+  font-size: var(--text-sm);
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--color-text);
   position: relative;
   transition: color var(--ease-default);
   padding-bottom: var(--space-1);
+  line-height: 1.5;
 }
 
 .link::after {
@@ -109,18 +110,22 @@
   border: none;
   border-bottom: 1px solid var(--color-border-strong);
   outline: none;
-  font-family: var(--font-display);
-  font-weight: 300;
+  font-family: var(--font-body);
+  font-weight: 400;
   font-size: var(--text-sm);
   letter-spacing: 0.04em;
   color: var(--color-text);
   padding: var(--space-1) var(--space-2) var(--space-1) 0;
   width: 100%;
+  line-height: 1.5;
 }
 
 .searchInput::placeholder {
   color: var(--color-text-muted);
-  opacity: 0.6;
+  opacity: 1;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.5;
 }
 
 .searchBtn {
@@ -183,14 +188,15 @@
 }
 
 .mobileLink {
-  font-family: var(--font-display);
-  font-size: var(--text-lg);
+  font-family: var(--font-body);
+  font-size: var(--text-md);
   font-weight: 400;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--color-text);
   text-decoration: none;
   transition: color var(--ease-default);
+  line-height: 1.5;
 }
 
 .mobileLink:hover {
@@ -203,7 +209,7 @@
 }
 
 /* ─── Responsive ──────────────────────────────────────────────────────────────── */
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   /* On mobile the nav is always visible (shows hamburger) */
   .nav {
     opacity: 1 !important;
@@ -261,17 +267,21 @@
   background: none;
   border: none;
   outline: none;
-  font-family: var(--font-display);
-  font-weight: 300;
+  font-family: var(--font-body);
+  font-weight: 400;
   font-size: var(--text-sm);
   letter-spacing: 0.02em;
   color: var(--color-text);
   padding: var(--space-1) 0;
+  line-height: 1.5;
 }
 
 .mobileSearchInput::placeholder {
   color: var(--color-text-muted);
-  opacity: 0.6;
+  opacity: 1;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.5;
 }
 
 .mobileSearchBtn {

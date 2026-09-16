@@ -29,9 +29,9 @@
 .channelLabel {
   font-family: var(--font-body);
   font-size: var(--text-xs);
-  font-weight: 300;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.08em;
   color: var(--color-text-muted);
 }
 

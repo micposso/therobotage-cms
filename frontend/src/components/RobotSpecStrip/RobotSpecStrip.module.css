@@ -6,12 +6,13 @@
 
 /* ─── Inner flex row ────────────────────────────────────────────────────────── */
 .inner {
-  display: flex;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
 }
 
 /* ─── Individual spec items ─────────────────────────────────────────────────── */
 .item {
+  overflow-wrap: anywhere;
   flex: 1 1 0;
   min-width: 0;
   display: flex;
@@ -33,16 +34,17 @@
 /* ─── Labels and values ─────────────────────────────────────────────────────── */
 .label {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-sm);
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.08em;
   color: var(--color-text-muted);
 }
 
 .value {
+  overflow-wrap: anywhere;
   font-family: var(--font-body);
-  font-size: var(--text-md);
+  font-size: var(--text-base);
   font-weight: 400;
   color: var(--color-text);
 }
@@ -51,12 +53,12 @@
 @media (max-width: 767px) {
   .inner {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .item {
     flex: unset;
-    min-width: unset;
+    min-width: 0;
     padding: var(--space-5) var(--space-4);
     border-right: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
@@ -83,4 +85,14 @@
   .item:nth-last-child(2):nth-child(3n+2) {
     border-bottom: none;
   }
+}
+
+@media (max-width: 480px) {
+  .inner { grid-template-columns: minmax(0, 1fr); }
+  .item,
+  .item:last-child {
+    border-right: none;
+    padding-inline: 0;
+  }
+  .item:not(:last-child) { border-bottom: 1px solid var(--color-border); }
 }

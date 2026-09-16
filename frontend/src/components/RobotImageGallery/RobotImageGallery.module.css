@@ -40,7 +40,7 @@
 .thumbCaption {
   font-family: var(--font-body);
   font-size: var(--text-xs);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.55;
   color: var(--color-text-muted);
   margin-top: var(--space-3);
@@ -85,7 +85,7 @@
 .lightboxCaption {
   font-family: var(--font-body);
   font-size: var(--text-sm);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.6;
   color: var(--color-text-inverse);
   margin: 0;
@@ -95,7 +95,7 @@
 .lightboxCounter {
   font-family: var(--font-body);
   font-size: var(--text-xs);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.08em;
   color: var(--color-footer-muted);
   white-space: nowrap;
@@ -111,7 +111,7 @@
   background: none;
   border: none;
   color: var(--color-text-inverse);
-  font-size: 1.5rem;
+  font-size: var(--text-md);
   line-height: 1;
   cursor: pointer;
   padding: var(--space-2);
@@ -131,10 +131,10 @@
   background: none;
   border: none;
   color: var(--color-text-inverse);
-  font-size: 1.25rem;
+  font-size: var(--text-base);
   cursor: pointer;
   padding: var(--space-3);
-  opacity: 0.6;
+  opacity: 1;
   transition: opacity var(--ease-default);
   z-index: 1;
 }

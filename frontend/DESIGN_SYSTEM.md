@@ -36,9 +36,9 @@ All tokens are defined in `src/app/globals.css` under `:root`. Every CSS value i
 | `--color-border` | `rgba(13,13,13,0.12)` | Default section dividers; card separators; list-item borders |
 | `--color-border-strong` | `rgba(13,13,13,0.35)` | Emphasized dividers; form input underlines; top border of spec cards |
 | `--color-bg-sand-dark` | `#A89880` | Summit section background only |
-| `--color-text-on-sand` | `#F5F0E8` | All text on `--color-bg-sand-dark` surfaces |
+| `--color-text-on-sand` | `var(--color-text)` | All text on `--color-bg-sand-dark` surfaces |
 | `--color-border-light` | `rgba(245,240,232,0.2)` | Dividers on dark or sand surfaces |
-| `--color-footer-muted` | `rgba(232,228,220,0.4)` | Footer secondary text and labels |
+| `--color-footer-muted` | `var(--color-text-inverse)` | Footer secondary text and labels |
 | `--color-footer-border` | `rgba(232,228,220,0.1)` | Footer internal dividers |
 | `--color-accent-grid` | `rgba(232,93,36,0.04)` | Accent grid lines on dark backgrounds (Hero component) |
 | `--color-accent-glow` | `rgba(232,93,36,0.07)` | Accent radial glow on dark backgrounds (Hero component) |
@@ -63,49 +63,31 @@ Two primary font families. Use only the tokens below; `--font-display-smallcaps`
 
 | Token | Value | Loaded weights | When to use |
 |---|---|---|---|
-| `--font-display` | `Fairview`, fallback `'IBM Plex Sans', sans-serif` | 400 | Headings, card titles, stat values, nav links, logo, form input text (user-typed) |
+| `--font-display` | `Fairview`, fallback `'IBM Plex Sans', sans-serif` | 400 | Headings, card titles, stat values, logo |
 | `--font-display-smallcaps` | `Fairview SmallCaps`, fallback `--font-display` | 400 | Small-caps display treatments when needed |
-| `--font-body` | `'IBM Plex Sans', sans-serif` | 300, 400 | Eyebrows, body copy, subtitles, labels, meta, buttons, footer |
+| `--font-body` | `'IBM Plex Sans', sans-serif` | 300, 400, 500 | Eyebrows, body copy, subtitles, labels, meta, navigation, inputs, buttons, footer |
 
 Fonts are loaded in `src/app/layout.tsx` via `next/font/local` for Fairview and `next/font/google` for IBM Plex Sans. Do not import them anywhere else.
 
-**Type scale.**
+**Type scale and semantic hierarchy.**
 
-| Token | Value | Typical use |
+| Token | Value | Role at a 16px browser default |
 |---|---|---|
-| `--text-xs` | `0.75rem` | Eyebrows, labels, meta, buttons, caps |
-| `--text-sm` | `0.9375rem` | Body copy, descriptions, form text |
-| `--text-base` | `1rem` | Nav logo, baseline |
-| `--text-md` | `1.375rem` | Card headlines, subheadings, pricing copy |
-| `--text-lg` | `2.625rem` | Large stat values |
-| `--text-xl` | `7rem` | Display (hero lockup lines) |
-| `--text-2xl` | `11rem` | Maximum display |
+| `--text-xs` | `0.875rem` | 14px: metadata, captions, eyebrows, status labels |
+| `--text-sm` | `1rem` | 16px: navigation, controls, supporting copy, H6 |
+| `--text-base` | `1.125rem` | 18px: body text, article paragraphs and lists, H5 |
+| `--text-md` | `1.5rem` | 24px: H4, secondary display values |
+| `--text-lg` | `2rem` | 32px: H3 and article/job/course card titles |
+| `--text-xl` | `3rem` | 48px: H2 section and article subheadings |
+| `--text-2xl` | `7rem`, `4rem` on mobile | 112px desktop / 64px mobile: H1 page and article titles |
 
-For responsive headings, always use `clamp()` anchored to scale tokens:
+Use the existing tokens for every font size. Keep all content on this scale. The existing H1 token reduces to 4rem below 768px for narrow-screen wrapping. The homepage H1 uses `calc(var(--text-2xl) * 1.5)` for a stronger brand headline (168px desktop / 96px mobile), with 1.05 line-height. Other H1s use the token directly with 1.05 line-height. H1 through H6 follow the mapping above; choose heading levels for document structure, never to make text smaller. Use one H1 per page and nest section headings logically. Card headings keep their semantic level and corresponding size. Fairview is optically small and condensed, so its heading sizes intentionally exceed the IBM Plex Sans body sizes.
 
-```css
-/* Standard section headline */
-font-size: clamp(2rem, 4vw, 3.25rem);
+Use rem sizes so browser font preferences and zoom work. Do not override the root font size, shrink body text on mobile, or use viewport/container units for text. Use 400 for normal text and 500 for emphasis; load 500 for IBM Plex Sans. Fairview headings use its available 400 weight. Body and long-form copy use unitless 1.7 line-height, supporting copy 1.5?1.7, and headings 1.2. Keep reading columns approximately 60?75 characters wide and left-aligned. Inputs use IBM Plex Sans at a minimum of 1rem.
 
-/* Large headline (PageHero title) */
-font-size: clamp(2.5rem, 6vw, 5rem);
+Use 0.08em maximum tracking for uppercase labels, 0.02em for navigation, and 0.06em for buttons. Do not reduce text opacity for decoration. Text on the sand surface uses the dark text token; footer text uses the inverse token.
 
-/* Feature section headline */
-font-size: clamp(1.75rem, 3.5vw, 2.625rem);
-```
-
-**Font-weight rules.** Only 300, 400, and 500 are available (the only loaded weights). Do not use 600, 700, or any other weight.
-
-**Letter-spacing conventions.**
-
-| Context | Value |
-|---|---|
-| Eyebrows and uppercase labels | `0.2em` |
-| Nav links (uppercase) | `0.12em` |
-| Small-caps meta (dates, categories) | `0.15em` |
-| Button text | `0.06em` |
-| Display / section headlines | `-0.02em` (negative tracking) |
-| Body copy | none |
+Allow text containers to grow and links to wrap. Verify at 320 CSS pixels, at 200% text size, and with user spacing overrides (1.5 line-height, 2em paragraph spacing, 0.12em letter spacing, 0.16em word spacing). WCAG does not prescribe these exact font sizes; the scale is our design decision. Relevant requirements: [Resize Text](https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html), [Reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html), and [Text Spacing](https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html).
 
 ---
 
@@ -143,7 +125,7 @@ font-size: clamp(1.75rem, 3.5vw, 2.625rem);
 
 | Token | Value | Use |
 |---|---|---|
-| `--nav-height` | `72px` | Offset for fixed nav in padding calculations |
+| `--nav-height` | `4.5rem` | Offset for fixed nav in padding calculations |
 | `--section-padding` | `var(--space-20)` | Default section vertical rhythm |
 | `--container-gutter` | `var(--space-8)` | Horizontal page margin; overrides Bootstrap default |
 
@@ -323,7 +305,7 @@ Fixed to the top of the viewport. Transparent and hidden by default; becomes vis
 | Scrolled or pinned | `--color-bg` | 1 |
 | Mobile (always) | `--color-bg` | 1 |
 
-Desktop links: `--font-display`, `text-xs`, uppercase, `letter-spacing: 0.12em`. Hover reveals a `2px` underline expanding from 0% to 100% width via `::after`.
+Desktop links: `--font-body`, `--text-sm`, uppercase, `letter-spacing: 0.02em`. Hover reveals a `2px` underline expanding from 0% to 100% width via `::after`.
 
 Mobile: hamburger opens a full-screen overlay with links at `--text-lg`. Body scroll locks while open.
 
@@ -590,9 +572,9 @@ Used in FoundingCohort right column and CredentialPage sidebar. Top border stron
 .label {
   font-family: var(--font-body);
   font-size: var(--text-xs);
-  font-weight: 300;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.08em;
   color: var(--color-text-muted);
 }
 .value {
@@ -643,7 +625,7 @@ background: var(--color-accent);
 color: var(--color-text-inverse);
 font-family: var(--font-body);
 font-weight: 500;
-font-size: var(--text-xs);
+font-size: var(--text-sm);
 letter-spacing: 0.06em;
 border: none;
 border-radius: 0;            /* always square — never pill */
@@ -675,7 +657,7 @@ border: none;
 border-bottom: 2.5px solid var(--color-text);
 font-family: var(--font-body);
 font-weight: 500;
-font-size: var(--text-xs);
+font-size: var(--text-sm);
 letter-spacing: 0.06em;
 color: var(--color-text);
 cursor: pointer;
@@ -700,7 +682,7 @@ color: var(--color-text-on-sand);       /* or --color-text-inverse on dark */
 border-bottom: 2.5px solid var(--color-text-on-sand);
 font-family: var(--font-body);
 font-weight: 400;
-font-size: var(--text-xs);
+font-size: var(--text-sm);
 text-transform: uppercase;
 letter-spacing: 0.1em;
 padding-bottom: 2px;
@@ -732,7 +714,7 @@ These rules are stated as enforceable constraints. An agent reviewing a PR shoul
 ### Tokens
 
 - **Never hardcode a color.** No hex values (`#e85d24`), no `rgb()`, no `rgba()` in component CSS or JSX. Use `var(--color-*)`.
-- **Never hardcode a font-size** in component CSS. Use `var(--text-*)` or `clamp()` built from those tokens.
+- **Never hardcode a font-size** in component CSS. Use `var(--text-*)`.
 - **Never hardcode a font-family string** in component CSS. Use `var(--font-display)` or `var(--font-body)`.
 - **Never use a font-weight outside 300, 400, or 500.** Only these weights are loaded.
 - **Never hardcode a spacing value** (margin, padding, gap) with a raw pixel or rem value from outside the scale. Use `var(--space-*)`. Exception: `2px` on `padding-bottom` for underline CTA offset, and `4px` for `translateX` on arrow hover — both are documented intentional micro-values.

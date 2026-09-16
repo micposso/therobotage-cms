@@ -16,8 +16,9 @@
 }
 
 .panel.collapsed {
-  width: 40px;
-  height: 40px;
+  width: max-content;
+  max-width: calc(100vw - var(--space-8));
+  height: auto;
   padding: 0;
   border: 0;
   overflow: visible;
@@ -29,12 +30,14 @@
 }
 
 .collapsed .toggle {
-  flex-basis: 40px;
-  width: 40px;
-  height: 40px;
+  flex-basis: auto;
+  width: auto;
+  min-height: var(--space-10);
+  height: auto;
+  padding: var(--space-2);
   border-radius: var(--radius-none);
-  font-family: var(--font-display);
-  font-size: 10px;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
   font-weight: 500;
 }
 
@@ -59,8 +62,8 @@
   color: var(--color-accent);
   font-family: var(--font-body);
   font-size: var(--text-xs);
-  font-weight: 300;
-  letter-spacing: 0.2em;
+  font-weight: 400;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -72,7 +75,7 @@
   color: var(--color-text-inverse);
   font-family: var(--font-body);
   font-size: var(--text-xs);
-  font-weight: 300;
+  font-weight: 400;
   text-align: right;
 }
 
@@ -191,7 +194,7 @@
   color: var(--color-footer-muted);
   font-family: var(--font-body);
   font-size: var(--text-xs);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .list {
@@ -229,7 +232,7 @@
   color: var(--color-footer-muted);
   font-family: var(--font-body);
   font-size: var(--text-xs);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .meta {
@@ -237,7 +240,7 @@
   color: var(--color-footer-muted);
   font-family: var(--font-body);
   font-size: var(--text-xs);
-  font-weight: 300;
+  font-weight: 400;
   text-align: right;
 }
 

@@ -7,10 +7,10 @@
 /* ─── Header / eyebrow ─── */
 .eyebrow {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-xs);
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.08em;
   color: var(--color-accent);
   margin-bottom: var(--space-8);
 }
@@ -25,17 +25,17 @@
 
 .headline {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: var(--text-xl);
   font-weight: 400;
-  line-height: 1.05;
+  line-height: 1.2;
   letter-spacing: -0.02em;
   color: var(--color-text);
 }
 
 .body {
   font-family: var(--font-body);
-  font-weight: 300;
-  font-size: var(--text-md);
+  font-weight: 400;
+  font-size: var(--text-base);
   line-height: 1.7;
   color: var(--color-text-muted);
   padding-top: var(--space-2);
@@ -57,7 +57,7 @@
   }
 
   .headline {
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size: var(--text-xl);
   }
 
   .body {

@@ -38,8 +38,8 @@ export default function LearnPage() {
 
       <section style={{ padding: 'var(--space-16) 0', borderTop: '1px solid var(--color-border)' }}>
         <div className="container-fluid">
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-xs)', fontWeight: 300, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--color-text-muted)', marginBottom: 'var(--space-4)' }}>Also in Learn</p>
-          <Link href="/robot-literacy" style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-3)', fontFamily: 'var(--font-display)', fontSize: 'clamp(1.125rem, 2vw, 1.5rem)', fontWeight: 400, color: 'var(--color-text)', textDecoration: 'none' }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-xs)', fontWeight: 400, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--color-text-muted)', marginBottom: 'var(--space-4)' }}>Also in Learn</p>
+          <Link href="/robot-literacy" style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-3)', fontFamily: 'var(--font-display)', fontSize: 'var(--text-lg)', fontWeight: 400, color: 'var(--color-text)', textDecoration: 'none' }}>
             Robot Literacy — the experience side of working with robots
             <span style={{ fontSize: '1.25em', lineHeight: 1 }}>→</span>
           </Link>

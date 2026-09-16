@@ -19,9 +19,9 @@
   --color-border: rgba(13, 13, 13, 0.12);
   --color-border-strong: rgba(13, 13, 13, 0.35);
   --color-bg-sand-dark: var(--color-fourth);
-  --color-text-on-sand: #F5F0E8;
+  --color-text-on-sand: var(--color-text);
   --color-border-light: rgba(245, 240, 232, 0.2);
-  --color-footer-muted: rgba(232, 228, 220, 0.4);
+  --color-footer-muted: var(--color-text-inverse);
   --color-footer-border: rgba(232, 228, 220, 0.1);
   --color-accent-grid: rgba(232, 93, 36, 0.04);
   --color-accent-glow: rgba(232, 93, 36, 0.07);
@@ -45,13 +45,13 @@
   --font-display-smallcaps: var(--font-display-smallcaps-source), var(--font-display);
   --font-body: 'IBM Plex Sans', sans-serif;
 
-  --text-xs: 0.75rem;
-  --text-sm: 0.9375rem;
-  --text-base: 1.0625rem;
-  --text-md: 1.375rem;
-  --text-lg: 2.625rem;
-  --text-xl: 7rem;
-  --text-2xl: 11rem;
+  --text-xs: 0.875rem;
+  --text-sm: 1rem;
+  --text-base: 1.125rem;
+  --text-md: 1.5rem;
+  --text-lg: 2rem;
+  --text-xl: 3rem;
+  --text-2xl: 7rem;
 
   /* Spacing (8pt scale) */
   --space-1: 0.25rem;
@@ -69,7 +69,7 @@
   --space-32: 8rem;
 
   /* Layout */
-  --nav-height: 72px;
+  --nav-height: 4.5rem;
   --section-padding: var(--space-20);
   --container-gutter: var(--space-8);
 
@@ -120,7 +120,7 @@ body {
 
 body {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-base);
   line-height: 1.7;
   position: relative;
@@ -181,5 +181,37 @@ p {
 @media (prefers-reduced-motion: reduce) {
   *::before {
     animation-name: none !important;
+  }
+}
+
+/* Semantic typography defaults. Component styles use these same scale tokens. */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+h1 { font-size: var(--text-2xl); line-height: 1.05; }
+h2 { font-size: var(--text-xl); }
+h3 { font-size: var(--text-lg); }
+h4 { font-size: var(--text-md); }
+h5 { font-family: var(--font-body); font-size: var(--text-base); font-weight: 500; }
+h6 { font-family: var(--font-body); font-size: var(--text-sm); font-weight: 500; }
+
+button, input, select, textarea {
+  font: inherit;
+}
+input, select, textarea {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+}
+strong, b { font-weight: 500; }
+small, figcaption { font-size: var(--text-xs); }
+p, li, dd { overflow-wrap: anywhere; }
+
+@media (max-width: 767px) {
+  :root {
+    --container-gutter: var(--space-4);
+    --text-2xl: 4rem;
   }
 }

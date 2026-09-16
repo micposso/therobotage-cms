@@ -1,10 +1,10 @@
 /* ─── Shared eyebrow ──────────────────────────────────────────────────────── */
 .eyebrow {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-xs);
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.08em;
   color: var(--color-accent);
   margin-bottom: var(--space-6);
 }
@@ -12,7 +12,7 @@
 /* Larger variant for section subheadlines (Field Images, Deployment Context) */
 .sectionEyebrow {
   font-size: var(--text-md);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
 }
 
 /* ─── Overview Section ────────────────────────────────────────────────────── */
@@ -30,8 +30,8 @@
 
 .overviewBody {
   font-family: var(--font-body);
-  font-weight: 300;
-  font-size: var(--text-md);
+  font-weight: 400;
+  font-size: var(--text-base);
   line-height: 1.75;
   color: var(--color-text-muted);
   margin: 0;
@@ -48,18 +48,18 @@
 
 .scorePanelEyebrow {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-xs);
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.08em;
   color: var(--color-text-muted);
   margin: 0;
 }
 
 .scorePanelNumber {
   font-family: var(--font-display);
-  font-size: clamp(5rem, 10vw, 9rem);
-  font-weight: 300;
+  font-size: var(--text-lg);
+  font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1;
   color: var(--color-text);
@@ -68,17 +68,17 @@
 .scorePanelMax {
   font-family: var(--font-display);
   font-size: var(--text-md);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: -0.01em;
   color: var(--color-text-muted);
 }
 
 .scorePanelTier {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-xs);
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.08em;
   color: var(--color-accent);
   margin: 0;
 }
@@ -92,9 +92,9 @@
 .scoreHeadline {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(1.75rem, 3.5vw, 2.625rem);
+  font-size: var(--text-xl);
   letter-spacing: -0.02em;
-  line-height: 1.1;
+  line-height: 1.2;
   color: var(--color-text);
   margin-bottom: var(--space-12);
 }
@@ -144,8 +144,8 @@
 
 .scoreDimLabel {
   font-family: var(--font-body);
-  font-weight: 300;
-  font-size: 0.65rem;
+  font-weight: 400;
+  font-size: var(--text-xs);
   letter-spacing: 0.03em;
   color: var(--color-text-muted);
   text-align: center;
@@ -162,7 +162,7 @@
 
 .scoreCompositeValue {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-size: var(--text-lg);
   font-weight: 400;
   letter-spacing: -0.02em;
   color: var(--color-text-muted);
@@ -170,7 +170,7 @@
 
 .scoreCompositeLabel {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-xs);
   letter-spacing: 0.1em;
   color: var(--color-text-muted);
@@ -178,7 +178,7 @@
 
 .scoreNote {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-xs);
   letter-spacing: 0.05em;
   color: var(--color-text-muted);
@@ -220,27 +220,27 @@
 
 .deploymentBoxLabel {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-xs);
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.08em;
   color: var(--color-accent);
   margin-bottom: var(--space-5);
 }
 
 .deploymentBoxTitle {
   font-family: var(--font-display);
-  font-size: clamp(1.125rem, 1.75vw, 1.5rem);
+  font-size: var(--text-lg);
   font-weight: 400;
   letter-spacing: -0.01em;
-  line-height: 1.15;
+  line-height: 1.2;
   color: var(--color-text);
   margin-bottom: var(--space-5);
 }
 
 .deploymentBoxBody {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-sm);
   line-height: 1.75;
   color: var(--color-text-muted);
