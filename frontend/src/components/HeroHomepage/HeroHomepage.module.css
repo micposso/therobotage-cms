@@ -8,23 +8,6 @@
   overflow: hidden;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(circle, var(--hero-dot-color) var(--hero-dot-size), transparent calc(var(--hero-dot-size) + 0.5px)),
-    radial-gradient(circle, var(--hero-dot-color-alt) var(--hero-dot-size), transparent calc(var(--hero-dot-size) + 0.5px)),
-    radial-gradient(circle, var(--hero-dot-color) var(--hero-dot-size), transparent calc(var(--hero-dot-size) + 0.5px));
-  background-size:
-    var(--hero-dot-gap) var(--hero-dot-gap),
-    calc(var(--hero-dot-gap) * 2) calc(var(--hero-dot-gap) * 2),
-    calc(var(--hero-dot-gap) * 3) calc(var(--hero-dot-gap) * 3);
-  animation: heroDotPulse 9s ease-in-out infinite;
-}
-
 .hero :global(.container-fluid) {
   position: relative;
   z-index: 1;
@@ -128,25 +111,22 @@
   width: 100%;
 }
 
-.lockupLine {
+.lockupLogo {
   display: block;
+  width: 55%;
+  height: auto;
+}
+
+.lockupName {
+  margin: var(--space-3) 0 0;
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 16cqi, var(--text-xl));
-  font-weight: 400;
-  line-height: 0.85;
-  letter-spacing: -0.02em;
+  font-size: var(--text-lg);
+  line-height: 1;
   color: var(--color-text);
 }
 
-/* ─── ROBOT colour pulse ─────────────────────────────────────────────────────── */
-@keyframes robotPulse {
-  0%   { color: var(--color-bg-sand-dark); }
-  50%  { color: var(--color-accent); }
-  100% { color: var(--color-bg-sand-dark); }
-}
-
-.robotPulse {
-  animation: robotPulse 4s ease-in-out infinite;
+.lockupAccent {
+  color: var(--color-secondary);
 }
 
 /* ─── Ticker — full-width bottom bar ─────────────────────────────────────────── */
@@ -225,9 +205,9 @@
   margin-bottom: var(--space-4);
 }
 
-/* H1 container — 70% */
+/* H1 container — 65% */
 .headlineCol {
-  width: 70%;
+  width: 65%;
   flex-shrink: 0;
   container-type: inline-size;
 }
@@ -255,7 +235,7 @@
   50%  { background: var(--color-text-on-sand); }
 }
 
-/* Carousel container — fills remaining 30%, carousel centered */
+/* Carousel container — fills remaining space, carousel centered */
 .carouselCol {
   flex: 1;
   display: flex;
@@ -265,7 +245,7 @@
 
 .imageCarousel {
   position: relative;
-  height: clamp(220px, 38vh, 651px);
+  height: clamp(250px, 44vh, 740px);
   aspect-ratio: 1 / 1;
   overflow: hidden;
 }

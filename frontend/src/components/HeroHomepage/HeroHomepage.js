@@ -9,8 +9,6 @@ import LearnMenu from '@therobotage/ui/LearnMenu'
 
 // ─── Content ──────────────────────────────────────────────────────────────────
 
-const LOCKUP_LINES = ['THE', 'ROBOT', 'AGE']
-
 const NAV_LINKS = [
   { label: 'Research',      href: '/research',   desc: 'Peer-reviewed robotics insights and industry reports.' },
   { label: 'Robots',        href: '/robots',     desc: 'Scored robot profiles evaluated through the RXD framework.' },
@@ -80,11 +78,6 @@ const tickerTrack = [...TICKER_ITEMS, ...TICKER_ITEMS]
 // ─── Framer variants ──────────────────────────────────────────────────────────
 
 const lockupVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-}
-
-const lineVariants = {
   hidden:  { y: 60, opacity: 0 },
   visible: {
     y: 0,
@@ -141,17 +134,17 @@ export default function HeroHomepage({ images = [] }) {
                 initial="hidden"
                 animate="visible"
               >
-                {LOCKUP_LINES.map((line) => (
-                  <motion.span
-                    key={line}
-                    className={styles.lockupLine}
-                    variants={lineVariants}
-                  >
-                    {line === 'ROBOT'
-                      ? <span className={styles.robotPulse}>{line}</span>
-                      : line}
-                  </motion.span>
-                ))}
+                <Image
+                  src="/brand/tra-logo.svg"
+                  alt="The Robot Age"
+                  width={1536}
+                  height={620}
+                  className={styles.lockupLogo}
+                  loading="eager"
+                />
+                <p className={styles.lockupName}>
+                  The<span className={styles.lockupAccent}>Robot</span>Age
+                </p>
               </motion.div>
 
               {/* Nav links — stacked vertically */}
@@ -174,10 +167,10 @@ export default function HeroHomepage({ images = [] }) {
           {/* ── Right col ─────────────────────────────────────────────────── */}
           <div className={`col-lg-7 ${styles.rightCol}`}>
 
-            {/* Side-by-side: headline 70% / carousel 30% */}
+            {/* Side-by-side: headline and carousel */}
             <div className={styles.contentRow}>
 
-              {/* H1 container — 70% */}
+              {/* H1 container */}
               <div className={styles.headlineCol}>
                 <motion.p
                   className={styles.eyebrow}

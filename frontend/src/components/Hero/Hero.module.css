@@ -10,23 +10,6 @@
   overflow: hidden;
 }
 
-.section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(circle, var(--hero-dot-color) var(--hero-dot-size), transparent calc(var(--hero-dot-size) + 0.5px)),
-    radial-gradient(circle, var(--hero-dot-color-alt) var(--hero-dot-size), transparent calc(var(--hero-dot-size) + 0.5px)),
-    radial-gradient(circle, var(--hero-dot-color) var(--hero-dot-size), transparent calc(var(--hero-dot-size) + 0.5px));
-  background-size:
-    var(--hero-dot-gap) var(--hero-dot-gap),
-    calc(var(--hero-dot-gap) * 2) calc(var(--hero-dot-gap) * 2),
-    calc(var(--hero-dot-gap) * 3) calc(var(--hero-dot-gap) * 3);
-  animation: heroDotPulse 9s ease-in-out infinite;
-}
-
 /* ─── Background Decorations ─────────────────────────────────────────────────── */
 .gridTexture {
   position: absolute;
