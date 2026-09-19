@@ -1,11 +1,11 @@
 ---
 slug: military-field-robots-china-ukraine-west
-title: "The next military robot is a field machine, not a missile"
+title: "The New Battlefield Robot Race"
 category: OPINION
 date: September 18, 2026
-excerpt: Ukraine shows why ground robots matter in war. China shows how fast cheap robot bodies can spread. The West still has better doctrine and guardrails, but China may have the scale advantage.
-headerImage: /images/news/unitree-ipo-robot-platform-header.jpg
-thumbnailImage: /images/news/unitree-ipo-robot-platform-thumb.jpg
+excerpt: Ukraine is teaching the West how field robots are used under fire, while China is scaling cheap robot bodies for military and security markets.
+headerImage: /images/news/military-field-robots-battlefield-race-header.png
+thumbnailImage: /images/news/military-field-robots-battlefield-race-thumb.png
 author: The Robot Age Editorial Team
 ---
 
@@ -77,4 +77,4 @@ The robot age will not enter war first as a metal soldier marching across a batt
 
 That may sound less cinematic than a humanoid army. It is also much closer to how military robotics will actually arrive.
 
-*Header and card images: The Robot Age composite using official Unitree product imagery.*
+*Header and card images: Original image generated for The Robot Age.*
