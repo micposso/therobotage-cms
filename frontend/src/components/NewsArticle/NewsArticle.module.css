@@ -109,6 +109,32 @@
   max-width: 720px;
 }
 
+.audioPlayer {
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.audioLabel {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+}
+
+.audioPlayer audio {
+  display: block;
+  width: 100%;
+}
+
+.audioDisclosure {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: var(--space-3);
+}
+
 /* ─── Sidebar ────────────────────────────────────────────────────────────────── */
 .sidebar {
   width: 180px;
