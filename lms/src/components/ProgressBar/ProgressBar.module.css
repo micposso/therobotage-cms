@@ -5,7 +5,7 @@
 }
 
 .label {
-  font-size: 0.875rem;
+  font-size: var(--text-xs);
   color: var(--color-text-muted);
   white-space: nowrap;
 }
@@ -24,7 +24,7 @@
 }
 
 .count {
-  font-size: 0.75rem;
+  font-size: var(--text-xs);
   color: var(--color-text-muted);
   white-space: nowrap;
 }

@@ -76,7 +76,7 @@ CSS Modules co-located with every component (`ComponentName/ComponentName.module
 
 **Breakpoints:** `max-width: 767px` (mobile) and `min-width: 768px` and `max-width: 1024px` (tablet). Desktop is default.
 
-**Fonts:** IBM Plex Sans (`--font-display`) + IBM Plex Serif (`--font-body`), loaded via `next/font/google` in `layout.tsx` only. Weights 300, 400, 500 only.
+**Fonts:** IBM Plex Sans (`--font-display` and `--font-body`), loaded via `next/font/google` in `layout.tsx` only. Weights 300, 400, 500 only.
 
 **Buttons:** Three patterns defined in `LMS.md §6`. No new button styles.
 

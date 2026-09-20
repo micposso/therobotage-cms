@@ -12,7 +12,7 @@
   align-items: center;
   gap: var(--space-3);
   font-family: var(--font-display);
-  font-size: 0.875rem;
+  font-size: var(--text-xs);
   padding: var(--space-2) 0;
   border-bottom: 1px solid var(--color-border);
 }
@@ -24,7 +24,7 @@
 
 .size {
   color: var(--color-text-muted);
-  font-size: 0.8125rem;
+  font-size: var(--text-xs);
 }
 
 .remove {
@@ -32,7 +32,7 @@
   border: none;
   color: var(--color-text-muted);
   font-family: var(--font-display);
-  font-size: 0.8125rem;
+  font-size: var(--text-xs);
   cursor: pointer;
   padding: 0;
 }

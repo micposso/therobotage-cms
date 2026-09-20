@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, IBM_Plex_Serif } from "next/font/google";
+import { IBM_Plex_Sans } from "next/font/google";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
 import "./globals.css";
 
@@ -10,10 +10,11 @@ const ibmPlexSans = IBM_Plex_Sans({
   display: "swap",
 });
 
-const ibmPlexSerif = IBM_Plex_Serif({
+const ibmPlexSansBody = IBM_Plex_Sans({
   subsets: ["latin"],
-  weight: ["300", "400"],
+  weight: ["300", "400", "500"],
   variable: "--font-body",
+  fallback: ["sans-serif"],
   display: "swap",
 });
 
@@ -30,7 +31,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${ibmPlexSans.variable} ${ibmPlexSerif.variable}`}>
+    <html lang="en" className={`${ibmPlexSans.variable} ${ibmPlexSansBody.variable}`}>
       <body>{children}</body>
     </html>
   );
