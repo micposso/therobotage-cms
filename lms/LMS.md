@@ -78,8 +78,8 @@ Copy these exactly into `src/app/globals.css` in the new Next.js app. These toke
 
   /* ── Dark surface support ────────────────────────────── */
   --color-bg-sand-dark:    #b7925b;
-  --color-text-on-sand:    #F5F0E8;
-  --color-footer-muted:    rgba(232, 228, 220, 0.4);
+  --color-text-on-sand:    var(--color-text);
+  --color-footer-muted:    var(--color-text-inverse);
   --color-footer-border:   rgba(232, 228, 220, 0.1);
   --color-border-on-dark:  rgba(255, 255, 255, 0.06);
 
@@ -106,15 +106,15 @@ Copy these exactly into `src/app/globals.css` in the new Next.js app. These toke
 
   /* ── Typography ──────────────────────────────────────── */
   --font-display: 'IBM Plex Sans', sans-serif;
-  --font-body:    'IBM Plex Serif', serif;
+  --font-body:    'IBM Plex Sans', sans-serif;
 
-  --text-xs:   0.75rem;
-  --text-sm:   0.9375rem;
-  --text-base: 1.0625rem;
-  --text-md:   1.375rem;
-  --text-lg:   2.625rem;
-  --text-xl:   7rem;
-  --text-2xl:  11rem;
+  --text-xs:   0.875rem;
+  --text-sm:   1rem;
+  --text-base: 1.125rem;
+  --text-md:   1.5rem;
+  --text-lg:   2rem;
+  --text-xl:   3rem;
+  --text-2xl:  4rem;
 
   /* ── Spacing (8pt scale) ─────────────────────────────── */
   --space-1:  0.25rem;
@@ -132,7 +132,7 @@ Copy these exactly into `src/app/globals.css` in the new Next.js app. These toke
   --space-32: 8rem;
 
   /* ── Layout ──────────────────────────────────────────── */
-  --nav-height:        64px;   /* LMS nav is slightly compact vs marketing site */
+  --nav-height:        4rem;   /* LMS nav is slightly compact vs marketing site */
   --sidebar-width:     280px;  /* course sidebar / progress panel */
   --content-max:       760px;  /* reading width for module content */
   --section-padding:   var(--space-20);
@@ -239,51 +239,34 @@ Permitted only for one or two dynamic values that cannot live in a CSS module (e
 
 ### Typefaces
 
-Two typefaces only. Load via `next/font/google` in `src/app/layout.tsx`. Do not import fonts anywhere else.
+One typeface: IBM Plex Sans. Load via `next/font/google` in `src/app/layout.tsx`. Do not import fonts anywhere else.
 
 | Token | Typeface | Weights | When to use |
 |---|---|---|---|
-| `--font-display` | IBM Plex Sans | 300, 400, 500 | Headings, card titles, nav links, data values, week numbers |
-| `--font-body` | IBM Plex Serif | 300, 400 | Eyebrows, body copy, labels, buttons, module descriptions |
+| `--font-display` | IBM Plex Sans | 300, 400, 500 | Headings, card titles, data values, week numbers |
+| `--font-body` | IBM Plex Sans | 300, 400, 500 | Eyebrows, body copy, labels, navigation, inputs, buttons, module descriptions |
 
 **Font-weight rule:** Only 300, 400, and 500 are loaded. Never use 600, 700, or any other weight.
 
 ### Type scale
 
-| Token | Value | Typical use |
+| Token | Value | Role at a 16px browser default |
 |---|---|---|
-| `--text-xs` | 0.75rem | Eyebrows, labels, meta, buttons, status badges |
-| `--text-sm` | 0.9375rem | Body copy, module descriptions, deliverable text |
-| `--text-base` | 1.0625rem | Default paragraph text |
-| `--text-md` | 1.375rem | Card headlines, week titles, subheadings |
-| `--text-lg` | 2.625rem | Large stat values, score displays |
-| `--text-xl` | 7rem | Display (landing hero only) |
+| `--text-xs` | `0.875rem` | 14px: metadata, captions, eyebrows, status labels |
+| `--text-sm` | `1rem` | 16px: navigation, controls, supporting copy, H6 |
+| `--text-base` | `1.125rem` | 18px: body text, article paragraphs and lists, H5 |
+| `--text-md` | `1.5rem` | 24px: H4, secondary display values |
+| `--text-lg` | `2rem` | 32px: H3 and article/job/course card titles |
+| `--text-xl` | `3rem` | 48px: H2 section and article subheadings |
+| `--text-2xl` | `4rem` | 64px: H1 page and article titles |
 
-### Letter-spacing conventions
+Use the existing tokens for every font size. Do not introduce separate page, article, card, or mobile scales. H1 through H6 follow the mapping above; choose heading levels for document structure, never to make text smaller. Use one H1 per page and nest section headings logically. Card headings keep their semantic level and corresponding size. The LMS shares the main site?s size scale using IBM Plex Sans throughout.
 
-| Context | Value |
-|---|---|
-| Eyebrows and uppercase labels | `0.2em` |
-| Nav links | `0.12em` |
-| Meta labels (dates, categories) | `0.15em` |
-| Button text | `0.06em` |
-| Display / section headlines | `-0.02em` |
-| Body copy | none |
+Use rem sizes so browser font preferences and zoom work. Do not override the root font size, shrink body text on mobile, or use viewport/container units for text. Use 400 for normal text and 500 for emphasis; load 500 for IBM Plex Sans. Body and long-form copy use unitless 1.7 line-height, supporting copy 1.5?1.7, and headings 1.2. Keep reading columns approximately 60?75 characters wide and left-aligned. Inputs use IBM Plex Sans at a minimum of 1rem.
 
-### Responsive headlines
+Use 0.08em maximum tracking for uppercase labels, 0.02em for navigation, and 0.06em for buttons. Do not reduce text opacity for decoration. Text on the sand surface uses the dark text token; footer text uses the inverse token.
 
-Always use `clamp()` anchored to scale tokens:
-
-```css
-/* Section headline */
-font-size: clamp(2rem, 4vw, 3.25rem);
-
-/* Page hero */
-font-size: clamp(2.5rem, 6vw, 5rem);
-
-/* Card / week title */
-font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-```
+Allow text containers to grow and links to wrap. Verify at 320 CSS pixels, at 200% text size, and with user spacing overrides (1.5 line-height, 2em paragraph spacing, 0.12em letter spacing, 0.16em word spacing). WCAG does not prescribe these exact font sizes; the scale is our design decision. Relevant requirements: [Resize Text](https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html), [Reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html), and [Text Spacing](https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html).
 
 ---
 
@@ -302,7 +285,7 @@ Persistent top navigation bar. Always visible — no scroll-reveal behavior (the
 - Background: `var(--color-bg)`
 - Border-bottom: `1px solid var(--color-border)`
 - Logo: `--font-display`, weight 400, `--text-sm`
-- Cohort label: `--font-body`, weight 300, `--text-xs`, uppercase, `0.15em` tracking, `--color-text-muted`
+- Cohort label: `--font-body`, weight 400, `--text-xs`, uppercase, `0.08em` tracking, `--color-text-muted`
 - Progress indicator: `--font-body`, `--text-xs`, `--color-text-muted`
 
 ### Course Sidebar
@@ -324,8 +307,8 @@ Left-side navigation inside a course. Shows all weeks with their completion stat
 - Width: `var(--sidebar-width)` (280px)
 - Background: `var(--color-bg)`
 - Border-right: `1px solid var(--color-border)`
-- Week numbers: `--font-display`, weight 300, `--text-xs`, `--color-text-muted`
-- Week titles: `--font-body`, weight 300, `--text-sm`, `--color-text`
+- Week numbers: `--font-display`, weight 400, `--text-xs`, `--color-text-muted`
+- Week titles: `--font-body`, weight 400, `--text-sm`, `--color-text`
 - Current week: `--color-accent` left border (4px), title weight 400
 - Completed week: checkmark SVG in `--color-success`, title `--color-text-muted`
 - Locked week: title `--color-text-muted`, opacity 0.5, no pointer events
@@ -357,10 +340,10 @@ Compact card in the dashboard grid showing a week's status at a glance.
 **Specs:**
 - Border-top: `1px solid var(--color-border-strong)`
 - Padding: `var(--space-6)`
-- Week number: `--font-display`, weight 300, `--text-xs`, `--color-text-muted`
+- Week number: `--font-display`, weight 400, `--text-xs`, `--color-text-muted`
 - Status badge: same pill pattern as therobotage.com (`--radius-pill`)
-- Title: `--font-display`, weight 400, `--text-md`
-- Meta: `--font-body`, weight 300, `--text-xs`, `--color-text-muted`
+- Title: `--font-display`, weight 400, `--text-xl`
+- Meta: `--font-body`, weight 400, `--text-xs`, `--color-text-muted`
 
 ### Progress Bar
 
@@ -407,7 +390,7 @@ Robot Experience Score         3.3 / 5
 ```
 
 **Specs:**
-- Dimension label: `--font-body`, weight 300, `--text-sm`
+- Dimension label: `--font-body`, weight 400, `--text-sm`
 - Score value: `--font-display`, weight 400, `--text-sm`, `--color-accent`
 - Bar fill: `--res-orange` at full score, graduating through `--res-bar-*` tokens at lower scores
 - Total RES: `--font-display`, weight 400, `--text-md`, `--color-text`
@@ -440,7 +423,7 @@ background: var(--color-accent);
 color: var(--color-text-inverse);
 font-family: var(--font-body);
 font-weight: 500;
-font-size: var(--text-xs);
+font-size: var(--text-sm);
 letter-spacing: 0.06em;
 border: none;
 border-radius: var(--radius-none);  /* always square */
@@ -463,7 +446,7 @@ border: none;
 border-bottom: 2.5px solid var(--color-text);
 font-family: var(--font-body);
 font-weight: 500;
-font-size: var(--text-xs);
+font-size: var(--text-sm);
 letter-spacing: 0.06em;
 color: var(--color-text);
 text-decoration: none;
@@ -484,8 +467,8 @@ padding: var(--space-3) var(--space-6);
 background: none;
 border: 1px solid var(--color-border-strong);
 font-family: var(--font-body);
-font-weight: 300;
-font-size: var(--text-xs);
+font-weight: 400;
+font-size: var(--text-sm);
 letter-spacing: 0.06em;
 color: var(--color-text-muted);
 border-radius: var(--radius-none);
@@ -528,7 +511,7 @@ Forgot your password?
 ```
 
 **Eyebrow:** none on auth pages.
-**Heading:** `--font-display`, weight 400, `clamp(1.5rem, 3vw, 2.25rem)`.
+**Heading:** `--font-display`, weight 400, `var(--text-2xl)`.
 **Form inputs:** border-bottom only (`1px solid var(--color-border-strong)`), no box border. On focus: `--color-accent` border. `--font-display` for typed text, `--font-body` for labels.
 
 ### 7.2 Dashboard
@@ -968,7 +951,7 @@ All rules from the main design system apply. Additional LMS-specific constraints
 
 - **Never use `box-shadow`.** No cards, no dropdowns, no modals.
 - **Never round a button.** `border-radius: var(--radius-none)` on all interactive elements except status badges (`--radius-pill`).
-- **Never use more than two typefaces.** IBM Plex Sans + IBM Plex Serif only.
+- **Use IBM Plex Sans only.** Both `--font-display` and `--font-body` use this family.
 - **Never use a font-weight outside 300, 400, 500.**
 - **Never hardcode a color.** Every color value must be `var(--color-*)` or `var(--res-*)`.
 

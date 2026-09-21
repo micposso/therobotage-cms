@@ -1,7 +1,7 @@
 .heading {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 300;
+  font-size: var(--text-2xl);
+  font-weight: 400;
   margin: 0 0 var(--space-6) 0;
 }
 
@@ -20,14 +20,14 @@
 
 .name {
   font-family: var(--font-display);
-  font-size: 0.9375rem;
+  font-size: var(--text-sm);
   font-weight: 500;
   margin: 0;
 }
 
 .course {
   font-family: var(--font-display);
-  font-size: 0.8125rem;
+  font-size: var(--text-xs);
   color: var(--color-text-muted);
   margin: 2px 0 0 0;
 }
@@ -40,13 +40,13 @@
 
 .status {
   font-family: var(--font-display);
-  font-size: 0.8125rem;
+  font-size: var(--text-xs);
   color: var(--color-text-muted);
   text-transform: capitalize;
 }
 
 .date {
   font-family: var(--font-display);
-  font-size: 0.875rem;
+  font-size: var(--text-xs);
   color: var(--color-text-muted);
 }

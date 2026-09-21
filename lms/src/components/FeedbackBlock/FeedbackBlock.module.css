@@ -16,7 +16,7 @@
 
 .label {
   font-family: var(--font-display);
-  font-size: 0.8125rem;
+  font-size: var(--text-xs);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -32,8 +32,8 @@
 
 .comment {
   font-family: var(--font-body);
-  font-size: 0.9375rem;
-  line-height: 1.65;
+  font-size: var(--text-sm);
+  line-height: 1.5;
   margin: 0;
   color: var(--color-text);
 }

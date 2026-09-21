@@ -10,7 +10,7 @@
 
 .label {
   font-family: var(--font-display);
-  font-size: 0.75rem;
+  font-size: var(--text-xs);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -20,15 +20,15 @@
 
 .title {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
-  font-weight: 300;
+  font-size: var(--text-2xl);
+  font-weight: 400;
   letter-spacing: -0.02em;
   margin: 0 0 var(--space-4) 0;
 }
 
 .description {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: var(--text-sm);
   line-height: 1.7;
   color: var(--color-text-muted);
   margin: 0;
@@ -39,7 +39,7 @@
   padding: var(--space-6);
   background: var(--color-surface-2);
   font-family: var(--font-body);
-  font-size: 0.9375rem;
+  font-size: var(--text-sm);
   color: var(--color-text-muted);
 }
 
@@ -53,7 +53,7 @@
 
 .submittedNote {
   font-family: var(--font-display);
-  font-size: 0.9375rem;
+  font-size: var(--text-sm);
   color: var(--color-text-muted);
   margin: 0;
 }
@@ -61,7 +61,7 @@
 .feedback {}
 .feedbackLabel {
   font-family: var(--font-display);
-  font-size: 0.75rem;
+  font-size: var(--text-xs);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -70,7 +70,7 @@
 }
 .feedbackContent {
   font-family: var(--font-body);
-  font-size: 0.9375rem;
+  font-size: var(--text-sm);
   line-height: 1.65;
   margin: 0;
 }

@@ -35,10 +35,11 @@
 .links a {
   display: block;
   padding: var(--space-3);
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-size: var(--text-base);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
   line-height: 1.5;
   color: var(--color-text);
+  letter-spacing: 0.02em;
 }
 .links a:hover { text-decoration: underline; text-underline-offset: var(--space-1); }
 .inline .links {

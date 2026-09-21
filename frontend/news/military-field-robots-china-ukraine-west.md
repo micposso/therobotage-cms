@@ -4,8 +4,8 @@ title: "The New Battlefield Robot Race"
 category: OPINION
 date: September 18, 2026
 excerpt: Ukraine is teaching the West how field robots are used under fire, while China is scaling cheap robot bodies for military and security markets.
-headerImage: /images/news/military-field-robots-battlefield-race-header.png
-thumbnailImage: /images/news/military-field-robots-battlefield-race-thumb.png
+headerImage: /images/news/military-field-robots-battlefield-race-header.jpg
+thumbnailImage: /images/news/military-field-robots-battlefield-race-thumb.jpg
 author: The Robot Age Editorial Team
 ---
 

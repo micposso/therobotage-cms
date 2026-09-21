@@ -12,7 +12,7 @@
 .dimLabel {
   display: block;
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: var(--text-sm);
   font-weight: 500;
   color: var(--color-text);
   margin-bottom: var(--space-1);
@@ -20,7 +20,7 @@
 
 .dimDesc {
   font-family: var(--font-body);
-  font-size: 0.9375rem;
+  font-size: var(--text-sm);
   color: var(--color-text-muted);
   margin: 0 0 var(--space-3) 0;
 }
@@ -37,8 +37,8 @@
   background: var(--color-surface-2);
   border: 1px solid var(--color-border);
   font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 300;
+  font-size: var(--text-sm);
+  font-weight: 400;
   color: var(--color-text);
   cursor: pointer;
 }
@@ -57,8 +57,8 @@
 .rationale {
   width: 100%;
   font-family: var(--font-body);
-  font-size: 0.9375rem;
-  line-height: 1.6;
+  font-size: var(--text-sm);
+  line-height: 1.5;
   color: var(--color-text);
   border: none;
   border-bottom: 1px solid var(--color-border);
@@ -68,21 +68,21 @@
   background: transparent;
 }
 
-.rationale:focus { border-color: var(--color-accent); }
-.rationale:disabled { color: var(--color-text-muted); cursor: not-allowed; }
+.rationale:focus { border-color: var(--color-accent); font-family: var(--font-body); font-size: var(--text-sm); line-height: 1.5; }
+.rationale:disabled { color: var(--color-text-muted); cursor: not-allowed; font-family: var(--font-body); font-size: var(--text-sm); line-height: 1.5; }
 
 .summary {}
 .summaryLabel {
   display: block;
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: var(--text-sm);
   font-weight: 500;
   margin-bottom: var(--space-2);
 }
 
 .error {
   font-family: var(--font-display);
-  font-size: 0.875rem;
+  font-size: var(--text-xs);
   color: #991b1b;
   margin: 0;
 }
@@ -94,7 +94,7 @@
 
 .saveBtn {
   font-family: var(--font-display);
-  font-size: 0.9375rem;
+  font-size: var(--text-sm);
   font-weight: 400;
   color: var(--color-text);
   background: none;
@@ -107,7 +107,7 @@
 
 .submitBtn {
   font-family: var(--font-display);
-  font-size: 0.9375rem;
+  font-size: var(--text-sm);
   font-weight: 500;
   color: var(--color-surface);
   background: var(--color-text);

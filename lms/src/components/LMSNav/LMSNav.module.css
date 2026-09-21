@@ -42,9 +42,9 @@
 
 .cohort {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-xs);
-  letter-spacing: 0.15em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-text-muted);
   flex-shrink: 0;
@@ -52,9 +52,9 @@
 
 .progress {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-xs);
-  letter-spacing: 0.15em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-text-muted);
   flex-shrink: 0;
@@ -108,13 +108,14 @@
 
 .dropdownLink {
   font-family: var(--font-body);
-  font-weight: 300;
-  font-size: var(--text-xs);
-  letter-spacing: 0.06em;
+  font-weight: 400;
+  font-size: var(--text-sm);
+  letter-spacing: 0.02em;
   color: var(--color-text);
   padding: var(--space-3) var(--space-4);
   display: block;
   transition: background var(--ease-default);
+  line-height: 1.5;
 }
 
 .dropdownLink:hover {
@@ -128,9 +129,9 @@
 
 .dropdownSignOut {
   font-family: var(--font-body);
-  font-weight: 300;
-  font-size: var(--text-xs);
-  letter-spacing: 0.06em;
+  font-weight: 400;
+  font-size: var(--text-sm);
+  letter-spacing: 0.02em;
   color: var(--color-text-muted);
   padding: var(--space-3) var(--space-4);
   background: none;
@@ -139,6 +140,7 @@
   cursor: pointer;
   transition: color var(--ease-default);
   width: 100%;
+  line-height: 1.5;
 }
 
 .dropdownSignOut:hover {

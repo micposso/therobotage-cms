@@ -1,0 +1,8 @@
+{
+  "military-field-robots-china-ukraine-west": {
+    "path": "news/military-field-robots-china-ukraine-west/324be1b32327bfb6-4c5103f7c920.mp3",
+    "sourceHash": "f14868e3ea4a3d369c3aea1d0512ffc3cc96a346cf5df96dad5c957df63502ce",
+    "model": "gpt-4o-mini-tts",
+    "voice": "marin"
+  }
+}

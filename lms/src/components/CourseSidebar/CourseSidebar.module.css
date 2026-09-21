@@ -42,7 +42,7 @@
   align-items: baseline;
   gap: var(--space-2);
   font-family: var(--font-display);
-  font-size: 0.875rem;
+  font-size: var(--text-xs);
   font-weight: 400;
   color: var(--color-text);
   text-decoration: none;
@@ -54,7 +54,7 @@
 }
 
 .weekNum {
-  font-size: 0.6875rem;
+  font-size: var(--text-xs);
   font-weight: 500;
   color: var(--color-text-muted);
   text-transform: uppercase;

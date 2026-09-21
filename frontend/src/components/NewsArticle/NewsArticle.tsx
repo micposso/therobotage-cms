@@ -35,6 +35,15 @@ export default function NewsArticle({ article }: Props) {
 
           {/* ── Body ──────────────────────────────────────────────────────── */}
           <div className={styles.content}>
+            {article.audioUrl && (
+              <section className={styles.audioPlayer} aria-label="Article narration">
+                <p className={styles.audioLabel}>Listen to this article</p>
+                <audio controls preload="metadata" src={article.audioUrl} aria-label={`Listen to ${article.title}`}>
+                  Your browser does not support audio playback.
+                </audio>
+                <p className={styles.audioDisclosure}>AI-generated narration</p>
+              </section>
+            )}
             <div
               className={styles.markdown}
               dangerouslySetInnerHTML={{ __html: article.content }}
