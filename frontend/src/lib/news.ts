@@ -30,7 +30,8 @@ function getAudioUrl(slug: string, raw: string): string | undefined {
   if (!baseUrl || !fs.existsSync(AUDIO_MANIFEST)) return undefined
   const manifest = JSON.parse(fs.readFileSync(AUDIO_MANIFEST, 'utf8')) as Record<string, { path: string; sourceHash: string }>
   const entry = manifest[slug]
-  if (!entry || entry.sourceHash !== createHash('sha256').update(raw).digest('hex')) return undefined
+  // Match the publisher across Windows (CRLF) and deployment (LF) checkouts.
+  if (!entry || entry.sourceHash !== createHash('sha256').update(raw.replace(/\r\n/g, '\n')).digest('hex')) return undefined
   if (!/^news\/[a-z0-9-]+\/[a-f0-9-]+\.mp3$/.test(entry.path)) return undefined
   return `${baseUrl.replace(/\/$/, '')}/storage/v1/object/public/article-audio/${entry.path}`
 }

@@ -7,7 +7,8 @@ export const AUDIO_VOICE = 'marin'
 export const AUDIO_INSTRUCTIONS = 'Narrate this journalism clearly and naturally. Use a measured, neutral editorial tone. Do not add or change any words.'
 
 export function sourceHash(raw) {
-  return crypto.createHash('sha256').update(raw).digest('hex')
+  // Git checkouts use different line endings on Windows and Linux.
+  return crypto.createHash('sha256').update(raw.replace(/\r\n/g, '\n')).digest('hex')
 }
 
 function inlineText(tokens = []) {

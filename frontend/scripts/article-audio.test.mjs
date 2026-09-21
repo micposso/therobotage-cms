@@ -17,3 +17,7 @@ test('long articles split into safe speech requests', () => {
 test('source hash changes when article text changes', () => {
   assert.notEqual(sourceHash('before'), sourceHash('after'))
 })
+
+test('source hash is stable across Windows and Linux checkouts', () => {
+  assert.equal(sourceHash('Title\r\n\r\nArticle text\r\n'), sourceHash('Title\n\nArticle text\n'))
+})
