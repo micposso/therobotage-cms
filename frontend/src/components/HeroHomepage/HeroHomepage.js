@@ -1,4 +1,6 @@
 'use client'
+import { useCopy } from '@/lib/i18n/useCopy'
+
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
@@ -89,6 +91,7 @@ const lockupVariants = {
 // ─── Nav item with hover panel ────────────────────────────────────────────────
 
 function HeroNavItem({ label, href, desc }) {
+  const { t, href: resolveHref } = useCopy()
   const [open, setOpen] = useState(false)
 
   return (
@@ -97,7 +100,7 @@ function HeroNavItem({ label, href, desc }) {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <Link href={href} className={styles.heroNavLink}>{label}</Link>
+      <Link href={resolveHref(href)} className={styles.heroNavLink}>{t(label)}</Link>
       <AnimatePresence>
         {open && (
           <motion.div
@@ -107,7 +110,7 @@ function HeroNavItem({ label, href, desc }) {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className={styles.heroNavDesc}>{desc}</p>
+            <p className={styles.heroNavDesc}>{t(desc)}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -119,6 +122,7 @@ function HeroNavItem({ label, href, desc }) {
 
 /** @param {{ images: string[] }} props */
 export default function HeroHomepage({ images = [] }) {
+  const { t, href: resolveHref } = useCopy()
   return (
     <section className={styles.hero}>
       <div className="container-fluid">
@@ -156,8 +160,8 @@ export default function HeroHomepage({ images = [] }) {
               >
                 {NAV_LINKS.map(({ label, href, desc }) => (
                   label === 'Learn'
-                    ? <LearnMenu key={label} inline triggerClassName={styles.heroNavLink} />
-                    : <HeroNavItem key={label} label={label} href={href} desc={desc} />
+                    ? <LearnMenu translate={t} resolveHref={resolveHref} key={label} inline triggerClassName={styles.heroNavLink} />
+                    : <HeroNavItem key={label} label={label} href={resolveHref(href)} desc={desc} />
                 ))}
               </motion.nav>
 
@@ -178,16 +182,16 @@ export default function HeroHomepage({ images = [] }) {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                  {eyebrowText}
+                  {t(eyebrowText)}
                 </motion.p>
-                <h1 className={styles.headline}>Robots for all.</h1>
+                <h1 className={styles.headline}>{t("Robots for all.")}</h1>
                 <motion.p
                   className={styles.subtext}
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 1.1 }}
                 >
-                  {subtext}
+                  {t(subtext)}
                 </motion.p>
               </div>
 
@@ -211,16 +215,10 @@ export default function HeroHomepage({ images = [] }) {
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 1.2 }}
             >
               <div className={styles.ctaRow}>
-                <Link href="/robot-literacy" className={styles.ctaPrimary}>
-                  What is Robot Literacy?
-                  <span className={styles.arrow} aria-hidden="true">→</span>
+                <Link href={resolveHref('/robot-literacy')} className={styles.ctaPrimary}>{t("What is Robot Literacy?")}<span className={styles.arrow} aria-hidden="true">→</span>
                 </Link>
-                <Link href="/learn" className={styles.ctaGhost}>
-                  Become Certified
-                </Link>
-                <Link href="/live-robot-lab#request-live-robot-lab" className={styles.ctaGhost}>
-                  Request a Live Robot Lab
-                </Link>
+                <Link href={resolveHref('/learn')} className={styles.ctaGhost}>{t("Become Certified")}</Link>
+                <Link href={resolveHref('/live-robot-lab#request-live-robot-lab')} className={styles.ctaGhost}>{t("Request a Live Robot Lab")}</Link>
               </div>
             </motion.div>
 
@@ -239,7 +237,7 @@ export default function HeroHomepage({ images = [] }) {
           <div className={styles.tickerTrack}>
             {tickerTrack.map((item, i) => (
               <span key={i} className={styles.tickerItem}>
-                {item}
+                {t(item)}
                 <span className={styles.tickerSep}>·</span>
               </span>
             ))}

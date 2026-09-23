@@ -1,11 +1,21 @@
 .menu { position: relative; }
 .trigger {
   cursor: pointer;
-  width: fit-content;
+  position: relative;
+  width: max-content;
+  min-width: max-content;
+  white-space: nowrap;
+  flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
   list-style: none;
+}
+/* The shared link underline must not consume space inside the flex trigger. */
+.trigger::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 .trigger::-webkit-details-marker {
   display: none;

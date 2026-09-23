@@ -1,4 +1,5 @@
 'use client'
+import { useCopy } from '@/lib/i18n/useCopy'
 
 import { createContext, useContext, useState, useEffect, useActionState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -14,6 +15,7 @@ const WaitlistContext = createContext<WaitlistContextValue | null>(null)
 const initialState = { success: false, error: undefined as string | undefined }
 
 export function WaitlistProvider({ children }: { children: React.ReactNode }) {
+  const { t } = useCopy()
   const [isOpen, setIsOpen] = useState(false)
   const [state, action, pending] = useActionState(joinWaitlist, initialState)
 
@@ -56,7 +58,7 @@ export function WaitlistProvider({ children }: { children: React.ReactNode }) {
               transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
               onClick={(e) => e.stopPropagation()}
             >
-              <button className={styles.closeBtn} onClick={() => setIsOpen(false)} aria-label="Close">
+              <button className={styles.closeBtn} onClick={() => setIsOpen(false)} aria-label={t("Close")}>
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M3 3l10 10M13 3L3 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                 </svg>
@@ -64,49 +66,41 @@ export function WaitlistProvider({ children }: { children: React.ReactNode }) {
 
               {state.success ? (
                 <div className={styles.success}>
-                  <p className={styles.eyebrow}>You&apos;re on the list.</p>
-                  <h2 className={styles.successHeadline} id="waitlist-title">We&apos;ll reach you first.</h2>
-                  <p className={styles.successBody}>
-                    Before the public announcement, you&apos;ll hear about the cohort schedule, founding-member pricing, and direct access to the instructor. Nothing in the meantime.
-                  </p>
-                  <button className={styles.closeAction} onClick={() => setIsOpen(false)}>
-                    Close
-                  </button>
+                  <p className={styles.eyebrow}>{t("You're on the list.")}</p>
+                  <h2 className={styles.successHeadline} id="waitlist-title">{t("We'll reach you first.")}</h2>
+                  <p className={styles.successBody}>{t("Before the public announcement, you'll hear about the cohort schedule, founding-member pricing, and direct access to the instructor. Nothing in the meantime.")}</p>
+                  <button className={styles.closeAction} onClick={() => setIsOpen(false)}>{t("Close")}</button>
                 </div>
               ) : (
                 <>
-                  <p className={styles.eyebrow}>REP Certification</p>
-                  <h2 className={styles.headline} id="waitlist-title">
-                    The first cohort runs May 2026.
-                  </h2>
-                  <p className={styles.description}>
-                    Certification dates are being confirmed now. Leave your email and we&apos;ll reach you before the public announcement — with the schedule, founding-member pricing, and direct access to the instructor.
-                  </p>
+                  <p className={styles.eyebrow}>{t("REP Certification")}</p>
+                  <h2 className={styles.headline} id="waitlist-title">{t("The first cohort runs May 2026.")}</h2>
+                  <p className={styles.description}>{t("Certification dates are being confirmed now. Leave your email and we'll reach you before the public announcement — with the schedule, founding-member pricing, and direct access to the instructor.")}</p>
 
                   <form action={action} className={styles.form} noValidate>
                     <div className={styles.fieldGroup}>
-                      <label htmlFor="waitlist-email" className={styles.label}>Email address</label>
+                      <label htmlFor="waitlist-email" className={styles.label}>{t("Email address")}</label>
                       <input
                         id="waitlist-email"
                         name="email"
                         type="email"
                         autoComplete="email"
                         required
-                        placeholder="you@example.com"
+                        placeholder={t("you@example.com")}
                         className={styles.input}
                       />
                     </div>
 
                     {state.error && (
-                      <p className={styles.errorMsg} role="alert">{state.error}</p>
+                      <p className={styles.errorMsg} role="alert">{t(state.error)}</p>
                     )}
 
                     <button type="submit" className={styles.submitBtn} disabled={pending}>
-                      {pending ? 'Saving…' : 'Reserve my seat →'}
+                      {t(pending ? 'Saving…' : 'Reserve my seat →')}
                     </button>
                   </form>
 
-                  <p className={styles.legalNote}>No noise. Just the announcement when it&apos;s ready.</p>
+                  <p className={styles.legalNote}>{t("No noise. Just the announcement when it's ready.")}</p>
                 </>
               )}
             </motion.div>

@@ -51,7 +51,7 @@ const SOCIAL_LINKS = [
   },
 ]
 
-export default function Footer({ baseUrl = '' }) {
+export default function Footer({ baseUrl = '', translate = (text) => text, resolveHref = (href) => href }) {
   const year = new Date().getFullYear()
 
   return (
@@ -63,30 +63,30 @@ export default function Footer({ baseUrl = '' }) {
 
           {/* Logo + tagline */}
           <div className={`col-lg-4 ${styles.logoCol}`}>
-            <a href={`${baseUrl}/`} className={styles.logo}>The Robot Age</a>
+            <a href={resolveHref(`${baseUrl}/`)} className={styles.logo}>The Robot Age</a>
             <p className={styles.tagline}>
-              Preparing people and organizations for a world with robots.
+              {translate('Preparing people and organizations for a world with robots.')}
             </p>
           </div>
 
           {/* Nav links */}
           <div className={`col-lg-2 ${styles.navCol}`}>
-            <span className={styles.colLabel}>Pages</span>
+            <span className={styles.colLabel}>{translate('Pages')}</span>
             <nav className={styles.navLinks}>
               {NAV_LINKS.map(({ label, href }) => (
-                <a key={label} href={`${baseUrl}${href}`} className={styles.navLink}>{label}</a>
+                <a key={label} href={resolveHref(`${baseUrl}${href}`)} className={styles.navLink}>{translate(label)}</a>
               ))}
-              <a href="https://learn.therobotage.com" className={styles.navLink}>Sign in</a>
+              <a href="https://learn.therobotage.com" className={styles.navLink}>{translate('Sign in')}</a>
             </nav>
           </div>
 
           {/* Certifications */}
           <div className={`col-lg-3 ${styles.navCol}`}>
-            <span className={styles.colLabel}>Certifications</span>
+            <span className={styles.colLabel}>{translate('Certifications')}</span>
             <nav className={styles.navLinks}>
               {certifications.map(({ abbr, slug, name }) => (
-                <a key={abbr} href={`${baseUrl}/learn/${slug}`} className={styles.navLink}>
-                  <span className={styles.certAbbr}>{abbr}</span> — {name}
+                <a key={abbr} href={resolveHref(`${baseUrl}/learn/${slug}`)} className={styles.navLink}>
+                  <span className={styles.certAbbr}>{abbr}</span> — {translate(name)}
                 </a>
               ))}
             </nav>
@@ -94,7 +94,7 @@ export default function Footer({ baseUrl = '' }) {
 
           {/* Social */}
           <div className={`col-lg-3 ${styles.socialCol}`}>
-            <span className={styles.colLabel}>Follow</span>
+            <span className={styles.colLabel}>{translate('Follow')}</span>
             <div className={styles.socialLinks}>
               {SOCIAL_LINKS.map(({ label, href, icon }) => (
                 <a
@@ -121,13 +121,13 @@ export default function Footer({ baseUrl = '' }) {
         <div className={`row align-items-center ${styles.bottomRow}`}>
           <div className="col-md-6">
             <p className={styles.legal}>
-              &copy; {year} The Robot Age. All rights reserved.
+              &copy; {year} The Robot Age. {translate('All rights reserved.')}
             </p>
           </div>
           <div className={`col-md-6 ${styles.legalRight}`}>
-            <a href={`${baseUrl}/privacy`} className={styles.legalLink}>Privacy Policy</a>
-            <a href={`${baseUrl}/terms`} className={styles.legalLink}>Terms of Use</a>
-            <a href={`${baseUrl}/ai-statement`} className={styles.legalLink}>Fair use of AI</a>
+            <a href={resolveHref(`${baseUrl}/privacy`)} className={styles.legalLink}>{translate('Privacy Policy')}</a>
+            <a href={resolveHref(`${baseUrl}/terms`)} className={styles.legalLink}>{translate('Terms of Use')}</a>
+            <a href={resolveHref(`${baseUrl}/ai-statement`)} className={styles.legalLink}>{translate('Fair use of AI')}</a>
           </div>
         </div>
 

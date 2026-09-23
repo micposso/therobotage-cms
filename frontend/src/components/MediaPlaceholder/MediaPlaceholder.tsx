@@ -1,4 +1,4 @@
-import styles from '@/app/live-robot-lab/live-robot-lab.module.css'
+import styles from '@/app/(english)/live-robot-lab/live-robot-lab.module.css'
 
 export default function MediaPlaceholder({ label, video = false }: { label: string; video?: boolean }) {
   return (

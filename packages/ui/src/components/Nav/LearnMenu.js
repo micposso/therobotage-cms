@@ -10,7 +10,7 @@ const LEARN_LINKS = [
 ]
 
 /** A native disclosure shared by the top, mobile and homepage navigation. */
-export default function LearnMenu({ baseUrl = '', inline = false, triggerClassName = '', onNavigate }) {
+export default function LearnMenu({ baseUrl = '', inline = false, triggerClassName = '', onNavigate, translate = (text) => text, resolveHref = (href) => href }) {
   const disclosure = useRef(null)
 
   useEffect(() => {
@@ -42,13 +42,13 @@ export default function LearnMenu({ baseUrl = '', inline = false, triggerClassNa
     onFocus={(event) => {
       event.currentTarget.open = true
     }}>
-    <summary className={`${styles.trigger} ${triggerClassName}`}>LEARN</summary>
+    <summary className={`${styles.trigger} ${triggerClassName}`}>{translate('LEARN')}</summary>
     <ul className={styles.links}>
       {LEARN_LINKS.map(({ label, href }) => <li key={href}>
-        <a href={`${baseUrl}${href}`} onClick={() => {
+        <a href={resolveHref(`${baseUrl}${href}`)} onClick={() => {
           if (disclosure.current) disclosure.current.open = false
           onNavigate?.()
-        }}>{label}</a>
+        }}>{translate(label)}</a>
       </li>)}
     </ul>
   </details>

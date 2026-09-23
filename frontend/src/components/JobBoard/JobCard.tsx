@@ -1,3 +1,6 @@
+'use client'
+import { useCopy } from '@/lib/i18n/useCopy'
+
 import Link from 'next/link'
 import type { JobCard as JobCardData } from '@/lib/jobs'
 import { PLACEHOLDER_LOGO_URL, formatLocation, formatSalary } from '@/lib/jobs'
@@ -11,10 +14,11 @@ type Props = {
 // A job board is a list, not a gallery: one row per role, separated by hairlines rather
 // than boxed. Follows DESIGN_SYSTEM 4.3's border-separator rule.
 export default function JobCard({ job }: Props) {
+  const { t, href } = useCopy()
   const salary = formatSalary(job)
 
   return (
-    <Link href={`/jobs/${job.slug}`} className={styles.card}>
+    <Link href={href(`/jobs/${job.slug}`)} className={styles.card}>
       <div
         className={styles.logo}
         style={{ backgroundImage: `url(${job.companyLogoUrl ?? PLACEHOLDER_LOGO_URL})` }}
@@ -39,11 +43,9 @@ export default function JobCard({ job }: Props) {
         {salary ? (
           <span className={styles.salary}>{salary}</span>
         ) : (
-          <span className={styles.salaryMissing}>Salary not disclosed</span>
+          <span className={styles.salaryMissing}>{t("Salary not disclosed")}</span>
         )}
-        <span className={styles.cta} aria-hidden="true">
-          View role
-          <svg width="16" height="10" viewBox="0 0 16 10" fill="none" className={styles.arrow}>
+        <span className={styles.cta} aria-hidden="true">{t("View role")}<svg width="16" height="10" viewBox="0 0 16 10" fill="none" className={styles.arrow}>
             <path d="M11 1L15 5L11 9" stroke="currentColor" strokeWidth="1" />
             <path d="M15 5H0" stroke="currentColor" strokeWidth="1" />
           </svg>

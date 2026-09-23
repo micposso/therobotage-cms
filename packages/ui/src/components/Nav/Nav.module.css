@@ -236,6 +236,12 @@
     display: none;
   }
 
+  .cta { display: none; }
+
+  .inner { justify-content: space-between; }
+
+  .hamburger { flex-shrink: 0; min-height: var(--space-12); min-width: var(--space-12); }
+
   .hamburger {
     display: flex;
   }
@@ -309,4 +315,13 @@
 
 .mobileSearchBtn:hover {
   color: var(--color-accent);
+}
+
+@media (max-width: 480px) {
+  .logoImage { width: var(--space-16); }
+}
+
+@media (min-width: 1025px) and (max-width: 1400px) {
+  .links { gap: var(--space-3); }
+  .cta, .searchWrap { margin-left: var(--space-3); }
 }

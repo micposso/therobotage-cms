@@ -5,6 +5,7 @@ import { articles } from '@/lib/articles'
 import { fieldSignals } from '@/lib/fieldSignals'
 import { certifications } from '@/lib/certifications'
 import { getLiveJobs } from '@/lib/jobsQueries'
+import { getAvailableTranslations, getTranslatedContent, translationAlternates } from '@/lib/i18n/content'
 
 const BASE = 'https://therobotage.com'
 
@@ -28,7 +29,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/research`,               lastModified: now,  changeFrequency: 'weekly',  priority: 0.9 },
     { url: `${BASE}/learn`,                  lastModified: now,  changeFrequency: 'weekly',  priority: 0.9 },
     { url: `${BASE}/rxd`,                    lastModified: now,  changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE}/robot-literacy`,         lastModified: now,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/summit`,                 lastModified: now,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/enterprise`,             lastModified: now,  changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/connect`,                lastModified: now,  changeFrequency: 'monthly', priority: 0.6 },
@@ -105,7 +105,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error('sitemap: failed to load jobs', error)
   }
 
-  return [
+  const english = [
     ...staticPages,
     ...certPages,
     ...newsPages,
@@ -114,4 +114,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...robotPages,
     ...jobPages,
   ]
+  const translations = getTranslatedContent()
+  const translated: MetadataRoute.Sitemap = getAvailableTranslations().filter((route) => route !== '/search').map((route) => ({
+    url: `${BASE}/es${route === '/' ? '' : route}`,
+    lastModified: translations.find((entry) => entry.route === route)?.generatedAt || now,
+    alternates: { languages: translationAlternates(route) },
+  }))
+  return [...english.map((entry) => ({ ...entry, alternates: { languages: translationAlternates(new URL(entry.url).pathname) } })), ...translated]
 }

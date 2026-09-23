@@ -1,14 +1,19 @@
+import { uiText } from '@/lib/i18n/messages'
 import Link from 'next/link'
 import type { NewsArticle as NewsArticleType } from '@/lib/news'
 import ShareButton from './ShareButton'
 import WaitlistModal from './WaitlistModal'
 import styles from './NewsArticle.module.css'
+import type { Locale } from '@/lib/i18n/routing'
 
 interface Props {
   article: NewsArticleType
+  locale?: Locale
+  originalHref?: string
 }
 
-export default function NewsArticle({ article }: Props) {
+export default function NewsArticle({ article, locale = 'en', originalHref }: Props) {
+  const t = (text: string) => uiText(text, locale)
   return (
     <article className={styles.article}>
 
@@ -35,13 +40,12 @@ export default function NewsArticle({ article }: Props) {
 
           {/* ── Body ──────────────────────────────────────────────────────── */}
           <div className={styles.content}>
+            {locale === 'es' && <p className={styles.translationNote}>{t("Traducido del inglés con IA. ")}<a href={`${originalHref}?lang=en`}>{t("Leer el original en inglés")}</a>.</p>}
             {article.audioUrl && (
-              <section className={styles.audioPlayer} aria-label="Article narration">
-                <p className={styles.audioLabel}>Listen to this article</p>
-                <audio controls preload="metadata" src={article.audioUrl} aria-label={`Listen to ${article.title}`}>
-                  Your browser does not support audio playback.
-                </audio>
-                <p className={styles.audioDisclosure}>AI-generated narration</p>
+              <section className={styles.audioPlayer} aria-label={t("Article narration")}>
+                <p className={styles.audioLabel}>{t("Listen to this article")}</p>
+                <audio controls preload="metadata" src={article.audioUrl} aria-label={`Listen to ${article.title}`}>{t("Your browser does not support audio playback.")}</audio>
+                <p className={styles.audioDisclosure}>{t("AI-generated narration")}</p>
               </section>
             )}
             <div
@@ -49,24 +53,22 @@ export default function NewsArticle({ article }: Props) {
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
             <div className={styles.back}>
-              <Link href="/" className={styles.backLink}>
-                ← Back to News
+              <Link href={locale === 'es' ? '/es' : '/'} className={styles.backLink}>
+                {locale === 'es' ? '← Volver a las noticias' : '← Back to News'}
               </Link>
             </div>
           </div>
 
           {/* ── Sidebar ───────────────────────────────────────────────────── */}
           <aside className={styles.sidebar}>
-            <p className={styles.sidebarLabel}>Related</p>
+            <p className={styles.sidebarLabel}>{t("Related")}</p>
             <nav className={styles.sidebarNav}>
-              <Link href="/learn" className={styles.sidebarLink}>Get the REP credential</Link>
-              <Link href="/robot-literacy" className={styles.sidebarLink}>What is robot literacy?</Link>
-              <Link href="/summit" className={styles.sidebarLink}>Join the Summit</Link>
+              <Link href="/learn" className={styles.sidebarLink}>{t("Get the REP credential")}</Link>
+              <Link href="/robot-literacy" className={styles.sidebarLink}>{t("What is robot literacy?")}</Link>
+              <Link href="/summit" className={styles.sidebarLink}>{t("Join the Summit")}</Link>
               <ShareButton />
             </nav>
-            <p className={styles.sidebarBlurb}>
-              The REP credential is built for the people who shape how robots land — not the engineers who build them.
-            </p>
+            <p className={styles.sidebarBlurb}>{t("The REP credential is built for the people who shape how robots land — not the engineers who build them.")}</p>
             <WaitlistModal />
           </aside>
 

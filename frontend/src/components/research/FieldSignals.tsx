@@ -1,4 +1,6 @@
 'use client'
+import { useCopy } from '@/lib/i18n/useCopy'
+
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
@@ -46,6 +48,7 @@ const itemVariants = {
 // ─── Component ───────────────────────────────────────────────────────────────
 
 export default function FieldSignals() {
+  const { t, href: resolveHref } = useCopy()
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
@@ -59,25 +62,19 @@ export default function FieldSignals() {
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6 }}
-          >
-            03 — Field Signals
-          </motion.p>
+          >{t("03 — Field Signals")}</motion.p>
           <motion.h2
             className={styles.headline}
             initial={{ y: 40, opacity: 0 }}
             animate={inView ? { y: 0, opacity: 1 } : {}}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-          >
-            Editorial essays from the human side of robotics.
-          </motion.h2>
+          >{t("Editorial essays from the human side of robotics.")}</motion.h2>
           <motion.p
             className={styles.body}
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-          >
-            Where the framework ends and the analysis begins. Field Signals examines deployment patterns, design decisions, and the operational consequences that follow.
-          </motion.p>
+          >{t("Where the framework ends and the analysis begins. Field Signals examines deployment patterns, design decisions, and the operational consequences that follow.")}</motion.p>
         </div>
 
         <motion.div
@@ -88,12 +85,12 @@ export default function FieldSignals() {
         >
           {ESSAYS.map((essay) => (
             <motion.div key={essay.number} variants={itemVariants}>
-              <Link href={essay.slug} className={styles.item}>
+              <Link href={resolveHref(essay.slug)} className={styles.item}>
                 <span className={styles.number}>{essay.number}</span>
                 <div className={styles.itemBody}>
                   <span className={styles.itemDate}>{essay.date}</span>
-                  <p className={styles.itemTitle}>{essay.title}</p>
-                  <p className={styles.itemTeaser}>{essay.teaser}</p>
+                  <p className={styles.itemTitle}>{t(essay.title)}</p>
+                  <p className={styles.itemTeaser}>{t(essay.teaser)}</p>
                 </div>
               </Link>
             </motion.div>
@@ -106,9 +103,7 @@ export default function FieldSignals() {
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.45 }}
           >
-            <Link href="/research/field-signals" className={styles.archiveCta}>
-              View full index
-              <span className={styles.ctaArrow} aria-hidden="true">
+            <Link href="/research/field-signals" className={styles.archiveCta}>{t("View full index")}<span className={styles.ctaArrow} aria-hidden="true">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5"
                     strokeLinecap="round" strokeLinejoin="round" />

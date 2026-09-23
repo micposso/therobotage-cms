@@ -17,7 +17,7 @@ const NAV_LINKS = [
   { label: 'ENTERPRISE',    href: '/enterprise' },
 ]
 
-export default function Nav({ pinned = false, baseUrl = '', cta = null }) {
+export default function Nav({ pinned = false, baseUrl = '', cta = null, utilitySlot = null, translate = (text) => text, resolveHref = (href) => href }) {
   const [scrolled, setScrolled]       = useState(false)
   const [menuOpen, setMenuOpen]       = useState(false)
   const [searchOpen, setSearchOpen]   = useState(false)
@@ -52,7 +52,7 @@ export default function Nav({ pinned = false, baseUrl = '', cta = null }) {
     const q = searchInputRef.current?.value?.trim()
     if (q) {
       setSearchOpen(false)
-      router.push(`/search?q=${encodeURIComponent(q)}`)
+      router.push(resolveHref(`/search?q=${encodeURIComponent(q)}`))
     }
   }
 
@@ -61,7 +61,7 @@ export default function Nav({ pinned = false, baseUrl = '', cta = null }) {
     const q = mobileSearchInputRef.current?.value?.trim()
     if (q) {
       setMenuOpen(false)
-      router.push(`/search?q=${encodeURIComponent(q)}`)
+      router.push(resolveHref(`/search?q=${encodeURIComponent(q)}`))
     }
   }
 
@@ -72,7 +72,7 @@ export default function Nav({ pinned = false, baseUrl = '', cta = null }) {
           <div className={styles.inner}>
 
             {/* Logo — always visible on mobile */}
-            <a href={`${baseUrl}/`} className={styles.logoMobile}>
+            <a href={resolveHref(`${baseUrl}/`)} className={styles.logoMobile}>
               <Image src={`${baseUrl}/brand/tra-logo.svg`} alt="The Robot Age" width={90} height={36} className={styles.logoImage} unoptimized />
             </a>
 
@@ -80,7 +80,7 @@ export default function Nav({ pinned = false, baseUrl = '', cta = null }) {
             <AnimatePresence>
               {(scrolled || pinned) && (
                 <motion.a
-                  href={`${baseUrl}/`}
+                  href={resolveHref(`${baseUrl}/`)}
                   className={styles.logo}
                   initial={{ opacity: 0, x: -12 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -97,8 +97,8 @@ export default function Nav({ pinned = false, baseUrl = '', cta = null }) {
               {NAV_LINKS.map(({ label, href }) => (
                 <li key={label}>
                   {label === 'LEARN'
-                    ? <LearnMenu baseUrl={baseUrl} triggerClassName={styles.link} />
-                    : <a href={`${baseUrl}${href}`} className={styles.link}>{label}</a>}
+                    ? <LearnMenu baseUrl={baseUrl} translate={translate} resolveHref={resolveHref} triggerClassName={styles.link} />
+                    : <a href={resolveHref(`${baseUrl}${href}`)} className={styles.link}>{translate(label)}</a>}
                 </li>
               ))}
             </ul>
@@ -124,9 +124,9 @@ export default function Nav({ pinned = false, baseUrl = '', cta = null }) {
                       ref={searchInputRef}
                       type="text"
                       name="q"
-                      placeholder="Search…"
+                      placeholder={translate('Search…')}
                       className={styles.searchInput}
-                      aria-label="Search"
+                      aria-label={translate('Search')}
                     />
                   </motion.form>
                 )}
@@ -135,7 +135,7 @@ export default function Nav({ pinned = false, baseUrl = '', cta = null }) {
               <button
                 className={`${styles.searchBtn} ${searchOpen ? styles.searchBtnActive : ''}`}
                 onClick={() => setSearchOpen((o) => !o)}
-                aria-label={searchOpen ? 'Close search' : 'Open search'}
+                aria-label={translate(searchOpen ? 'Close search' : 'Open search')}
               >
                 {searchOpen ? (
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -151,10 +151,12 @@ export default function Nav({ pinned = false, baseUrl = '', cta = null }) {
               </button>
             </div>
 
+            {utilitySlot}
+
             {/* Hamburger */}
             <button
               className={styles.hamburger}
-              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-label={translate(menuOpen ? 'Close menu' : 'Open menu')}
               aria-expanded={menuOpen}
               aria-controls="site-mobile-menu"
               onClick={() => setMenuOpen((o) => !o)}
@@ -194,11 +196,11 @@ export default function Nav({ pinned = false, baseUrl = '', cta = null }) {
                 ref={mobileSearchInputRef}
                 type="text"
                 name="q"
-                placeholder="Search…"
+                placeholder={translate('Search…')}
                 className={styles.mobileSearchInput}
-                aria-label="Search"
+                aria-label={translate('Search')}
               />
-              <button type="submit" className={styles.mobileSearchBtn} aria-label="Search">
+              <button type="submit" className={styles.mobileSearchBtn} aria-label={translate('Search')}>
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <circle cx="6.5" cy="6.5" r="4.5" stroke="currentColor" strokeWidth="1.5" />
                   <path d="M10 10l4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -207,6 +209,7 @@ export default function Nav({ pinned = false, baseUrl = '', cta = null }) {
             </form>
 
             <nav className={styles.mobileLinks}>
+              {cta && <a href={cta.href} className={styles.mobileLink}>{cta.label}</a>}
               {NAV_LINKS.map(({ label, href }, i) => (
                 <motion.div
                   key={label}
@@ -214,12 +217,12 @@ export default function Nav({ pinned = false, baseUrl = '', cta = null }) {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1], delay: i * 0.06 }}
                 >
-                  {label === 'LEARN' ? <LearnMenu baseUrl={baseUrl} inline triggerClassName={styles.mobileLink} onNavigate={() => setMenuOpen(false)} /> : <a
-                    href={`${baseUrl}${href}`}
+                  {label === 'LEARN' ? <LearnMenu baseUrl={baseUrl} translate={translate} resolveHref={resolveHref} inline triggerClassName={styles.mobileLink} onNavigate={() => setMenuOpen(false)} /> : <a
+                    href={resolveHref(`${baseUrl}${href}`)}
                     className={styles.mobileLink}
                     onClick={() => setMenuOpen(false)}
                   >
-                    {label}
+                    {translate(label)}
                   </a>}
                 </motion.div>
               ))}
