@@ -162,6 +162,12 @@
     "expiresAt": null
   },
   {
+    "id": "news/un-autonomous-weapons-human-control.md",
+    "route": "/news/un-autonomous-weapons-human-control",
+    "sourceHash": "7725025c36b2e16aa92ff5811edc3eebc52ee82fc5fe1cd81533f0cbafa6b8ec",
+    "expiresAt": null
+  },
+  {
     "id": "news/unitree-ipo-robot-platform.md",
     "route": "/news/unitree-ipo-robot-platform",
     "sourceHash": "828f727550150c9db0011b14c5c51f196dc90fcc10dddbc3e7437a3a5499e3ce",
@@ -298,6 +304,12 @@
     "route": "/jobs/design-technologist-robot-animation-fauna",
     "sourceHash": "c613eaf1897b67f03b58f29c361f6d424f97853742404f7aa5d313968417f0c4",
     "expiresAt": "2026-11-02T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/director-head-of-editorial-content-agility.md",
+    "route": "/jobs/director-head-of-editorial-content-agility",
+    "sourceHash": "08f991f7dcbaf9109071fc0932e905242207e7d7526dc14d001abab9358dc83d",
+    "expiresAt": "2026-11-21T00:00:00.000Z"
   },
   {
     "id": "jobs/director-product-data-flywheel-serve-robotics.md",
@@ -558,6 +570,12 @@
     "expiresAt": "2026-10-24T00:00:00.000Z"
   },
   {
+    "id": "jobs/product-designer-manufacturing-defense-gecko.md",
+    "route": "/jobs/product-designer-manufacturing-defense-gecko",
+    "sourceHash": "30d71400f4518885ee850c5942dacee546a0b469c396f572dea4b090f1a31adf",
+    "expiresAt": "2026-11-21T00:00:00.000Z"
+  },
+  {
     "id": "jobs/product-designer-treeswift.md",
     "route": "/jobs/product-designer-treeswift",
     "sourceHash": "0beb180d760b0dc5d9c1fba6f0c510ed043e7953bf0efe407154c936dea661ca",
@@ -796,6 +814,12 @@
     "route": "/jobs/research-scientist-world-action-foundation-model-robotics-applied-intuition",
     "sourceHash": "065df678f4517602d61f8e00e6686815d68e8fa525bbc579b4d8fbd457abf0b1",
     "expiresAt": "2026-11-03T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/robot-learning-engineer-manipulation-applied-intuition.md",
+    "route": "/jobs/robot-learning-engineer-manipulation-applied-intuition",
+    "sourceHash": "92123cb33431a9f7e1d810d3b631fdc23213b508a93f3b33abcd81785e24f424",
+    "expiresAt": "2026-11-20T00:00:00.000Z"
   },
   {
     "id": "jobs/robotics-algorithms-engineer-manipulation-control-path-robotics.md",
@@ -1172,8 +1196,8 @@
   {
     "id": "jobs/staff-technical-program-manager-software-collaborative-robotics.md",
     "route": "/jobs/staff-technical-program-manager-software-collaborative-robotics",
-    "sourceHash": "fb2dd21e8f279436546cc2fbdf0353ae6ceec8ed8842cea73ca380376b6066c8",
-    "expiresAt": "2026-10-20T00:00:00.000Z"
+    "sourceHash": "5010a277f15fe355e44834e5db5be9716f5f2daa07f3ff75407a402a86fb61cb",
+    "expiresAt": "2026-11-21T00:00:00.000Z"
   },
   {
     "id": "jobs/staff-video-producer-apptronik.md",
@@ -1300,6 +1324,18 @@
     "route": "/jobs/ux-validation-lead-applied-intuition",
     "sourceHash": "8ab41b0e24f331ca715d92de194160717043bba1add3430c14b0d256ed3be6b2",
     "expiresAt": "2026-10-24T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/vice-president-embodied-ai-apptronik.md",
+    "route": "/jobs/vice-president-embodied-ai-apptronik",
+    "sourceHash": "ec9a0f92c41c1d6f1f3ba04bc62c6064d85086f1d62eca7c4c25761a9d1c7977",
+    "expiresAt": "2026-11-20T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/vp-product-design-serve-robotics.md",
+    "route": "/jobs/vp-product-design-serve-robotics",
+    "sourceHash": "afb89d93187ca764f75b306a0237270525908538d2ffa356459df972dcade715",
+    "expiresAt": "2026-11-10T00:00:00.000Z"
   },
   {
     "id": "jobs/west-coast-communications-manager-applied-intuition.md",

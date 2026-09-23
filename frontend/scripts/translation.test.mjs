@@ -109,9 +109,9 @@ test('Learn course content, form options and required-field errors have Spanish 
     ['liveRobotLab', 'labFields', 'validateLabRequest'],
     ['robotLiteracyPartners', 'partnerFields', 'validateRobotLiteracyPartnerRequest'],
   ]) {
-    const module = await load(path.join(root, `src/lib/${file}.ts`))
-    for (const field of module[fields]) { check(field.label); check(field.options) }
-    check(Object.values(module[validate](new FormData())))
+    const loadedModule = await load(path.join(root, `src/lib/${file}.ts`))
+    for (const field of loadedModule[fields]) { check(field.label); check(field.options) }
+    check(Object.values(loadedModule[validate](new FormData())))
   }
   for (const [source, translated] of Object.entries(saved)) {
     const tokens = text => (text.match(/\{[a-zA-Z]+\}/g) || []).sort()

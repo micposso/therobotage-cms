@@ -1,6 +1,7 @@
 'use client'
 
 import { useActionState } from 'react'
+import Link from 'next/link'
 import { sendWorkshopEmail } from '@/app/actions/sendWorkshopEmail'
 import { WORKSHOP_HEARD_OPTIONS, WORKSHOP_PROFESSIONS } from '@/lib/events'
 import styles from './workshop.module.css'
@@ -112,8 +113,8 @@ export default function WorkshopForm() {
 
       <p className={styles.disclaimer}>
         By reserving a spot, you agree that sessions are recorded and shared with the cohort, and that short clips, your first name, or comments may be used for educational and promotional purposes. Camera off and on mute = you won&rsquo;t be featured. We&rsquo;ll always ask separately before using anything that identifies you personally. See our{' '}
-        <a href="/privacy" className={styles.disclaimerLink}>Privacy Policy</a> and{' '}
-        <a href="/terms" className={styles.disclaimerLink}>Terms</a>.
+        <Link href="/privacy" className={styles.disclaimerLink}>Privacy Policy</Link> and{' '}
+        <Link href="/terms" className={styles.disclaimerLink}>Terms</Link>.
       </p>
     </form>
   )

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import styles from './CookieBanner.module.css'
 import { useLanguage } from '@/components/LanguageSwitcher/LanguageProvider'
@@ -87,7 +88,7 @@ export default function CookieBanner() {
           <div className={styles.inner}>
             <p className={styles.text}>
               {t('We use cookies to understand how visitors use The Robot Age and to improve your experience.')} {' '}
-              <a href="/privacy" className={styles.link}>{t('Privacy Policy')}</a>
+              <Link href="/privacy" className={styles.link}>{t('Privacy Policy')}</Link>
             </p>
 
             <div className={styles.actions}>

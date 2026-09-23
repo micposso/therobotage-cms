@@ -1,6 +1,7 @@
 'use client'
 
 import { useId, useState } from 'react'
+import Link from 'next/link'
 import VerticalStackedCards from '@/components/VerticalStackedCards/VerticalStackedCards'
 import { exercise, useCases } from './framework-content'
 import styles from '@/app/(english)/live-robot-lab/live-robot-lab.module.css'
@@ -66,6 +67,6 @@ export function LiteracySignup() {
       </div>
       <button className={`${styles.button} ${local.unavailable}`} type="button" disabled aria-describedby="literacy-signup-note">Follow the Project</button>
     </div>
-    <p id="literacy-signup-note" className={styles.meta}>Email signup is not available yet. In the meantime, <a className={styles.textLink} href="/robotics-literacy">explore the free Robot Literacy Series</a>.</p>
+    <p id="literacy-signup-note" className={styles.meta}>Email signup is not available yet. In the meantime, <Link className={styles.textLink} href="/robotics-literacy">explore the free Robot Literacy Series</Link>.</p>
   </div>
 }

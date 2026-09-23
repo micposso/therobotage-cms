@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react'
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
 import type { RoboticsCompany } from '@/lib/robotics-map'
 import styles from './RoboticsMapExplorer.module.css'
 
@@ -231,7 +232,7 @@ export default function RoboticsMapExplorer({ companies, facets }: Props) {
         <span>{filteredCompanies.length} of {companies.length} companies visible</span>
         <span>{paidDeployments + scaledDeployments} with paid or scaled proof</span>
         <span>{averageSignal || 'TBD'} average Robot Age Signal</span>
-        <a href="/api/robotics-map" className={styles.apiLink}>Open JSON API</a>
+        <Link href="/api/robotics-map" className={styles.apiLink}>Open JSON API</Link>
       </div>
 
       <div className={styles.intelligenceStrip} aria-label="Robotics map intelligence summary">
