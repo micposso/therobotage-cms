@@ -8,9 +8,9 @@ employment_type: full-time
 remote_type: onsite
 state: PA
 city: Pittsburgh
-posted_at: 2026-07-09
-expires_at: 2026-09-07
-apply_url: https://jobs.ashbyhq.com/gecko-robotics/f766bd30-ff4f-4c04-8346-417e220dff6c
+posted_at: 2026-09-22
+expires_at: 2026-11-21
+apply_url: https://jobs.ashbyhq.com/gecko-robotics/f766bd30-ff4f-4c04-8346-417e220dff6c/application
 tags: [product design, user research, manufacturing, inspection robotics, defense]
 source_url: https://jobs.ashbyhq.com/gecko-robotics/f766bd30-ff4f-4c04-8346-417e220dff6c
 status: published
