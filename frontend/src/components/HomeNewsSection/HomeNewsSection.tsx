@@ -1,4 +1,6 @@
 'use client'
+import { useCopy } from '@/lib/i18n/useCopy'
+
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -24,6 +26,7 @@ const containerVariants = {
 }
 
 export default function HomeNewsSection({ articles }: Props) {
+  const { t } = useCopy()
   const [expanded, setExpanded] = useState(false)
 
   const initial = articles.slice(0, 3)
@@ -40,10 +43,8 @@ export default function HomeNewsSection({ articles }: Props) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-          >
-            Latest
-          </motion.p>
-          <h2 className={styles.headline}>News &amp; Research</h2>
+          >{t("Latest")}</motion.p>
+          <h2 className={styles.headline}>{t("News & Research")}</h2>
         </div>
 
         <motion.div
@@ -80,7 +81,7 @@ export default function HomeNewsSection({ articles }: Props) {
               className={styles.viewAllBtn}
               onClick={() => setExpanded((v) => !v)}
             >
-              {expanded ? 'Show less' : 'See all news'}
+              {t(expanded ? 'Show less' : 'See all news')}
             </button>
           </div>
         )}

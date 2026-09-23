@@ -12,7 +12,9 @@ export default function WhitepaperPopup() {
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
-    const dismissedAt = localStorage.getItem(POPUP_KEY)
+    let dismissedAt: string | null = null
+    let hasConsent = false
+    try { dismissedAt = localStorage.getItem(POPUP_KEY); hasConsent = Boolean(localStorage.getItem(CONSENT_KEY)) } catch { return }
     if (dismissedAt) {
       const daysSince = (Date.now() - Number(dismissedAt)) / (1000 * 60 * 60 * 24)
       if (daysSince < SUPPRESS_DAYS) return
@@ -25,7 +27,7 @@ export default function WhitepaperPopup() {
     }
 
     // Returning visitor — consent already stored, start timer immediately
-    if (localStorage.getItem(CONSENT_KEY)) {
+    if (hasConsent) {
       startTimer()
       return () => clearTimeout(timer)
     }
@@ -40,7 +42,7 @@ export default function WhitepaperPopup() {
 
   function handleClose() {
     setOpen(false)
-    localStorage.setItem(POPUP_KEY, String(Date.now()))
+    try { localStorage.setItem(POPUP_KEY, String(Date.now())) } catch { /* Dismiss for this visit. */ }
   }
 
   return <WhitepaperModal isOpen={open} onClose={handleClose} />

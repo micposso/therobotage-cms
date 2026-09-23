@@ -1,4 +1,6 @@
 'use client'
+import { useCopy } from '@/lib/i18n/useCopy'
+
 
 import { useMemo, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
@@ -66,18 +68,19 @@ function FilterSelect({
   allLabel: string
   onChange: (value: string) => void
 }) {
+  const { t } = useCopy()
   return (
     <label className={styles.selectLabel}>
-      <span>{label}</span>
+      <span>{t(label)}</span>
       <select
         className={styles.select}
         value={value}
         onChange={(event) => onChange(event.target.value)}
       >
-        <option value="all">{allLabel}</option>
+        <option value="all">{t(allLabel)}</option>
         {options.map((option) => (
           <option key={option.value} value={option.value}>
-            {option.label}
+            {t(option.label)}
           </option>
         ))}
       </select>
@@ -103,6 +106,7 @@ export default function JobBoardExplorer({
   lockedRole,
   lockedState,
 }: Props) {
+  const { t } = useCopy()
   const searchParams = useSearchParams()
   const router = useRouter()
 
@@ -166,20 +170,20 @@ export default function JobBoardExplorer({
     <div className={styles.explorer}>
       <div className={styles.toolbar}>
         <label className={styles.searchLabel}>
-          <span>Search</span>
+          <span>{t("Search")}</span>
           <input
             type="search"
             className={styles.searchInput}
             value={filters.q}
             onChange={(event) => updateSingle('q', event.target.value)}
-            placeholder="Product design, UX research, Boston..."
+            placeholder={t("Product design, UX research, Boston...")}
           />
         </label>
 
         {!lockedRole && (
           <FilterSelect
-            label="Role"
-            allLabel="All roles"
+            label={t("Role")}
+            allLabel={t("All roles")}
             value={filters.role[0] ?? 'all'}
             options={roleOptions}
             onChange={(value) => updateMulti('role', value)}
@@ -187,8 +191,8 @@ export default function JobBoardExplorer({
         )}
 
         <FilterSelect
-          label="Level"
-          allLabel="All levels"
+          label={t("Level")}
+          allLabel={t("All levels")}
           value={filters.level[0] ?? 'all'}
           options={levelOptions}
           onChange={(value) => updateMulti('level', value)}
@@ -196,8 +200,8 @@ export default function JobBoardExplorer({
 
         {!lockedState && (
           <FilterSelect
-            label="State"
-            allLabel="All states"
+            label={t("State")}
+            allLabel={t("All states")}
             value={filters.state[0] ?? 'all'}
             options={stateOptions}
             onChange={(value) => updateMulti('state', value)}
@@ -205,31 +209,31 @@ export default function JobBoardExplorer({
         )}
 
         <FilterSelect
-          label="Work mode"
-          allLabel="Any mode"
+          label={t("Work mode")}
+          allLabel={t("Any mode")}
           value={filters.remote[0] ?? 'all'}
           options={remoteOptions}
           onChange={(value) => updateMulti('remote', value)}
         />
 
         <FilterSelect
-          label="Type"
-          allLabel="Any type"
+          label={t("Type")}
+          allLabel={t("Any type")}
           value={filters.type[0] ?? 'all'}
           options={typeOptions}
           onChange={(value) => updateMulti('type', value)}
         />
 
         <FilterSelect
-          label="Company"
-          allLabel="All companies"
+          label={t("Company")}
+          allLabel={t("All companies")}
           value={filters.company}
           options={companyOptions}
           onChange={(value) => updateSingle('company', value)}
         />
 
         <label className={styles.selectLabel}>
-          <span>Pay</span>
+          <span>{t("Pay")}</span>
           <select
             className={styles.select}
             value={filters.pay}
@@ -237,14 +241,14 @@ export default function JobBoardExplorer({
           >
             {PAY_OPTIONS.map((option) => (
               <option key={option.value} value={option.value}>
-                {option.label}
+                {t(option.label)}
               </option>
             ))}
           </select>
         </label>
 
         <label className={styles.selectLabel}>
-          <span>Posted</span>
+          <span>{t("Posted")}</span>
           <select
             className={styles.select}
             value={filters.posted}
@@ -252,7 +256,7 @@ export default function JobBoardExplorer({
           >
             {POSTED_OPTIONS.map((option) => (
               <option key={option.value} value={option.value}>
-                {option.label}
+                {t(option.label)}
               </option>
             ))}
           </select>
@@ -263,39 +267,33 @@ export default function JobBoardExplorer({
           className={styles.resetButton}
           onClick={() => applyFilters(emptyFilters)}
           disabled={activeCount === 0}
-        >
-          Reset
-        </button>
+        >{t("Reset")}</button>
       </div>
 
       <div className={styles.summaryBar} aria-live="polite">
         <span>
-          {visibleJobs.length} of {jobs.length} open {jobs.length === 1 ? 'role' : 'roles'}
+          {visibleJobs.length}{t(" of ")}{jobs.length}{t(" open ")}{jobs.length === 1 ? 'role' : 'roles'}
         </span>
         {visibleJobs.length > 0 && (
-          <span>
-            Showing {shownStart}-{shownEnd}
+          <span>{t("Showing")}{shownStart}-{shownEnd}
           </span>
         )}
         {activeCount > 0 && (
           <span>
-            {activeCount} {activeCount === 1 ? 'filter' : 'filters'} applied
-          </span>
+            {activeCount} {activeCount === 1 ? 'filter' : 'filters'}{t("applied")}</span>
         )}
       </div>
 
       <JobList jobs={paginatedJobs} />
 
       {visibleJobs.length > 0 && (
-        <nav className={styles.pagination} aria-label="Job board pagination">
+        <nav className={styles.pagination} aria-label={t("Job board pagination")}>
           <button
             type="button"
             className={styles.pageButton}
             onClick={() => applyPage(currentPage - 1)}
             disabled={currentPage === 1}
-          >
-            Previous
-          </button>
+          >{t("Previous")}</button>
 
           <div className={styles.pageNumbers}>
             {Array.from({ length: pageCount }, (_, index) => {
@@ -319,9 +317,7 @@ export default function JobBoardExplorer({
             className={styles.pageButton}
             onClick={() => applyPage(currentPage + 1)}
             disabled={currentPage === pageCount}
-          >
-            Next
-          </button>
+          >{t("Next")}</button>
         </nav>
       )}
     </div>

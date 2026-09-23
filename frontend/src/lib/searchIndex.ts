@@ -1,3 +1,5 @@
+import { localize } from '@/lib/i18n/localize'
+import type { Locale } from '@/lib/i18n/routing'
 import { articles } from './articles'
 import { fieldSignals } from './fieldSignals'
 import { certifications } from './certifications'
@@ -74,10 +76,10 @@ function titleScore(query: string, title: string): number {
   }, 0)
 }
 
-export async function runSearch(query: string): Promise<SearchResult[]> {
+export async function runSearch(query: string, locale: Locale = 'en'): Promise<SearchResult[]> {
   if (!query.trim()) return []
 
-  const newsArticles = getAllNewsArticles()
+  const newsArticles = getAllNewsArticles().map(a => localize(a, `/news/${a.slug}`, locale))
 
   const candidates: Array<SearchResult & { _score: number }> = []
 
@@ -88,13 +90,13 @@ export async function runSearch(query: string): Promise<SearchResult[]> {
   }
 
   // Static articles (research page)
-  for (const a of articles) {
+  for (const a of articles.map(a => localize(a, `/research/${a.slug}`, locale))) {
     const s = titleScore(query, a.headline) + score(query, [a.body[0], a.category])
     if (s > 0) candidates.push({ type: 'Research', title: a.headline, excerpt: a.body[0], url: `/research/${a.slug}`, tag: a.category, _score: s })
   }
 
   // Field Signals
-  for (const f of fieldSignals) {
+  for (const f of fieldSignals.map(a => localize(a, `/research/field-signals/${a.slug}`, locale))) {
     const s = titleScore(query, f.headline) + score(query, [f.body[0], f.refDimension])
     if (s > 0) candidates.push({ type: 'Field Signal', title: f.headline, excerpt: f.body[0], url: `/research/field-signals/${f.slug}`, tag: f.refDimension, _score: s })
   }
@@ -109,7 +111,7 @@ export async function runSearch(query: string): Promise<SearchResult[]> {
   // Job listings. Search must keep working if Supabase is unreachable, so this block
   // degrades to no job results rather than failing the whole query.
   try {
-    for (const job of await getJobCards()) {
+    for (const job of (await getJobCards()).map(a => localize(a, `/jobs/${a.slug}`, locale))) {
       const s =
         titleScore(query, job.title) +
         score(query, [job.companyName, job.summary, job.roleFamilyLabel, ...job.tags])

@@ -1,4 +1,6 @@
 'use client'
+import { useCopy } from '@/lib/i18n/useCopy'
+
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
@@ -23,6 +25,7 @@ const SAMPLE_PROFILE = {
 // ─── Component ───────────────────────────────────────────────────────────────
 
 export default function InstrumentFeature() {
+  const { t } = useCopy()
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
@@ -38,27 +41,21 @@ export default function InstrumentFeature() {
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6 }}
-            >
-              02 — Instrument
-            </motion.p>
+            >{t("02 — Instrument")}</motion.p>
 
             <motion.p
               className={styles.eyebrow}
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.05 }}
-            >
-              RES — Robot Experience Score
-            </motion.p>
+            >{t("RES — Robot Experience Score")}</motion.p>
 
             <motion.h2
               className={styles.headline}
               initial={{ y: 40, opacity: 0 }}
               animate={inView ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            >
-              RXD applied. A scoring instrument built for field use.
-            </motion.h2>
+            >{t("RXD applied. A scoring instrument built for field use.")}</motion.h2>
 
             <motion.div
               className={styles.body}
@@ -66,8 +63,8 @@ export default function InstrumentFeature() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             >
-              <p>The Robot Experience Score translates the six RXD dimensions into a repeatable rubric. A trained evaluator can produce a dimensional profile for any consumer robot — drawing on public deployment footage, manufacturer materials, reviewer documentation, and direct observation where available.</p>
-              <p>The score surfaces where interaction design is functioning and where it is creating friction for the humans working alongside the machine. It is designed for practitioners, not engineers — no sensor data, no proprietary access, no technical background required.</p>
+              <p>{t("The Robot Experience Score translates the six RXD dimensions into a repeatable rubric. A trained evaluator can produce a dimensional profile for any consumer robot — drawing on public deployment footage, manufacturer materials, reviewer documentation, and direct observation where available.")}</p>
+              <p>{t("The score surfaces where interaction design is functioning and where it is creating friction for the humans working alongside the machine. It is designed for practitioners, not engineers — no sensor data, no proprietary access, no technical background required.")}</p>
             </motion.div>
 
             <motion.div
@@ -75,9 +72,7 @@ export default function InstrumentFeature() {
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.35 }}
             >
-              <Link href="/research/ref#rubric" className={styles.cta}>
-                View the full rubric
-                <span className={styles.ctaArrow} aria-hidden="true">
+              <Link href="/research/ref#rubric" className={styles.cta}>{t("View the full rubric")}<span className={styles.ctaArrow} aria-hidden="true">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                     <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5"
                       strokeLinecap="round" strokeLinejoin="round" />
@@ -95,7 +90,7 @@ export default function InstrumentFeature() {
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.25 }}
             aria-hidden="true"
           >
-            <p className={styles.profileLabel}>Sample RES dimensional profile</p>
+            <p className={styles.profileLabel}>{t("Sample RES dimensional profile")}</p>
             <p className={styles.profileTitle}>{SAMPLE_PROFILE.robotName}</p>
             <p className={styles.profileMeta}>{SAMPLE_PROFILE.context}</p>
 
@@ -116,9 +111,7 @@ export default function InstrumentFeature() {
               ))}
             </div>
 
-            <p className={styles.profileNote}>
-              Sample profile for illustration. Methodology and source disclosure published with each scored deployment.
-            </p>
+            <p className={styles.profileNote}>{t("Sample profile for illustration. Methodology and source disclosure published with each scored deployment.")}</p>
           </motion.div>
 
         </div>

@@ -7,6 +7,9 @@ const noindex = process.env.SITE_NOINDEX === "true";
 
 const nextConfig: NextConfig = {
   transpilePackages: ['@therobotage/ui'],
+  outputFileTracingIncludes: {
+    '/*': ['./translations/**/*.md', './news/*.md', './robots-profiles/*.md', './robots/*.md', './jobs/*.md', './src/content/scores/*.md'],
+  },
   async redirects() {
     return appRedirects
   },

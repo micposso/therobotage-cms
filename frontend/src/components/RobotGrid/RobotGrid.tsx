@@ -1,4 +1,6 @@
 'use client'
+import { useCopy } from '@/lib/i18n/useCopy'
+
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
@@ -36,11 +38,12 @@ const cardVariants = {
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export default function RobotGrid({ robots }: Props) {
+  const { t, href: resolveHref } = useCopy()
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   if (robots.length === 0) {
-    return <p className={styles.empty}>The first scored robot profile is coming soon.</p>
+    return <p className={styles.empty}>{t("The first scored robot profile is coming soon.")}</p>
   }
 
   return (
@@ -53,7 +56,7 @@ export default function RobotGrid({ robots }: Props) {
     >
       {robots.map((robot) => (
         <motion.div key={robot.slug} variants={cardVariants}>
-          <Link href={`/robots/${robot.slug}`} className={styles.card}>
+          <Link href={resolveHref(`/robots/${robot.slug}`)} className={styles.card}>
             {robot.thumbnailImage && (
               <div className={styles.image}>
                 <Image
@@ -74,17 +77,17 @@ export default function RobotGrid({ robots }: Props) {
                 <div className={styles.scoreRow}>
                   <span className={styles.scoreValue}>
                     {robot.score.compositeScore.toFixed(1)}
-                    <span className={styles.scoreMax}>&thinsp;/&thinsp;5</span>
+                    <span className={styles.scoreMax}>{t("&thinsp;/&thinsp;5")}</span>
                   </span>
                   <span className={styles.scoreTier}>{robot.score.tier}</span>
                 </div>
               ) : (
                 <div className={styles.scoreRow}>
-                  <span className={styles.scoreUnscored}>Score pending</span>
+                  <span className={styles.scoreUnscored}>{t("Score pending")}</span>
                 </div>
               )}
               <p className={styles.excerpt}>{robot.excerpt}</p>
-              <span className={styles.cta}>View RXD profile →</span>
+              <span className={styles.cta}>{t("View RXD profile →")}</span>
             </div>
           </Link>
         </motion.div>

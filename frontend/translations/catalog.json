@@ -1,0 +1,1424 @@
+[
+  {
+    "id": "news/agility-robotics-first-humanoid-ipo.md",
+    "route": "/news/agility-robotics-first-humanoid-ipo",
+    "sourceHash": "58733a3bbb7d11e0b026549a438444a7296468ae0ca0d4a80f9eb2bb5442bf68",
+    "expiresAt": null
+  },
+  {
+    "id": "news/atlas-world-cup-interface-test.md",
+    "route": "/news/atlas-world-cup-interface-test",
+    "sourceHash": "5d16d455f0fd9758108aae2986d2327e3cdadd4ccd37d337bf12b267dc6e02f3",
+    "expiresAt": null
+  },
+  {
+    "id": "news/automation-anxiety-vs-readiness.md",
+    "route": "/news/automation-anxiety-vs-readiness",
+    "sourceHash": "7496c04cfe089ca84f3fe5b4cd9d27877e676bfb91ebed4b3ce18bb50b7c9482",
+    "expiresAt": null
+  },
+  {
+    "id": "news/autonomous-rescue-robots-earthquake-rubble.md",
+    "route": "/news/autonomous-rescue-robots-earthquake-rubble",
+    "sourceHash": "08b1ce6f76a05d1eecb78467194a6a004bfcd5f6b7f008ab0e08290bdc32c4e3",
+    "expiresAt": null
+  },
+  {
+    "id": "news/china-10000-humanoid-robots-domestic-deployment.md",
+    "route": "/news/china-10000-humanoid-robots-domestic-deployment",
+    "sourceHash": "d000109f2eb18e9343ddba609842af1747c566d16acab2d4cea2856e24356024",
+    "expiresAt": null
+  },
+  {
+    "id": "news/digit-5-humanoid-form-trust.md",
+    "route": "/news/digit-5-humanoid-form-trust",
+    "sourceHash": "4b6286fb2998aa9398deb022919be6ee0471a2e02124fa39e6d1dd93d726f3fa",
+    "expiresAt": null
+  },
+  {
+    "id": "news/domestic-humanoid-safety-standards.md",
+    "route": "/news/domestic-humanoid-safety-standards",
+    "sourceHash": "b55b647be7a7dc840511e2684c0a53426fdfe6c3e9f4d941ad5030d8c6317aef",
+    "expiresAt": null
+  },
+  {
+    "id": "news/elliq-case-study-experience-design.md",
+    "route": "/news/elliq-case-study-experience-design",
+    "sourceHash": "234c6515426de42ee11630aad824868e5f7142062b61fff9758c312e7c3f4834",
+    "expiresAt": null
+  },
+  {
+    "id": "news/fcc-foreign-robot-ban.md",
+    "route": "/news/fcc-foreign-robot-ban",
+    "sourceHash": "782ea493d57b2c64945666305c05074d8a5f54200dca2019ea23b0faa8992472",
+    "expiresAt": null
+  },
+  {
+    "id": "news/google-deepmind-robotics-ux-product-framework.md",
+    "route": "/news/google-deepmind-robotics-ux-product-framework",
+    "sourceHash": "3ab93d341b77a8b9eda336e2106458b3cf7e3c52dd7921ce958f8116b62f0d5c",
+    "expiresAt": null
+  },
+  {
+    "id": "news/hello-robot-stretch-4-useful-home-robot.md",
+    "route": "/news/hello-robot-stretch-4-useful-home-robot",
+    "sourceHash": "9fe962db0d9c22f68560415f1a77635abcd846d5f5fe38a5527a2b52e729f96e",
+    "expiresAt": null
+  },
+  {
+    "id": "news/hugging-face-robot-app-store.md",
+    "route": "/news/hugging-face-robot-app-store",
+    "sourceHash": "7040c5f197eb47b7f9c61caa63c078ad77ece2b0c4ac151ed6aa6f188d14cfbf",
+    "expiresAt": null
+  },
+  {
+    "id": "news/humanoid-hype-utility-robots-already-here.md",
+    "route": "/news/humanoid-hype-utility-robots-already-here",
+    "sourceHash": "e60d1c9b900e3590e10a08a67532b30c8894b69e419ff7edd048925dc6e477f6",
+    "expiresAt": null
+  },
+  {
+    "id": "news/humanoid-olympics-not-about-sports.md",
+    "route": "/news/humanoid-olympics-not-about-sports",
+    "sourceHash": "ad510f1e5899ac78c39c3b21f16d2e8ef0673c54c1c5940b43a44172942799e1",
+    "expiresAt": null
+  },
+  {
+    "id": "news/massachusetts-first-robot-weapons-law.md",
+    "route": "/news/massachusetts-first-robot-weapons-law",
+    "sourceHash": "e226686f8a736f2279e75dd637361b7a6e4c483b1431ba561c3065ea26cb844e",
+    "expiresAt": null
+  },
+  {
+    "id": "news/military-field-robots-china-ukraine-west.md",
+    "route": "/news/military-field-robots-china-ukraine-west",
+    "sourceHash": "f14868e3ea4a3d369c3aea1d0512ffc3cc96a346cf5df96dad5c957df63502ce",
+    "expiresAt": null
+  },
+  {
+    "id": "news/nasa-lunabotics-2026-autonomous-construction.md",
+    "route": "/news/nasa-lunabotics-2026-autonomous-construction",
+    "sourceHash": "11474dfa15797669e21da6f3ed7b12cdcca0b54894f2a71156c5cb635d58c30d",
+    "expiresAt": null
+  },
+  {
+    "id": "news/nvidia-halos-robot-safety.md",
+    "route": "/news/nvidia-halos-robot-safety",
+    "sourceHash": "42c482e2752df50729cf8425a4fcc67b71499a009a1ecbd899b23a54aebf9e9f",
+    "expiresAt": null
+  },
+  {
+    "id": "news/nvidia-hugging-face-open-robotics-ecosystem.md",
+    "route": "/news/nvidia-hugging-face-open-robotics-ecosystem",
+    "sourceHash": "a041ff57998c20bc8b0022d75b561c41868a3ee09e423ff8d61a9202bfbeb23c",
+    "expiresAt": null
+  },
+  {
+    "id": "news/robot-com-r-noid-field-experience.md",
+    "route": "/news/robot-com-r-noid-field-experience",
+    "sourceHash": "41a88d7832e34c41d0f6ef5ee4876b45a07672d0677b4abebfcd84e8ab7c435c",
+    "expiresAt": null
+  },
+  {
+    "id": "news/robotics-interaction-design-is-cheap-now.md",
+    "route": "/news/robotics-interaction-design-is-cheap-now",
+    "sourceHash": "6a6adc9d844ab1c6310877d43b2b63e18409817c8dd93ed85a86eda7ee18bc8b",
+    "expiresAt": null
+  },
+  {
+    "id": "news/shenzhen-robot-fight-league-benchmark.md",
+    "route": "/news/shenzhen-robot-fight-league-benchmark",
+    "sourceHash": "f91ac72bd9bcb4bbf3c79ccfc4bbd4627e504817343afa232b289e033e319b1a",
+    "expiresAt": null
+  },
+  {
+    "id": "news/softbank-1x-physical-ai-strategy.md",
+    "route": "/news/softbank-1x-physical-ai-strategy",
+    "sourceHash": "3d6483bf30b83870fe45b75f630569140d884ceef0e39e5d362090cc3a8cf915",
+    "expiresAt": null
+  },
+  {
+    "id": "news/southwest-airlines-humanoid-robot-ban.md",
+    "route": "/news/southwest-airlines-humanoid-robot-ban",
+    "sourceHash": "4e738cbccb7b7d45915c6baf7b57b4180b658ed470ebac086b8332aa79cc8cd4",
+    "expiresAt": null
+  },
+  {
+    "id": "news/spot-porch-gap-delivery.md",
+    "route": "/news/spot-porch-gap-delivery",
+    "sourceHash": "2630bf6272b8ae9a1a557f571883b46c33a750ef91316aa87ac77a0131ad12dc",
+    "expiresAt": null
+  },
+  {
+    "id": "news/summit-nyc-call-for-speakers.md",
+    "route": "/news/summit-nyc-call-for-speakers",
+    "sourceHash": "ee2b8bc475fe2d8acad8a4860e6f77187bc110764b41ba47bcaa73d3d94f108f",
+    "expiresAt": null
+  },
+  {
+    "id": "news/the-familiar-hri-design-brief.md",
+    "route": "/news/the-familiar-hri-design-brief",
+    "sourceHash": "4e374c7b5fe6edec8dcf79a1bf695c2de92793bd22c32d0a8620f1d8d3d6014f",
+    "expiresAt": null
+  },
+  {
+    "id": "news/unitree-ipo-robot-platform.md",
+    "route": "/news/unitree-ipo-robot-platform",
+    "sourceHash": "828f727550150c9db0011b14c5c51f196dc90fcc10dddbc3e7437a3a5499e3ce",
+    "expiresAt": null
+  },
+  {
+    "id": "news/var-offside-robot.md",
+    "route": "/news/var-offside-robot",
+    "sourceHash": "c2680288ca8617123ae98dbed1e950d86db1485d0ec6b045655549ebf59c597f",
+    "expiresAt": null
+  },
+  {
+    "id": "news/world-models-physical-ai-rehearsal.md",
+    "route": "/news/world-models-physical-ai-rehearsal",
+    "sourceHash": "8807f10fd3c6dce1d0d3fbccf98de3ae956dec6995ba41ea432f483975209666",
+    "expiresAt": null
+  },
+  {
+    "id": "news/xiaomi-robotics-1-open-source-robot-model.md",
+    "route": "/news/xiaomi-robotics-1-open-source-robot-model",
+    "sourceHash": "4d0a5bb5e0782e75fbbba885feb7356f847f82de1881ece63281bb04ddd9eb2d",
+    "expiresAt": null
+  },
+  {
+    "id": "robots-profiles/reachy-mini.md",
+    "route": "/robots/reachy-mini",
+    "sourceHash": "2c02689b240d15060c02635de2da3a17e225ed527405ad2c8222174b07c89979",
+    "expiresAt": null
+  },
+  {
+    "id": "robots-profiles/unitree-go2-pro.md",
+    "route": "/robots/unitree-go2-pro",
+    "sourceHash": "fa46fab789f0bf910234d69fba328883e127ed1e446398886ea5f21ebef51ac1",
+    "expiresAt": null
+  },
+  {
+    "id": "robots/spot-boston-dynamics.md",
+    "route": "",
+    "sourceHash": "11250d452428ff631c7a46d6e08ee862c3bf75117315dbe24bd609ed8d730d72",
+    "expiresAt": null
+  },
+  {
+    "id": "robots/unitree-r1.md",
+    "route": "",
+    "sourceHash": "a55aa228acefb10c159f26ad14b36c6db5ff20f231f586deb0b74245e0c62b52",
+    "expiresAt": null
+  },
+  {
+    "id": "jobs/ai-research-engineer-collaborative-robotics.md",
+    "route": "/jobs/ai-research-engineer-collaborative-robotics",
+    "sourceHash": "4ec96c5d8e1513d332c047eef78136585487f0ed6b8cc736e5244b1fca07a22c",
+    "expiresAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/ai-research-intern-foundation-models-graymatter-robotics.md",
+    "route": "/jobs/ai-research-intern-foundation-models-graymatter-robotics",
+    "sourceHash": "929ba3f081cbf711bf9aeb87f4c6e6ae7aef7f6d60c7fa65a7bc28156d118599",
+    "expiresAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/applied-ai-researcher-agent-systems-evaluation-nuro.md",
+    "route": "/jobs/applied-ai-researcher-agent-systems-evaluation-nuro",
+    "sourceHash": "876b0b805d32846fa681df413b8cd16baf42787bdbdbe4e3d70bf6f7fd19ab70",
+    "expiresAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/applied-scientist-ii-reinforcement-learning-amazon-robotics.md",
+    "route": "/jobs/applied-scientist-ii-reinforcement-learning-amazon-robotics",
+    "sourceHash": "f84f2f161723d2ebbbd99b3148dbb0685645b94967cd97396ee16b63b8f90633",
+    "expiresAt": "2026-11-08T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/applied-scientist-robot-navigation-fauna.md",
+    "route": "/jobs/applied-scientist-robot-navigation-fauna",
+    "sourceHash": "299f49a827bb472200d44b487c123c3eebdea44290aa5e7bc5245956ca7f4c57",
+    "expiresAt": "2026-11-08T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/brand-designer-applied-intuition.md",
+    "route": "/jobs/brand-designer-applied-intuition",
+    "sourceHash": "bb7a614d58740880776d572100d769b748b447ed42c331199def0b650ac0cad2",
+    "expiresAt": "2026-11-09T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/communications-associate-shield-ai.md",
+    "route": "/jobs/communications-associate-shield-ai",
+    "sourceHash": "91c30a69c9ce60549a20f264ca6117f531a083013c06ac445d3c6465891997a9",
+    "expiresAt": "2026-09-29T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/communications-manager-local-launch-communications-zipline.md",
+    "route": "/jobs/communications-manager-local-launch-communications-zipline",
+    "sourceHash": "542c1131a3409ce1ef20d68f85ebae8df09f6b5f14150f73a15c10462367e143",
+    "expiresAt": "2026-11-10T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/community-engagement-intern-spring-2027-zipline.md",
+    "route": "/jobs/community-engagement-intern-spring-2027-zipline",
+    "sourceHash": "79f882e907ac5ae380e61f3e40295ad08c80cddf2a33315df4765834b44096f0",
+    "expiresAt": "2026-11-10T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/community-engagement-intern-summer-2027-zipline.md",
+    "route": "/jobs/community-engagement-intern-summer-2027-zipline",
+    "sourceHash": "7db3138212e4f922b122069554c47a5df992215fc208e84d07cf4b3b26a9ba91",
+    "expiresAt": "2026-11-10T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/creative-content-producer-path-robotics.md",
+    "route": "/jobs/creative-content-producer-path-robotics",
+    "sourceHash": "908b41f1d2e1ab27b2e84d22b6134b91c9ee7e4f66a72015e9af1679ba50ce92",
+    "expiresAt": "2026-10-03T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/cross-functional-producer-events-applied-intuition.md",
+    "route": "/jobs/cross-functional-producer-events-applied-intuition",
+    "sourceHash": "95056935a9d7a0c40f6c74ca4af3f3c462a2bb8118a8af0e68eaf53f1c110dcd",
+    "expiresAt": "2026-10-23T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/customer-technical-program-manager-vehicle-os-applied-intuition.md",
+    "route": "/jobs/customer-technical-program-manager-vehicle-os-applied-intuition",
+    "sourceHash": "751bf6a1ba9b900bd287491772ad30887f1f05818b05ac170e19de78f8db8434",
+    "expiresAt": "2026-11-06T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/customer-technical-program-manager-vehicle-os-sunnyvale-applied-intuition.md",
+    "route": "/jobs/customer-technical-program-manager-vehicle-os-sunnyvale-applied-intuition",
+    "sourceHash": "45964811469f083e29525fdad70de0c68fde8a64fe858e67b23a7de4cc4c96d1",
+    "expiresAt": "2026-11-08T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/design-technologist-robot-animation-fauna.md",
+    "route": "/jobs/design-technologist-robot-animation-fauna",
+    "sourceHash": "c613eaf1897b67f03b58f29c361f6d424f97853742404f7aa5d313968417f0c4",
+    "expiresAt": "2026-11-02T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/director-product-data-flywheel-serve-robotics.md",
+    "route": "/jobs/director-product-data-flywheel-serve-robotics",
+    "sourceHash": "c200479a6e33ce77373e4c9e660786fb6c673bdc5d0a5b75ae2497d539b98f01",
+    "expiresAt": "2026-10-17T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/director-product-learning-development-apptronik.md",
+    "route": "/jobs/director-product-learning-development-apptronik",
+    "sourceHash": "db6f16ace24917ff4a17523c90a753dd950ead8f6b9de8d84536d34e860c213c",
+    "expiresAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/director-product-management-hardware-apptronik.md",
+    "route": "/jobs/director-product-management-hardware-apptronik",
+    "sourceHash": "64a18cd82069f3961409ec32e976688f00a56e302d32e96a5ac82ac98b0b7309",
+    "expiresAt": "2026-10-18T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/director-technical-program-manager-software-collaborative-robotics.md",
+    "route": "/jobs/director-technical-program-manager-software-collaborative-robotics",
+    "sourceHash": "9f16d6ae5979c1599d6d3ff0b2b1f81c94a68aa3fedba3acf655ded6cd11ec93",
+    "expiresAt": "2026-10-20T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/field-events-marketing-manager-gecko-robotics.md",
+    "route": "/jobs/field-events-marketing-manager-gecko-robotics",
+    "sourceHash": "ee72c4e3e2b812ee3638c78612ee953ff4571ed3fb4f4db885b15617630dd5ac",
+    "expiresAt": "2026-11-09T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/forward-deployed-transformation-lead-physical-ai-dexterity.md",
+    "route": "/jobs/forward-deployed-transformation-lead-physical-ai-dexterity",
+    "sourceHash": "423d6f8f1a6ac6500120bc51525dd5a85750cfe6fccdded3455b6ed1b4d414d0",
+    "expiresAt": "2026-10-21T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/hardware-product-management-intern-skydio.md",
+    "route": "/jobs/hardware-product-management-intern-skydio",
+    "sourceHash": "9214f007e2a0543175338d88ab32545276184d11ee20f57e91b4f9314b0b5c9a",
+    "expiresAt": "2026-10-26T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/head-of-communications-nuro.md",
+    "route": "/jobs/head-of-communications-nuro",
+    "sourceHash": "6237cb3cdaeb93065b5e6ef9b1ea32bf5c5dcd2af38be69a6d0413dd51814651",
+    "expiresAt": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/head-of-product-operations-zipline.md",
+    "route": "/jobs/head-of-product-operations-zipline",
+    "sourceHash": "ca621809b4da2f58ef7520bafbc5a9329a8632873d3a436db455fa00cf5596c3",
+    "expiresAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/helix-ai-engineer-reinforcement-learning-figure-ai.md",
+    "route": "/jobs/helix-ai-engineer-reinforcement-learning-figure-ai",
+    "sourceHash": "cc823d10234ca80ecd08d753732d5beb0be3f12ce11cc64cb68d76300fdcc160",
+    "expiresAt": "2026-10-01T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/helix-ai-engineer-robot-learning-figure-ai.md",
+    "route": "/jobs/helix-ai-engineer-robot-learning-figure-ai",
+    "sourceHash": "edc38cc89a0612785c7aa6818b25bcef444864534126f2f0ebc7893779532d69",
+    "expiresAt": "2026-11-06T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/human-robot-interaction-applied-scientist-fauna-ny.md",
+    "route": "/jobs/human-robot-interaction-applied-scientist-fauna-ny",
+    "sourceHash": "f6f1c15daeb6c7b4cc4369e3d08ef68bc506b3659621f5430c4c4698d796d324",
+    "expiresAt": "2026-10-23T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/human-robot-interaction-applied-scientist-fauna.md",
+    "route": "/jobs/human-robot-interaction-applied-scientist-fauna",
+    "sourceHash": "bdeb329bb27fb512c79b4eefb98fc0b64f90f6816be0d5220e520edc999a99d2",
+    "expiresAt": "2026-10-30T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/human-robot-interaction-senior-applied-scientist-fauna.md",
+    "route": "/jobs/human-robot-interaction-senior-applied-scientist-fauna",
+    "sourceHash": "3c8385c1ae703e3dc7b97f3149604daf6a7ea1fbc9c3ac9886f94c4a2d9b8c4a",
+    "expiresAt": "2026-11-02T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/industrial-designer-applied-intuition.md",
+    "route": "/jobs/industrial-designer-applied-intuition",
+    "sourceHash": "99631fc32b95cf85e7c6f86001050c335f1782e68d80fa91411f1bf907bf3f55",
+    "expiresAt": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/industrial-designer-fauna.md",
+    "route": "/jobs/industrial-designer-fauna",
+    "sourceHash": "6af7678eb740953358375fa4f6782ae2506b37bb11818dd7f003c8c28af31950",
+    "expiresAt": "2026-11-07T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/industrial-designer-zipline.md",
+    "route": "/jobs/industrial-designer-zipline",
+    "sourceHash": "d6f0aeb77bd187336693a11a3a12cc2cd6f56c9d356635d55f38ab5d2f9d80d1",
+    "expiresAt": "2026-10-21T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/learning-experience-designer-applied-intuition.md",
+    "route": "/jobs/learning-experience-designer-applied-intuition",
+    "sourceHash": "65c1965e4a3bf9222fa40726008485882f3d4654568a4555074dc9ac5f9dc0b7",
+    "expiresAt": "2026-10-30T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/machine-learning-engineer-robot-learning-loco-manipulation-path-robotics.md",
+    "route": "/jobs/machine-learning-engineer-robot-learning-loco-manipulation-path-robotics",
+    "sourceHash": "02f4bca94ba9c0b19e0ef1b1ca558b75babd6805f376cf034abedbd3bf5adba2",
+    "expiresAt": "2026-11-02T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/machine-learning-engineer-robot-learning-path-robotics.md",
+    "route": "/jobs/machine-learning-engineer-robot-learning-path-robotics",
+    "sourceHash": "be2f90aa0dd287fcef684d4af3365f9bd343150c87c81c53acbf4a9e492b5130",
+    "expiresAt": "2026-11-02T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/machine-learning-research-scientist-behavior-planning-prediction-nuro.md",
+    "route": "/jobs/machine-learning-research-scientist-behavior-planning-prediction-nuro",
+    "sourceHash": "87e27b2b2f661c29faac1ca1811a52e41748982395d95b319e657c37b71ce660",
+    "expiresAt": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/machine-learning-research-scientist-generative-modeling-planning-nuro.md",
+    "route": "/jobs/machine-learning-research-scientist-generative-modeling-planning-nuro",
+    "sourceHash": "c88765569ad3c36036fbd150ca3fbc62848b18ac838ccaee3188043af6e2af88",
+    "expiresAt": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/manager-data-operations-and-annotations-autonomy-data-zipline.md",
+    "route": "/jobs/manager-data-operations-and-annotations-autonomy-data-zipline",
+    "sourceHash": "71d7e52c342e7c4700eec9f3917075209e2007c2421eb3e12d34fefe5c899299",
+    "expiresAt": "2026-11-06T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/manager-manipulation-data-farm-path-robotics.md",
+    "route": "/jobs/manager-manipulation-data-farm-path-robotics",
+    "sourceHash": "ceab29600352a8afc907b1842e5c388562addf26ed3eb2b3e2d1164d007bd91c",
+    "expiresAt": "2026-09-30T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/marketing-operations-manager-contractor-skydio.md",
+    "route": "/jobs/marketing-operations-manager-contractor-skydio",
+    "sourceHash": "a556995197b4f1011e54d7f52701398f7feeac152db646ff045defd6a6aae3b0",
+    "expiresAt": "2026-11-09T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/marketing-principal-director-physical-ai-dexterity.md",
+    "route": "/jobs/marketing-principal-director-physical-ai-dexterity",
+    "sourceHash": "6ef0259a43db0bb5d1a3b2cd672a07935b1882c8cea559c42717ab5083bb8822",
+    "expiresAt": "2026-10-18T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/ml-research-scientist-prediction-smart-agents-nuro.md",
+    "route": "/jobs/ml-research-scientist-prediction-smart-agents-nuro",
+    "sourceHash": "7396eae7fe4eb67480d13235d955f66a4bf4c2153bcc7092ba35d69aeb957ce7",
+    "expiresAt": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/new-product-introduction-npi-technical-program-manager-zipline.md",
+    "route": "/jobs/new-product-introduction-npi-technical-program-manager-zipline",
+    "sourceHash": "5efadf317b820ebd2b7430b0a23c8b840c85cfaf5e641e6665dc0676d027831d",
+    "expiresAt": "2026-11-06T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/operations-senior-technical-program-manager-apptronik.md",
+    "route": "/jobs/operations-senior-technical-program-manager-apptronik",
+    "sourceHash": "1fb10885e89fea35593aaea21c56d74325c4e325c4337418d0863a0ef37ffb9c",
+    "expiresAt": "2026-10-23T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/partner-marketing-lead-zipline.md",
+    "route": "/jobs/partner-marketing-lead-zipline",
+    "sourceHash": "f612af0e7ab4770b03f4323c29c7975a8fed3d12c4becbc88f18ae07e84ef9f2",
+    "expiresAt": "2026-10-21T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/principal-designer-special-projects-shield-ai.md",
+    "route": "/jobs/principal-designer-special-projects-shield-ai",
+    "sourceHash": "73e0e6b994103a1b0e0d94c264543a5ec0b74c445a53f158a6cc36fa3997eb37",
+    "expiresAt": "2026-10-18T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/principal-product-manager-physical-ai-dexterity.md",
+    "route": "/jobs/principal-product-manager-physical-ai-dexterity",
+    "sourceHash": "6c181bb3a6f73de4d8bfd591367b03d1b993c13f938b06a24b58a872df623533",
+    "expiresAt": "2026-10-16T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/principal-technical-product-manager-shield-ai.md",
+    "route": "/jobs/principal-technical-product-manager-shield-ai",
+    "sourceHash": "c036e08f811c55c6e806bbcda8d28057e1eb2e158c67af1ff0bfa881ddc72e74",
+    "expiresAt": "2026-10-18T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/principal-technical-program-manager-agility.md",
+    "route": "/jobs/principal-technical-program-manager-agility",
+    "sourceHash": "b969470d9a189d0e5f777e559916d405aadfe59a3940fb5fb42f62e2949dadc8",
+    "expiresAt": "2026-10-24T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/principal-ux-designer-amazon-robotics.md",
+    "route": "/jobs/principal-ux-designer-amazon-robotics",
+    "sourceHash": "a4f46af7ea503e0890a60dc32742d12eb8a4f305438729984c22c0431fa24a9c",
+    "expiresAt": "2026-10-17T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/principal-ux-designer-fauna.md",
+    "route": "/jobs/principal-ux-designer-fauna",
+    "sourceHash": "21c222bfd60704edad9c1c45ca86e23ad95d5450cfd74430fdf582b4fb4c6ff9",
+    "expiresAt": "2026-10-14T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-design-engineer-all-levels-skydio.md",
+    "route": "/jobs/product-design-engineer-all-levels-skydio",
+    "sourceHash": "a4faf1965cb4a297eac2843d200abbd29e1338e8bdc721d9ddf4fe01dc6eb61a",
+    "expiresAt": "2026-11-17T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-design-engineer-intern-skydio.md",
+    "route": "/jobs/product-design-engineer-intern-skydio",
+    "sourceHash": "e34679d381968e2fc4ef71b8a04586dc9e82efb9cb777cec92741b9420399c3b",
+    "expiresAt": "2026-11-03T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-design-tools-applied-intuition.md",
+    "route": "/jobs/product-design-tools-applied-intuition",
+    "sourceHash": "9d9e3a6a8b6881c6d9fdf21808db143cbb249fb3cbdf4c4d5df6d08faea35b25",
+    "expiresAt": "2026-10-18T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-designer-defense-applied-intuition.md",
+    "route": "/jobs/product-designer-defense-applied-intuition",
+    "sourceHash": "81866e3ca32d85b3a039ff49686ca86f869ab835f2f1e5f2429fa85d0536cb94",
+    "expiresAt": "2026-10-18T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-designer-defense-developer-tools-applied-intuition.md",
+    "route": "/jobs/product-designer-defense-developer-tools-applied-intuition",
+    "sourceHash": "5b959a34cd8c04b9f94486efe2e2f9e9864b5db11f2642b3d77d5f3aba4b021b",
+    "expiresAt": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-designer-ground-control-station-shield-ai.md",
+    "route": "/jobs/product-designer-ground-control-station-shield-ai",
+    "sourceHash": "8eecf7d33201246c928f3a3afd18e1f0e9a707dd99a49ed83d9f860cfede9686",
+    "expiresAt": "2026-10-02T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-designer-hmi-applied-intuition.md",
+    "route": "/jobs/product-designer-hmi-applied-intuition",
+    "sourceHash": "3a3be85e705e89048ee40d0ea04f7eeda21f70b72245050ed6964c97ae8efa56",
+    "expiresAt": "2026-10-24T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-designer-treeswift.md",
+    "route": "/jobs/product-designer-treeswift",
+    "sourceHash": "0beb180d760b0dc5d9c1fba6f0c510ed043e7953bf0efe407154c936dea661ca",
+    "expiresAt": "2026-10-23T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-growth-manager-physical-ai-dexterity.md",
+    "route": "/jobs/product-growth-manager-physical-ai-dexterity",
+    "sourceHash": "b8a6073b146fa99805fb5915509b7ad4e7920f697b2d5973c3ecd67be5ee9245",
+    "expiresAt": "2026-10-05T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-lead-marketplace-pricing-zipline.md",
+    "route": "/jobs/product-lead-marketplace-pricing-zipline",
+    "sourceHash": "764279b4176d54c10b16bd4d11772cb3e7f7f41fe338b979b432fa7ccb4f0851",
+    "expiresAt": "2026-11-16T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-manager-ai-ml-foundation-models-shield-ai.md",
+    "route": "/jobs/product-manager-ai-ml-foundation-models-shield-ai",
+    "sourceHash": "2cdce5efd32cd3300e7b13d8825bf55fe43440d89c075d42eeedb094ca4294fe",
+    "expiresAt": "2026-10-16T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-manager-airspace-platform-zipline.md",
+    "route": "/jobs/product-manager-airspace-platform-zipline",
+    "sourceHash": "6d3cae8c15dadd2c3a40796859fd4b42308b4d126a9d16e8019181a622632ce7",
+    "expiresAt": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-manager-ambi-robotics.md",
+    "route": "/jobs/product-manager-ambi-robotics",
+    "sourceHash": "61d3c843cfa2c8f9477bb729e58079cfabb078029672d0483d3abee43b55212d",
+    "expiresAt": "2026-11-14T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-manager-bear-robotics.md",
+    "route": "/jobs/product-manager-bear-robotics",
+    "sourceHash": "468c8c32f405754ec27802f5ddb741816c13cba7e2e7187a384ec09244f8f09a",
+    "expiresAt": "2026-10-19T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-manager-dana-physical-ai-applied-intuition.md",
+    "route": "/jobs/product-manager-dana-physical-ai-applied-intuition",
+    "sourceHash": "aa3754b00ea2087f8871cf6c355438e8e5f96c1383e28bbbcc31751b2defad5f",
+    "expiresAt": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-manager-defenseos-applied-intuition.md",
+    "route": "/jobs/product-manager-defenseos-applied-intuition",
+    "sourceHash": "6dab12a1acce0e6d677bea0f8e677361729274251fed6b8c96bb7f12787057ec",
+    "expiresAt": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-manager-developer-tooling-applied-intuition.md",
+    "route": "/jobs/product-manager-developer-tooling-applied-intuition",
+    "sourceHash": "7eef26c63e829394ce7039aa2422099ecbdf786b42c9bc26007d45846d8a9a09",
+    "expiresAt": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-manager-drone-stack-applied-intuition.md",
+    "route": "/jobs/product-manager-drone-stack-applied-intuition",
+    "sourceHash": "1327c883a45d89891d20b45d2bd28472a06e9fcbc3392f13dbdba12e84815dfa",
+    "expiresAt": "2026-10-24T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-manager-human-robot-interaction-apptronik.md",
+    "route": "/jobs/product-manager-human-robot-interaction-apptronik",
+    "sourceHash": "a6ccd58feb06733331bef1240eda9fa6295ff4637b5c52376d204d3ce32919af",
+    "expiresAt": "2026-10-17T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-manager-manufacturing-orchestration-intrinsic.md",
+    "route": "/jobs/product-manager-manufacturing-orchestration-intrinsic",
+    "sourceHash": "4b7ede77870b9155300996cb75d4f7e9b5cd2bdf102c268d32a9000cdf3e8dee",
+    "expiresAt": "2026-10-14T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-manager-platform-dana-applied-intuition.md",
+    "route": "/jobs/product-manager-platform-dana-applied-intuition",
+    "sourceHash": "9e745eb0208ece5ee555827253d0f2c21a0b2a73b79122865851409be48abcfd",
+    "expiresAt": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-manager-supply-chain-systems-applied-intuition.md",
+    "route": "/jobs/product-manager-supply-chain-systems-applied-intuition",
+    "sourceHash": "07b54f09cba6952735110b8c66f39e7d94219eee65fda130a14d67aedf6c8ff8",
+    "expiresAt": "2026-10-30T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-manager-technical-commercialization-path-robotics.md",
+    "route": "/jobs/product-manager-technical-commercialization-path-robotics",
+    "sourceHash": "d649a5ce3cadc9a9d7a21e1891c25f08edb478f6d26248d932acff78ded982ae",
+    "expiresAt": "2026-10-23T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-manager-vehicle-os-applied-intuition.md",
+    "route": "/jobs/product-manager-vehicle-os-applied-intuition",
+    "sourceHash": "ba30298902c42d517df39694332fab63dd224568b93cab164919f5d33a6e1357",
+    "expiresAt": "2026-10-24T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-marketing-manager-defense-applied-intuition.md",
+    "route": "/jobs/product-marketing-manager-defense-applied-intuition",
+    "sourceHash": "2a69d8bc47a728e738e7b96b232546a7a9cb7fc447b4b778e27214e364c968ac",
+    "expiresAt": "2026-10-23T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-operations-manager-kodiak.md",
+    "route": "/jobs/product-operations-manager-kodiak",
+    "sourceHash": "f7173f803fa8fa5ce9e42ae80fe79a7940b076967ebf8308910ddb03a66b0351",
+    "expiresAt": "2026-10-24T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/program-manager-growth-profitability-zipline.md",
+    "route": "/jobs/program-manager-growth-profitability-zipline",
+    "sourceHash": "a32d890b62952e4345c16fdb3ab6a67b874c55a92cb130dc01ff6c1aba4e8f76",
+    "expiresAt": "2026-10-24T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/program-manager-major-deployments-skydio.md",
+    "route": "/jobs/program-manager-major-deployments-skydio",
+    "sourceHash": "880581631600af33d4308ce34cecf209189c43c23fd0cd8beeb790e8ad334f4a",
+    "expiresAt": "2026-11-02T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/reinforcement-learning-engineer-apptronik.md",
+    "route": "/jobs/reinforcement-learning-engineer-apptronik",
+    "sourceHash": "1d48313e14559285b15a27b11d275631606927e5e0def673a8efc675c30cc64b",
+    "expiresAt": "2026-11-07T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/reinforcement-learning-engineer-whole-body-control-figure-ai.md",
+    "route": "/jobs/reinforcement-learning-engineer-whole-body-control-figure-ai",
+    "sourceHash": "6fe9036de46e9f1c9752c488f81363ce377605f6f0e25409f67dfe5b7c279495",
+    "expiresAt": "2026-10-09T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/research-engineer-3d-vision-generation-self-driving-applied-intuition.md",
+    "route": "/jobs/research-engineer-3d-vision-generation-self-driving-applied-intuition",
+    "sourceHash": "480719d1c29b50deeb7ecb9ab9d2aa72357b469f823a95d0e49f48bbff215207",
+    "expiresAt": "2026-11-07T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/research-engineer-ai-rl-infrastructure-applied-intuition.md",
+    "route": "/jobs/research-engineer-ai-rl-infrastructure-applied-intuition",
+    "sourceHash": "4a9536eb885f753ef3ba7a4a70fe907d1afdc3efa30f5eb0dfe0f645ac199c07",
+    "expiresAt": "2026-11-06T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/research-engineer-new-grad-2027-applied-intuition.md",
+    "route": "/jobs/research-engineer-new-grad-2027-applied-intuition",
+    "sourceHash": "a8856a468da9fbc0ebdadd2919e3f1caea066595a4f918fa2ccd94764d415318",
+    "expiresAt": "2026-11-07T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/research-engineer-reinforcement-learning-self-driving-applied-intuition.md",
+    "route": "/jobs/research-engineer-reinforcement-learning-self-driving-applied-intuition",
+    "sourceHash": "b872f6659c075ab060939307a5d40c953189bb2b6bfb479ea8b14d6f66379801",
+    "expiresAt": "2026-11-03T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/research-engineer-robot-learning-applied-intuition.md",
+    "route": "/jobs/research-engineer-robot-learning-applied-intuition",
+    "sourceHash": "d9af20c00a82ba990ca1e3cb615ceff1d5994481f9b8405de6296deab9eac3be",
+    "expiresAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/research-engineer-robotic-hardware-simulation-and-data-applied-intuition.md",
+    "route": "/jobs/research-engineer-robotic-hardware-simulation-and-data-applied-intuition",
+    "sourceHash": "cb585df155acfbf78c323452ae9b9c4ff804af39593f7abfc82cc0e2e64be3a1",
+    "expiresAt": "2026-11-06T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/research-intern-3d-vision-and-generation-self-driving-applied-intuition.md",
+    "route": "/jobs/research-intern-3d-vision-and-generation-self-driving-applied-intuition",
+    "sourceHash": "41a86681a4b80c397aef3b876a347dbdf8eada56d6206f162f54589a5286361b",
+    "expiresAt": "2026-11-10T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/research-intern-reinforcement-learning-robotics-applied-intuition.md",
+    "route": "/jobs/research-intern-reinforcement-learning-robotics-applied-intuition",
+    "sourceHash": "771a640dd4ff8314bfbad582a7a2087eb14dd3a36ee88504013de507202359f4",
+    "expiresAt": "2026-11-07T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/research-intern-reinforcement-learning-self-driving-applied-intuition.md",
+    "route": "/jobs/research-intern-reinforcement-learning-self-driving-applied-intuition",
+    "sourceHash": "370adf7ca8b6a0c5e8bfa1355cb64b168f1f5a9a6d3489989414cc17ff4cf081",
+    "expiresAt": "2026-11-09T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/research-intern-robotic-hardware-simulation-and-data-applied-intuition.md",
+    "route": "/jobs/research-intern-robotic-hardware-simulation-and-data-applied-intuition",
+    "sourceHash": "1eddd1f5f7c46837f34eee4a55f5a874ed8028201fef68bc2b0e62952f56eadd",
+    "expiresAt": "2026-11-10T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/research-intern-world-action-foundation-model-robotics-applied-intuition.md",
+    "route": "/jobs/research-intern-world-action-foundation-model-robotics-applied-intuition",
+    "sourceHash": "3ca8f39178374eb70a355414d48f179e753c3b7c90a2eb730d6308c135ee3ebb",
+    "expiresAt": "2026-11-03T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/research-scientist-3d-vision-and-generation-self-driving-applied-intuition.md",
+    "route": "/jobs/research-scientist-3d-vision-and-generation-self-driving-applied-intuition",
+    "sourceHash": "2cbe0ecd0bebe3d6164adac697dd67dd42ca671ee64e6123ac9e1d2799da22ff",
+    "expiresAt": "2026-11-06T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/research-scientist-humanoid-robotics-applied-intuition.md",
+    "route": "/jobs/research-scientist-humanoid-robotics-applied-intuition",
+    "sourceHash": "3f9adb68a06170a4af9ae6d87aa688c4648418f484327fbf454eb3a4db7da137",
+    "expiresAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/research-scientist-reinforcement-learning-robotics-applied-intuition.md",
+    "route": "/jobs/research-scientist-reinforcement-learning-robotics-applied-intuition",
+    "sourceHash": "820c4180f7b4594202a51294cc29c3b16430a1b1049c68a2a0f10182dd4b3265",
+    "expiresAt": "2026-11-03T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/research-scientist-research-applied-intuition.md",
+    "route": "/jobs/research-scientist-research-applied-intuition",
+    "sourceHash": "fc33449e2717051c1f010efaae6110d648d62b147808450cd1cce368aad2d091",
+    "expiresAt": "2026-11-06T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/research-scientist-robot-capability-evaluation-fauna.md",
+    "route": "/jobs/research-scientist-robot-capability-evaluation-fauna",
+    "sourceHash": "2aa23c9a4df5c6f4623ce27d290e908aa2ba40f56826f58473a3455640f117ff",
+    "expiresAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/research-scientist-world-action-foundation-model-robotics-applied-intuition.md",
+    "route": "/jobs/research-scientist-world-action-foundation-model-robotics-applied-intuition",
+    "sourceHash": "065df678f4517602d61f8e00e6686815d68e8fa525bbc579b4d8fbd457abf0b1",
+    "expiresAt": "2026-11-03T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/robotics-algorithms-engineer-manipulation-control-path-robotics.md",
+    "route": "/jobs/robotics-algorithms-engineer-manipulation-control-path-robotics",
+    "sourceHash": "7203c4db83d7de9f2ef71e7b3c3dc37f62a61b6544a003c71c7f1d466dfbfcb8",
+    "expiresAt": "2026-11-17T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-3d-generalist-product-visualization-skydio.md",
+    "route": "/jobs/senior-3d-generalist-product-visualization-skydio",
+    "sourceHash": "0863dce39fcfa5c2161ac114213244ac739c4520d5be5f2fd822bf5a0b43b542",
+    "expiresAt": "2026-10-26T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-ai-research-engineer-agility.md",
+    "route": "/jobs/senior-ai-research-engineer-agility",
+    "sourceHash": "d67782b4b4dd981618777fcd81a2501aa16617d131812e2216b6a64da6516ae8",
+    "expiresAt": "2026-11-02T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-ai-software-engineer-reinforcement-learning-agility.md",
+    "route": "/jobs/senior-ai-software-engineer-reinforcement-learning-agility",
+    "sourceHash": "a79332f83f9f5e331c98ab0029289890f3ed05271e1dd04d5c6d6153d79b152d",
+    "expiresAt": "2026-11-09T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-applied-scientist-robot-capability-evaluation-fauna.md",
+    "route": "/jobs/senior-applied-scientist-robot-capability-evaluation-fauna",
+    "sourceHash": "64c5e8266b87d5fdb052bc94b9faac22bf5eaa674fa28a75485eb13013b6818b",
+    "expiresAt": "2026-11-02T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-curriculum-developer-suas-operations-skydio.md",
+    "route": "/jobs/senior-curriculum-developer-suas-operations-skydio",
+    "sourceHash": "7323ea46cf9b52e87cac9b6016bcc536a74d8c9acb87f92eb228b19a037de891",
+    "expiresAt": "2026-11-07T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-director-demand-generation-dusty-robotics.md",
+    "route": "/jobs/senior-director-demand-generation-dusty-robotics",
+    "sourceHash": "ffba71ee7ee177c8b49dbe165d5b2650a39401bfbaf6ecfb024ad3c59f0f94c1",
+    "expiresAt": "2026-09-29T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-graphic-designer-path-robotics.md",
+    "route": "/jobs/senior-graphic-designer-path-robotics",
+    "sourceHash": "b2f322f320ce40bd3eb8ff7899b58fa3310fc12fac8cbd6d80bb57795b618b5b",
+    "expiresAt": "2026-10-09T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-industrial-designer-amazon-robotics.md",
+    "route": "/jobs/senior-industrial-designer-amazon-robotics",
+    "sourceHash": "f01c77a89561f176cb88ed2dc6bb1709ef107ab14afc5cdd8050c311b45d139e",
+    "expiresAt": "2026-10-17T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-industrial-designer-fauna.md",
+    "route": "/jobs/senior-industrial-designer-fauna",
+    "sourceHash": "fedc6f24ea234a2dddad90974e85eda7dda297510318acd60437e870eb244044",
+    "expiresAt": "2026-10-26T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-learning-experience-developer-skydio.md",
+    "route": "/jobs/senior-learning-experience-developer-skydio",
+    "sourceHash": "e9d9c4587e2b054f3f74bc73137e74726fee760a6f249538f0f2913981734290",
+    "expiresAt": "2026-11-07T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-machine-learning-engineer-reinforcement-learning-world-model-path-robotics.md",
+    "route": "/jobs/senior-machine-learning-engineer-reinforcement-learning-world-model-path-robotics",
+    "sourceHash": "510a6279121a23caab6bf447875da976308f169af3b8c6b25ef4b10cc79be78a",
+    "expiresAt": "2026-11-06T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-machine-learning-engineer-tech-lead-robot-learning-loco-manipulation-path-robotics.md",
+    "route": "/jobs/senior-machine-learning-engineer-tech-lead-robot-learning-loco-manipulation-path-robotics",
+    "sourceHash": "32e3141f80f621efd9540873911391251fad2ddfeac8041b7618f65de031fe89",
+    "expiresAt": "2026-11-02T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-manager-learning-from-demonstration-agility.md",
+    "route": "/jobs/senior-manager-learning-from-demonstration-agility",
+    "sourceHash": "a9641527b67f09d0d87025b0c14cf1ce8dd2de71948d7942f5239cd048a3cab0",
+    "expiresAt": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-ml-engineer-foundation-models-chef-robotics.md",
+    "route": "/jobs/senior-ml-engineer-foundation-models-chef-robotics",
+    "sourceHash": "fb92d4ab69170d725d0a63a837e7ae60a31fedd9a22213fd890cddbd2c854fff",
+    "expiresAt": "2026-11-06T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-ml-engineer-manipulation-chef-robotics.md",
+    "route": "/jobs/senior-ml-engineer-manipulation-chef-robotics",
+    "sourceHash": "102bb76c1dab5ff020b0bec769ab5df16fe5c37188e6d1d4c4a93793f60ab843",
+    "expiresAt": "2026-11-04T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-motion-designer-zipline.md",
+    "route": "/jobs/senior-motion-designer-zipline",
+    "sourceHash": "62baa2236c90c752ed3f062f51d32c8c6474dd9c9ab306b78d0b27eb47e57fdf",
+    "expiresAt": "2026-11-08T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-producer-zipline.md",
+    "route": "/jobs/senior-producer-zipline",
+    "sourceHash": "d49ca16b13ebb263b6d5a98ef6f607709c754abb6cd9c55ddeed39d11f7bf8c9",
+    "expiresAt": "2026-11-10T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-product-designer-gecko-robotics.md",
+    "route": "/jobs/senior-product-designer-gecko-robotics",
+    "sourceHash": "15cb2d69dc3cdaf171ef5ef163a47d4c63710618d7fcaa4fe82a37814734293c",
+    "expiresAt": "2026-10-16T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-product-designer-nuro.md",
+    "route": "/jobs/senior-product-designer-nuro",
+    "sourceHash": "54011e98dfe8f78d723dbafa4b367078f453892b4fd35afe5e80b5be8808991d",
+    "expiresAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-product-designer-shield-ai.md",
+    "route": "/jobs/senior-product-designer-shield-ai",
+    "sourceHash": "22477c185bd7f05b0cb9a08b424e13fd2a6bce8ef5e6f9a23e8ea3791cf9abcb",
+    "expiresAt": "2026-10-18T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-product-manager-dock-hardware-platform-skydio.md",
+    "route": "/jobs/senior-product-manager-dock-hardware-platform-skydio",
+    "sourceHash": "acab957ab9001f8aa52b7d5b72e5583fd0c8904281597020bb0d62096380945d",
+    "expiresAt": "2026-11-09T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-product-manager-fleet-internal-tools-skydio.md",
+    "route": "/jobs/senior-product-manager-fleet-internal-tools-skydio",
+    "sourceHash": "139e29c09d4bda395e1d14b20add7de12251ad438d5295a4588f63dd67f23b73",
+    "expiresAt": "2026-10-18T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-product-manager-hardware-platform-apptronik.md",
+    "route": "/jobs/senior-product-manager-hardware-platform-apptronik",
+    "sourceHash": "40cb26271a312a2e981fa3447dab5b9e7fe8ebf32e5961b27a55c6400ad1ed24",
+    "expiresAt": "2026-10-18T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-product-manager-perception-navigation-apptronik.md",
+    "route": "/jobs/senior-product-manager-perception-navigation-apptronik",
+    "sourceHash": "dcedd93116b4e2ba8fea5171b6ab776aabdef392c22e57f0041b2e39ce7db9a3",
+    "expiresAt": "2026-10-18T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-product-manager-perception-navigation-sunnyvale-apptronik.md",
+    "route": "/jobs/senior-product-manager-perception-navigation-sunnyvale-apptronik",
+    "sourceHash": "7fb4cc271872f550ff7dd849c6ce44dfeb9d6c928a8a174b53997a618988332f",
+    "expiresAt": "2026-10-30T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-product-manager-perception-world-understanding-skills-agility.md",
+    "route": "/jobs/senior-product-manager-perception-world-understanding-skills-agility",
+    "sourceHash": "190eb53eccae1c43ae0703f322301c818bebdf15c63cbad6ebaaf89783c828f0",
+    "expiresAt": "2026-11-15T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-product-manager-sensing-compute-apptronik.md",
+    "route": "/jobs/senior-product-manager-sensing-compute-apptronik",
+    "sourceHash": "03a1cdf352f648eb96e5ce58a2ce827470a308e805fcb64b3aafa6f6fad07ed6",
+    "expiresAt": "2026-10-18T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-product-manager-simulation-apptronik.md",
+    "route": "/jobs/senior-product-manager-simulation-apptronik",
+    "sourceHash": "e0e0d03f4081ae9ca1c13d83bca5db15da906f93038b790fa5333ee7f690dd87",
+    "expiresAt": "2026-10-18T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-product-manager-teleoperation-apptronik.md",
+    "route": "/jobs/senior-product-manager-teleoperation-apptronik",
+    "sourceHash": "cc43761811ae1cb84c0dc37fa3a856777bbc2edf872cc6b8ff026875c8a42f73",
+    "expiresAt": "2026-10-17T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-product-marketing-manager-agility.md",
+    "route": "/jobs/senior-product-marketing-manager-agility",
+    "sourceHash": "2f702f42568fab94e2bba7161d101ba3ec10295874216df0b64c369f998f8be7",
+    "expiresAt": "2026-10-14T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-program-manager-eval-operations-nuro.md",
+    "route": "/jobs/senior-program-manager-eval-operations-nuro",
+    "sourceHash": "557651aab09962ae9ad4870c276b5a3117db51ad79121a6d800647bd251e591b",
+    "expiresAt": "2026-10-21T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-program-manager-perception-data-operations-nuro.md",
+    "route": "/jobs/senior-program-manager-perception-data-operations-nuro",
+    "sourceHash": "d1ccf7232cb75f0f9212825aedf99bc8c248909c69f53ebe87fa52660d19dcf4",
+    "expiresAt": "2026-11-03T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-reinforcement-learning-engineer-austin-apptronik.md",
+    "route": "/jobs/senior-reinforcement-learning-engineer-austin-apptronik",
+    "sourceHash": "40780c9b0ff919d79471d8cf3ee7674d2ad5f04e26b4ba7f0ba7aba54145479f",
+    "expiresAt": "2026-11-07T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-reinforcement-learning-engineer-sunnyvale-apptronik.md",
+    "route": "/jobs/senior-reinforcement-learning-engineer-sunnyvale-apptronik",
+    "sourceHash": "4b9e96c02cfe6bbaff3747b599b214315fc2203bfb809227aacd512286121eed",
+    "expiresAt": "2026-11-07T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-robotics-research-engineer-ambi-robotics.md",
+    "route": "/jobs/senior-robotics-research-engineer-ambi-robotics",
+    "sourceHash": "0d4b1e064312ecc9bc3cb37efedff29563a824a41f86eafc82480a841c66d9bd",
+    "expiresAt": "2026-11-03T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-staff-machine-learning-research-scientist-generative-modeling-planning-nuro.md",
+    "route": "/jobs/senior-staff-machine-learning-research-scientist-generative-modeling-planning-nuro",
+    "sourceHash": "a1cac374e3edff1bb38b9c7f5c355748b7a1669895017d30c0e761be3b6182cb",
+    "expiresAt": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-staff-product-manager-stretch-boston-dynamics.md",
+    "route": "/jobs/senior-staff-product-manager-stretch-boston-dynamics",
+    "sourceHash": "7e6039b86de816adf07fb011f59937373257f1609efd01a5c41eeb1566e33d1c",
+    "expiresAt": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-staff-product-marketing-manager-atlas-boston-dynamics.md",
+    "route": "/jobs/senior-staff-product-marketing-manager-atlas-boston-dynamics",
+    "sourceHash": "dd3577ef7a4fb1514c3a07af4b2829016b780fa3d2a6ae51664567e27518b6af",
+    "expiresAt": "2026-10-16T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-staff-technical-program-manager-hivemind-catalyst-shield-ai.md",
+    "route": "/jobs/senior-staff-technical-program-manager-hivemind-catalyst-shield-ai",
+    "sourceHash": "87a7539fbdf5118ea4d83d212c7ac3b0f7eb9ecaa2a2d739c7e04c4ed7699852",
+    "expiresAt": "2026-10-20T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-technical-program-manager-ai-platform-performance-reliability-nuro.md",
+    "route": "/jobs/senior-technical-program-manager-ai-platform-performance-reliability-nuro",
+    "sourceHash": "a8d9d418d5b4b5c3b8f8fb75d25b58566409d90ca0374af690842af27543da0d",
+    "expiresAt": "2026-11-07T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-technical-program-manager-integration-serve-robotics.md",
+    "route": "/jobs/senior-technical-program-manager-integration-serve-robotics",
+    "sourceHash": "895b547a91e6220cd85cc2cc623a926ec868fca2e2b73626f8ea0e33ac5596c0",
+    "expiresAt": "2026-10-20T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-technical-program-manager-operations-agility.md",
+    "route": "/jobs/senior-technical-program-manager-operations-agility",
+    "sourceHash": "185dfb9a4f59186e45163827fdb35297602b5d2fe741f91a9749b8ab974da692",
+    "expiresAt": "2026-10-24T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-technical-program-manager-robot-skills-agility.md",
+    "route": "/jobs/senior-technical-program-manager-robot-skills-agility",
+    "sourceHash": "ce5f5ee28d1cc6442e9ac436226008602762a0765722cfab65446289fbc43378",
+    "expiresAt": "2026-10-21T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-technical-program-manager-robotics-pickle-robot.md",
+    "route": "/jobs/senior-technical-program-manager-robotics-pickle-robot",
+    "sourceHash": "b8f72e2fb44968d8daef1020264677a53301b0605daafefd6078bc46b4e8865f",
+    "expiresAt": "2026-10-20T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-technical-program-manager-software-collaborative-robotics.md",
+    "route": "/jobs/senior-technical-program-manager-software-collaborative-robotics",
+    "sourceHash": "4850baad2333ada1686eb29b7b7021070f15dacae06f75f306607db7323616b6",
+    "expiresAt": "2026-10-20T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-ux-designer-apptronik.md",
+    "route": "/jobs/senior-ux-designer-apptronik",
+    "sourceHash": "1c97d1d953be2e18a5eaf016349740428ad1ad7b74bc33981bfba47ed7412a63",
+    "expiresAt": "2026-10-17T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-ux-researcher-fauna.md",
+    "route": "/jobs/senior-ux-researcher-fauna",
+    "sourceHash": "ce24b47139384fcb636c9b4587f0c498ad73d398a84440c745ce695e35188eff",
+    "expiresAt": "2026-10-17T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-video-producer-zipline.md",
+    "route": "/jobs/senior-video-producer-zipline",
+    "sourceHash": "b8f832cc99d22520b08272281000f8e73e8d23b46bb5af59674e3774a85f79b5",
+    "expiresAt": "2026-11-10T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/social-community-engagement-manager-applied-intuition.md",
+    "route": "/jobs/social-community-engagement-manager-applied-intuition",
+    "sourceHash": "fe92e513c82047223b463590459f77b14dcafe64e4d1ab156ade483ca08a05e9",
+    "expiresAt": "2026-10-11T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/software-engineer-v-applied-ml-research-pickle-robot.md",
+    "route": "/jobs/software-engineer-v-applied-ml-research-pickle-robot",
+    "sourceHash": "f3cf4ca9b8e40a57a9566c2d9c8df718a65dcb1343b9e2bcb463ec545c4540ef",
+    "expiresAt": "2026-11-02T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/sr-product-designer-amazon-robotics-amazon-robotics.md",
+    "route": "/jobs/sr-product-designer-amazon-robotics-amazon-robotics",
+    "sourceHash": "105e36e8f5a6751b765f9fdab5cd41aa386c5d48092fbb253ab2f7c4442c2e02",
+    "expiresAt": "2026-10-09T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/sr-product-designer-amazon-robotics.md",
+    "route": "/jobs/sr-product-designer-amazon-robotics",
+    "sourceHash": "d7ad051722fee03b00af2a51f741269a067e892470f3b5a5af9f386b6c848b24",
+    "expiresAt": "2026-10-14T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/sr-product-manager-assisted-autonomy-kodiak.md",
+    "route": "/jobs/sr-product-manager-assisted-autonomy-kodiak",
+    "sourceHash": "9db0148850e25b668d3fc7c379b1702e1808abb6abfb28e5fd9e2b2cabd573c3",
+    "expiresAt": "2026-10-23T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/sr-technical-program-manager-hardware-software-integration-serve-robotics.md",
+    "route": "/jobs/sr-technical-program-manager-hardware-software-integration-serve-robotics",
+    "sourceHash": "8cc5384cd8000b5a3daf9b0e4ad098f977552ef5ad3c4ac3bef4184ec03c9a73",
+    "expiresAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/staff-ai-research-engineer-agility.md",
+    "route": "/jobs/staff-ai-research-engineer-agility",
+    "sourceHash": "67a87fbf9e6ae14103dd1b18166b2413f460c48f56d7f428ba732eb671895fe6",
+    "expiresAt": "2026-11-02T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/staff-product-manager-applied-ai-apptronik.md",
+    "route": "/jobs/staff-product-manager-applied-ai-apptronik",
+    "sourceHash": "0c82880fcd40fa491b7c296fa7a297af2c285af862d59fb1b50b0d88d8db53a0",
+    "expiresAt": "2026-10-17T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/staff-product-manager-platform-infrastructure-skydio.md",
+    "route": "/jobs/staff-product-manager-platform-infrastructure-skydio",
+    "sourceHash": "3561510960489645cc0710b90a1339d185ddd41286f3dc0d1065da2e5f3d0ee7",
+    "expiresAt": "2026-10-18T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/staff-product-manager-telecommunications-skydio.md",
+    "route": "/jobs/staff-product-manager-telecommunications-skydio",
+    "sourceHash": "c06cd7254f6cf7dc623fd1a8090f1d26b8cfde16a1e574d0c5540836ae739ace",
+    "expiresAt": "2026-10-26T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/staff-product-marketing-manager-v-bat-shield-ai.md",
+    "route": "/jobs/staff-product-marketing-manager-v-bat-shield-ai",
+    "sourceHash": "f8539e7ee0430ee7c01251689828da6ec72107e5596f09265d59f138794863b2",
+    "expiresAt": "2026-10-18T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/staff-technical-program-manager-ai-perception-apptronik.md",
+    "route": "/jobs/staff-technical-program-manager-ai-perception-apptronik",
+    "sourceHash": "59487896f1507e322ab925cf84a70b05e67f761023bd5079cf588eccaf366a08",
+    "expiresAt": "2026-10-20T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/staff-technical-program-manager-autonomy-serve-robotics.md",
+    "route": "/jobs/staff-technical-program-manager-autonomy-serve-robotics",
+    "sourceHash": "a3f85695c6ea82cbebd97bb7b40f0080fbc28e6dffd3dff545380fba2eb544f7",
+    "expiresAt": "2026-10-20T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/staff-technical-program-manager-software-collaborative-robotics.md",
+    "route": "/jobs/staff-technical-program-manager-software-collaborative-robotics",
+    "sourceHash": "fb2dd21e8f279436546cc2fbdf0353ae6ceec8ed8842cea73ca380376b6066c8",
+    "expiresAt": "2026-10-20T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/staff-video-producer-apptronik.md",
+    "route": "/jobs/staff-video-producer-apptronik",
+    "sourceHash": "dbfcaed2d7edc7b6bcb9069f41a51f46e7239368529eba858f8344285c2eca8e",
+    "expiresAt": "2026-10-24T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/system-designer-applied-intuition.md",
+    "route": "/jobs/system-designer-applied-intuition",
+    "sourceHash": "2aebcac1e5cf571a811129b66b834aa69fd52fed63118c91fd3ae5bea6fdea91",
+    "expiresAt": "2026-10-29T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/technical-lead-evaluation-infrastructure-nuro.md",
+    "route": "/jobs/technical-lead-evaluation-infrastructure-nuro",
+    "sourceHash": "88602794af59f3e4ef0a6a5a9bbb669f5001597f44dfb23c46eafdfffcc01f16",
+    "expiresAt": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/technical-lead-manager-autonomy-evaluation-intelligence-nuro.md",
+    "route": "/jobs/technical-lead-manager-autonomy-evaluation-intelligence-nuro",
+    "sourceHash": "ff3e33e4c03a7750b28f9ba8b34b0e79e98f78fff47deea4d0ae0ebe86c3855a",
+    "expiresAt": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/technical-program-manager-architectural-elements-dexterity.md",
+    "route": "/jobs/technical-program-manager-architectural-elements-dexterity",
+    "sourceHash": "eb153263a532c6bfa9525b302ca2b8f3bc56e34b5adaa4a1ea75ba4977d38699",
+    "expiresAt": "2026-11-11T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/technical-program-manager-bear-robotics.md",
+    "route": "/jobs/technical-program-manager-bear-robotics",
+    "sourceHash": "91660666391d2f58faa5689b3677d2e552c858a4410280886b0bdde0181ceed2",
+    "expiresAt": "2026-10-23T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/technical-program-manager-dana-physical-ai-applied-intuition.md",
+    "route": "/jobs/technical-program-manager-dana-physical-ai-applied-intuition",
+    "sourceHash": "a39991e632a552fadb055048f9d6e2eefede0daf045dffd5cc62d457a8efdb9a",
+    "expiresAt": "2026-10-29T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/technical-program-manager-defense-autonomy-applied-intuition.md",
+    "route": "/jobs/technical-program-manager-defense-autonomy-applied-intuition",
+    "sourceHash": "1b6b1941d1c2024fa06be4c5ab911ce25cfd5f1b0dc26eb22717dd79badece8b",
+    "expiresAt": "2026-09-23T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/technical-program-manager-droid-structures-and-mechanisms-zipline.md",
+    "route": "/jobs/technical-program-manager-droid-structures-and-mechanisms-zipline",
+    "sourceHash": "0b0edbae023c1b0ead9f5d2b8f8c902eeecd18aa462b43cb938a193f6a3ec1ae",
+    "expiresAt": "2026-11-06T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/technical-program-manager-flight-systems-platform-zipline.md",
+    "route": "/jobs/technical-program-manager-flight-systems-platform-zipline",
+    "sourceHash": "3b10c2de7b6b9b438f5db920f22a718f995b9a8f068ccbb94a6189cd5779c2b5",
+    "expiresAt": "2026-10-26T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/technical-program-manager-intern-spring-2027-zipline.md",
+    "route": "/jobs/technical-program-manager-intern-spring-2027-zipline",
+    "sourceHash": "d301410059445c5ee7c4f12465760603129a15f6b05504a06e0fdaacee71e1ae",
+    "expiresAt": "2026-11-10T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/technical-program-manager-intern-summer-2027-zipline.md",
+    "route": "/jobs/technical-program-manager-intern-summer-2027-zipline",
+    "sourceHash": "9e75d8712d437f9e3ad4b948cbd8a5444e919677bd1ff2272a0fbbd6cf738688",
+    "expiresAt": "2026-11-06T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/technical-program-manager-maritime-shield-ai.md",
+    "route": "/jobs/technical-program-manager-maritime-shield-ai",
+    "sourceHash": "bc33e59550c5234e462c3ca1de138f77fb473e289dcae3a8262d9ef6c6894353",
+    "expiresAt": "2026-11-15T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/technical-program-manager-mission-autonomy-shield-ai.md",
+    "route": "/jobs/technical-program-manager-mission-autonomy-shield-ai",
+    "sourceHash": "2bbd823fb9fb905ab3c450743d0627f35ec24e7b50353264b12e00c9e65ceb9f",
+    "expiresAt": "2026-10-20T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/technical-program-manager-operations-agility.md",
+    "route": "/jobs/technical-program-manager-operations-agility",
+    "sourceHash": "3775d2671c5a78e003aceed597da6d5a12e2c4539a13240f877a73c191c29379",
+    "expiresAt": "2026-10-24T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/technical-program-manager-trucking-operations-applied-intuition.md",
+    "route": "/jobs/technical-program-manager-trucking-operations-applied-intuition",
+    "sourceHash": "afaeb2f0a0083af28059aba0924ccd699e4626167ad6dc2eb1116427a4d38687",
+    "expiresAt": "2026-11-06T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/technical-program-manager-vehicle-os-applied-intuition.md",
+    "route": "/jobs/technical-program-manager-vehicle-os-applied-intuition",
+    "sourceHash": "8c59ab1d08b7e0d9cb5b04c2f9e5cbcab839d5a807136cadb8da907af5e92ef8",
+    "expiresAt": "2026-11-07T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/test-maintenance-program-manager-zipline.md",
+    "route": "/jobs/test-maintenance-program-manager-zipline",
+    "sourceHash": "63be4d579c842dda9ebf85df54b19c69702206a9b987980c9fe1d6b2dbc4612f",
+    "expiresAt": "2026-11-10T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/ux-product-design-lead-skydio.md",
+    "route": "/jobs/ux-product-design-lead-skydio",
+    "sourceHash": "3762778434298b62752312513d918a7b356e2041ac0bf80411856d37dbd92bd6",
+    "expiresAt": "2026-10-14T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/ux-test-engineer-new-grad-applied-intuition.md",
+    "route": "/jobs/ux-test-engineer-new-grad-applied-intuition",
+    "sourceHash": "794a239b633108fcb173aa6bf5c3dea3d158a92d684711a81b3296a1d29d88d0",
+    "expiresAt": "2026-10-24T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/ux-ui-designer-agility.md",
+    "route": "/jobs/ux-ui-designer-agility",
+    "sourceHash": "68fe8da2d4f836c5345638b932a1bb7cba2bb051c7e50224086493530dc9b316",
+    "expiresAt": "2026-10-17T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/ux-validation-lead-applied-intuition.md",
+    "route": "/jobs/ux-validation-lead-applied-intuition",
+    "sourceHash": "8ab41b0e24f331ca715d92de194160717043bba1add3430c14b0d256ed3be6b2",
+    "expiresAt": "2026-10-24T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/west-coast-communications-manager-applied-intuition.md",
+    "route": "/jobs/west-coast-communications-manager-applied-intuition",
+    "sourceHash": "4c152cd17c2368aea25ba94064c5922345640cbc7f41fd69abe63bdead0712cf",
+    "expiresAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/world-model-research-scientist-physical-ai-kodiak.md",
+    "route": "/jobs/world-model-research-scientist-physical-ai-kodiak",
+    "sourceHash": "932eae43dd100cb2348961a3a555b51ed35ce4d5808536b36aa5cc111501c12f",
+    "expiresAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "scores/reachy-mini.md",
+    "route": "",
+    "sourceHash": "a5d0ba8bf6ce02ec319e5b9798238cbb47dcb2755df0a453a220a4f1970cfd35",
+    "expiresAt": null
+  },
+  {
+    "id": "scores/robot-profile-01.md",
+    "route": "",
+    "sourceHash": "a5d0ba8bf6ce02ec319e5b9798238cbb47dcb2755df0a453a220a4f1970cfd35",
+    "expiresAt": null
+  },
+  {
+    "id": "scores/robot-profile-02.md",
+    "route": "",
+    "sourceHash": "bac93fb2b1b1cb656f4ad751108491adca17fbf3d6db448ae600d91e040093b5",
+    "expiresAt": null
+  },
+  {
+    "id": "scores/robot-profile-03.md",
+    "route": "",
+    "sourceHash": "e13c634ec3f839373eb5a8ed0ee43d4c957e342f96e41213de181984e7cdebf0",
+    "expiresAt": null
+  },
+  {
+    "id": "scores/unitree-go2-pro.md",
+    "route": "",
+    "sourceHash": "582e2670bae54b64b24f58602550a5f85b763b2d73e992e02657b216866f3e45",
+    "expiresAt": null
+  },
+  {
+    "id": "research/automation-anxiety-vs-readiness.md",
+    "route": "/research/automation-anxiety-vs-readiness",
+    "sourceHash": "5c0e042c00b176d16fd484a84b9a6ee94d25c84e54006e260a84d67a785db3ea",
+    "expiresAt": null
+  },
+  {
+    "id": "research/first-rep-workplace.md",
+    "route": "/research/first-rep-workplace",
+    "sourceHash": "cb71373e5e3b93c88550ff24f2eacef6df427ccdfae3a22a1276e67c13d543e7",
+    "expiresAt": null
+  },
+  {
+    "id": "research/hugging-face-robot-app-store.md",
+    "route": "/research/hugging-face-robot-app-store",
+    "sourceHash": "4952c1bd85875125e6c4a42e1fa82d7883ec3f355e8589593c187d5ea0d2999a",
+    "expiresAt": null
+  },
+  {
+    "id": "research/human-readiness-framework.md",
+    "route": "/research/human-readiness-framework",
+    "sourceHash": "32b2922f7c5de086f02fc51f1c71eae9ac3521a5448a193cc0bf829dbe049568",
+    "expiresAt": null
+  },
+  {
+    "id": "research/rlp-module-1-1-live.md",
+    "route": "/research/rlp-module-1-1-live",
+    "sourceHash": "1f4aea1b683871bdb339e08025af638d719c207d0de17efa2309884483ff0374",
+    "expiresAt": null
+  },
+  {
+    "id": "research/soft-skills-hard-skills-robotic-workflows.md",
+    "route": "/research/soft-skills-hard-skills-robotic-workflows",
+    "sourceHash": "116d5ef0c807cfc439cd46d8acb808ed2c406f919239802134a68f78cd772e0d",
+    "expiresAt": null
+  },
+  {
+    "id": "research/summit-nyc-call-for-speakers.md",
+    "route": "/research/summit-nyc-call-for-speakers",
+    "sourceHash": "7bc970855d1114670c20c59add634c839a0d72416e29b9152fb233e353db5158",
+    "expiresAt": null
+  },
+  {
+    "id": "research/the-familiar-hri-design-brief.md",
+    "route": "/research/the-familiar-hri-design-brief",
+    "sourceHash": "c07848dde723646b749f6e775773918011819a09c97c2b231c4daf5cf8857a4c",
+    "expiresAt": null
+  },
+  {
+    "id": "field-signals/failure-transparency-costs.md",
+    "route": "/research/field-signals/failure-transparency-costs",
+    "sourceHash": "a61954e8de1ea7fb5549b7dbc9341f70648b90c92eba1aa5c1435fe2138db6a5",
+    "expiresAt": null
+  },
+  {
+    "id": "field-signals/interaction-fit-mismatch.md",
+    "route": "/research/field-signals/interaction-fit-mismatch",
+    "sourceHash": "e9144cb99241c12780f5658cb5a4e3382ed0aed26f489b26251f3aea9916af2a",
+    "expiresAt": null
+  },
+  {
+    "id": "field-signals/recovery-design-gap.md",
+    "route": "/research/field-signals/recovery-design-gap",
+    "sourceHash": "48f9f0c5768a8334565b9941064acfa02ec495e53173c84e620df858776d2178",
+    "expiresAt": null
+  },
+  {
+    "id": "field-signals/spatial-legibility-hospitals.md",
+    "route": "/research/field-signals/spatial-legibility-hospitals",
+    "sourceHash": "c843548e53d38e3d8918946a409e750f37cb883b127f680054216e1a6673ba63",
+    "expiresAt": null
+  }
+]

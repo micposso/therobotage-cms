@@ -1,9 +1,13 @@
+import { uiText } from '@/lib/i18n/messages'
+import { localize, contentHref } from '@/lib/i18n/localize'
+import type { Locale } from '@/lib/i18n/routing'
 import ArticleCard from '@/components/ArticleCard/ArticleCard'
 import { getAllNewsArticles } from '@/lib/news'
 import styles from './LatestNewsSection.module.css'
 
-export default function LatestNewsSection() {
-  const articles = getAllNewsArticles().slice(0, 3)
+export default function LatestNewsSection({ locale = 'en' }: { locale?: Locale }) {
+  const t = (text: string) => uiText(text, locale)
+  const articles = getAllNewsArticles().slice(0, 3).map(a => localize(a, `/news/${a.slug}`, locale))
   if (articles.length === 0) return null
 
   return (
@@ -12,8 +16,8 @@ export default function LatestNewsSection() {
 
         <div className={`row ${styles.headerRow}`}>
           <div className="col-12">
-            <p className={styles.eyebrow}>Latest</p>
-            <h2 className={styles.headline}>News</h2>
+            <p className={styles.eyebrow}>{t("Latest")}</p>
+            <h2 className={styles.headline}>{t("News")}</h2>
           </div>
         </div>
 
@@ -28,7 +32,7 @@ export default function LatestNewsSection() {
                   headline: article.title,
                   image: article.thumbnailImage,
                 }}
-                href={`/news/${article.slug}`}
+                href={contentHref(`/news/${article.slug}`, locale)}
               />
             </div>
           ))}

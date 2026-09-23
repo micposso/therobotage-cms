@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "predev": "node scripts/translate-content.mjs sync",
+    "prebuild": "node scripts/translate-content.mjs sync",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
@@ -13,7 +15,10 @@
     "jobs:publish": "node scripts/publish-jobs.mjs",
     "audio:dry": "node scripts/article-audio.mjs --dry-run",
     "audio:publish": "node scripts/article-audio.mjs",
-    "audio:test": "node --test scripts/article-audio.test.mjs"
+    "audio:test": "node --test scripts/article-audio.test.mjs",
+    "translate": "node scripts/translate-content.mjs",
+    "translate:check": "node scripts/translate-content.mjs check",
+    "translate:test": "node --test scripts/translation.test.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.112.3",

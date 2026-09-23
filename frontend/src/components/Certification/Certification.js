@@ -1,4 +1,6 @@
 'use client'
+import { useCopy } from '@/lib/i18n/useCopy'
+
 
 import { useRef, useEffect, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
@@ -32,6 +34,7 @@ const stats = [
 // ─── Count-up ─────────────────────────────────────────────────────────────────
 
 function CountUp({ target, suffix, isActive }) {
+  const { t } = useCopy()
   const [count, setCount] = useState(0)
 
   useEffect(() => {
@@ -54,7 +57,7 @@ function CountUp({ target, suffix, isActive }) {
     return () => clearInterval(timer)
   }, [isActive, target])
 
-  return <>{count}{suffix}</>
+  return <>{count}{t(suffix)}</>
 }
 
 // ─── Stat card variants ───────────────────────────────────────────────────────
@@ -72,6 +75,7 @@ const statVariants = {
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export default function Certification() {
+  const { t, href: resolveHref } = useCopy()
   const sectionRef  = useRef(null)
   const specsRef    = useRef(null)
   const inView      = useInView(sectionRef, { once: true, margin: '-80px' })
@@ -89,17 +93,13 @@ export default function Certification() {
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6 }}
-            >
-              Flagship Certification
-            </motion.p>
+            >{t("Flagship Certification")}</motion.p>
             <motion.h2
               className={styles.headline}
               initial={{ y: 40, opacity: 0 }}
               animate={inView ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            >
-              Become a Robotics Experience Practitioner
-            </motion.h2>
+            >{t("Become a Robotics Experience Practitioner")}</motion.h2>
           </div>
           <div className="col-lg-5 offset-lg-1">
             <motion.p
@@ -107,17 +107,13 @@ export default function Certification() {
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              The REP credential is built for product designers, UX strategists, and business leaders who shape the spaces, systems, and decisions where humans and robots meet. No engineering background required.
-            </motion.p>
+            >{t("The REP credential is built for product designers, UX strategists, and business leaders who shape the spaces, systems, and decisions where humans and robots meet. No engineering background required.")}</motion.p>
             <motion.div
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <Link href="/learn/rep" className={styles.headerCta}>
-                Get your REP credential
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <Link href={resolveHref("/learn/rep")} className={styles.headerCta}>{t("Get your REP credential")}<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </Link>
@@ -138,11 +134,9 @@ export default function Certification() {
             >
               {/* Top */}
               <div>
-                <span className={styles.badge}>REP — Robotics Experience Practitioner</span>
-                <h3 className={styles.cardName}>Practitioner Track</h3>
-                <p className={styles.cardDescription}>
-                  A six-week hybrid programme covering the human side of robotics — how robots signal intent, where human-robot interaction breaks down, how to design around failure, and how to evaluate a real deployment with confidence. Culminates in a Robot Readiness Audit and your REP credential.
-                </p>
+                <span className={styles.badge}>{t("REP — Robotics Experience Practitioner")}</span>
+                <h3 className={styles.cardName}>{t("Practitioner Track")}</h3>
+                <p className={styles.cardDescription}>{t("A six-week hybrid programme covering the human side of robotics — how robots signal intent, where human-robot interaction breaks down, how to design around failure, and how to evaluate a real deployment with confidence. Culminates in a Robot Readiness Audit and your REP credential.")}</p>
               </div>
 
               {/* Specs */}
@@ -151,27 +145,25 @@ export default function Certification() {
                   <span className={styles.specValue}>
                     <CountUp target={6} suffix=" Weeks" isActive={specsInView} />
                   </span>
-                  <span className={styles.specLabel}>Duration</span>
+                  <span className={styles.specLabel}>{t("Duration")}</span>
                 </div>
                 <div className={styles.specItem}>
                   <span className={styles.specValue}>
                     <CountUp target={15} suffix=" Hours" isActive={specsInView} />
                   </span>
-                  <span className={styles.specLabel}>Total learning</span>
+                  <span className={styles.specLabel}>{t("Total learning")}</span>
                 </div>
                 <div className={styles.specItem}>
                   <span className={styles.specValue}>
                     <CountUp target={1} suffix=" Live" isActive={specsInView} />
                   </span>
-                  <span className={styles.specLabel}>Zoom kick-off</span>
+                  <span className={styles.specLabel}>{t("Zoom kick-off")}</span>
                 </div>
               </div>
 
               {/* Bottom */}
               <div className={styles.cardBottom}>
-                <Link href="/learn" className={styles.cta}>
-                  Explore the Full Curriculum
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <Link href={resolveHref("/learn")} className={styles.cta}>{t("Explore the Full Curriculum")}<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                     <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </Link>
@@ -189,9 +181,9 @@ export default function Certification() {
             >
               {stats.map((stat) => (
                 <motion.div key={stat.value} className={styles.statCard} variants={statVariants}>
-                  <p className={styles.statValue}>{stat.value}</p>
-                  <p className={styles.statLabel}>{stat.label}</p>
-                  <p className={styles.statSource}>{stat.source}</p>
+                  <p className={styles.statValue}>{t(stat.value)}</p>
+                  <p className={styles.statLabel}>{t(stat.label)}</p>
+                  <p className={styles.statSource}>{t(stat.source)}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -207,25 +199,23 @@ export default function Certification() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <div className={styles.tracksHeader}>
-            <p className={styles.tracksLabel}>Credential Family</p>
-            <a href="/notify" className={styles.teaseLink}>
-              Join the list to be notified when new tracks open
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <p className={styles.tracksLabel}>{t("Credential Family")}</p>
+            <Link href={resolveHref("/notify")} className={styles.teaseLink}>{t("Join the list to be notified when new tracks open")}<svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </a>
+            </Link>
           </div>
           <div className={styles.tracksGrid}>
             {tracks.map((track) => (
-              <Link key={track.abbr} href={`/learn/${track.slug}`} className={`${styles.trackCard} ${track.status === 'Live' ? styles.trackLive : styles.trackSoon}`}>
+              <Link key={track.abbr} href={resolveHref(`/learn/${track.slug}`)} className={`${styles.trackCard} ${track.status === 'Live' ? styles.trackLive : styles.trackSoon}`}>
                 <div className={styles.trackTop}>
-                  <span className={styles.trackAbbr}>{track.abbr}</span>
+                  <span className={styles.trackAbbr}>{t(track.abbr)}</span>
                   <span className={`${styles.statusPill} ${track.status === 'Live' ? styles.statusLive : styles.statusSoon}`}>
-                    {track.status}
+                    {t(track.status)}
                   </span>
                 </div>
-                <p className={styles.trackName}>{track.name}</p>
-                <p className={styles.trackDescription}>{track.description}</p>
+                <p className={styles.trackName}>{t(track.name)}</p>
+                <p className={styles.trackDescription}>{t(track.description)}</p>
               </Link>
             ))}
           </div>
