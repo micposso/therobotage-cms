@@ -4,8 +4,8 @@ title: "The UN Is Asking the Right Robot Question"
 category: OPINION
 date: September 23, 2026
 excerpt: The autonomous-weapons debate is not only about killer robots. It is about whether machines should be allowed to choose targets when war is already filling with drones, robot dogs, and field machines.
-headerImage: /images/news/military-field-robots-battlefield-race-header.jpg
-thumbnailImage: /images/news/military-field-robots-battlefield-race-thumb.jpg
+headerImage: /images/news/un-autonomous-weapons-human-control-header.png
+thumbnailImage: /images/news/un-autonomous-weapons-human-control-thumb.png
 author: The Robot Age Editorial Team
 ---
 
