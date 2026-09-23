@@ -1218,12 +1218,6 @@
     "expiresAt": "2026-10-29T00:00:00.000Z"
   },
   {
-    "id": "jobs/technical-program-manager-defense-autonomy-applied-intuition.md",
-    "route": "/jobs/technical-program-manager-defense-autonomy-applied-intuition",
-    "sourceHash": "1b6b1941d1c2024fa06be4c5ab911ce25cfd5f1b0dc26eb22717dd79badece8b",
-    "expiresAt": "2026-09-23T00:00:00.000Z"
-  },
-  {
     "id": "jobs/technical-program-manager-droid-structures-and-mechanisms-zipline.md",
     "route": "/jobs/technical-program-manager-droid-structures-and-mechanisms-zipline",
     "sourceHash": "0b0edbae023c1b0ead9f5d2b8f8c902eeecd18aa462b43cb938a193f6a3ec1ae",

@@ -184,6 +184,12 @@ p {
   }
 }
 
+/* Temporarily hide sign-in links in top, mobile, and sidebar navigation.
+   Keep the links in the markup; remove this rule when sign-in is ready. */
+nav a[href$="/signin"] {
+  display: none;
+}
+
 /* Semantic typography defaults. Component styles use these same scale tokens. */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
