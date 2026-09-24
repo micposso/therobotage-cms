@@ -246,6 +246,12 @@
     "expiresAt": "2026-11-08T00:00:00.000Z"
   },
   {
+    "id": "jobs/aviation-regulatory-program-manager-skydio.md",
+    "route": "/jobs/aviation-regulatory-program-manager-skydio",
+    "sourceHash": "7835a9f7bf42784af02c08fdb4643d77b24cf9e5e92677b6eb6b500a2ea561fd",
+    "expiresAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
     "id": "jobs/brand-designer-applied-intuition.md",
     "route": "/jobs/brand-designer-applied-intuition",
     "sourceHash": "bb7a614d58740880776d572100d769b748b447ed42c331199def0b650ac0cad2",
@@ -312,6 +318,12 @@
     "expiresAt": "2026-11-21T00:00:00.000Z"
   },
   {
+    "id": "jobs/director-product-compliance-skydio.md",
+    "route": "/jobs/director-product-compliance-skydio",
+    "sourceHash": "adee175181b37c1975e5b807b4ec4b55e7b0e6555780b0b3cfb0202824b70462",
+    "expiresAt": "2026-10-24T00:00:00.000Z"
+  },
+  {
     "id": "jobs/director-product-data-flywheel-serve-robotics.md",
     "route": "/jobs/director-product-data-flywheel-serve-robotics",
     "sourceHash": "c200479a6e33ce77373e4c9e660786fb6c673bdc5d0a5b75ae2497d539b98f01",
@@ -328,6 +340,12 @@
     "route": "/jobs/director-product-management-hardware-apptronik",
     "sourceHash": "64a18cd82069f3961409ec32e976688f00a56e302d32e96a5ac82ac98b0b7309",
     "expiresAt": "2026-10-18T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/director-product-quality-agility.md",
+    "route": "/jobs/director-product-quality-agility",
+    "sourceHash": "0f92648ca84eca24d945c25babfd662569683b38a83768375a5249340066a87e",
+    "expiresAt": "2026-11-22T00:00:00.000Z"
   },
   {
     "id": "jobs/director-technical-program-manager-software-collaborative-robotics.md",
@@ -688,6 +706,18 @@
     "route": "/jobs/product-operations-manager-kodiak",
     "sourceHash": "f7173f803fa8fa5ce9e42ae80fe79a7940b076967ebf8308910ddb03a66b0351",
     "expiresAt": "2026-10-24T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-quality-manager-apptronik.md",
+    "route": "/jobs/product-quality-manager-apptronik",
+    "sourceHash": "578ee2c0e7f137299bf84f62b80ec828534bb6d3785484ded750cfdb6960e685",
+    "expiresAt": "2026-11-22T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-strategy-operations-associate-kodiak.md",
+    "route": "/jobs/product-strategy-operations-associate-kodiak",
+    "sourceHash": "86d5e0035330cbbe5d6a2579434266946209558483a95c4a013b07d441fecfb2",
+    "expiresAt": "2026-11-22T00:00:00.000Z"
   },
   {
     "id": "jobs/program-manager-growth-profitability-zipline.md",
@@ -1056,10 +1086,22 @@
     "expiresAt": "2026-10-16T00:00:00.000Z"
   },
   {
+    "id": "jobs/senior-staff-systems-engineer-autonomy-verification-nuro.md",
+    "route": "/jobs/senior-staff-systems-engineer-autonomy-verification-nuro",
+    "sourceHash": "23f61728ee6f4b3a46f0272f7ed95c6bf4b1d5ea3aee14d19f3416ac43ff6e36",
+    "expiresAt": "2026-11-22T00:00:00.000Z"
+  },
+  {
     "id": "jobs/senior-staff-technical-program-manager-hivemind-catalyst-shield-ai.md",
     "route": "/jobs/senior-staff-technical-program-manager-hivemind-catalyst-shield-ai",
     "sourceHash": "87a7539fbdf5118ea4d83d212c7ac3b0f7eb9ecaa2a2d739c7e04c4ed7699852",
     "expiresAt": "2026-10-20T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-systems-test-engineer-autonomy-behavior-nuro.md",
+    "route": "/jobs/senior-systems-test-engineer-autonomy-behavior-nuro",
+    "sourceHash": "a116741efab3f69a32463a70043b117eabc83ad2ff1650b773f19bce18b1a21e",
+    "expiresAt": "2026-11-22T00:00:00.000Z"
   },
   {
     "id": "jobs/senior-technical-program-manager-ai-platform-performance-reliability-nuro.md",
