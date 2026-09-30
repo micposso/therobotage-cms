@@ -42,6 +42,12 @@
     "expiresAt": null
   },
   {
+    "id": "news/drone-sidewalk-delivery-public-space.md",
+    "route": "/news/drone-sidewalk-delivery-public-space",
+    "sourceHash": "33b367037572d1d88ce46211f845cd457fa528b530ee8d79b578c014211138d7",
+    "expiresAt": null
+  },
+  {
     "id": "news/elliq-case-study-experience-design.md",
     "route": "/news/elliq-case-study-experience-design",
     "sourceHash": "234c6515426de42ee11630aad824868e5f7142062b61fff9758c312e7c3f4834",
@@ -246,6 +252,12 @@
     "expiresAt": "2026-11-08T00:00:00.000Z"
   },
   {
+    "id": "jobs/associate-customer-technical-program-manager-vehicle-os-applied-intuition.md",
+    "route": "/jobs/associate-customer-technical-program-manager-vehicle-os-applied-intuition",
+    "sourceHash": "e29b8d351693be42508b137d14bee180ff61616b9d0042ce30dd575cfb8c487d",
+    "expiresAt": "2026-11-27T00:00:00.000Z"
+  },
+  {
     "id": "jobs/aviation-regulatory-program-manager-skydio.md",
     "route": "/jobs/aviation-regulatory-program-manager-skydio",
     "sourceHash": "7835a9f7bf42784af02c08fdb4643d77b24cf9e5e92677b6eb6b500a2ea561fd",
@@ -256,12 +268,6 @@
     "route": "/jobs/brand-designer-applied-intuition",
     "sourceHash": "bb7a614d58740880776d572100d769b748b447ed42c331199def0b650ac0cad2",
     "expiresAt": "2026-11-09T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/communications-associate-shield-ai.md",
-    "route": "/jobs/communications-associate-shield-ai",
-    "sourceHash": "91c30a69c9ce60549a20f264ca6117f531a083013c06ac445d3c6465891997a9",
-    "expiresAt": "2026-09-29T00:00:00.000Z"
   },
   {
     "id": "jobs/communications-manager-local-launch-communications-zipline.md",
@@ -378,6 +384,12 @@
     "expiresAt": "2026-10-25T00:00:00.000Z"
   },
   {
+    "id": "jobs/head-of-product-design-shield-ai.md",
+    "route": "/jobs/head-of-product-design-shield-ai",
+    "sourceHash": "fce7ac75b012d5f9fbadf8fdd855c783b35fb0afe5d11044d465e9292aa711f7",
+    "expiresAt": "2026-11-25T00:00:00.000Z"
+  },
+  {
     "id": "jobs/head-of-product-operations-zipline.md",
     "route": "/jobs/head-of-product-operations-zipline",
     "sourceHash": "ca621809b4da2f58ef7520bafbc5a9329a8632873d3a436db455fa00cf5596c3",
@@ -432,6 +444,12 @@
     "expiresAt": "2026-10-21T00:00:00.000Z"
   },
   {
+    "id": "jobs/lead-technical-program-manager-ai-platform-nuro.md",
+    "route": "/jobs/lead-technical-program-manager-ai-platform-nuro",
+    "sourceHash": "bb0897857461e65e9456b0eeb38e7adc1aab643cd7902d9fdc147f03c0078688",
+    "expiresAt": "2026-11-24T00:00:00.000Z"
+  },
+  {
     "id": "jobs/learning-experience-designer-applied-intuition.md",
     "route": "/jobs/learning-experience-designer-applied-intuition",
     "sourceHash": "65c1965e4a3bf9222fa40726008485882f3d4654568a4555074dc9ac5f9dc0b7",
@@ -466,12 +484,6 @@
     "route": "/jobs/manager-data-operations-and-annotations-autonomy-data-zipline",
     "sourceHash": "71d7e52c342e7c4700eec9f3917075209e2007c2421eb3e12d34fefe5c899299",
     "expiresAt": "2026-11-06T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/manager-manipulation-data-farm-path-robotics.md",
-    "route": "/jobs/manager-manipulation-data-farm-path-robotics",
-    "sourceHash": "ceab29600352a8afc907b1842e5c388562addf26ed3eb2b3e2d1164d007bd91c",
-    "expiresAt": "2026-09-30T00:00:00.000Z"
   },
   {
     "id": "jobs/marketing-operations-manager-contractor-skydio.md",
@@ -510,10 +522,22 @@
     "expiresAt": "2026-10-21T00:00:00.000Z"
   },
   {
+    "id": "jobs/presentation-designer-shield-ai.md",
+    "route": "/jobs/presentation-designer-shield-ai",
+    "sourceHash": "b87e74342f4faf8b2de176b0827a4d11dbbb0724bc31560ba22ce87e05d9fe48",
+    "expiresAt": "2026-11-23T00:00:00.000Z"
+  },
+  {
     "id": "jobs/principal-designer-special-projects-shield-ai.md",
     "route": "/jobs/principal-designer-special-projects-shield-ai",
     "sourceHash": "73e0e6b994103a1b0e0d94c264543a5ec0b74c445a53f158a6cc36fa3997eb37",
     "expiresAt": "2026-10-18T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/principal-product-manager-atlas-logistics-robotics-boston-dynamics.md",
+    "route": "/jobs/principal-product-manager-atlas-logistics-robotics-boston-dynamics",
+    "sourceHash": "43679577081f5a4bde5ff73d6154e460f5f0af4c062565244e51d61e3aaae392",
+    "expiresAt": "2026-11-21T00:00:00.000Z"
   },
   {
     "id": "jobs/principal-product-manager-physical-ai-dexterity.md",
@@ -732,6 +756,12 @@
     "expiresAt": "2026-11-02T00:00:00.000Z"
   },
   {
+    "id": "jobs/r-d-product-manager-boston-dynamics.md",
+    "route": "/jobs/r-d-product-manager-boston-dynamics",
+    "sourceHash": "9c73cad38790202f2b40ab45c9a8afa0bffae242b7beb83243217b4de9ee98a0",
+    "expiresAt": "2026-11-27T00:00:00.000Z"
+  },
+  {
     "id": "jobs/reinforcement-learning-engineer-apptronik.md",
     "route": "/jobs/reinforcement-learning-engineer-apptronik",
     "sourceHash": "1d48313e14559285b15a27b11d275631606927e5e0def673a8efc675c30cc64b",
@@ -840,6 +870,12 @@
     "expiresAt": "2026-10-10T00:00:00.000Z"
   },
   {
+    "id": "jobs/research-scientist-vla-models-atlas-boston-dynamics.md",
+    "route": "/jobs/research-scientist-vla-models-atlas-boston-dynamics",
+    "sourceHash": "63321fcb3037dae7c2c84152d06dd698f663d8c29ca8c9ece8290faffa03232d",
+    "expiresAt": "2026-11-22T00:00:00.000Z"
+  },
+  {
     "id": "jobs/research-scientist-world-action-foundation-model-robotics-applied-intuition.md",
     "route": "/jobs/research-scientist-world-action-foundation-model-robotics-applied-intuition",
     "sourceHash": "065df678f4517602d61f8e00e6686815d68e8fa525bbc579b4d8fbd457abf0b1",
@@ -886,12 +922,6 @@
     "route": "/jobs/senior-curriculum-developer-suas-operations-skydio",
     "sourceHash": "7323ea46cf9b52e87cac9b6016bcc536a74d8c9acb87f92eb228b19a037de891",
     "expiresAt": "2026-11-07T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/senior-director-demand-generation-dusty-robotics.md",
-    "route": "/jobs/senior-director-demand-generation-dusty-robotics",
-    "sourceHash": "ffba71ee7ee177c8b49dbe165d5b2650a39401bfbaf6ecfb024ad3c59f0f94c1",
-    "expiresAt": "2026-09-29T00:00:00.000Z"
   },
   {
     "id": "jobs/senior-graphic-designer-path-robotics.md",
@@ -1068,6 +1098,12 @@
     "expiresAt": "2026-11-03T00:00:00.000Z"
   },
   {
+    "id": "jobs/senior-staff-designer-shield-ai.md",
+    "route": "/jobs/senior-staff-designer-shield-ai",
+    "sourceHash": "28c0639ed422d1cabd2ced94a0950dab6115aabe12f1489202ad694fd4cbddfb",
+    "expiresAt": "2026-11-23T00:00:00.000Z"
+  },
+  {
     "id": "jobs/senior-staff-machine-learning-research-scientist-generative-modeling-planning-nuro.md",
     "route": "/jobs/senior-staff-machine-learning-research-scientist-generative-modeling-planning-nuro",
     "sourceHash": "a1cac374e3edff1bb38b9c7f5c355748b7a1669895017d30c0e761be3b6182cb",
@@ -1096,6 +1132,12 @@
     "route": "/jobs/senior-staff-technical-program-manager-hivemind-catalyst-shield-ai",
     "sourceHash": "87a7539fbdf5118ea4d83d212c7ac3b0f7eb9ecaa2a2d739c7e04c4ed7699852",
     "expiresAt": "2026-10-20T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-staff-technical-program-manager-hivemind-enterprise-shield-ai.md",
+    "route": "/jobs/senior-staff-technical-program-manager-hivemind-enterprise-shield-ai",
+    "sourceHash": "6eab1b194eaf9d3297d4798469df3db4e3e1bef138009de978b0a87e6cb6d889",
+    "expiresAt": "2026-11-24T00:00:00.000Z"
   },
   {
     "id": "jobs/senior-systems-test-engineer-autonomy-behavior-nuro.md",
@@ -1200,6 +1242,12 @@
     "expiresAt": "2026-11-02T00:00:00.000Z"
   },
   {
+    "id": "jobs/staff-ml-research-scientist-boston-dynamics.md",
+    "route": "/jobs/staff-ml-research-scientist-boston-dynamics",
+    "sourceHash": "f89efea850a6c329a0a9ca863cedbc82260d6c54a4407a04b30780b80b8b503b",
+    "expiresAt": "2026-11-16T00:00:00.000Z"
+  },
+  {
     "id": "jobs/staff-product-manager-applied-ai-apptronik.md",
     "route": "/jobs/staff-product-manager-applied-ai-apptronik",
     "sourceHash": "0c82880fcd40fa491b7c296fa7a297af2c285af862d59fb1b50b0d88d8db53a0",
@@ -1240,6 +1288,12 @@
     "route": "/jobs/staff-technical-program-manager-software-collaborative-robotics",
     "sourceHash": "5010a277f15fe355e44834e5db5be9716f5f2daa07f3ff75407a402a86fb61cb",
     "expiresAt": "2026-11-21T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/staff-ui-designer-shield-ai.md",
+    "route": "/jobs/staff-ui-designer-shield-ai",
+    "sourceHash": "a6b78f21b29002d13a9024854a313f2db3cef80a120b650a58d9101d1de6b493",
+    "expiresAt": "2026-11-23T00:00:00.000Z"
   },
   {
     "id": "jobs/staff-video-producer-apptronik.md",
