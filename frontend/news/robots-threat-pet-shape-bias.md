@@ -4,8 +4,8 @@ title: "Why some robots feel like pets and others feel like threats"
 category: OPINION
 date: October 10, 2026
 excerpt: "Natalie Fratto's Threat to Pet Matrix points to a deeper robot literacy problem: humans are projecting old social threat cues onto new AI bodies."
-headerImage: /images/news/therobotage-house-pet-robots.png
-thumbnailImage: /images/news/therobotage-house-pet-robots.png
+headerImage: /images/news/robots-threat-pet-shape-bias-header.png
+thumbnailImage: /images/news/robots-threat-pet-shape-bias-thumb.png
 author: The Robot Age Editorial Team
 ---
 
@@ -27,6 +27,10 @@ The Robot Age question is no longer only "what can this system do?" It is "what 
 
 ## Example 1: Muse and the harmless assistant problem
 
+![An original editorial illustration of a friendly AI agent interface surrounded by abstract calendar, return, chat, and permission controls.](/images/news/robots-threat-pet-muse-agent.png)
+
+*Original editorial illustration for The Robot Age. The image represents the agent-design problem; it is not a Meta product screenshot.*
+
 Meta's Muse is being presented as a personal AI agent: something that can move from answering questions toward acting on your behalf. [ABC News](https://abcnews.com/Business/metas-muse-ai-agent/story?id=136680507) described examples such as handling product returns, navigating customer service instructions, and resolving parking tickets. [CBS News](https://www.youtube.com/watch?v=wiG0T7MJBMY) framed it as different from a chatbot because it can take an information task and turn it into an action, like putting reminders into your calendar.
 
 That sounds helpful. It also changes the trust problem.
@@ -39,6 +43,10 @@ In Fratto's matrix, a system like Muse sits in the uncomfortable middle. It want
 
 ## Example 2: Digit 5 and the worker-shaped bet
 
+![Agility Robotics Digit, a bipedal warehouse humanoid with a white sensor head, teal torso, arms, and reverse-knee legs.](/images/news/digit-5-humanoid-form-trust-header.jpg)
+
+*Image: Agility Robotics.*
+
 Agility's Digit 5 is the opposite problem. Digit does not pretend to be a pet. It is tall, bipedal, industrial, and explicitly work-oriented. It has a head-like sensor area, arms, legs, and a torso. People read it immediately as a worker because the body maps onto a human work role.
 
 That is powerful design. It is also risky design.
@@ -49,7 +57,31 @@ Digit's advantage is that it is legible: people understand that it walks, carrie
 
 That is why Digit 5's design challenge is not only safety certification. It is expectation management. The robot has to look competent without looking autonomous in the wrong way. It has to communicate that it has intent without implying that it has judgment.
 
-## Example 3: Spot and the police-dog shadow
+## Example 3: T800 and NEO show how humanoids split
+
+![The EngineAI T800, a full-size humanoid robot in olive-green armored plating, walking through a boxing gym.](/images/news/shenzhen-robot-fight-league-benchmark-t800.jpg)
+
+*The EngineAI T800, used as the standardized platform in Shenzhen's robot fighting league. Image: EngineAI.*
+
+EngineAI's T800 belongs on the threat side of the matrix not because it is evil, but because its design language is openly dominance-coded. It is tall, armored-looking, athletic, and associated with robot fighting and martial performance. In our [earlier look at Shenzhen's robot fight league](/news/shenzhen-robot-fight-league-benchmark), the important point was that the fight is really a benchmark for balance, recovery, perception, and whole-body control. But for a normal observer, the first read is simpler: this is a humanoid built to take hits and stay upright.
+
+That visual message matters. The T800's body asks to be read as force-capable. Its height, dark plating, exposed mechanical power, and combat context all push the human brain toward threat perception. Even if the real technical story is algorithmic benchmarking, the form says contest, impact, and physical dominance.
+
+![An original editorial illustration of a soft, neutral home humanoid standing calmly in a living room while holding folded laundry.](/images/news/robots-threat-pet-neo-neutral.png)
+
+*Original editorial illustration for The Robot Age, based on the neutral domestic-humanoid design problem rather than an exact 1X product image.*
+
+NEO from [1X](https://www.1x.tech/neo) is useful as the contrast. It is also a humanoid, but its public positioning is domestic: chores, assistance, and presence inside the home. As we wrote in [SoftBank wants 1X because Japan's robot advantage was built for factories](/news/softbank-1x-physical-ai-strategy), the 1X bet is not martial performance. It is home-scale physical AI: laundry, tidying, carrying, helping, waiting, and fitting into routines.
+
+That does not automatically make NEO safe or trustworthy. A home humanoid still raises serious questions about privacy, teleoperation, failure, labor, data, and dependency. But its threat signal is different. The soft body, lighter palette, domestic setting, and service role are designed to neutralize dominance. The machine still has power. The form tries not to announce it.
+
+This is the humanoid lesson: two robots can share the same basic body plan and produce opposite first impressions. The difference is not only mechanics. It is posture, surface, context, implied role, and whether the robot appears to be entering the world as labor, companion, athlete, guard, appliance, or weapon.
+
+## Example 4: Spot and the police-dog shadow
+
+![Boston Dynamics Spot-style quadruped robot standing on a residential porch near a delivery package.](/images/news/spot-porch-gap-delivery-header.jpg)
+
+*Image from The Robot Age's local Spot coverage.*
 
 Boston Dynamics' Spot is one of the clearest cases of context changing the body.
 
@@ -61,7 +93,11 @@ The quadruped shape pulls from two directions at once. It resembles an animal, w
 
 This is the key translation from human threat perception into robot form. Size, speed, posture, affiliation, and implied authority matter. A robot dog at a factory is equipment. A robot dog beside police is a threat cue.
 
-## Example 4: ElliQ and the designed non-threat
+## Example 5: ElliQ and the designed non-threat
+
+![ElliQ, a small tabletop companion robot with a rounded screen and expressive lamp-like body in a home setting.](/images/news/elliq-case-study-header.jpg)
+
+*Image: ElliQ / Fuseproject coverage in The Robot Age.*
 
 Companion robots move in the other direction. They are often designed to avoid human threat cues almost completely.
 
@@ -73,7 +109,11 @@ This is also why some companion robots succeed emotionally despite limited capab
 
 The pet side of the matrix is not about cuteness alone. It is about a lack of coercive affordance.
 
-## Example 5: Delivery robots and the public-space test
+## Example 6: Delivery robots and the public-space test
+
+![An original editorial image of sidewalk and drone delivery systems sharing public space with pedestrians.](/images/news/drone-sidewalk-delivery-public-space-header.png)
+
+*Original image generated for The Robot Age's delivery-robot coverage.*
 
 Delivery robots sit in another ambiguous zone. They are small, slow, boxy, and often intentionally cute. They do not look like people. They do not look like predators. They are designed to read as harmless public servants. As we argued in [The Delivery Robot Is Splitting in Two](/news/drone-sidewalk-delivery-public-space), the real issue is not only autonomy. It is public-space negotiation.
 
@@ -110,3 +150,5 @@ If the machine looks cute but controls money, access, or attention, the pet cue 
 The shape of AI is becoming part of the interface. In the robot age, form is not decoration. It is a claim about relationship.
 
 And people will judge that claim before the robot says a word.
+
+*Header and card images: Original image generated for The Robot Age. Inline examples use a mix of original editorial illustrations and local Robot Age product imagery as credited above.*
