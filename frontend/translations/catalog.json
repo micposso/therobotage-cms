@@ -138,6 +138,12 @@
     "expiresAt": null
   },
   {
+    "id": "news/robots-threat-pet-shape-bias.md",
+    "route": "/news/robots-threat-pet-shape-bias",
+    "sourceHash": "27318f0ec18d233375d80ed3586b93ad3e34f764b7a60ab63247f2309463f5fb",
+    "expiresAt": null
+  },
+  {
     "id": "news/shenzhen-robot-fight-league-benchmark.md",
     "route": "/news/shenzhen-robot-fight-league-benchmark",
     "sourceHash": "f91ac72bd9bcb4bbf3c79ccfc4bbd4627e504817343afa232b289e033e319b1a",
@@ -274,12 +280,6 @@
     "route": "/jobs/atlas-research-engineer-slam-spatial-ai-boston-dynamics",
     "sourceHash": "407f3767f26f7a62e0b1a51c00f05bbccc5b453d1468ffd6ff64c5ac9235516f",
     "expiresAt": "2026-10-31T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/aviation-regulatory-program-manager-skydio.md",
-    "route": "/jobs/aviation-regulatory-program-manager-skydio",
-    "sourceHash": "7835a9f7bf42784af02c08fdb4643d77b24cf9e5e92677b6eb6b500a2ea561fd",
-    "expiresAt": "2026-10-10T00:00:00.000Z"
   },
   {
     "id": "jobs/brand-designer-applied-intuition.md",
@@ -570,6 +570,12 @@
     "expiresAt": "2026-10-21T00:00:00.000Z"
   },
   {
+    "id": "jobs/perception-engineer-multimodal-embodied-ai-shield-ai.md",
+    "route": "/jobs/perception-engineer-multimodal-embodied-ai-shield-ai",
+    "sourceHash": "9624470448c5b44fa7f6c9314fdf4941cc60926abe026fac722e434641706c58",
+    "expiresAt": "2026-12-02T00:00:00.000Z"
+  },
+  {
     "id": "jobs/presentation-designer-shield-ai.md",
     "route": "/jobs/presentation-designer-shield-ai",
     "sourceHash": "b87e74342f4faf8b2de176b0827a4d11dbbb0724bc31560ba22ce87e05d9fe48",
@@ -706,6 +712,12 @@
     "route": "/jobs/product-manager-bear-robotics",
     "sourceHash": "468c8c32f405754ec27802f5ddb741816c13cba7e2e7187a384ec09244f8f09a",
     "expiresAt": "2026-10-19T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/product-manager-cabin-intelligence-applied-intuition.md",
+    "route": "/jobs/product-manager-cabin-intelligence-applied-intuition",
+    "sourceHash": "ecdd6db496f63b4c2a278584198b78be9185cbb8e22bb439d8400e55ab19d08d",
+    "expiresAt": "2026-12-08T00:00:00.000Z"
   },
   {
     "id": "jobs/product-manager-dana-physical-ai-applied-intuition.md",
@@ -928,12 +940,6 @@
     "route": "/jobs/research-scientist-research-applied-intuition",
     "sourceHash": "fc33449e2717051c1f010efaae6110d648d62b147808450cd1cce368aad2d091",
     "expiresAt": "2026-11-06T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/research-scientist-robot-capability-evaluation-fauna.md",
-    "route": "/jobs/research-scientist-robot-capability-evaluation-fauna",
-    "sourceHash": "2aa23c9a4df5c6f4623ce27d290e908aa2ba40f56826f58473a3455640f117ff",
-    "expiresAt": "2026-10-10T00:00:00.000Z"
   },
   {
     "id": "jobs/research-scientist-vla-models-atlas-boston-dynamics.md",
@@ -1320,12 +1326,6 @@
     "expiresAt": "2026-10-23T00:00:00.000Z"
   },
   {
-    "id": "jobs/sr-technical-program-manager-hardware-software-integration-serve-robotics.md",
-    "route": "/jobs/sr-technical-program-manager-hardware-software-integration-serve-robotics",
-    "sourceHash": "8cc5384cd8000b5a3daf9b0e4ad098f977552ef5ad3c4ac3bef4184ec03c9a73",
-    "expiresAt": "2026-10-10T00:00:00.000Z"
-  },
-  {
     "id": "jobs/staff-ai-research-engineer-agility.md",
     "route": "/jobs/staff-ai-research-engineer-agility",
     "sourceHash": "67a87fbf9e6ae14103dd1b18166b2413f460c48f56d7f428ba732eb671895fe6",
@@ -1570,12 +1570,6 @@
     "route": "/jobs/vp-product-design-serve-robotics",
     "sourceHash": "afb89d93187ca764f75b306a0237270525908538d2ffa356459df972dcade715",
     "expiresAt": "2026-11-10T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/west-coast-communications-manager-applied-intuition.md",
-    "route": "/jobs/west-coast-communications-manager-applied-intuition",
-    "sourceHash": "4c152cd17c2368aea25ba94064c5922345640cbc7f41fd69abe63bdead0712cf",
-    "expiresAt": "2026-10-10T00:00:00.000Z"
   },
   {
     "id": "jobs/world-model-research-scientist-physical-ai-kodiak.md",
