@@ -1,5 +1,11 @@
 [
   {
+    "id": "news/agility-digit-5-economics-bipedal-bet.md",
+    "route": "/news/agility-digit-5-economics-bipedal-bet",
+    "sourceHash": "ea996ad2f7136b4f2ffdffb8779c29ca13f5f021e46a29f899447767de616c58",
+    "expiresAt": null
+  },
+  {
     "id": "news/agility-robotics-first-humanoid-ipo.md",
     "route": "/news/agility-robotics-first-humanoid-ipo",
     "sourceHash": "58733a3bbb7d11e0b026549a438444a7296468ae0ca0d4a80f9eb2bb5442bf68",
@@ -316,6 +322,12 @@
     "route": "/jobs/data-collection-manager-agility",
     "sourceHash": "0e825b9016e16a7c0363668b2028579c1bfa46011a426a54974ce328dd360fae",
     "expiresAt": "2026-12-05T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/demo-program-manager-nuro.md",
+    "route": "/jobs/demo-program-manager-nuro",
+    "sourceHash": "fcf4382a0192d1b5a0ed0b961b44aa9cf7b5570330daf34734f9a12fbfc947d1",
+    "expiresAt": "2026-12-07T00:00:00.000Z"
   },
   {
     "id": "jobs/design-technologist-robot-animation-fauna.md",
@@ -1128,6 +1140,12 @@
     "expiresAt": "2026-10-14T00:00:00.000Z"
   },
   {
+    "id": "jobs/senior-program-manager-compliance-reporting-nuro.md",
+    "route": "/jobs/senior-program-manager-compliance-reporting-nuro",
+    "sourceHash": "1e183668243057cd809e1dc49d3b9e46fb10e48d7f9b19f8129415201c12bf2c",
+    "expiresAt": "2026-12-01T00:00:00.000Z"
+  },
+  {
     "id": "jobs/senior-program-manager-eval-operations-nuro.md",
     "route": "/jobs/senior-program-manager-eval-operations-nuro",
     "sourceHash": "557651aab09962ae9ad4870c276b5a3117db51ad79121a6d800647bd251e591b",
@@ -1270,6 +1288,12 @@
     "route": "/jobs/software-engineer-v-applied-ml-research-pickle-robot",
     "sourceHash": "f3cf4ca9b8e40a57a9566c2d9c8df718a65dcb1343b9e2bcb463ec545c4540ef",
     "expiresAt": "2026-11-02T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/sr-deployment-program-manager-robotics-collaborative-robotics.md",
+    "route": "/jobs/sr-deployment-program-manager-robotics-collaborative-robotics",
+    "sourceHash": "3d349d656803286eaf8503ddb6ab388d0fcd437ca11ed7ff7f0eed180177114d",
+    "expiresAt": "2026-12-04T00:00:00.000Z"
   },
   {
     "id": "jobs/sr-product-designer-amazon-robotics.md",
@@ -1480,6 +1504,12 @@
     "route": "/jobs/technical-program-manager-vehicle-os-applied-intuition",
     "sourceHash": "8c59ab1d08b7e0d9cb5b04c2f9e5cbcab839d5a807136cadb8da907af5e92ef8",
     "expiresAt": "2026-11-07T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/technical-program-manager-xbat-shield-ai.md",
+    "route": "/jobs/technical-program-manager-xbat-shield-ai",
+    "sourceHash": "946a8c047c8291c69d16fe957cf4b7cd3e745c349fcafd4ac340a8da7dec68f3",
+    "expiresAt": "2026-12-07T00:00:00.000Z"
   },
   {
     "id": "jobs/test-maintenance-program-manager-zipline.md",
