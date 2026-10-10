@@ -2,7 +2,7 @@ import { pageMetadata } from '@/lib/i18n/page-metadata'
 import { contentHref } from '@/lib/i18n/localize'
 import { uiText } from '@/lib/i18n/messages'
 import type { Locale } from '@/lib/i18n/routing'
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import Nav from '@/components/Nav/Nav'
 import Footer from '@/components/Footer/Footer'
 import { getCertificationBySlug, getAllCertificationSlugs } from '@/lib/certifications'
@@ -39,6 +39,8 @@ export default async function CurriculumPage({ params }: { params: Promise<{ cre
   const resolveHref = (url: string) => contentHref(url, locale)
   const cert = getCertificationBySlug(credential)
   if (!cert) notFound()
+  // Academy curricula use the existing credential overview, not REP's weekly plan.
+  if (credential === 'rpdp' || credential === 'rdp') redirect(resolveHref(`/learn/${credential}#curriculum`))
 
   const weeks: WeekData[] = [
     {

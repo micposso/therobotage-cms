@@ -6,6 +6,7 @@ import Nav from '@/components/Nav/Nav'
 import PageHero from '@/components/PageHero/PageHero'
 import Footer from '@/components/Footer/Footer'
 import styles from './access.module.css'
+import AccessForm from './AccessForm'
 
 const baseMetadata: Metadata = {
   title: 'Access — The Robot Age',
@@ -42,19 +43,7 @@ export default async function AccessPage({ params }: { params: Promise<{ locale?
         <div className="container-fluid">
           <div className={styles.inner}>
             <p className={styles.intro}>{t("We're keeping the first cohort small. Leave your name and email and we'll be in touch before the public announcement.")}</p>
-            <form className={styles.form}>
-              <input
-                type="text"
-                placeholder={t("Your name")}
-                className={styles.input}
-              />
-              <input
-                type="email"
-                placeholder={t("Your email")}
-                className={styles.input}
-              />
-              <button type="submit" className={styles.submitButton}>{t("Join the Waitlist")}</button>
-            </form>
+            <AccessForm locale={locale} />
           </div>
         </div>
       </section>

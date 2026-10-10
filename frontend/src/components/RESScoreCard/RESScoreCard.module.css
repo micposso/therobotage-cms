@@ -107,15 +107,16 @@
 }
 
 .barHeader {
+  font-family: var(--font-display);
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
   margin-bottom: var(--space-3);
 }
 
 .barName {
-  font-family: var(--font-res-body);
-  font-size: var(--text-xs);
   font-weight: 400;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -123,8 +124,6 @@
 }
 
 .barScore {
-  font-family: var(--font-res-display);
-  font-size: var(--text-md);
   font-weight: 400;
   color: var(--color-text-muted);
   letter-spacing: -0.02em;
@@ -140,8 +139,8 @@
 .barIcon {
   flex-shrink: 0;
   display: block;
-  width: var(--space-6);
-  height: var(--space-6);
+  width: calc(var(--space-20) * 2);
+  height: calc(var(--space-20) * 2);
   object-fit: contain;
 }
 
@@ -160,10 +159,10 @@
 }
 
 .barSummary {
-  font-family: var(--font-res-body);
-  font-size: var(--text-xs);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
   font-weight: 400;
-  line-height: 1.6;
+  line-height: var(--leading-body);
   color: var(--color-text-muted);
   margin: 0;
 }

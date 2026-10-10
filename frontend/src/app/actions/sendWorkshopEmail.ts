@@ -6,7 +6,7 @@ import { emailHtml, workshopWaitlistHtml, escapeHtml } from '@/lib/emailTemplate
 import { WORKSHOP_HEARD_OPTIONS, WORKSHOP_PROFESSIONS } from '@/lib/events'
 
 const FROM_ADDRESS  = process.env.EMAIL_FROM_HELLO ?? 'onboarding@resend.dev'
-const ADMIN_ADDRESS = 'micposso@gmail.com'
+const ADMIN_ADDRESS = 'mike@therobotage.com'
 const REGISTRY_FILE = '/tmp/rxd-workshop-emails.json'
 const WAITLIST_FILE = '/tmp/rxd-workshop-waitlist.json'
 const MAX_SEATS     = 15

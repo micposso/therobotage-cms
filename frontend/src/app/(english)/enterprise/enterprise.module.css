@@ -59,8 +59,8 @@
 .cardBody {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: var(--text-sm);
-  line-height: 1.7;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
   color: var(--color-text-muted);
 }
 

@@ -74,12 +74,28 @@ const statVariants = {
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
-export default function Certification() {
+/** @param {{ children?: import('react').ReactNode, id?: string, title?: string, description?: string, eyebrow?: string }} props */
+export default function Certification({ children, id, title, description, eyebrow } = {}) {
   const { t, href: resolveHref } = useCopy()
   const sectionRef  = useRef(null)
   const specsRef    = useRef(null)
   const inView      = useInView(sectionRef, { once: true, margin: '-80px' })
   const specsInView = useInView(specsRef,   { once: true, margin: '-80px' })
+
+  if (children) return (
+    <section id={id} className={styles.section} ref={sectionRef}>
+      <div className="container-fluid">
+        <div className={`row align-items-end ${styles.headerRow}`}>
+          <div className="col-lg-6">
+            {eyebrow && <p className={styles.eyebrow}>{eyebrow}</p>}
+            <h2 className={styles.headline}>{title}</h2>
+          </div>
+          {description && <div className="col-lg-5 offset-lg-1"><p className={styles.subhead}>{description}</p></div>}
+        </div>
+        {children}
+      </div>
+    </section>
+  )
 
   return (
     <section className={styles.section} ref={sectionRef}>

@@ -270,12 +270,6 @@
     "expiresAt": "2026-10-31T00:00:00.000Z"
   },
   {
-    "id": "jobs/aviation-regulatory-program-manager-skydio.md",
-    "route": "/jobs/aviation-regulatory-program-manager-skydio",
-    "sourceHash": "7835a9f7bf42784af02c08fdb4643d77b24cf9e5e92677b6eb6b500a2ea561fd",
-    "expiresAt": "2026-10-10T00:00:00.000Z"
-  },
-  {
     "id": "jobs/brand-designer-applied-intuition.md",
     "route": "/jobs/brand-designer-applied-intuition",
     "sourceHash": "bb7a614d58740880776d572100d769b748b447ed42c331199def0b650ac0cad2",
@@ -822,12 +816,6 @@
     "expiresAt": "2026-11-07T00:00:00.000Z"
   },
   {
-    "id": "jobs/reinforcement-learning-engineer-whole-body-control-figure-ai.md",
-    "route": "/jobs/reinforcement-learning-engineer-whole-body-control-figure-ai",
-    "sourceHash": "6fe9036de46e9f1c9752c488f81363ce377605f6f0e25409f67dfe5b7c279495",
-    "expiresAt": "2026-10-09T00:00:00.000Z"
-  },
-  {
     "id": "jobs/research-engineer-3d-vision-generation-self-driving-applied-intuition.md",
     "route": "/jobs/research-engineer-3d-vision-generation-self-driving-applied-intuition",
     "sourceHash": "480719d1c29b50deeb7ecb9ab9d2aa72357b469f823a95d0e49f48bbff215207",
@@ -924,12 +912,6 @@
     "expiresAt": "2026-11-06T00:00:00.000Z"
   },
   {
-    "id": "jobs/research-scientist-robot-capability-evaluation-fauna.md",
-    "route": "/jobs/research-scientist-robot-capability-evaluation-fauna",
-    "sourceHash": "2aa23c9a4df5c6f4623ce27d290e908aa2ba40f56826f58473a3455640f117ff",
-    "expiresAt": "2026-10-10T00:00:00.000Z"
-  },
-  {
     "id": "jobs/research-scientist-vla-models-atlas-boston-dynamics.md",
     "route": "/jobs/research-scientist-vla-models-atlas-boston-dynamics",
     "sourceHash": "63321fcb3037dae7c2c84152d06dd698f663d8c29ca8c9ece8290faffa03232d",
@@ -994,12 +976,6 @@
     "route": "/jobs/senior-curriculum-developer-suas-operations-skydio",
     "sourceHash": "7323ea46cf9b52e87cac9b6016bcc536a74d8c9acb87f92eb228b19a037de891",
     "expiresAt": "2026-11-07T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/senior-graphic-designer-path-robotics.md",
-    "route": "/jobs/senior-graphic-designer-path-robotics",
-    "sourceHash": "b2f322f320ce40bd3eb8ff7899b58fa3310fc12fac8cbd6d80bb57795b618b5b",
-    "expiresAt": "2026-10-09T00:00:00.000Z"
   },
   {
     "id": "jobs/senior-industrial-designer-amazon-robotics.md",
@@ -1296,12 +1272,6 @@
     "expiresAt": "2026-11-02T00:00:00.000Z"
   },
   {
-    "id": "jobs/sr-product-designer-amazon-robotics-amazon-robotics.md",
-    "route": "/jobs/sr-product-designer-amazon-robotics-amazon-robotics",
-    "sourceHash": "105e36e8f5a6751b765f9fdab5cd41aa386c5d48092fbb253ab2f7c4442c2e02",
-    "expiresAt": "2026-10-09T00:00:00.000Z"
-  },
-  {
     "id": "jobs/sr-product-designer-amazon-robotics.md",
     "route": "/jobs/sr-product-designer-amazon-robotics",
     "sourceHash": "d7ad051722fee03b00af2a51f741269a067e892470f3b5a5af9f386b6c848b24",
@@ -1312,12 +1282,6 @@
     "route": "/jobs/sr-product-manager-assisted-autonomy-kodiak",
     "sourceHash": "9db0148850e25b668d3fc7c379b1702e1808abb6abfb28e5fd9e2b2cabd573c3",
     "expiresAt": "2026-10-23T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/sr-technical-program-manager-hardware-software-integration-serve-robotics.md",
-    "route": "/jobs/sr-technical-program-manager-hardware-software-integration-serve-robotics",
-    "sourceHash": "8cc5384cd8000b5a3daf9b0e4ad098f977552ef5ad3c4ac3bef4184ec03c9a73",
-    "expiresAt": "2026-10-10T00:00:00.000Z"
   },
   {
     "id": "jobs/staff-ai-research-engineer-agility.md",
@@ -1558,12 +1522,6 @@
     "route": "/jobs/vp-product-design-serve-robotics",
     "sourceHash": "afb89d93187ca764f75b306a0237270525908538d2ffa356459df972dcade715",
     "expiresAt": "2026-11-10T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/west-coast-communications-manager-applied-intuition.md",
-    "route": "/jobs/west-coast-communications-manager-applied-intuition",
-    "sourceHash": "4c152cd17c2368aea25ba94064c5922345640cbc7f41fd69abe63bdead0712cf",
-    "expiresAt": "2026-10-10T00:00:00.000Z"
   },
   {
     "id": "jobs/world-model-research-scientist-physical-ai-kodiak.md",

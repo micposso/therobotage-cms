@@ -28,8 +28,8 @@
 
 .description {
   font-family: var(--font-body);
-  font-size: var(--text-sm);
-  line-height: 1.7;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
   color: var(--color-text-muted);
   margin: 0;
   max-width: 640px;

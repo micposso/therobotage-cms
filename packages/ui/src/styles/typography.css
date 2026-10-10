@@ -1,0 +1,45 @@
+/* Shared by the public site and learning app. Change typography here. */
+:root {
+  --font-display: var(--font-display-source), 'IBM Plex Sans', sans-serif;
+  --font-display-smallcaps: var(--font-display-smallcaps-source), var(--font-display);
+  --font-body: 'IBM Plex Sans', sans-serif;
+
+  --text-xs: 0.875rem;
+  --text-sm: 1rem;
+  --text-base: 1.125rem;
+  --text-md: 1.5rem;
+  --text-lg: 2rem;
+  --text-xl: 3rem;
+  --text-2xl: 7rem;
+
+  --text-page-title: var(--text-2xl);
+  --text-heading: var(--text-xl);
+  --text-subheading: var(--text-lg);
+  --text-body: var(--text-base);
+  --leading-heading: 1.2;
+  --leading-body: 1.75;
+}
+
+/* Intentional priority: component classes must not shrink semantic headings.
+   Use the heading level for hierarchy; type-heading also covers score labels. */
+h1, h2, h3, h4, h5, h6, .type-heading {
+  font-family: var(--font-display) !important;
+  font-weight: 400 !important;
+  line-height: var(--leading-heading) !important;
+  overflow-wrap: anywhere;
+}
+h1 { font-size: var(--text-page-title) !important; line-height: 1.05 !important; }
+h2, h3, .type-heading { font-size: var(--text-heading) !important; }
+h4 { font-size: var(--text-subheading) !important; }
+h5 { font-size: var(--text-md) !important; }
+h6 { font-size: var(--text-body) !important; }
+
+.type-body {
+  font-family: var(--font-body) !important;
+  font-size: var(--text-body) !important;
+  line-height: var(--leading-body) !important;
+}
+
+@media (max-width: 767px) {
+  :root { --text-2xl: 4rem; }
+}

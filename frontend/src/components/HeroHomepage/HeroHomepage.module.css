@@ -96,9 +96,9 @@
 
 .heroNavDesc {
   font-family: var(--font-body);
-  font-size: var(--text-base);
+  font-size: var(--text-body);
   font-weight: 400;
-  line-height: 1.6;
+  line-height: var(--leading-body);
   color: var(--color-text);
   margin: var(--space-1) 0 0 0;
   padding-bottom: var(--space-1);

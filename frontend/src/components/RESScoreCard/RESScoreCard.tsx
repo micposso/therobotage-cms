@@ -198,20 +198,20 @@ export default function RESScoreCard({ score }: Props) {
           >
             <div className={styles.barHeader}>
               <span
-                className={styles.barName}
+                className={`type-heading ${styles.barName}`}
                 style={{
                   color: hoveredIndex === i ? 'var(--color-red)' : undefined,
                   transition: 'color 0.15s ease',
                 }}
               >{DIMENSION_NAMES[i]}</span>
-              <span className={styles.barScore}>{displayScores[i].toFixed(1)}&thinsp;/&thinsp;5</span>
+              <span className={`type-heading ${styles.barScore}`}>{displayScores[i].toFixed(1)}&thinsp;/&thinsp;5</span>
             </div>
             <div className={styles.barBody}>
               <Image
                 src={DIMENSION_ICONS[i]}
                 alt=""
-                width={24}
-                height={24}
+                width={160}
+                height={160}
                 className={styles.barIcon}
               />
               <div className={styles.barTrack}>

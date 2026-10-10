@@ -49,8 +49,8 @@
 .abstract {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: var(--text-sm);
-  line-height: 1.8;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
   color: var(--color-text-muted);
   max-width: 680px;
   margin-bottom: var(--space-8);
@@ -113,8 +113,8 @@
 .dimensionDesc {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: var(--text-sm);
-  line-height: 1.7;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
   color: var(--color-text-muted);
   margin: 0;
 }

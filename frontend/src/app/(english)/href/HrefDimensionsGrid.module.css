@@ -72,8 +72,8 @@
 .dimensionDescription {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: var(--text-sm);
-  line-height: 1.65;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
   color: var(--color-text-muted);
   margin: 0;
 }
@@ -123,7 +123,7 @@
   cursor: pointer;
   font-family: var(--font-body);
   font-size: var(--text-base);
-  color: var(--color-text-inverse);
+  color: var(--color-text);
   line-height: 1;
   padding: var(--space-2);
   transition: opacity var(--ease-default);
@@ -136,12 +136,13 @@
 /* ─── Modal image ─────────────────────────────────────────────────────────── */
 .modalImageWrap {
   position: relative;
+  margin-top: 20px;
   aspect-ratio: 16 / 9;
   width: 100%;
 }
 
 .modalImage {
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* ─── Modal content ───────────────────────────────────────────────────────── */
@@ -173,8 +174,8 @@
 .modalBody {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: var(--text-sm);
-  line-height: 1.7;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
   color: var(--color-text-muted);
   margin: 0;
 }

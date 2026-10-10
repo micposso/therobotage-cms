@@ -66,7 +66,7 @@ export default function ConnectPage() {
       <section className={styles.formSection}>
         <div className="container-fluid">
           <div className={styles.inner}>
-            <p className={styles.formHeading}>Send us a message</p>
+            <h3 className={styles.formHeading}>Send us a message</h3>
             <ContactForm />
           </div>
         </div>

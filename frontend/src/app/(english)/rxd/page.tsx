@@ -46,7 +46,7 @@ export default function RxdPage() {
         <div className="container-fluid">
           <div className={styles.earlyCtaInner}>
             <a
-              href="/pdf/rxd-therobotage-v2.pdf"
+              href="/api/download/whitepaper"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.earlyCtaButton}
@@ -88,7 +88,7 @@ export default function RxdPage() {
                   )}
                   {robot.score ? (
                     <div className={styles.robotCardScore}>
-                      <span className={styles.robotCardScoreValue}>
+                      <span className={`type-heading ${styles.robotCardScoreValue}`}>
                         {robot.score.compositeScore.toFixed(1)}<span className={styles.robotCardScoreMax}>&thinsp;/&thinsp;5</span>
                       </span>
                       <span className={styles.robotCardScoreTier}>{robot.score.tier}</span>
@@ -142,7 +142,7 @@ export default function RxdPage() {
             </ul>
             <div className={styles.downloadCta}>
               <a
-                href="/pdf/rxd-therobotage-v2.pdf"
+                href="/api/download/whitepaper"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.downloadButton}

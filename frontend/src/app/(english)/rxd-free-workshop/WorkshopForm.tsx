@@ -16,7 +16,7 @@ export default function WorkshopForm() {
       return (
         <div className={styles.success}>
           <p className={styles.successEyebrow}>You&rsquo;re on the waitlist</p>
-          <p className={styles.successHeading}>This free workshop is full.</p>
+          <h3 className={styles.successHeading}>This free workshop is full.</h3>
           <p className={styles.successText}>
             We&rsquo;ve added you to the waitlist. If a spot opens up, we&rsquo;ll reach out to you directly. Check your inbox for a confirmation — and your spam folder if you don&rsquo;t see it within a few minutes.
           </p>
@@ -26,7 +26,7 @@ export default function WorkshopForm() {
     return (
       <div className={styles.success}>
         <p className={styles.successEyebrow}>You&rsquo;re registered</p>
-        <p className={styles.successHeading}>See you at the workshop.</p>
+        <h3 className={styles.successHeading}>See you at the workshop.</h3>
         <p className={styles.successText}>
           A confirmation is on its way to your inbox with the session link and details. Check your spam folder if you don&rsquo;t see it within a few minutes.
         </p>

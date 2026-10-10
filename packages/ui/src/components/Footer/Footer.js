@@ -51,7 +51,7 @@ const SOCIAL_LINKS = [
   },
 ]
 
-export default function Footer({ baseUrl = '', translate = (text) => text, resolveHref = (href) => href }) {
+export default function Footer({ baseUrl = '', translate = (text) => text, resolveHref = (href) => href, programs = certifications }) {
   const year = new Date().getFullYear()
 
   return (
@@ -84,7 +84,7 @@ export default function Footer({ baseUrl = '', translate = (text) => text, resol
           <div className={`col-lg-3 ${styles.navCol}`}>
             <span className={styles.colLabel}>{translate('Certifications')}</span>
             <nav className={styles.navLinks}>
-              {certifications.map(({ abbr, slug, name }) => (
+              {programs.map(({ abbr, slug, name }) => (
                 <a key={abbr} href={resolveHref(`${baseUrl}/learn/${slug}`)} className={styles.navLink}>
                   <span className={styles.certAbbr}>{abbr}</span> — {translate(name)}
                 </a>

@@ -22,7 +22,7 @@ const REF = {
     { id: 'recovery-design',      label: 'Recovery Design' },
   ],
   readUrl: '/rxd',
-  downloadUrl: '/pdf/rxd-therobotage-v2.pdf',
+  downloadUrl: '/api/download/whitepaper',
   citation:
     'Posso, M. (2026). Robot Experience Design (RXD): A framework for evaluating the human side of consumer robotics (White Paper v2.0). The Robot Age. therobotage.com/rxd. CC BY-NC 4.0.',
 }

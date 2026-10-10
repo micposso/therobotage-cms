@@ -92,11 +92,11 @@
   align-items: center;
 }
 .lead {
-  font-size: var(--text-md);
-  line-height: 1.65;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
 }
 .hero .lead {
-  font-size: var(--text-base);
+  font-size: var(--text-body);
   max-width: 56ch;
 }
 .meta {
@@ -239,7 +239,7 @@
   padding: var(--space-8);
 }
 .robotCopy h3 {
-  font-size: var(--text-lg);
+  font-size: var(--text-body);
 }
 .tags {
   display: flex;

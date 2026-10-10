@@ -19,6 +19,43 @@ export interface Certification {
   outcomes: string[]
 }
 
+export const academyPrograms = [
+  {
+    abbr: 'RPDP', slug: 'rpdp', name: 'Robotics Product Design Practitioner',
+    title: 'Product Design for Robots', status: 'Coming Soon' as const,
+    description: 'Learn how to design interactions between robots, people, and their environments. Apply UX, product design, accessibility, human-robot interaction, and the Robot Experience Design framework to real robotics challenges.',
+    audience: 'Product designers, UX/UI professionals, design students, UX researchers, and product managers.',
+    overview: 'A five-week professional learning experience for designers who want to apply their skills to robotics. Learn to design human-robot interactions, communicate robot intent, create physical and digital interfaces, and design for unexpected behavior and failure.',
+    topics: 'Robot behavior, interaction design, interface design, proxemics, accessibility, safety signaling, failure recovery, prototyping, and user testing.',
+    format: 'Live and self-paced', duration: '5 weeks · 25 hours · February 2027',
+    capstone: 'Robot Experience Design portfolio project',
+    modules: [
+      'Human-robot interaction fundamentals', 'Robot behavior and communication',
+      'Physical and digital interfaces', 'Proxemics and environmental design',
+      'Accessibility and inclusive design', 'Failure states and recovery design',
+      'Prototyping robot experiences', 'Testing and evaluation',
+    ].map((title, i) => ({ number: String(i + 1).padStart(2, '0'), title, description: '', status: 'Coming Soon' as const })),
+    outcomes: ['Robot Experience Design portfolio project'],
+  },
+  {
+    abbr: 'RDP', slug: 'rdp', name: 'Robot Deployment Practitioner',
+    title: 'Robot Deployment Practitioner', status: 'Coming Soon' as const,
+    description: 'Learn how to prepare organizations for successful commercial robotics deployment. Evaluate operational readiness, workforce training, safety requirements, regulation, insurance, cultural fit, change management, adoption, and measurable business outcomes.',
+    audience: 'Robotics companies, deployment teams, system integrators, operations managers, consultants, and organizational leaders.',
+    overview: 'Prepare organizations for successful commercial robotics deployment through deployment planning, workforce readiness, operational governance, and measurable business outcomes.',
+    topics: 'Deployment planning, readiness assessments, risk and safety, regulatory requirements, insurance and liability, employee onboarding, cultural adaptation, operational governance, and ROI.',
+    format: 'Applied projects and assessments', duration: '4 weeks · 24 hours · Commercial launch January 2027',
+    capstone: 'Robot Deployment Readiness Plan',
+    modules: [
+      'Commercial robotics ecosystem', 'Site and organizational readiness',
+      'Safety, regulations, and insurance', 'Workforce and cultural adaptation',
+      'Change management and onboarding', 'Fleet operations and governance',
+      'Adoption and performance measurement', 'ROI and value realization',
+    ].map((title, i) => ({ number: String(i + 1).padStart(2, '0'), title, description: '', status: 'Coming Soon' as const })),
+    outcomes: ['Robot Deployment Readiness Plan'],
+  },
+]
+
 export const certifications: Certification[] = [
   {
     abbr: 'REP',
@@ -76,50 +113,7 @@ export const certifications: Certification[] = [
       'Earn the REP credential and badge',
     ],
   },
-  {
-    abbr: 'RPDP',
-    slug: 'rpdp',
-    name: 'Robotics Product Design Practitioner',
-    status: 'Coming Soon',
-    description: 'For product designers and design leads building interfaces, flows, and physical touchpoints between humans and robotic systems. Safety signaling, proxemics, error states, edge-case design.',
-    audience: 'Product designers, interaction designers, design leads, and UX practitioners working on products or environments that include robotic systems.',
-    overview: 'The RPDP credential is for designers who need to go deeper than robot literacy into the practical craft of designing for robots. It covers the specific design challenges that emerge when your user is sharing a space with a machine that moves, perceives, and acts — and what it means to design that experience well.',
-    format: 'Five-week hybrid programme. Four self-paced modules followed by a design critique and portfolio review.',
-    duration: '5 weeks · 15 hours total · 2 live critique sessions',
-    modules: [
-      {
-        number: '2.1',
-        title: 'Design Constraints in Robotic Environments',
-        description: 'How robots perceive space, light, and people — and what that means for the designer trying to communicate intent across the human-machine boundary.',
-        status: 'Coming Soon',
-      },
-      {
-        number: '2.2',
-        title: 'Safety Signaling & Spatial Communication',
-        description: 'Designing for proxemics, legibility, and trust. How do you tell a person what a robot is about to do before it does it?',
-        status: 'Coming Soon',
-      },
-      {
-        number: '2.3',
-        title: 'Error States & Edge Cases',
-        description: 'The robot stopped. No one knows why. This module covers failure mode design — what the system communicates, to whom, and how.',
-        status: 'Coming Soon',
-      },
-      {
-        number: '2.4',
-        title: 'Robotic Interface Portfolio Review',
-        description: 'Capstone: critique and present a design for a human-robot touchpoint. Earn your RPDP credential.',
-        status: 'Coming Soon',
-      },
-    ],
-    outcomes: [
-      'Apply spatial design principles specific to robotic environments',
-      'Design safety signals and legibility cues that work across diverse user populations',
-      'Develop error state flows for robotic systems that fail gracefully',
-      'Critique robotic interface designs using a structured evaluation framework',
-      'Build a portfolio piece demonstrating robotic experience design capability',
-    ],
-  },
+  ...academyPrograms.filter((program) => program.slug === 'rpdp'),
   {
     abbr: 'RSP',
     slug: 'rsp',
@@ -211,9 +205,9 @@ export const certifications: Certification[] = [
 ]
 
 export function getCertificationBySlug(slug: string): Certification | undefined {
-  return certifications.find((c) => c.slug === slug)
+  return certifications.find((c) => c.slug === slug) ?? academyPrograms.find((c) => c.slug === slug)
 }
 
 export function getAllCertificationSlugs(): string[] {
-  return certifications.map((c) => c.slug)
+  return [...new Set([...certifications, ...academyPrograms].map((c) => c.slug))]
 }

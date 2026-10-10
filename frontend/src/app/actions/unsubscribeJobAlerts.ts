@@ -1,5 +1,7 @@
 'use server'
 
+import { Resend } from 'resend'
+import { getJobAlertFromAddress } from '@/lib/jobAlertEmail'
 import { getSupabaseJobsService } from '@/lib/supabase/admin'
 
 type State = { success: boolean; error?: string }
@@ -17,7 +19,7 @@ export async function unsubscribeJobAlerts(
   }
 
   try {
-    const { error } = await getSupabaseJobsService()
+    const { data: subscriber, error } = await getSupabaseJobsService()
       .from('job_alert_subscribers')
       .update({
         status: 'unsubscribed',
@@ -25,12 +27,15 @@ export async function unsubscribeJobAlerts(
         updated_at: new Date().toISOString(),
       })
       .eq('unsubscribe_token', token)
+      .select('email')
+      .maybeSingle()
 
     if (error) {
       console.error('unsubscribeJobAlerts error:', error)
       return { success: false, error: 'Something went wrong. Please try again.' }
     }
 
+    if (subscriber) await notifyPreferenceChange(subscriber.email, 'unsubscribed')
     return { success: true }
   } catch (err) {
     console.error('unsubscribeJobAlerts error:', err)
@@ -49,7 +54,7 @@ export async function resubscribeJobAlerts(
   }
 
   try {
-    const { error } = await getSupabaseJobsService()
+    const { data: subscriber, error } = await getSupabaseJobsService()
       .from('job_alert_subscribers')
       .update({
         status: 'active',
@@ -57,15 +62,33 @@ export async function resubscribeJobAlerts(
         updated_at: new Date().toISOString(),
       })
       .eq('unsubscribe_token', token)
+      .select('email')
+      .maybeSingle()
 
     if (error) {
       console.error('resubscribeJobAlerts error:', error)
       return { success: false, error: 'Something went wrong. Please try again.' }
     }
 
+    if (subscriber) await notifyPreferenceChange(subscriber.email, 'resubscribed')
     return { success: true }
   } catch (err) {
     console.error('resubscribeJobAlerts error:', err)
     return { success: false, error: 'Something went wrong. Please try again.' }
+  }
+}
+
+// Subscription changes remain effective even if the notification provider is down.
+async function notifyPreferenceChange(email: string, change: string): Promise<void> {
+  try {
+    const { error } = await new Resend(process.env.RESEND_API_KEY).emails.send({
+      from: getJobAlertFromAddress(),
+      to: 'mike@therobotage.com',
+      subject: `Robotics job alerts: ${change}`,
+      text: `${email} ${change} to robotics job alerts.`,
+    })
+    if (error) console.error('Job alert preference notification failed:', error)
+  } catch (error) {
+    console.error('Job alert preference notification failed:', error)
   }
 }

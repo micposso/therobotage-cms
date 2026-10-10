@@ -40,7 +40,7 @@ export default function HrefPage() {
         <div className="container-fluid">
           <div className={styles.earlyCtaInner}>
             <a
-              href="/pdf/href-therobotage-v2.pdf"
+              href="/api/download/whitepaper"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.earlyCtaButton}
@@ -99,7 +99,7 @@ export default function HrefPage() {
             </ul>
             <div className={styles.downloadCta}>
               <a
-                href="/pdf/href-therobotage-v2.pdf"
+                href="/api/download/whitepaper"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.downloadButton}

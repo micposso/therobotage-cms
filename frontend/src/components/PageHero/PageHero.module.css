@@ -90,8 +90,8 @@
 .subtitle {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: var(--text-base);
-  line-height: 1.6;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
   color: var(--color-text-muted);
   max-width: 600px;
 }

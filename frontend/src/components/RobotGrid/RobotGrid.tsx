@@ -77,7 +77,7 @@ export default function RobotGrid({ robots }: Props) {
                 <div className={styles.scoreRow}>
                   <span className={styles.scoreValue}>
                     {robot.score.compositeScore.toFixed(1)}
-                    <span className={styles.scoreMax}>{t("&thinsp;/&thinsp;5")}</span>
+                    <span className={styles.scoreMax}>{'\u2009/\u20095'}</span>
                   </span>
                   <span className={styles.scoreTier}>{robot.score.tier}</span>
                 </div>

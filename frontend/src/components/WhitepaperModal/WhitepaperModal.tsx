@@ -73,7 +73,7 @@ export default function WhitepaperModal({ isOpen, onClose }: Props) {
                   We&apos;ve also sent a link to your email.
                 </p>
                 <a
-                  href="/pdf/rxd-therobotage-v2.pdf"
+                  href="/api/download/whitepaper"
                   download
                   className={styles.downloadBtn}
                 >
@@ -122,7 +122,7 @@ export default function WhitepaperModal({ isOpen, onClose }: Props) {
                 </p>
 
                 <div className={styles.directDownload}>
-                  <a href="/pdf/rxd-therobotage-v2.pdf" download className={styles.directDownloadLink}>
+                  <a href="/api/download/whitepaper" download className={styles.directDownloadLink}>
                     Download directly without email
                   </a>
                   <span className={styles.directDownloadNote}>CC BY-NC 4.0 — free to use with attribution.</span>

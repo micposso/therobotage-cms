@@ -160,9 +160,9 @@
 
 .trackDescription {
   font-family: var(--font-body);
-  font-size: var(--text-base);
+  font-size: var(--text-body);
   font-weight: 400;
-  line-height: 1.7;
+  line-height: var(--leading-body);
   color: var(--color-text);
 }
 
@@ -208,10 +208,10 @@
 .cardDescription {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: var(--text-sm);
+  font-size: var(--text-body);
   color: var(--color-text-inverse);
   opacity: 1;
-  line-height: 1.8;
+  line-height: var(--leading-body);
   max-width: 480px;
 }
 
@@ -436,9 +436,9 @@
 
 .courseDescription {
   font-family: var(--font-body);
-  font-size: var(--text-sm);
+  font-size: var(--text-body);
   font-weight: 400;
-  line-height: 1.7;
+  line-height: var(--leading-body);
   color: var(--color-text);
   max-width: 560px;
 }

@@ -90,7 +90,7 @@ export default function Summit() {
                 <motion.div key={track.number} className={styles.track} variants={trackVariants}>
                   <span className={styles.trackNumber}>{track.number}</span>
                   <div className={styles.trackContent}>
-                    <p className={styles.trackTitle}>{t(track.title)}</p>
+                    <h3 className={styles.trackTitle}>{t(track.title)}</h3>
                     <p className={styles.trackDescription}>{t(track.description)}</p>
                   </div>
                 </motion.div>

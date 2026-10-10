@@ -43,6 +43,7 @@ export default async function CredentialPage({ params }: { params: Promise<{ cre
   if (!cert) notFound()
 
   const isLive = cert.status === 'Live'
+  const isAcademy = credential === 'rpdp' || credential === 'rdp'
 
   return (
     <>
@@ -65,7 +66,7 @@ export default async function CredentialPage({ params }: { params: Promise<{ cre
               {isLive ? (
                 <a href={resolveHref("/access")} className={styles.ctaPrimary}>{t("Join the Waitlist →")}</a>
               ) : (
-                <a href={resolveHref("/access")} className={styles.ctaSecondary}>{t("Notify me when this opens →")}</a>
+                <a href={resolveHref(isAcademy ? `/learn#${credential === 'rpdp' ? 'founding-cohort-list' : 'academy-updates'}` : '/access')} className={styles.ctaSecondary}>{t("Notify me when this opens →")}</a>
               )}
             </div>
             <div className={styles.headerRight}>
@@ -96,7 +97,7 @@ export default async function CredentialPage({ params }: { params: Promise<{ cre
           <section className={styles.section}>
             <p className={styles.eyebrow}>{t("Built on")}</p>
             <p className={styles.frameworkName}>{t("Robot Experience Design (RXD)")}</p>
-            <p className={styles.frameworkText}>{t("Every module, deliverable, and capstone in the REP programme maps directly to the six dimensions of the RXD framework — the original research framework developed by The Robot Age for evaluating how humans experience robots in real environments.")}</p>
+            <p className={styles.frameworkText}>{t(isAcademy ? 'Explore the Robot Experience Design framework for evaluating how people experience robots in real environments.' : "Every module, deliverable, and capstone in the REP programme maps directly to the six dimensions of the RXD framework — the original research framework developed by The Robot Age for evaluating how humans experience robots in real environments.")}</p>
             <div className={styles.pills}>
               {['Signal Clarity', 'Spatial Legibility', 'Perceived Presence', 'Failure Transparency', 'Interaction Fit', 'Recovery Design'].map((dim) => (
                 <span key={dim} className={styles.pill}>{t(dim)}</span>
@@ -111,7 +112,7 @@ export default async function CredentialPage({ params }: { params: Promise<{ cre
           )}
 
           {/* ── Curriculum ──────────────────────────────────────────────────── */}
-          <section className={styles.section}>
+          <section id="curriculum" className={styles.section}>
             <p className={styles.eyebrow}>{t("Curriculum")}</p>
             <div className={styles.moduleList}>
               {cert.modules.map((mod) => (
@@ -124,12 +125,12 @@ export default async function CredentialPage({ params }: { params: Promise<{ cre
                         {t(mod.status ?? '')}
                       </span>
                     </div>
-                    <p className={styles.moduleDescription}>{t(mod.description)}</p>
+                    {mod.description && <p className={styles.moduleDescription}>{t(mod.description)}</p>}
                   </div>
                 </div>
               ))}
             </div>
-            <a href={resolveHref(`/learn/${credential}/curriculum`)} className={styles.curriculumLink}>{t("See full week-by-week curriculum →")}</a>
+            {!isAcademy && <a href={resolveHref(`/learn/${credential}/curriculum`)} className={styles.curriculumLink}>{t("See full week-by-week curriculum →")}</a>}
           </section>
 
           {/* ── Outcomes ────────────────────────────────────────────────────── */}

@@ -556,7 +556,7 @@ export default function Scorecard() {
                 ) : (
                   <form action={emailAction} className={styles.leadForm} noValidate>
                     <p className={styles.formEyebrow}>Go deeper</p>
-                    <p className={styles.leadHeading}>Want the full white paper and scoring rubric?</p>
+                    <h3 className={styles.leadHeading}>Want the full white paper and scoring rubric?</h3>
                     <p className={styles.leadSub}>
                       The complete RXD framework: detailed 1&ndash;5 rubrics for every dimension, methodology, and a printable worksheet.
                     </p>
