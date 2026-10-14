@@ -564,6 +564,12 @@
     "expiresAt": "2026-10-21T00:00:00.000Z"
   },
   {
+    "id": "jobs/perception-engineer-multimodal-embodied-ai-shield-ai.md",
+    "route": "/jobs/perception-engineer-multimodal-embodied-ai-shield-ai",
+    "sourceHash": "9624470448c5b44fa7f6c9314fdf4941cc60926abe026fac722e434641706c58",
+    "expiresAt": "2026-12-02T00:00:00.000Z"
+  },
+  {
     "id": "jobs/presentation-designer-shield-ai.md",
     "route": "/jobs/presentation-designer-shield-ai",
     "sourceHash": "b87e74342f4faf8b2de176b0827a4d11dbbb0724bc31560ba22ce87e05d9fe48",
@@ -610,12 +616,6 @@
     "route": "/jobs/principal-ux-designer-amazon-robotics",
     "sourceHash": "a4f46af7ea503e0890a60dc32742d12eb8a4f305438729984c22c0431fa24a9c",
     "expiresAt": "2026-10-17T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/principal-ux-designer-fauna.md",
-    "route": "/jobs/principal-ux-designer-fauna",
-    "sourceHash": "21c222bfd60704edad9c1c45ca86e23ad95d5450cfd74430fdf582b4fb4c6ff9",
-    "expiresAt": "2026-10-14T00:00:00.000Z"
   },
   {
     "id": "jobs/probabilistic-risk-assessment-engineer-kodiak.md",
@@ -702,6 +702,12 @@
     "expiresAt": "2026-10-19T00:00:00.000Z"
   },
   {
+    "id": "jobs/product-manager-cabin-intelligence-applied-intuition.md",
+    "route": "/jobs/product-manager-cabin-intelligence-applied-intuition",
+    "sourceHash": "ecdd6db496f63b4c2a278584198b78be9185cbb8e22bb439d8400e55ab19d08d",
+    "expiresAt": "2026-12-08T00:00:00.000Z"
+  },
+  {
     "id": "jobs/product-manager-dana-physical-ai-applied-intuition.md",
     "route": "/jobs/product-manager-dana-physical-ai-applied-intuition",
     "sourceHash": "aa3754b00ea2087f8871cf6c355438e8e5f96c1383e28bbbcc31751b2defad5f",
@@ -730,12 +736,6 @@
     "route": "/jobs/product-manager-human-robot-interaction-apptronik",
     "sourceHash": "a6ccd58feb06733331bef1240eda9fa6295ff4637b5c52376d204d3ce32919af",
     "expiresAt": "2026-10-17T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/product-manager-manufacturing-orchestration-intrinsic.md",
-    "route": "/jobs/product-manager-manufacturing-orchestration-intrinsic",
-    "sourceHash": "4b7ede77870b9155300996cb75d4f7e9b5cd2bdf102c268d32a9000cdf3e8dee",
-    "expiresAt": "2026-10-14T00:00:00.000Z"
   },
   {
     "id": "jobs/product-manager-platform-dana-applied-intuition.md",
@@ -1134,12 +1134,6 @@
     "expiresAt": "2026-10-17T00:00:00.000Z"
   },
   {
-    "id": "jobs/senior-product-marketing-manager-agility.md",
-    "route": "/jobs/senior-product-marketing-manager-agility",
-    "sourceHash": "2f702f42568fab94e2bba7161d101ba3ec10295874216df0b64c369f998f8be7",
-    "expiresAt": "2026-10-14T00:00:00.000Z"
-  },
-  {
     "id": "jobs/senior-program-manager-compliance-reporting-nuro.md",
     "route": "/jobs/senior-program-manager-compliance-reporting-nuro",
     "sourceHash": "1e183668243057cd809e1dc49d3b9e46fb10e48d7f9b19f8129415201c12bf2c",
@@ -1278,12 +1272,6 @@
     "expiresAt": "2026-11-10T00:00:00.000Z"
   },
   {
-    "id": "jobs/social-community-engagement-manager-applied-intuition.md",
-    "route": "/jobs/social-community-engagement-manager-applied-intuition",
-    "sourceHash": "fe92e513c82047223b463590459f77b14dcafe64e4d1ab156ade483ca08a05e9",
-    "expiresAt": "2026-10-11T00:00:00.000Z"
-  },
-  {
     "id": "jobs/software-engineer-v-applied-ml-research-pickle-robot.md",
     "route": "/jobs/software-engineer-v-applied-ml-research-pickle-robot",
     "sourceHash": "f3cf4ca9b8e40a57a9566c2d9c8df718a65dcb1343b9e2bcb463ec545c4540ef",
@@ -1294,12 +1282,6 @@
     "route": "/jobs/sr-deployment-program-manager-robotics-collaborative-robotics",
     "sourceHash": "3d349d656803286eaf8503ddb6ab388d0fcd437ca11ed7ff7f0eed180177114d",
     "expiresAt": "2026-12-04T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/sr-product-designer-amazon-robotics.md",
-    "route": "/jobs/sr-product-designer-amazon-robotics",
-    "sourceHash": "d7ad051722fee03b00af2a51f741269a067e892470f3b5a5af9f386b6c848b24",
-    "expiresAt": "2026-10-14T00:00:00.000Z"
   },
   {
     "id": "jobs/sr-product-manager-assisted-autonomy-kodiak.md",
@@ -1516,12 +1498,6 @@
     "route": "/jobs/test-maintenance-program-manager-zipline",
     "sourceHash": "63be4d579c842dda9ebf85df54b19c69702206a9b987980c9fe1d6b2dbc4612f",
     "expiresAt": "2026-11-10T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/ux-product-design-lead-skydio.md",
-    "route": "/jobs/ux-product-design-lead-skydio",
-    "sourceHash": "3762778434298b62752312513d918a7b356e2041ac0bf80411856d37dbd92bd6",
-    "expiresAt": "2026-10-14T00:00:00.000Z"
   },
   {
     "id": "jobs/ux-test-engineer-new-grad-applied-intuition.md",

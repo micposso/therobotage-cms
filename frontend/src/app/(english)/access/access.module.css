@@ -55,6 +55,7 @@
 
 /* ─── Submit button — Pattern A ── */
 .submitButton {
+  clip-path: var(--cta-corner-clip);
   margin-top: var(--space-4);
   display: inline-block;
   padding: var(--space-4) var(--space-8);

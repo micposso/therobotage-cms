@@ -16,6 +16,7 @@ import {
   workshopMetrics,
 } from './content'
 import styles from './live-robot-lab.module.css'
+import RobotLiteracyVideo from '../robot-literacy/RobotLiteracyVideo'
 
 export const requestAnchor = '#request-live-robot-lab'
 
@@ -68,7 +69,6 @@ export function LiveRobotLabHero({ locale = 'en' }: { locale?: Locale } = {}) {
 
 export function LiveRobotLabVideo({ locale = 'en' }: { locale?: Locale } = {}) {
   const t = (text: string) => uiText(text, locale)
-  // Replace this figure with a titled iframe or a video with controls and captions.
   return (
     <section
       id="live-robot-lab-video"
@@ -76,12 +76,13 @@ export function LiveRobotLabVideo({ locale = 'en' }: { locale?: Locale } = {}) {
       className={styles.section}
     >
       <div className={styles.container}>
-        <figure className={styles.video}>
-          <span className={styles.mediaMark} aria-hidden="true">
-            ↗
-          </span>
-          <p className={styles.eyebrow}>{t("LIVE ROBOT LAB")}</p>
-          <h2>{t("Video coming soon")}</h2>
+        <figure>
+          <RobotLiteracyVideo
+            src="https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/videos/robotlivelab/RobotLiveLab.mp4"
+            poster=""
+            label="Live Robot Lab video"
+            playLabel="Watch the experience"
+          />
           <figcaption>{t("See what happens when people meet embodied AI.")}</figcaption>
         </figure>
       </div>

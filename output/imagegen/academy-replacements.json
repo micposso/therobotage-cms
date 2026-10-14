@@ -1,0 +1,15 @@
+{
+  "mode": "Built-in image_gen",
+  "images": [
+    {
+      "key": "design-gap",
+      "prompt": "Create one square 1:1 cinematic documentary photograph for a professional robotics education website, replacing the design-gap section image. Scene: exactly two adult university students, a woman and a man, collaboratively working on a physically plausible bipedal humanoid robot in a sunlit university robotics studio. Robot clearly visible with torso, two articulated arms, two legs and two feet, approximately human-sized, powered down and supported on a stable maintenance stand. One student carefully adjusts a forearm panel while the other studies the mechanism and holds a tablet. Candid focused collaboration, human-centered design learning. Medium-wide three-quarter view that includes both students and the full bipedal robot. Natural warm window light, soft shadows, muted charcoal and amber cinematic film grading, subtle film grain, authentic skin, metal and fabric textures, 35mm documentary lens. Contemporary realistic hardware, no futuristic holograms, no exaggerated glowing eyes, no staged smiles. No text, logos, watermarks, collage or decorative borders. Match a warm, restrained cinematic documentary photo series about people learning to work with robots.",
+      "source": "C:\\Users\\micpo\\.codex\\generated_images\\01a13853-db94-71d1-86db-e6301bfa52c2\\exec-525aa082-098f-4290-9ca0-a3d6bef2f222.png"
+    },
+    {
+      "key": "curriculum",
+      "prompt": "Edit this curriculum photograph: remove the entire small wheeled robot from the center of the table, including wheels, electronics, wires and its shadow. Fill its former location naturally with the matching uninterrupted wooden tabletop. There must be no physical robot anywhere in the image. Preserve the people, hands, notebooks, paper sketches, floor plan, wooden blocks, laptop, camera angle, square composition and warm cinematic documentary style. Maintain the natural window lighting, muted amber and charcoal palette, subtle film grain and photorealistic textures. Do not add other objects or text.",
+      "source": "C:\\Users\\micpo\\.codex\\generated_images\\01a13853-db94-71d1-86db-e6301bfa52c2\\exec-f322e4b8-a533-43cd-b22e-ee36368e0785.png"
+    }
+  ]
+}

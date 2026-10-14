@@ -23,7 +23,7 @@ details should be confirmed in the quote.
 Existing Go2 product imagery is used for the hero and robot card; the Reachy card uses
 the existing local photo. A new hero image is optional, not required.
 
-- Captioned Live Robot Lab video (replace the 16:9 figure with a titled embed or video with controls).
+- Video is hosted at `videos/robotlivelab/RobotLiveLab.mp4` on Cloudflare R2 and uses the Robot Literacy player. Captions remain to be supplied.
 - Approved workshop photography (replace the labeled placeholder).
 - Verified metrics and approved, attributed testimonials (replace null content entries).
 

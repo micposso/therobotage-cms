@@ -1,0 +1,50 @@
+{
+  "mode": "Built-in image_gen",
+  "images": [
+    {
+      "key": "hero",
+      "prompt": "Create one square cinematic documentary photograph for a robotics professional education website hero. Candid scene in a sunlit industrial learning studio: three adult professionals of varied ages and backgrounds thoughtfully observing a compact, physically plausible quadruped robot on the floor, one person crouching at a respectful distance, others discussing. Human curiosity and hands-on learning, not engineering spectacle. Eye-level 35mm documentary photography, layered composition, warm window light, muted charcoal and amber palette, subtle film grain, authentic skin and material textures, restrained film color grading. Contemporary real-world environment. Square 1:1 composition, no text, no logos, no watermarks, no collage, no sci-fi holograms. This is conceptual editorial imagery, not a depiction of an actual event.",
+      "source": "C:\\Users\\micpo\\.codex\\generated_images\\01a13853-db94-71d1-86db-e6301bfa52c2\\exec-acac3b29-4a67-4dc9-9ad2-9412ddc12226.png"
+    },
+    {
+      "key": "rpdp-feature",
+      "prompt": "Create one square 1:1 cinematic documentary photograph for a robotics professional education website. Photorealistic conceptual editorial image, contemporary real world, natural unposed human behavior, authentic diverse adult professionals, plausible robot hardware. 35mm documentary lens, warm natural window light with soft shadows, restrained charcoal and amber film grading, subtle film grain, tactile material detail. No text overlays, logos, watermarks, collage, science-fiction effects or staged stock-photo handshakes. Scene: Over-the-shoulder intimate view of a female product designer sketching simple robot interaction storyboards on paper at a worn studio table, compact wheeled service robot prototype across the table and colleague listening. Emphasis on human-centered product design, tactile paper and thoughtful work.",
+      "source": "C:\\Users\\micpo\\.codex\\generated_images\\01a13853-db94-71d1-86db-e6301bfa52c2\\exec-48244e32-09b5-483f-aa8e-77732abdf6e5.png"
+    },
+    {
+      "key": "rpdp-program",
+      "prompt": "Create one square 1:1 cinematic documentary photograph for a robotics professional education website. Photorealistic conceptual editorial image, contemporary real world, natural unposed human behavior, authentic diverse adult professionals, plausible robot hardware. 35mm documentary lens, warm natural window light with soft shadows, restrained charcoal and amber film grading, subtle film grain, tactile material detail. No text overlays, logos, watermarks, collage, science-fiction effects or staged stock-photo handshakes. Scene: Two interaction designers conducting a candid usability session with an adult participant and a waist-high wheeled service robot in a public-library test space. Participant gestures toward robot while designer quietly takes notes. Medium-wide observer perspective, clear human-robot relationship.",
+      "source": "C:\\Users\\micpo\\.codex\\generated_images\\01a13853-db94-71d1-86db-e6301bfa52c2\\exec-ada50507-e0ee-4126-94de-151217d51b28.png"
+    },
+    {
+      "key": "rdp-program",
+      "prompt": "Create one square 1:1 cinematic documentary photograph for a robotics professional education website. Photorealistic conceptual editorial image, contemporary real world, natural unposed human behavior, authentic diverse adult professionals, plausible robot hardware. 35mm documentary lens, warm natural window light with soft shadows, restrained charcoal and amber film grading, subtle film grain, tactile material detail. No text overlays, logos, watermarks, collage, science-fiction effects or staged stock-photo handshakes. Scene: An operations lead and a warehouse team member in realistic safety vests standing beside a stopped autonomous mobile logistics robot in a clean warehouse aisle, discussing its route while looking at a tablet. Safe separation, organized floor markings, everyday deployment planning.",
+      "source": "C:\\Users\\micpo\\.codex\\generated_images\\01a13853-db94-71d1-86db-e6301bfa52c2\\exec-6cc084b4-f4e0-4055-b218-9669cd354c74.png"
+    },
+    {
+      "key": "design-gap",
+      "prompt": "Create one square 1:1 cinematic documentary photograph for a robotics professional education website. Photorealistic conceptual editorial image, contemporary real world, natural unposed human behavior, authentic diverse adult professionals, plausible robot hardware. 35mm documentary lens, warm natural window light with soft shadows, restrained charcoal and amber film grading, subtle film grain, tactile material detail. No text overlays, logos, watermarks, collage, science-fiction effects or staged stock-photo handshakes. Scene: A wheelchair user and an accessibility researcher evaluating a compact service robot at an accessible height in an airy community building lobby. Respectful candid eye-level framing; researcher listens as participant indicates the robot interface. Clear accessible route and believable robot proportions.",
+      "source": "C:\\Users\\micpo\\.codex\\generated_images\\01a13853-db94-71d1-86db-e6301bfa52c2\\exec-eb35380b-baf9-40d9-8a56-130a862098d3.png"
+    },
+    {
+      "key": "deployment-gap",
+      "prompt": "Create one square 1:1 cinematic documentary photograph for a robotics professional education website. Photorealistic conceptual editorial image, contemporary real world, natural unposed human behavior, authentic diverse adult professionals, plausible robot hardware. 35mm documentary lens, warm natural window light with soft shadows, restrained charcoal and amber film grading, subtle film grain, tactile material detail. No text overlays, logos, watermarks, collage, science-fiction effects or staged stock-photo handshakes. Scene: An experienced female facilities manager walking a healthcare corridor with a staff trainer, both discussing how a stopped enclosed autonomous delivery cart will pass through a doorway. A third staff member observes farther back. No patients, no readable medical information. Thoughtful operational readiness and clear unobstructed routes, strong architectural depth.",
+      "source": "C:\\Users\\micpo\\.codex\\generated_images\\01a13853-db94-71d1-86db-e6301bfa52c2\\exec-2435c059-2211-4ce1-bad1-52f05b2fb103.png"
+    },
+    {
+      "key": "curriculum",
+      "prompt": "Create one square 1:1 cinematic documentary photograph for a robotics professional education website. Photorealistic conceptual editorial image, contemporary real world, natural unposed human behavior, authentic diverse adult professionals, plausible robot hardware. 35mm documentary lens, warm natural window light with soft shadows, restrained charcoal and amber film grading, subtle film grain, tactile material detail. No text overlays, logos, watermarks, collage, science-fiction effects or staged stock-photo handshakes. Scene: Close documentary detail of a practical learning assessment: adult learners' hands arranging paper robot journey sketches and a floor-plan drawing around a small tabletop wheeled robot, with a notebook and pencil, a thoughtful instructor softly out of focus behind. Tangible applied learning, oblique overhead composition, no readable writing.",
+      "source": "C:\\Users\\micpo\\.codex\\generated_images\\01a13853-db94-71d1-86db-e6301bfa52c2\\exec-322b4cbf-aefe-4a47-89e5-c8a644cbbe59.png"
+    },
+    {
+      "key": "corporate-training",
+      "prompt": "Create one square 1:1 cinematic documentary photograph for a robotics professional education website. Photorealistic conceptual editorial image, contemporary real world, natural unposed human behavior, authentic diverse adult professionals, plausible robot hardware. 35mm documentary lens, warm natural window light with soft shadows, restrained charcoal and amber film grading, subtle film grain, tactile material detail. No text overlays, logos, watermarks, collage, science-fiction effects or staged stock-photo handshakes. Scene: An adult female trainer guiding four adult hotel operations employees through an onboarding session beside a stationary waist-high delivery robot in a real staff training room. Participants listening and one asking a question; warm natural side light, candid attentive faces, practical everyday work clothing. Distinct from a warehouse and from a design studio.",
+      "source": "C:\\Users\\micpo\\.codex\\generated_images\\01a13853-db94-71d1-86db-e6301bfa52c2\\exec-494e5df4-78b0-42a5-84ab-7e3044d50f5f.png"
+    },
+    {
+      "key": "closing",
+      "prompt": "Create one square 1:1 cinematic documentary photograph for a robotics professional education website. Photorealistic conceptual editorial image, contemporary real world, natural unposed human behavior, authentic diverse adult professionals, plausible robot hardware. 35mm documentary lens, warm natural window light with soft shadows, restrained charcoal and amber film grading, subtle film grain, tactile material detail. No text overlays, logos, watermarks, collage, science-fiction effects or staged stock-photo handshakes. Scene: Quiet hopeful final frame of a robotics documentary: two adult professionals, a younger woman and an older man, seen in three-quarter rear view walking together through a sunlit university innovation building atrium beside a compact wheeled service robot. Human-scale architecture, long late-afternoon shadows, understated forward motion, no posing for camera.",
+      "source": "C:\\Users\\micpo\\.codex\\generated_images\\01a13853-db94-71d1-86db-e6301bfa52c2\\exec-48d3e1b2-9df8-4c1c-ae3a-7cfa66bc2344.png"
+    }
+  ]
+}
