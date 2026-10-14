@@ -138,6 +138,12 @@
     "expiresAt": null
   },
   {
+    "id": "news/robots-threat-pet-shape-bias.md",
+    "route": "/news/robots-threat-pet-shape-bias",
+    "sourceHash": "69568f94dc41a8d7934ada249429998abc034682659ac34b8692b498451f40f4",
+    "expiresAt": null
+  },
+  {
     "id": "news/shenzhen-robot-fight-league-benchmark.md",
     "route": "/news/shenzhen-robot-fight-league-benchmark",
     "sourceHash": "f91ac72bd9bcb4bbf3c79ccfc4bbd4627e504817343afa232b289e033e319b1a",
