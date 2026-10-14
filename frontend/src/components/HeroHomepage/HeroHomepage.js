@@ -217,7 +217,7 @@ export default function HeroHomepage({ images = [] }) {
               <div className={styles.ctaRow}>
                 <Link href={resolveHref('/robot-literacy')} className={styles.ctaPrimary}>{t("What is Robot Literacy?")}<span className={styles.arrow} aria-hidden="true">→</span>
                 </Link>
-                <Link href={resolveHref('/learn')} className={styles.ctaGhost}>{t("Become Certified")}</Link>
+                <Link href={resolveHref('/learn')} className={styles.ctaGhost}>{t("Explore Professional Programs")}</Link>
                 <Link href={resolveHref('/live-robot-lab#request-live-robot-lab')} className={styles.ctaGhost}>{t("Request a Live Robot Lab")}</Link>
               </div>
             </motion.div>

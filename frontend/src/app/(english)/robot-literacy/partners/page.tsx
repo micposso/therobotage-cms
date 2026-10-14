@@ -38,7 +38,7 @@ const baseMetadata: Metadata = {
 
 const frameworkAreas = [
   {
-    title: 'INTERPRET',
+    title: 'READ',
     scale: 'Understand robot capability',
     image: '/images/signal-icon.png',
     description: 'Help people understand what robots can perceive, decide, record, communicate, and accomplish - as well as where their limitations begin.',

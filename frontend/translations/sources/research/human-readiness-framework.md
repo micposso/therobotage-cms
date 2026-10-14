@@ -25,4 +25,4 @@ The framework is deliberately non-technical. It was designed to be administered 
 
 Early pilots using the HRF showed a 34% reduction in escalation events during the first 90 days of deployment. Teams that scored high on "feedback loops" — meaning they had structured ways to collect and act on frontline observations — outperformed low-scoring peers on nearly every adoption metric.
 
-The HRF is available as part of the REP curriculum and will be published in full as an open research tool later this year.
+Program update — October 2026: this earlier framework article is not a current course-availability announcement. Explore RPDP and RDP on the Academy page for current professional learning pathways.

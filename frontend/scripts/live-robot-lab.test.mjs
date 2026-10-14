@@ -1,3 +1,4 @@
+import { testModule } from './test-module.mjs'
 import assert from 'node:assert/strict'
 import { readFile } from 'node:fs/promises'
 import test from 'node:test'
@@ -59,10 +60,6 @@ test('accepts international names, email plus addressing, and leap day', () => {
 test('server submission reports provider acceptance, rejection, and missing configuration honestly', async () => {
   const asModule = (code) =>
     `data:text/javascript;base64,${Buffer.from(code).toString('base64')}`
-  const template = await readFile(
-    new URL('../src/lib/emailTemplate.ts', import.meta.url),
-    'utf8',
-  )
   const action = await readFile(
     new URL('../src/app/actions/sendLiveRobotLabRequest.ts', import.meta.url),
     'utf8',
@@ -84,7 +81,7 @@ test('server submission reports provider acceptance, rejection, and missing conf
         .replace("'resend'", JSON.stringify(mock))
         .replace(
           "'@/lib/emailTemplate'",
-          JSON.stringify(asModule(compile(template))),
+          JSON.stringify(await testModule(new URL('../src/lib/emailTemplate.ts', import.meta.url))),
         )
         .replace("'@/lib/liveRobotLab'", JSON.stringify(asModule(javascript)))
       const { sendLiveRobotLabRequest } = await import(asModule(compiled))

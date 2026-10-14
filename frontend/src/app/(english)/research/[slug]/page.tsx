@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${article.headline} — The Robot Age`,
     description: article.body[0],
+    ...(article.category === 'ARCHIVE' ? { robots: { index: false, follow: true } } : {}),
     alternates: { canonical: `/research/${slug}`, languages: translationAlternates(`/research/${slug}`) },
     openGraph: {
       title: article.headline,
@@ -79,6 +80,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             </div>
           </div>
 
+          <p><Link href={contentHref('/learn#programs', locale)}>{t('Explore Professional Programs')} →</Link></p>
           {/* Back link */}
           <div className={styles.back}>
             <Link href={contentHref("/research", locale)} className={styles.backLink}>{t("← Back to Research")}</Link>

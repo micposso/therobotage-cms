@@ -48,7 +48,7 @@ export default function ConnectPage() {
       <PageHero
         eyebrow="Connect"
         title="Let's talk"
-        subtitle="Whether you're interested in the certification, the summit, a partnership, or just the work — we'd like to hear from you."
+        subtitle="Ask about Robot Literacy, Live Robot Lab, RPDP, RDP, or a partnership. Tell us what you would like to explore."
         imageSrc="/images/human.png"
       />
       <section className={styles.section}>

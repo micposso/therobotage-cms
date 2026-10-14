@@ -1,3 +1,4 @@
+import { testModule } from './test-module.mjs'
 import assert from 'node:assert/strict'
 import { readFile } from 'node:fs/promises'
 import test from 'node:test'
@@ -6,7 +7,7 @@ import ts from 'typescript'
 const moduleUrl = (source) => `data:text/javascript;base64,${Buffer.from(source).toString('base64')}`
 const read = (path) => readFile(new URL(path, import.meta.url), 'utf8')
 const compile = (source) => ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext } }).outputText
-const template = moduleUrl(compile(await read('../src/lib/emailTemplate.ts')))
+const template = await testModule(new URL('../src/lib/emailTemplate.ts', import.meta.url))
 
 test('enterprise validates input, includes every field, and requires provider acceptance', async (t) => {
   t.mock.method(console, 'error', () => {})

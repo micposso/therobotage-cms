@@ -1,244 +1,31 @@
 'use client'
-import { useCopy } from '@/lib/i18n/useCopy'
-
-
-import { useRef, useEffect, useState } from 'react'
-import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
-import { certifications as tracks } from '@/lib/certifications'
+import { programLinks } from '@/lib/certifications'
+import { useCopy } from '@/lib/i18n/useCopy'
 import styles from './Certification.module.css'
 
-const stats = [
-  {
-    value: '$205B',
-    label: 'Global robotics market by 2030',
-    source: 'GlobalData, 2024',
-  },
-  {
-    value: '36.8M',
-    label: 'Robots already operating worldwide',
-    source: 'IFR, 2024',
-  },
-  {
-    value: '78M',
-    label: 'Net new jobs created by automation by 2030',
-    source: 'World Economic Forum, 2025',
-  },
-  {
-    value: '2.1M',
-    label: 'Skilled roles that will go unfilled without a prepared workforce',
-    source: 'Deloitte / NAM, 2024',
-  },
-]
-
-// ─── Count-up ─────────────────────────────────────────────────────────────────
-
-function CountUp({ target, suffix, isActive }) {
-  const { t } = useCopy()
-  const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    if (!isActive) return
-    let current = 0
-    const duration = 1200
-    const interval = 16
-    const increment = target / (duration / interval)
-
-    const timer = setInterval(() => {
-      current += increment
-      if (current >= target) {
-        setCount(target)
-        clearInterval(timer)
-      } else {
-        setCount(Math.floor(current))
-      }
-    }, interval)
-
-    return () => clearInterval(timer)
-  }, [isActive, target])
-
-  return <>{count}{t(suffix)}</>
-}
-
-// ─── Stat card variants ───────────────────────────────────────────────────────
-
-const statContainerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-}
-
-const statVariants = {
-  hidden:  { y: 20, opacity: 0 },
-  visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
-}
-
-// ─── Component ────────────────────────────────────────────────────────────────
-
-/** @param {{ children?: import('react').ReactNode, id?: string, title?: string, description?: string, eyebrow?: string }} props */
-export default function Certification({ children, id, title, description, eyebrow } = {}) {
-  const { t, href: resolveHref } = useCopy()
-  const sectionRef  = useRef(null)
-  const specsRef    = useRef(null)
-  const inView      = useInView(sectionRef, { once: true, margin: '-80px' })
-  const specsInView = useInView(specsRef,   { once: true, margin: '-80px' })
-
-  if (children) return (
-    <section id={id} className={styles.section} ref={sectionRef}>
-      <div className="container-fluid">
-        <div className={`row align-items-end ${styles.headerRow}`}>
-          <div className="col-lg-6">
-            {eyebrow && <p className={styles.eyebrow}>{eyebrow}</p>}
-            <h2 className={styles.headline}>{title}</h2>
-          </div>
-          {description && <div className="col-lg-5 offset-lg-1"><p className={styles.subhead}>{description}</p></div>}
+export default function Certification() {
+  const { t, href } = useCopy()
+  return <section id="programs" className={styles.section}>
+    <div className="container-fluid">
+      <div className={`row align-items-end ${styles.headerRow}`}>
+        <div className="col-lg-6">
+          <p className={styles.eyebrow}>{t('Our Programs')}</p>
+          <h2 className={styles.headline}>{t('Understand. Experience. Design. Deploy.')}</h2>
         </div>
-        {children}
+        <div className="col-lg-5 offset-lg-1">
+          <p className={styles.subhead}>{t('Build your robot literacy, meet real robots, or develop professional skills in robot product design and deployment. Choose the starting point that fits your goals.')}</p>
+          <Link href={href('/learn#programs')} className={styles.headerCta}>{t('Compare Professional Programs')} →</Link>
+        </div>
       </div>
-    </section>
-  )
-
-  return (
-    <section className={styles.section} ref={sectionRef}>
-      <div className="container-fluid">
-
-        {/* ── Row 1: Header ─────────────────────────────────────────────────── */}
-        <div className={`row align-items-end ${styles.headerRow}`}>
-          <div className="col-lg-6">
-            <motion.p
-              className={styles.eyebrow}
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.6 }}
-            >{t("Flagship Certification")}</motion.p>
-            <motion.h2
-              className={styles.headline}
-              initial={{ y: 40, opacity: 0 }}
-              animate={inView ? { y: 0, opacity: 1 } : {}}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            >{t("Become a Robotics Experience Practitioner")}</motion.h2>
-          </div>
-          <div className="col-lg-5 offset-lg-1">
-            <motion.p
-              className={styles.subhead}
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >{t("The REP credential is built for product designers, UX strategists, and business leaders who shape the spaces, systems, and decisions where humans and robots meet. No engineering background required.")}</motion.p>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <Link href={resolveHref("/learn/rep")} className={styles.headerCta}>{t("Get your REP credential")}<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* ── Row 2: Main content ───────────────────────────────────────────── */}
-        <div className="row g-4 align-items-stretch">
-
-          {/* Featured card */}
-          <div className="col-lg-7">
-            <motion.div
-              className={styles.featuredCard}
-              initial={{ x: -40, opacity: 0 }}
-              animate={inView ? { x: 0, opacity: 1 } : {}}
-              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            >
-              {/* Top */}
-              <div>
-                <span className={styles.badge}>{t("REP — Robotics Experience Practitioner")}</span>
-                <h3 className={styles.cardName}>{t("Practitioner Track")}</h3>
-                <p className={styles.cardDescription}>{t("A six-week hybrid programme covering the human side of robotics — how robots signal intent, where human-robot interaction breaks down, how to design around failure, and how to evaluate a real deployment with confidence. Culminates in a Robot Readiness Audit and your REP credential.")}</p>
-              </div>
-
-              {/* Specs */}
-              <div className={styles.specsGrid} ref={specsRef}>
-                <div className={styles.specItem}>
-                  <span className={styles.specValue}>
-                    <CountUp target={6} suffix=" Weeks" isActive={specsInView} />
-                  </span>
-                  <span className={styles.specLabel}>{t("Duration")}</span>
-                </div>
-                <div className={styles.specItem}>
-                  <span className={styles.specValue}>
-                    <CountUp target={15} suffix=" Hours" isActive={specsInView} />
-                  </span>
-                  <span className={styles.specLabel}>{t("Total learning")}</span>
-                </div>
-                <div className={styles.specItem}>
-                  <span className={styles.specValue}>
-                    <CountUp target={1} suffix=" Live" isActive={specsInView} />
-                  </span>
-                  <span className={styles.specLabel}>{t("Zoom kick-off")}</span>
-                </div>
-              </div>
-
-              {/* Bottom */}
-              <div className={styles.cardBottom}>
-                <Link href={resolveHref("/learn")} className={styles.cta}>{t("Explore the Full Curriculum")}<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Stat cards */}
-          <div className="col-lg-5">
-            <motion.div
-              className={styles.statList}
-              variants={statContainerVariants}
-              initial="hidden"
-              animate={inView ? 'visible' : 'hidden'}
-            >
-              {stats.map((stat) => (
-                <motion.div key={stat.value} className={styles.statCard} variants={statVariants}>
-                  <p className={styles.statValue}>{t(stat.value)}</p>
-                  <p className={styles.statLabel}>{t(stat.label)}</p>
-                  <p className={styles.statSource}>{t(stat.source)}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-
-        </div>
-
-        {/* ── Credential tracks ─────────────────────────────────────────────── */}
-        <motion.div
-          className={styles.tracksSection}
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          <div className={styles.tracksHeader}>
-            <p className={styles.tracksLabel}>{t("Credential Family")}</p>
-            <Link href={resolveHref("/notify")} className={styles.teaseLink}>{t("Join the list to be notified when new tracks open")}<svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
-          </div>
-          <div className={styles.tracksGrid}>
-            {tracks.map((track) => (
-              <Link key={track.abbr} href={resolveHref(`/learn/${track.slug}`)} className={`${styles.trackCard} ${track.status === 'Live' ? styles.trackLive : styles.trackSoon}`}>
-                <div className={styles.trackTop}>
-                  <span className={styles.trackAbbr}>{t(track.abbr)}</span>
-                  <span className={`${styles.statusPill} ${track.status === 'Live' ? styles.statusLive : styles.statusSoon}`}>
-                    {t(track.status)}
-                  </span>
-                </div>
-                <p className={styles.trackName}>{t(track.name)}</p>
-                <p className={styles.trackDescription}>{t(track.description)}</p>
-              </Link>
-            ))}
-          </div>
-        </motion.div>
-
-
+      <div className={styles.tracksGrid}>
+        {programLinks.map((program) => <article key={program.href} className={styles.trackCard}>
+          <h3 className={styles.trackName}>{t(program.label)}</h3>
+          <p className={styles.trackDescription}>{t(program.summary)}</p>
+          <Link href={href(program.href.startsWith('/learn/') ? `${program.href}#curriculum` : program.href)} className={styles.headerCta}>{t(program.cta)} →</Link>
+        </article>)}
       </div>
-    </section>
-  )
+      <p className={styles.subhead}>{t('RPDP and RDP are upcoming professional programs. Explore the Academy for dates and interest lists. Joining a list does not reserve a seat.')}</p>
+    </div>
+  </section>
 }

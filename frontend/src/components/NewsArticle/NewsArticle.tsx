@@ -1,5 +1,6 @@
 import { uiText } from '@/lib/i18n/messages'
 import Link from 'next/link'
+import { contentHref } from '@/lib/i18n/localize'
 import type { NewsArticle as NewsArticleType } from '@/lib/news'
 import ShareButton from './ShareButton'
 import WaitlistModal from './WaitlistModal'
@@ -63,12 +64,12 @@ export default function NewsArticle({ article, locale = 'en', originalHref }: Pr
           <aside className={styles.sidebar}>
             <p className={styles.sidebarLabel}>{t("Related")}</p>
             <nav className={styles.sidebarNav}>
-              <Link href="/learn" className={styles.sidebarLink}>{t("Get the REP credential")}</Link>
-              <Link href="/robot-literacy" className={styles.sidebarLink}>{t("What is robot literacy?")}</Link>
-              <Link href="/summit" className={styles.sidebarLink}>{t("Join the Summit")}</Link>
+              <Link href={contentHref("/learn#programs", locale)} className={styles.sidebarLink}>{t("Explore Professional Programs")}</Link>
+              <Link href={contentHref("/robot-literacy", locale)} className={styles.sidebarLink}>{t("What is robot literacy?")}</Link>
+              <Link href={contentHref("/live-robot-lab", locale)} className={styles.sidebarLink}>{t("Explore Live Robot Lab")}</Link>
               <ShareButton />
             </nav>
-            <p className={styles.sidebarBlurb}>{t("The REP credential is built for the people who shape how robots land — not the engineers who build them.")}</p>
+            <p className={styles.sidebarBlurb}>{t("Explore RPDP for robot product design and RDP for commercial robot deployment.")}</p>
             <WaitlistModal />
           </aside>
 

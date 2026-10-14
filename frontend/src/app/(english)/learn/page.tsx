@@ -131,7 +131,7 @@ export default async function LearnPage({ params }: { params: Promise<{ locale?:
               <p className={styles.trackDescription}><strong>{t('Final project')}: </strong>{t(program.capstone)}</p>
               </div>
               </div>
-              <div><Link href={href(`/learn/${program.slug}`)} className={styles.headerCta}>{t(`Explore ${program.abbr} Curriculum`)}</Link></div>
+              <div><Link href={href(`/learn/${program.slug}#curriculum`)} className={styles.headerCta}>{t(`Explore ${program.abbr} Curriculum`)}</Link></div>
               </div>
           </article>)}
         </div>
@@ -189,6 +189,11 @@ export default async function LearnPage({ params }: { params: Promise<{ locale?:
         </div>
       </Certification>
 
+      <Certification id="rdp-updates" title={t('Get RDP Launch Updates')}>
+        <p className={styles.trackDescription}>{t('Get updates about Robot Deployment Practitioner. Joining this list does not reserve a seat.')}</p>
+        <AccessForm locale={locale} interest="rdp" buttonLabel="Get RDP Launch Updates" />
+      </Certification>
+
       <AboutInstructor />
 
       <Certification title={t("The next generation of robotics professionals won't all be engineers.")}>
@@ -208,11 +213,12 @@ export default async function LearnPage({ params }: { params: Promise<{ locale?:
           <div data-parallax className={layout.image}>{images.closing}</div>
         </div>
         <div className={layout.related}>
-          <p className={styles.startHereEyebrow}>{t('Also in Learn')}</p>
-          <Link href={href('/robot-literacy')} className={styles.headerCta}>{t('Robot Literacy — the experience side of working with robots')}</Link>
+          <p className={styles.startHereEyebrow}>{t('Our Programs')}</p>
+          <Link href={href('/robot-literacy')} className={styles.headerCta}>{t('Explore Robot Literacy')}</Link>
+          <Link href={href('/live-robot-lab')} className={styles.headerCta}>{t('Explore Live Robot Lab')}</Link>
         </div>
       </Certification>
     </LearnMain>
-    <Footer programs={academyPrograms} />
+    <Footer />
   </>
 }

@@ -27,7 +27,7 @@ const FACTS = [
   ['Focus', 'Robotics literacy and human-robot experience'],
   ['Audience', 'Designers, product teams, strategists, operations leaders, and educators'],
   ['Based in', 'New York'],
-  ['Flagship credential', 'REP — Robotics Experience Practitioner'],
+  ['Professional credentials', 'RPDP — Robotics Product Design Practitioner; RDP — Robot Deployment Practitioner'],
   ['Research framework', 'Robot Experience Design (RXD)'],
 ]
 
@@ -40,22 +40,23 @@ const COVERAGE_AREAS = [
 ]
 
 const PRESS_LINKS = [
+  { title: 'Robot Deployment Practitioner (RDP)', body: 'A four-week, 24-hour professional program focused on organizational readiness, workforce training, governance, and adoption. Commercial launch is planned for January 2027.', href: '/learn/rdp', cta: 'Explore the curriculum' },
   {
-    title: 'Robotics Literacy',
+    title: 'Robot Literacy',
     body: 'The practical ability to understand robot capability, design for coexistence, and communicate across technical and non-technical teams.',
-    href: '/robotics-literacy',
+    href: '/robot-literacy',
     cta: 'Read the definition',
   },
   {
-    title: 'REP Certification',
-    body: 'A six-week hybrid credential on the human side of robotics, culminating in a Robot Readiness Audit.',
-    href: '/learn/rep',
+    title: 'Product Design for Robots (RPDP)',
+    body: 'A five-week, 25-hour professional program culminating in a Robot Experience Design portfolio project. The first cohort is planned for February 2027.',
+    href: '/learn/rpdp',
     cta: 'View the credential',
   },
   {
-    title: 'Robot Live Labs',
-    body: 'Small, live online sessions where practitioners apply the RXD framework to a real robot, including guided scoring with Reachy Mini.',
-    href: '/rxd-free-workshop',
+    title: 'Live Robot Lab',
+    body: 'Guided, in-person experiences with Reachy Mini and Unitree Go2 Pro for schools, universities, organizations, and events.',
+    href: '/live-robot-lab',
     cta: 'View the live lab',
   },
   {
@@ -90,7 +91,7 @@ export default function PressPage() {
                   The Robot Age is an independent education and research platform focused on the human side of robotics. It gives designers, product teams, operations leaders, educators, and decision-makers the language and methods to understand what robots can do, evaluate how they behave in real environments, and design what happens when people and robots share a space.
                 </p>
                 <p>
-                  Its work includes the Robot Experience Design framework, the Robotics Experience Practitioner credential, live robot labs, field research, and reporting on robotics through a practitioner lens. The focus is not how to engineer a robot. It is how to prepare everyone else whose work changes when one arrives.
+                  Its work includes Robot Literacy, Live Robot Lab, RPDP and RDP professional education, the Robot Experience Design framework, field research, and reporting on robotics through a practitioner lens. The focus is not how to engineer a robot. It is how to prepare everyone else whose work changes when one arrives.
                 </p>
               </div>
             </div>

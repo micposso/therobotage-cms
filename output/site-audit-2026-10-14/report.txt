@@ -1,0 +1,234 @@
+THE ROBOT AGE — CONTENT, NAVIGATION AND PROGRAM AUDIT
+14 October 2026 | Recommendations only; no production content changed
+
+THE MAIN FINDING
+The site currently tells two competing stories. The current /learn page presents an Academy with RPDP and RDP. The homepage, most footers, news sidebars, robot profiles, press materials, and older learning routes still promote REP, RSP, and RXR. A visitor can start on the correct program page and immediately be redirected into the old catalog by shared navigation or promotional content. Fixing shared components is the highest-leverage correction.
+
+Recommended central message:
+“The Robot Age prepares people and organizations for a world with robots—through Robot Literacy, hands-on Live Robot Lab experiences, and professional education in robot product design and deployment.”
+
+1. SCOPE AND EVIDENCE
+The public sitemap and discovered same-domain links produced 555 URL checks: 550 finished with HTTP 200 and five returned HTTP 404. These are URL checks, not 555 distinct editorial pages: the total includes English and Spanish versions, redirected URLs, and both root URL forms. There are 230 Spanish URLs; the English /jobs family contains 230 URLs, /news contains 35, and /research contains 15 including two error routes.
+
+Every fetched page was extracted into crawl.json and systematically scanned for links, legacy program terms, and status errors. Core marketing/program pages, research essays, shared article promotions, robot profiles, and source components received detailed review. Job listings and repeated translated pages received automated/template-level review. This is not a claim that every employer listing or third-party news assertion has been independently fact-checked. Browser inspection confirmed the rendered Robot Literacy journey. Forms were not submitted; email delivery, checkout, authenticated LMS content, all interactive states, PDFs, and external destination availability were not tested.
+
+The search engine initially returned an obsolete /learn snapshot. The report uses the directly fetched current page and repository source instead. Status results describe this crawl, not a permanent uptime guarantee. Page text excludes navigation/footer for some automated scans; fullText retains the complete extracted document, including content headers.
+
+Evidence files: crawl.json, page-inventory.csv, link-issues.json, and page-review.csv. The last file assigns a recommended role and detected flags to each checked URL. Automated flags are screening results, not a substitute for the detailed findings below.
+
+2. THE FOUR-OFFER MODEL TO USE EVERYWHERE
+Robot Literacy | /robot-literacy
+Purpose: foundational understanding and responsible participation. Canonical pillars: READ, RELATE, COEXIST. Audience: schools, individuals, educators, organizations, and society. It is the underlying literacy framework; do not silently equate it with an REP credential. Explain which actual teaching formats are available by inquiry.
+
+Live Robot Lab | /live-robot-lab
+Purpose: guided, in-person interaction with real robots. Current page: Reachy Mini and Unitree Go2 Pro; initially NYC metropolitan area. Schools from $1,250, universities from $1,500, corporate groups from $2,500; events by quote. Standard school/university format is two hours; corporate formats are 90–120 minutes. State prices as starting prices and requests as inquiries, not confirmed bookings. This is an applied experience, not a professional certification.
+
+RPDP | /learn/rpdp
+Public program title: Product Design for Robots. Credential: Robotics Product Design Practitioner. Audience: designers, UX practitioners, design students, researchers, and product managers. Current /learn facts: five weeks, 25 hours, live and self-paced, first cohort planned February 2027; student $149, professional $299. Capstone: Robot Experience Design portfolio project. Current conversion: join the founding cohort list; no seat is reserved.
+
+RDP | /learn/rdp
+Public title/credential: Robot Deployment Practitioner. Audience: deployment teams, robotics companies, integrators, operations managers, consultants, and organizational leaders. Current /learn facts: four weeks, 24 hours, commercial launch January 2027. Capstone: Robot Deployment Readiness Plan. Price and delivery schedule are not established on the reviewed page; do not invent them. Use “Get RDP launch updates” until enrollment is actually open.
+
+Both Academy credentials recognize educational completion. Preserve /learn’s clear distinction from government licenses, regulated safety certifications, and authorization to operate robots. Apply the same explanation to credential detail pages. Dates and prices above are the site's current published plans, not independently verified business commitments.
+
+These are four offers, with two professional credential pathways. Avoid “four certifications.” Do not present Robot Literacy or Live Robot Lab as mandatory prerequisites unless the programs actually require them.
+
+3. RECOMMENDED LOGICAL MAP
+Home /
+  Programs menu — choose by desired outcome
+    Understand robots → Robot Literacy /robot-literacy
+    Experience robots → Live Robot Lab /live-robot-lab
+    Professional education → Academy /learn
+      Design robot experiences → RPDP /learn/rpdp
+      Prepare deployments → RDP /learn/rdp
+  For Organizations → /enterprise
+    Workforce literacy / guided lab / design team education / deployment education
+    Discuss team training → organization inquiry
+  Research & Tools → /research
+    RXD framework → /rxd
+    Apply the framework → /rxd-scorecard
+    Evaluated robot profiles → /robots → /robots/[slug]
+    News and analysis → /news/[slug], browsable from /research
+    Field Signals → working index or an explicitly named section on /research
+    Robotics map → /robotics-map, only when its published data and labels are ready
+  Jobs → /jobs → /jobs/[slug]
+  Contact → /connect
+  Secondary/footer → Partners, Press, confirmed Events, policies, learner sign-in
+
+Recommended desktop navigation: Programs | For Organizations | Research & Tools | Jobs; one clear “Request a Live Robot Lab” action; learner sign-in as a quieter utility. Programs should expose the four choices with plain-language descriptions. Within Academy, compare the two credential pathways side by side. Label /learn consistently “Academy” or “Professional Programs,” rather than alternating between Curriculum, Learn, and Courses & Certifications.
+
+Keep existing core URLs. A clearer hierarchy does not require moving every page. Footer groups should be Programs (all four), Research & Tools, Organization (Contact, Partners, Press, confirmed events), and Legal. Remove generic Access from primary discovery; route people to an offer-specific interest form.
+
+The two frameworks need an explicit relationship: Robot Literacy asks people to READ, RELATE, and COEXIST; RXD supplies six dimensions for evaluating a particular robot experience. RES/scorecard is a tool for applying RXD. RPDP uses this design/evaluation material; RDP covers broader organizational deployment planning. Do not use HRF, RXD, RES, and Robot Literacy as interchangeable names.
+
+4. PRIORITY FINDINGS
+P0 means repair before the next promotion. P1 means the next content release. P2 means refinement after the core journeys work.
+
+P0 — Competing program catalog [confirmed]
+Pages: /, /robot-literacy, /press, /access, /learn/rep, /learn/rsp, /learn/rxr, news sidebars, robot profiles, and default shared footers.
+Evidence: homepage “Flagship Certification” promotes REP; /learn lists RPDP and RDP. Even /learn/rdp ends with REP/RPDP/RSP/RXR footer links. /learn itself opts into an Academy-specific footer, so correcting only that page did not update the rest of the site.
+Recommendation: make RPDP/RDP the canonical active professional catalog and show all four offers in global program navigation. Remove legacy offers from active promotions. Preserve historical learner access if it exists; mark old pages as archived or superseded. Do not silently relabel an old REP completion as RPDP or assume RSP and RDP are academically equivalent.
+Implementation: packages/ui/src/lib/certifications.ts currently has both academyPrograms and a legacy certifications collection. Default shared consumers still use the latter.
+
+P0 — Past cohort dates and misleading reservation language [confirmed]
+Pages: /learn/rep and both published robot profiles; shared news reservation modal.
+Evidence: May 2026 founding cohort, ten seats, $199 or two payments of $99. The current audit date is October 2026. Two $99 payments total $198. The reservation action opens a waitlist, not a booking confirmation. /access says REP is launching soon while the catalog labels it Live.
+Recommendation: remove obsolete promotions; use program-specific interest language. The Academy's “joining the list does not reserve a seat” is the correct model. Do not roll old urgency or seat counts forward without real availability data.
+Implementation: FoundingCohort.tsx, WaitlistContext.tsx, NewsArticle/WaitlistModal.tsx, access/page.tsx, and the legacy certification status.
+
+P0 — Wrong curriculum on legacy routes [confirmed]
+Pages: /learn/rsp/curriculum and /learn/rxr/curriculum.
+Evidence: each uses its own credential label but renders the REP six-week plan and promises an REP credential. RPDP and RDP curriculum URLs correctly redirect to their respective overview #curriculum sections; do not flag those redirects as errors.
+Recommendation: retire or properly archive the unsupported legacy curricula. If retained for existing learners, show the actual matching historical syllabus and status.
+
+P0 — Broken conversion/navigation destinations [confirmed]
+/notify returns 404; linked from homepage credential-family notification CTA in English and Spanish.
+/research/ref returns 404; /research and /es/research send “View the full rubric” to /research/ref#rubric.
+/research/field-signals returns 404; both research hubs promise a full index there.
+/robots/spot-boston-dynamics and /robots/unitree-r1 return 404 and were discovered through the sitemap, not a rendered incoming link in this crawl.
+Recommendation: replace notification links with the appropriate Academy interest destination; send the scorecard action to /rxd-scorecard, or create a real rubric section and label it accurately. Create the Field Signals index or use a real index section on /research. Remove unpublished robot entries from the sitemap or publish valid profiles; do not redirect unrelated profiles to a generic page merely to conceal an error.
+
+P0 — Summit buttons do nothing [source-confirmed]
+Pages: homepage Summit block and /summit. The shared component renders Get Notified and Apply to Speak buttons with no action handler or destination.
+Recommendation: wire specific event-interest and speaker-inquiry actions after confirming the event is active. Otherwise mark the page as an announcement/archive and remove active application language. “Fall 2026” is not inherently past on October 14, but it is too vague to support an active conversion campaign without a confirmed date/status.
+
+P0 — Program outcome/research claims need records [unverified, not established false]
+/research/first-rep-workplace claims a Columbus workplace completed a six-month designation process, eight staff finished REP, and six passed on the first attempt. Request completion records, dates, participant/client permission, and attribution before using this as proof.
+/research/human-readiness-framework claims five dimensions, a risk cutoff below 12, fieldwork, and a 34% reduction in escalation events. Require the study, sample, scoring validation, baseline, and method; explain whether this is a distinct historical framework or superseded material.
+/research/automation-anxiety-vs-readiness cites a 1,400-worker survey without a visible source.
+/research/soft-skills-hard-skills-robotic-workflows refers to ten deployment sites without a visible study.
+Field Signals /failure-transparency-costs claims five deployments, 18 months, 62% of escalations, and a 14-minute average without visible underlying records. /spatial-legibility-hospitals presents three observations without disclosed sites/method. Label illustrative scenarios as illustrative if they are not documented field observations.
+Recommendation: add substantiation and attribution, label hypothetical examples accurately, or withdraw unsupported factual claims. Do not replace REP with RDP in historical claims as a cosmetic fix. The AI statement promises source verification, making these gaps especially consequential.
+
+P0 — Arithmetic in Field Signals [confirmed inconsistency]
+/research/field-signals/failure-transparency-costs turns 20 events per month and two people per event into 40 staff-hours while giving a 14-minute average. On those stated assumptions, 20 × 2 × 14 ÷ 60 = 9.33 staff-hours. If a different total duration was measured, publish that duration and method; otherwise correct the calculation.
+
+P1 — Robot Literacy contradicts its partner page [confirmed]
+/robot-literacy uses READ / RELATE / COEXIST; /robot-literacy/partners uses INTERPRET / RELATE / COEXIST. Use READ everywhere. The main page still sends “Build Your Robot Literacy” to /learn/rep. Offer Live Robot Lab, professional pathways, and a specific literacy inquiry instead. Do not advertise a self-paced foundation course unless one actually exists.
+
+P1 — Inquiry links take an unnecessary detour [browser-confirmed]
+Four Robot Literacy CTAs point to #inquiry. That target exists, but it contains a closing statement and another link to /connect, not an inquiry form. This is a semantic destination problem, not a missing anchor.
+Recommendation: either restore an appropriate inquiry form there or link directly to the intended inquiry. Send curriculum partnership requests to /robot-literacy/partners; send corporate training inquiries to /enterprise. Preserve interest context in the actual form and confirmation.
+
+P1 — Press page conflicts with actual offers and biography [confirmed conflict; personal fact requires owner verification]
+/press promotes REP as flagship and describes “Robot Live Labs” as small online RXD sessions, linking to /rxd-free-workshop. Actual Live Robot Lab is in-person, with two robots and audience-specific starting prices. /press says the founder holds a master's degree; /learn says pursuing it.
+Recommendation: update the press boilerplate to the four-offer model, use the exact name Live Robot Lab, link to /live-robot-lab, and use one verified biography. The /learn wording is the current reference, but only the owner can establish actual degree status.
+
+P1 — Obsolete workshop and speaker deadlines [confirmed date/status problem]
+/rxd-free-workshop advertises June 16/23/30 sessions with reservation language and no year in the visible schedule. These match the old 2026 event schedule. /research/summit-nyc-call-for-speakers says applications close May 15 and promises a form on the Summit page; the current page has no working application action. A related /news version should be reviewed alongside it.
+Recommendation: archive past sessions with recordings/resources if available; route interested readers to current Academy updates. Show date, year, timezone, status, and a working next action on every event. Confirm the speaker deadline and travel-support promise rather than repeating them.
+
+P1 — Homepage statistics are unreliable as presented [externally checked / unresolved]
+“36.8M robots already operating worldwide — IFR, 2024” is not supported by IFR's cited-period factory stock release, which reports 4,281,585 industrial robots. A total across robot categories needs its own defensible source and definition. Do not substitute industrial stock while still labeling it all robots.
+“78M net new jobs created by automation” misattributes WEF's forecast: the 78 million net increase covers multiple macrotrends, not automation alone, and is not robotics-specific.
+“2.1M skilled roles ... Deloitte / NAM, 2024” does not match the 2024 Deloitte/Manufacturing Institute result of 1.9 million potentially unfilled US manufacturing roles by 2033. Preserve geography, sector, forecast horizon, and conditional wording if used.
+“$205B global robotics market by 2030 — GlobalData, 2024” remains unverified here. Require a direct source, market definition, and forecast date.
+Recommendation: remove unsupported sales statistics until sourced. Program outcomes and a real sample project would support the Academy story more directly.
+Primary sources:
+https://ifr.org/ifr-press-releases/record-of-4-million-robots-working-in-factories-worldwide
+https://www.weforum.org/publications/the-future-of-jobs-report-2025/in-full/2-jobs-outlook/
+https://www2.deloitte.com/us/en/pages/about-deloitte/articles/press-releases/us-manufacturing-could-need-new-employees-by-2033.html
+
+P1 — Enterprise offer does not explain the four programs [confirmed omission]
+/enterprise promises certification access but never names RDP or RPDP in its body. “Most deployment failures trace back to the humans” is an unsupported majority claim and frames the workforce as the problem.
+Recommendation: show four organizational use cases: shared literacy, facilitated lab, design-team learning through RPDP, deployment-team learning through RDP. Suggested copy: “Deployment outcomes depend on people, workflows, environments, and technology. Prepare the team as well as the system.” State the actual deliverables and availability of each format.
+
+P1 — RDP discovery and conversion are weaker than RPDP [confirmed]
+The sitemap generator uses the legacy certifications array and omits RDP from that credential loop. RPDP has a dedicated interest value; RDP sends people to generic Academy updates. joinWaitlist.ts recognizes rpdp and academy, not a distinct rdp interest.
+Recommendation: include canonical active program URLs in sitemap/navigation/search; support distinct RDP inquiry or update intent, email confirmation, and internal routing. Keep the generic update form as an option, not the only RDP path.
+
+P1 — Spanish content repeats and obscures the problem [confirmed]
+/es/learn contains substantial English Academy body copy mixed with Spanish labels. Spanish article templates repeat REP marketing and an English reservation trigger. Research CTAs point to the same broken English destinations.
+Recommendation: translate the corrected canonical program content, preserve locale through internal links, and disclose English-only destinations where a translation is not available. Check forms, validation, confirmations, and shared components, not just body headings.
+
+P1 — Evidence placeholders are published [confirmed]
+/live-robot-lab displays workshop photo, measurements, and testimonials “coming soon.” /robotics-map displays TBD leaderboard scores, “Score model scaffold,” and “Needs research.”
+Recommendation: remove empty proof sections until evidence exists. Keep concrete logistics, genuine photos, disclosed illustrative media, and verifiable outcomes. Publish the map as a directory without a leaderboard until a documented scoring model and data support it.
+
+P1 — Scoring language is inconsistent [confirmed]
+/research shows an illustrative RES profile with numbers such as 74 and 81; /rxd-scorecard and robot profiles use 1–5. The framework, instrument, and score labels need a consistent explanation. Illustrative samples must remain clearly marked.
+Recommendation: choose one visible scale or publish the conversion and context. Distinguish an experience assessment from operational safety approval. Expose method, observation date, software/hardware context, and confidence on real profiles.
+
+P2 — Shared navigation and metadata polish [confirmed]
+The YouTube footer link is # on 550 successful URL responses; this is one repeated component defect, not 550 separate destinations. Link a real channel or remove it. Many page titles repeat “The Robot Age” twice. Header sign-in goes to /signin while footer sign-in goes to the LMS root; align the intent. The main site exposes browser-agent activity text; keep developer diagnostics out of ordinary visitor journeys unless deliberately intended for that audience.
+
+P2 — Animated values are poor static fallbacks [source-confirmed]
+Crawler HTML shows zero-week/zero-hour counters and 0.0 dimensional robot scores before animation. Source uses client animation, so these are not confirmed visible final values for a fully running browser. Render the real values server-side and animate presentation without losing meaningful fallback text.
+
+P2 — Editorial and policy consistency [review needed]
+Research and news contain overlapping subjects/routes; identify one canonical article per duplicated story and provide a complete browsable archive. Use article-specific next steps instead of a universal REP promotion. /terms broadly disallows copying/adaptation while /research explicitly allows certain CC BY-NC uses; clarify the content-policy scope and exceptions. This is a wording conflict to reconcile, not a legal conclusion. Privacy and AI statements should accurately describe the actual Academy, Lab, partnership, and editorial processes.
+
+5. PAGE-BY-PAGE PURPOSE AND NEXT STEP
+Home: establish the mission, show the four offers, then evidence and editorial exploration. Primary “Explore Programs”; secondary “Request a Live Robot Lab.” Replace the REP feature with an RPDP/RDP comparison and remove the inactive Summit promotion until its status is confirmed.
+/learn: preserve the strong two-pathway Academy structure. Add a short “Looking for foundational learning or a group experience?” bridge to Robot Literacy and Live Robot Lab. Label Robot Week NYC as an introduction/event moment separately from the February teaching cohort; do not imply enrollment starts at the event. Clarify what RDP “commercial launch” means.
+/learn/rpdp: include the published price, cohort status, concrete portfolio outcomes, delivery pattern, assessment expectations, and waitlist CTA. Its current eight topic headings over five weeks need a week/module explanation, not an assumption that eight topics mean eight weeks.
+/learn/rdp: explain the four-week allocation across eight topics, who teaches it, delivery format, assessment, and price when confirmed. Add several observable learning outcomes rather than listing only the capstone artifact. Primary “Get RDP Launch Updates.”
+/robot-literacy: define READ/RELATE/COEXIST, provide useful examples, then route to the Lab, Academy, or organizational inquiry. Remove the REP dependency.
+/live-robot-lab: retain audience pricing and practical itinerary. Distinguish the school two-hour sample from the shorter corporate option; clarify NYC included transport versus metro/travel quotes. Preserve selected school/university/corporate/event intent when opening the inquiry form. Offer a follow-up path to Robot Literacy and the Academy without implying a credential is included.
+/robot-literacy/partners: correct READ; describe agreed deliverables as possibilities until a partnership is scoped. Connect robot access and educational collaboration explicitly to the Lab and literacy work.
+/enterprise: explain which program meets which business need, then request context. Make RDP the obvious deployment-training choice and RPDP the design-team option.
+/connect: label as general contact; show direct routes to Lab requests, corporate training, partnerships, and Academy updates so users do not have to restate their needs.
+/press: one approved biography and four-offer fact sheet; provide canonical links and a last-reviewed date.
+/access and /notify: remove from routine discovery. Reuse or redirect only with a clear current purpose; route program interest directly to the relevant form. An archival REP page may need its own explanation rather than a misleading automatic replacement.
+/research: organize Framework → Tool → Evidence → Interpretation. Fix rubric/index destinations; add a contextual “Apply this in RPDP” or “Use this in deployment planning” bridge.
+/research/[slug] and /research/field-signals/[slug]: disclose whether research, analysis, opinion, or illustration. Add original sources and context; quarantine unsupported outcome claims. Historical posts should retain dates and a current-status note.
+/news/[slug]: keep reporting distinct from course sales. At the end, route design/HRI articles to RPDP, readiness/governance to RDP, accessible introductory stories to Robot Literacy, and event experiences to the Lab. These are editorial associations, not evidence that completing a program qualifies someone for any job.
+/rxd: explain how RXD relates to Robot Literacy, offer the actual white paper, a scorecard action, and an RPDP application path. Keep the framework freely discoverable.
+/rxd-scorecard: include method guidance and a relevant next learning step after scoring. Treat generated results as educational assessments, not certification.
+/robots and the two valid profiles: replace obsolete cohort advertisements with “Meet these robots in Live Robot Lab” and “Learn to evaluate robot experiences.” Date observations. Hardware claims such as camera counts, autonomy, and model-specific capabilities need manufacturer/model verification; the Reachy page itself describes a wide-angle camera but later says “two cameras.”
+/robotics-map: an optional research directory, not a core program pillar. Hide unready scoring and research scaffolding; cite records and review dates before making comparative claims.
+/jobs and job detail pages: keep role discovery useful on its own. Add optional relevant learning links without suggesting program completion meets all employer requirements. Live employer availability and client-loaded filtering need separate verification.
+/what-robot-are-you and its nine result pages: keep as a discovery activity. Results should lead to learning about robots or a guided Lab; do not imply personality results are research evaluations or credentials. “Verified specs” needs dated manufacturer sources.
+/summit and /rxd-free-workshop: treat as events with explicit state (planned, registration open, closed, completed, canceled), not additional core programs. Archive past announcements responsibly.
+/privacy, /terms, /ai-statement: retain utility placement; reconcile descriptions with actual offers and editorial practices. No legal compliance determination was performed.
+/es/*: same program facts, destinations, and status as English; translate the entire conversion journey.
+
+6. BUTTON AND LINK CONTRACT
+“Explore Programs” → /learn#programs when it means professional programs; use “Explore Professional Programs” if the surrounding page also includes literacy and the Lab.
+“Understand Robot Literacy” → /robot-literacy.
+“Explore Live Robot Lab” → /live-robot-lab (overview).
+“Request a Live Robot Lab” → /live-robot-lab#request-live-robot-lab (inquiry).
+“Explore RPDP Curriculum” → /learn/rpdp#curriculum.
+“Join the RPDP Founding Cohort List” → /learn#founding-cohort-list (existing form; no reservation).
+“Explore RDP Curriculum” → /learn/rdp#curriculum.
+“Get RDP Launch Updates” → dedicated RDP-interest form (proposed); interim /learn#academy-updates must clearly say Academy updates.
+“Discuss Team Training” → /enterprise with a real inquiry section; do not append an anchor until it exists.
+“Become a Robot Literacy Partner” → /robot-literacy/partners and its actual inquiry section.
+“Read the RXD Framework” → /rxd.
+“Try the RXD Scorecard” → /rxd-scorecard.
+“Download the White Paper” → actual PDF/download flow; “Read the White Paper” should not merely open an unrelated overview.
+“Browse Field Signals” → implemented index or actual research section, never the current 404.
+“Sign in” → learner sign-in, consistent across header and footer.
+“Join,” “Request,” “Apply,” “Book,” and “Enroll” must describe different real actions. A request is not a booking; an update list is not enrollment; a general contact form is not a completed speaker application.
+
+Suggested journeys:
+School organizer: Home → Live Robot Lab → school format/pricing → Lab request → inquiry receipt and next steps.
+Designer: Article/RXD/Home → Academy comparison → RPDP curriculum → RPDP interest list → explicit non-reservation confirmation.
+Operations leader: Enterprise/Article → RDP overview → launch updates or team-training inquiry → confirmation preserving RDP interest.
+Curious visitor: Home/Quiz → Robot Literacy → Lab or freely available research; professional education remains optional.
+Robotics partner: Literacy/Lab → Partners → selected collaboration inquiry.
+
+7. IMPLEMENTATION ORDER AND ACCEPTANCE CRITERIA
+First release: centralize active program facts; update homepage/footer/article promotions; remove past-cohort and unsupported reservation copy; repair 404 links and inactive Summit controls; archive or flag unsupported program claims. Correct the arithmetic and contradictory curriculum pages. Decide the truthful status of old credentials without erasing legitimate learner history.
+
+Second release: align Robot Literacy/partners, press biography, enterprise offer, RDP-specific interest handling, Spanish copy, and research evidence. Replace placeholders with real material or omit them. Repair sitemap/search discovery and program-specific confirmations.
+
+Third release: improve editorial routing, browseable archives, scoring explanations, static counter fallbacks, metadata, and measurement. Do not start with a wholesale visual redesign; consistent decisions and destinations matter first.
+
+Use one program record per offer: stable ID, public title, credential name where applicable, audience, outcome, format, duration, start date, status, starting/total price and qualifiers, canonical URL, primary CTA, interest ID, and reviewed-at date. Store historical offerings separately. Generate menus, footer, cards, sitemap, search records, translations, form labels, and confirmation copy from these facts where practical.
+
+Acceptance criteria:
+• All active marketing shows the same four-offer model; only RPDP and RDP are presented as current professional credential pathways.
+• Every program CTA reaches the promised program, curriculum section, or form.
+• No active CTA ends at a 404, placeholder #, inactive button, or unrelated old waitlist.
+• No expired cohort is presented as open; no static scarcity or unverified outcome claim remains.
+• RPDP/RDP form interest survives submission and confirmation; a list signup never claims a reserved seat.
+• Canonical program dates/prices/statuses match across English, Spanish, metadata, shared promotions, and emails.
+• Framework names/scales and biographies are consistent; supporting studies are accessible or claims are removed/reframed.
+• Sitemap contains published canonical routes, including RDP, and excludes unpublished/error routes and avoidable redirected curriculum URLs.
+• Test the main journeys on desktop and mobile, including successful/failed form states, without generating unwanted production leads.
+
+Useful measurements after fixes: program-choice clicks, curriculum views, form starts/completions by program and audience, and misrouted/general-contact inquiries. Keep marketing consent separate from the operational response the person requested.
+
+8. OWNER FACTS TO CONFIRM BEFORE PUBLICATION
+Confirm legacy REP/RSP/RXR status and any existing learners; evidence for claimed completed cohorts and research outcomes; the current approved biography; RPDP/RDP launch dates and delivery details; RDP price; current Summit/workshop status and any travel-support commitment; real Lab testimonials/photos/measurements; and the original sources for market claims and robot specifications. These unresolved facts do not prevent the navigation and content recommendations above.

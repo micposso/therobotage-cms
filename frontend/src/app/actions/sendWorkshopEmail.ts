@@ -1,5 +1,7 @@
 'use server'
 
+import { workshopEvent } from '@/lib/events'
+
 import fs from 'fs'
 import { Resend } from 'resend'
 import { emailHtml, workshopWaitlistHtml, escapeHtml } from '@/lib/emailTemplate'
@@ -60,6 +62,7 @@ export async function sendWorkshopEmail(
   prevState: { success: boolean; waitlisted?: boolean; error?: string } | null,
   formData: FormData
 ): Promise<{ success: boolean; waitlisted?: boolean; error?: string }> {
+  if (workshopEvent.registration.availability !== 'open') return { success: false, error: 'Registration for this workshop is closed. Explore current programs at /learn.' }
   const firstName  = (formData.get('firstName')  as string | null)?.trim()
   const lastName   = (formData.get('lastName')   as string | null)?.trim()
   const email      = (formData.get('email')      as string | null)?.trim()

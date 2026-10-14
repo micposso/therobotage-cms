@@ -13,7 +13,7 @@ export async function GET() {
     const { data, error } = await resend.emails.send({
       from: 'onboarding@resend.dev',
       to: 'micposso@gmail.com',
-      subject: "[Test] You're first in line — RXD Certification",
+      subject: "[Test] Academy updates confirmation",
       html: waitlistConfirmationHtml(),
     })
 

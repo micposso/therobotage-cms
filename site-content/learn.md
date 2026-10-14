@@ -1,56 +1,13 @@
-# Learn — /learn
+# Academy — /learn
 
-## Eyebrow
-Curriculum
+Current catalog reference: October 2026. The shared implementation source is packages/ui/src/lib/certifications.ts.
 
-## H1
-Built for the people robots work beside
+The Robot Age has four offers: Robot Literacy (/robot-literacy), Live Robot Lab (/live-robot-lab), Product Design for Robots (RPDP, /learn/rpdp), and Robot Deployment Practitioner (RDP, /learn/rdp).
 
-## Subtitle
-Four credentials for designers, strategists, and leaders who need to work confidently in a world where robots are already deployed. No engineering background required.
+/learn compares the two professional credential pathways. RPDP: 5 weeks, 25 hours, live and self-paced, first cohort planned February 2027, student $149 / professional $299. Capstone: Robot Experience Design portfolio project. RDP: 4 weeks, 24 hours, commercial launch planned January 2027. Capstone: Robot Deployment Readiness Plan. Do not invent an RDP price or schedule.
 
----
+RPDP interest: /learn#founding-cohort-list. RDP interest: /learn#rdp-updates. General Academy updates: /learn#academy-updates. Joining a list does not reserve a seat or confirm enrollment.
 
-## Certifications
+Robot Literacy uses READ / RELATE / COEXIST. Live Robot Lab is a guided, in-person experience, not an Academy credential. Do not present either as a prerequisite unless explicitly required.
 
-### REP — Robotics Experience Practitioner
-**Status:** Live
-
-**Description:** Human-robot interaction, designing around failure, and evaluating real deployments. The foundational credential for anyone shaping the human side of robotics.
-
-**Specs:**
-- Duration: 4 weeks
-- Total hours: ~12 hours
-- Live sessions: 2
-- Format: Hybrid (self-paced + group sessions)
-
-**CTA:** Get your REP credential → /learn/rep
-
----
-
-### RPDP — Robotics Product Design Practitioner
-**Status:** Coming Soon
-
-**Description:** For product designers and design leads building interfaces, flows, and physical touchpoints between humans and robotic systems.
-
-**Specs:**
-- Duration: 5 weeks
-- Total hours: ~15 hours
-- Critique sessions: 2
-
----
-
-### RSP — Robotics Strategy Practitioner
-**Status:** Coming Soon
-
-**Description:** For operations leads, consultants, and executives making deployment decisions.
-
-**Specs:**
-- Duration: 4 weeks
-- Total hours: ~10 hours
-- Strategy sessions: 1
-
----
-
-### HSP — Healthcare Systems Practitioner
-**Status:** Coming Soon
+Legacy credential pages show a catalog-update notice. Historical learner records and credentials are not renamed.

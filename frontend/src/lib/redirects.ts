@@ -12,6 +12,8 @@ import type { Redirect } from 'next/dist/lib/load-custom-routes'
  * For external destinations use a full URL as the destination.
  */
 const redirects: Redirect[] = [
+  { source: '/notify', destination: '/learn#academy-updates', permanent: true },
+  { source: '/es/notify', destination: '/es/learn#academy-updates', permanent: true },
   // ── Robot literacy page ─────────────────────────────────────────────────
   // Old naming leaned toward the technical field; the new URL centers the human experience.
   { source: '/robotics-literacy', destination: '/robot-literacy', permanent: true },

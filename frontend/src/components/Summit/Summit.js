@@ -64,17 +64,17 @@ export default function Summit() {
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <button className={styles.ctaPrimary}>
+              <a href="/connect" className={styles.ctaPrimary}>
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                   <path d="M7 1a4 4 0 0 1 4 4c0 2.5-4 8-4 8S3 7.5 3 5a4 4 0 0 1 4-4z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round"/>
                   <circle cx="7" cy="5" r="1.2" fill="currentColor"/>
-                </svg>{t("Get Notified")}</button>
+                </svg>{t("Ask About the Summit")}</a>
 
-              <button className={styles.ctaSecondary}>
+              <a href="mailto:summit@therobotage.com" className={styles.ctaSecondary}>
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                   <rect x="4.5" y="1" width="5" height="7" rx="2.5" stroke="currentColor" strokeWidth="1.3"/>
                   <path d="M2 7.5A5 5 0 0 0 12 7.5M7 12v1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
-                </svg>{t("Apply to Speak")}</button>
+                </svg>{t("Discuss Speaking")}</a>
             </motion.div>
           </div>
 

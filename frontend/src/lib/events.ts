@@ -26,7 +26,7 @@ export type SiteEvent = {
   title: string
   summary: string
   description: string
-  status: 'registration-open' | 'announced'
+  status: 'registration-open' | 'announced' | 'closed'
   dates: Array<{
     label: string
     date: string
@@ -48,7 +48,7 @@ export type SiteEvent = {
     description: string
   }>
   registration: {
-    availability: 'open' | 'interest-only'
+    availability: 'open' | 'interest-only' | 'closed'
     adapter: 'workshop-email' | null
     note: string
   }
@@ -62,11 +62,11 @@ export const workshopEvent: SiteEvent = {
     'A free, three-session workshop covering robotics basics, the RXD framework, and a scored Reachy Mini case study.',
   description:
     'You don’t need a $50k humanoid to start designing robot experiences. You need the right lens. Three live Zoom sessions. Robotics basics, the RXD framework in practice, and a scored case study on Reachy Mini — the expressive desktop robot that went viral after CES. Everything you need to design and evaluate human-robot experiences with confidence.',
-  status: 'registration-open',
+  status: 'closed',
   dates: [
-    { label: 'Session 01', date: 'Tuesday, June 16', time: '7:00–7:45 pm' },
-    { label: 'Session 02', date: 'Tuesday, June 23', time: '7:00–7:45 pm' },
-    { label: 'Session 03', date: 'Tuesday, June 30', time: '7:00–7:45 pm' },
+    { label: 'Session 01', date: 'June 16, 2026', time: '7:00–7:45 pm ET' },
+    { label: 'Session 02', date: 'June 23, 2026', time: '7:00–7:45 pm ET' },
+    { label: 'Session 03', date: 'June 30, 2026', time: '7:00–7:45 pm ET' },
   ],
   location: { format: 'online', name: 'Live Zoom' },
   url: '/rxd-free-workshop',
@@ -81,9 +81,9 @@ export const workshopEvent: SiteEvent = {
     'A live scoring exercise on a real robot, ending in a Robot Readiness Audit',
   ],
   registration: {
-    availability: 'open',
-    adapter: 'workshop-email',
-    note: 'Registration uses the existing validated workshop email flow and its capacity checks.',
+    availability: 'closed',
+    adapter: null,
+    note: 'Registration for the June 2026 workshop is closed. Explore current Academy programs.',
   },
 }
 

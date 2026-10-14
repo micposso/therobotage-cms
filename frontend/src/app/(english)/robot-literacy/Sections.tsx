@@ -1,3 +1,4 @@
+import { contentHref } from '@/lib/i18n/localize'
 import type { Locale } from '@/lib/i18n/routing'
 import { uiText } from '@/lib/i18n/messages'
 import Image from 'next/image'
@@ -22,7 +23,7 @@ export function LiteracyActions({ locale = 'en' }: { locale?: Locale } = {}) {
   const t = (text: string) => uiText(text, locale)
   return <div className={styles.actions}>
     <a className={styles.button} href="#framework">{t("Explore the Framework ")}<span aria-hidden="true">↓</span></a>
-    <a className={styles.textLink} href="#inquiry">{t("Bring Robot Literacy to Your Organization")}</a>
+    <a className={styles.textLink} href="/enterprise">{t("Bring Robot Literacy to Your Organization")}</a>
   </div>
 }
 
@@ -102,7 +103,7 @@ export function RobotLiteracyApplications({ locale = 'en' }: { locale?: Locale }
         <p className={styles.eyebrow}>{t("Example questions")}</p>
         <ul className={styles.list}>{item.questions.map((question) => <li key={question}>{t(question)}</li>)}</ul>
       </>,
-      cta: <a className={styles.button} href={item.href}>{t(item.cta)}</a>,
+      cta: <a className={styles.button} href={contentHref(item.href, locale)}>{t(item.cta)}</a>,
     }))} />
   </Section>
 }
@@ -111,9 +112,9 @@ export function RobotLiteracyLearningFormats({ locale = 'en' }: { locale?: Local
   const t = (text: string) => uiText(text, locale)
   return <Section title={t("Turn understanding into experience.")} eyebrow={t("Ways to learn")}>
     <VerticalStackedCards cards={[
-      { title: t("Build Your Robot Literacy"), description: t("A structured learning path for people who want to develop foundational knowledge of robots, human–robot interaction and the societal implications of robotics."), cta: <Link className={styles.textLink} href="/learn/rep">{t("Explore the Robotics Experience Practitioner Certification ↗")}</Link> },
-      { title: t("Live Robot Lab"), description: t("Hands-on experiences with real robots. Observe behavior, ask questions and practice READ, RELATE and COEXIST with physical robotic systems."), cta: <Link className={styles.textLink} href="/live-robot-lab">{t("Explore Live Robot Lab ↗")}</Link> },
-      { title: t("Corporate Consulting & Workshops"), description: t("Programs for companies, universities and organizations applying Robot Literacy to workforce readiness, robot deployment, customer experience, governance and responsible adoption."), cta: <a className={styles.textLink} href="#inquiry">{t("Discuss a Program")}</a> },
+      { title: t("Professional Programs"), description: t("Professional pathways for people designing robot experiences (RPDP) or preparing organizations for robot deployment (RDP)."), cta: <Link className={styles.textLink} href={contentHref("/learn#programs", locale)}>{t("Explore RPDP and RDP ↗")}</Link> },
+      { title: t("Live Robot Lab"), description: t("Hands-on experiences with real robots. Observe behavior, ask questions and practice READ, RELATE and COEXIST with physical robotic systems."), cta: <Link className={styles.textLink} href={contentHref("/live-robot-lab", locale)}>{t("Explore Live Robot Lab ↗")}</Link> },
+      { title: t("Corporate Consulting & Workshops"), description: t("Programs for companies, universities and organizations applying Robot Literacy to workforce readiness, robot deployment, customer experience, governance and responsible adoption."), cta: <a className={styles.textLink} href={contentHref("/enterprise", locale)}>{t("Discuss a Program")}</a> },
     ]} />
     <p className={styles.meta}>{t("The Robot Age’s Robot Literacy framework is hardware-agnostic and can be applied across humanoids, quadrupeds, social robots, autonomous mobile robots, cobots and emerging robotic systems.")}</p>
     <p className={styles.meta}><PartnershipLink>{t("Discuss a curriculum partnership ↗")}</PartnershipLink></p>
@@ -209,9 +210,9 @@ export function LearningFormats() {
   return <Section title="Turn understanding into experience." eyebrow="08 / Ways to learn">
     <p className={local.learningPath}>Robot Literacy Framework <span aria-hidden="true">↓</span> Learning experiences <span aria-hidden="true">↓</span> Real-world application</p>
     <VerticalStackedCards cards={[
-      { title: 'Build Your Robot Literacy', description: 'A structured learning path for people who want to develop foundational knowledge of robots, human–robot interaction and the societal implications of robotics.', cta: <Link className={styles.textLink} href="/learn/rep">Explore the Robotics Experience Practitioner Certification ↗</Link> },
+      { title: 'Professional Programs', description: 'Professional pathways for people designing robot experiences (RPDP) or preparing organizations for robot deployment (RDP).', cta: <Link className={styles.textLink} href="/learn#programs">Explore RPDP and RDP ↗</Link> },
       { title: 'Live Robot Lab', description: 'Hands-on experiences with real robots. Observe behavior, ask questions and practice READ, RELATE and COEXIST with physical robotic systems.', cta: <Link className={styles.textLink} href="/live-robot-lab">Explore Live Robot Lab ↗</Link> },
-      { title: 'Corporate Consulting & Workshops', description: 'Programs for companies, universities and organizations applying Robot Literacy to workforce readiness, robot deployment, customer experience, governance and responsible adoption.', cta: <a className={styles.textLink} href="#inquiry">Discuss a Program</a> },
+      { title: 'Corporate Consulting & Workshops', description: 'Programs for companies, universities and organizations applying Robot Literacy to workforce readiness, robot deployment, customer experience, governance and responsible adoption.', cta: <a className={styles.textLink} href="/enterprise">Discuss a Program</a> },
     ]} />
   </Section>
 }

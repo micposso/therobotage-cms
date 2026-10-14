@@ -15,7 +15,7 @@ const WaitlistContext = createContext<WaitlistContextValue | null>(null)
 const initialState = { success: false, error: undefined as string | undefined }
 
 export function WaitlistProvider({ children }: { children: React.ReactNode }) {
-  const { t } = useCopy()
+  const { t, locale } = useCopy()
   const [isOpen, setIsOpen] = useState(false)
   const [state, action, pending] = useActionState(joinWaitlist, initialState)
 
@@ -67,17 +67,19 @@ export function WaitlistProvider({ children }: { children: React.ReactNode }) {
               {state.success ? (
                 <div className={styles.success}>
                   <p className={styles.eyebrow}>{t("You're on the list.")}</p>
-                  <h2 className={styles.successHeadline} id="waitlist-title">{t("We'll reach you first.")}</h2>
-                  <p className={styles.successBody}>{t("Before the public announcement, you'll hear about the cohort schedule, founding-member pricing, and direct access to the instructor. Nothing in the meantime.")}</p>
+                  <h2 className={styles.successHeadline} id="waitlist-title">{t("Check your inbox.")}</h2>
+                  <p className={styles.successBody}>{t("You have joined the Academy update list. Joining does not reserve a seat.")}</p>
                   <button className={styles.closeAction} onClick={() => setIsOpen(false)}>{t("Close")}</button>
                 </div>
               ) : (
                 <>
-                  <p className={styles.eyebrow}>{t("REP Certification")}</p>
-                  <h2 className={styles.headline} id="waitlist-title">{t("The first cohort runs May 2026.")}</h2>
-                  <p className={styles.description}>{t("Certification dates are being confirmed now. Leave your email and we'll reach you before the public announcement — with the schedule, founding-member pricing, and direct access to the instructor.")}</p>
+                  <p className={styles.eyebrow}>{t("The Robot Age Academy")}</p>
+                  <h2 className={styles.headline} id="waitlist-title">{t("Get Academy Updates")}</h2>
+                  <p className={styles.description}>{t("Get updates about RPDP and RDP. Joining the list does not reserve a seat.")}</p>
 
-                  <form action={action} className={styles.form} noValidate>
+                  <form action={action} className={styles.form}>
+                    <input type="hidden" name="interest" value="academy" />
+                    <input type="hidden" name="locale" value={locale} />
                     <div className={styles.fieldGroup}>
                       <label htmlFor="waitlist-email" className={styles.label}>{t("Email address")}</label>
                       <input
@@ -96,11 +98,11 @@ export function WaitlistProvider({ children }: { children: React.ReactNode }) {
                     )}
 
                     <button type="submit" className={styles.submitBtn} disabled={pending}>
-                      {t(pending ? 'Saving…' : 'Reserve my seat →')}
+                      {t(pending ? 'Saving…' : 'Get Academy Updates')}
                     </button>
                   </form>
 
-                  <p className={styles.legalNote}>{t("No noise. Just the announcement when it's ready.")}</p>
+                  <p className={styles.legalNote}>{t("Program updates by email. No seat reservation or payment.")}</p>
                 </>
               )}
             </motion.div>

@@ -170,7 +170,7 @@
   {
     "id": "news/summit-nyc-call-for-speakers.md",
     "route": "/news/summit-nyc-call-for-speakers",
-    "sourceHash": "ee2b8bc475fe2d8acad8a4860e6f77187bc110764b41ba47bcaa73d3d94f108f",
+    "sourceHash": "4c0056fcde12eaa6afac82cceb176bcde41f24b6f17987e0c16d8e517cf53211",
     "expiresAt": null
   },
   {
@@ -372,6 +372,12 @@
     "expiresAt": "2026-10-18T00:00:00.000Z"
   },
   {
+    "id": "jobs/director-product-management-software-apptronik.md",
+    "route": "/jobs/director-product-management-software-apptronik",
+    "sourceHash": "70eef7a843af4426cffac1916372d3afe17e62273162fbf0f8f410e79c103d49",
+    "expiresAt": "2026-12-08T00:00:00.000Z"
+  },
+  {
     "id": "jobs/director-product-quality-agility.md",
     "route": "/jobs/director-product-quality-agility",
     "sourceHash": "0f92648ca84eca24d945c25babfd662569683b38a83768375a5249340066a87e",
@@ -522,10 +528,22 @@
     "expiresAt": "2026-11-23T00:00:00.000Z"
   },
   {
+    "id": "jobs/marketing-manager-dfw-zipline.md",
+    "route": "/jobs/marketing-manager-dfw-zipline",
+    "sourceHash": "dafcd6d51477bd34000138d36d37e3d9d98fabb8684d23b75f717769f66b428d",
+    "expiresAt": "2026-12-02T00:00:00.000Z"
+  },
+  {
     "id": "jobs/marketing-manager-events-content-collaborative-robotics.md",
     "route": "/jobs/marketing-manager-events-content-collaborative-robotics",
     "sourceHash": "34572d55f7025320fd597cd0c3bc1af908ec248a079d0babba704ca063751f6a",
     "expiresAt": "2026-11-30T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/marketing-manager-phoenix-zipline.md",
+    "route": "/jobs/marketing-manager-phoenix-zipline",
+    "sourceHash": "2fded3d2e79adcd9b12a6fe3f88617b1ea7cdf3ec43b460fa6fa76537e039d71",
+    "expiresAt": "2026-12-02T00:00:00.000Z"
   },
   {
     "id": "jobs/marketing-operations-manager-contract-skydio.md",
@@ -598,6 +616,12 @@
     "route": "/jobs/principal-product-manager-physical-ai-dexterity",
     "sourceHash": "6c181bb3a6f73de4d8bfd591367b03d1b993c13f938b06a24b58a872df623533",
     "expiresAt": "2026-10-16T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/principal-program-manager-customer-success-agility.md",
+    "route": "/jobs/principal-program-manager-customer-success-agility",
+    "sourceHash": "d892cf35c4845f33c288d9d024e162380d35245e4a47aeb21e4c8225e96b49d5",
+    "expiresAt": "2026-12-05T00:00:00.000Z"
   },
   {
     "id": "jobs/principal-technical-product-manager-shield-ai.md",
@@ -804,6 +828,12 @@
     "expiresAt": "2026-11-24T00:00:00.000Z"
   },
   {
+    "id": "jobs/program-manager-dfr-new-jersey-skydio.md",
+    "route": "/jobs/program-manager-dfr-new-jersey-skydio",
+    "sourceHash": "1eb6f17c2aead03a0dd8d1c1fada25a14885967dbce53458f77a5ee121160b3b",
+    "expiresAt": "2026-12-04T00:00:00.000Z"
+  },
+  {
     "id": "jobs/program-manager-fms-shield-ai.md",
     "route": "/jobs/program-manager-fms-shield-ai",
     "sourceHash": "080bd1985827478d2ea0927426473ffd9f042a89985330fdb0d6bd9c9eab9e25",
@@ -996,6 +1026,12 @@
     "expiresAt": "2026-11-07T00:00:00.000Z"
   },
   {
+    "id": "jobs/senior-electrical-engineer-hri-visuals-apptronik.md",
+    "route": "/jobs/senior-electrical-engineer-hri-visuals-apptronik",
+    "sourceHash": "f02c9ed3f955c94a520b8baba8fe9654ec277529aa6d8b8f5d4ee238c12216d3",
+    "expiresAt": "2026-11-27T00:00:00.000Z"
+  },
+  {
     "id": "jobs/senior-industrial-designer-amazon-robotics.md",
     "route": "/jobs/senior-industrial-designer-amazon-robotics",
     "sourceHash": "f01c77a89561f176cb88ed2dc6bb1709ef107ab14afc5cdd8050c311b45d139e",
@@ -1176,10 +1212,28 @@
     "expiresAt": "2026-11-03T00:00:00.000Z"
   },
   {
+    "id": "jobs/senior-staff-data-scientist-robotics-agility.md",
+    "route": "/jobs/senior-staff-data-scientist-robotics-agility",
+    "sourceHash": "50bf2fd8e95d3fa75abd1f9fbb03ec8835b9b7515e86de44e339d392147f20af",
+    "expiresAt": "2026-12-05T00:00:00.000Z"
+  },
+  {
     "id": "jobs/senior-staff-designer-shield-ai.md",
     "route": "/jobs/senior-staff-designer-shield-ai",
     "sourceHash": "28c0639ed422d1cabd2ced94a0950dab6115aabe12f1489202ad694fd4cbddfb",
     "expiresAt": "2026-11-23T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-staff-engineer-machine-learning-online-mapping-nuro.md",
+    "route": "/jobs/senior-staff-engineer-machine-learning-online-mapping-nuro",
+    "sourceHash": "df253af3c1a268092dcbb5f76917cc47aef663064336e44321fbfb05b76838de",
+    "expiresAt": "2026-12-08T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/senior-staff-machine-learning-engineer-sensor-simulation-nuro.md",
+    "route": "/jobs/senior-staff-machine-learning-engineer-sensor-simulation-nuro",
+    "sourceHash": "5743d3c6ee5a27c058493cec57c573aec9b4e0597863353ca22cf5fa409ec68b",
+    "expiresAt": "2026-12-08T00:00:00.000Z"
   },
   {
     "id": "jobs/senior-staff-machine-learning-research-scientist-generative-modeling-planning-nuro.md",
@@ -1306,6 +1360,12 @@
     "route": "/jobs/staff-hardware-technical-program-manager-agility",
     "sourceHash": "de3db657b03d36d68abf5b05c4bf818ec72c774185351398d47c30e601f382b6",
     "expiresAt": "2026-12-01T00:00:00.000Z"
+  },
+  {
+    "id": "jobs/staff-lead-machine-learning-engineer-behavior-planning-nuro.md",
+    "route": "/jobs/staff-lead-machine-learning-engineer-behavior-planning-nuro",
+    "sourceHash": "fb6a12045f4ce6a1166e38338571e6fb72b16465513e0c79a2820ff7b60e78c6",
+    "expiresAt": "2026-12-08T00:00:00.000Z"
   },
   {
     "id": "jobs/staff-ml-research-scientist-boston-dynamics.md",
@@ -1488,6 +1548,12 @@
     "expiresAt": "2026-11-06T00:00:00.000Z"
   },
   {
+    "id": "jobs/technical-program-manager-trust-and-safety-zipline.md",
+    "route": "/jobs/technical-program-manager-trust-and-safety-zipline",
+    "sourceHash": "dfa77519931351494b6ee2cacce9a85008ad7ab76973fe585093a3dbbefbdfa9",
+    "expiresAt": "2026-12-07T00:00:00.000Z"
+  },
+  {
     "id": "jobs/technical-program-manager-vehicle-os-applied-intuition.md",
     "route": "/jobs/technical-program-manager-vehicle-os-applied-intuition",
     "sourceHash": "8c59ab1d08b7e0d9cb5b04c2f9e5cbcab839d5a807136cadb8da907af5e92ef8",
@@ -1580,7 +1646,7 @@
   {
     "id": "research/first-rep-workplace.md",
     "route": "/research/first-rep-workplace",
-    "sourceHash": "cb71373e5e3b93c88550ff24f2eacef6df427ccdfae3a22a1276e67c13d543e7",
+    "sourceHash": "e2f0464c9ca5f9d799e202ef468bf87facb6a7c2855146028e9e262a30657e81",
     "expiresAt": null
   },
   {
@@ -1592,13 +1658,13 @@
   {
     "id": "research/human-readiness-framework.md",
     "route": "/research/human-readiness-framework",
-    "sourceHash": "32b2922f7c5de086f02fc51f1c71eae9ac3521a5448a193cc0bf829dbe049568",
+    "sourceHash": "74d3544ef63361ffcfcc46fc69f9b32a2d7ad6618b5f84db7f564a2658c02820",
     "expiresAt": null
   },
   {
     "id": "research/rlp-module-1-1-live.md",
     "route": "/research/rlp-module-1-1-live",
-    "sourceHash": "1f4aea1b683871bdb339e08025af638d719c207d0de17efa2309884483ff0374",
+    "sourceHash": "66156d1248ebdbce8726c83952ae18fd6fea45a16b9fe1853743e2bf7259fc6a",
     "expiresAt": null
   },
   {
@@ -1610,7 +1676,7 @@
   {
     "id": "research/summit-nyc-call-for-speakers.md",
     "route": "/research/summit-nyc-call-for-speakers",
-    "sourceHash": "7bc970855d1114670c20c59add634c839a0d72416e29b9152fb233e353db5158",
+    "sourceHash": "b829c5d2f00c21eff2bc7883bdee421e95f4827d224219fbf75ee0dec5e4e1c0",
     "expiresAt": null
   },
   {

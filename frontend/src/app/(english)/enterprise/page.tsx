@@ -1,3 +1,5 @@
+import Link from 'next/link'
+import { programLinks } from '@/lib/certifications'
 import Nav from '@/components/Nav/Nav'
 import PageHero from '@/components/PageHero/PageHero'
 import Footer from '@/components/Footer/Footer'
@@ -22,7 +24,7 @@ export const metadata = {
 const WHY_CARDS = [
   {
     title: 'Robots are arriving faster than the training',
-    body: 'Most deployment failures trace back to the humans around the robot, not the robot itself. Operational teams need a shared language before the machine arrives on the floor.',
+    body: 'Deployment outcomes depend on people, workflows, environments, and technology. Prepare teams with a shared language before robots arrive.',
   },
   {
     title: 'Non-engineering staff carry the risk',
@@ -39,7 +41,7 @@ const WALKAWAY_ITEMS = [
   'Practical frameworks for assessing and closing knowledge gaps on your team.',
   'Language for communicating robot capabilities and limits to non-technical stakeholders.',
   'A deployment readiness baseline your organization can revisit as the fleet grows.',
-  'Access to certification tracks aligned to your operational context.',
+  'A relevant learning pathway: Robot Literacy, Live Robot Lab, RPDP for design teams, or RDP for deployment teams.',
 ]
 
 export default function EnterprisePage() {
@@ -88,6 +90,15 @@ export default function EnterprisePage() {
         </div>
       </section>
 
+      <section className={styles.whySection}>
+        <div className="container-fluid">
+          <h2 className={styles.formHeading}>Find the right program for your team</h2>
+          <div className={styles.cardGrid}>{programLinks.map((program) => <article className={styles.card} key={program.href}>
+            <h3 className={styles.cardTitle}>{program.label}</h3><p className={styles.cardBody}>{program.summary}</p>
+            <Link href={program.href}>{program.cta} →</Link>
+          </article>)}</div>
+        </div>
+      </section>
       {/* Request a briefing */}
       <section className={styles.formSection}>
         <div className="container-fluid">

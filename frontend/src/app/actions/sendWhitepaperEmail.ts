@@ -58,8 +58,8 @@ export async function sendWhitepaperEmail(
           The credentials, frameworks, and research we publish are built for non-engineers — to give you the vocabulary and mental models to do your job well in a workplace that has changed.
         </p>
         <p style="font-family:Georgia,serif;font-size:15px;line-height:1.75;color:#2A2A28;margin:0;">
-          If you want to go further, the REP credential is the structured path — four tracks, no engineering prerequisites. Explore the research at
-          <a href="https://therobotage.com" style="color:#9b5152;text-decoration:none;">therobotage.com</a>,
+          Explore Robot Literacy, hands-on Live Robot Lab experiences, and the Academy’s two professional pathways: RPDP for product design and RDP for deployment. Find current programs at
+          <a href="https://therobotage.com/learn" style="color:#9b5152;text-decoration:none;">The Robot Age Academy</a>,
           or reply to this email with any questions.
         </p>
       `),

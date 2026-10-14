@@ -17,10 +17,10 @@ excerpt: >-
   está diseñado para cerrar.
 translation:
   locale: es
-  sourceHash: 32b2922f7c5de086f02fc51f1c71eae9ac3521a5448a193cc0bf829dbe049568
+  sourceHash: 74d3544ef63361ffcfcc46fc69f9b32a2d7ad6618b5f84db7f564a2658c02820
   version: 1
-  model: gpt-4.1-mini-2025-04-14
-  generatedAt: '2026-09-22T18:07:37.270Z'
+  model: editorial-catalog-update
+  generatedAt: '2026-10-14T12:58:28.933Z'
   reviewed: false
 ---
 La mayoría de los despliegues de robots fallan no porque el robot se rompa, sino porque las personas a su alrededor no estaban preparadas. La máquina funciona. El contexto no. Esta es la brecha que el Marco de Preparación Humana está diseñado para cerrar.
@@ -33,4 +33,4 @@ El marco es deliberadamente no técnico. Fue diseñado para ser administrado por
 
 Los primeros pilotos que usaron el HRF mostraron una reducción del 34 % en eventos de escalamiento durante los primeros 90 días del despliegue. Los equipos que obtuvieron alta puntuación en "circuitos de retroalimentación" — es decir, que contaban con formas estructuradas de recopilar y actuar según las observaciones en primera línea — superaron a sus pares con baja puntuación en casi todas las métricas de adopción.
 
-El HRF está disponible como parte del currículo REP y será publicado completamente como una herramienta de investigación abierta más adelante este año.
+Actualización del programa — octubre de 2026: este artículo anterior sobre el marco no anuncia la disponibilidad de un curso actual. Explora RPDP y RDP en la página de la Academia para conocer los itinerarios profesionales actuales.

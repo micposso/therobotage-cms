@@ -10,7 +10,6 @@ const spanish: Record<string, string> = {
   Pages: 'Páginas', Certifications: 'Certificaciones', Follow: 'Síguenos', 'All rights reserved.': 'Todos los derechos reservados.',
   'Privacy Policy': 'Política de privacidad', 'Terms of Use': 'Términos de uso', 'Fair use of AI': 'Uso responsable de la IA',
   'What Robot Are You?': '¿Qué robot eres?', 'RXD Scorecard': 'Evaluación RXD', Access: 'Acceso', Connect: 'Contacto', Summit: 'Encuentro',
-  'Robotics Experience Practitioner': 'Profesional de experiencia robótica', 'Robot Experience Designer': 'Diseñador de experiencia robótica',
   'Cookie preferences': 'Preferencias de cookies',
   'We use cookies to understand how visitors use The Robot Age and to improve your experience.': 'Usamos cookies para entender cómo se utiliza The Robot Age y mejorar tu experiencia.',
   'Manage preferences': 'Gestionar preferencias', 'Reject non-essential': 'Rechazar las no esenciales', 'Accept all': 'Aceptar todas',

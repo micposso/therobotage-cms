@@ -1,33 +1,25 @@
 ---
 id: 2
 slug: rlp-module-1-1-live
-category: CERTIFICACIÓN
+category: ARCHIVE
 date: 'March 28, 2026'
-headline: >-
-  El Módulo 1.1 de RLP está disponible: fundamentos de la alfabetización
-  robótica para profesionales
+headline: 'Anuncio de programa archivado: itinerarios de aprendizaje actuales'
 image: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1200&q=80'
-title: >-
-  El Módulo 1.1 de RLP está disponible: fundamentos de la alfabetización
-  robótica para profesionales
+title: 'Anuncio de programa archivado: itinerarios de aprendizaje actuales'
 excerpt: >-
-  El Módulo 1.1 — Fundamentos de la Alfabetización Robótica — ya está disponible
-  para todos los alumnos registrados. Es el primer módulo de la certificación
-  Robotics Experience Practitioner (REP) y es gratuito.
+  Actualización del programa — octubre de 2026. La disponibilidad del módulo y
+  la credencial descritas anteriormente aquí ya no forman parte del catálogo
+  público actual.
 translation:
   locale: es
-  sourceHash: 1f4aea1b683871bdb339e08025af638d719c207d0de17efa2309884483ff0374
+  sourceHash: 66156d1248ebdbce8726c83952ae18fd6fea45a16b9fe1853743e2bf7259fc6a
   version: 1
-  model: gpt-4.1-mini-2025-04-14
-  generatedAt: '2026-09-22T18:07:33.863Z'
+  model: editorial-catalog-update
+  generatedAt: '2026-10-14T12:58:28.905Z'
   reviewed: false
 ---
-El Módulo 1.1 — Fundamentos de la Alfabetización Robótica — ya está disponible para todos los alumnos registrados. Es el primer módulo de la certificación Robotics Experience Practitioner (REP) y es gratuito.
+Actualización del programa — octubre de 2026. La disponibilidad del módulo y la credencial descritas anteriormente aquí ya no forman parte del catálogo público actual.
 
-El módulo cubre tres áreas centrales: qué son en realidad los robots (no la versión de ciencia ficción), cómo perciben y actúan en entornos físicos, y por qué las decisiones humanas hechas en torno a ellos importan más que las máquinas mismas.
+Empieza con Robot Literacy para adquirir conocimientos básicos, experimenta con robots reales en Live Robot Lab o explora los itinerarios profesionales de la Academia: Diseño de productos para robots (RPDP) y Profesional de despliegue de robots (RDP).
 
-Su duración aproximada es de dos horas y no requiere conocimientos técnicos previos. Al finalizar, los alumnos podrán describir en lenguaje sencillo la arquitectura básica de un sistema robótico, identificar los momentos clave en que la interacción humano-robot es más propensa a fallar y explicar por qué la alfabetización robótica es importante para roles no ingenieriles.
-
-El módulo está estructurado en tres lecciones: Máquinas y Conceptos Erróneos, Percepción y Acción, y La Capa Humana. Cada lección incluye lecturas, un video corto y una reflexión. Los alumnos que completen las tres lecciones recibirán un certificado digital de finalización.
-
-El Módulo 1.2 — Interacción Humano-Robot — está en desarrollo y se espera que abra inscripciones más adelante este trimestre. Los alumnos registrados serán notificados al momento de su lanzamiento.
+Consulta los currículos, las fechas previstas y las listas de interés en la Academia. Inscribirse en una lista no reserva una plaza. Los estudiantes actuales pueden iniciar sesión para acceder a su historial de aprendizaje.

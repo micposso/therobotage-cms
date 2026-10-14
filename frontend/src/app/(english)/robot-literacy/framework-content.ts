@@ -64,15 +64,15 @@ export const applications = [
     description: 'The Robot Age’s Robot Literacy framework helps leaders, workers, designers and technology teams examine capabilities, human interaction, workflow changes, privacy, accessibility, risk and accountability before treating robotics as simply a technology purchase or engineering concern.',
     questions: ['Should a robot perform this task?', 'How will employees or customers interact with it?', 'What happens when it fails?', 'Who remains responsible?'],
     cta: 'Explore Robot Literacy Consulting',
-    href: '#inquiry',
+    href: '/enterprise',
   },
   {
     audience: 'For Individuals & Society',
     title: 'Build the knowledge needed to live and work alongside robots.',
     description: 'The Robot Age’s Robot Literacy framework gives professionals, students and the public a way to examine robots entering workplaces, public spaces and everyday life without needing to code or build robots, while understanding questions involving privacy, employment, accessibility, governance and human responsibility.',
     questions: ['What should I know when I encounter a robot?', 'What can it perceive about me?', 'How could robots change my profession?', 'What rules and expectations should society develop?'],
-    cta: 'Build Your Robot Literacy',
-    href: '/learn/rep',
+    cta: 'Explore Professional Programs',
+    href: '/learn#programs',
   },
 ] as const
 

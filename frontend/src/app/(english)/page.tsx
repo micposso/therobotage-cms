@@ -6,9 +6,9 @@ import Nav from '@/components/Nav/Nav'
 import HeroHomepage from '@/components/HeroHomepage/HeroHomepage'
 import HomeNewsSection from '@/components/HomeNewsSection/HomeNewsSection'
 import Certification from '@/components/Certification/Certification'
-import Summit from '@/components/Summit/Summit'
 import Footer from '@/components/Footer/Footer'
 import { getAllNewsArticles } from '@/lib/news'
+import { academyPrograms } from '@/lib/certifications'
 import { siteOverview } from '@/lib/site'
 import { translationAlternates } from '@/lib/i18n/content'
 
@@ -20,12 +20,14 @@ const jsonLd = [
     url: 'https://therobotage.com',
     description: siteOverview.summary,
     sameAs: ['https://linkedin.com/company/therobotage'],
-    offers: {
-      '@type': 'Course',
-      name: 'Robotics Experience Practitioner (REP)',
-      description: 'The foundational credential for non-engineers shaping the human side of robotics.',
-      url: 'https://therobotage.com/learn',
-      provider: { '@type': 'Organization', name: 'The Robot Age' },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'The Robot Age Academy',
+      itemListElement: academyPrograms.map((program) => ({
+        '@type': 'Course', name: program.title, description: program.description,
+        url: `https://therobotage.com/learn/${program.slug}`,
+        provider: { '@type': 'Organization', name: 'The Robot Age Academy' },
+      })),
     },
   },
   {
@@ -92,7 +94,6 @@ export default async function Home({ params }: { params: Promise<{ locale?: Loca
       <HeroHomepage images={heroImages} />
       <HomeNewsSection articles={articles} />
       <Certification />
-      <Summit />
       <Footer />
     </>
   )

@@ -580,8 +580,8 @@ export default function Scorecard() {
                 )}
               </div>
 
-              <Link href="/learn/rep" className={styles.repCta}>
-                Get the REP credential
+              <Link href="/learn/rpdp#curriculum" className={styles.repCta}>
+                Explore RPDP Curriculum
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
