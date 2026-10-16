@@ -1,4 +1,5 @@
 'use client'
+import { imageUrl } from '@/lib/image-assets'
 
 import { useRef, useState } from 'react'
 import { useLanguage } from '@/components/LanguageSwitcher/LanguageProvider'
@@ -47,7 +48,7 @@ export default function RobotLiteracyVideo({
           slot="media"
           className={local.literacyVideoMedia}
           src={src}
-          poster={poster || undefined}
+          poster={poster ? imageUrl(poster) : undefined}
           preload={poster ? 'none' : 'metadata'}
           playsInline
           onPlay={() => setIsPlaying(true)}

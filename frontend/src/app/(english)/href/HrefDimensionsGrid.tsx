@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
-import Image from 'next/image'
+import Image from '@/components/MediaImage'
 import styles from './HrefDimensionsGrid.module.css'
 
 interface Dimension {

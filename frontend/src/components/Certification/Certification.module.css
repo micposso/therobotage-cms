@@ -9,6 +9,11 @@
   margin-bottom: var(--space-16);
 }
 
+.headerRow .subhead {
+  font-size: var(--text-md);
+  line-height: 1.6;
+}
+
 .eyebrow {
   font-family: var(--font-body);
   font-weight: 400;
@@ -119,6 +124,83 @@
 
 .trackCard:first-child {
   border-left: none;
+}
+
+.section .headerCta {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.trackCta,
+.compareCta {
+  padding-left: 10px;
+  background-image: linear-gradient(225deg, transparent 7px, var(--color-accent) 7px);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0% 100%;
+  transition: background-size 300ms ease, color 200ms ease;
+}
+
+.trackCta {
+  margin-top: auto;
+}
+
+.section .compareCta {
+  color: var(--color-tertiary);
+  border-color: var(--color-tertiary);
+  background-image: linear-gradient(225deg, transparent 7px, var(--color-tertiary) 7px);
+}
+
+.section .headerCta:hover {
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+.section .trackCta:hover {
+  background-size: 100% 100%;
+  color: #fff;
+  border-color: var(--color-accent);
+}
+
+.section .compareCta:hover {
+  background-size: 100% 100%;
+  color: #fff;
+  border-color: var(--color-tertiary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trackCta, .compareCta { transition: none; }
+}
+
+.trackImage {
+  --image-cut: clamp(16px, 2vw, 28px);
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  margin-bottom: var(--space-3);
+  overflow: hidden;
+  isolation: isolate;
+  clip-path: polygon(var(--image-cut) 0, 100% 0, 100% calc(100% - var(--image-cut)), calc(100% - var(--image-cut)) 100%, 0 100%, 0 var(--image-cut));
+}
+
+.trackImage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-right: 3px solid var(--color-accent);
+  border-bottom: 3px solid var(--color-accent);
+  pointer-events: none;
+}
+
+.trackImage img {
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .trackCard:hover .trackImage img,
+  .trackCard:focus-within .trackImage img { transform: scale(1.04); }
 }
 
 .trackLive {
@@ -540,6 +622,9 @@
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+  .tracksGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .trackCard:nth-child(odd) { border-left: none; }
+
   .featuredCard {
     min-height: 460px;
   }

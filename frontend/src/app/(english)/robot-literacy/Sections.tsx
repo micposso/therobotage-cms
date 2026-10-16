@@ -1,7 +1,8 @@
+import { imageAsset } from '@/lib/image-assets'
 import { contentHref } from '@/lib/i18n/localize'
 import type { Locale } from '@/lib/i18n/routing'
 import { uiText } from '@/lib/i18n/messages'
-import Image from 'next/image'
+import Image from '@/components/MediaImage'
 import Link from 'next/link'
 import MediaPlaceholder from '@/components/MediaPlaceholder/MediaPlaceholder'
 import PageHero from '@/components/PageHero/PageHero'
@@ -12,9 +13,17 @@ import { PartnershipLink } from './Interactive'
 import RobotLiteracyVideo from './RobotLiteracyVideo'
 import styles from '@/app/(english)/live-robot-lab/live-robot-lab.module.css'
 import local from './robot-literacy.module.css'
+import schoolsImageLocal from '../../../../public/images/robot-literacy/schools.webp'
+const schoolsImage = imageAsset('/images/robot-literacy/schools.webp', schoolsImageLocal)
+import organizationsImageLocal from '../../../../public/images/robot-literacy/organizations.webp'
+const organizationsImage = imageAsset('/images/robot-literacy/organizations.webp', organizationsImageLocal)
+import societyImageLocal from '../../../../public/images/robot-literacy/society.webp'
+const societyImage = imageAsset('/images/robot-literacy/society.webp', societyImageLocal)
+
+const applicationImages = [schoolsImage, organizationsImage, societyImage]
 
 const frameworkHeaderImages = {
-  READ: '/images/signal-icon.png',
+  INTERPRET: '/images/signal-icon.png',
   RELATE: '/images/heart.png',
   COEXIST: '/images/human.png',
 } as const
@@ -31,9 +40,9 @@ export function FrameworkProgression({ locale = 'en' }: { locale?: Locale } = {}
   const t = (text: string) => uiText(text, locale)
   return <ol className={local.progression} aria-label={t("Robot Literacy framework areas")}>
     {framework.map((area) => <li id={area.title.toLowerCase()} key={area.title}>
-      <a href={`#${area.title.toLowerCase()}`}>
-        <strong>{t(area.title)}</strong>
-        <span>{t(area.scale)}</span>
+      <article className={local.progressionCard} aria-labelledby={`${area.title.toLowerCase()}-title`}>
+        <h2 id={`${area.title.toLowerCase()}-title`} className={local.progressionTitle}>{t(area.title)}</h2>
+        <p className={local.progressionSubtitle}>{t(area.scale)}</p>
         <div className={local.progressionImage}>
           <Image
             src={frameworkHeaderImages[area.title]}
@@ -44,11 +53,11 @@ export function FrameworkProgression({ locale = 'en' }: { locale?: Locale } = {}
         </div>
         <p className={local.progressionDescription}>{t(area.description)}</p>
         {'principle' in area && area.principle && <p className={local.progressionDescription}>{t(area.principle)}</p>}
-        <ul className={local.progressionQuestions}>
+        {area.headerQuestions.length > 0 && <ul className={local.progressionQuestions}>
           {area.headerQuestions.map((question) => <li key={question}>{t(question)}</li>)}
-        </ul>
-        <span className={local.progressionConcepts}>{area.topics.map(t).join(' · ')}</span>
-      </a>
+        </ul>}
+        <p className={local.progressionConcepts}>{area.topics.map(t).join(' · ')}</p>
+      </article>
     </li>)}
   </ol>
 }
@@ -93,27 +102,34 @@ export function RobotLiteracyFrameworkSummary({ locale = 'en' }: { locale?: Loca
 
 export function RobotLiteracyApplications({ locale = 'en' }: { locale?: Locale } = {}) {
   const t = (text: string) => uiText(text, locale)
-  return <Section title={t("What does Robot Literacy mean for you?")} eyebrow={t("Application")}>
+  return <Section id="literacy-applications" title={t("What does Robot Literacy mean for you?")} eyebrow={t("Application")}>
     <p className={styles.intro}>{t("The same framework can help people understand robots in very different environments.")}</p>
-    <VerticalStackedCards cards={applications.map((item) => ({
-      title: t(item.title),
-      eyebrow: t(item.audience),
-      description: t(item.description),
-      content: <>
-        <p className={styles.eyebrow}>{t("Example questions")}</p>
-        <ul className={styles.list}>{item.questions.map((question) => <li key={question}>{t(question)}</li>)}</ul>
-      </>,
-      cta: <a className={styles.button} href={contentHref(item.href, locale)}>{t(item.cta)}</a>,
-    }))} />
+    <div className={local.applicationRows}>
+      {applications.map((item, index) => <article className={local.applicationRow} key={item.audience}>
+        <div className={local.applicationImage}>
+          <Image src={applicationImages[index]} alt="" fill sizes="(max-width: 900px) 100vw, 40vw" />
+        </div>
+        <div className={local.applicationCopy}>
+          <p className={styles.eyebrow}>{t(item.audience)}</p>
+          <h3>{t(item.title)}</h3>
+          <p className={local.applicationDescription}>{t(item.description)}</p>
+          <div className={local.applicationQuestions}>
+            <p className={styles.eyebrow}>{t('Example questions')}</p>
+            <ul>{item.questions.map((question) => <li key={question}>{t(question)}</li>)}</ul>
+          </div>
+          <Link className={styles.button} href={contentHref(item.href, locale)}>{t(item.cta)} <span aria-hidden="true">→</span></Link>
+        </div>
+      </article>)}
+    </div>
   </Section>
 }
 
 export function RobotLiteracyLearningFormats({ locale = 'en' }: { locale?: Locale } = {}) {
   const t = (text: string) => uiText(text, locale)
-  return <Section title={t("Turn understanding into experience.")} eyebrow={t("Ways to learn")}>
+  return <Section id="literacy-learning" title={t("Turn understanding into experience.")} eyebrow={t("Ways to learn")}>
     <VerticalStackedCards cards={[
       { title: t("Professional Programs"), description: t("Professional pathways for people designing robot experiences (RPDP) or preparing organizations for robot deployment (RDP)."), cta: <Link className={styles.textLink} href={contentHref("/learn#programs", locale)}>{t("Explore RPDP and RDP ↗")}</Link> },
-      { title: t("Live Robot Lab"), description: t("Hands-on experiences with real robots. Observe behavior, ask questions and practice READ, RELATE and COEXIST with physical robotic systems."), cta: <Link className={styles.textLink} href={contentHref("/live-robot-lab", locale)}>{t("Explore Live Robot Lab ↗")}</Link> },
+      { title: t("Live Robot Lab"), description: t("Hands-on experiences with real robots. Observe behavior, ask questions and practice INTERPRET, RELATE and COEXIST with physical robotic systems."), cta: <Link className={styles.textLink} href={contentHref("/live-robot-lab", locale)}>{t("Explore Live Robot Lab ↗")}</Link> },
       { title: t("Corporate Consulting & Workshops"), description: t("Programs for companies, universities and organizations applying Robot Literacy to workforce readiness, robot deployment, customer experience, governance and responsible adoption."), cta: <a className={styles.textLink} href={contentHref("/enterprise", locale)}>{t("Discuss a Program")}</a> },
     ]} />
     <p className={styles.meta}>{t("The Robot Age’s Robot Literacy framework is hardware-agnostic and can be applied across humanoids, quadrupeds, social robots, autonomous mobile robots, cobots and emerging robotic systems.")}</p>
@@ -211,7 +227,7 @@ export function LearningFormats() {
     <p className={local.learningPath}>Robot Literacy Framework <span aria-hidden="true">↓</span> Learning experiences <span aria-hidden="true">↓</span> Real-world application</p>
     <VerticalStackedCards cards={[
       { title: 'Professional Programs', description: 'Professional pathways for people designing robot experiences (RPDP) or preparing organizations for robot deployment (RDP).', cta: <Link className={styles.textLink} href="/learn#programs">Explore RPDP and RDP ↗</Link> },
-      { title: 'Live Robot Lab', description: 'Hands-on experiences with real robots. Observe behavior, ask questions and practice READ, RELATE and COEXIST with physical robotic systems.', cta: <Link className={styles.textLink} href="/live-robot-lab">Explore Live Robot Lab ↗</Link> },
+      { title: 'Live Robot Lab', description: 'Hands-on experiences with real robots. Observe behavior, ask questions and practice INTERPRET, RELATE and COEXIST with physical robotic systems.', cta: <Link className={styles.textLink} href="/live-robot-lab">Explore Live Robot Lab ↗</Link> },
       { title: 'Corporate Consulting & Workshops', description: 'Programs for companies, universities and organizations applying Robot Literacy to workforce readiness, robot deployment, customer experience, governance and responsible adoption.', cta: <a className={styles.textLink} href="/enterprise">Discuss a Program</a> },
     ]} />
   </Section>
@@ -250,6 +266,6 @@ export function LiteracyClosing() {
     <h2>Now we need to learn how to live with robots.</h2>
     <p className={styles.intro}>The Robot Age’s Robot Literacy framework prepares people not simply to use robots, but to understand them, interact with them responsibly and make informed decisions about the role they should play in our world.</p>
     <LiteracyActions />
-    <div className={styles.brand}><p>READ → RELATE → COEXIST</p><p>Preparing people and organizations for a world with robots.</p></div>
+    <div className={styles.brand}><p>INTERPRET → RELATE → COEXIST</p><p>Preparing people and organizations for a world with robots.</p></div>
   </div></section>
 }

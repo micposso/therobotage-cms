@@ -1,3 +1,4 @@
+import { imageUrl } from '@/lib/image-assets'
 import { uiText } from '@/lib/i18n/messages'
 import type { Locale } from '@/lib/i18n/routing'
 import Nav from '@/components/Nav/Nav'
@@ -21,11 +22,11 @@ export const metadata = {
   openGraph: {
     title: 'Research — The Robot Age',
     description: 'Original frameworks, field observations, and critical perspectives on the human side of robotics deployment.',
-    images: [{ url: '/images/hand.png', alt: 'The Robot Age' }],
+    images: [{ url: imageUrl('/images/hand.png'), alt: 'The Robot Age' }],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/images/hand.png'],
+    images: [imageUrl('/images/hand.png')],
   },
 }
 

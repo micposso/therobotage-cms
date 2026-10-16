@@ -1,7 +1,10 @@
+import { imageAsset } from '@/lib/image-assets'
 import { contentHref } from '@/lib/i18n/localize'
 import { uiText } from '@/lib/i18n/messages'
 import type { Locale } from '@/lib/i18n/routing'
-import Image from 'next/image'
+import Image from '@/components/MediaImage'
+import groupSessionLocal from '../../../../public/images/live-robot-lab/group-session.webp'
+const groupSession = imageAsset('/images/live-robot-lab/group-session.webp', groupSessionLocal)
 import type { ReactNode } from 'react'
 import {
   agenda,
@@ -97,12 +100,12 @@ export function ExperiencePrinciples({ locale = 'en' }: { locale?: Locale } = {}
       title={t("This isn't a robot demo.")}
       eyebrow={t("Learn through experience")}
     >
-      <p className={styles.subheading}>{t("Robots aren't just something to watch. They're something to understand.")}</p>
+      <p className={styles.experienceStatement}>{t("Robots aren't just something to watch. They're something to understand.")}</p>
       <p className={styles.intro}>{t("Live Robot Lab combines demonstration, interaction, experimentation, and discussion to help participants understand how modern robots perceive, move, communicate, and interact with humans.")}</p>
       <div className={styles.fourGrid}>
         {principles.map(([title, body], i) => (
           <article className={styles.card} key={title}>
-            <p className={styles.eyebrow}>0{i + 1}</p>
+            <p className={styles.principleNumber}>0{i + 1}</p>
             <h3>{t(title ?? '')}</h3>
             <p>{t(body ?? '')}</p>
           </article>
@@ -255,19 +258,13 @@ export function AudienceLevels({ locale = 'en' }: { locale?: Locale } = {}) {
 export function SocialProof({ locale = 'en' }: { locale?: Locale } = {}) {
   const t = (text: string) => uiText(text, locale)
   return (
-    <Section
-      title={t("Robots are better understood when you can actually meet one.")}
-      eyebrow={t("From the workshop floor")}
-    >
-      <div className={styles.twoGrid}>
+    <section className={styles.section}>
+      <div className={styles.container}>
+      <div className={styles.workshopLayout}>
+      <div className={styles.workshopCopy}>
+        <p className={styles.eyebrow}>{t('From the workshop floor')}</p>
+        <h2>{t('Robots are better understood when you can actually meet one.')}</h2>
         <p className={styles.lead}>{t("Live Robot Lab grew out of The Robot Age's hands-on robotics workshops exploring how people understand, trust, and interact with intelligent machines.")}</p>
-        <figure className={styles.photoPlaceholder}>
-          <span className={styles.mediaMark} aria-hidden="true">
-            +
-          </span>
-          <figcaption>{t("Workshop photo coming soon")}</figcaption>
-        </figure>
-      </div>
       <div className={styles.threeGrid}>
         {workshopMetrics.map((metric) => (
           <div className={styles.card} key={metric.label}>
@@ -291,7 +288,13 @@ export function SocialProof({ locale = 'en' }: { locale?: Locale } = {}) {
           </article>
         ))}
       </div>
-    </Section>
+      </div>
+      <div className={styles.requestImage}>
+        <Image src={groupSession} alt={t('Illustration of a group observing a quadruped robot, with participants taking notes')} fill sizes="(max-width: 900px) 100vw, 45vw" />
+      </div>
+      </div>
+      </div>
+    </section>
   )
 }
 

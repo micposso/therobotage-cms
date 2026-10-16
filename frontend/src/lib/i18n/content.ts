@@ -4,6 +4,7 @@ import path from 'node:path'
 import matter from 'gray-matter'
 import { cache } from 'react'
 import { marked } from 'marked'
+import { imageHtml } from '../image-assets'
 import catalog from '../../../translations/catalog.json'
 import { VERSION } from '../../../scripts/translation-core.mjs'
 import { learnRoutes } from './learn-routes'
@@ -25,12 +26,12 @@ export const getTranslatedContent = cache((): TranslatedContent[] => {
     if (!fs.existsSync(file)) return []
     const { data, content } = matter(fs.readFileSync(file, 'utf8'))
     if (data.translation?.locale !== 'es' || data.translation?.sourceHash !== source.sourceHash || data.translation?.version !== VERSION) return []
-    return [{ id: source.id, route: source.route, data, body: content, html: String(marked.parse(content)), generatedAt: String(data.translation.generatedAt) }]
+    return [{ id: source.id, route: source.route, data, body: content, html: imageHtml(String(marked.parse(content))), generatedAt: String(data.translation.generatedAt) }]
   })
 })
 
 export function getAvailableTranslations(): string[] {
-  return ['/', '/research', '/robots', '/jobs', '/search', ...learnRoutes, ...getTranslatedContent().map((entry) => entry.route).filter(Boolean)]
+  return ['/', '/research', '/robots', '/jobs', '/search', '/rxd', '/rxd-scorecard', ...learnRoutes, ...getTranslatedContent().map((entry) => entry.route).filter(Boolean)]
 }
 
 export function getTranslation(route: string) {

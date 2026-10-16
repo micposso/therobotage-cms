@@ -58,6 +58,12 @@
   max-width: 24ch;
   margin-bottom: var(--space-10);
 }
+
+.page > .section > .container > h2 {
+  --text-heading: clamp(3rem, 4.5vw, 4rem);
+  max-width: none;
+  text-wrap: pretty;
+}
 .page h3 {
   font-size: var(--text-lg);
   line-height: 1.2;
@@ -201,6 +207,38 @@
   font-size: var(--text-md);
   max-width: 48ch;
   margin-bottom: var(--space-6);
+}
+.experienceStatement {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.25;
+  max-width: none;
+  margin-bottom: var(--space-6);
+}
+.card .principleNumber {
+  font-family: var(--font-body);
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-6);
+}
+.workshopLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: start;
+  gap: clamp(32px, 5vw, 72px);
+}
+.workshopCopy { min-width: 0; }
+.page .workshopCopy > h2 {
+  --text-heading: clamp(3rem, 4.5vw, 4rem);
+  max-width: none;
+}
+.workshopCopy .card h3 { --text-heading: 1.5rem; }
+.workshopLayout > .requestImage { margin-top: 0; }
+@media (max-width: 900px) {
+  .workshopLayout { grid-template-columns: minmax(0, 1fr); }
 }
 .fourGrid,
 .threeGrid {
@@ -362,6 +400,36 @@
 }
 .form {
   max-width: 960px;
+}
+.requestLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: start;
+  gap: clamp(32px, 5vw, 72px);
+}
+.requestImage {
+  --image-cut: clamp(16px, 2vw, 28px);
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  margin-top: var(--space-8);
+  overflow: hidden;
+  isolation: isolate;
+  clip-path: polygon(var(--image-cut) 0, 100% 0, 100% calc(100% - var(--image-cut)), calc(100% - var(--image-cut)) 100%, 0 100%, 0 var(--image-cut));
+}
+.requestImage img { object-fit: cover; }
+.requestImage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-right: 3px solid var(--color-accent);
+  border-bottom: 3px solid var(--color-accent);
+  pointer-events: none;
+}
+@media (max-width: 900px) {
+  .requestLayout { grid-template-columns: minmax(0, 1fr); }
+  .requestImage { max-width: 600px; }
 }
 .formGrid {
   display: grid;

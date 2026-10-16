@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState, type ReactNode } from 'react'
-import Image from 'next/image'
+import Image from '@/components/MediaImage'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import styles from './PageHero.module.css'
 

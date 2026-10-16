@@ -1,3 +1,4 @@
+import { imageUrl } from '@/lib/image-assets'
 import { uiText } from '@/lib/i18n/messages'
 import { localize, contentHref } from '@/lib/i18n/localize'
 import type { Locale } from '@/lib/i18n/routing'
@@ -25,13 +26,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: essay.headline,
       description: essay.body[0],
       type: 'article',
-      images: [{ url: '/images/hand.png', alt: 'The Robot Age' }],
+      images: [{ url: imageUrl('/images/hand.png'), alt: 'The Robot Age' }],
     },
     twitter: {
       card: 'summary_large_image',
       title: essay.headline,
       description: essay.body[0],
-      images: ['/images/hand.png'],
+      images: [imageUrl('/images/hand.png')],
     },
   }
 }

@@ -1,3 +1,4 @@
+import { imageUrl } from '@/lib/image-assets'
 import Nav from '@/components/Nav/Nav'
 import Footer from '@/components/Footer/Footer'
 import RoboticsMapExplorer from '@/components/RoboticsMap/RoboticsMapExplorer'
@@ -10,11 +11,11 @@ export const metadata = {
   openGraph: {
     title: 'Robotics Map — The Robot Age',
     description: 'Explore robotics companies by geography, sector, robot type, founding year, and business signal.',
-    images: [{ url: '/images/robot.png', alt: 'The Robot Age' }],
+    images: [{ url: imageUrl('/images/robot.png'), alt: 'The Robot Age' }],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/images/robot.png'],
+    images: [imageUrl('/images/robot.png')],
   },
 }
 

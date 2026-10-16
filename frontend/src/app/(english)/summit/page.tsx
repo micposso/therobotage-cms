@@ -1,3 +1,4 @@
+import { imageUrl } from '@/lib/image-assets'
 import Nav from '@/components/Nav/Nav'
 import PageHero from '@/components/PageHero/PageHero'
 import Summit from '@/components/Summit/Summit'
@@ -10,11 +11,11 @@ export const metadata = {
   openGraph: {
     title: 'Summit — The Robot Age',
     description: 'A gathering for the people shaping human-robot experience.',
-    images: [{ url: '/images/hand.png', alt: 'The Robot Age Summit' }],
+    images: [{ url: imageUrl('/images/hand.png'), alt: 'The Robot Age Summit' }],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/images/hand.png'],
+    images: [imageUrl('/images/hand.png')],
   },
 }
 

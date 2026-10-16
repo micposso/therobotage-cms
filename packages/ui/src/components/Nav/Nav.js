@@ -17,7 +17,7 @@ const NAV_LINKS = [
   { label: 'ENTERPRISE',    href: '/enterprise' },
 ]
 
-export default function Nav({ pinned = false, baseUrl = '', cta = null, utilitySlot = null, translate = (text) => text, resolveHref = (href) => href }) {
+export default function Nav({ pinned = false, baseUrl = '', logoSrc = `${baseUrl}/brand/tra-logo.svg`, cta = null, utilitySlot = null, translate = (text) => text, resolveHref = (href) => href }) {
   const [scrolled, setScrolled]       = useState(false)
   const [menuOpen, setMenuOpen]       = useState(false)
   const [searchOpen, setSearchOpen]   = useState(false)
@@ -73,7 +73,7 @@ export default function Nav({ pinned = false, baseUrl = '', cta = null, utilityS
 
             {/* Logo — always visible on mobile */}
             <a href={resolveHref(`${baseUrl}/`)} className={styles.logoMobile}>
-              <Image src={`${baseUrl}/brand/tra-logo.svg`} alt="The Robot Age" width={90} height={36} className={styles.logoImage} unoptimized />
+              <Image src={logoSrc} alt="The Robot Age" width={90} height={36} className={styles.logoImage} loading="eager" unoptimized />
             </a>
 
             {/* Logo — visible on scroll (desktop) */}
@@ -87,7 +87,7 @@ export default function Nav({ pinned = false, baseUrl = '', cta = null, utilityS
                   exit={{ opacity: 0, x: -12 }}
                   transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <Image src={`${baseUrl}/brand/tra-logo.svg`} alt="The Robot Age" width={90} height={36} className={styles.logoImage} unoptimized />
+                  <Image src={logoSrc} alt="The Robot Age" width={90} height={36} className={styles.logoImage} loading="eager" unoptimized />
                 </motion.a>
               )}
             </AnimatePresence>

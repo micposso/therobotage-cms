@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect, useCallback, useActionState } from 'react'
-import Image from 'next/image'
+import Image from '@/components/MediaImage'
 import Link from 'next/link'
 import { sendWhitepaperEmail } from '@/app/actions/sendWhitepaperEmail'
 import styles from './rxd-scorecard.module.css'
@@ -437,7 +437,7 @@ export default function Scorecard() {
     const v = verdictFor(finalAvg)
     return {
       robotName: robotName.trim(),
-      context: context.trim(),
+      context: 'UNREVIEWED PRACTICE — not an index evaluation. ' + context.trim(),
       dims: DIMENSIONS.map((d) => ({ title: d.title, score: scores[d.key] as number, note: notes[d.key] })),
       avg: finalAvg,
       total,
@@ -692,10 +692,10 @@ export default function Scorecard() {
             <div className={styles.summaryInner}>
               <p className={styles.summaryEyebrow}>Overall</p>
               <div className={styles.summaryScore}>
-                <span className={styles.summaryAvg}>{avg.toFixed(1)}</span>
+                <span className={styles.summaryAvg}>{complete ? avg.toFixed(1) : '—'}</span>
                 <span className={styles.summaryAvgMax}>/ 5</span>
               </div>
-              <p className={styles.summaryTotal}>{total} / 30 total</p>
+              <p className={styles.summaryTotal}>{complete ? `${total} / 30 · Unreviewed practice` : 'No overall score — incomplete assessment'}</p>
 
               <div className={styles.summaryBars}>
                 {DIMENSIONS.map((d) => {

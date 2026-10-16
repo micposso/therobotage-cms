@@ -3,6 +3,7 @@ import path from 'path'
 import { createHash } from 'node:crypto'
 import matter from 'gray-matter'
 import { marked } from 'marked'
+import { imageUrl, imageHtml } from './image-assets'
 
 export interface NewsArticleMeta {
   slug: string
@@ -52,8 +53,8 @@ function parseFrontmatter(file: string): NewsArticleMeta {
     category: (data.category ?? 'NEWS') as string,
     date: data.date as string,
     excerpt: (data.excerpt ?? '') as string,
-    headerImage: (data.headerImage ?? '') as string,
-    thumbnailImage: (data.thumbnailImage ?? '') as string,
+    headerImage: imageUrl((data.headerImage ?? '') as string),
+    thumbnailImage: imageUrl((data.thumbnailImage ?? '') as string),
     author: data.author as string | undefined,
   }
 }
@@ -77,7 +78,7 @@ export function getNewsArticleBySlug(slug: string): NewsArticle | undefined {
     if (data.slug === slug) {
       return {
         ...parseFrontmatter(file),
-        content: String(marked.parse(md)),
+        content: imageHtml(String(marked.parse(md))),
         audioUrl: getAudioUrl(slug, raw),
       }
     }

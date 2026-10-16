@@ -1,0 +1,267 @@
+{
+  "schemaVersion": "1.0",
+  "robot": {
+    "id": "synthetic-example-robot",
+    "slug": "synthetic-example-robot",
+    "manufacturer": "SYNTHETIC Manufacturer",
+    "model": "SYNTHETIC Model",
+    "variant": "Fixture only",
+    "description": "Synthetic schema example, not a factual robot profile.",
+    "category": "Synthetic mobile robot",
+    "applications": [
+      "Validator testing"
+    ],
+    "physicalFunction": "Synthetic delivery task",
+    "physical": true,
+    "commerciallyReleased": true,
+    "ownershipAvailable": true,
+    "humanInteraction": "Synthetic user interaction",
+    "availability": "purchase",
+    "deployment": "integration",
+    "prerequisites": [
+      "Synthetic configuration"
+    ],
+    "acquisition": {
+      "channel": "manufacturer",
+      "url": "https://example.org/rxd-fixtures/purchase",
+      "verifiedAt": "2026-01-01",
+      "evidenceIds": [
+        "purchase"
+      ],
+      "region": "Synthetic region",
+      "notes": "Synthetic purchase and fulfillment claim for tests only."
+    },
+    "specifications": [
+      {
+        "name": "Unknown dimension",
+        "value": null,
+        "evidenceIds": []
+      }
+    ],
+    "imagery": [],
+    "editorialStatus": "pending",
+    "createdAt": "2026-01-01",
+    "updatedAt": "2026-01-01"
+  },
+  "evaluation": {
+    "id": "synthetic-example-robot-v1",
+    "version": "1",
+    "robotId": "synthetic-example-robot",
+    "methodologyVersion": "1.0",
+    "classification": "research",
+    "date": "2026-01-01",
+    "evaluator": "synthetic-fixture-author",
+    "firmware": null,
+    "configuration": "Synthetic; not tested",
+    "environment": "Synthetic; not observed",
+    "participants": [],
+    "dimensions": [
+      {
+        "dimension": "signal",
+        "status": "insufficient",
+        "score": null,
+        "evidenceQuality": "low",
+        "method": "research",
+        "protocolId": "RXD-SC-001",
+        "protocolVersion": "1.0-draft",
+        "evidenceIds": [
+          "purchase"
+        ],
+        "observations": [
+          "Only synthetic product documentation is represented."
+        ],
+        "limitations": [
+          "Behavioral evidence unavailable; no performance score."
+        ],
+        "evaluatorNotes": "Missing evidence is not poor performance."
+      },
+      {
+        "dimension": "spatial",
+        "status": "insufficient",
+        "score": null,
+        "evidenceQuality": "low",
+        "method": "research",
+        "protocolId": "RXD-SL-001",
+        "protocolVersion": "1.0-draft",
+        "evidenceIds": [
+          "purchase"
+        ],
+        "observations": [
+          "Only synthetic product documentation is represented."
+        ],
+        "limitations": [
+          "Behavioral evidence unavailable; no performance score."
+        ],
+        "evaluatorNotes": "Missing evidence is not poor performance."
+      },
+      {
+        "dimension": "presence",
+        "status": "insufficient",
+        "score": null,
+        "evidenceQuality": "low",
+        "method": "research",
+        "protocolId": "RXD-PP-001",
+        "protocolVersion": "1.0-draft",
+        "evidenceIds": [
+          "purchase"
+        ],
+        "observations": [
+          "Only synthetic product documentation is represented."
+        ],
+        "limitations": [
+          "Behavioral evidence unavailable; no performance score."
+        ],
+        "evaluatorNotes": "Missing evidence is not poor performance."
+      },
+      {
+        "dimension": "failure",
+        "status": "insufficient",
+        "score": null,
+        "evidenceQuality": "low",
+        "method": "research",
+        "protocolId": "RXD-FT-001",
+        "protocolVersion": "1.0-draft",
+        "evidenceIds": [
+          "purchase"
+        ],
+        "observations": [
+          "Only synthetic product documentation is represented."
+        ],
+        "limitations": [
+          "Behavioral evidence unavailable; no performance score."
+        ],
+        "evaluatorNotes": "Missing evidence is not poor performance."
+      },
+      {
+        "dimension": "fit",
+        "status": "insufficient",
+        "score": null,
+        "evidenceQuality": "low",
+        "method": "research",
+        "protocolId": "RXD-IF-001",
+        "protocolVersion": "1.0-draft",
+        "evidenceIds": [
+          "purchase"
+        ],
+        "observations": [
+          "Only synthetic product documentation is represented."
+        ],
+        "limitations": [
+          "Behavioral evidence unavailable; no performance score."
+        ],
+        "evaluatorNotes": "Missing evidence is not poor performance."
+      },
+      {
+        "dimension": "recovery",
+        "status": "insufficient",
+        "score": null,
+        "evidenceQuality": "low",
+        "method": "research",
+        "protocolId": "RXD-RD-001",
+        "protocolVersion": "1.0-draft",
+        "evidenceIds": [
+          "purchase"
+        ],
+        "observations": [
+          "Only synthetic product documentation is represented."
+        ],
+        "limitations": [
+          "Behavioral evidence unavailable; no performance score."
+        ],
+        "evaluatorNotes": "Missing evidence is not poor performance."
+      }
+    ],
+    "findings": [
+      "Synthetic example only."
+    ],
+    "limitations": [
+      "No real product or research process is represented."
+    ],
+    "trials": [],
+    "review": {
+      "state": "pending",
+      "reviewer": null,
+      "date": null,
+      "notes": "SYNTHETIC — human review required; never publish."
+    },
+    "aiAssisted": true,
+    "disclosures": {
+      "payment": "Synthetic fixture",
+      "relationships": "Synthetic fixture",
+      "manufacturerParticipation": "Synthetic fixture"
+    }
+  },
+  "evidence": [
+    {
+      "id": "purchase",
+      "title": "SYNTHETIC fixture source — no real research",
+      "publisher": "Synthetic Example Organization",
+      "url": "https://example.org/rxd-fixtures/purchase",
+      "publicationDate": null,
+      "accessedAt": "2026-01-01",
+      "provenance": "manufacturer-documentation",
+      "independence": "manufacturer-controlled",
+      "context": "SYNTHETIC: imaginary scenario for validator coverage only.",
+      "locator": "Synthetic fixture section; no actual timestamp or quotation.",
+      "observations": [
+        "Synthetic observation used only to exercise validation."
+      ],
+      "limitations": [
+        "Not factual evidence. Never publish or use for a real robot."
+      ],
+      "demonstratesFailure": false,
+      "participantEvidence": false,
+      "robotId": "synthetic-example-robot",
+      "dimensions": [
+        "signal",
+        "spatial",
+        "presence",
+        "failure",
+        "fit",
+        "recovery"
+      ],
+      "claimType": "claim"
+    }
+  ],
+  "revisions": [
+    {
+      "previousVersion": null,
+      "version": "1",
+      "date": "2026-01-01",
+      "reviewer": null,
+      "description": "Created synthetic validator fixture.",
+      "reason": "Exercise contract, not research."
+    }
+  ],
+  "research": {
+    "synthetic": true,
+    "question": "Can the contract represent incomplete evidence?",
+    "date": "2026-01-01",
+    "evaluatorId": "synthetic-fixture-author",
+    "gaps": [
+      "No actual research or observation exists."
+    ],
+    "editorialNotes": [
+      "Never publish this fixture."
+    ],
+    "fulfillmentConfirmed": true,
+    "fulfillmentEvidenceIds": [
+      "purchase"
+    ],
+    "sourceDecisions": [
+      {
+        "url": "https://example.org/rxd-fixtures/purchase",
+        "decision": "included",
+        "reason": "Synthetic fixture source only."
+      }
+    ],
+    "disagreements": [],
+    "finalDecision": "pending",
+    "overallScore": null,
+    "coverage": {
+      "documented": 6,
+      "assessed": 0,
+      "total": 6
+    }
+  }
+}

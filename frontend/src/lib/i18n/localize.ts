@@ -1,4 +1,5 @@
 import 'server-only'
+import { imageHtml } from '../image-assets'
 import { getTranslation, getAvailableTranslations } from './content'
 import { localizedHref, type Locale } from './routing'
 
@@ -13,10 +14,10 @@ export function localize<T>(value: T, route: string, locale: Locale): T {
   for (const key of fields) {
     if (key in original && entry.data[key] !== undefined) result[key] = entry.data[key]
   }
-  if ('content' in original) result.content = entry.html
+  if ('content' in original) result.content = imageHtml(entry.html)
   if ('overview' in original) result.overview = entry.body.trim()
   if ('body' in original) result.body = entry.body.trim().split(/\n\s*\n/)
-  if ('descriptionHtml' in original) result.descriptionHtml = entry.html
+  if ('descriptionHtml' in original) result.descriptionHtml = imageHtml(entry.html)
   if ('audioUrl' in original) result.audioUrl = undefined
   return result as T
 }

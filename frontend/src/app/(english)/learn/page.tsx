@@ -1,6 +1,8 @@
+import { imageUrl } from '@/lib/image-assets'
+import { imageAsset } from '@/lib/image-assets'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-import Image from 'next/image'
+import Image from '@/components/MediaImage'
 import Link from 'next/link'
 import { pageMetadata } from '@/lib/i18n/page-metadata'
 import { contentHref } from '@/lib/i18n/localize'
@@ -18,20 +20,28 @@ import cohort from '@/components/FoundingCohort/FoundingCohort.module.css'
 import credential from './[credential]/CredentialPage.module.css'
 import layout from './learn.module.css'
 import LearnMain from './LearnMain'
-import rpdpFeature from '../../../../public/images/academy/rpdp-feature.webp'
-import rpdpProgram from '../../../../public/images/academy/rpdp-program.webp'
-import rdpProgram from '../../../../public/images/academy/rdp-program.webp'
-import designGap from '../../../../public/images/academy/design-gap.webp'
-import deploymentGap from '../../../../public/images/academy/deployment-gap.webp'
-import curriculum from '../../../../public/images/academy/curriculum.webp'
-import corporateTraining from '../../../../public/images/academy/corporate-training.webp'
-import closing from '../../../../public/images/academy/closing.webp'
+import rpdpFeatureLocal from '../../../../public/images/academy/rpdp-feature.webp'
+const rpdpFeature = imageAsset('/images/academy/rpdp-feature.webp', rpdpFeatureLocal)
+import rpdpProgramLocal from '../../../../public/images/academy/rpdp-program.webp'
+const rpdpProgram = imageAsset('/images/academy/rpdp-program.webp', rpdpProgramLocal)
+import rdpProgramLocal from '../../../../public/images/academy/rdp-program.webp'
+const rdpProgram = imageAsset('/images/academy/rdp-program.webp', rdpProgramLocal)
+import designGapLocal from '../../../../public/images/academy/design-gap.webp'
+const designGap = imageAsset('/images/academy/design-gap.webp', designGapLocal)
+import deploymentGapLocal from '../../../../public/images/academy/deployment-gap.webp'
+const deploymentGap = imageAsset('/images/academy/deployment-gap.webp', deploymentGapLocal)
+import curriculumLocal from '../../../../public/images/academy/curriculum.webp'
+const curriculum = imageAsset('/images/academy/curriculum.webp', curriculumLocal)
+import corporateTrainingLocal from '../../../../public/images/academy/corporate-training.webp'
+const corporateTraining = imageAsset('/images/academy/corporate-training.webp', corporateTrainingLocal)
+import closingLocal from '../../../../public/images/academy/closing.webp'
+const closing = imageAsset('/images/academy/closing.webp', closingLocal)
 
 const description = 'Professional education in product design for robots and commercial robot deployment. Explore RPDP and RDP at The Robot Age Academy. No robotics engineering background required.'
 const baseMetadata: Metadata = {
   title: 'The Robot Age Academy — Product Design & Robot Deployment', description,
-  openGraph: { title: 'The Robot Age Academy — Product Design & Robot Deployment', description, images: [{ url: '/images/human.png', alt: 'The Robot Age Academy' }] },
-  twitter: { card: 'summary_large_image', description, images: ['/images/human.png'] },
+  openGraph: { title: 'The Robot Age Academy — Product Design & Robot Deployment', description, images: [{ url: imageUrl('/images/human.png'), alt: 'The Robot Age Academy' }] },
+  twitter: { card: 'summary_large_image', description, images: [imageUrl('/images/human.png')] },
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale?: Locale }> }): Promise<Metadata> {

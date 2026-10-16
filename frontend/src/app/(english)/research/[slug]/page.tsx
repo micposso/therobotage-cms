@@ -1,8 +1,9 @@
 import { uiText } from '@/lib/i18n/messages'
+import { imageUrl } from '@/lib/image-assets'
 import { localize, contentHref } from '@/lib/i18n/localize'
 import type { Locale } from '@/lib/i18n/routing'
 import { notFound } from 'next/navigation'
-import Image from 'next/image'
+import Image from '@/components/MediaImage'
 import Link from 'next/link'
 import Nav from '@/components/Nav/Nav'
 import Footer from '@/components/Footer/Footer'
@@ -27,13 +28,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: article.headline,
       description: article.body[0],
       type: 'article',
-      ...(article.image && { images: [{ url: article.image, alt: article.headline }] }),
+      ...(article.image && { images: [{ url: imageUrl(article.image), alt: article.headline }] }),
     },
     twitter: {
       card: 'summary_large_image',
       title: article.headline,
       description: article.body[0],
-      ...(article.image && { images: [article.image] }),
+      ...(article.image && { images: [imageUrl(article.image)] }),
     },
   }
 }

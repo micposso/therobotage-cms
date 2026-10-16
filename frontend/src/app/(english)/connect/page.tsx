@@ -1,3 +1,4 @@
+import { imageUrl } from '@/lib/image-assets'
 import Nav from '@/components/Nav/Nav'
 import PageHero from '@/components/PageHero/PageHero'
 import Footer from '@/components/Footer/Footer'
@@ -10,11 +11,11 @@ export const metadata = {
   openGraph: {
     title: 'Connect — The Robot Age',
     description: 'Get in touch, follow the work, or join the community.',
-    images: [{ url: '/images/human.png', alt: 'The Robot Age' }],
+    images: [{ url: imageUrl('/images/human.png'), alt: 'The Robot Age' }],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/images/human.png'],
+    images: [imageUrl('/images/human.png')],
   },
 }
 

@@ -2,7 +2,7 @@
 import { useCopy } from '@/lib/i18n/useCopy'
 
 import { useRef } from 'react'
-import Image from 'next/image'
+import Image from '@/components/MediaImage'
 import { motion, useInView } from 'framer-motion'
 import styles from './AboutInstructor.module.css'
 

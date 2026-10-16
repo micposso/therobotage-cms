@@ -1,0 +1,153 @@
+{
+  "schemaVersion": "1.0",
+  "robot": {
+    "id": "synthetic-browser-check",
+    "model": "Synthetic fixture",
+    "manufacturer": "Synthetic",
+    "category": "Fixture",
+    "applications": [
+      "Validation"
+    ],
+    "physicalFunction": "Synthetic test only",
+    "physical": true,
+    "commerciallyReleased": false,
+    "ownershipAvailable": false,
+    "humanInteraction": "Synthetic test only",
+    "availability": "unverified",
+    "deployment": "integration",
+    "prerequisites": [],
+    "acquisition": {
+      "channel": null,
+      "url": null,
+      "verifiedAt": null,
+      "evidenceIds": [],
+      "region": "Not verified",
+      "notes": "Scorecard draft; commercial eligibility must be researched before index submission."
+    },
+    "specifications": []
+  },
+  "evaluation": {
+    "id": "synthetic-browser-check-draft",
+    "version": "1",
+    "robotId": "synthetic-browser-check",
+    "methodologyVersion": "1.0",
+    "classification": "research",
+    "date": "2026-10-16",
+    "evaluator": "Synthetic browser test",
+    "firmware": null,
+    "configuration": "Synthetic test only",
+    "environment": "Synthetic test only",
+    "participants": [],
+    "dimensions": [
+      {
+        "dimension": "signal",
+        "status": "not-assessed",
+        "score": null,
+        "evidenceQuality": null,
+        "method": "research",
+        "protocolId": "RXD-SC-001",
+        "protocolVersion": "1.0-draft",
+        "evidenceIds": [],
+        "observations": [],
+        "limitations": [
+          "Evidence not yet documented"
+        ],
+        "evaluatorNotes": ""
+      },
+      {
+        "dimension": "spatial",
+        "status": "not-assessed",
+        "score": null,
+        "evidenceQuality": null,
+        "method": "research",
+        "protocolId": "RXD-SL-001",
+        "protocolVersion": "1.0-draft",
+        "evidenceIds": [],
+        "observations": [],
+        "limitations": [
+          "Evidence not yet documented"
+        ],
+        "evaluatorNotes": ""
+      },
+      {
+        "dimension": "presence",
+        "status": "not-assessed",
+        "score": null,
+        "evidenceQuality": null,
+        "method": "research",
+        "protocolId": "RXD-PP-001",
+        "protocolVersion": "1.0-draft",
+        "evidenceIds": [],
+        "observations": [],
+        "limitations": [
+          "Evidence not yet documented"
+        ],
+        "evaluatorNotes": ""
+      },
+      {
+        "dimension": "failure",
+        "status": "not-assessed",
+        "score": null,
+        "evidenceQuality": null,
+        "method": "research",
+        "protocolId": "RXD-FT-001",
+        "protocolVersion": "1.0-draft",
+        "evidenceIds": [],
+        "observations": [],
+        "limitations": [
+          "Evidence not yet documented"
+        ],
+        "evaluatorNotes": ""
+      },
+      {
+        "dimension": "fit",
+        "status": "not-assessed",
+        "score": null,
+        "evidenceQuality": null,
+        "method": "research",
+        "protocolId": "RXD-IF-001",
+        "protocolVersion": "1.0-draft",
+        "evidenceIds": [],
+        "observations": [],
+        "limitations": [
+          "Evidence not yet documented"
+        ],
+        "evaluatorNotes": ""
+      },
+      {
+        "dimension": "recovery",
+        "status": "not-assessed",
+        "score": null,
+        "evidenceQuality": null,
+        "method": "research",
+        "protocolId": "RXD-RD-001",
+        "protocolVersion": "1.0-draft",
+        "evidenceIds": [],
+        "observations": [],
+        "limitations": [
+          "Evidence not yet documented"
+        ],
+        "evaluatorNotes": ""
+      }
+    ],
+    "findings": [],
+    "limitations": [
+      "No real research or testing"
+    ],
+    "trials": [],
+    "review": {
+      "state": "pending",
+      "reviewer": null,
+      "date": null,
+      "notes": "User-authored draft; no publication approval."
+    },
+    "aiAssisted": false,
+    "disclosures": {
+      "payment": "Synthetic",
+      "relationships": "Synthetic",
+      "manufacturerParticipation": "Synthetic"
+    }
+  },
+  "evidence": [],
+  "revisions": []
+}

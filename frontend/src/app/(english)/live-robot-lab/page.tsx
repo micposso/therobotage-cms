@@ -1,8 +1,13 @@
+import { imageUrl } from '@/lib/image-assets'
+import { imageAsset } from '@/lib/image-assets'
 import { contentHref } from '@/lib/i18n/localize'
 import { pageMetadata } from '@/lib/i18n/page-metadata'
 import { uiText } from '@/lib/i18n/messages'
 import type { Locale } from '@/lib/i18n/routing'
 import type { Metadata } from 'next'
+import Image from '@/components/MediaImage'
+import groupSessionLocal from '../../../../public/images/live-robot-lab/group-session.webp'
+const groupSession = imageAsset('/images/live-robot-lab/group-session.webp', groupSessionLocal)
 import Nav from '@/components/Nav/Nav'
 import Footer from '@/components/Footer/Footer'
 import LiveRobotLabRequestForm from './LiveRobotLabRequestForm'
@@ -36,7 +41,7 @@ const baseMetadata: Metadata = {
     url: '/live-robot-lab',
     images: [
       {
-        url: '/images/robots/unitree-go2-pro/shop-01.png',
+        url: imageUrl('/images/robots/unitree-go2-pro/shop-01.png'),
         alt: 'Unitree Go2 Pro at The Robot Age Live Robot Lab',
       },
     ],
@@ -45,7 +50,7 @@ const baseMetadata: Metadata = {
     card: 'summary_large_image',
     title,
     description,
-    images: ['/images/robots/unitree-go2-pro/shop-01.png'],
+    images: [imageUrl('/images/robots/unitree-go2-pro/shop-01.png')],
   },
 }
 
@@ -87,7 +92,12 @@ export default async function LiveRobotLabPage({ params }: { params: Promise<{ l
           eyebrow={t("Request a Live Robot Lab")}
         >
           <p className={styles.intro}>{t("Tell us about your school, organization, or event. We'll recommend the right Live Robot Lab format and provide pricing and availability.")}</p>
-          <LiveRobotLabRequestForm />
+          <div className={styles.requestLayout}>
+            <div className={styles.requestImage}>
+              <Image src={groupSession} alt="A group observing a quadruped robot in a casual workshop, with participants taking notes" fill sizes="(max-width: 900px) 100vw, 45vw" />
+            </div>
+            <LiveRobotLabRequestForm />
+          </div>
         </Section>
         <FinalCTA locale={locale} />
       </main>

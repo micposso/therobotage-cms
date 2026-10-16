@@ -1,3 +1,4 @@
+import { imageUrl } from '@/lib/image-assets'
 import Nav from '@/components/Nav/Nav'
 import PageHero from '@/components/PageHero/PageHero'
 import Footer from '@/components/Footer/Footer'
@@ -14,11 +15,11 @@ export const metadata = {
     title: "Product & UX Design for a World With Robots — Free Workshop",
     description:
       "Three live Zoom sessions covering robotics basics, the RXD framework, and a scored case study on Reachy Mini.",
-    images: [{ url: "/images/hand.png", alt: "The Robot Age" }],
+    images: [{ url: imageUrl("/images/hand.png"), alt: "The Robot Age" }],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/images/hand.png"],
+    images: [imageUrl("/images/hand.png")],
   },
 }
 

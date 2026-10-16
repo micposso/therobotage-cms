@@ -1,0 +1,13 @@
+{
+  "mode": "Built-in image_gen",
+  "images": [
+    {
+      "path": "frontend/public/images/enterprise/hotel-team.webp",
+      "prompt": "Use case: photorealistic-natural. Square editorial website photograph for The Robot Age enterprise education. Two professional hotel housekeeping staff in neat neutral uniforms working alongside a contemporary autonomous floor-cleaning robot in a bright upscale hotel guest room. One staff member straightens white linen on the bed while the other supervises the compact commercial cleaning robot moving on the open floor beside the bed, holding a simple tablet. Robot is a plausible wheeled commercial floor scrubber with visible cleaning base, white and graphite housing and small sensors, not a humanoid. Warm window daylight, muted beige wood and cream palette, natural candid expressions, realistic hospitality setting, people and robot sharing work. Medium-wide composition showing staff, robot and bed clearly, main subjects within central 85 percent. Photorealistic documentary quality matching warm editorial robotics photographs. No text, signage, logos, watermark, border or collage."
+    },
+    {
+      "path": "frontend/public/images/live-robot-lab/group-session.webp",
+      "prompt": "Use case: photorealistic-natural. Square editorial photograph for The Robot Age Live Robot Lab webpage. A diverse group of five adults in a casual sunlit community lounge or creative studio, watching a Unitree Go2 Pro-style quadruped robot demonstrating on an open floor. Plausible Go2 Pro appearance: compact silver-gray and black doglike rectangular body, front camera and lidar sensor, four slender articulated legs with black rounded feet, no head or tail. Robot completely visible in foreground. Two attendees seated on simple chairs take handwritten notes in paper notepads, while others just observe attentively, with an adult facilitator nearby. Relaxed everyday clothing, warm natural window light, neutral wood, indoor plants, muted neutral colors, candid documentary realism matching warm editorial robotics education photos. Medium-wide composition showing robot and people clearly. No legible text, logos, watermark, collage or border."
+    }
+  ]
+}

@@ -138,7 +138,8 @@ a {
 
 p {
   font-family: var(--font-body);
-  font-size: var(--text-body);
+  /* Keep every paragraph on the shared body scale, including CSS-module variants. */
+  font-size: var(--text-body, 18px) !important;
   font-weight: 400;
   line-height: var(--leading-body);
   color: var(--color-text);

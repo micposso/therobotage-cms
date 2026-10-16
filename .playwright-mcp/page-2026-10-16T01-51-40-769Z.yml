@@ -1,0 +1,446 @@
+- generic [active] [ref=f7e1]:
+  - link "Skip to content" [ref=f7e2] [cursor=pointer]:
+    - /url: "#lab-main"
+  - navigation [ref=f7e3]:
+    - generic [ref=f7e5]:
+      - link [ref=f7e6] [cursor=pointer]:
+        - /url: /
+        - img "The Robot Age" [ref=f7e7]
+      - link "Request a Live Robot Lab" [ref=f7e8] [cursor=pointer]:
+        - /url: /live-robot-lab#request-live-robot-lab
+      - generic [ref=f7e9]:
+        - generic [ref=f7e10]: Language
+        - combobox "Language" [ref=f7e15] [cursor=pointer]:
+          - option "English" [selected]: EN
+          - option "Español": ES
+      - button "Open menu" [ref=f7e16] [cursor=pointer]
+  - main [ref=f7e18]:
+    - generic [ref=f7e21]:
+      - paragraph [ref=f7e22]: THE ROBOT AGE · LIVE EXPERIENCES
+      - heading "Meet the robots shaping our future." [level=1] [ref=f7e23]
+      - paragraph [ref=f7e24]: Live Robot Lab is a hands-on robotics experience that brings real robots, embodied AI, and human-robot interaction directly to your school, organization, or workplace.
+      - paragraph [ref=f7e25]: Starting at $1,250 · 2-hour experience · NYC Metro Area
+      - generic [ref=f7e26]:
+        - link "Request a Robot Lab" [ref=f7e27] [cursor=pointer]:
+          - /url: "#request-live-robot-lab"
+          - text: Request a Robot Lab
+          - generic [aria-hidden] [ref=f7e28]: ↗
+        - link "Watch the Experience" [ref=f7e29] [cursor=pointer]:
+          - /url: "#live-robot-lab-video"
+          - text: Watch the Experience↓
+    - region "Watch the experience" [ref=f7e30]:
+      - figure "See what happens when people meet embodied AI." [ref=f7e32]:
+        - region "video player" [ref=f7e34]:
+          - generic "Live Robot Lab video" [ref=f7e35]
+          - generic:
+            - generic:
+              - button "Watch the experience" [ref=f7e36] [cursor=pointer]
+              - generic [ref=f7e38]:
+                - generic:
+                  - button "play" [ref=f7e39] [cursor=pointer]:
+                    - generic [ref=f7e44]:
+                      - generic [aria-hidden]:
+                        - generic: Play
+                  - generic [ref=f7e46] [cursor=pointer]:
+                    - slider "seek" [ref=f7e53]: "0"
+                    - generic: en 0:00
+                  - button "playback time" [ref=f7e54]: 0:00 / 0:28
+                  - button "mute" [ref=f7e55] [cursor=pointer]:
+                    - generic [ref=f7e60]:
+                      - generic [aria-hidden]:
+                        - generic: Mute
+                  - slider "volume" [ref=f7e69] [cursor=pointer]: "1"
+                  - button "enter fullscreen mode" [ref=f7e70] [cursor=pointer]:
+                    - generic [ref=f7e75]:
+                      - generic [aria-hidden]:
+                        - generic: Enter fullscreen mode
+    - generic [ref=f7e78]:
+      - paragraph [ref=f7e79]: Learn through experience
+      - heading "This isn't a robot demo." [level=2] [ref=f7e80]
+      - paragraph [ref=f7e81]: Robots aren't just something to watch. They're something to understand.
+      - paragraph [ref=f7e82]: Live Robot Lab combines demonstration, interaction, experimentation, and discussion to help participants understand how modern robots perceive, move, communicate, and interact with humans.
+      - generic [ref=f7e83]:
+        - article [ref=f7e84]:
+          - paragraph [ref=f7e85]: "01"
+          - heading "SEE" [level=3] [ref=f7e86]
+          - paragraph [ref=f7e87]: Watch real robots navigate, perceive, and respond.
+        - article [ref=f7e88]:
+          - paragraph [ref=f7e89]: "02"
+          - heading "INTERACT" [level=3] [ref=f7e90]
+          - paragraph [ref=f7e91]: Experience human-robot interaction firsthand.
+        - article [ref=f7e92]:
+          - paragraph [ref=f7e93]: "03"
+          - heading "UNDERSTAND" [level=3] [ref=f7e94]
+          - paragraph [ref=f7e95]: Learn how sensors, AI, movement, and autonomy work together.
+        - article [ref=f7e96]:
+          - paragraph [ref=f7e97]: "04"
+          - heading "DESIGN" [level=3] [ref=f7e98]
+          - paragraph [ref=f7e99]: Explore how robots should behave around humans.
+    - generic [ref=f7e101]:
+      - paragraph [ref=f7e102]: Two robots. Two ways to explore.
+      - heading "Meet the robots" [level=2] [ref=f7e103]
+      - generic [ref=f7e104]:
+        - article [ref=f7e105]:
+          - img "Reachy Mini, a white tabletop robot with expressive eyes and two antennas." [ref=f7e107]
+          - generic [ref=f7e108]:
+            - heading "Reachy Mini" [level=3] [ref=f7e109]
+            - paragraph [ref=f7e110]: Social robotics + embodied AI
+            - paragraph [ref=f7e111]: Participants explore conversation, expression, perception, AI agents, and how robot behavior affects human interaction.
+            - list "Reachy Mini topics" [ref=f7e112]:
+              - listitem [ref=f7e113]: Voice
+              - listitem [ref=f7e114]: Vision
+              - listitem [ref=f7e115]: AI
+              - listitem [ref=f7e116]: Expression
+              - listitem [ref=f7e117]: HRI
+        - article [ref=f7e118]:
+          - img "Unitree Go2 Pro, a gray four-legged robot with forward-facing sensors." [ref=f7e120]
+          - generic [ref=f7e121]:
+            - heading "Unitree Go2 Pro" [level=3] [ref=f7e122]
+            - paragraph [ref=f7e123]: Movement + autonomous robotics
+            - paragraph [ref=f7e124]: Participants explore locomotion, spatial awareness, sensing, navigation, and what it means for a machine to physically operate around humans.
+            - list "Unitree Go2 Pro topics" [ref=f7e125]:
+              - listitem [ref=f7e126]: LiDAR
+              - listitem [ref=f7e127]: Sensors
+              - listitem [ref=f7e128]: Movement
+              - listitem [ref=f7e129]: Navigation
+              - listitem [ref=f7e130]: Safety
+    - generic [ref=f7e132]:
+      - paragraph [ref=f7e133]: Bring the experience to your community
+      - heading "Choose your Live Robot Lab" [level=2] [ref=f7e134]
+      - generic [ref=f7e135]:
+        - article [ref=f7e136]:
+          - heading "K–12 Schools" [level=3] [ref=f7e137]
+          - paragraph [ref=f7e138]: From $1,250
+          - paragraph [ref=f7e139]:
+            - generic [ref=f7e140]: 2-hour experience
+            - generic [ref=f7e141]: Up to 30 students
+          - paragraph [ref=f7e142]: Designed for elementary, middle, and high school students.
+          - generic [ref=f7e143]:
+            - paragraph [ref=f7e144]: Included
+            - list [ref=f7e145]:
+              - listitem [ref=f7e146]: Reachy Mini + Go2 Pro
+              - listitem [ref=f7e147]: Robot demonstrations
+              - listitem [ref=f7e148]: Guided interactions
+              - listitem [ref=f7e149]: Robot Literacy lesson
+              - listitem [ref=f7e150]: Human-robot interaction activity
+              - listitem [ref=f7e151]: Q&A
+              - listitem [ref=f7e152]: Teacher resources
+          - paragraph [ref=f7e153]: "Additional group: +$500"
+          - link "Request School Pricing" [ref=f7e154] [cursor=pointer]:
+            - /url: "#request-live-robot-lab"
+            - text: Request School Pricing ↗
+        - article [ref=f7e155]:
+          - heading "Colleges & Universities" [level=3] [ref=f7e156]
+          - paragraph [ref=f7e157]: From $1,500
+          - paragraph [ref=f7e158]:
+            - generic [ref=f7e159]: 2-hour experience
+            - generic [ref=f7e160]: Up to 40 participants
+          - paragraph [ref=f7e161]: Explore embodied AI, robotics careers, human-robot interaction, UX, product design, and emerging technology.
+          - link "Bring Live Robot Lab to Campus" [ref=f7e162] [cursor=pointer]:
+            - /url: "#request-live-robot-lab"
+            - text: Bring Live Robot Lab to Campus ↗
+        - article [ref=f7e163]:
+          - heading "Corporate & Organizations" [level=3] [ref=f7e164]
+          - paragraph [ref=f7e165]: From $2,500
+          - paragraph [ref=f7e166]:
+            - generic [ref=f7e167]: 90–120 minutes
+            - generic [ref=f7e168]: Up to 40 participants
+          - paragraph [ref=f7e169]: An interactive introduction to embodied AI for teams exploring the future of work, AI, automation, and human-robot collaboration.
+          - generic [ref=f7e170]:
+            - paragraph [ref=f7e171]: Possible formats
+            - list [ref=f7e172]:
+              - listitem [ref=f7e173]: Innovation Day
+              - listitem [ref=f7e174]: Lunch & Learn
+              - listitem [ref=f7e175]: Employee Experience
+              - listitem [ref=f7e176]: Leadership Workshop
+              - listitem [ref=f7e177]: Technology Showcase
+          - link "Request Corporate Pricing" [ref=f7e178] [cursor=pointer]:
+            - /url: "#request-live-robot-lab"
+            - text: Request Corporate Pricing ↗
+        - article [ref=f7e179]:
+          - heading "Events" [level=3] [ref=f7e180]
+          - paragraph [ref=f7e181]: Custom pricing
+          - paragraph [ref=f7e182]: Conferences, exhibitions, community programs, and larger events.
+          - link "Tell Us About Your Event" [ref=f7e183] [cursor=pointer]:
+            - /url: "#request-live-robot-lab"
+            - text: Tell Us About Your Event ↗
+    - generic [ref=f7e185]:
+      - paragraph [ref=f7e186]: The experience, step by step
+      - heading "What happens during the two hours?" [level=2] [ref=f7e187]
+      - list [ref=f7e188]:
+        - listitem [ref=f7e189]:
+          - generic [ref=f7e190]: 00–15 MIN
+          - generic [ref=f7e191]:
+            - heading "Meet the Robots" [level=3] [ref=f7e192]
+            - paragraph [ref=f7e193]: What makes something a robot?
+        - listitem [ref=f7e194]:
+          - generic [ref=f7e195]: 15–35 MIN
+          - generic [ref=f7e196]:
+            - heading "Robot Literacy" [level=3] [ref=f7e197]
+            - paragraph [ref=f7e198]: AI vs. robotics vs. embodied AI.
+        - listitem [ref=f7e199]:
+          - generic [ref=f7e200]: 35–60 MIN
+          - generic [ref=f7e201]:
+            - heading "Robot Demonstrations" [level=3] [ref=f7e202]
+            - paragraph [ref=f7e203]: Movement, sensing, perception, and communication.
+        - listitem [ref=f7e204]:
+          - generic [ref=f7e205]: 60–90 MIN
+          - generic [ref=f7e206]:
+            - heading "Human + Robot Lab" [level=3] [ref=f7e207]
+            - paragraph [ref=f7e208]: Participants interact with Reachy and Go2.
+        - listitem [ref=f7e209]:
+          - generic [ref=f7e210]: 90–110 MIN
+          - generic [ref=f7e211]:
+            - heading "Robot Experience Challenge" [level=3] [ref=f7e212]
+            - paragraph [ref=f7e213]: How should robots behave around people?
+        - listitem [ref=f7e214]:
+          - generic [ref=f7e215]: 110–120 MIN
+          - generic [ref=f7e216]:
+            - heading "Future of Robotics + Q&A" [level=3] [ref=f7e217]
+            - paragraph [ref=f7e218]: Careers, society, and what's coming next.
+    - generic [ref=f7e220]:
+      - paragraph [ref=f7e221]: Ideas that stay with you
+      - heading "What participants learn" [level=2] [ref=f7e222]
+      - generic [ref=f7e223]:
+        - article [ref=f7e224]:
+          - heading "Robot Literacy" [level=3] [ref=f7e225]
+          - paragraph [ref=f7e226]: Understand what robots are and how they differ from AI.
+        - article [ref=f7e227]:
+          - heading "Embodied AI" [level=3] [ref=f7e228]
+          - paragraph [ref=f7e229]: Understand what happens when AI can perceive and act physically.
+        - article [ref=f7e230]:
+          - heading "Sensors + Perception" [level=3] [ref=f7e231]
+          - paragraph [ref=f7e232]: See how machines understand their surroundings.
+        - article [ref=f7e233]:
+          - heading "Human-Robot Interaction" [level=3] [ref=f7e234]
+          - paragraph [ref=f7e235]: Explore how people communicate with intelligent machines.
+        - article [ref=f7e236]:
+          - heading "Robot Experience Design" [level=3] [ref=f7e237]
+          - paragraph [ref=f7e238]: Consider trust, behavior, accessibility, and usability.
+        - article [ref=f7e239]:
+          - heading "Robotics Careers" [level=3] [ref=f7e240]
+          - paragraph [ref=f7e241]: Discover emerging roles beyond robotics engineering.
+    - generic [ref=f7e243]:
+      - paragraph [ref=f7e244]: A shared experience. Different depths.
+      - heading "Designed for different ages" [level=2] [ref=f7e245]
+      - generic [ref=f7e246]:
+        - article [ref=f7e247]:
+          - paragraph [ref=f7e248]: Explore
+          - heading "Elementary" [level=3] [ref=f7e249]
+          - list [ref=f7e250]:
+            - listitem [ref=f7e251]: What is a robot?
+            - listitem [ref=f7e252]: How does it see?
+            - listitem [ref=f7e253]: How does it move?
+        - article [ref=f7e254]:
+          - paragraph [ref=f7e255]: Understand
+          - heading "Middle School" [level=3] [ref=f7e256]
+          - list [ref=f7e257]:
+            - listitem [ref=f7e258]: Sensors
+            - listitem [ref=f7e259]: AI
+            - listitem [ref=f7e260]: Autonomy
+            - listitem [ref=f7e261]: Human interaction
+        - article [ref=f7e262]:
+          - paragraph [ref=f7e263]: Design
+          - heading "High School" [level=3] [ref=f7e264]
+          - list [ref=f7e265]:
+            - listitem [ref=f7e266]: Embodied AI
+            - listitem [ref=f7e267]: HRI
+            - listitem [ref=f7e268]: Ethics
+            - listitem [ref=f7e269]: Robot Experience Design
+            - listitem [ref=f7e270]: Careers
+        - article [ref=f7e271]:
+          - paragraph [ref=f7e272]: Apply
+          - heading "College / Adult" [level=3] [ref=f7e273]
+          - list [ref=f7e274]:
+            - listitem [ref=f7e275]: HRI
+            - listitem [ref=f7e276]: AI agents
+            - listitem [ref=f7e277]: Product design
+            - listitem [ref=f7e278]: Automation
+            - listitem [ref=f7e279]: Future of work
+    - generic [ref=f7e281]:
+      - paragraph [ref=f7e282]: From the workshop floor
+      - heading "Robots are better understood when you can actually meet one." [level=2] [ref=f7e283]
+      - generic [ref=f7e284]:
+        - paragraph [ref=f7e285]: Live Robot Lab grew out of The Robot Age's hands-on robotics workshops exploring how people understand, trust, and interact with intelligent machines.
+        - figure "Workshop photo coming soon" [ref=f7e286]:
+          - generic [aria-hidden] [ref=f7e287]: +
+      - generic [ref=f7e289]:
+        - generic [ref=f7e290]:
+          - heading "Workshop participants" [level=3] [ref=f7e291]
+          - paragraph [ref=f7e292]: Measurement coming soon
+        - generic [ref=f7e293]:
+          - heading "Robot interactions" [level=3] [ref=f7e294]
+          - paragraph [ref=f7e295]: Measurement coming soon
+        - generic [ref=f7e296]:
+          - heading "Future survey metric" [level=3] [ref=f7e297]
+          - paragraph [ref=f7e298]: Measurement coming soon
+      - generic [ref=f7e299]:
+        - article [ref=f7e300]:
+          - heading "Educator perspective" [level=3] [ref=f7e301]
+          - paragraph [ref=f7e302]: Testimonial coming soon
+        - article [ref=f7e303]:
+          - heading "Participant perspective" [level=3] [ref=f7e304]
+          - paragraph [ref=f7e305]: Testimonial coming soon
+        - article [ref=f7e306]:
+          - heading "Organizer perspective" [level=3] [ref=f7e307]
+          - paragraph [ref=f7e308]: Testimonial coming soon
+    - generic [ref=f7e310]:
+      - paragraph [ref=f7e311]: Everything you need to get started
+      - heading "What's included" [level=2] [ref=f7e312]
+      - list [ref=f7e313]:
+        - listitem [ref=f7e314]: Reachy Mini robot
+        - listitem [ref=f7e315]: Unitree Go2 Pro robot
+        - listitem [ref=f7e316]: Robot Age instructor / facilitator
+        - listitem [ref=f7e317]: Transport and setup within NYC
+        - listitem [ref=f7e318]: 2-hour facilitated program
+        - listitem [ref=f7e319]: Robot Literacy curriculum
+        - listitem [ref=f7e320]: Interactive HRI exercises
+        - listitem [ref=f7e321]: Q&A
+        - listitem [ref=f7e322]: Teacher / organizer preparation guide
+        - listitem [ref=f7e323]: Digital follow-up resources
+      - generic [ref=f7e324]:
+        - paragraph [ref=f7e325]: "You provide: an indoor space, power, Wi-Fi, and participants."
+        - paragraph [ref=f7e326]: We bring the robots.
+    - generic [ref=f7e328]:
+      - paragraph [ref=f7e329]: Before the robots arrive
+      - heading "Frequently asked questions" [level=2] [ref=f7e330]
+      - generic [ref=f7e331]:
+        - group [ref=f7e332]:
+          - generic "Is Live Robot Lab appropriate for students with no robotics experience?" [ref=f7e333] [cursor=pointer]
+        - group [ref=f7e334]:
+          - generic "Can you customize the experience for different grades?" [ref=f7e335] [cursor=pointer]
+        - group [ref=f7e336]:
+          - generic "How many participants can attend?" [ref=f7e337] [cursor=pointer]
+        - group [ref=f7e338]:
+          - generic "Do students control the robots?" [ref=f7e339] [cursor=pointer]
+        - group [ref=f7e340]:
+          - generic "Where is Live Robot Lab available?" [ref=f7e341] [cursor=pointer]
+        - group [ref=f7e342]:
+          - generic "How much does it cost?" [ref=f7e343] [cursor=pointer]
+    - generic [ref=f7e345]:
+      - paragraph [ref=f7e346]: Request a Live Robot Lab
+      - heading "Bring the robots to you." [level=2] [ref=f7e347]
+      - paragraph [ref=f7e348]: Tell us about your school, organization, or event. We'll recommend the right Live Robot Lab format and provide pricing and availability.
+      - generic [ref=f7e349]:
+        - img "A group observing a quadruped robot in a casual workshop, with participants taking notes" [ref=f7e351]
+        - generic [ref=f7e352]:
+          - paragraph [ref=f7e353]: Fields marked * are required.
+          - status
+          - group "Live Robot Lab request details" [ref=f7e354]:
+            - generic [ref=f7e356]:
+              - generic [ref=f7e357]: Name *
+              - textbox "Name *" [ref=f7e358]
+            - generic [ref=f7e359]:
+              - generic [ref=f7e360]: Work Email *
+              - textbox "Work Email *" [ref=f7e361]
+            - generic [ref=f7e362]:
+              - generic [ref=f7e363]: Organization *
+              - textbox "Organization *" [ref=f7e364]
+            - generic [ref=f7e365]:
+              - generic [ref=f7e366]: Organization Type *
+              - combobox "Organization Type *" [ref=f7e367]:
+                - option "Select an option" [selected]
+                - option "K–12 School"
+                - option "College or University"
+                - option "Company"
+                - option "Nonprofit"
+                - option "Event"
+                - option "Other"
+            - generic [ref=f7e368]:
+              - generic [ref=f7e369]: Your Role (optional)
+              - textbox "Your Role (optional)" [ref=f7e370]
+            - generic [ref=f7e371]:
+              - generic [ref=f7e372]: Approximate Group Size *
+              - combobox "Approximate Group Size *" [ref=f7e373]:
+                - option "Select an option" [selected]
+                - option "1–15"
+                - option "16–30"
+                - option "31–50"
+                - option "51–100"
+                - option "100+"
+            - generic [ref=f7e374]:
+              - generic [ref=f7e375]: Participant Age / Grade (optional)
+              - textbox "Participant Age / Grade (optional)" [ref=f7e376]
+            - generic [ref=f7e377]:
+              - generic [ref=f7e378]: Preferred Date (optional)
+              - textbox "Preferred Date (optional)" [ref=f7e379]
+            - generic [ref=f7e380]:
+              - generic [ref=f7e381]: Location / ZIP Code *
+              - textbox "Location / ZIP Code *" [ref=f7e382]
+            - generic [ref=f7e383]:
+              - generic [ref=f7e384]: What would you like participants to experience? (optional)
+              - textbox "What would you like participants to experience? (optional)" [ref=f7e385]
+          - paragraph [ref=f7e386]: By submitting this form, you agree that The Robot Age may contact you about Live Robot Lab.
+          - button "Request Information" [ref=f7e387] [cursor=pointer]
+    - generic [ref=f7e389]:
+      - heading "The future of AI isn't only on a screen." [level=2] [ref=f7e390]
+      - paragraph [ref=f7e391]: Meet it in person.
+      - link "Request a Live Robot Lab" [ref=f7e392] [cursor=pointer]:
+        - /url: "#request-live-robot-lab"
+        - text: Request a Live Robot Lab
+        - generic [aria-hidden] [ref=f7e393]: ↗
+      - generic [ref=f7e394]:
+        - paragraph [ref=f7e395]: THE ROBOT AGE
+        - paragraph [ref=f7e396]: Robot Literacy · Embodied AI · Human-Robot Interaction
+  - contentinfo [ref=f7e397]:
+    - generic [ref=f7e398]:
+      - generic [ref=f7e399]:
+        - generic [ref=f7e400]:
+          - link "The Robot Age" [ref=f7e401] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f7e402]: Preparing people and organizations for a world with robots.
+        - generic [ref=f7e403]:
+          - generic [ref=f7e404]: Pages
+          - navigation [ref=f7e405]:
+            - link "Research" [ref=f7e406] [cursor=pointer]:
+              - /url: /research
+            - link "Academy" [ref=f7e407] [cursor=pointer]:
+              - /url: /learn
+            - link "Jobs" [ref=f7e408] [cursor=pointer]:
+              - /url: /jobs
+            - link "What Robot Are You?" [ref=f7e409] [cursor=pointer]:
+              - /url: /what-robot-are-you
+            - link "RXD Scorecard" [ref=f7e410] [cursor=pointer]:
+              - /url: /rxd-scorecard
+            - link "For Organizations" [ref=f7e411] [cursor=pointer]:
+              - /url: /enterprise
+            - link "Partners" [ref=f7e412] [cursor=pointer]:
+              - /url: /robot-literacy/partners
+            - link "Press" [ref=f7e413] [cursor=pointer]:
+              - /url: /press
+            - link "Connect" [ref=f7e414] [cursor=pointer]:
+              - /url: /connect
+            - link "Summit" [ref=f7e415] [cursor=pointer]:
+              - /url: /summit
+        - generic [ref=f7e416]:
+          - generic [ref=f7e417]: Programs
+          - navigation [ref=f7e418]:
+            - link "Robot Literacy" [ref=f7e419] [cursor=pointer]:
+              - /url: /robot-literacy
+            - link "Live Robot Lab" [ref=f7e420] [cursor=pointer]:
+              - /url: /live-robot-lab
+            - link "Product Design for Robots (RPDP)" [ref=f7e421] [cursor=pointer]:
+              - /url: /learn/rpdp
+            - link "Robot Deployment Practitioner (RDP)" [ref=f7e422] [cursor=pointer]:
+              - /url: /learn/rdp
+        - generic [ref=f7e423]:
+          - generic [ref=f7e424]: Follow
+          - generic [ref=f7e425]:
+            - link "LinkedIn" [ref=f7e426] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/therobotage/
+            - link "Instagram" [ref=f7e432] [cursor=pointer]:
+              - /url: https://www.instagram.com/roboticsliteracy/
+      - generic [ref=f7e439]:
+        - paragraph [ref=f7e441]: © 2026 The Robot Age. All rights reserved.
+        - generic [ref=f7e442]:
+          - link "Privacy Policy" [ref=f7e443] [cursor=pointer]:
+            - /url: /privacy
+          - link "Terms of Use" [ref=f7e444] [cursor=pointer]:
+            - /url: /terms
+          - link "Fair use of AI" [ref=f7e445] [cursor=pointer]:
+            - /url: /ai-statement
+  - complementary "Browser agent activity" [ref=f7e446]:
+    - button "Expand WebMCP browser agent activity" [ref=f7e449] [cursor=pointer]:
+      - generic [ref=f7e450]: WebMCP
+  - button "Open Next.js Dev Tools" [ref=f7e456] [cursor=pointer]
+  - alert [ref=f7e460]
