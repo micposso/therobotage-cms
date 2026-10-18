@@ -1,7 +1,7 @@
 {
   "published": true,
-  "count": 171,
-  "bytes": 80046435,
+  "count": 172,
+  "bytes": 80290073,
   "assets": {
     "/brand/instructor.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/brand/instructor.4400bfbd66cbf98c.png",
@@ -86,6 +86,12 @@
       "key": "website/images/enterprise/enterprise-adoption-workplace.0219b5b2f1643ac6.webp",
       "bytes": 153362,
       "sha256": "0219b5b2f1643ac650f57105a236d0253e2c05865df17c1cb606f3482bc40133"
+    },
+    "/images/enterprise/enterprise-entertainment-amusement-park.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/enterprise/enterprise-entertainment-amusement-park.6f50864a158c3e0f.webp",
+      "key": "website/images/enterprise/enterprise-entertainment-amusement-park.6f50864a158c3e0f.webp",
+      "bytes": 243638,
+      "sha256": "6f50864a158c3e0f48b4ba5a60a490d1b663009426a999b6a623ce93f056db0f"
     },
     "/images/enterprise/enterprise-entertainment.webp": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/enterprise/enterprise-entertainment.c784423bbfb45d57.webp",

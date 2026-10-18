@@ -24,7 +24,7 @@ const assets = {
   adoption: '/images/enterprise/enterprise-adoption-workplace.webp',
   humanoid: '/images/enterprise/enterprise-humanoid-onboarding.webp',
   quadruped: '/images/enterprise/enterprise-quadruped-inspection.webp',
-  entertainment: '/images/enterprise/enterprise-entertainment.webp',
+  entertainment: '/images/enterprise/enterprise-entertainment-amusement-park.webp',
   security: '/images/enterprise/enterprise-security.webp',
   government: '/images/enterprise/enterprise-local-government.webp',
 }

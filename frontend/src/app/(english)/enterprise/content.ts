@@ -206,7 +206,7 @@ export const enterpriseContent = {
     "adoption": "Facilities staff carry out daily work while a floor-cleaning robot follows a clear corridor route.",
     "humanoid": "Hotel operations staff learn a supervised supply handoff with a humanoid robot in a back-of-house workroom.",
     "quadruped": "Facilities technicians learn to guide a quadruped inspection robot through a basement mechanical room.",
-    "entertainment": "Museum staff practice visitor interactions beside a wheeled interactive robot.",
+    "entertainment": "Amusement-park staff practice visitor greetings with a humanoid robot dressed in an explorer costume beside a carousel.",
     "security": "A supervisor trains security officers to oversee a wheeled patrol robot at a commercial campus.",
     "government": "Municipal facilities staff learn an inspection route with a quadruped robot in a building mechanical room."
   },
