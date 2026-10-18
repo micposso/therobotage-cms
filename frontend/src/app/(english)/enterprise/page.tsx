@@ -53,6 +53,7 @@ export default async function EnterprisePage({ params }: Props) {
       <div id="enterprise-main" className={styles.brandHero}>
         <PageHero eyebrow={t(c.eyebrow)} title={`${t(c.title[0])} ${t(c.title[1])}`} subtitle={t(c.support)}>
           <div className={styles.actions}><a className={`${cta.cta} ${styles.button}`} href="#enterprise-briefing">{t(c.cta)} <span aria-hidden="true">↗</span></a><a className={styles.textLink} href="#academy-process">{t(c.explore)} <span aria-hidden="true">↓</span></a></div>
+          <p className={styles.firstStep}>{t(c.focus.firstStep)}</p>
         </PageHero>
       </div>
       <section className={`${styles.section} ${styles.problem}`} aria-labelledby="gap-title"><div className={styles.wrap}>

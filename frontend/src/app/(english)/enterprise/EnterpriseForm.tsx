@@ -8,6 +8,7 @@ import { uiText } from '@/lib/i18n/messages'
 import type { Locale } from '@/lib/i18n/routing'
 import styles from './enterprise.module.css'
 import cta from '@/components/FoundingCohort/FoundingCohort.module.css'
+import { enterpriseContent } from './content'
 
 export default function EnterpriseForm({ locale = 'en' }: { locale?: Locale }) {
   const t = (value: string) => uiText(value, locale)
@@ -17,22 +18,17 @@ export default function EnterpriseForm({ locale = 'en' }: { locale?: Locale }) {
   const successRef = useRef<HTMLParagraphElement>(null)
   const formRef = useRef<HTMLFormElement>(null)
   const errors = localErrors ?? state.errors ?? {}
+  function focusFirstError() {
+    const field = formRef.current?.querySelector<HTMLElement>('[aria-invalid="true"]')
+    const details = field?.closest('details')
+    if (details) details.open = true
+    field?.focus()
+  }
   useEffect(() => {
     if (state.success) successRef.current?.focus()
-    else if (state.errors) formRef.current?.querySelector<HTMLElement>('[aria-invalid="true"]')?.focus()
+    else if (state.errors) focusFirstError()
   }, [state])
-  if (state.success) return <p ref={successRef} className={styles.success} role="status" tabIndex={-1}>{t('Thank you. Your Academy briefing request has been received. We will be in touch using the email you provided.')}</p>
-  return <form ref={formRef} className={styles.form} action={action} noValidate aria-busy={pending} onSubmit={(event) => {
-    const next = validateEnterpriseRequest(new FormData(event.currentTarget))
-    if (Object.keys(next).length) {
-      event.preventDefault()
-      setLocalErrors(next)
-      requestAnimationFrame(() => formRef.current?.querySelector<HTMLElement>('[aria-invalid="true"]')?.focus())
-    } else setLocalErrors(null)
-  }}>
-    <p className={styles.formNote}>{t('Required fields are marked *.')}</p>
-    <div className={styles.honeypot} aria-hidden="true"><label htmlFor="enterprise-website">{t('Leave this field empty')}</label><input id="enterprise-website" name="website" tabIndex={-1} autoComplete="off" /></div>
-    {enterpriseFields.map((field) => {
+  function renderField(field: typeof enterpriseFields[number]) {
       const id = `enterprise-${field.name}`
       const props = {
         id, name: field.name, required: field.required, className: styles.input,
@@ -50,10 +46,23 @@ export default function EnterpriseForm({ locale = 'en' }: { locale?: Locale }) {
           : <input {...props} type={field.type} maxLength={field.maxLength} autoComplete={'autoComplete' in field ? field.autoComplete : undefined} />}
         {errors[field.name] && <p className={styles.error} id={`${id}-error`}>{t(errors[field.name]!)}</p>}
       </div>
-    })}
+  }
+  if (state.success) return <p ref={successRef} className={styles.success} role="status" tabIndex={-1}>{t('Thank you. Your Academy briefing request has been received. We will be in touch using the email you provided.')}</p>
+  return <form ref={formRef} className={styles.form} action={action} noValidate aria-busy={pending} onSubmit={(event) => {
+    const next = validateEnterpriseRequest(new FormData(event.currentTarget))
+    if (Object.keys(next).length) {
+      event.preventDefault()
+      setLocalErrors(next)
+      requestAnimationFrame(focusFirstError)
+    } else setLocalErrors(null)
+  }}>
+    <p className={styles.formNote}>{t('Required fields are marked *.')}</p>
+    <div className={styles.honeypot} aria-hidden="true"><label htmlFor="enterprise-website">{t('Leave this field empty')}</label><input id="enterprise-website" name="website" tabIndex={-1} autoComplete="off" /></div>
+    {enterpriseFields.filter(field => field.required).map(renderField)}
+    <details className={`${styles.details} ${styles.optionalFields}`}><summary>{t('Add deployment details (optional)')}</summary><div className={styles.optionalFieldsGrid}>{enterpriseFields.filter(field => !field.required).map(renderField)}</div></details>
     <p className={styles.consent}>{t('By submitting, you agree that The Robot Age may contact you about this inquiry. Read our')} <Link href="/privacy">{t('Privacy Policy')}</Link>.</p>
     {(Object.values(errors).some(Boolean) || state.error) && <p className={styles.formError} role="alert">{t(state.error || 'Please check the highlighted fields.')}</p>}
-    <button type="submit" disabled={pending} className={`${cta.cta} ${styles.submitButton}`}>{t(pending ? 'Sending your request…' : 'Request Academy Briefing')} <span aria-hidden="true">↗</span></button>
+    <button type="submit" disabled={pending} className={`${cta.cta} ${styles.submitButton}`}>{t(pending ? 'Sending your request…' : enterpriseContent.cta)} <span aria-hidden="true">↗</span></button>
     <span className={styles.honeypot} role="status">{pending ? t('Sending your request…') : ''}</span>
   </form>
 }

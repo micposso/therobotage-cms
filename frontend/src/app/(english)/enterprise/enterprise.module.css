@@ -162,6 +162,10 @@ textarea.input { min-height:106px; resize:vertical; }
 }
 /* Compose the existing brand hero and CTA system without changing shared pages. */
 .brandHero { scroll-margin-top:var(--nav-height); }
+.firstStep { margin-top:var(--space-4); max-width:60ch; color:var(--color-text-muted); }
+.optionalFields { grid-column:1 / -1; margin-top:0; }
+.optionalFieldsGrid { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-6); padding-top:var(--space-4); }
+@media (max-width:600px) { .optionalFieldsGrid { grid-template-columns:1fr; } }
 .brandHero .offer { margin-top:var(--space-6) !important; margin-bottom:var(--space-3) !important;  }
 .page .button,.page .submitButton { background:var(--color-accent); color:var(--color-text-inverse) !important; font-size:var(--text-sm); letter-spacing:.06em; padding:var(--space-4) var(--space-8); }
 .page .button:hover,.page .submitButton:hover { background:var(--color-text); }

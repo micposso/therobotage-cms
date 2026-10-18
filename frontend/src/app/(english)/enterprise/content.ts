@@ -5,27 +5,27 @@ export const enterpriseContent = {
     "You deploy the robots.",
     "We prepare the people."
   ],
-  "support": "Scale customer onboarding without scaling your training workload. We build and manage reusable, multilingual training so your engineers spend less time repeating instructions and more time deploying robots.",
+  "support": "Make customer onboarding a path to growth, not a deployment bottleneck. Our managed, multilingual Academy helps your team train more customer sites without repeating the same work.",
   "intro": "The Robot Age helps robotics manufacturers, integrators, and deployment providers prepare their customers for working with robots through managed education, onboarding, practical assessments, and adoption programs.",
-  "cta": "Request an Academy Briefing",
+  "cta": "Plan your Academy pilot",
   "explore": "Explore How It Works",
   "scope": "We prepare workforces. We do not sell or install robots. Our programs complement the manufacturer's technical training, safety engineering, servicing, and commissioning requirements.",
   "problem": {
     "label": "THE DEPLOYMENT GAP",
-    "title": "Installing a robot is only the beginning.",
-    "body": "Every new customer brings another team to train. When engineers repeat the same onboarding, customer education consumes time that could support the next deployment.",
+    "title": "Is customer training holding back your next deployment?",
+    "body": "When every site depends on your engineers to train its workforce, growth adds work to the same team. A reusable Academy gives customer education its own delivery model.",
     "items": [
       [
-        "Less repeat training",
-        "Build one product-specific learning program, then adapt it for each customer site."
+        "Free deployment capacity",
+        "Move repeatable workforce instruction into a managed Academy so specialists can focus on commissioning and the next customer."
       ],
       [
-        "More capable customer teams",
-        "Teach everyday tasks in the workforce’s language, then check practical understanding."
+        "Protect rollout margins",
+        "Reuse lessons across sites instead of rebuilding training each time. Compare total onboarding cost per site in the pilot."
       ],
       [
-        "Support beyond handover",
-        "Give new hires and changing shifts a consistent way to learn without starting from scratch."
+        "Support customer expansion",
+        "Give customers a repeatable way to prepare new teams and locations when they expand their robot fleet."
       ]
     ],
     "closing": "You focus on your robots. We help your customers learn how to work with them."
@@ -166,7 +166,7 @@ export const enterpriseContent = {
       "Practical assessment and outcomes report",
       "Recommendations for rollout and refreshers"
     ],
-    "cta": "Discuss an Academy Pilot"
+    "cta": "Plan your Academy pilot"
   },
   "programs": {
     "title": "Part of a broader robotics education ecosystem.",
@@ -195,8 +195,8 @@ export const enterpriseContent = {
   },
   "form": {
     "label": "LET'S TALK",
-    "title": "Let's prepare your next deployment.",
-    "body": "Tell us about your robot and where customer onboarding takes the most time. We’ll discuss the scope, measures, and cost of a focused Academy pilot."
+    "title": "Where is onboarding slowing you down?",
+    "body": "Tell us who you are. In the first conversation, we’ll identify the training bottleneck, discuss one suitable pilot, and agree what would make it worth scaling."
   },
   "alt": {
     "hero": "Restaurant employees and a trainer learning to use a wheeled tray service robot before service.",
@@ -213,7 +213,7 @@ export const enterpriseContent = {
   "imageNote": "Conceptual workplace illustration · AI-generated",
   "outcome": "The goal: people and robots working confidently alongside one another.",
   "focus": {
-    "areaCta": "Discuss your deployment",
+    "areaCta": "Plan your Academy pilot",
     "pilotCta": "Explore a measurable pilot",
     "deliverables": "What the pilot includes",
     "measurement": "Compare results with a comparable cohort or your documented baseline. Set targets together; improvements are measured, not guaranteed.",
@@ -230,6 +230,8 @@ export const enterpriseContent = {
         "Customer satisfaction",
         "Customer ratings of onboarding quality and confidence using the robot, collected with the same questions and timing."
       ]
-    ]
+    ],
+    "firstStep": "Start with a conversation about your onboarding bottleneck, pilot scope, and cost.",
+    "fit": "For robot manufacturers, integrators, distributors, and RaaS teams preparing customer deployments."
   }
 } as const
