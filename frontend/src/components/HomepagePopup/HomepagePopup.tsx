@@ -1,6 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
+import { englishPath } from '@/lib/i18n/routing'
 import WhitepaperModal from '@/components/WhitepaperModal/WhitepaperModal'
 
 const POPUP_KEY = 'wp_popup_dismissed_at'
@@ -10,8 +12,11 @@ const SUPPRESS_DAYS = 60
 
 export default function WhitepaperPopup() {
   const [open, setOpen] = useState(false)
+  const isEnterprise = englishPath(usePathname()) === '/enterprise'
 
   useEffect(() => {
+    // Keep Academy inquiries free from competing timed acquisition prompts.
+    if (isEnterprise) return
     let dismissedAt: string | null = null
     let hasConsent = false
     try { dismissedAt = localStorage.getItem(POPUP_KEY); hasConsent = Boolean(localStorage.getItem(CONSENT_KEY)) } catch { return }
@@ -38,12 +43,12 @@ export default function WhitepaperPopup() {
       window.removeEventListener('tra:consent-saved', startTimer)
       clearTimeout(timer)
     }
-  }, [])
+  }, [isEnterprise])
 
   function handleClose() {
     setOpen(false)
     try { localStorage.setItem(POPUP_KEY, String(Date.now())) } catch { /* Dismiss for this visit. */ }
   }
 
-  return <WhitepaperModal isOpen={open} onClose={handleClose} />
+  return isEnterprise ? null : <WhitepaperModal isOpen={open} onClose={handleClose} />
 }

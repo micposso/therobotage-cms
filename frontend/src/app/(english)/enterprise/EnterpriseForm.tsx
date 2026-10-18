@@ -1,107 +1,59 @@
 'use client'
 
-import { useState, useActionState } from 'react'
+import { useState, useActionState, useEffect, useRef } from 'react'
+import Link from 'next/link'
 import { sendEnterpriseRequest } from '@/app/actions/sendEnterpriseRequest'
+import { enterpriseFields, validateEnterpriseRequest, type EnterpriseErrors, type EnterpriseField } from '@/lib/enterpriseRequest'
+import { uiText } from '@/lib/i18n/messages'
+import type { Locale } from '@/lib/i18n/routing'
 import styles from './enterprise.module.css'
+import cta from '@/components/FoundingCohort/FoundingCohort.module.css'
 
-interface FormPayload {
-  email: string
-  name: string
-  organization: string
-  role: string
-  deployment: string
-}
-
-export default function EnterpriseForm() {
-  const [payload, setPayload] = useState<FormPayload>({
-    email: '',
-    name: '',
-    organization: '',
-    role: '',
-    deployment: '',
-  })
-
-  function handleChange(
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) {
-    setPayload((prev) => ({ ...prev, [e.target.name]: e.target.value }))
-  }
-
+export default function EnterpriseForm({ locale = 'en' }: { locale?: Locale }) {
+  const t = (value: string) => uiText(value, locale)
+  const [values, setValues] = useState<Partial<Record<EnterpriseField, string>>>({})
+  const [localErrors, setLocalErrors] = useState<EnterpriseErrors | null>(null)
   const [state, action, pending] = useActionState(sendEnterpriseRequest, { success: false })
-
-  if (state.success) return <p role="status">Thank you. We received your briefing request and will be in touch.</p>
-
-  return (
-    <form className={styles.form} action={action} noValidate>
-      <div className={styles.fieldGroup}>
-        <label htmlFor="name" className={styles.label}>
-          Name<span className={styles.required}>*</span>
-        </label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          required
-          autoComplete="name"
-          className={styles.input}
-          value={payload.name}
-          onChange={handleChange}
-        />
+  const successRef = useRef<HTMLParagraphElement>(null)
+  const formRef = useRef<HTMLFormElement>(null)
+  const errors = localErrors ?? state.errors ?? {}
+  useEffect(() => {
+    if (state.success) successRef.current?.focus()
+    else if (state.errors) formRef.current?.querySelector<HTMLElement>('[aria-invalid="true"]')?.focus()
+  }, [state])
+  if (state.success) return <p ref={successRef} className={styles.success} role="status" tabIndex={-1}>{t('Thank you. Your Academy briefing request has been received. We will be in touch using the email you provided.')}</p>
+  return <form ref={formRef} className={styles.form} action={action} noValidate aria-busy={pending} onSubmit={(event) => {
+    const next = validateEnterpriseRequest(new FormData(event.currentTarget))
+    if (Object.keys(next).length) {
+      event.preventDefault()
+      setLocalErrors(next)
+      requestAnimationFrame(() => formRef.current?.querySelector<HTMLElement>('[aria-invalid="true"]')?.focus())
+    } else setLocalErrors(null)
+  }}>
+    <p className={styles.formNote}>{t('Required fields are marked *.')}</p>
+    <div className={styles.honeypot} aria-hidden="true"><label htmlFor="enterprise-website">{t('Leave this field empty')}</label><input id="enterprise-website" name="website" tabIndex={-1} autoComplete="off" /></div>
+    {enterpriseFields.map((field) => {
+      const id = `enterprise-${field.name}`
+      const props = {
+        id, name: field.name, required: field.required, className: styles.input,
+        value: values[field.name] ?? '', 'aria-invalid': !!errors[field.name],
+        'aria-describedby': errors[field.name] ? `${id}-error` : undefined,
+        onChange: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+          setValues((prev) => ({ ...prev, [field.name]: event.target.value }))
+          setLocalErrors({ ...errors, [field.name]: undefined })
+        },
+      }
+      return <div className={`${styles.field} ${field.type === 'textarea' ? styles.fullWidth : ''}`} key={field.name}>
+        <label htmlFor={id} className={styles.label}>{t(field.label)}{field.required ? <span aria-hidden="true"> *</span> : <span className={styles.optional}>({t('Optional')})</span>}</label>
+        {field.type === 'select' ? <select {...props}><option value="">{t('Select an option')}</option>{field.options.map(option => <option key={option} value={option}>{t(option)}</option>)}</select>
+          : field.type === 'textarea' ? <textarea {...props} maxLength={field.maxLength} rows={3} />
+          : <input {...props} type={field.type} maxLength={field.maxLength} autoComplete={'autoComplete' in field ? field.autoComplete : undefined} />}
+        {errors[field.name] && <p className={styles.error} id={`${id}-error`}>{t(errors[field.name]!)}</p>}
       </div>
-
-      <div className={styles.fieldGroup}>
-        <label htmlFor="organization" className={styles.label}>
-          Organization<span className={styles.required}>*</span>
-        </label>
-        <input
-          id="organization"
-          name="organization"
-          type="text"
-          required
-          autoComplete="organization"
-          className={styles.input}
-          value={payload.organization}
-          onChange={handleChange}
-        />
-      </div>
-
-      <div className={styles.fieldGroup}>
-        <label htmlFor="role" className={styles.label}>
-          Role<span className={styles.required}>*</span>
-        </label>
-        <input
-          id="role"
-          name="role"
-          type="text"
-          required
-          autoComplete="organization-title"
-          className={styles.input}
-          value={payload.role}
-          onChange={handleChange}
-        />
-      </div>
-
-      <div className={styles.fieldGroup}>
-        <label htmlFor="deployment" className={styles.label}>
-          What are you deploying or considering?
-        </label>
-        <textarea
-          id="deployment"
-          name="deployment"
-          className={styles.textarea}
-          value={payload.deployment}
-          onChange={handleChange}
-        />
-      </div>
-
-      <div className={styles.fieldGroup}>
-        <label htmlFor="enterprise-email" className={styles.label}>Email<span className={styles.required}>*</span></label>
-        <input id="enterprise-email" name="email" type="email" required autoComplete="email" className={styles.input} value={payload.email} onChange={handleChange} />
-      </div>
-      {state.error && <p role="alert">{state.error}</p>}
-      <button disabled={pending} type="submit" className={styles.submitButton}>
-        {pending ? 'Sending...' : 'Request briefing'}
-      </button>
-    </form>
-  )
+    })}
+    <p className={styles.consent}>{t('By submitting, you agree that The Robot Age may contact you about this inquiry. Read our')} <Link href="/privacy">{t('Privacy Policy')}</Link>.</p>
+    {(Object.values(errors).some(Boolean) || state.error) && <p className={styles.formError} role="alert">{t(state.error || 'Please check the highlighted fields.')}</p>}
+    <button type="submit" disabled={pending} className={`${cta.cta} ${styles.submitButton}`}>{t(pending ? 'Sending your request…' : 'Request Academy Briefing')} <span aria-hidden="true">↗</span></button>
+    <span className={styles.honeypot} role="status">{pending ? t('Sending your request…') : ''}</span>
+  </form>
 }

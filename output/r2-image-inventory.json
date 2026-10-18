@@ -1,7 +1,7 @@
 {
   "published": true,
-  "count": 161,
-  "bytes": 78297169,
+  "count": 168,
+  "bytes": 79506847,
   "assets": {
     "/brand/instructor.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/brand/instructor.4400bfbd66cbf98c.png",
@@ -74,6 +74,48 @@
       "key": "website/images/academy/rpdp-program.5b823fdd4b273b7f.webp",
       "bytes": 155634,
       "sha256": "5b823fdd4b273b7f05f5b43857ed0da5e7bc85ce3f4b2f15eae2c2cbd5337060"
+    },
+    "/images/enterprise/enterprise-academy-hero.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/enterprise/enterprise-academy-hero.c86f307c8a17bf28.webp",
+      "key": "website/images/enterprise/enterprise-academy-hero.c86f307c8a17bf28.webp",
+      "bytes": 210566,
+      "sha256": "c86f307c8a17bf2882c83c800578a89e603ecf6af1ad7f036415a68141951454"
+    },
+    "/images/enterprise/enterprise-adoption-workplace.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/enterprise/enterprise-adoption-workplace.0219b5b2f1643ac6.webp",
+      "key": "website/images/enterprise/enterprise-adoption-workplace.0219b5b2f1643ac6.webp",
+      "bytes": 153362,
+      "sha256": "0219b5b2f1643ac650f57105a236d0253e2c05865df17c1cb606f3482bc40133"
+    },
+    "/images/enterprise/enterprise-factory-training.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/enterprise/enterprise-factory-training.c04833e871103217.webp",
+      "key": "website/images/enterprise/enterprise-factory-training.c04833e871103217.webp",
+      "bytes": 190436,
+      "sha256": "c04833e87110321797884a3e0134b7d44b75c89ffc02370e1c96a0a8b3d3934b"
+    },
+    "/images/enterprise/enterprise-humanoid-onboarding.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/enterprise/enterprise-humanoid-onboarding.f1f8099e5a8c6335.webp",
+      "key": "website/images/enterprise/enterprise-humanoid-onboarding.f1f8099e5a8c6335.webp",
+      "bytes": 162644,
+      "sha256": "f1f8099e5a8c6335dacc7d2f5641d611ed92a24b1fa564cb48533c2a3ff029dc"
+    },
+    "/images/enterprise/enterprise-multilingual-training.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/enterprise/enterprise-multilingual-training.43f4432be28c8547.webp",
+      "key": "website/images/enterprise/enterprise-multilingual-training.43f4432be28c8547.webp",
+      "bytes": 150570,
+      "sha256": "43f4432be28c8547be88a2a25a911fd480fe4a71d16f63600ee7426c2d7e3960"
+    },
+    "/images/enterprise/enterprise-quadruped-inspection.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/enterprise/enterprise-quadruped-inspection.e457cf672642939e.webp",
+      "key": "website/images/enterprise/enterprise-quadruped-inspection.e457cf672642939e.webp",
+      "bytes": 195778,
+      "sha256": "e457cf672642939ebec7f7bc6db0f1e239b97f1d447dfeda8f44ae1e8aee5b66"
+    },
+    "/images/enterprise/enterprise-senior-living.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/enterprise/enterprise-senior-living.1df6dc0a03b3fa4e.webp",
+      "key": "website/images/enterprise/enterprise-senior-living.1df6dc0a03b3fa4e.webp",
+      "bytes": 146322,
+      "sha256": "1df6dc0a03b3fa4e2912d63c75303e370a7dad0aa61c80ae79c0d952527dde6f"
     },
     "/images/enterprise/hotel-team.webp": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/enterprise/hotel-team.0f94632adfb77b1f.webp",

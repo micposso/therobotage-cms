@@ -16,6 +16,7 @@ import Curriculum, { generateMetadata as curriculumMetadata } from '@/app/(engli
 import LiveRobotLab, { generateMetadata as labMetadata } from '@/app/(english)/live-robot-lab/page'
 import LiteracyPartners, { generateMetadata as partnersMetadata } from '@/app/(english)/robot-literacy/partners/page'
 import Access, { generateMetadata as accessMetadata } from '@/app/(english)/access/page'
+import Enterprise, { generateMetadata as enterpriseMetadata } from '@/app/(english)/enterprise/page'
 import Rxd from '@/app/(english)/rxd/page'
 import RxdScorecard from '@/app/(english)/rxd-scorecard/page'
 import type { Metadata } from 'next'
@@ -44,6 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (route === '/live-robot-lab') return labMetadata({ params: pageParams })
   if (route === '/robot-literacy/partners') return partnersMetadata({ params: pageParams })
   if (route === '/access') return accessMetadata({ params: pageParams })
+  if (route === '/enterprise') return enterpriseMetadata({ params: pageParams })
   if (segments[0] === 'learn' && getAvailableTranslations().includes(route)) {
     const params = Promise.resolve({ locale: 'es' as const, credential: segments[1] })
     return segments[2] === 'curriculum' ? curriculumMetadata({ params }) : credentialMetadata({ params })
@@ -72,6 +74,7 @@ export default async function TranslatedPage({ params, searchParams }: Props) {
   if (route === '/live-robot-lab') return <LiveRobotLab params={pageParams} />
   if (route === '/robot-literacy/partners') return <LiteracyPartners params={pageParams} />
   if (route === '/access') return <Access params={pageParams} />
+  if (route === '/enterprise') return <Enterprise params={pageParams} />
   if (route === '/rxd') return <Rxd params={pageParams} />
   if (route === '/rxd-scorecard') return <RxdScorecard params={pageParams} />
   if (segments[0] === 'learn' && getAvailableTranslations().includes(route)) {

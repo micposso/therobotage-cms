@@ -1,5 +1,6 @@
 import savedSpanish from './ui-es.json'
 import rxdSpanish from './rxd-es.json'
+import enterpriseSpanish from './enterprise-es.json'
 import type { Locale } from './routing'
 const spanish: Record<string, string> = {
   RESEARCH: 'INVESTIGACIÓN', ROBOTS: 'ROBOTS', 'RXD FRAMEWORK': 'MARCO RXD', LEARN: 'APRENDER', JOBS: 'EMPLEOS', ENTERPRISE: 'EMPRESAS',
@@ -19,4 +20,4 @@ const spanish: Record<string, string> = {
   'Toggle analytics cookies': 'Activar o desactivar cookies de análisis', 'Toggle marketing cookies': 'Activar o desactivar cookies de marketing',
   'Used to measure the effectiveness of outreach and promotions.': 'Permiten medir la eficacia de nuestras campañas y promociones.', 'Save preferences': 'Guardar preferencias',
 }
-export function uiText(text: string, locale: Locale): string { if (locale === 'en') return text; const key = text.trim(); const translated = (rxdSpanish as Record<string, string>)[key] || spanish[key] || (savedSpanish as Record<string, string>)[key]; return translated ? text.replace(key, translated) : text }
+export function uiText(text: string, locale: Locale): string { if (locale === 'en') return text; const key = text.trim(); const translated = (enterpriseSpanish as Record<string, string>)[key] || (rxdSpanish as Record<string, string>)[key] || spanish[key] || (savedSpanish as Record<string, string>)[key]; return translated ? text.replace(key, translated) : text }
