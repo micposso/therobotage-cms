@@ -1,7 +1,7 @@
 {
   "published": true,
-  "count": 168,
-  "bytes": 79506847,
+  "count": 171,
+  "bytes": 80046435,
   "assets": {
     "/brand/instructor.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/brand/instructor.4400bfbd66cbf98c.png",
@@ -87,6 +87,12 @@
       "bytes": 153362,
       "sha256": "0219b5b2f1643ac650f57105a236d0253e2c05865df17c1cb606f3482bc40133"
     },
+    "/images/enterprise/enterprise-entertainment.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/enterprise/enterprise-entertainment.c784423bbfb45d57.webp",
+      "key": "website/images/enterprise/enterprise-entertainment.c784423bbfb45d57.webp",
+      "bytes": 178310,
+      "sha256": "c784423bbfb45d579d5251f3c77296f60957df6f004a8d635a5a1137d3879c36"
+    },
     "/images/enterprise/enterprise-factory-training.webp": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/enterprise/enterprise-factory-training.c04833e871103217.webp",
       "key": "website/images/enterprise/enterprise-factory-training.c04833e871103217.webp",
@@ -99,6 +105,12 @@
       "bytes": 162644,
       "sha256": "f1f8099e5a8c6335dacc7d2f5641d611ed92a24b1fa564cb48533c2a3ff029dc"
     },
+    "/images/enterprise/enterprise-local-government.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/enterprise/enterprise-local-government.51393905fe9b7599.webp",
+      "key": "website/images/enterprise/enterprise-local-government.51393905fe9b7599.webp",
+      "bytes": 200316,
+      "sha256": "51393905fe9b75999c24d6e40ca3b0ea513c1458aa739330a733fc4ac76cc797"
+    },
     "/images/enterprise/enterprise-multilingual-training.webp": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/enterprise/enterprise-multilingual-training.43f4432be28c8547.webp",
       "key": "website/images/enterprise/enterprise-multilingual-training.43f4432be28c8547.webp",
@@ -110,6 +122,12 @@
       "key": "website/images/enterprise/enterprise-quadruped-inspection.e457cf672642939e.webp",
       "bytes": 195778,
       "sha256": "e457cf672642939ebec7f7bc6db0f1e239b97f1d447dfeda8f44ae1e8aee5b66"
+    },
+    "/images/enterprise/enterprise-security.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/enterprise/enterprise-security.6c34314f737f7990.webp",
+      "key": "website/images/enterprise/enterprise-security.6c34314f737f7990.webp",
+      "bytes": 160962,
+      "sha256": "6c34314f737f7990b7bb86f3ab0168c6909e9146172b6042fc745e4959aacdea"
     },
     "/images/enterprise/enterprise-senior-living.webp": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/enterprise/enterprise-senior-living.1df6dc0a03b3fa4e.webp",

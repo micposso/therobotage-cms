@@ -1,6 +1,12 @@
 # Enterprise Academy implementation
 
-The enterprise page uses the existing PageHero, navigation, footer, MediaImage, Fairview display font, IBM Plex Sans body font, brand color variables, and FoundingCohort CTA styling.
+The enterprise page uses the existing PageHero brand-image carousel, navigation, footer, MediaImage, Fairview display font, IBM Plex Sans body font, brand color variables, and FoundingCohort CTA styling.
+
+## Current page refinement
+
+The page now has five main sections after the hero: deployment value, six industry use cases, a consolidated Academy delivery model, a measurable paid pilot, and the inquiry form. Repeated audience, capability and process sections have been consolidated. Pilot metrics cover training effort, practical workforce readiness and customer satisfaction without unsupported percentage claims. Industry cards reuse Robot Literacy's existing card styling. The headline has two explicit lines on desktop and wraps naturally on smaller screens.
+
+Industrial, Hospitality, Healthcare, Entertainment, Security and Local Government each have an illustrated use case. The separate humanoid/inspection section was removed; the humanoid appears in Hospitality and municipal quadruped inspection appears in Local Government. Three additional optimized images are saved under the same public image directory and published through R2. English and Spanish copy, image descriptions and CTA text are synchronized. Header and body font sizes use the existing site scale.
 
 ## Files and components
 

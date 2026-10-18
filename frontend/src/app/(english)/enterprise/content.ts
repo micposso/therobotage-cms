@@ -5,7 +5,7 @@ export const enterpriseContent = {
     "You deploy the robots.",
     "We prepare the people."
   ],
-  "support": "Multilingual training. Multicultural workforce readiness. Scalable robot adoption.",
+  "support": "Scale customer onboarding without scaling your training workload. We build and manage reusable, multilingual training so your engineers spend less time repeating instructions and more time deploying robots.",
   "intro": "The Robot Age helps robotics manufacturers, integrators, and deployment providers prepare their customers for working with robots through managed education, onboarding, practical assessments, and adoption programs.",
   "cta": "Request an Academy Briefing",
   "explore": "Explore How It Works",
@@ -13,53 +13,40 @@ export const enterpriseContent = {
   "problem": {
     "label": "THE DEPLOYMENT GAP",
     "title": "Installing a robot is only the beginning.",
-    "body": "Your team knows how to build, configure, and deploy robots. But every new customer introduces a new workforce, new languages, new workflows, and new operational challenges.",
-    "note": "As deployments scale, customer education becomes a recurring operational responsibility.",
+    "body": "Every new customer brings another team to train. When engineers repeat the same onboarding, customer education consumes time that could support the next deployment.",
     "items": [
       [
-        "Training doesn't scale automatically",
-        "Each customer site requires workforce onboarding and practical instruction."
+        "Less repeat training",
+        "Build one product-specific learning program, then adapt it for each customer site."
       ],
       [
-        "Workforces are not homogeneous",
-        "Employees may have different languages, cultural expectations, job responsibilities, and levels of familiarity with robots."
+        "More capable customer teams",
+        "Teach everyday tasks in the workforce’s language, then check practical understanding."
       ],
       [
-        "Adoption continues after go-live",
-        "New hires, changing workflows, software updates, and expanding fleets create continuing education needs."
+        "Support beyond handover",
+        "Give new hires and changing shifts a consistent way to learn without starting from scratch."
       ]
     ],
     "closing": "You focus on your robots. We help your customers learn how to work with them."
   },
   "solution": {
     "label": "ACADEMY-AS-A-SERVICE",
-    "title": "Your robotics product. Your customers. Your Academy.",
-    "body": "Robot Deployment Academy-as-a-Service is a managed education and adoption offering built around your robotics product and the workplaces where it operates.",
-    "note": "We collaborate with your organization to create reusable learning programs that can be adapted across customers, locations, and workforce groups.",
+    "title": "Your customer training team, on demand.",
+    "body": "Robot Deployment Academy-as-a-Service gives manufacturers, integrators, distributors, and RaaS providers a managed onboarding program built around their robot.",
+    "note": "Research-informed learning adapted to workforce languages, roles, and cultural context. English and Spanish are initially planned; other languages depend on scope.",
     "items": [
       [
-        "Deployment Readiness",
-        "Assess workforce roles, training needs, and operational knowledge gaps."
+        "Build once",
+        "We turn your operating procedures into role-based lessons, practical exercises, and assessments."
       ],
       [
-        "Customer Onboarding",
-        "Prepare frontline employees, supervisors, and customer teams."
+        "Deliver across customers",
+        "We support workshops, digital learning, and train-the-trainer delivery, adapted to each workforce."
       ],
       [
-        "Multilingual Learning",
-        "Develop localized courses, training materials, and assessments for diverse workforces."
-      ],
-      [
-        "Competency Assessment",
-        "Evaluate understanding and practical task proficiency."
-      ],
-      [
-        "Adoption Management",
-        "Support communication, workforce confidence, change management, and human-robot interaction."
-      ],
-      [
-        "Continuous Education",
-        "Provide refreshers as customers hire employees, update robots, and expand deployments."
+        "Improve as you scale",
+        "We review learning outcomes and refresh materials for new hires, workflows, and robot updates."
       ]
     ]
   },
@@ -117,19 +104,35 @@ export const enterpriseContent = {
     "title": "Different workplaces. Different people. One approach to readiness.",
     "items": [
       [
-        "Restaurants & Hospitality",
-        "Train front-of-house, service, facilities, and operations teams to work alongside delivery and service robots."
+        "Industrial",
+        "Repeatable onboarding for factory, warehouse, and inspection teams—designed to reduce specialist training time at each site."
       ],
       [
-        "Manufacturing & Logistics",
-        "Support workforce orientation, robot interaction procedures, and changing operational workflows."
+        "Hospitality",
+        "Train hotel teams to manage robot supply handoffs and exceptions, helping maintain consistent service across shifts."
       ],
       [
-        "Senior Living & Facilities",
-        "Help staff understand service robots, their limitations, and appropriate operation in human-centered environments."
+        "Healthcare",
+        "Prepare care-support staff for service robots, with clear task boundaries and escalation procedures that respect care workflows."
+      ],
+      [
+        "Entertainment",
+        "Prepare museum and attraction staff to guide robot-led visitor interactions and step in when needed, supporting an engaging, well-managed guest experience."
+      ],
+      [
+        "Security",
+        "Train campus security teams to review patrol-robot alerts and escalate incidents, with clear human oversight and consistent shift handovers."
+      ],
+      [
+        "Local Government",
+        "Prepare municipal facilities teams for robot-assisted building inspections: follow routes, review findings, and flag maintenance needs through a repeatable workflow."
       ]
     ],
-    "note": "Illustrative target environments. All imagery on this page is AI-generated and does not document customer engagements."
+    "note": "Illustrative target environments. All imagery on this page is AI-generated and does not document customer engagements.",
+    "titleLines": [
+      "Different workplaces. Different people.",
+      "One approach to readiness."
+    ]
   },
   "partners": {
     "label": "OUR PARTNERS",
@@ -155,16 +158,13 @@ export const enterpriseContent = {
   },
   "pilot": {
     "label": "THE ACADEMY PILOT",
-    "title": "One robot. One customer. One repeatable program.",
-    "body": "Start with a focused, paid Academy pilot tailored to one robotics product, a defined workforce, and a practical deployment use case.",
+    "title": "Measure the value before you scale.",
+    "body": "Start with one robot, one customer, and a paid pilot. Agree a baseline, success criteria, and review period before training begins.",
     "items": [
-      "Workforce learning-needs assessment",
-      "Role-based onboarding plan",
-      "Robot-specific training module",
-      "Guided training session",
-      "Practical competency assessment",
-      "Readiness and learning outcomes report",
-      "Recommendations for scaling"
+      "Learning-needs assessment and onboarding plan",
+      "Robot-specific module and guided training",
+      "Practical assessment and outcomes report",
+      "Recommendations for rollout and refreshers"
     ],
     "cta": "Discuss an Academy Pilot"
   },
@@ -196,7 +196,7 @@ export const enterpriseContent = {
   "form": {
     "label": "LET'S TALK",
     "title": "Let's prepare your next deployment.",
-    "body": "Tell us about your robotics product and deployment goals. We'll discuss how a tailored Academy could support your customer onboarding, workforce education, and adoption requirements."
+    "body": "Tell us about your robot and where customer onboarding takes the most time. We’ll discuss the scope, measures, and cost of a focused Academy pilot."
   },
   "alt": {
     "hero": "Restaurant employees and a trainer learning to use a wheeled tray service robot before service.",
@@ -205,18 +205,31 @@ export const enterpriseContent = {
     "multilingual": "Hotel employees discuss a cleaning robot and training diagrams with an instructor.",
     "adoption": "Facilities staff carry out daily work while a floor-cleaning robot follows a clear corridor route.",
     "humanoid": "Hotel operations staff learn a supervised supply handoff with a humanoid robot in a back-of-house workroom.",
-    "quadruped": "Facilities technicians learn to guide a quadruped inspection robot through a basement mechanical room."
+    "quadruped": "Facilities technicians learn to guide a quadruped inspection robot through a basement mechanical room.",
+    "entertainment": "Museum staff practice visitor interactions beside a wheeled interactive robot.",
+    "security": "A supervisor trains security officers to oversee a wheeled patrol robot at a commercial campus.",
+    "government": "Municipal facilities staff learn an inspection route with a quadruped robot in a building mechanical room."
   },
   "imageNote": "Conceptual workplace illustration · AI-generated",
   "outcome": "The goal: people and robots working confidently alongside one another.",
-  "additionalScenarios": [
-    [
-      "Humanoids & Assisted Workflows",
-      "Prepare teams for supervised material handling, clear handoffs, task limits, and intervention procedures around humanoid robots."
-    ],
-    [
-      "Building Inspection & Maintenance",
-      "Orient facilities teams to quadruped inspection robots in basements and plant rooms: routes, observation, reporting, and safe escalation."
+  "focus": {
+    "areaCta": "Discuss your deployment",
+    "pilotCta": "Explore a measurable pilot",
+    "deliverables": "What the pilot includes",
+    "measurement": "Compare results with a comparable cohort or your documented baseline. Set targets together; improvements are measured, not guaranteed.",
+    "metrics": [
+      [
+        "Training effort",
+        "Staff hours per customer site, multiplied by your hourly staff cost. Compare this with the Academy fee and remaining internal effort."
+      ],
+      [
+        "Workforce readiness",
+        "Share of employees who can complete agreed robot tasks without prompting, using the same practical assessment."
+      ],
+      [
+        "Customer satisfaction",
+        "Customer ratings of onboarding quality and confidence using the robot, collected with the same questions and timing."
+      ]
     ]
-  ]
+  }
 } as const
