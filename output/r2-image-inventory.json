@@ -1,7 +1,7 @@
 {
   "published": true,
-  "count": 160,
-  "bytes": 76114087,
+  "count": 161,
+  "bytes": 78297169,
   "assets": {
     "/brand/instructor.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/brand/instructor.4400bfbd66cbf98c.png",
@@ -644,6 +644,12 @@
       "key": "website/images/recovery-icon.7e9ed7e20cb8bee1.png",
       "bytes": 1132841,
       "sha256": "7e9ed7e20cb8bee168afa6036eb4f9e9441fb9f8b0252331a51d1a59d942a110"
+    },
+    "/images/robot-accountability-urban-controller.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/robot-accountability-urban-controller.d960bf947bf97b8d.png",
+      "key": "website/images/robot-accountability-urban-controller.d960bf947bf97b8d.png",
+      "bytes": 2183082,
+      "sha256": "d960bf947bf97b8d421ba06430e2cfc12172bdfffb6e725db103808f1538f30e"
     },
     "/images/robot-literacy/organizations.webp": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/robot-literacy/organizations.c1657efba200f615.webp",
