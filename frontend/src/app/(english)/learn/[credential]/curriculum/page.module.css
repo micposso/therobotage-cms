@@ -106,9 +106,9 @@
 
 .audienceIntro {
   font-family: var(--font-body);
-  font-size: var(--text-base);
+  font-size: var(--text-body);
   font-weight: 400;
-  line-height: 1.7;
+  line-height: var(--leading-body);
   color: var(--color-text-muted);
   max-width: 680px;
   margin-bottom: var(--space-12);
@@ -137,9 +137,9 @@
 
 .audienceCardBody {
   font-family: var(--font-body);
-  font-size: var(--text-sm);
+  font-size: var(--text-body);
   font-weight: 400;
-  line-height: 1.7;
+  line-height: var(--leading-body);
   color: var(--color-text-muted);
 }
 
@@ -147,9 +147,9 @@
 
 .structureIntro {
   font-family: var(--font-body);
-  font-size: var(--text-base);
+  font-size: var(--text-body);
   font-weight: 400;
-  line-height: 1.7;
+  line-height: var(--leading-body);
   color: var(--color-text-muted);
   max-width: 680px;
   margin-bottom: var(--space-12);
@@ -295,9 +295,9 @@
 
 .moduleDescription {
   font-family: var(--font-body);
-  font-size: var(--text-sm);
+  font-size: var(--text-body);
   font-weight: 400;
-  line-height: 1.7;
+  line-height: var(--leading-body);
   color: var(--color-text-muted);
 }
 
@@ -350,7 +350,7 @@
 .weekSummary::after {
   content: '+';
   font-family: var(--font-body);
-  font-size: var(--text-sm);
+  font-size: var(--text-body);
   font-weight: 400;
   color: var(--color-text-muted);
   margin-left: auto;
@@ -409,9 +409,9 @@
 
 .weekDesc {
   font-family: var(--font-body);
-  font-size: var(--text-sm);
+  font-size: var(--text-body);
   font-weight: 400;
-  line-height: 1.7;
+  line-height: var(--leading-body);
   color: var(--color-text-muted);
   max-width: 640px;
 }
@@ -508,9 +508,9 @@
 
 .sectionBody {
   font-family: var(--font-body);
-  font-size: var(--text-base);
+  font-size: var(--text-body);
   font-weight: 400;
-  line-height: 1.7;
+  line-height: var(--leading-body);
   color: var(--color-text-muted);
   max-width: 680px;
   margin-bottom: var(--space-10);
@@ -560,9 +560,9 @@
 
 .ctaBody {
   font-family: var(--font-body);
-  font-size: var(--text-base);
+  font-size: var(--text-body);
   font-weight: 400;
-  line-height: 1.7;
+  line-height: var(--leading-body);
   color: var(--color-text-muted);
   max-width: 600px;
   margin-bottom: var(--space-10);
@@ -657,7 +657,7 @@
 .faqSummary::after {
   content: '+';
   font-family: var(--font-body);
-  font-size: var(--text-sm);
+  font-size: var(--text-body);
   font-weight: 400;
   color: var(--color-text-muted);
   flex-shrink: 0;

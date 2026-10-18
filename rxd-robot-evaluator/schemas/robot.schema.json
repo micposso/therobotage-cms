@@ -1,0 +1,312 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "manufacturer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "category": {
+      "type": "string",
+      "minLength": 1
+    },
+    "applications": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "physicalFunction": {
+      "type": "string",
+      "minLength": 1
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "variant": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "imagery": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "alt": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sourceEvidenceIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "url",
+          "alt",
+          "sourceEvidenceIds"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "editorialStatus": {
+      "type": "string",
+      "const": "pending"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+    },
+    "commerciallyReleased": {
+      "type": "boolean"
+    },
+    "physical": {
+      "type": "boolean"
+    },
+    "humanInteraction": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ownershipAvailable": {
+      "type": "boolean"
+    },
+    "availability": {
+      "type": "string",
+      "enum": [
+        "purchase",
+        "quotation",
+        "temporary",
+        "unverified",
+        "archived"
+      ]
+    },
+    "deployment": {
+      "type": "string",
+      "enum": [
+        "consumer",
+        "commercial",
+        "integration",
+        "developer"
+      ]
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "acquisition": {
+      "type": "object",
+      "properties": {
+        "channel": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [
+                "manufacturer",
+                "retailer",
+                "distributor",
+                "enterprise-quotation",
+                "integrator"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "url": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "verifiedAt": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidenceIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "region": {
+          "type": "string",
+          "minLength": 1
+        },
+        "notes": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "channel",
+        "url",
+        "verifiedAt",
+        "evidenceIds",
+        "region",
+        "notes"
+      ],
+      "additionalProperties": false
+    },
+    "specifications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "evidenceIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "name",
+          "value",
+          "evidenceIds"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "id",
+    "manufacturer",
+    "model",
+    "category",
+    "applications",
+    "physicalFunction",
+    "slug",
+    "variant",
+    "description",
+    "imagery",
+    "editorialStatus",
+    "createdAt",
+    "updatedAt",
+    "commerciallyReleased",
+    "physical",
+    "humanInteraction",
+    "ownershipAvailable",
+    "availability",
+    "deployment",
+    "prerequisites",
+    "acquisition",
+    "specifications"
+  ],
+  "additionalProperties": false,
+  "title": "RXD Robot 1.0",
+  "$comment": "GENERATED from frontend/src/lib/rxd/schema.ts. Run generate-schemas.mjs; do not hand-edit. Semantic validation is mandatory.",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "availability": {
+            "enum": [
+              "purchase",
+              "quotation"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "physical": {
+            "const": true
+          },
+          "commerciallyReleased": {
+            "const": true
+          },
+          "ownershipAvailable": {
+            "const": true
+          },
+          "acquisition": {
+            "properties": {
+              "channel": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "verifiedAt": {
+                "type": "string",
+                "format": "date"
+              },
+              "evidenceIds": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

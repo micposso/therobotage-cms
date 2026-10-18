@@ -65,8 +65,8 @@
 
 .contentBody {
   font-family: var(--font-body);
-  font-size: var(--text-sm);
-  line-height: 1.75;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
   margin: 0;
   white-space: pre-wrap;
 }

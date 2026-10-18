@@ -1,0 +1,226 @@
+- generic [active] [ref=f4e1]:
+  - link "Skip to content" [ref=f4e2] [cursor=pointer]:
+    - /url: "#literacy-main"
+  - navigation [ref=f4e3]:
+    - generic [ref=f4e5]:
+      - link [ref=f4e6] [cursor=pointer]:
+        - /url: /
+        - img "The Robot Age" [ref=f4e7]
+      - list [ref=f4e8]:
+        - listitem [ref=f4e9]:
+          - link "RESEARCH" [ref=f4e10] [cursor=pointer]:
+            - /url: /research
+        - listitem [ref=f4e11]:
+          - link "ROBOTS" [ref=f4e12] [cursor=pointer]:
+            - /url: /robots
+        - listitem [ref=f4e13]:
+          - link "RXD FRAMEWORK" [ref=f4e14] [cursor=pointer]:
+            - /url: /rxd
+        - listitem [ref=f4e15]:
+          - group [ref=f4e16]:
+            - generic "PROGRAMS" [ref=f4e17] [cursor=pointer]
+        - listitem [ref=f4e18]:
+          - link "JOBS" [ref=f4e19] [cursor=pointer]:
+            - /url: /jobs
+        - listitem [ref=f4e20]:
+          - link "ENTERPRISE" [ref=f4e21] [cursor=pointer]:
+            - /url: /enterprise
+      - button "Open search" [ref=f4e23] [cursor=pointer]
+      - generic [ref=f4e27]:
+        - generic [ref=f4e28]: Language
+        - combobox "Language" [ref=f4e33] [cursor=pointer]:
+          - option "English" [selected]: EN
+          - option "Español": ES
+  - main [ref=f4e34]:
+    - generic [ref=f4e38]:
+      - paragraph [ref=f4e39]: THE ROBOT AGE
+      - heading "Robot Literacy" [level=1] [ref=f4e40]
+      - paragraph [ref=f4e42]: Understand robots. Interact responsibly. Decide how they belong in our world.
+      - paragraph [ref=f4e44]: The Robot Age’s Robot Literacy framework helps people understand what robots can do, how humans and robots should interact, and what changes when robots become part of everyday life.
+      - generic [ref=f4e45]:
+        - link "Explore the Framework" [ref=f4e46] [cursor=pointer]:
+          - /url: "#framework"
+          - text: Explore the Framework
+          - generic [aria-hidden] [ref=f4e47]: ↓
+        - link "Bring Robot Literacy to Your Organization" [ref=f4e48] [cursor=pointer]:
+          - /url: /enterprise
+    - generic [ref=f4e53]:
+      - paragraph [ref=f4e54]: The Robot Age Robot Literacy Framework — Version 1.0 · September 2026
+      - list "Robot Literacy framework areas" [ref=f4e55]:
+        - listitem [ref=f4e56]:
+          - article [ref=f4e57]:
+            - heading "INTERPRET" [level=2] [ref=f4e58]
+            - paragraph [ref=f4e59]: Understand the robot
+            - paragraph [ref=f4e61]: What can it do? What can it sense? How autonomous is it? What data does it collect or transmit? Where are its limits?
+            - paragraph [ref=f4e62]: Capabilities · Sensing · Autonomy · Data · Limitations
+        - listitem [ref=f4e63]:
+          - article [ref=f4e64]:
+            - heading "RELATE" [level=2] [ref=f4e65]
+            - paragraph [ref=f4e66]: Interact with robots
+            - paragraph [ref=f4e68]: How should robots behave around people? How should people behave around robots? What creates trust, healthy boundaries, clear communication and responsible interaction?
+            - paragraph [ref=f4e69]: Trust · Communication · Boundaries · Human control · Responsibility
+        - listitem [ref=f4e70]:
+          - article [ref=f4e71]:
+            - heading "COEXIST" [level=2] [ref=f4e72]
+            - paragraph [ref=f4e73]: Live with robots
+            - paragraph [ref=f4e75]: What happens when robots become part of workplaces, schools, homes and public spaces? Who benefits, who is affected and who remains responsible?
+            - paragraph [ref=f4e76]: Privacy · Work · Accessibility · Governance · Accountability · Society
+      - generic [ref=f4e78]:
+        - generic "Robot Literacy framework video" [ref=f4e79]
+        - generic:
+          - generic:
+            - button "Play Robot Literacy framework video" [ref=f4e80] [cursor=pointer]
+            - generic [ref=f4e82]:
+              - generic:
+                - generic [ref=f4e88] [cursor=pointer]:
+                  - generic [aria-hidden]:
+                    - generic: Pause
+                - slider [ref=f4e96] [cursor=pointer]: "0"
+                - generic [ref=f4e97]: 0:00 / 0:00
+                - generic [ref=f4e103] [cursor=pointer]:
+                  - generic [aria-hidden]:
+                    - generic: Mute
+                - slider [ref=f4e111] [cursor=pointer]: "0"
+                - generic [ref=f4e117] [cursor=pointer]:
+                  - generic [aria-hidden]:
+                    - generic: Enter fullscreen mode
+    - generic [ref=f4e119]:
+      - paragraph [ref=f4e120]: Application
+      - heading "What does Robot Literacy mean for you?" [level=2] [ref=f4e121]
+      - paragraph [ref=f4e122]: The same framework can help people understand robots in very different environments.
+      - generic [ref=f4e123]:
+        - article [ref=f4e124]:
+          - generic [ref=f4e125]:
+            - paragraph [ref=f4e126]: For Schools
+            - heading "Prepare students to understand robots, not simply use them." [level=3] [ref=f4e127]
+          - generic [ref=f4e128]:
+            - paragraph [ref=f4e129]: "The Robot Age’s Robot Literacy framework gives educators and students a shared language for discussing robots beyond coding or robotics engineering: capabilities, sensing, privacy, appropriate interaction, human responsibility and the role robots may play in society."
+            - paragraph [ref=f4e130]: Example questions
+            - list [ref=f4e131]:
+              - listitem [ref=f4e132]: What does this robot actually understand?
+              - listitem [ref=f4e133]: What information can it collect?
+              - listitem [ref=f4e134]: How should children interact with it?
+              - listitem [ref=f4e135]: When should a teacher or other human remain in control?
+            - link "Experience the Live Robot Lab" [ref=f4e137] [cursor=pointer]:
+              - /url: /live-robot-lab
+        - article [ref=f4e138]:
+          - generic [ref=f4e139]:
+            - paragraph [ref=f4e140]: For Organizations
+            - heading "Make better decisions about when, where and how robots should be deployed." [level=3] [ref=f4e141]
+          - generic [ref=f4e142]:
+            - paragraph [ref=f4e143]: The Robot Age’s Robot Literacy framework helps leaders, workers, designers and technology teams examine capabilities, human interaction, workflow changes, privacy, accessibility, risk and accountability before treating robotics as simply a technology purchase or engineering concern.
+            - paragraph [ref=f4e144]: Example questions
+            - list [ref=f4e145]:
+              - listitem [ref=f4e146]: Should a robot perform this task?
+              - listitem [ref=f4e147]: How will employees or customers interact with it?
+              - listitem [ref=f4e148]: What happens when it fails?
+              - listitem [ref=f4e149]: Who remains responsible?
+            - link "Explore Robot Literacy Consulting" [ref=f4e151] [cursor=pointer]:
+              - /url: /enterprise
+        - article [ref=f4e152]:
+          - generic [ref=f4e153]:
+            - paragraph [ref=f4e154]: For Individuals & Society
+            - heading "Build the knowledge needed to live and work alongside robots." [level=3] [ref=f4e155]
+          - generic [ref=f4e156]:
+            - paragraph [ref=f4e157]: The Robot Age’s Robot Literacy framework gives professionals, students and the public a way to examine robots entering workplaces, public spaces and everyday life without needing to code or build robots, while understanding questions involving privacy, employment, accessibility, governance and human responsibility.
+            - paragraph [ref=f4e158]: Example questions
+            - list [ref=f4e159]:
+              - listitem [ref=f4e160]: What should I know when I encounter a robot?
+              - listitem [ref=f4e161]: What can it perceive about me?
+              - listitem [ref=f4e162]: How could robots change my profession?
+              - listitem [ref=f4e163]: What rules and expectations should society develop?
+            - link "Explore Professional Programs" [ref=f4e165] [cursor=pointer]:
+              - /url: /learn#programs
+    - generic [ref=f4e167]:
+      - paragraph [ref=f4e168]: Ways to learn
+      - heading "Turn understanding into experience." [level=2] [ref=f4e169]
+      - generic [ref=f4e170]:
+        - article [ref=f4e171]:
+          - heading "Professional Programs" [level=3] [ref=f4e173]
+          - generic [ref=f4e174]:
+            - paragraph [ref=f4e175]: Professional pathways for people designing robot experiences (RPDP) or preparing organizations for robot deployment (RDP).
+            - link "Explore RPDP and RDP ↗" [ref=f4e177] [cursor=pointer]:
+              - /url: /learn#programs
+        - article [ref=f4e178]:
+          - heading "Live Robot Lab" [level=3] [ref=f4e180]
+          - generic [ref=f4e181]:
+            - paragraph [ref=f4e182]: Hands-on experiences with real robots. Observe behavior, ask questions and practice INTERPRET, RELATE and COEXIST with physical robotic systems.
+            - link "Explore Live Robot Lab ↗" [ref=f4e184] [cursor=pointer]:
+              - /url: /live-robot-lab
+        - article [ref=f4e185]:
+          - heading "Corporate Consulting & Workshops" [level=3] [ref=f4e187]
+          - generic [ref=f4e188]:
+            - paragraph [ref=f4e189]: Programs for companies, universities and organizations applying Robot Literacy to workforce readiness, robot deployment, customer experience, governance and responsible adoption.
+            - link "Discuss a Program" [ref=f4e191] [cursor=pointer]:
+              - /url: /enterprise
+      - paragraph [ref=f4e192]: The Robot Age’s Robot Literacy framework is hardware-agnostic and can be applied across humanoids, quadrupeds, social robots, autonomous mobile robots, cobots and emerging robotic systems.
+      - paragraph [ref=f4e193]:
+        - link "Discuss a curriculum partnership ↗" [ref=f4e194] [cursor=pointer]:
+          - /url: /robot-literacy/partners
+    - generic [ref=f4e196]:
+      - paragraph [ref=f4e197]: The next literacy
+      - heading "Robot Literacy will evolve as robots evolve." [level=2] [ref=f4e198]
+      - paragraph [ref=f4e199]: Capabilities, regulations, social norms and human relationships with robots will continue changing. The Robot Age is developing Robot Literacy as a shared framework that can be tested, questioned and refined through education, research and real-world interaction.
+      - link "Bring Robot Literacy to Your School or Organization" [ref=f4e200] [cursor=pointer]:
+        - /url: /connect
+  - contentinfo [ref=f4e201]:
+    - generic [ref=f4e202]:
+      - generic [ref=f4e203]:
+        - generic [ref=f4e204]:
+          - link "The Robot Age" [ref=f4e205] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f4e206]: Preparing people and organizations for a world with robots.
+        - generic [ref=f4e207]:
+          - generic [ref=f4e208]: Pages
+          - navigation [ref=f4e209]:
+            - link "Research" [ref=f4e210] [cursor=pointer]:
+              - /url: /research
+            - link "Academy" [ref=f4e211] [cursor=pointer]:
+              - /url: /learn
+            - link "Jobs" [ref=f4e212] [cursor=pointer]:
+              - /url: /jobs
+            - link "What Robot Are You?" [ref=f4e213] [cursor=pointer]:
+              - /url: /what-robot-are-you
+            - link "RXD Scorecard" [ref=f4e214] [cursor=pointer]:
+              - /url: /rxd-scorecard
+            - link "For Organizations" [ref=f4e215] [cursor=pointer]:
+              - /url: /enterprise
+            - link "Partners" [ref=f4e216] [cursor=pointer]:
+              - /url: /robot-literacy/partners
+            - link "Press" [ref=f4e217] [cursor=pointer]:
+              - /url: /press
+            - link "Connect" [ref=f4e218] [cursor=pointer]:
+              - /url: /connect
+            - link "Summit" [ref=f4e219] [cursor=pointer]:
+              - /url: /summit
+        - generic [ref=f4e220]:
+          - generic [ref=f4e221]: Programs
+          - navigation [ref=f4e222]:
+            - link "Robot Literacy" [ref=f4e223] [cursor=pointer]:
+              - /url: /robot-literacy
+            - link "Live Robot Lab" [ref=f4e224] [cursor=pointer]:
+              - /url: /live-robot-lab
+            - link "Product Design for Robots (RPDP)" [ref=f4e225] [cursor=pointer]:
+              - /url: /learn/rpdp
+            - link "Robot Deployment Practitioner (RDP)" [ref=f4e226] [cursor=pointer]:
+              - /url: /learn/rdp
+        - generic [ref=f4e227]:
+          - generic [ref=f4e228]: Follow
+          - generic [ref=f4e229]:
+            - link "LinkedIn" [ref=f4e230] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/therobotage/
+            - link "Instagram" [ref=f4e236] [cursor=pointer]:
+              - /url: https://www.instagram.com/roboticsliteracy/
+      - generic [ref=f4e243]:
+        - paragraph [ref=f4e245]: © 2026 The Robot Age. All rights reserved.
+        - generic [ref=f4e246]:
+          - link "Privacy Policy" [ref=f4e247] [cursor=pointer]:
+            - /url: /privacy
+          - link "Terms of Use" [ref=f4e248] [cursor=pointer]:
+            - /url: /terms
+          - link "Fair use of AI" [ref=f4e249] [cursor=pointer]:
+            - /url: /ai-statement
+  - complementary "Browser agent activity" [ref=f4e250]:
+    - button "Expand WebMCP browser agent activity" [ref=f4e253] [cursor=pointer]:
+      - generic [ref=f4e254]: WebMCP
+  - button "Open Next.js Dev Tools" [ref=f4e260] [cursor=pointer]

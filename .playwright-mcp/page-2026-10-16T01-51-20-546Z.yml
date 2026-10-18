@@ -1,0 +1,175 @@
+- generic [active] [ref=f6e1]:
+  - navigation [ref=f6e2]:
+    - generic [ref=f6e4]:
+      - link [ref=f6e5] [cursor=pointer]:
+        - /url: /
+        - img "The Robot Age" [ref=f6e6]
+      - list [ref=f6e7]:
+        - listitem [ref=f6e8]:
+          - link "RESEARCH" [ref=f6e9] [cursor=pointer]:
+            - /url: /research
+        - listitem [ref=f6e10]:
+          - link "ROBOTS" [ref=f6e11] [cursor=pointer]:
+            - /url: /robots
+        - listitem [ref=f6e12]:
+          - link "RXD FRAMEWORK" [ref=f6e13] [cursor=pointer]:
+            - /url: /rxd
+        - listitem [ref=f6e14]:
+          - group [ref=f6e15]:
+            - generic "PROGRAMS" [ref=f6e16] [cursor=pointer]
+        - listitem [ref=f6e17]:
+          - link "JOBS" [ref=f6e18] [cursor=pointer]:
+            - /url: /jobs
+        - listitem [ref=f6e19]:
+          - link "ENTERPRISE" [ref=f6e20] [cursor=pointer]:
+            - /url: /enterprise
+      - button "Open search" [ref=f6e22] [cursor=pointer]
+      - generic [ref=f6e26]:
+        - generic [ref=f6e27]: Language
+        - combobox "Language" [ref=f6e32] [cursor=pointer]:
+          - option "English" [selected]: EN
+          - option "Español": ES
+  - generic [ref=f6e35]:
+    - generic [ref=f6e36]:
+      - paragraph [ref=f6e37]: Enterprise
+      - heading "Deployment readiness starts with people" [level=1] [ref=f6e38]
+      - paragraph [ref=f6e40]: Structured robot literacy for operations, logistics, and facilities teams — built for organizations integrating robots into non-engineering environments.
+      - link "Request a briefing →" [ref=f6e41] [cursor=pointer]:
+        - /url: "#enterprise-briefing"
+    - img "A workplace team discussing how to work alongside a mobile robot" [ref=f6e45]
+  - generic [ref=f6e47]:
+    - paragraph [ref=f6e48]: Why this matters
+    - generic [ref=f6e49]:
+      - generic [ref=f6e50]:
+        - heading "Robots are arriving faster than the training" [level=2] [ref=f6e51]
+        - paragraph [ref=f6e52]: Deployment outcomes depend on people, workflows, environments, and technology. Prepare teams with a shared language before robots arrive.
+      - generic [ref=f6e53]:
+        - heading "Non-engineering staff carry the risk" [level=2] [ref=f6e54]
+        - paragraph [ref=f6e55]: Logistics, facilities, HR, and operations own the environments where robots operate. Without structured literacy, they make decisions in the dark.
+      - generic [ref=f6e56]:
+        - heading "Readiness is a process, not a checklist" [level=2] [ref=f6e57]
+        - paragraph [ref=f6e58]: Our framework gives organizations a repeatable way to assess, train, and verify deployment readiness — before and after go-live.
+  - generic [ref=f6e60]:
+    - heading "What you’ll walk away with" [level=2] [ref=f6e61]
+    - generic [ref=f6e62]:
+      - img "Hotel housekeeping staff working alongside a floor-cleaning robot in a guest room" [ref=f6e64]
+      - list [ref=f6e65]:
+        - listitem [ref=f6e66]:
+          - generic [ref=f6e67]: "01"
+          - generic [ref=f6e68]: A clear map of which roles need what level of robot literacy — and why.
+        - listitem [ref=f6e69]:
+          - generic [ref=f6e70]: "02"
+          - generic [ref=f6e71]: Practical frameworks for assessing and closing knowledge gaps on your team.
+        - listitem [ref=f6e72]:
+          - generic [ref=f6e73]: "03"
+          - generic [ref=f6e74]: Language for communicating robot capabilities and limits to non-technical stakeholders.
+        - listitem [ref=f6e75]:
+          - generic [ref=f6e76]: "04"
+          - generic [ref=f6e77]: A deployment readiness baseline your organization can revisit as the fleet grows.
+        - listitem [ref=f6e78]:
+          - generic [ref=f6e79]: "05"
+          - generic [ref=f6e80]: "A relevant learning pathway: Robot Literacy, Live Robot Lab, RPDP for design teams, or RDP for deployment teams."
+  - generic [ref=f6e82]:
+    - heading "Find the right program for your team" [level=2] [ref=f6e83]
+    - generic [ref=f6e84]:
+      - article [ref=f6e85]:
+        - heading "Robot Literacy" [level=3] [ref=f6e86]
+        - paragraph [ref=f6e87]: Understand robots through READ, RELATE, and COEXIST.
+        - link "Explore Robot Literacy →" [ref=f6e88] [cursor=pointer]:
+          - /url: /robot-literacy
+      - article [ref=f6e89]:
+        - heading "Live Robot Lab" [level=3] [ref=f6e90]
+        - paragraph [ref=f6e91]: Experience real robots through guided, hands-on sessions for schools and organizations.
+        - link "Explore Live Robot Lab →" [ref=f6e92] [cursor=pointer]:
+          - /url: /live-robot-lab
+      - article [ref=f6e93]:
+        - heading "Product Design for Robots (RPDP)" [level=3] [ref=f6e94]
+        - paragraph [ref=f6e95]: Learn how to design interactions between robots, people, and their environments. Apply UX, product design, accessibility, human-robot interaction, and the Robot Experience Design framework to real robotics challenges.
+        - link "Explore RPDP Curriculum →" [ref=f6e96] [cursor=pointer]:
+          - /url: /learn/rpdp
+      - article [ref=f6e97]:
+        - heading "Robot Deployment Practitioner (RDP)" [level=3] [ref=f6e98]
+        - paragraph [ref=f6e99]: Learn how to prepare organizations for successful commercial robotics deployment. Evaluate operational readiness, workforce training, safety requirements, regulation, insurance, cultural fit, change management, adoption, and measurable business outcomes.
+        - link "Explore RDP Curriculum →" [ref=f6e100] [cursor=pointer]:
+          - /url: /learn/rdp
+  - generic [ref=f6e103]:
+    - heading "Request a briefing." [level=2] [ref=f6e104]
+    - paragraph [ref=f6e105]: Tell us about your organization and deployment context. We’ll follow up with the right entry point.
+    - generic [ref=f6e106]:
+      - generic [ref=f6e107]:
+        - generic [ref=f6e108]: Name*
+        - textbox "Name*" [ref=f6e109]
+      - generic [ref=f6e110]:
+        - generic [ref=f6e111]: Organization*
+        - textbox "Organization*" [ref=f6e112]
+      - generic [ref=f6e113]:
+        - generic [ref=f6e114]: Role*
+        - textbox "Role*" [ref=f6e115]
+      - generic [ref=f6e116]:
+        - generic [ref=f6e117]: What are you deploying or considering?
+        - textbox "What are you deploying or considering?" [ref=f6e118]
+      - generic [ref=f6e119]:
+        - generic [ref=f6e120]: Email*
+        - textbox "Email*" [ref=f6e121]
+      - button "Request briefing" [ref=f6e122] [cursor=pointer]
+  - contentinfo [ref=f6e123]:
+    - generic [ref=f6e124]:
+      - generic [ref=f6e125]:
+        - generic [ref=f6e126]:
+          - link "The Robot Age" [ref=f6e127] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f6e128]: Preparing people and organizations for a world with robots.
+        - generic [ref=f6e129]:
+          - generic [ref=f6e130]: Pages
+          - navigation [ref=f6e131]:
+            - link "Research" [ref=f6e132] [cursor=pointer]:
+              - /url: /research
+            - link "Academy" [ref=f6e133] [cursor=pointer]:
+              - /url: /learn
+            - link "Jobs" [ref=f6e134] [cursor=pointer]:
+              - /url: /jobs
+            - link "What Robot Are You?" [ref=f6e135] [cursor=pointer]:
+              - /url: /what-robot-are-you
+            - link "RXD Scorecard" [ref=f6e136] [cursor=pointer]:
+              - /url: /rxd-scorecard
+            - link "For Organizations" [ref=f6e137] [cursor=pointer]:
+              - /url: /enterprise
+            - link "Partners" [ref=f6e138] [cursor=pointer]:
+              - /url: /robot-literacy/partners
+            - link "Press" [ref=f6e139] [cursor=pointer]:
+              - /url: /press
+            - link "Connect" [ref=f6e140] [cursor=pointer]:
+              - /url: /connect
+            - link "Summit" [ref=f6e141] [cursor=pointer]:
+              - /url: /summit
+        - generic [ref=f6e142]:
+          - generic [ref=f6e143]: Programs
+          - navigation [ref=f6e144]:
+            - link "Robot Literacy" [ref=f6e145] [cursor=pointer]:
+              - /url: /robot-literacy
+            - link "Live Robot Lab" [ref=f6e146] [cursor=pointer]:
+              - /url: /live-robot-lab
+            - link "Product Design for Robots (RPDP)" [ref=f6e147] [cursor=pointer]:
+              - /url: /learn/rpdp
+            - link "Robot Deployment Practitioner (RDP)" [ref=f6e148] [cursor=pointer]:
+              - /url: /learn/rdp
+        - generic [ref=f6e149]:
+          - generic [ref=f6e150]: Follow
+          - generic [ref=f6e151]:
+            - link "LinkedIn" [ref=f6e152] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/therobotage/
+            - link "Instagram" [ref=f6e158] [cursor=pointer]:
+              - /url: https://www.instagram.com/roboticsliteracy/
+      - generic [ref=f6e165]:
+        - paragraph [ref=f6e167]: © 2026 The Robot Age. All rights reserved.
+        - generic [ref=f6e168]:
+          - link "Privacy Policy" [ref=f6e169] [cursor=pointer]:
+            - /url: /privacy
+          - link "Terms of Use" [ref=f6e170] [cursor=pointer]:
+            - /url: /terms
+          - link "Fair use of AI" [ref=f6e171] [cursor=pointer]:
+            - /url: /ai-statement
+  - complementary "Browser agent activity" [ref=f6e172]:
+    - button "Expand WebMCP browser agent activity" [ref=f6e175] [cursor=pointer]:
+      - generic [ref=f6e176]: WebMCP
+  - button "Open Next.js Dev Tools" [ref=f6e182] [cursor=pointer]

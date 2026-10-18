@@ -74,7 +74,7 @@ export default function FrameworkFeature() {
                   transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.35 + i * 0.07 }}
                 >
                   <p className={styles.dimensionIndex}>{String(i + 1).padStart(2, '0')}</p>
-                  <p className={styles.dimensionName}>{name}</p>
+                  <h3 className={styles.dimensionName}>{name}</h3>
                   <p className={styles.dimensionDesc}>{description}</p>
                 </motion.div>
               ))}

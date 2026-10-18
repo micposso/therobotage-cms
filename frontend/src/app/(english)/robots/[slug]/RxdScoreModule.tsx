@@ -3,6 +3,7 @@ import { getTranslatedContent } from '@/lib/i18n/content'
 import { getScoreBySlug } from '@/lib/scores'
 import RESScoreCard from '@/components/RESScoreCard/RESScoreCard'
 import styles from './page.module.css'
+import { uiText } from '@/lib/i18n/messages'
 
 interface Props {
   locale?: Locale
@@ -16,8 +17,10 @@ export default function RxdScoreModule({ slug, robotName, locale = 'en' }: Props
   const translated = locale === 'es' ? getTranslatedContent().find(item => item.id === `scores/${slug}.md`) : undefined
 
   return (
-    <section className={styles.scoreSection}>
+    <section id="rxd-evaluation" className={styles.scoreSection}>
       <div className="container-fluid">
+        <h2>{uiText('RXD evaluation', locale)}</h2>
+        <p>{uiText('Original scores and observations retained. Not reassessed under methodology 1.0.', locale)}</p>
         {scoreData ? (
           <RESScoreCard
             score={{

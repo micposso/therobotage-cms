@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
     const { error: sendError } = await resend.emails.send({
       from: FROM_ADDRESS,
       to: email,
-      bcc: 'micposso@gmail.com',
+      bcc: 'mike@therobotage.com',
       subject: `Your robot match: ${robot.name} — ${robot.archetype}`,
       html: emailHtml(`
         <p style="font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:#e85d24;margin:0 0 12px;">

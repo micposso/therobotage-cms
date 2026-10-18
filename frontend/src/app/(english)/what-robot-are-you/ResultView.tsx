@@ -558,7 +558,7 @@ export default function ResultView({
               ) : (
                 <form onSubmit={handleEmailSubmit} className={styles.leadForm} noValidate>
                   <p className={styles.formEyebrow}>Keep your card</p>
-                  <p className={styles.leadHeading}>Email me my robot card</p>
+                  <h3 className={styles.leadHeading}>Email me my robot card</h3>
                   <p className={styles.leadSub}>
                     We&rsquo;ll send this card straight to your inbox so you have it to share later.
                   </p>

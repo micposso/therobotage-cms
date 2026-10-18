@@ -2,7 +2,7 @@
 import { useCopy } from '@/lib/i18n/useCopy'
 
 import { useRef } from 'react'
-import Image from 'next/image'
+import Image from '@/components/MediaImage'
 import { motion, useInView } from 'framer-motion'
 import styles from './AboutInstructor.module.css'
 
@@ -22,10 +22,15 @@ export default function AboutInstructor() {
             animate={inView ? { y: 0, opacity: 1 } : {}}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className={styles.eyebrow}>{t("About the Creator")}</p>
-            <h2 className={styles.name}>{t("Michael Posso")}</h2>
-            <p className={styles.titles}>{t("Adjunct Professor, FIT & NYI  ·  M.S. Information Design & Technology, SUNY Poly")}</p>
-            <p className={styles.bio}>{t("The Robot Age was created by Michael Posso — a product designer and educator focused on the intersection of human experience and robotics. Michael holds a Master's degree in Information Design and Technology from SUNY Polytechnic Institute, and teaches as an adjunct professor at the Fashion Institute of Technology and the New York Institute of Technology. With over 10 years of experience teaching at the high school, undergraduate, and graduate levels — across courses in UX, web design, and JavaScript — his work centers on product design and robotics experiences: how people interact with automated systems, and how to design those systems in ways that are clear, trustworthy, and effective. The Robot Age is the curriculum he wished existed.")}</p>
+            <p className={styles.eyebrow}>{t("About the Instructor")}</p>
+            <h2 className={styles.name}>{t("Developed by Michael Posso")}</h2>
+            <p className={styles.titles}>{t("Founder, The Robot Age · Product & Technology Leader · Adjunct Professor")}</p>
+            {[
+              "Michael Posso is a technology leader, designer, and educator with more than 15 years of experience in digital products, UX engineering, and enterprise technology.",
+              "He teaches undergraduate and graduate courses at the Fashion Institute of Technology and New York Institute of Technology and is pursuing a master's degree in Information Design and Technology at SUNY Polytechnic Institute.",
+              "Through The Robot Age, he explores how design, technology, and education can help people understand, interact with, and work alongside robots.",
+              "His work brings together product design, human-robot interaction, practical robotics experimentation, and professional education.",
+            ].map((paragraph) => <p key={paragraph} className={styles.bio}>{t(paragraph)}</p>)}
           </motion.div>
 
           <motion.div

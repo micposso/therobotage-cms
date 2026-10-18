@@ -78,11 +78,11 @@
 .excerpt {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: var(--text-sm);
+  font-size: var(--text-body);
   color: var(--color-text-muted);
   text-align: left;
   margin-top: var(--space-6);
-  line-height: 1.8;
+  line-height: var(--leading-body);
 }
 
 .divider {

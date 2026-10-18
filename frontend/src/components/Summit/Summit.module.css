@@ -129,10 +129,10 @@
 .trackDescription {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: var(--text-sm);
+  font-size: var(--text-body);
   color: var(--color-text-on-sand);
   opacity: 1;
-  line-height: 1.6;
+  line-height: var(--leading-body);
 }
 
 /* ─── Responsive ─────────────────────────────────────────────────────────────── */

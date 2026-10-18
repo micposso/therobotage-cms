@@ -1,3 +1,4 @@
+import { testModule } from './test-module.mjs'
 import assert from 'node:assert/strict'
 import { readFile } from 'node:fs/promises'
 import test from 'node:test'
@@ -34,7 +35,7 @@ test('rejects files substituted for text fields', () => {
 })
 test('delivery succeeds only on provider acceptance; escapes all fields and includes all interests', async () => {
   const action = compile(await read('../src/app/actions/sendRobotLiteracyRequest.ts'))
-  const template = asModule(compile(await read('../src/lib/emailTemplate.ts')))
+  const template = await testModule(new URL('../src/lib/emailTemplate.ts', import.meta.url))
   const originalKey = process.env.RESEND_API_KEY
   try {
     for (const mode of ['accepted', 'rejected', 'exception', 'missing']) {

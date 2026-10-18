@@ -1,0 +1,234 @@
+- generic [active] [ref=e1]:
+  - navigation:
+    - generic:
+      - generic:
+        - list:
+          - listitem:
+            - link "RESEARCH":
+              - /url: /research
+          - listitem:
+            - link "ROBOTS":
+              - /url: /robots
+          - listitem:
+            - link "RXD FRAMEWORK":
+              - /url: /rxd
+          - listitem:
+            - group:
+              - generic "PROGRAMS"
+          - listitem:
+            - link "JOBS":
+              - /url: /jobs
+          - listitem:
+            - link "ENTERPRISE":
+              - /url: /enterprise
+        - generic:
+          - button "Open search"
+        - generic:
+          - generic: Language
+          - combobox "Language":
+            - option "English" [selected]: EN
+            - option "Español": ES
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - img "The Robot Age" [ref=e8]
+          - paragraph [ref=e9]: TheRobotAge
+        - navigation [ref=e10]:
+          - link "Research" [ref=e12] [cursor=pointer]:
+            - /url: /research
+          - link "Robots" [ref=e14] [cursor=pointer]:
+            - /url: /robots
+          - link "RXD Framework" [ref=e16] [cursor=pointer]:
+            - /url: /rxd
+          - group [ref=e17]:
+            - generic "PROGRAMS" [ref=e18] [cursor=pointer]
+          - link "Jobs" [ref=e20] [cursor=pointer]:
+            - /url: /jobs
+          - link "Enterprise" [ref=e22] [cursor=pointer]:
+            - /url: /enterprise
+      - generic [ref=e23]:
+        - generic [ref=e25]:
+          - paragraph [ref=e26]: Preparing everyone for a world with robots.
+          - heading "Robots for all." [level=1] [ref=e27]
+          - paragraph [ref=e28]: Robots are moving into our homes, workplaces, schools, hospitals, and public spaces. The Robot Age helps people understand what that means and how to prepare.
+        - generic [ref=e33]:
+          - link "What is Robot Literacy?" [ref=e34] [cursor=pointer]:
+            - /url: /robot-literacy
+            - text: What is Robot Literacy?
+            - generic [aria-hidden] [ref=e35]: →
+          - link "Explore Professional Programs" [ref=e36] [cursor=pointer]:
+            - /url: /learn
+          - link "Request a Live Robot Lab" [ref=e37] [cursor=pointer]:
+            - /url: /live-robot-lab#request-live-robot-lab
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - text: Industrial
+        - generic [ref=e41]: ·
+      - generic [ref=e42]:
+        - text: Surgical
+        - generic [ref=e43]: ·
+      - generic [ref=e44]:
+        - text: Collaborative
+        - generic [ref=e45]: ·
+      - generic [ref=e46]:
+        - text: Autonomous
+        - generic [ref=e47]: ·
+      - generic [ref=e48]:
+        - text: Social
+        - generic [ref=e49]: ·
+      - generic [ref=e50]:
+        - text: Exoskeletal
+        - generic [ref=e51]: ·
+      - generic [ref=e52]:
+        - text: Agricultural
+        - generic [ref=e53]: ·
+      - generic [ref=e54]:
+        - text: Service
+        - generic [ref=e55]: ·
+      - generic [ref=e56]:
+        - text: Industrial
+        - generic [ref=e57]: ·
+      - generic [ref=e58]:
+        - text: Surgical
+        - generic [ref=e59]: ·
+      - generic [ref=e60]:
+        - text: Collaborative
+        - generic [ref=e61]: ·
+      - generic [ref=e62]:
+        - text: Autonomous
+        - generic [ref=e63]: ·
+      - generic [ref=e64]:
+        - text: Social
+        - generic [ref=e65]: ·
+      - generic [ref=e66]:
+        - text: Exoskeletal
+        - generic [ref=e67]: ·
+      - generic [ref=e68]:
+        - text: Agricultural
+        - generic [ref=e69]: ·
+      - generic [ref=e70]:
+        - text: Service
+        - generic [ref=e71]: ·
+  - generic [ref=e73]:
+    - generic [ref=e74]:
+      - paragraph [ref=e75]: Latest
+      - heading "News & Research" [level=2] [ref=e76]
+    - generic [ref=e77]:
+      - link [ref=e78] [cursor=pointer]:
+        - /url: /news/robots-threat-pet-shape-bias
+        - article [ref=e79]:
+          - img "Why some robots feel like pets and others feel like threats" [ref=e81]
+          - generic [ref=e82]:
+            - generic [ref=e83]: OPINION
+            - generic [ref=e84]: October 10, 2026
+          - heading "Why some robots feel like pets and others feel like threats" [level=3] [ref=e85]
+      - link [ref=e86] [cursor=pointer]:
+        - /url: /news/agility-digit-5-economics-bipedal-bet
+        - article [ref=e87]:
+          - img "Agility's Digit 5 bet is that legs can become a business model" [ref=e89]
+          - generic [ref=e90]:
+            - generic [ref=e91]: ANALYSIS
+            - generic [ref=e92]: October 9, 2026
+          - heading "Agility's Digit 5 bet is that legs can become a business model" [level=3] [ref=e93]
+      - link [ref=e94] [cursor=pointer]:
+        - /url: /news/drone-sidewalk-delivery-public-space
+        - article [ref=e95]:
+          - img "The Delivery Robot Is Splitting in Two" [ref=e97]
+          - generic [ref=e98]:
+            - generic [ref=e99]: OPINION
+            - generic [ref=e100]: September 30, 2026
+          - heading "The Delivery Robot Is Splitting in Two" [level=3] [ref=e101]
+    - button "See all news" [ref=e103] [cursor=pointer]
+  - generic [ref=e105]:
+    - generic [ref=e106]:
+      - generic [ref=e107]:
+        - paragraph [ref=e108]: Our Programs
+        - heading "Understand. Experience. Design. Deploy." [level=2] [ref=e109]
+      - generic [ref=e110]:
+        - paragraph [ref=e111]: Build your robot literacy, meet real robots, or develop professional skills in robot product design and deployment. Choose the starting point that fits your goals.
+        - link "Compare Professional Programs →" [ref=e112] [cursor=pointer]:
+          - /url: /learn#programs
+    - generic [ref=e113]:
+      - article [ref=e114]:
+        - heading "Robot Literacy" [level=3] [ref=e116]
+        - paragraph [ref=e117]: Understand robots through READ, RELATE, and COEXIST.
+        - link "Explore Robot Literacy →" [ref=e118] [cursor=pointer]:
+          - /url: /robot-literacy
+      - article [ref=e119]:
+        - heading "Live Robot Lab" [level=3] [ref=e121]
+        - paragraph [ref=e122]: Experience real robots through guided, hands-on sessions for schools and organizations.
+        - link "Explore Live Robot Lab →" [ref=e123] [cursor=pointer]:
+          - /url: /live-robot-lab
+      - article [ref=e124]:
+        - heading "Product Design for Robots (RPDP)" [level=3] [ref=e126]
+        - paragraph [ref=e127]: Learn how to design interactions between robots, people, and their environments. Apply UX, product design, accessibility, human-robot interaction, and the Robot Experience Design framework to real robotics challenges.
+        - link "Explore RPDP Curriculum →" [ref=e128] [cursor=pointer]:
+          - /url: /learn/rpdp#curriculum
+      - article [ref=e129]:
+        - heading "Robot Deployment Practitioner (RDP)" [level=3] [ref=e131]
+        - paragraph [ref=e132]: Learn how to prepare organizations for successful commercial robotics deployment. Evaluate operational readiness, workforce training, safety requirements, regulation, insurance, cultural fit, change management, adoption, and measurable business outcomes.
+        - link "Explore RDP Curriculum →" [ref=e133] [cursor=pointer]:
+          - /url: /learn/rdp#curriculum
+    - paragraph [ref=e134]: RPDP and RDP are upcoming professional programs. Explore the Academy for dates and interest lists. Joining a list does not reserve a seat.
+  - contentinfo [ref=e135]:
+    - generic [ref=e136]:
+      - generic [ref=e137]:
+        - generic [ref=e138]:
+          - link "The Robot Age" [ref=e139] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=e140]: Preparing people and organizations for a world with robots.
+        - generic [ref=e141]:
+          - generic [ref=e142]: Pages
+          - navigation [ref=e143]:
+            - link "Research" [ref=e144] [cursor=pointer]:
+              - /url: /research
+            - link "Academy" [ref=e145] [cursor=pointer]:
+              - /url: /learn
+            - link "Jobs" [ref=e146] [cursor=pointer]:
+              - /url: /jobs
+            - link "What Robot Are You?" [ref=e147] [cursor=pointer]:
+              - /url: /what-robot-are-you
+            - link "RXD Scorecard" [ref=e148] [cursor=pointer]:
+              - /url: /rxd-scorecard
+            - link "For Organizations" [ref=e149] [cursor=pointer]:
+              - /url: /enterprise
+            - link "Partners" [ref=e150] [cursor=pointer]:
+              - /url: /robot-literacy/partners
+            - link "Press" [ref=e151] [cursor=pointer]:
+              - /url: /press
+            - link "Connect" [ref=e152] [cursor=pointer]:
+              - /url: /connect
+            - link "Summit" [ref=e153] [cursor=pointer]:
+              - /url: /summit
+        - generic [ref=e154]:
+          - generic [ref=e155]: Programs
+          - navigation [ref=e156]:
+            - link "Robot Literacy" [ref=e157] [cursor=pointer]:
+              - /url: /robot-literacy
+            - link "Live Robot Lab" [ref=e158] [cursor=pointer]:
+              - /url: /live-robot-lab
+            - link "Product Design for Robots (RPDP)" [ref=e159] [cursor=pointer]:
+              - /url: /learn/rpdp
+            - link "Robot Deployment Practitioner (RDP)" [ref=e160] [cursor=pointer]:
+              - /url: /learn/rdp
+        - generic [ref=e161]:
+          - generic [ref=e162]: Follow
+          - generic [ref=e163]:
+            - link "LinkedIn" [ref=e164] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/therobotage/
+            - link "Instagram" [ref=e170] [cursor=pointer]:
+              - /url: https://www.instagram.com/roboticsliteracy/
+      - generic [ref=e177]:
+        - paragraph [ref=e179]: © 2026 The Robot Age. All rights reserved.
+        - generic [ref=e180]:
+          - link "Privacy Policy" [ref=e181] [cursor=pointer]:
+            - /url: /privacy
+          - link "Terms of Use" [ref=e182] [cursor=pointer]:
+            - /url: /terms
+          - link "Fair use of AI" [ref=e183] [cursor=pointer]:
+            - /url: /ai-statement
+  - complementary "Browser agent activity" [ref=e184]:
+    - button "Expand WebMCP browser agent activity" [ref=e187] [cursor=pointer]:
+      - generic [ref=e188]: WebMCP
+  - button "Open Next.js Dev Tools" [ref=e194] [cursor=pointer]

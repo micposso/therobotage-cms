@@ -41,20 +41,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]
 
   // ── Certification + curriculum pages ──────────────────────────────────────
-  const certPages: MetadataRoute.Sitemap = certifications.flatMap((c) => [
-    {
-      url: `${BASE}/learn/${c.slug}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${BASE}/learn/${c.slug}/curriculum`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    },
-  ])
+  const certPages: MetadataRoute.Sitemap = certifications.map((program) => ({
+    url: `${BASE}/learn/${program.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }))
 
   // ── News articles (markdown) ───────────────────────────────────────────────
   const newsArticles = getAllNewsArticles()
@@ -66,7 +58,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }))
 
   // ── Research articles (static) ────────────────────────────────────────────
-  const researchPages: MetadataRoute.Sitemap = articles.map((a) => ({
+  const researchPages: MetadataRoute.Sitemap = articles.filter((a) => a.category !== 'ARCHIVE').map((a) => ({
     url: `${BASE}/research/${a.slug}`,
     lastModified: parseDate(a.date),
     changeFrequency: 'yearly' as const,
@@ -115,7 +107,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...jobPages,
   ]
   const translations = getTranslatedContent()
-  const translated: MetadataRoute.Sitemap = getAvailableTranslations().filter((route) => route !== '/search').map((route) => ({
+  const translated: MetadataRoute.Sitemap = getAvailableTranslations().filter((route) => route !== '/search' && !route.endsWith('/curriculum') && !['/research/rlp-module-1-1-live', '/research/first-rep-workplace'].includes(route) && !/\/learn\/(rep|rsp|rxr|hsp)$/.test(route)).map((route) => ({
     url: `${BASE}/es${route === '/' ? '' : route}`,
     lastModified: translations.find((entry) => entry.route === route)?.generatedAt || now,
     alternates: { languages: translationAlternates(route) },

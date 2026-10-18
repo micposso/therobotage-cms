@@ -1,13 +1,10 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { programLinks } from '../../lib/certifications'
 import styles from './LearnMenu.module.css'
 
-const LEARN_LINKS = [
-  { label: 'Robot Literacy', href: '/robot-literacy' },
-  { label: 'Live Robot Lab', href: '/live-robot-lab' },
-  { label: 'Courses & Certifications', href: '/learn' },
-]
+const LEARN_LINKS = [...programLinks, { label: 'Academy — Compare Programs', href: '/learn' }]
 
 /** A native disclosure shared by the top, mobile and homepage navigation. */
 export default function LearnMenu({ baseUrl = '', inline = false, triggerClassName = '', onNavigate, translate = (text) => text, resolveHref = (href) => href }) {
@@ -42,7 +39,7 @@ export default function LearnMenu({ baseUrl = '', inline = false, triggerClassNa
     onFocus={(event) => {
       event.currentTarget.open = true
     }}>
-    <summary className={`${styles.trigger} ${triggerClassName}`}>{translate('LEARN')}</summary>
+    <summary className={`${styles.trigger} ${triggerClassName}`}>{translate('PROGRAMS')}</summary>
     <ul className={styles.links}>
       {LEARN_LINKS.map(({ label, href }) => <li key={href}>
         <a href={resolveHref(`${baseUrl}${href}`)} onClick={() => {

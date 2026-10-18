@@ -52,7 +52,7 @@ export function RobotUseCaseExplorer() {
 }
 
 export function PartnershipLink({ children }: { children: React.ReactNode }) {
-  return <a className={styles.textLink} href="#inquiry" onClick={() => window.dispatchEvent(new Event('robot-literacy-partnership'))}>{children}</a>
+  return <a className={styles.textLink} href="/robot-literacy/partners">{children}</a>
 }
 
 export function LiteracySignup() {

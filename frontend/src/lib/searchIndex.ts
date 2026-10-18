@@ -15,6 +15,7 @@ export interface SearchResult {
 }
 
 const STATIC_PAGES: SearchResult[] = [
+  { type: 'Page', title: 'Live Robot Lab', excerpt: 'Guided, hands-on experiences with real robots for schools, universities, organizations, and events.', url: '/live-robot-lab' },
   {
     type: 'Page',
     title: 'Research',
@@ -29,8 +30,8 @@ const STATIC_PAGES: SearchResult[] = [
   },
   {
     type: 'Page',
-    title: 'Learn',
-    excerpt: 'Credentials and curricula built for non-engineers who work in, around, or alongside robotic systems.',
+    title: 'Academy',
+    excerpt: 'Explore RPDP for robot product design and RDP for commercial robot deployment.',
     url: '/learn',
   },
   {
@@ -90,7 +91,7 @@ export async function runSearch(query: string, locale: Locale = 'en'): Promise<S
   }
 
   // Static articles (research page)
-  for (const a of articles.map(a => localize(a, `/research/${a.slug}`, locale))) {
+  for (const a of articles.filter(a => a.category !== 'ARCHIVE').map(a => localize(a, `/research/${a.slug}`, locale))) {
     const s = titleScore(query, a.headline) + score(query, [a.body[0], a.category])
     if (s > 0) candidates.push({ type: 'Research', title: a.headline, excerpt: a.body[0], url: `/research/${a.slug}`, tag: a.category, _score: s })
   }

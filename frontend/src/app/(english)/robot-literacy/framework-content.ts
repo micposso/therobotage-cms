@@ -2,7 +2,7 @@ export const definition = 'The Robot Age’s Robot Literacy framework is a pract
 
 export const framework = [
   {
-    title: 'READ',
+    title: 'INTERPRET',
     scale: 'Understand the robot',
     question: 'Understand the robot.',
     headerQuestions: [],
@@ -64,15 +64,15 @@ export const applications = [
     description: 'The Robot Age’s Robot Literacy framework helps leaders, workers, designers and technology teams examine capabilities, human interaction, workflow changes, privacy, accessibility, risk and accountability before treating robotics as simply a technology purchase or engineering concern.',
     questions: ['Should a robot perform this task?', 'How will employees or customers interact with it?', 'What happens when it fails?', 'Who remains responsible?'],
     cta: 'Explore Robot Literacy Consulting',
-    href: '#inquiry',
+    href: '/enterprise',
   },
   {
     audience: 'For Individuals & Society',
     title: 'Build the knowledge needed to live and work alongside robots.',
     description: 'The Robot Age’s Robot Literacy framework gives professionals, students and the public a way to examine robots entering workplaces, public spaces and everyday life without needing to code or build robots, while understanding questions involving privacy, employment, accessibility, governance and human responsibility.',
     questions: ['What should I know when I encounter a robot?', 'What can it perceive about me?', 'How could robots change my profession?', 'What rules and expectations should society develop?'],
-    cta: 'Build Your Robot Literacy',
-    href: '/learn/rep',
+    cta: 'Explore Professional Programs',
+    href: '/learn#programs',
   },
 ] as const
 
@@ -116,7 +116,7 @@ export const audiences = [
 ] as const
 
 export const faqs = [
-  ['What is Robot Literacy?', `${definition} The Robot Age organizes its evolving educational framework into READ, RELATE and COEXIST.`],
+  ['What is Robot Literacy?', `${definition} The Robot Age organizes its evolving educational framework into INTERPRET, RELATE and COEXIST.`],
   ['Is Robot Literacy a robotics engineering course?', 'No. It focuses on understanding robots in everyday life and making informed judgments about them. You can explore sensors and autonomy without designing hardware or studying engineering.'],
   ['Do I need programming experience?', 'No. Start with observation and plain-language questions. The framework is for the general public as well as students, educators, professionals, designers, technologists and policymakers.'],
   ['How is Robot Literacy different from AI literacy?', 'AI literacy helps people understand intelligent digital systems. Robot Literacy extends that understanding into physical environments, where sensing, movement and interaction can affect bodies, shared spaces and people who never chose to use the system.'],

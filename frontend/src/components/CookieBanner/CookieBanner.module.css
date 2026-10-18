@@ -137,9 +137,9 @@
 
 .prefDesc {
   font-family: var(--font-body);
-  font-size: var(--text-sm);
+  font-size: var(--text-body);
   font-weight: 400;
-  line-height: 1.5;
+  line-height: var(--leading-body);
   color: var(--color-footer-muted);
 }
 

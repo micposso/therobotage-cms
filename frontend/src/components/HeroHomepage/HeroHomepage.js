@@ -4,7 +4,7 @@ import { useCopy } from '@/lib/i18n/useCopy'
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+import Image from '@/components/MediaImage'
 import { motion, AnimatePresence } from 'framer-motion'
 import styles from './HeroHomepage.module.css'
 import LearnMenu from '@therobotage/ui/LearnMenu'
@@ -217,8 +217,8 @@ export default function HeroHomepage({ images = [] }) {
               <div className={styles.ctaRow}>
                 <Link href={resolveHref('/robot-literacy')} className={styles.ctaPrimary}>{t("What is Robot Literacy?")}<span className={styles.arrow} aria-hidden="true">→</span>
                 </Link>
-                <Link href={resolveHref('/learn')} className={styles.ctaGhost}>{t("Become Certified")}</Link>
-                <Link href={resolveHref('/live-robot-lab#request-live-robot-lab')} className={styles.ctaGhost}>{t("Request a Live Robot Lab")}</Link>
+                <Link href={resolveHref('/learn')} className={styles.ctaGhost}>{t("Explore Professional Programs")}</Link>
+                <Link href={resolveHref('/live-robot-lab#request-live-robot-lab')} className={`${styles.ctaGhost} ${styles.ctaGreen}`}>{t("Request a Live Robot Lab")}</Link>
               </div>
             </motion.div>
 

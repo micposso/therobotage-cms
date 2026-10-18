@@ -1,0 +1,18 @@
+{
+  "mode": "Built-in image_gen",
+  "directory": "frontend/public/images/robot-literacy",
+  "assets": [
+    {
+      "name": "schools",
+      "prompt": "Use case: photorealistic-natural. Square editorial photograph for The Robot Age Robot Literacy website. Warm natural daylight, muted neutral palette, thoughtful human-centered contemporary robotics, realistic materials, candid engaging composition. Main people and robot clear at small size, no embedded text, no logos, no watermarks, no collage or borders. A Black female teacher and three diverse teenage students gathered around a small white tabletop educational robot in a bright school classroom. One student points toward the robot's camera while others discuss what it can sense. Teacher facilitates observation and questions. Robot clearly visible on desk, notebooks, sunlit windows, authentic learning rather than coding."
+    },
+    {
+      "name": "organizations",
+      "prompt": "Use case: photorealistic-natural. Square editorial photograph for The Robot Age Robot Literacy website. Warm natural daylight, muted neutral palette, thoughtful human-centered contemporary robotics, realistic materials, candid engaging composition. Main people and robot clear at small size, no embedded text, no logos, no watermarks, no collage or borders. Three diverse adult colleagues, an operations worker in a safety vest, a woman manager and a designer, discussing a compact autonomous mobile robot in a bright clean workplace logistics area. Robot with one tote clearly visible beside the team, one colleague holding a tablet, attention on planning how people share the workspace with it. Natural documentary photograph, practical collaborative decision making."
+    },
+    {
+      "name": "society",
+      "prompt": "Use case: photorealistic-natural. Square editorial photograph for The Robot Age Robot Literacy website. Warm natural daylight, muted neutral palette, thoughtful human-centered contemporary robotics, realistic materials, candid engaging composition. Main people and robot clear at small size, no embedded text, no logos, no watermarks, no collage or borders. A diverse group of adults including an older woman, a young man and an adult wheelchair user sharing a broad leafy city plaza with a friendly contemporary white humanoid robot. They converse and observe the robot from a comfortable distance. Robot fully visible, accessible open path, trees and public benches, ordinary everyday civic life and coexistence. Natural candid photography."
+    }
+  ]
+}

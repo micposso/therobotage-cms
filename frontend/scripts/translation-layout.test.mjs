@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 
 // Run against a production server with TRANSLATION_TEST_URL=http://localhost:3000.
 const base = process.env.TRANSLATION_TEST_URL
-const routes = ['/learn', '/live-robot-lab', '/robot-literacy/partners', '/access', ...['rep', 'rpdp', 'rsp', 'rxr'].flatMap(slug => [`/learn/${slug}`, `/learn/${slug}/curriculum`]), '/', '/robot-literacy', '/research', '/robots', '/robots/reachy-mini', '/jobs', '/jobs/product-design-engineer-all-levels-skydio', '/research/the-familiar-hri-design-brief', '/research/field-signals/recovery-design-gap']
+const routes = ['/learn', '/live-robot-lab', '/robot-literacy/partners', '/access', ...['rpdp', 'rdp'].flatMap(slug => [`/learn/${slug}`, `/learn/${slug}/curriculum`]), '/', '/robot-literacy', '/research', '/robots', '/robots/reachy-mini', '/jobs', '/jobs/product-design-engineer-all-levels-skydio', '/research/the-familiar-hri-design-brief', '/research/field-signals/recovery-design-gap']
 function structure(html) {
   return [...html.matchAll(/<(section|article|aside)\b[^>]*class="([^"]*)"/g)]
     .filter(([, , classes]) => !classes.includes('audioPlayer'))
@@ -24,7 +24,8 @@ for (const route of routes) {
       assert.match(es, /Robots para todos\./)
       assert.match(es, /HeroHomepage/)
       assert.match(es, /Certification/)
-      assert.match(es, /Summit/)
+      assert.match(es, /RPDP/)
+      assert.match(es, /RDP/)
     }
     if (route === '/robot-literacy') {
       assert.ok(es.includes('Alfabetización robótica'), 'Spanish page title is present')

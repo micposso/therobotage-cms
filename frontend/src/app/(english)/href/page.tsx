@@ -1,3 +1,4 @@
+import { imageUrl } from '@/lib/image-assets'
 import Nav from '@/components/Nav/Nav'
 import PageHero from '@/components/PageHero/PageHero'
 import Footer from '@/components/Footer/Footer'
@@ -12,14 +13,14 @@ export const metadata = {
     title: 'HREF — Human-Robot Experience Framework | The Robot Age',
     description:
       'A six-dimension evaluation model for assessing the human experience of interacting with robots. Free to download. Built for UX designers, product managers, and human factors researchers.',
-    images: [{ url: '/images/hand.png', alt: 'Human-Robot Experience Framework' }],
+    images: [{ url: imageUrl('/images/hand.png'), alt: 'Human-Robot Experience Framework' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'HREF — Human-Robot Experience Framework | The Robot Age',
     description:
       'A six-dimension evaluation model for assessing the human experience of interacting with robots. Free to download. Built for UX designers, product managers, and human factors researchers.',
-    images: ['/images/hand.png'],
+    images: [imageUrl('/images/hand.png')],
   },
 }
 
@@ -40,7 +41,7 @@ export default function HrefPage() {
         <div className="container-fluid">
           <div className={styles.earlyCtaInner}>
             <a
-              href="/pdf/href-therobotage-v2.pdf"
+              href="/api/download/whitepaper"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.earlyCtaButton}
@@ -99,7 +100,7 @@ export default function HrefPage() {
             </ul>
             <div className={styles.downloadCta}>
               <a
-                href="/pdf/href-therobotage-v2.pdf"
+                href="/api/download/whitepaper"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.downloadButton}

@@ -1,0 +1,5 @@
+{
+  "mode": "Built-in image_gen edit",
+  "path": "frontend/public/images/programs/live-robot-lab-college.webp",
+  "prompt": "Edit the supplied Live Robot Lab photograph. Replace only the two foreground people: on the left show an African American college student, a young adult woman wearing the same cream sweater and jeans, in the same crouched pose interacting with the robot; on the right show an Asian adult college teacher, a middle-aged man wearing the same dark casual clothing and glasses, in the same crouched teaching pose. Maintain natural respectful photorealistic appearances. Preserve exactly the same white and graphite quadruped robot, its design, size, position and pose. Preserve the same sunlit robotics workshop, background people, windows, workbenches, plants, concrete floor, lighting, warm muted colors, camera perspective, square crop and composition. Keep the hands anatomically plausible. No text, logos, watermark or framing. Change only the two foreground people as specified."
+}

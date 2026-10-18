@@ -1,3 +1,13 @@
+import { imageUrl } from '@/lib/image-assets'
+import { imageAsset } from '@/lib/image-assets'
+import Link from 'next/link'
+import Image from '@/components/MediaImage'
+import hotelTeamLocal from '../../../../public/images/enterprise/hotel-team.webp'
+const hotelTeam = imageAsset('/images/enterprise/hotel-team.webp', hotelTeamLocal)
+import workplaceTeamLocal from '../../../../public/images/robot-literacy/organizations.webp'
+const workplaceTeam = imageAsset('/images/robot-literacy/organizations.webp', workplaceTeamLocal)
+import cta from '@/components/FoundingCohort/FoundingCohort.module.css'
+import { programLinks } from '@/lib/certifications'
 import Nav from '@/components/Nav/Nav'
 import PageHero from '@/components/PageHero/PageHero'
 import Footer from '@/components/Footer/Footer'
@@ -11,18 +21,18 @@ export const metadata = {
   openGraph: {
     title: 'Enterprise — The Robot Age',
     description: 'Deployment readiness education for organizations integrating robots into non-engineering operations.',
-    images: [{ url: '/images/robot.png', alt: 'The Robot Age' }],
+    images: [{ url: imageUrl('/images/robot.png'), alt: 'The Robot Age' }],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/images/robot.png'],
+    images: [imageUrl('/images/robot.png')],
   },
 }
 
 const WHY_CARDS = [
   {
     title: 'Robots are arriving faster than the training',
-    body: 'Most deployment failures trace back to the humans around the robot, not the robot itself. Operational teams need a shared language before the machine arrives on the floor.',
+    body: 'Deployment outcomes depend on people, workflows, environments, and technology. Prepare teams with a shared language before robots arrive.',
   },
   {
     title: 'Non-engineering staff carry the risk',
@@ -39,7 +49,7 @@ const WALKAWAY_ITEMS = [
   'Practical frameworks for assessing and closing knowledge gaps on your team.',
   'Language for communicating robot capabilities and limits to non-technical stakeholders.',
   'A deployment readiness baseline your organization can revisit as the fleet grows.',
-  'Access to certification tracks aligned to your operational context.',
+  'A relevant learning pathway: Robot Literacy, Live Robot Lab, RPDP for design teams, or RDP for deployment teams.',
 ]
 
 export default function EnterprisePage() {
@@ -51,8 +61,10 @@ export default function EnterprisePage() {
         eyebrow="Enterprise"
         title="Deployment readiness starts with people"
         subtitle="Structured robot literacy for operations, logistics, and facilities teams — built for organizations integrating robots into non-engineering environments."
-        imageSrc="/images/robot.png"
-      />
+        imageContent={<div className={styles.imageFrame}><Image src={workplaceTeam} alt="A workplace team discussing how to work alongside a mobile robot" fill sizes="(max-width: 767px) 100vw, 456px" /></div>}
+      >
+        <a href="#enterprise-briefing" className={cta.cta}>Request a briefing →</a>
+      </PageHero>
 
       {/* Why this matters */}
       <section className={styles.whySection}>
@@ -72,8 +84,9 @@ export default function EnterprisePage() {
       {/* What you'll walk away with */}
       <section className={styles.walkawaySection}>
         <div className="container-fluid">
+          <h2 className={styles.walkawayHeading}>What you&rsquo;ll walk away with</h2>
           <div className={styles.walkawayInner}>
-            <p className={styles.sectionEyebrow}>What you&rsquo;ll walk away with</p>
+            <div className={styles.imageFrame}><Image src={hotelTeam} alt="Hotel housekeeping staff working alongside a floor-cleaning robot in a guest room" fill sizes="(max-width: 900px) 100vw, 45vw" /></div>
             <ol className={styles.numberedList}>
               {WALKAWAY_ITEMS.map((item, i) => (
                 <li key={i} className={styles.numberedItem}>
@@ -88,8 +101,17 @@ export default function EnterprisePage() {
         </div>
       </section>
 
+      <section className={styles.whySection}>
+        <div className="container-fluid">
+          <h2 className={styles.formHeading}>Find the right program for your team</h2>
+          <div className={`${styles.cardGrid} ${styles.programGrid}`}>{programLinks.map((program) => <article className={styles.card} key={program.href}>
+            <h3 className={styles.cardTitle}>{program.label}</h3><p className={styles.cardBody}>{program.summary}</p>
+            <Link className={`${cta.cta} ${styles.programCta}`} href={program.href}>{program.cta} →</Link>
+          </article>)}</div>
+        </div>
+      </section>
       {/* Request a briefing */}
-      <section className={styles.formSection}>
+      <section id="enterprise-briefing" className={styles.formSection}>
         <div className="container-fluid">
           <div className={styles.formInner}>
             <h2 className={styles.formHeading}>Request a briefing.</h2>

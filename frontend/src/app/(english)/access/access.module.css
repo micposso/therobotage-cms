@@ -11,8 +11,8 @@
 /* ─── Content elements ──── */
 .intro {
   font-family: var(--font-body);
-  font-size: var(--text-sm);
-  line-height: 1.8;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
   margin-bottom: var(--space-8);
   color: var(--color-text-muted);
 }
@@ -55,6 +55,7 @@
 
 /* ─── Submit button — Pattern A ── */
 .submitButton {
+  clip-path: var(--cta-corner-clip);
   margin-top: var(--space-4);
   display: inline-block;
   padding: var(--space-4) var(--space-8);

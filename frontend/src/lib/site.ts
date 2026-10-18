@@ -1,12 +1,15 @@
 export const siteOverview = {
   name: 'The Robot Age',
   summary:
-    'Robotic literacy education, research, and certification for designers, strategists, and leaders who work alongside robots.',
+    'Prepare for a world with robots through Robot Literacy, Live Robot Lab, and professional education in robot product design (RPDP) and deployment (RDP).',
   url: 'https://therobotage.com',
   primaryAreas: [
-    { title: 'Robotics education and certification', url: '/learn' },
+    { title: 'Robot Literacy', url: '/robot-literacy' },
+    { title: 'Live Robot Lab', url: '/live-robot-lab' },
+    { title: 'Product Design for Robots (RPDP)', url: '/learn/rpdp' },
+    { title: 'Robot Deployment Practitioner (RDP)', url: '/learn/rdp' },
     { title: 'Human-robot experience research', url: '/research' },
-    { title: 'Robotics news and field signals', url: '/news' },
+    { title: 'Robotics news and field signals', url: '/research' },
     { title: 'Robotics events and workshops', url: '/summit' },
   ],
 } as const

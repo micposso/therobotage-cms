@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { marked } from 'marked'
+import { imageUrl, imageHtml } from './image-assets'
 
 export interface RobotMeta {
   slug: string
@@ -36,8 +37,8 @@ function parseFrontmatter(file: string): RobotMeta {
     manufacturer:  (data.manufacturer ?? '') as string,
     date:          data.date as string,
     excerpt:       (data.excerpt ?? '') as string,
-    headerImage:   (data.headerImage ?? '') as string,
-    thumbnailImage:(data.thumbnailImage ?? '') as string,
+    headerImage: imageUrl((data.headerImage ?? '') as string),
+    thumbnailImage: imageUrl((data.thumbnailImage ?? '') as string),
     author:        data.author as string | undefined,
   }
 }
@@ -65,7 +66,7 @@ export function getRobotBySlug(slug: string): Robot | undefined {
     if (data.slug === slug) {
       return {
         ...parseFrontmatter(file),
-        content: String(marked.parse(md)),
+        content: imageHtml(String(marked.parse(md))),
       }
     }
   }

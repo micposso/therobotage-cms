@@ -1,0 +1,305 @@
+[
+  {
+    "id": "RXD-SC-001",
+    "dimension": "signal",
+    "version": "1.0-draft",
+    "scenarioName": "Operating State Communication",
+    "categories": [
+      "Physical robots interacting with people"
+    ],
+    "objective": "Can a person interpret operating state and intended action?",
+    "setup": [
+      "Document exact model, firmware, settings, operator experience and participant roles.",
+      "Use an appropriate supervised environment and manufacturer-supported operations.",
+      "Approach, pause and resume a task within the documented operating envelope."
+    ],
+    "instructions": [
+      "Record cues before each state transition and ask observers what they expect next.",
+      "Define success and failure criteria before observation; record every attempt and any deviation."
+    ],
+    "observableMeasures": [
+      "Cue channel, timing and consistency",
+      "participant interpretation with verbatim responses."
+    ],
+    "measurementApproach": "Code observed behaviors against the stated question. Report participant accounts separately from evaluator inference. Quantitative measures require recorded trials, units and a documented analysis plan.",
+    "evidenceRequirements": [
+      "Source URL or durable record, access date, provenance, configuration and environment.",
+      "Continuous footage or documented firsthand observations with event locators; identify edits and missing intervals.",
+      "Independent evidence and human review before scoring. Manufacturer claims remain attributed claims."
+    ],
+    "minimumEvidence": "A state-transition sequence with context and participant interpretation. Timing claims need timestamped records.",
+    "environmentalConsiderations": "Document lighting, noise, space, surface, connectivity, crowding, language and accessibility needs. Compare models only under compatible conditions.",
+    "repetitionGuidance": "Plan repeated trials before testing behavioral reliability. Record all attempts and interventions. Justify sample size for the research question; one success is not consistency.",
+    "successCriterion": "The stated interaction objective is achieved in the defined context, supported by recorded behavior and participant interpretation where applicable.",
+    "failureCriterion": "The objective is not achieved, human interpretation conflicts with intended behavior, or intervention/abort is required. Record what happened without treating missing evidence as failure.",
+    "rubricReference": "web-1-5 / PDF-v2-Appendix-A.1 (scale conflict unresolved)",
+    "scoringCriteria": [
+      "Preserved web endpoint: 1 — absent or unclear.",
+      "Preserved web endpoint: 5 — exemplary, no instruction needed.",
+      "Proposed intermediate anchors: 2 — substantial gaps in documented cases; 3 — objective met with identifiable gaps; 4 — objective met across documented cases with minor gaps. Editorial review required; not active scoring rules."
+    ],
+    "limitations": [
+      "Internal draft, not a validated scientific standard or NIST/ASTM test.",
+      "No universal recognition threshold, reliability target or sample size is established.",
+      "Results are specific to the configuration, population and setting observed."
+    ],
+    "review": {
+      "state": "draft",
+      "reviewer": null,
+      "date": null,
+      "notes": "Requires editorial approval, pilot studies and reconciliation of the PDF/web scoring scales."
+    }
+  },
+  {
+    "id": "RXD-SL-001",
+    "dimension": "spatial",
+    "version": "1.0-draft",
+    "scenarioName": "Predictability of Movement",
+    "categories": [
+      "Mobile robots",
+      "Robots with articulated movement"
+    ],
+    "objective": "Can people predict where the robot will move?",
+    "setup": [
+      "Document exact model, firmware, settings, operator experience and participant roles.",
+      "Use an appropriate supervised environment and manufacturer-supported operations.",
+      "Follow a marked route, turn and stop; for fixed robots use a bounded motion envelope."
+    ],
+    "instructions": [
+      "Ask observers to indicate the expected path before movement; document operator commands separately.",
+      "Define success and failure criteria before observation; record every attempt and any deviation."
+    ],
+    "observableMeasures": [
+      "Anticipatory cues, path predictions, avoidance and operator interventions."
+    ],
+    "measurementApproach": "Code observed behaviors against the stated question. Report participant accounts separately from evaluator inference. Quantitative measures require recorded trials, units and a documented analysis plan.",
+    "evidenceRequirements": [
+      "Source URL or durable record, access date, provenance, configuration and environment.",
+      "Continuous footage or documented firsthand observations with event locators; identify edits and missing intervals.",
+      "Independent evidence and human review before scoring. Manufacturer claims remain attributed claims."
+    ],
+    "minimumEvidence": "Continuous motion evidence including a direction change or stop and bystander expectations.",
+    "environmentalConsiderations": "Document lighting, noise, space, surface, connectivity, crowding, language and accessibility needs. Compare models only under compatible conditions.",
+    "repetitionGuidance": "Plan repeated trials before testing behavioral reliability. Record all attempts and interventions. Justify sample size for the research question; one success is not consistency.",
+    "successCriterion": "The stated interaction objective is achieved in the defined context, supported by recorded behavior and participant interpretation where applicable.",
+    "failureCriterion": "The objective is not achieved, human interpretation conflicts with intended behavior, or intervention/abort is required. Record what happened without treating missing evidence as failure.",
+    "rubricReference": "web-1-5 / PDF-v2-Appendix-A.2 (scale conflict unresolved)",
+    "scoringCriteria": [
+      "Preserved web endpoint: 1 — absent or unclear.",
+      "Preserved web endpoint: 5 — exemplary, no instruction needed.",
+      "Proposed intermediate anchors: 2 — substantial gaps in documented cases; 3 — objective met with identifiable gaps; 4 — objective met across documented cases with minor gaps. Editorial review required; not active scoring rules."
+    ],
+    "limitations": [
+      "Internal draft, not a validated scientific standard or NIST/ASTM test.",
+      "No universal recognition threshold, reliability target or sample size is established.",
+      "Results are specific to the configuration, population and setting observed."
+    ],
+    "review": {
+      "state": "draft",
+      "reviewer": null,
+      "date": null,
+      "notes": "Requires editorial approval, pilot studies and reconciliation of the PDF/web scoring scales."
+    }
+  },
+  {
+    "id": "RXD-PP-001",
+    "dimension": "presence",
+    "version": "1.0-draft",
+    "scenarioName": "Human Perception of Presence",
+    "categories": [
+      "Physical robots interacting with people"
+    ],
+    "objective": "Do voice, form and behavior communicate a coherent identity?",
+    "setup": [
+      "Document exact model, firmware, settings, operator experience and participant roles.",
+      "Use an appropriate supervised environment and manufacturer-supported operations.",
+      "Introduce the robot and observe repeated task interactions in the intended setting."
+    ],
+    "instructions": [
+      "Collect first impressions and post-task accounts without suggesting human traits.",
+      "Define success and failure criteria before observation; record every attempt and any deviation."
+    ],
+    "observableMeasures": [
+      "Consistency across voice, form and movement",
+      "participant interpretations and mismatches."
+    ],
+    "measurementApproach": "Code observed behaviors against the stated question. Report participant accounts separately from evaluator inference. Quantitative measures require recorded trials, units and a documented analysis plan.",
+    "evidenceRequirements": [
+      "Source URL or durable record, access date, provenance, configuration and environment.",
+      "Continuous footage or documented firsthand observations with event locators; identify edits and missing intervals.",
+      "Independent evidence and human review before scoring. Manufacturer claims remain attributed claims."
+    ],
+    "minimumEvidence": "Documented participant accounts plus contextual behavior. Images alone do not establish perceived presence.",
+    "environmentalConsiderations": "Document lighting, noise, space, surface, connectivity, crowding, language and accessibility needs. Compare models only under compatible conditions.",
+    "repetitionGuidance": "Plan repeated trials before testing behavioral reliability. Record all attempts and interventions. Justify sample size for the research question; one success is not consistency.",
+    "successCriterion": "The stated interaction objective is achieved in the defined context, supported by recorded behavior and participant interpretation where applicable.",
+    "failureCriterion": "The objective is not achieved, human interpretation conflicts with intended behavior, or intervention/abort is required. Record what happened without treating missing evidence as failure.",
+    "rubricReference": "web-1-5 / PDF-v2-Appendix-A.3 (scale conflict unresolved)",
+    "scoringCriteria": [
+      "Preserved web endpoint: 1 — absent or unclear.",
+      "Preserved web endpoint: 5 — exemplary, no instruction needed.",
+      "Proposed intermediate anchors: 2 — substantial gaps in documented cases; 3 — objective met with identifiable gaps; 4 — objective met across documented cases with minor gaps. Editorial review required; not active scoring rules."
+    ],
+    "limitations": [
+      "Internal draft, not a validated scientific standard or NIST/ASTM test.",
+      "No universal recognition threshold, reliability target or sample size is established.",
+      "Results are specific to the configuration, population and setting observed."
+    ],
+    "review": {
+      "state": "draft",
+      "reviewer": null,
+      "date": null,
+      "notes": "Requires editorial approval, pilot studies and reconciliation of the PDF/web scoring scales."
+    }
+  },
+  {
+    "id": "RXD-FT-001",
+    "dimension": "failure",
+    "version": "1.0-draft",
+    "scenarioName": "Failure Communication",
+    "categories": [
+      "Physical robots interacting with people"
+    ],
+    "objective": "Does the robot make a problem understandable?",
+    "setup": [
+      "Document exact model, firmware, settings, operator experience and participant roles.",
+      "Use an appropriate supervised environment and manufacturer-supported operations.",
+      "Use a safe, supported task interruption such as a blocked route or unavailable request."
+    ],
+    "instructions": [
+      "Document the transition to failure and ask who understands what happened and who should act.",
+      "Define success and failure criteria before observation; record every attempt and any deviation."
+    ],
+    "observableMeasures": [
+      "Problem acknowledgement, severity, explanation and clarity of responsibility."
+    ],
+    "measurementApproach": "Code observed behaviors against the stated question. Report participant accounts separately from evaluator inference. Quantitative measures require recorded trials, units and a documented analysis plan.",
+    "evidenceRequirements": [
+      "Source URL or durable record, access date, provenance, configuration and environment.",
+      "Continuous footage or documented firsthand observations with event locators; identify edits and missing intervals.",
+      "Independent evidence and human review before scoring. Manufacturer claims remain attributed claims."
+    ],
+    "minimumEvidence": "An actual failure sequence and human interpretation. Successful demonstrations are insufficient.",
+    "environmentalConsiderations": "Document lighting, noise, space, surface, connectivity, crowding, language and accessibility needs. Compare models only under compatible conditions.",
+    "repetitionGuidance": "Plan repeated trials before testing behavioral reliability. Record all attempts and interventions. Justify sample size for the research question; one success is not consistency.",
+    "successCriterion": "The stated interaction objective is achieved in the defined context, supported by recorded behavior and participant interpretation where applicable.",
+    "failureCriterion": "The objective is not achieved, human interpretation conflicts with intended behavior, or intervention/abort is required. Record what happened without treating missing evidence as failure.",
+    "rubricReference": "web-1-5 / PDF-v2-Appendix-A.4 (scale conflict unresolved)",
+    "scoringCriteria": [
+      "Preserved web endpoint: 1 — absent or unclear.",
+      "Preserved web endpoint: 5 — exemplary, no instruction needed.",
+      "Proposed intermediate anchors: 2 — substantial gaps in documented cases; 3 — objective met with identifiable gaps; 4 — objective met across documented cases with minor gaps. Editorial review required; not active scoring rules."
+    ],
+    "limitations": [
+      "Internal draft, not a validated scientific standard or NIST/ASTM test.",
+      "No universal recognition threshold, reliability target or sample size is established.",
+      "Results are specific to the configuration, population and setting observed."
+    ],
+    "review": {
+      "state": "draft",
+      "reviewer": null,
+      "date": null,
+      "notes": "Requires editorial approval, pilot studies and reconciliation of the PDF/web scoring scales."
+    }
+  },
+  {
+    "id": "RXD-IF-001",
+    "dimension": "fit",
+    "version": "1.0-draft",
+    "scenarioName": "Task Interaction Suitability",
+    "categories": [
+      "Physical robots interacting with people"
+    ],
+    "objective": "Does interaction match the task, population and context?",
+    "setup": [
+      "Document exact model, firmware, settings, operator experience and participant roles.",
+      "Use an appropriate supervised environment and manufacturer-supported operations.",
+      "Ask representative users to carry out a routine task in the intended environment."
+    ],
+    "instructions": [
+      "Record the task, user expectations, accessibility needs, assistance and participant feedback.",
+      "Define success and failure criteria before observation; record every attempt and any deviation."
+    ],
+    "observableMeasures": [
+      "Task completion, workflow mismatch, accessibility barriers and effort transferred to staff."
+    ],
+    "measurementApproach": "Code observed behaviors against the stated question. Report participant accounts separately from evaluator inference. Quantitative measures require recorded trials, units and a documented analysis plan.",
+    "evidenceRequirements": [
+      "Source URL or durable record, access date, provenance, configuration and environment.",
+      "Continuous footage or documented firsthand observations with event locators; identify edits and missing intervals.",
+      "Independent evidence and human review before scoring. Manufacturer claims remain attributed claims."
+    ],
+    "minimumEvidence": "A contextual task sequence and feedback from relevant users; disclose excluded populations.",
+    "environmentalConsiderations": "Document lighting, noise, space, surface, connectivity, crowding, language and accessibility needs. Compare models only under compatible conditions.",
+    "repetitionGuidance": "Plan repeated trials before testing behavioral reliability. Record all attempts and interventions. Justify sample size for the research question; one success is not consistency.",
+    "successCriterion": "The stated interaction objective is achieved in the defined context, supported by recorded behavior and participant interpretation where applicable.",
+    "failureCriterion": "The objective is not achieved, human interpretation conflicts with intended behavior, or intervention/abort is required. Record what happened without treating missing evidence as failure.",
+    "rubricReference": "web-1-5 / PDF-v2-Appendix-A.5 (scale conflict unresolved)",
+    "scoringCriteria": [
+      "Preserved web endpoint: 1 — absent or unclear.",
+      "Preserved web endpoint: 5 — exemplary, no instruction needed.",
+      "Proposed intermediate anchors: 2 — substantial gaps in documented cases; 3 — objective met with identifiable gaps; 4 — objective met across documented cases with minor gaps. Editorial review required; not active scoring rules."
+    ],
+    "limitations": [
+      "Internal draft, not a validated scientific standard or NIST/ASTM test.",
+      "No universal recognition threshold, reliability target or sample size is established.",
+      "Results are specific to the configuration, population and setting observed."
+    ],
+    "review": {
+      "state": "draft",
+      "reviewer": null,
+      "date": null,
+      "notes": "Requires editorial approval, pilot studies and reconciliation of the PDF/web scoring scales."
+    }
+  },
+  {
+    "id": "RXD-RD-001",
+    "dimension": "recovery",
+    "version": "1.0-draft",
+    "scenarioName": "Recovery from Interrupted Tasks",
+    "categories": [
+      "Physical robots interacting with people"
+    ],
+    "objective": "Can people and the robot get back on track after a breakdown?",
+    "setup": [
+      "Document exact model, firmware, settings, operator experience and participant roles.",
+      "Use an appropriate supervised environment and manufacturer-supported operations.",
+      "Observe a safe interruption followed by a supported recovery attempt."
+    ],
+    "instructions": [
+      "Record every recovery step, guidance, retained task state and human intervention until resolved or stopped.",
+      "Define success and failure criteria before observation; record every attempt and any deviation."
+    ],
+    "observableMeasures": [
+      "Actionable guidance, intervention burden, safe restart and understandable return to operation."
+    ],
+    "measurementApproach": "Code observed behaviors against the stated question. Report participant accounts separately from evaluator inference. Quantitative measures require recorded trials, units and a documented analysis plan.",
+    "evidenceRequirements": [
+      "Source URL or durable record, access date, provenance, configuration and environment.",
+      "Continuous footage or documented firsthand observations with event locators; identify edits and missing intervals.",
+      "Independent evidence and human review before scoring. Manufacturer claims remain attributed claims."
+    ],
+    "minimumEvidence": "A breakdown and subsequent recovery attempt, including unsuccessful attempts. Success-only footage cannot support recovery scores.",
+    "environmentalConsiderations": "Document lighting, noise, space, surface, connectivity, crowding, language and accessibility needs. Compare models only under compatible conditions.",
+    "repetitionGuidance": "Plan repeated trials before testing behavioral reliability. Record all attempts and interventions. Justify sample size for the research question; one success is not consistency.",
+    "successCriterion": "The stated interaction objective is achieved in the defined context, supported by recorded behavior and participant interpretation where applicable.",
+    "failureCriterion": "The objective is not achieved, human interpretation conflicts with intended behavior, or intervention/abort is required. Record what happened without treating missing evidence as failure.",
+    "rubricReference": "web-1-5 / PDF-v2-Appendix-A.6 (scale conflict unresolved)",
+    "scoringCriteria": [
+      "Preserved web endpoint: 1 — absent or unclear.",
+      "Preserved web endpoint: 5 — exemplary, no instruction needed.",
+      "Proposed intermediate anchors: 2 — substantial gaps in documented cases; 3 — objective met with identifiable gaps; 4 — objective met across documented cases with minor gaps. Editorial review required; not active scoring rules."
+    ],
+    "limitations": [
+      "Internal draft, not a validated scientific standard or NIST/ASTM test.",
+      "No universal recognition threshold, reliability target or sample size is established.",
+      "Results are specific to the configuration, population and setting observed."
+    ],
+    "review": {
+      "state": "draft",
+      "reviewer": null,
+      "date": null,
+      "notes": "Requires editorial approval, pilot studies and reconciliation of the PDF/web scoring scales."
+    }
+  }
+]

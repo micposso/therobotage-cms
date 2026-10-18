@@ -91,15 +91,15 @@ export default function InstrumentFeature() {
             aria-hidden="true"
           >
             <p className={styles.profileLabel}>{t("Sample RES dimensional profile")}</p>
-            <p className={styles.profileTitle}>{SAMPLE_PROFILE.robotName}</p>
+            <h3 className={styles.profileTitle}>{SAMPLE_PROFILE.robotName}</h3>
             <p className={styles.profileMeta}>{SAMPLE_PROFILE.context}</p>
 
             <div className={styles.dimensionList}>
               {SAMPLE_PROFILE.dimensions.map(({ name, score }) => (
                 <div key={name} className={styles.dimensionRow}>
                   <div className={styles.dimensionMeta}>
-                    <span className={styles.dimensionName}>{name}</span>
-                    <span className={styles.dimensionScore}>{score}</span>
+                    <span className={`type-heading ${styles.dimensionName}`}>{name}</span>
+                    <span className={`type-heading ${styles.dimensionScore}`}>{score}</span>
                   </div>
                   <div className={styles.bar}>
                     <div

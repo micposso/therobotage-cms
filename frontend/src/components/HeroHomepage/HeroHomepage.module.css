@@ -96,9 +96,9 @@
 
 .heroNavDesc {
   font-family: var(--font-body);
-  font-size: var(--text-base);
+  font-size: var(--text-body);
   font-weight: 400;
-  line-height: 1.6;
+  line-height: var(--leading-body);
   color: var(--color-text);
   margin: var(--space-1) 0 0 0;
   padding-bottom: var(--space-1);
@@ -184,7 +184,9 @@
   justify-content: center;
   padding: var(--space-8) 0 var(--space-8) var(--space-8);
   border-left: 1px solid var(--color-border);
-  height: 100%;
+  /* Stretch to the viewport-filling row so centering uses its full height. */
+  align-self: stretch;
+  height: auto;
 }
 
 /* ─── Eyebrow ─────────────────────────────────────────────────────────────────── */
@@ -214,8 +216,9 @@
 }
 
 .headline {
+  --text-page-title: calc(var(--text-2xl) * 1.5);
   font-family: var(--font-display);
-  font-size: calc(var(--text-2xl) * 1.5);
+  font-size: var(--text-page-title);
   font-weight: 400;
   line-height: 1.05;
   color: var(--color-accent);
@@ -337,6 +340,11 @@
 
 .ctaGhost:hover {
   opacity: 0.85;
+}
+
+.ctaGreen {
+  background: var(--color-tertiary);
+  color: var(--color-text-inverse);
 }
 
 .arrow {

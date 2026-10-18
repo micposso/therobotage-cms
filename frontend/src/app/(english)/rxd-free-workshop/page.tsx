@@ -1,7 +1,8 @@
+import { imageUrl } from '@/lib/image-assets'
 import Nav from '@/components/Nav/Nav'
 import PageHero from '@/components/PageHero/PageHero'
 import Footer from '@/components/Footer/Footer'
-import WorkshopForm from './WorkshopForm'
+import Link from 'next/link'
 import styles from './workshop.module.css'
 import { Fragment } from 'react'
 import { workshopEvent } from '@/lib/events'
@@ -14,11 +15,11 @@ export const metadata = {
     title: "Product & UX Design for a World With Robots — Free Workshop",
     description:
       "Three live Zoom sessions covering robotics basics, the RXD framework, and a scored case study on Reachy Mini.",
-    images: [{ url: "/images/hand.png", alt: "The Robot Age" }],
+    images: [{ url: imageUrl("/images/hand.png"), alt: "The Robot Age" }],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/images/hand.png"],
+    images: [imageUrl("/images/hand.png")],
   },
 }
 
@@ -28,7 +29,7 @@ export default function RxdFreeWorkshopPage() {
       <Nav pinned />
 
       <PageHero
-        eyebrow="Free Workshop"
+        eyebrow="Past Workshop · June 2026"
         title={workshopEvent.title}
         subtitle={workshopEvent.description}
         imageSrc="/images/hand.png"
@@ -99,16 +100,11 @@ export default function RxdFreeWorkshopPage() {
             {/* Right — form */}
             <div className={styles.formCol}>
               <div className={styles.formCard}>
-                <p className={styles.formEyebrow}>Reserve your spot</p>
-                <h3 className={styles.formHeading}>
-                  This is the founding cohort &mdash; the first time I&rsquo;m running this.
-                  Ten seats, direct access to me throughout.
-                </h3>
-                <p className={styles.formSubheading}>
-                  Fill in your details and I&rsquo;ll send you a confirmation with the dates
-                  and session links.
-                </p>
-                <WorkshopForm />
+                <p className={styles.formEyebrow}>Registration closed</p>
+                <h3 className={styles.formHeading}>This page describes the June 2026 workshop.</h3>
+                <p className={styles.formSubheading}>Explore the Academy for current RPDP and RDP program information, or request a Live Robot Lab for your group.</p>
+                <p><Link href="/learn#programs">Explore Professional Programs →</Link></p>
+                <p><Link href="/live-robot-lab">Explore Live Robot Lab →</Link></p>
               </div>
             </div>
 

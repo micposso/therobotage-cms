@@ -15,9 +15,9 @@ import {
 } from '@/lib/jobsTaxonomy'
 
 const FROM_ADDRESS = getJobAlertFromAddress()
-const ADMIN_ADDRESS = process.env.JOB_ALERT_ADMIN_EMAIL
+const ADMIN_ADDRESS = 'mike@therobotage.com'
 const FALLBACK_SIGNUP_RECIPIENT =
-  process.env.JOB_ALERT_ADMIN_EMAIL ?? process.env.EMAIL_FROM_HELLO ?? 'hello@therobotage.com'
+  ADMIN_ADDRESS
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://therobotage.com'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/

@@ -1,3 +1,4 @@
+import { imageUrl } from '@/lib/image-assets'
 import Nav from '@/components/Nav/Nav'
 import PageHero from '@/components/PageHero/PageHero'
 import Footer from '@/components/Footer/Footer'
@@ -10,11 +11,11 @@ export const metadata = {
   openGraph: {
     title: 'Connect — The Robot Age',
     description: 'Get in touch, follow the work, or join the community.',
-    images: [{ url: '/images/human.png', alt: 'The Robot Age' }],
+    images: [{ url: imageUrl('/images/human.png'), alt: 'The Robot Age' }],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/images/human.png'],
+    images: [imageUrl('/images/human.png')],
   },
 }
 
@@ -48,7 +49,7 @@ export default function ConnectPage() {
       <PageHero
         eyebrow="Connect"
         title="Let's talk"
-        subtitle="Whether you're interested in the certification, the summit, a partnership, or just the work — we'd like to hear from you."
+        subtitle="Ask about Robot Literacy, Live Robot Lab, RPDP, RDP, or a partnership. Tell us what you would like to explore."
         imageSrc="/images/human.png"
       />
       <section className={styles.section}>
@@ -66,7 +67,7 @@ export default function ConnectPage() {
       <section className={styles.formSection}>
         <div className="container-fluid">
           <div className={styles.inner}>
-            <p className={styles.formHeading}>Send us a message</p>
+            <h3 className={styles.formHeading}>Send us a message</h3>
             <ContactForm />
           </div>
         </div>

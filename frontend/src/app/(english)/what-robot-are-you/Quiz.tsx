@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useRef } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+import Image from '@/components/MediaImage'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import { QUESTIONS, matchRobot, type Answers } from '@/lib/matching'
 import { QUIZ_ROBOTS, type QuizRobot } from '@/lib/quizRobots'

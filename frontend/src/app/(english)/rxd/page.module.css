@@ -116,15 +116,12 @@
 }
 
 .robotCardScoreValue {
-  font-family: var(--font-display);
-  font-size: var(--text-md);
-  font-weight: 400;
   letter-spacing: -0.02em;
   color: var(--res-orange);
 }
 
 .robotCardScoreMax {
-  font-size: var(--text-sm);
+  font-size: inherit;
   color: var(--color-text-muted);
 }
 
@@ -161,8 +158,8 @@
 .sectionBody {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: var(--text-sm);
-  line-height: 1.7;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
   color: var(--color-text-muted);
   margin: 0;
 }

@@ -6,17 +6,17 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Nav from '@/components/Nav/Nav'
 import Footer from '@/components/Footer/Footer'
-import FoundingCohort from '@/components/FoundingCohort/FoundingCohort'
-import { getCertificationBySlug, getAllCertificationSlugs } from '@/lib/certifications'
+import { getCertificationBySlug, getAllCertificationSlugs, legacyCredentialSlugs, isLegacyCredential } from '@/lib/certifications'
 import styles from './CredentialPage.module.css'
 
 export async function generateStaticParams() {
-  return getAllCertificationSlugs().map((credential) => ({ credential }))
+  return [...getAllCertificationSlugs(), ...legacyCredentialSlugs].map((credential) => ({ credential }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ credential: string; locale?: Locale }> }) {
   const { credential, locale = 'en' } = await params
   const cert = getCertificationBySlug(credential)
+  if (isLegacyCredential(credential)) return { title: uiText('Program catalog updated', locale), robots: { index: false, follow: true } }
   if (!cert) return {}
   return pageMetadata({
     title: `${cert.abbr} — ${uiText(cert.name, locale)} — The Robot Age`,
@@ -40,6 +40,16 @@ export default async function CredentialPage({ params }: { params: Promise<{ cre
   const t = (text: string) => uiText(text, locale)
   const resolveHref = (url: string) => contentHref(url, locale)
   const cert = getCertificationBySlug(credential)
+  if (isLegacyCredential(credential)) return <>
+    <Nav pinned />
+    <main className={styles.page}><div className="container-fluid">
+      <h1 className={styles.title}>{t('Program catalog updated')}</h1>
+      <p className={styles.description}>{t('This credential is no longer part of our current public program catalog. Explore RPDP and RDP at The Robot Age Academy, or start with Robot Literacy and Live Robot Lab.')}</p>
+      <Link className={styles.ctaPrimary} href={resolveHref('/learn#programs')}>{t('Compare Professional Programs')} →</Link>
+      <p className={styles.overviewText}>{t('Existing learners can sign in to access their learning records. This catalog update does not rename previously issued credentials.')}</p>
+      <a className={styles.backLink} href="https://learn.therobotage.com/signin">{t('Learner sign in')} →</a>
+    </div></main><Footer />
+  </>
   if (!cert) notFound()
 
   const isLive = cert.status === 'Live'
@@ -62,11 +72,10 @@ export default async function CredentialPage({ params }: { params: Promise<{ cre
               </div>
               <h1 className={styles.title}>{t(cert.name)}</h1>
               <p className={styles.description}>{t(cert.description)}</p>
-              {isLive ? (
-                <a href={resolveHref("/access")} className={styles.ctaPrimary}>{t("Join the Waitlist →")}</a>
-              ) : (
-                <a href={resolveHref("/access")} className={styles.ctaSecondary}>{t("Notify me when this opens →")}</a>
-              )}
+              <Link href={resolveHref(`/learn#${credential === 'rpdp' ? 'founding-cohort-list' : 'rdp-updates'}`)} className={styles.ctaPrimary}>
+                {t(credential === 'rpdp' ? 'Join the RPDP Founding Cohort List' : 'Get RDP Launch Updates')} →
+              </Link>
+              <p className={styles.frameworkText}>{t('Joining the list does not reserve a seat.')}</p>
             </div>
             <div className={styles.headerRight}>
               <div className={styles.specCard}>
@@ -96,22 +105,17 @@ export default async function CredentialPage({ params }: { params: Promise<{ cre
           <section className={styles.section}>
             <p className={styles.eyebrow}>{t("Built on")}</p>
             <p className={styles.frameworkName}>{t("Robot Experience Design (RXD)")}</p>
-            <p className={styles.frameworkText}>{t("Every module, deliverable, and capstone in the REP programme maps directly to the six dimensions of the RXD framework — the original research framework developed by The Robot Age for evaluating how humans experience robots in real environments.")}</p>
+            <p className={styles.frameworkText}>{t("Explore the Robot Experience Design framework for evaluating how people experience robots in real environments.")}</p>
             <div className={styles.pills}>
               {['Signal Clarity', 'Spatial Legibility', 'Perceived Presence', 'Failure Transparency', 'Interaction Fit', 'Recovery Design'].map((dim) => (
                 <span key={dim} className={styles.pill}>{t(dim)}</span>
               ))}
             </div>
-            <a href={resolveHref("/rxd")} className={styles.frameworkLink}>{t("Read the RXD White Paper →")}</a>
+            <a href={resolveHref("/rxd")} className={styles.frameworkLink}>{t("Explore the RXD Framework →")}</a>
           </section>
 
-          {/* ── Founding Cohort ─────────────────────────────────────────────── */}
-          {cert.slug === 'rep' && (
-            <FoundingCohort />
-          )}
-
           {/* ── Curriculum ──────────────────────────────────────────────────── */}
-          <section className={styles.section}>
+          <section id="curriculum" className={styles.section}>
             <p className={styles.eyebrow}>{t("Curriculum")}</p>
             <div className={styles.moduleList}>
               {cert.modules.map((mod) => (
@@ -124,12 +128,11 @@ export default async function CredentialPage({ params }: { params: Promise<{ cre
                         {t(mod.status ?? '')}
                       </span>
                     </div>
-                    <p className={styles.moduleDescription}>{t(mod.description)}</p>
+                    {mod.description && <p className={styles.moduleDescription}>{t(mod.description)}</p>}
                   </div>
                 </div>
               ))}
             </div>
-            <a href={resolveHref(`/learn/${credential}/curriculum`)} className={styles.curriculumLink}>{t("See full week-by-week curriculum →")}</a>
           </section>
 
           {/* ── Outcomes ────────────────────────────────────────────────────── */}
@@ -146,8 +149,9 @@ export default async function CredentialPage({ params }: { params: Promise<{ cre
           </section>
 
           {/* ── Back ────────────────────────────────────────────────────────── */}
+          <p className={styles.frameworkText}>{t('Credentials recognize completion of educational requirements. They are not government licenses, regulated safety certifications, or authorization to operate robots.')}</p>
           <div className={styles.back}>
-            <Link href={resolveHref("/learn")} className={styles.backLink}>{t("← Back to Curriculum")}</Link>
+            <Link href={resolveHref("/learn")} className={styles.backLink}>{t("← Back to Academy")}</Link>
           </div>
 
         </div>

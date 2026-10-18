@@ -2,6 +2,7 @@
 import { useCopy } from '@/lib/i18n/useCopy'
 
 import Link from 'next/link'
+import Image from '@/components/MediaImage'
 import type { JobCard as JobCardData } from '@/lib/jobs'
 import { PLACEHOLDER_LOGO_URL, formatLocation, formatSalary } from '@/lib/jobs'
 import { EMPLOYMENT_TYPE_LABELS, SENIORITY_LABELS } from '@/lib/jobsTaxonomy'
@@ -19,11 +20,14 @@ export default function JobCard({ job }: Props) {
 
   return (
     <Link href={href(`/jobs/${job.slug}`)} className={styles.card}>
-      <div
+      <Image
         className={styles.logo}
-        style={{ backgroundImage: `url(${job.companyLogoUrl ?? PLACEHOLDER_LOGO_URL})` }}
-        role="img"
-        aria-label={`${job.companyName} logo`}
+        src={job.companyLogoUrl ?? PLACEHOLDER_LOGO_URL}
+        alt={`${job.companyName} logo`}
+        width={64}
+        height={64}
+        style={{ objectFit: 'contain' }}
+        unoptimized
       />
 
       <div className={styles.main}>

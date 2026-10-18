@@ -54,8 +54,8 @@
 .abstract {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: var(--text-sm);
-  line-height: 1.75;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
   color: var(--color-text-muted);
   max-width: 580px;
   margin-bottom: var(--space-8);

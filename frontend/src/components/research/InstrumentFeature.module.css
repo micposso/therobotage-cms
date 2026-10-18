@@ -48,8 +48,8 @@
 .body {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: var(--text-sm);
-  line-height: 1.8;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
   color: var(--color-text-muted);
   max-width: 680px;
   margin-bottom: var(--space-10);
@@ -139,20 +139,18 @@
 
 .dimensionMeta {
   display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
   justify-content: space-between;
   align-items: baseline;
 }
 
 .dimensionName {
-  font-family: var(--font-body);
-  font-size: var(--text-xs);
   font-weight: 400;
   color: var(--color-text);
 }
 
 .dimensionScore {
-  font-family: var(--font-display);
-  font-size: var(--text-xs);
   font-weight: 400;
   color: var(--color-accent);
 }

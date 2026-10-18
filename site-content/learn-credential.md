@@ -1,49 +1,7 @@
-# Learn — Credential Detail — /learn/[credential]
+# Professional credential pages
 
-*Dynamic route. Examples: /learn/rep, /learn/rpdp, /learn/rsp*
+Current pages: /learn/rpdp and /learn/rdp. See learn.md and packages/ui/src/lib/certifications.ts for canonical program facts.
 
----
+Show the specific program audience, overview, format, duration, modules, capstone and current status. Link curriculum CTAs to the corresponding #curriculum section. Route RPDP interest to /learn#founding-cohort-list and RDP interest to /learn#rdp-updates.
 
-## Page Structure
-
-**Credential abbreviation** + status badge (e.g., Live / Coming Soon)
-
-**Full credential name** (e.g., Robotics Experience Practitioner)
-
-**Description:** Full narrative description of the credential.
-
----
-
-## Specs Card
-
-| Field | Value |
-|---|---|
-| Format | Hybrid (self-paced + group sessions) |
-| Duration | e.g., 4 weeks |
-| Audience | e.g., Product designers, UX strategists, Operations leads |
-
----
-
-## Overview Section
-
-Narrative overview of the programme, what it covers, and who it is for.
-
----
-
-## Curriculum Modules
-
-List of modules with status indicators (Live / Coming Soon).
-
----
-
-## Learning Outcomes
-
-Bulleted list of what participants will be able to do upon completion.
-
----
-
-## CTAs
-
-- Join the Waitlist → /access
-- Back to Curriculum → /learn
-- View full curriculum → /learn/[credential]/curriculum *(where available)*
+Credentials recognize educational completion, not government licenses, regulated safety certifications, or authorization to operate robots. An interest-list signup is not a reservation. Legacy URLs display a catalog-update notice and existing-learner sign-in.

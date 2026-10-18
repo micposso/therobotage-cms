@@ -16,7 +16,7 @@ import {
 import styles from '@/app/(english)/live-robot-lab/live-robot-lab.module.css'
 import local from './robot-literacy.module.css'
 
-const title = 'Robot Literacy: READ, RELATE, COEXIST | The Robot Age'
+const title = 'Robot Literacy: INTERPRET, RELATE, COEXIST | The Robot Age'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale?: Locale }> }): Promise<Metadata> {
   const { locale = 'en' } = await params

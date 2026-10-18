@@ -1,4 +1,5 @@
 import savedSpanish from './ui-es.json'
+import rxdSpanish from './rxd-es.json'
 import type { Locale } from './routing'
 const spanish: Record<string, string> = {
   RESEARCH: 'INVESTIGACIÓN', ROBOTS: 'ROBOTS', 'RXD FRAMEWORK': 'MARCO RXD', LEARN: 'APRENDER', JOBS: 'EMPLEOS', ENTERPRISE: 'EMPRESAS',
@@ -10,7 +11,6 @@ const spanish: Record<string, string> = {
   Pages: 'Páginas', Certifications: 'Certificaciones', Follow: 'Síguenos', 'All rights reserved.': 'Todos los derechos reservados.',
   'Privacy Policy': 'Política de privacidad', 'Terms of Use': 'Términos de uso', 'Fair use of AI': 'Uso responsable de la IA',
   'What Robot Are You?': '¿Qué robot eres?', 'RXD Scorecard': 'Evaluación RXD', Access: 'Acceso', Connect: 'Contacto', Summit: 'Encuentro',
-  'Robotics Experience Practitioner': 'Profesional de experiencia robótica', 'Robot Experience Designer': 'Diseñador de experiencia robótica',
   'Cookie preferences': 'Preferencias de cookies',
   'We use cookies to understand how visitors use The Robot Age and to improve your experience.': 'Usamos cookies para entender cómo se utiliza The Robot Age y mejorar tu experiencia.',
   'Manage preferences': 'Gestionar preferencias', 'Reject non-essential': 'Rechazar las no esenciales', 'Accept all': 'Aceptar todas',
@@ -19,4 +19,4 @@ const spanish: Record<string, string> = {
   'Toggle analytics cookies': 'Activar o desactivar cookies de análisis', 'Toggle marketing cookies': 'Activar o desactivar cookies de marketing',
   'Used to measure the effectiveness of outreach and promotions.': 'Permiten medir la eficacia de nuestras campañas y promociones.', 'Save preferences': 'Guardar preferencias',
 }
-export function uiText(text: string, locale: Locale): string { if (locale === 'en') return text; const key = text.trim(); const translated = spanish[key] || (savedSpanish as Record<string, string>)[key]; return translated ? text.replace(key, translated) : text }
+export function uiText(text: string, locale: Locale): string { if (locale === 'en') return text; const key = text.trim(); const translated = (rxdSpanish as Record<string, string>)[key] || spanish[key] || (savedSpanish as Record<string, string>)[key]; return translated ? text.replace(key, translated) : text }

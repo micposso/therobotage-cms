@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { imageUrl } from '../image-assets'
 import type { Locale } from './routing'
 import { localizedHref } from './routing'
 import { translationAlternates } from './content'
@@ -7,7 +8,7 @@ import { uiText } from './messages'
 export function pageMetadata(metadata: Metadata, route: string, locale: Locale): Metadata {
   const translated = JSON.parse(JSON.stringify(metadata, (key, value) =>
     typeof value === 'string' && ['title', 'absolute', 'description', 'alt'].includes(key)
-      ? uiText(value, locale) : value,
+      ? uiText(value, locale) : typeof value === 'string' ? imageUrl(value) : value,
   )) as Metadata
   const url = localizedHref(route, locale)
   return {

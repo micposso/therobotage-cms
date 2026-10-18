@@ -13,6 +13,7 @@ import { getScoreBySlug } from '@/lib/scores'
 import RobotSpecStrip from '@/components/RobotSpecStrip/RobotSpecStrip'
 import styles from './page.module.css'
 import { translationAlternates } from '@/lib/i18n/content'
+import ProfileResearch from '@/components/RXDEvaluation/ProfileResearch'
 
 export async function generateStaticParams() {
   return getAllRobotProfileSlugs().map((slug) => ({ slug }))
@@ -54,7 +55,6 @@ export default async function RobotProfilePage({ params }: { params: Promise<{ s
   const t = (text: string) => uiText(text, locale)
   const robot = localize(getRobotProfile(slug), `/robots/${slug}`, locale)
   if (!robot) notFound()
-  const score = getScoreBySlug(slug)
 
   return (
     <>
@@ -79,16 +79,12 @@ export default async function RobotProfilePage({ params }: { params: Promise<{ s
               <p className={`${styles.eyebrow} ${styles.sectionEyebrow}`}>{t("Overview")}</p>
               <p className={styles.overviewBody}>{robot.overview}</p>
             </div>
-            {score && (
-              <div className={styles.scorePanel}>
-                <p className={styles.scorePanelEyebrow}>{t("RXD Score")}</p>
-                <div>
-                  <span className={styles.scorePanelNumber}>{score.compositeScore.toFixed(2)}</span>
-                  <span className={styles.scorePanelMax}> / 5.0</span>
-                </div>
-                <p className={styles.scorePanelTier}>{score.tier}</p>
-              </div>
-            )}
+            <nav className={styles.profileNav} aria-label={t('On this page')}>
+              <a href="#rxd-evaluation">{t('RXD evaluation')} <span aria-hidden="true">01</span></a>
+              <a href="#deployment-context">{t('Deployment Context')} <span aria-hidden="true">02</span></a>
+              <a href="#commercial-readiness-section">{t('Commercial readiness')} <span aria-hidden="true">03</span></a>
+              <a href="#profile-sources">{t('Sources and methodology')} <span aria-hidden="true">04</span></a>
+            </nav>
           </div>
         </div>
       </section>
@@ -96,18 +92,8 @@ export default async function RobotProfilePage({ params }: { params: Promise<{ s
       {/* RXD Scoring */}
       <RxdScoreModule locale={locale} slug={slug} robotName={robot.title} />
 
-      {/* Image gallery */}
-      {robot.gallery.length > 0 && (
-        <section className={styles.gallerySection}>
-          <div className="container-fluid">
-            <p className={`${styles.eyebrow} ${styles.sectionEyebrow}`}>{t("Field Images")}</p>
-            <RobotImageGallery items={robot.gallery} />
-          </div>
-        </section>
-      )}
-
       {/* Deployment context */}
-      <section className={styles.deploymentSection}>
+      <section id="deployment-context" className={styles.deploymentSection}>
         <div className="container-fluid">
           <p className={`${styles.eyebrow} ${styles.sectionEyebrow}`}>{t("Deployment Context")}</p>
           <div className={styles.deploymentGrid}>
@@ -121,6 +107,20 @@ export default async function RobotProfilePage({ params }: { params: Promise<{ s
           </div>
         </div>
       </section>
+
+      <ProfileResearch slug={slug} locale={locale} section="commercial" />
+
+      {/* Image gallery */}
+      {robot.gallery.length > 0 && (
+        <section className={styles.gallerySection}>
+          <div className="container-fluid">
+            <p className={`${styles.eyebrow} ${styles.sectionEyebrow}`}>{t("Field Images")}</p>
+            <RobotImageGallery items={robot.gallery} />
+          </div>
+        </section>
+      )}
+
+      <ProfileResearch slug={slug} locale={locale} section="sources" />
 
       {/* Cohort promo */}
       <section className={styles.cohortSection}>

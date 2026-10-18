@@ -4,7 +4,7 @@ import { Resend } from 'resend'
 import { emailHtml, escapeHtml } from '@/lib/emailTemplate'
 
 const FROM_ADDRESS = process.env.EMAIL_FROM_HELLO ?? 'onboarding@resend.dev'
-const ADMIN_ADDRESS = 'micposso@gmail.com'
+const ADMIN_ADDRESS = 'mike@therobotage.com'
 
 export async function sendContactEmail(
   prevState: { success: boolean; error?: string } | null,

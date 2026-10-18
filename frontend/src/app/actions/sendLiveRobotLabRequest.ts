@@ -30,7 +30,7 @@ export async function sendLiveRobotLabRequest(
       .join('')
     const { error } = await new Resend(process.env.RESEND_API_KEY).emails.send({
       from: process.env.EMAIL_FROM_HELLO ?? 'onboarding@resend.dev',
-      to: 'micposso@gmail.com',
+      to: 'mike@therobotage.com',
       replyTo: String(data.get('email')).trim(),
       subject: 'New Live Robot Lab request — The Robot Age',
       html: emailHtml(

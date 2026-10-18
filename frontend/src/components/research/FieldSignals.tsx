@@ -89,7 +89,7 @@ export default function FieldSignals() {
                 <span className={styles.number}>{essay.number}</span>
                 <div className={styles.itemBody}>
                   <span className={styles.itemDate}>{essay.date}</span>
-                  <p className={styles.itemTitle}>{t(essay.title)}</p>
+                  <h3 className={styles.itemTitle}>{t(essay.title)}</h3>
                   <p className={styles.itemTeaser}>{t(essay.teaser)}</p>
                 </div>
               </Link>

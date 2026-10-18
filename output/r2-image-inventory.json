@@ -1,0 +1,967 @@
+{
+  "published": true,
+  "count": 160,
+  "bytes": 76114087,
+  "assets": {
+    "/brand/instructor.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/brand/instructor.4400bfbd66cbf98c.png",
+      "key": "website/brand/instructor.4400bfbd66cbf98c.png",
+      "bytes": 1171978,
+      "sha256": "4400bfbd66cbf98c27ad5eddaf6630b0f8e9bbb012488a3ec990b9231ab7582d"
+    },
+    "/brand/logo.svg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/brand/logo.9a0b6768bf6b5518.svg",
+      "key": "website/brand/logo.9a0b6768bf6b5518.svg",
+      "bytes": 9671,
+      "sha256": "9a0b6768bf6b5518266234255092e197c6c94e8bd2bd01a49545a0076961e063"
+    },
+    "/brand/tra-logo.svg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/brand/tra-logo.3de88534c991ab5b.svg",
+      "key": "website/brand/tra-logo.3de88534c991ab5b.svg",
+      "bytes": 6738,
+      "sha256": "3de88534c991ab5b1a281c7019f0d9c6025cd9ec1a29fb489860d99be805f353"
+    },
+    "/images/academy/closing.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/academy/closing.4ead4b05335999c8.webp",
+      "key": "website/images/academy/closing.4ead4b05335999c8.webp",
+      "bytes": 164222,
+      "sha256": "4ead4b05335999c89a84116dbc0d60f2b365253a929718e29161d3bd8a988819"
+    },
+    "/images/academy/corporate-training.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/academy/corporate-training.6ec50f34dbc6d012.webp",
+      "key": "website/images/academy/corporate-training.6ec50f34dbc6d012.webp",
+      "bytes": 101624,
+      "sha256": "6ec50f34dbc6d01271d7c9a1a6334abb7663b0d22ab42e893252bf0897c82a30"
+    },
+    "/images/academy/curriculum.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/academy/curriculum.b4900a696fdf3669.webp",
+      "key": "website/images/academy/curriculum.b4900a696fdf3669.webp",
+      "bytes": 107814,
+      "sha256": "b4900a696fdf36691fc03683f5c1b4517f9513f4693ea796e94733db52414b1b"
+    },
+    "/images/academy/deployment-gap.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/academy/deployment-gap.e23d3de9152a9fca.webp",
+      "key": "website/images/academy/deployment-gap.e23d3de9152a9fca.webp",
+      "bytes": 113806,
+      "sha256": "e23d3de9152a9fca0c0e92807ce9c69fb3e60cf1138c5d78ab95ef27b39a375f"
+    },
+    "/images/academy/design-gap.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/academy/design-gap.cef358531046c13b.webp",
+      "key": "website/images/academy/design-gap.cef358531046c13b.webp",
+      "bytes": 200298,
+      "sha256": "cef358531046c13bcf4def0fb117b5b9365982973a817bad8ce2b2dc651b912e"
+    },
+    "/images/academy/hero.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/academy/hero.b6a31c11274fb3fa.webp",
+      "key": "website/images/academy/hero.b6a31c11274fb3fa.webp",
+      "bytes": 142366,
+      "sha256": "b6a31c11274fb3fa4d6f0b28146f9cd04bbf54e5b51d85a5fa0636ce1caddeda"
+    },
+    "/images/academy/rdp-program.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/academy/rdp-program.b4401bf8374b2501.webp",
+      "key": "website/images/academy/rdp-program.b4401bf8374b2501.webp",
+      "bytes": 149534,
+      "sha256": "b4401bf8374b2501d131edab3c2d23ead4ed463ed46bd8505b407bab02a80eb0"
+    },
+    "/images/academy/rpdp-feature.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/academy/rpdp-feature.34320bf8f907129a.webp",
+      "key": "website/images/academy/rpdp-feature.34320bf8f907129a.webp",
+      "bytes": 122616,
+      "sha256": "34320bf8f907129a87be852c678ec3b4d3234542b1c30370b390712e1c937e54"
+    },
+    "/images/academy/rpdp-program.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/academy/rpdp-program.5b823fdd4b273b7f.webp",
+      "key": "website/images/academy/rpdp-program.5b823fdd4b273b7f.webp",
+      "bytes": 155634,
+      "sha256": "5b823fdd4b273b7f05f5b43857ed0da5e7bc85ce3f4b2f15eae2c2cbd5337060"
+    },
+    "/images/enterprise/hotel-team.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/enterprise/hotel-team.0f94632adfb77b1f.webp",
+      "key": "website/images/enterprise/hotel-team.0f94632adfb77b1f.webp",
+      "bytes": 91782,
+      "sha256": "0f94632adfb77b1f818059e8ef9b62fe263d3993a6354d9c1a5b8aba3200ae30"
+    },
+    "/images/failure-icon.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/failure-icon.698267aa7038f059.png",
+      "key": "website/images/failure-icon.698267aa7038f059.png",
+      "bytes": 1137332,
+      "sha256": "698267aa7038f059e571a8c2f6f6162f26f6b30dfda878abe0af8ab2743e4cda"
+    },
+    "/images/hand.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/hand.e88c614b95655f05.png",
+      "key": "website/images/hand.e88c614b95655f05.png",
+      "bytes": 509882,
+      "sha256": "e88c614b95655f05aea16d256dcbf8dcc88b62d31a4f4d1783fe8481aa7bbb7c"
+    },
+    "/images/heart.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/heart.dfe5a0201c3fc626.png",
+      "key": "website/images/heart.dfe5a0201c3fc626.png",
+      "bytes": 1154549,
+      "sha256": "dfe5a0201c3fc6261cc31765bc7f15040092ba8e6cd7056fe5e3c12cfd4e5e88"
+    },
+    "/images/human.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/human.d91e9355a3183fd8.png",
+      "key": "website/images/human.d91e9355a3183fd8.png",
+      "bytes": 213015,
+      "sha256": "d91e9355a3183fd80d85af55486db5975f2adbf6df5cd57c6c062f0adf9baa97"
+    },
+    "/images/imported/16cb3ea2b91bd44f.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/imported/16cb3ea2b91bd44f.730572505b05c514.webp",
+      "key": "website/images/imported/16cb3ea2b91bd44f.730572505b05c514.webp",
+      "bytes": 23072,
+      "sha256": "730572505b05c514fd2df1224614d4a4b6e2df59055f6bc8a604c382777ad151"
+    },
+    "/images/imported/61c8334097d4a125.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/imported/61c8334097d4a125.76fe863a9ee3e341.webp",
+      "key": "website/images/imported/61c8334097d4a125.76fe863a9ee3e341.webp",
+      "bytes": 246802,
+      "sha256": "76fe863a9ee3e34153a0664432d7597cdce8e380c21042d0ea3495f27ba72941"
+    },
+    "/images/imported/7012dc625d986578.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/imported/7012dc625d986578.cf62ab343f3d1b5a.webp",
+      "key": "website/images/imported/7012dc625d986578.cf62ab343f3d1b5a.webp",
+      "bytes": 97922,
+      "sha256": "cf62ab343f3d1b5a03b0e3151c4575cb9ff2f3702ca004bbfccf9037efb72f80"
+    },
+    "/images/imported/8997dae9082157ad.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/imported/8997dae9082157ad.3ceb36846a96279c.webp",
+      "key": "website/images/imported/8997dae9082157ad.3ceb36846a96279c.webp",
+      "bytes": 37448,
+      "sha256": "3ceb36846a96279cc6e0578ed74092fdbfdec0c7178b86c070fb7326db309357"
+    },
+    "/images/imported/acd7daf8f4165de3.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/imported/acd7daf8f4165de3.66923ea2adfc55fe.webp",
+      "key": "website/images/imported/acd7daf8f4165de3.66923ea2adfc55fe.webp",
+      "bytes": 145080,
+      "sha256": "66923ea2adfc55fe91efa379a2f8b2038ff919c56ffc976d3ce90f8a93b24376"
+    },
+    "/images/imported/d174eb9ac1856a53.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/imported/d174eb9ac1856a53.f603c423195f86c4.webp",
+      "key": "website/images/imported/d174eb9ac1856a53.f603c423195f86c4.webp",
+      "bytes": 68390,
+      "sha256": "f603c423195f86c4f2145fd39fa395d49cf5eb35ef0369577c2742737de28508"
+    },
+    "/images/imported/e95240483525663b.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/imported/e95240483525663b.7879fe9685a29bdf.webp",
+      "key": "website/images/imported/e95240483525663b.7879fe9685a29bdf.webp",
+      "bytes": 132470,
+      "sha256": "7879fe9685a29bdfc49d7e99fb749a202adf73dd81d7313386a6e8def0677dd2"
+    },
+    "/images/legibility-icon.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/legibility-icon.4a5c30b41bd3dee3.png",
+      "key": "website/images/legibility-icon.4a5c30b41bd3dee3.png",
+      "bytes": 384061,
+      "sha256": "4a5c30b41bd3dee38ead24cb85da5ba2bcf950d020393d860e1cf3cc9f0bde07"
+    },
+    "/images/live-robot-lab/group-session.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/live-robot-lab/group-session.4df8acbdc5ab4476.webp",
+      "key": "website/images/live-robot-lab/group-session.4df8acbdc5ab4476.webp",
+      "bytes": 167882,
+      "sha256": "4df8acbdc5ab44760cc28fc4f292be93f1736de8b4b4ff4e97286d5e2c975dc8"
+    },
+    "/images/news/Helix-02.jpeg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/Helix-02.f812bd4c8159456c.jpeg",
+      "key": "website/images/news/Helix-02.f812bd4c8159456c.jpeg",
+      "bytes": 254194,
+      "sha256": "f812bd4c8159456cd835b42b50a498f98b5f5c0f0f11ef74963b31f902d9b84a"
+    },
+    "/images/news/agility-digit-flagship.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/agility-digit-flagship.0e43feb21dce5464.jpg",
+      "key": "website/images/news/agility-digit-flagship.0e43feb21dce5464.jpg",
+      "bytes": 376061,
+      "sha256": "0e43feb21dce546423e0734e3c03672f3d3fba1683634cf2b44c2cc909a6667e"
+    },
+    "/images/news/agility-robotics-first-humanoid-ipo-header.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/agility-robotics-first-humanoid-ipo-header.de4d120337571904.jpg",
+      "key": "website/images/news/agility-robotics-first-humanoid-ipo-header.de4d120337571904.jpg",
+      "bytes": 367981,
+      "sha256": "de4d1203375719047a2ca1d69b22c421495bef4b847b6e4a9ed0ac79090dcc5b"
+    },
+    "/images/news/agility-robotics-first-humanoid-ipo-thumb.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/agility-robotics-first-humanoid-ipo-thumb.51b068b313658b12.jpg",
+      "key": "website/images/news/agility-robotics-first-humanoid-ipo-thumb.51b068b313658b12.jpg",
+      "bytes": 205283,
+      "sha256": "51b068b313658b1286af7ee0eaf967c05c6c62af419cb404526963325af25e8c"
+    },
+    "/images/news/atlas-world-cup-interface-test-header.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/atlas-world-cup-interface-test-header.c5f59dc1cb1218de.jpg",
+      "key": "website/images/news/atlas-world-cup-interface-test-header.c5f59dc1cb1218de.jpg",
+      "bytes": 61005,
+      "sha256": "c5f59dc1cb1218def6f8dd9437fe54d0690f2345148df3e6eab539e8a64dfbe6"
+    },
+    "/images/news/atlas-world-cup-interface-test-thumb.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/atlas-world-cup-interface-test-thumb.a5d10f42b38b7a47.jpg",
+      "key": "website/images/news/atlas-world-cup-interface-test-thumb.a5d10f42b38b7a47.jpg",
+      "bytes": 118100,
+      "sha256": "a5d10f42b38b7a47508ed6f0b24be95d11b98f6597cccb2e62c51a4c6abe3006"
+    },
+    "/images/news/autonomous-rescue-robots-earthquake-rubble-header.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/autonomous-rescue-robots-earthquake-rubble-header.dd6c5891aaf88bd9.png",
+      "key": "website/images/news/autonomous-rescue-robots-earthquake-rubble-header.dd6c5891aaf88bd9.png",
+      "bytes": 2766708,
+      "sha256": "dd6c5891aaf88bd906ca819b671d668bfdd1c96aed335362e60b5c152cb97862"
+    },
+    "/images/news/autonomous-rescue-robots-earthquake-rubble-thumb.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/autonomous-rescue-robots-earthquake-rubble-thumb.890c97eb3a210ac4.png",
+      "key": "website/images/news/autonomous-rescue-robots-earthquake-rubble-thumb.890c97eb3a210ac4.png",
+      "bytes": 2230516,
+      "sha256": "890c97eb3a210ac405f928c115cea466c70a2533420ecd56d74ffc013aebdd08"
+    },
+    "/images/news/china-10000-humanoid-robots-header.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/china-10000-humanoid-robots-header.87227b8baf3dedd6.png",
+      "key": "website/images/news/china-10000-humanoid-robots-header.87227b8baf3dedd6.png",
+      "bytes": 2170202,
+      "sha256": "87227b8baf3dedd667a686863ba96d1d0f193518de5c25abe76fb5732a9587b3"
+    },
+    "/images/news/china-10000-humanoid-robots-thumb.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/china-10000-humanoid-robots-thumb.9f305694b38d0e53.png",
+      "key": "website/images/news/china-10000-humanoid-robots-thumb.9f305694b38d0e53.png",
+      "bytes": 738715,
+      "sha256": "9f305694b38d0e533caacee5f0f92251109e6fd9ba9fa3fca10d0afaf7e37374"
+    },
+    "/images/news/digit-5-humanoid-form-trust-header.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/digit-5-humanoid-form-trust-header.b07561f48b9a65e8.jpg",
+      "key": "website/images/news/digit-5-humanoid-form-trust-header.b07561f48b9a65e8.jpg",
+      "bytes": 53701,
+      "sha256": "b07561f48b9a65e86f761cf7bf0aa668b603b373fe1d4e44008ff66de227c32a"
+    },
+    "/images/news/domestic-humanoid-safety-standards-header.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/domestic-humanoid-safety-standards-header.91a3d3da4afed21c.jpg",
+      "key": "website/images/news/domestic-humanoid-safety-standards-header.91a3d3da4afed21c.jpg",
+      "bytes": 127242,
+      "sha256": "91a3d3da4afed21c0bc2416b0a110863cc422e78f01320d801cf1d05e2df4b5e"
+    },
+    "/images/news/domestic-humanoid-safety-standards-thumb.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/domestic-humanoid-safety-standards-thumb.91a3d3da4afed21c.jpg",
+      "key": "website/images/news/domestic-humanoid-safety-standards-thumb.91a3d3da4afed21c.jpg",
+      "bytes": 127242,
+      "sha256": "91a3d3da4afed21c0bc2416b0a110863cc422e78f01320d801cf1d05e2df4b5e"
+    },
+    "/images/news/drone-sidewalk-delivery-public-space-header.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/drone-sidewalk-delivery-public-space-header.b275c9b0b9b72e9e.png",
+      "key": "website/images/news/drone-sidewalk-delivery-public-space-header.b275c9b0b9b72e9e.png",
+      "bytes": 2444653,
+      "sha256": "b275c9b0b9b72e9ef4b4436b8c07efb4ad447a4a072f23577a973fadae36f08d"
+    },
+    "/images/news/drone-sidewalk-delivery-public-space-thumb.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/drone-sidewalk-delivery-public-space-thumb.b275c9b0b9b72e9e.png",
+      "key": "website/images/news/drone-sidewalk-delivery-public-space-thumb.b275c9b0b9b72e9e.png",
+      "bytes": 2444653,
+      "sha256": "b275c9b0b9b72e9ef4b4436b8c07efb4ad447a4a072f23577a973fadae36f08d"
+    },
+    "/images/news/elliq-case-study-header.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/elliq-case-study-header.ba6ced62322578e4.jpg",
+      "key": "website/images/news/elliq-case-study-header.ba6ced62322578e4.jpg",
+      "bytes": 162665,
+      "sha256": "ba6ced62322578e4fd12f02bb4a5344551331087cd8ce99053f8508717187766"
+    },
+    "/images/news/fcc-foreign-robot-ban-header.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/fcc-foreign-robot-ban-header.37209583928fee32.png",
+      "key": "website/images/news/fcc-foreign-robot-ban-header.37209583928fee32.png",
+      "bytes": 1987071,
+      "sha256": "37209583928fee324f78867f791adeefaa3b2fa01add1ab9b92605a5acfe7419"
+    },
+    "/images/news/fcc-foreign-robot-ban-thumb.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/fcc-foreign-robot-ban-thumb.37209583928fee32.png",
+      "key": "website/images/news/fcc-foreign-robot-ban-thumb.37209583928fee32.png",
+      "bytes": 1987071,
+      "sha256": "37209583928fee324f78867f791adeefaa3b2fa01add1ab9b92605a5acfe7419"
+    },
+    "/images/news/figure_03.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/figure_03.95de9ce0b8f49f4d.png",
+      "key": "website/images/news/figure_03.95de9ce0b8f49f4d.png",
+      "bytes": 110961,
+      "sha256": "95de9ce0b8f49f4ddc57ff5f148e610bc7994518f9c7d7c4b31aa4bf153e8d2d"
+    },
+    "/images/news/google-deepmind-robotics-ux-framework-header.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/google-deepmind-robotics-ux-framework-header.9d9c168aeba10749.png",
+      "key": "website/images/news/google-deepmind-robotics-ux-framework-header.9d9c168aeba10749.png",
+      "bytes": 1883826,
+      "sha256": "9d9c168aeba10749c0f2b8d97d267e1e4fb3f27580a7b21958f0b811d6219b7d"
+    },
+    "/images/news/hello-robot-stretch-4-header.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/hello-robot-stretch-4-header.ac4ecde2db446a37.jpg",
+      "key": "website/images/news/hello-robot-stretch-4-header.ac4ecde2db446a37.jpg",
+      "bytes": 140644,
+      "sha256": "ac4ecde2db446a37f9975d024bce612dfb346ca68f14189936ca1c87cb9e4d1c"
+    },
+    "/images/news/hello-robot-stretch-4-thumb.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/hello-robot-stretch-4-thumb.78986c0cb9c2191e.jpg",
+      "key": "website/images/news/hello-robot-stretch-4-thumb.78986c0cb9c2191e.jpg",
+      "bytes": 70779,
+      "sha256": "78986c0cb9c2191e889969083d4597380126fe666be86f74ad5b047253a0a74a"
+    },
+    "/images/news/humanoid-olympics-not-about-sports-header.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/humanoid-olympics-not-about-sports-header.46b5e1306e3a8cbe.png",
+      "key": "website/images/news/humanoid-olympics-not-about-sports-header.46b5e1306e3a8cbe.png",
+      "bytes": 1876454,
+      "sha256": "46b5e1306e3a8cbed7348e858e4a8bd208e0e8b1bf894e54076b6d0f2512853f"
+    },
+    "/images/news/humanoid-olympics-not-about-sports-thumb.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/humanoid-olympics-not-about-sports-thumb.8c365302e0992b55.png",
+      "key": "website/images/news/humanoid-olympics-not-about-sports-thumb.8c365302e0992b55.png",
+      "bytes": 663041,
+      "sha256": "8c365302e0992b55a8fc1848f8cea69c93c538c33ea176c5d1724274bd3b5670"
+    },
+    "/images/news/massachusetts-first-robot-weapons-law-header.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/massachusetts-first-robot-weapons-law-header.27014a913647d567.jpg",
+      "key": "website/images/news/massachusetts-first-robot-weapons-law-header.27014a913647d567.jpg",
+      "bytes": 361287,
+      "sha256": "27014a913647d567ea17682ac5203d86f36b27374886cc2c95621a5abcfd9c41"
+    },
+    "/images/news/massachusetts-first-robot-weapons-law-thumb.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/massachusetts-first-robot-weapons-law-thumb.db24fe1123e20a32.jpg",
+      "key": "website/images/news/massachusetts-first-robot-weapons-law-thumb.db24fe1123e20a32.jpg",
+      "bytes": 218386,
+      "sha256": "db24fe1123e20a32c1d53a74b0456509ea77e38c77b26fef5cc50b4754a46a9d"
+    },
+    "/images/news/microduck-open-robotics-platform.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/microduck-open-robotics-platform.8519b3e1b075d942.webp",
+      "key": "website/images/news/microduck-open-robotics-platform.8519b3e1b075d942.webp",
+      "bytes": 153852,
+      "sha256": "8519b3e1b075d94293b6cb336cdba4c86f945721c31b52dfadaff4abc83d6c99"
+    },
+    "/images/news/microduck-pollen-official.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/microduck-pollen-official.8519b3e1b075d942.webp",
+      "key": "website/images/news/microduck-pollen-official.8519b3e1b075d942.webp",
+      "bytes": 153852,
+      "sha256": "8519b3e1b075d94293b6cb336cdba4c86f945721c31b52dfadaff4abc83d6c99"
+    },
+    "/images/news/military-field-robots-battlefield-race-header.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/military-field-robots-battlefield-race-header.ad0e923a53436259.jpg",
+      "key": "website/images/news/military-field-robots-battlefield-race-header.ad0e923a53436259.jpg",
+      "bytes": 341833,
+      "sha256": "ad0e923a53436259457545fa941ee13cbea8c5f9bb31a59748209c916e37c03d"
+    },
+    "/images/news/military-field-robots-battlefield-race-header.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/military-field-robots-battlefield-race-header.41034f99017ae59f.png",
+      "key": "website/images/news/military-field-robots-battlefield-race-header.41034f99017ae59f.png",
+      "bytes": 2458288,
+      "sha256": "41034f99017ae59f06f882d694e6c828faff9bef0350419925a8d22131dbf54f"
+    },
+    "/images/news/military-field-robots-battlefield-race-thumb.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/military-field-robots-battlefield-race-thumb.9552fececf3cd2ff.jpg",
+      "key": "website/images/news/military-field-robots-battlefield-race-thumb.9552fececf3cd2ff.jpg",
+      "bytes": 128752,
+      "sha256": "9552fececf3cd2ff676a52b10144c7ce58e475c191ce63987cebf321340ef22e"
+    },
+    "/images/news/military-field-robots-battlefield-race-thumb.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/military-field-robots-battlefield-race-thumb.aa93618f9de3a841.png",
+      "key": "website/images/news/military-field-robots-battlefield-race-thumb.aa93618f9de3a841.png",
+      "bytes": 795891,
+      "sha256": "aa93618f9de3a84135324265561b6e3e71e70a85c50cda9b684fc826c61b950b"
+    },
+    "/images/news/nasa-robot-teams.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/nasa-robot-teams.c733371cd3b5d2a2.jpg",
+      "key": "website/images/news/nasa-robot-teams.c733371cd3b5d2a2.jpg",
+      "bytes": 71271,
+      "sha256": "c733371cd3b5d2a2791d81ec05fad142bb400a03c1c378083068d03c135d8963"
+    },
+    "/images/news/nasa-robots.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/nasa-robots.80ed09c34ad8dc73.png",
+      "key": "website/images/news/nasa-robots.80ed09c34ad8dc73.png",
+      "bytes": 1055529,
+      "sha256": "80ed09c34ad8dc734dcfe72bedec31fda23e933aeb99f5354edc91b58f9a22b8"
+    },
+    "/images/news/nvidia-halos-robot-safety-header.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/nvidia-halos-robot-safety-header.6e9b18d40ed07820.jpg",
+      "key": "website/images/news/nvidia-halos-robot-safety-header.6e9b18d40ed07820.jpg",
+      "bytes": 101861,
+      "sha256": "6e9b18d40ed0782019ee942728ae3d0350ac61a22bad26fd1a48354dc7faa56a"
+    },
+    "/images/news/nvidia-halos-robot-safety-thumb.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/nvidia-halos-robot-safety-thumb.6e9b18d40ed07820.jpg",
+      "key": "website/images/news/nvidia-halos-robot-safety-thumb.6e9b18d40ed07820.jpg",
+      "bytes": 101861,
+      "sha256": "6e9b18d40ed0782019ee942728ae3d0350ac61a22bad26fd1a48354dc7faa56a"
+    },
+    "/images/news/reachy-mini-store.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/reachy-mini-store.b9d039bbb5f32d36.jpg",
+      "key": "website/images/news/reachy-mini-store.b9d039bbb5f32d36.jpg",
+      "bytes": 198304,
+      "sha256": "b9d039bbb5f32d36df2442b3a8a55ea2f07365da5c65513dd9e65859cfcbd829"
+    },
+    "/images/news/robot-com-r-noid-field-experience-detail.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/robot-com-r-noid-field-experience-detail.fb6495751d13feec.jpg",
+      "key": "website/images/news/robot-com-r-noid-field-experience-detail.fb6495751d13feec.jpg",
+      "bytes": 120867,
+      "sha256": "fb6495751d13feecd9b7dedbf866d3a3f698c71f3021e6e89099ce95639d19f7"
+    },
+    "/images/news/robot-com-r-noid-field-experience-header.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/robot-com-r-noid-field-experience-header.c7a38c53699130b4.jpg",
+      "key": "website/images/news/robot-com-r-noid-field-experience-header.c7a38c53699130b4.jpg",
+      "bytes": 77640,
+      "sha256": "c7a38c53699130b4d40c657c2aa35eb7ebd07357b0a582a61bb0a88285a21039"
+    },
+    "/images/news/robot-com-r-noid-field-experience-inline.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/robot-com-r-noid-field-experience-inline.941c50adf5b3e39d.jpg",
+      "key": "website/images/news/robot-com-r-noid-field-experience-inline.941c50adf5b3e39d.jpg",
+      "bytes": 251939,
+      "sha256": "941c50adf5b3e39d1b670ae08df8410de904103aedf9e1dde45964939b2fd197"
+    },
+    "/images/news/robot-com-r-noid-field-experience-kiwibot.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/robot-com-r-noid-field-experience-kiwibot.17b8576b2ff84420.jpg",
+      "key": "website/images/news/robot-com-r-noid-field-experience-kiwibot.17b8576b2ff84420.jpg",
+      "bytes": 65738,
+      "sha256": "17b8576b2ff8442014cfde08568c3e57c2f7962857d2414f7aca24ba40327de9"
+    },
+    "/images/news/robot-com-r-noid-field-experience-thumb.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/robot-com-r-noid-field-experience-thumb.c7a38c53699130b4.jpg",
+      "key": "website/images/news/robot-com-r-noid-field-experience-thumb.c7a38c53699130b4.jpg",
+      "bytes": 77640,
+      "sha256": "c7a38c53699130b4d40c657c2aa35eb7ebd07357b0a582a61bb0a88285a21039"
+    },
+    "/images/news/robot-interaction-design-low-cost-header.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/robot-interaction-design-low-cost-header.c35f7693c606d4f7.jpg",
+      "key": "website/images/news/robot-interaction-design-low-cost-header.c35f7693c606d4f7.jpg",
+      "bytes": 299703,
+      "sha256": "c35f7693c606d4f7a5cf391286f6a033190e2b404161191d86cc5125eb50b5a7"
+    },
+    "/images/news/robot-interaction-design-low-cost-thumb.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/robot-interaction-design-low-cost-thumb.1b0de2b13408042c.jpg",
+      "key": "website/images/news/robot-interaction-design-low-cost-thumb.1b0de2b13408042c.jpg",
+      "bytes": 121535,
+      "sha256": "1b0de2b13408042c66f44b25dc8897a394e9174bc8a8c0ff989df704799247ea"
+    },
+    "/images/news/robots-threat-pet-muse-agent.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/robots-threat-pet-muse-agent.ec2c826d8e79bfdc.png",
+      "key": "website/images/news/robots-threat-pet-muse-agent.ec2c826d8e79bfdc.png",
+      "bytes": 1721120,
+      "sha256": "ec2c826d8e79bfdcfa6384f4884f5f5bcb4f555ec6c13fdd54990cff54d2e868"
+    },
+    "/images/news/robots-threat-pet-neo-neutral.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/robots-threat-pet-neo-neutral.677cb01740429b19.png",
+      "key": "website/images/news/robots-threat-pet-neo-neutral.677cb01740429b19.png",
+      "bytes": 2284366,
+      "sha256": "677cb01740429b199e868af962eeef75a212932999acbad4bc29e2ddc93a716b"
+    },
+    "/images/news/robots-threat-pet-shape-bias-header.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/robots-threat-pet-shape-bias-header.220e2d1c863f99d7.png",
+      "key": "website/images/news/robots-threat-pet-shape-bias-header.220e2d1c863f99d7.png",
+      "bytes": 2201957,
+      "sha256": "220e2d1c863f99d76e7b9808d765c2eedddfbe6b67253e2c12e9b6eaa1cb6e0b"
+    },
+    "/images/news/robots-threat-pet-shape-bias-thumb.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/robots-threat-pet-shape-bias-thumb.220e2d1c863f99d7.png",
+      "key": "website/images/news/robots-threat-pet-shape-bias-thumb.220e2d1c863f99d7.png",
+      "bytes": 2201957,
+      "sha256": "220e2d1c863f99d76e7b9808d765c2eedddfbe6b67253e2c12e9b6eaa1cb6e0b"
+    },
+    "/images/news/shenzhen-robot-fight-league-benchmark-header.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/shenzhen-robot-fight-league-benchmark-header.d1fc0ba6f246b5ef.jpg",
+      "key": "website/images/news/shenzhen-robot-fight-league-benchmark-header.d1fc0ba6f246b5ef.jpg",
+      "bytes": 563858,
+      "sha256": "d1fc0ba6f246b5ef3963a870cbcc6baf604dfa81903dac93090b32073420bdf2"
+    },
+    "/images/news/shenzhen-robot-fight-league-benchmark-t800.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/shenzhen-robot-fight-league-benchmark-t800.25756923d810236e.jpg",
+      "key": "website/images/news/shenzhen-robot-fight-league-benchmark-t800.25756923d810236e.jpg",
+      "bytes": 22516,
+      "sha256": "25756923d810236e53032668c61bee7fc85f63d5bf308ebab2a0a5ad423c8ced"
+    },
+    "/images/news/shenzhen-robot-fight-league-benchmark-thumb.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/shenzhen-robot-fight-league-benchmark-thumb.cdcd35131b70145c.jpg",
+      "key": "website/images/news/shenzhen-robot-fight-league-benchmark-thumb.cdcd35131b70145c.jpg",
+      "bytes": 257678,
+      "sha256": "cdcd35131b70145c8357756fe07aec29743354aabe41f1e60c214db20522ec56"
+    },
+    "/images/news/softbank-1x-physical-ai-flywheel.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/softbank-1x-physical-ai-flywheel.ed730dde498ae4d8.png",
+      "key": "website/images/news/softbank-1x-physical-ai-flywheel.ed730dde498ae4d8.png",
+      "bytes": 2135335,
+      "sha256": "ed730dde498ae4d8727c6252253c4cf16d9a2655c3af7e8756aa4c3e56ceb736"
+    },
+    "/images/news/softbank-1x-physical-ai-strategy-header.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/softbank-1x-physical-ai-strategy-header.e10ab36415265869.png",
+      "key": "website/images/news/softbank-1x-physical-ai-strategy-header.e10ab36415265869.png",
+      "bytes": 1928856,
+      "sha256": "e10ab36415265869f17839e8d337911b008a3b3935430b2874c8bc524aa846cc"
+    },
+    "/images/news/softbank-1x-physical-ai-strategy-thumb.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/softbank-1x-physical-ai-strategy-thumb.e10ab36415265869.png",
+      "key": "website/images/news/softbank-1x-physical-ai-strategy-thumb.e10ab36415265869.png",
+      "bytes": 1928856,
+      "sha256": "e10ab36415265869f17839e8d337911b008a3b3935430b2874c8bc524aa846cc"
+    },
+    "/images/news/southwest-robot-ban.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/southwest-robot-ban.97a912f25b4d6e8b.jpg",
+      "key": "website/images/news/southwest-robot-ban.97a912f25b4d6e8b.jpg",
+      "bytes": 563614,
+      "sha256": "97a912f25b4d6e8be32eff8630c353c4d1534fa51cccf034a8b19ef34a7d238a"
+    },
+    "/images/news/spot-porch-gap-delivery-header.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/spot-porch-gap-delivery-header.ccc0ee1279e92138.jpg",
+      "key": "website/images/news/spot-porch-gap-delivery-header.ccc0ee1279e92138.jpg",
+      "bytes": 316141,
+      "sha256": "ccc0ee1279e92138b348d42abb94af711e20032bc2bc6838b5efb50bfa28f4b1"
+    },
+    "/images/news/spot-porch-gap-delivery-thumb.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/spot-porch-gap-delivery-thumb.b6b2ce0666f84d7c.jpg",
+      "key": "website/images/news/spot-porch-gap-delivery-thumb.b6b2ce0666f84d7c.jpg",
+      "bytes": 344487,
+      "sha256": "b6b2ce0666f84d7cffbd368d7c8149bde82f38962ca67a6ac658d9254c52cf70"
+    },
+    "/images/news/stewie-robot.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/stewie-robot.29b396a970cc12bd.jpg",
+      "key": "website/images/news/stewie-robot.29b396a970cc12bd.jpg",
+      "bytes": 155982,
+      "sha256": "29b396a970cc12bd562a8cafe6e02dd0f4f09d1bd4554974cfe403869e469f0f"
+    },
+    "/images/news/therobotage-house-pet-robots.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/therobotage-house-pet-robots.91a3d3da4afed21c.png",
+      "key": "website/images/news/therobotage-house-pet-robots.91a3d3da4afed21c.png",
+      "bytes": 127242,
+      "sha256": "91a3d3da4afed21c0bc2416b0a110863cc422e78f01320d801cf1d05e2df4b5e"
+    },
+    "/images/news/ultra.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/ultra.f3762ca019716a37.png",
+      "key": "website/images/news/ultra.f3762ca019716a37.png",
+      "bytes": 1663018,
+      "sha256": "f3762ca019716a37ff570476e0410206b992bb40566c3672c1917549be643a8d"
+    },
+    "/images/news/un-autonomous-weapons-human-control-header.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/un-autonomous-weapons-human-control-header.78292605a351f29b.png",
+      "key": "website/images/news/un-autonomous-weapons-human-control-header.78292605a351f29b.png",
+      "bytes": 1782456,
+      "sha256": "78292605a351f29b379fd9d1f4060824c9f9a59f7260aac4c13ebf756faa28bc"
+    },
+    "/images/news/un-autonomous-weapons-human-control-thumb.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/un-autonomous-weapons-human-control-thumb.b9117021ac1a81d4.png",
+      "key": "website/images/news/un-autonomous-weapons-human-control-thumb.b9117021ac1a81d4.png",
+      "bytes": 628145,
+      "sha256": "b9117021ac1a81d46d9e5e40c9aff7ba472010171f7b19dd585d133a95c8bbb9"
+    },
+    "/images/news/unitree-ipo-robot-platform-header.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/unitree-ipo-robot-platform-header.94213c20968533b6.jpg",
+      "key": "website/images/news/unitree-ipo-robot-platform-header.94213c20968533b6.jpg",
+      "bytes": 49603,
+      "sha256": "94213c20968533b63accb2a25a2175a8de1237f0869b72366889253e4bd018bc"
+    },
+    "/images/news/unitree-ipo-robot-platform-thumb.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/unitree-ipo-robot-platform-thumb.1c4ef34fe3e01d71.jpg",
+      "key": "website/images/news/unitree-ipo-robot-platform-thumb.1c4ef34fe3e01d71.jpg",
+      "bytes": 27363,
+      "sha256": "1c4ef34fe3e01d71cd0696f8feb214e917c20f6c9f2c8dfd3c440d7d40aba5f1"
+    },
+    "/images/news/var-offside-robot-header.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/var-offside-robot-header.8914fb1167f3f095.jpg",
+      "key": "website/images/news/var-offside-robot-header.8914fb1167f3f095.jpg",
+      "bytes": 146991,
+      "sha256": "8914fb1167f3f095f3ff9421ec5eb5fc87b8462f7e72c5d616cf4c8e4007f04c"
+    },
+    "/images/news/var-offside-robot-referee-header.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/var-offside-robot-referee-header.8914fb1167f3f095.jpg",
+      "key": "website/images/news/var-offside-robot-referee-header.8914fb1167f3f095.jpg",
+      "bytes": 146991,
+      "sha256": "8914fb1167f3f095f3ff9421ec5eb5fc87b8462f7e72c5d616cf4c8e4007f04c"
+    },
+    "/images/news/var-offside-robot-referee-thumb.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/var-offside-robot-referee-thumb.29d6000c995bbcdd.jpg",
+      "key": "website/images/news/var-offside-robot-referee-thumb.29d6000c995bbcdd.jpg",
+      "bytes": 72224,
+      "sha256": "29d6000c995bbcdd245008d67c4d9cbca106edef0165d6a3016a445242191ec0"
+    },
+    "/images/news/var-offside-robot-thumb.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/var-offside-robot-thumb.29d6000c995bbcdd.jpg",
+      "key": "website/images/news/var-offside-robot-thumb.29d6000c995bbcdd.jpg",
+      "bytes": 72224,
+      "sha256": "29d6000c995bbcdd245008d67c4d9cbca106edef0165d6a3016a445242191ec0"
+    },
+    "/images/news/world-models-physical-ai-rehearsal-header.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/world-models-physical-ai-rehearsal-header.54684ad177255f55.png",
+      "key": "website/images/news/world-models-physical-ai-rehearsal-header.54684ad177255f55.png",
+      "bytes": 2176122,
+      "sha256": "54684ad177255f5524f727d4da3bf8417816c24a2032059f7f733036aed88a36"
+    },
+    "/images/news/world-models-physical-ai-rehearsal-thumb.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/world-models-physical-ai-rehearsal-thumb.8ad3c3463fab73e0.png",
+      "key": "website/images/news/world-models-physical-ai-rehearsal-thumb.8ad3c3463fab73e0.png",
+      "bytes": 714309,
+      "sha256": "8ad3c3463fab73e0c13da7c9ffde8900e166c00c5496a732b7a64d6d113417eb"
+    },
+    "/images/news/xiaomi-robotics-open-source-header.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/xiaomi-robotics-open-source-header.1fb1e9afa4614c59.png",
+      "key": "website/images/news/xiaomi-robotics-open-source-header.1fb1e9afa4614c59.png",
+      "bytes": 1841128,
+      "sha256": "1fb1e9afa4614c590f0309d0687571f47a483eee043b0058b9c55878a41b8069"
+    },
+    "/images/news/xiaomi-robotics-open-source-thumb.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/xiaomi-robotics-open-source-thumb.1fb1e9afa4614c59.png",
+      "key": "website/images/news/xiaomi-robotics-open-source-thumb.1fb1e9afa4614c59.png",
+      "bytes": 1841128,
+      "sha256": "1fb1e9afa4614c590f0309d0687571f47a483eee043b0058b9c55878a41b8069"
+    },
+    "/images/palm.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/palm.4892bc2fef0159ef.png",
+      "key": "website/images/palm.4892bc2fef0159ef.png",
+      "bytes": 188112,
+      "sha256": "4892bc2fef0159ef874320002269ce86c9d898b70b1a2fe4d847e943849f0dd4"
+    },
+    "/images/programs/live-robot-lab-college.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/programs/live-robot-lab-college.e021f9a8c6ba1504.webp",
+      "key": "website/images/programs/live-robot-lab-college.e021f9a8c6ba1504.webp",
+      "bytes": 97334,
+      "sha256": "e021f9a8c6ba150401d3d45013b94e4eb5084743e49fe731ba8e7539f7bff40e"
+    },
+    "/images/programs/live-robot-lab.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/programs/live-robot-lab.17e283f04e1e43f8.webp",
+      "key": "website/images/programs/live-robot-lab.17e283f04e1e43f8.webp",
+      "bytes": 98518,
+      "sha256": "17e283f04e1e43f8cecaec61e8c0f1825e5367c632a5b46aa32fd54c187bc9da"
+    },
+    "/images/programs/rdp-factory.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/programs/rdp-factory.c2be1a4f6d7ba8dd.webp",
+      "key": "website/images/programs/rdp-factory.c2be1a4f6d7ba8dd.webp",
+      "bytes": 84638,
+      "sha256": "c2be1a4f6d7ba8dd871440f1eed0ad9b99a8d8e6a619993a2ea3f7a4a0619757"
+    },
+    "/images/programs/rdp.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/programs/rdp.945444ea3367fd3d.webp",
+      "key": "website/images/programs/rdp.945444ea3367fd3d.webp",
+      "bytes": 87074,
+      "sha256": "945444ea3367fd3dc40f2ea95771fcc60bd31bf63c7df87a5ed34957ed8d016e"
+    },
+    "/images/programs/robot-literacy-family.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/programs/robot-literacy-family.9f22da156ea3289d.webp",
+      "key": "website/images/programs/robot-literacy-family.9f22da156ea3289d.webp",
+      "bytes": 193770,
+      "sha256": "9f22da156ea3289db60c3357a5400eebeafe71e29b4250449d96b1ed6d3229cd"
+    },
+    "/images/programs/robot-literacy.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/programs/robot-literacy.df8555714972b263.webp",
+      "key": "website/images/programs/robot-literacy.df8555714972b263.webp",
+      "bytes": 91672,
+      "sha256": "df8555714972b26384fc5f157aa03c29e56b0c55f7f8ce7caf4d8de3e442bf70"
+    },
+    "/images/programs/rpdp.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/programs/rpdp.073e5de6e2728712.webp",
+      "key": "website/images/programs/rpdp.073e5de6e2728712.webp",
+      "bytes": 86462,
+      "sha256": "073e5de6e2728712d5359e90852c641ab075ec944f88919a2a72e6500ce5908e"
+    },
+    "/images/recovery-icon.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/recovery-icon.7e9ed7e20cb8bee1.png",
+      "key": "website/images/recovery-icon.7e9ed7e20cb8bee1.png",
+      "bytes": 1132841,
+      "sha256": "7e9ed7e20cb8bee168afa6036eb4f9e9441fb9f8b0252331a51d1a59d942a110"
+    },
+    "/images/robot-literacy/organizations.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/robot-literacy/organizations.c1657efba200f615.webp",
+      "key": "website/images/robot-literacy/organizations.c1657efba200f615.webp",
+      "bytes": 127378,
+      "sha256": "c1657efba200f6159cec6b18f83de856e92be6acc8c05344298bb7c500370c69"
+    },
+    "/images/robot-literacy/schools.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/robot-literacy/schools.d7f6c42594ed6193.webp",
+      "key": "website/images/robot-literacy/schools.d7f6c42594ed6193.webp",
+      "bytes": 129290,
+      "sha256": "d7f6c42594ed6193065f5924256160ae4a80f784ee226cce0cea8dc7e5ebf3e1"
+    },
+    "/images/robot-literacy/society.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/robot-literacy/society.6b6772c0057fdb59.webp",
+      "key": "website/images/robot-literacy/society.6b6772c0057fdb59.webp",
+      "bytes": 218650,
+      "sha256": "6b6772c0057fdb5941a8991a93f454e5384009da227fb68c6273efb8047875a6"
+    },
+    "/images/robot.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/robot.40d69f52071ff7eb.png",
+      "key": "website/images/robot.40d69f52071ff7eb.png",
+      "bytes": 590649,
+      "sha256": "40d69f52071ff7eb5d685fa0ad8c9ad0b84ff224677ebda20ed874ed107e3be3"
+    },
+    "/images/robots/reachy-mini/gf-01.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/robots/reachy-mini/gf-01.399ef1c14eeda7e7.jpg",
+      "key": "website/images/robots/reachy-mini/gf-01.399ef1c14eeda7e7.jpg",
+      "bytes": 87764,
+      "sha256": "399ef1c14eeda7e736049458eeda8a23056f1ce07a40e7537edd38af4830bc24"
+    },
+    "/images/robots/reachy-mini/gf-02.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/robots/reachy-mini/gf-02.e53fc56086a2bf4c.jpg",
+      "key": "website/images/robots/reachy-mini/gf-02.e53fc56086a2bf4c.jpg",
+      "bytes": 54552,
+      "sha256": "e53fc56086a2bf4c9469de5b3cd454412a4848a4c295a41663c255bd5cdd225f"
+    },
+    "/images/robots/reachy-mini/gf-03.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/robots/reachy-mini/gf-03.a8d182322fd1af62.jpg",
+      "key": "website/images/robots/reachy-mini/gf-03.a8d182322fd1af62.jpg",
+      "bytes": 61058,
+      "sha256": "a8d182322fd1af624a3978740c5af76158c7b9f82e8a992b983b74b28210db62"
+    },
+    "/images/robots/reachy-mini/gf-04.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/robots/reachy-mini/gf-04.8a92453116d18a37.jpg",
+      "key": "website/images/robots/reachy-mini/gf-04.8a92453116d18a37.jpg",
+      "bytes": 41774,
+      "sha256": "8a92453116d18a37f74202ac8e096dd9333907e86049f5eb9b9ac4378c1412dc"
+    },
+    "/images/robots/reachy-mini/hero.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/robots/reachy-mini/hero.0f0d568d14a900d6.png",
+      "key": "website/images/robots/reachy-mini/hero.0f0d568d14a900d6.png",
+      "bytes": 184290,
+      "sha256": "0f0d568d14a900d6c9161fd361563c4c118dd50c673f34fa0eb47b694991c2ae"
+    },
+    "/images/robots/unitree-go2-pro/field-01.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/robots/unitree-go2-pro/field-01.77cb1999099830ba.png",
+      "key": "website/images/robots/unitree-go2-pro/field-01.77cb1999099830ba.png",
+      "bytes": 498768,
+      "sha256": "77cb1999099830baef29306ec0c799210a89c2d4295db4ae39f9764ef71276b3"
+    },
+    "/images/robots/unitree-go2-pro/field-04.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/robots/unitree-go2-pro/field-04.917eceda75dc460f.jpg",
+      "key": "website/images/robots/unitree-go2-pro/field-04.917eceda75dc460f.jpg",
+      "bytes": 289359,
+      "sha256": "917eceda75dc460f6ccba49682671278aa989e935f000c757996a33d4a02b540"
+    },
+    "/images/robots/unitree-go2-pro/shop-01.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/robots/unitree-go2-pro/shop-01.91f17195bfa82dbd.png",
+      "key": "website/images/robots/unitree-go2-pro/shop-01.91f17195bfa82dbd.png",
+      "bytes": 238308,
+      "sha256": "91f17195bfa82dbd4fda932ea8d9f58e42078ebe264b73a09de3fd6845b807a4"
+    },
+    "/images/robots/unitree-go2-pro/shop-02.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/robots/unitree-go2-pro/shop-02.a440fe4a39cf1f4b.png",
+      "key": "website/images/robots/unitree-go2-pro/shop-02.a440fe4a39cf1f4b.png",
+      "bytes": 388566,
+      "sha256": "a440fe4a39cf1f4b17d1cb56611565e53748f3859afdeba1ebccd3aa3bd0c37a"
+    },
+    "/images/robots/unitree-go2-pro/shop-03.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/robots/unitree-go2-pro/shop-03.2c9cf7d84660295a.png",
+      "key": "website/images/robots/unitree-go2-pro/shop-03.2c9cf7d84660295a.png",
+      "bytes": 263482,
+      "sha256": "2c9cf7d84660295a053276348f35ef2f83c2b62245e693361a39cf4a7e23ade9"
+    },
+    "/images/signal-icon.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/signal-icon.dcd34d4ab912726a.png",
+      "key": "website/images/signal-icon.dcd34d4ab912726a.png",
+      "bytes": 595485,
+      "sha256": "dcd34d4ab912726abc2a56d92227211d8ddf962b915d17cb4b33cab2f2f6e77e"
+    },
+    "/images/society-family-sm.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/society-family-sm.9f3106784c6d7df1.png",
+      "key": "website/images/society-family-sm.9f3106784c6d7df1.png",
+      "bytes": 1723645,
+      "sha256": "9f3106784c6d7df1cc25dec673356d718920060bcc3cd0dbe68ea415bbb209f1"
+    },
+    "/logos/agility-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/agility-logo.724733ebf161de84.png",
+      "key": "website/logos/agility-logo.724733ebf161de84.png",
+      "bytes": 28925,
+      "sha256": "724733ebf161de84f1c856594bf3773f259ec6190d77addf4a1f304a33090eac"
+    },
+    "/logos/amazon-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/amazon-logo.56ef7965ed94c195.png",
+      "key": "website/logos/amazon-logo.56ef7965ed94c195.png",
+      "bytes": 23000,
+      "sha256": "56ef7965ed94c195a22b72e699f5e0c0c8697c1f16e4d8675d989284086bf205"
+    },
+    "/logos/ambi-robotics-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/ambi-robotics-logo.e3c9163e976b5bd1.png",
+      "key": "website/logos/ambi-robotics-logo.e3c9163e976b5bd1.png",
+      "bytes": 7523,
+      "sha256": "e3c9163e976b5bd1f99683b270e78f585e48fde9fd637c683e938b7e7868d806"
+    },
+    "/logos/amp-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/amp-logo.93ae76728808a7ac.png",
+      "key": "website/logos/amp-logo.93ae76728808a7ac.png",
+      "bytes": 1493,
+      "sha256": "93ae76728808a7ac698b23b6623c61fd2e4e78572f98a5f42acbead7feac74f0"
+    },
+    "/logos/applied-intuition-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/applied-intuition-logo.26cf46590cf74930.png",
+      "key": "website/logos/applied-intuition-logo.26cf46590cf74930.png",
+      "bytes": 1613,
+      "sha256": "26cf46590cf7493067751c82afdfffedaf7bea55e107f1cf3df2329f7d26cced"
+    },
+    "/logos/apptronik-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/apptronik-logo.e2aa5bc84a6cdf8b.png",
+      "key": "website/logos/apptronik-logo.e2aa5bc84a6cdf8b.png",
+      "bytes": 8289,
+      "sha256": "e2aa5bc84a6cdf8b8d2e334b47d7e4305ef73f743943a438f704860ce839c4ab"
+    },
+    "/logos/bear-robotics-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/bear-robotics-logo.a28f9fcefec68326.png",
+      "key": "website/logos/bear-robotics-logo.a28f9fcefec68326.png",
+      "bytes": 2768,
+      "sha256": "a28f9fcefec683260f0d6508a92a9786ec512ea4fb6c8468b8bb17cea09cb309"
+    },
+    "/logos/boston-dynamics-logo.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/boston-dynamics-logo.8645f487e718f1c0.jpg",
+      "key": "website/logos/boston-dynamics-logo.8645f487e718f1c0.jpg",
+      "bytes": 5159,
+      "sha256": "8645f487e718f1c067983a4eade23c1c91455513d5333ed4b8f5ce1d76e5a6a2"
+    },
+    "/logos/chef-robotics-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/chef-robotics-logo.10d9b4c503e38a50.png",
+      "key": "website/logos/chef-robotics-logo.10d9b4c503e38a50.png",
+      "bytes": 861,
+      "sha256": "10d9b4c503e38a509af85c8dc268285e4f575dbec21661a1eeba287570990b26"
+    },
+    "/logos/collaborative-robotics-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/collaborative-robotics-logo.8ff022551fb7f28b.png",
+      "key": "website/logos/collaborative-robotics-logo.8ff022551fb7f28b.png",
+      "bytes": 2220,
+      "sha256": "8ff022551fb7f28b8eb6999992fe6245c2950c24775a8a63e8d9720c0b287d58"
+    },
+    "/logos/dexterity-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/dexterity-logo.cad65f5e7fc5c115.png",
+      "key": "website/logos/dexterity-logo.cad65f5e7fc5c115.png",
+      "bytes": 2384,
+      "sha256": "cad65f5e7fc5c1155a8ac6ea1dd3215b6f80876ef05a9bd9d8b42e2e2f97f95a"
+    },
+    "/logos/dusty-robotics-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/dusty-robotics-logo.416fda5fef737ea8.png",
+      "key": "website/logos/dusty-robotics-logo.416fda5fef737ea8.png",
+      "bytes": 2130,
+      "sha256": "416fda5fef737ea8fe1d70979d78cb8ade7f3441fe2db23b2807d93130ebf694"
+    },
+    "/logos/fauna-robotics-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/fauna-robotics-logo.9fec9602f67bdc54.png",
+      "key": "website/logos/fauna-robotics-logo.9fec9602f67bdc54.png",
+      "bytes": 4360,
+      "sha256": "9fec9602f67bdc5413faa5e16e6df091cacc9c0d9f142422aa2b26702aebb517"
+    },
+    "/logos/figure-ai-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/figure-ai-logo.852543cac2846bdd.png",
+      "key": "website/logos/figure-ai-logo.852543cac2846bdd.png",
+      "bytes": 922,
+      "sha256": "852543cac2846bdd72b58199074c3177c72d46b7aa483bda2e170cdfe4802230"
+    },
+    "/logos/gecko-robotics-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/gecko-robotics-logo.74cff379f02543d3.png",
+      "key": "website/logos/gecko-robotics-logo.74cff379f02543d3.png",
+      "bytes": 3483,
+      "sha256": "74cff379f02543d396a46bca98987e4df639a21668c33dc2b1ebba624e54df50"
+    },
+    "/logos/graymatter-robotics-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/graymatter-robotics-logo.9ea19cc60b8d9123.png",
+      "key": "website/logos/graymatter-robotics-logo.9ea19cc60b8d9123.png",
+      "bytes": 25684,
+      "sha256": "9ea19cc60b8d9123ba7e861672a35bfc3fe0bb5d1d0a0dffc2399468326c86a8"
+    },
+    "/logos/intrinsic-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/intrinsic-logo.982822101995f901.png",
+      "key": "website/logos/intrinsic-logo.982822101995f901.png",
+      "bytes": 485,
+      "sha256": "982822101995f90198663e4907d6e86f7bcacf154e8f24bbd116959a8bac3a92"
+    },
+    "/logos/kodiak-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/kodiak-logo.0e6be83f58d595ae.png",
+      "key": "website/logos/kodiak-logo.0e6be83f58d595ae.png",
+      "bytes": 1126,
+      "sha256": "0e6be83f58d595ae9a9730a4f241512421d38dc06d04b2c244058ee25cf1ef5f"
+    },
+    "/logos/nuro-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/nuro-logo.a6245e2c90811071.png",
+      "key": "website/logos/nuro-logo.a6245e2c90811071.png",
+      "bytes": 968,
+      "sha256": "a6245e2c90811071abcbe4b93536850b2053488c1afb7ac08575f974e9f0a735"
+    },
+    "/logos/path-robotics-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/path-robotics-logo.dade3cc29a15407a.png",
+      "key": "website/logos/path-robotics-logo.dade3cc29a15407a.png",
+      "bytes": 1355,
+      "sha256": "dade3cc29a15407aad84bcc92891302ed5907699800c00203e6793a237f9ff80"
+    },
+    "/logos/pickle-robot-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/pickle-robot-logo.f7b2015ee80eef01.png",
+      "key": "website/logos/pickle-robot-logo.f7b2015ee80eef01.png",
+      "bytes": 717,
+      "sha256": "f7b2015ee80eef01932a30e47eb92bc391fa608416e26d9c65d9a76463773aba"
+    },
+    "/logos/placeholder.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/placeholder.20b275bfe80b6056.jpg",
+      "key": "website/logos/placeholder.20b275bfe80b6056.jpg",
+      "bytes": 240073,
+      "sha256": "20b275bfe80b60560f23c3adf453cc4188ce9dfd2dc03e727397a09becdf20c6"
+    },
+    "/logos/serve-robotics-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/serve-robotics-logo.cb968d53681d4bf5.png",
+      "key": "website/logos/serve-robotics-logo.cb968d53681d4bf5.png",
+      "bytes": 2493,
+      "sha256": "cb968d53681d4bf5c0710e9b7b45d0f20c29c015ad4d3af673fc8cfe9e9888ac"
+    },
+    "/logos/shield-ai-logo.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/shield-ai-logo.acbf3cf4bb8a11b5.jpg",
+      "key": "website/logos/shield-ai-logo.acbf3cf4bb8a11b5.jpg",
+      "bytes": 4235,
+      "sha256": "acbf3cf4bb8a11b53c799fb2a2882044a6ec2e7c2962b14973db8a748944a054"
+    },
+    "/logos/skydio-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/skydio-logo.85515e4641d83d91.png",
+      "key": "website/logos/skydio-logo.85515e4641d83d91.png",
+      "bytes": 991,
+      "sha256": "85515e4641d83d91565679557393cfccb0c8882d41958c369aa1bba3cc7e8150"
+    },
+    "/logos/treeswift-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/treeswift-logo.a0b077583968b2f5.png",
+      "key": "website/logos/treeswift-logo.a0b077583968b2f5.png",
+      "bytes": 2669,
+      "sha256": "a0b077583968b2f57f5220f6ed6f8c4af1397aba0c7515f391c9cb24d767eb62"
+    },
+    "/logos/zipline-logo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/zipline-logo.0304043f7ca70afc.png",
+      "key": "website/logos/zipline-logo.0304043f7ca70afc.png",
+      "bytes": 1462,
+      "sha256": "0304043f7ca70afc60d53353514644eb21f128997f1fcd8153b500a2d4e23ade"
+    },
+    "/robots/atlas.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/robots/atlas.68369a9272cf1a00.jpg",
+      "key": "website/robots/atlas.68369a9272cf1a00.jpg",
+      "bytes": 155111,
+      "sha256": "68369a9272cf1a00f384a5fbafb35b44f98cff8d5272d4dde3792b7e8283289d"
+    },
+    "/robots/digit.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/robots/digit.812f66b2f652c623.jpg",
+      "key": "website/robots/digit.812f66b2f652c623.jpg",
+      "bytes": 146387,
+      "sha256": "812f66b2f652c6236a4e54e86e97fed72b649b8c0488b36da162576b377fbe42"
+    },
+    "/robots/figure-03.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/robots/figure-03.0b6c969aef0e670c.jpg",
+      "key": "website/robots/figure-03.0b6c969aef0e670c.jpg",
+      "bytes": 140440,
+      "sha256": "0b6c969aef0e670cd989f0a28462269349d11c9e88f0e02f76bf8bceb31279b2"
+    },
+    "/robots/neo.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/robots/neo.38dcfbae7fd40de6.jpg",
+      "key": "website/robots/neo.38dcfbae7fd40de6.jpg",
+      "bytes": 140822,
+      "sha256": "38dcfbae7fd40de6301949bd41135f3d4b0defe5907b5b2259ebb632ee07709f"
+    },
+    "/robots/optimus.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/robots/optimus.85bf62066999d79f.jpg",
+      "key": "website/robots/optimus.85bf62066999d79f.jpg",
+      "bytes": 139829,
+      "sha256": "85bf62066999d79f0f6013e1cd082a8d9e6ccef7a2eb73279ddb0b612f9ce4cc"
+    },
+    "/robots/reachy-mini.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/robots/reachy-mini.664300cb54442634.jpg",
+      "key": "website/robots/reachy-mini.664300cb54442634.jpg",
+      "bytes": 125935,
+      "sha256": "664300cb54442634a9135dcbe37368b2448578de6f4422d34bb819190493bb48"
+    },
+    "/robots/stretch.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/robots/stretch.9871444c9bd39d67.jpg",
+      "key": "website/robots/stretch.9871444c9bd39d67.jpg",
+      "bytes": 117960,
+      "sha256": "9871444c9bd39d672fee85b6665499550b2f138cd0e9bcb8a9058cf30ed45701"
+    },
+    "/robots/unitree-g1.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/robots/unitree-g1.56f01e97e6fc7d9b.jpg",
+      "key": "website/robots/unitree-g1.56f01e97e6fc7d9b.jpg",
+      "bytes": 131583,
+      "sha256": "56f01e97e6fc7d9b7275cf074d61e98aefcbd609f343631c1a3234131e0c29fa"
+    },
+    "/robots/unitree-go2.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/robots/unitree-go2.5a02d2d3440cc56c.jpg",
+      "key": "website/robots/unitree-go2.5a02d2d3440cc56c.jpg",
+      "bytes": 158775,
+      "sha256": "5a02d2d3440cc56c245bba7fe854d5aefd41790525fd30456f1b2155d9554863"
+    },
+    "/videos/robot-literacy-poster.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/videos/robot-literacy-poster.56ab2f68f6f15c62.png",
+      "key": "website/videos/robot-literacy-poster.56ab2f68f6f15c62.png",
+      "bytes": 1629966,
+      "sha256": "56ab2f68f6f15c623c1fc9fc331079049b92fe6b06fc02a0f10ed0199ca9000a"
+    }
+  }
+}

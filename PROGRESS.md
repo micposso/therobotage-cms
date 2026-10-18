@@ -1,5 +1,21 @@
 # The Robot Age — Progress Log
 
+## Current catalog baseline — deployed 2026-10-14
+
+Deployment confirmed by the user on 2026-10-14; this is a user-reported deployment, not an independent production verification.
+
+- Current public offers: **Robot Literacy**, **Live Robot Lab**, **Product Design for Robots (RPDP)**, and **Robot Deployment Practitioner (RDP)**.
+- Use `/learn` and `packages/ui/src/lib/certifications.ts` as the current program reference. Keep navigation, footers, page copy, internal links, CTAs, emails, and Spanish equivalents aligned with this catalog.
+- Story: understand robots through Robot Literacy (READ, RELATE, COEXIST); experience them through Live Robot Lab; develop professional design skills through RPDP and deployment skills through RDP.
+- REP, RSP, RXR, and HSP are retired from the current public catalog. Old credential URLs provide catalog-update notices and learner access; do not rename historical learner credentials.
+- Obsolete prices, past cohort dates, seat guarantees, and retired certification promotions were removed. Interest-list submissions do not reserve seats. Keep RPDP and RDP interests and confirmation emails distinct.
+- RPDP links lead to its curriculum and founding-cohort interest form; RDP links lead to its curriculum and launch-update form. Past workshop registration is closed.
+- Local validation before deployment: production build and TypeScript passed; 35 regression checks passed; 555 generated HTML pages scanned with no retired catalog names or old seat-reservation promises. One unrelated existing job translation remained stale.
+
+This baseline supersedes older catalog/navigation descriptions in the historical log below. Recheck current program dates and pricing before future changes rather than treating this dated entry as permanent offer information.
+
+---
+
 ## Project Setup
 - Initialised monorepo at `/THEROBOTAGE/`
 - **Frontend**: Next.js 16 (App Router, TypeScript, Tailwind removed)

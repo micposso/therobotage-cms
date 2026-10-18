@@ -6,13 +6,14 @@ import Nav from '@/components/Nav/Nav'
 import PageHero from '@/components/PageHero/PageHero'
 import Footer from '@/components/Footer/Footer'
 import styles from './access.module.css'
+import AccessForm from './AccessForm'
 
 const baseMetadata: Metadata = {
-  title: 'Access — The Robot Age',
-  description: 'Join the waitlist for the REP certification.',
+  title: 'Academy Updates — The Robot Age',
+  description: 'Get updates about RPDP and RDP at The Robot Age Academy.',
   openGraph: {
-    title: 'Access — The Robot Age',
-    description: 'Join the waitlist for the REP certification.',
+    title: 'Academy Updates — The Robot Age',
+    description: 'Get updates about RPDP and RDP at The Robot Age Academy.',
     images: [{ url: '/images/learn.png', alt: 'The Robot Age' }],
   },
   twitter: {
@@ -33,28 +34,16 @@ export default async function AccessPage({ params }: { params: Promise<{ locale?
     <>
       <Nav pinned />
       <PageHero
-        eyebrow={t("Get Access")}
-        title={t("Be first in.")}
-        subtitle={t("The Robotics Experience Practitioner certification is launching soon. Join the waitlist and we'll notify you when enrollment opens — along with early access offers and pre-launch resources.")}
+        eyebrow={t("Academy Updates")}
+        title={t("Stay informed about the Academy.")}
+        subtitle={t("Explore professional education in robot product design and deployment. Get updates about RPDP and RDP. Joining the list does not reserve a seat.")}
         imageSrc="/images/placeholder.jpg"
       />
       <section className={styles.section}>
         <div className="container-fluid">
           <div className={styles.inner}>
-            <p className={styles.intro}>{t("We're keeping the first cohort small. Leave your name and email and we'll be in touch before the public announcement.")}</p>
-            <form className={styles.form}>
-              <input
-                type="text"
-                placeholder={t("Your name")}
-                className={styles.input}
-              />
-              <input
-                type="email"
-                placeholder={t("Your email")}
-                className={styles.input}
-              />
-              <button type="submit" className={styles.submitButton}>{t("Join the Waitlist")}</button>
-            </form>
+            <p className={styles.intro}>{t("Leave your name and email to receive Academy program updates.")}</p>
+            <AccessForm locale={locale} />
           </div>
         </div>
       </section>

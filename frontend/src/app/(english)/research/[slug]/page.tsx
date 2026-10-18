@@ -1,8 +1,9 @@
 import { uiText } from '@/lib/i18n/messages'
+import { imageUrl } from '@/lib/image-assets'
 import { localize, contentHref } from '@/lib/i18n/localize'
 import type { Locale } from '@/lib/i18n/routing'
 import { notFound } from 'next/navigation'
-import Image from 'next/image'
+import Image from '@/components/MediaImage'
 import Link from 'next/link'
 import Nav from '@/components/Nav/Nav'
 import Footer from '@/components/Footer/Footer'
@@ -21,18 +22,19 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${article.headline} — The Robot Age`,
     description: article.body[0],
+    ...(article.category === 'ARCHIVE' ? { robots: { index: false, follow: true } } : {}),
     alternates: { canonical: `/research/${slug}`, languages: translationAlternates(`/research/${slug}`) },
     openGraph: {
       title: article.headline,
       description: article.body[0],
       type: 'article',
-      ...(article.image && { images: [{ url: article.image, alt: article.headline }] }),
+      ...(article.image && { images: [{ url: imageUrl(article.image), alt: article.headline }] }),
     },
     twitter: {
       card: 'summary_large_image',
       title: article.headline,
       description: article.body[0],
-      ...(article.image && { images: [article.image] }),
+      ...(article.image && { images: [imageUrl(article.image)] }),
     },
   }
 }
@@ -79,6 +81,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             </div>
           </div>
 
+          <p><Link href={contentHref('/learn#programs', locale)}>{t('Explore Professional Programs')} →</Link></p>
           {/* Back link */}
           <div className={styles.back}>
             <Link href={contentHref("/research", locale)} className={styles.backLink}>{t("← Back to Research")}</Link>

@@ -1,4 +1,5 @@
 import JobDetail from '@/app/(english)/jobs/[slug]/page'
+import { imageUrl } from '@/lib/image-assets'
 import RobotDetail from '@/app/(english)/robots/[slug]/page'
 import SignalDetail from '@/app/(english)/research/field-signals/[slug]/page'
 import ResearchDetail from '@/app/(english)/research/[slug]/page'
@@ -15,6 +16,8 @@ import Curriculum, { generateMetadata as curriculumMetadata } from '@/app/(engli
 import LiveRobotLab, { generateMetadata as labMetadata } from '@/app/(english)/live-robot-lab/page'
 import LiteracyPartners, { generateMetadata as partnersMetadata } from '@/app/(english)/robot-literacy/partners/page'
 import Access, { generateMetadata as accessMetadata } from '@/app/(english)/access/page'
+import Rxd from '@/app/(english)/rxd/page'
+import RxdScorecard from '@/app/(english)/rxd-scorecard/page'
 import type { Metadata } from 'next'
 import { notFound, redirect } from 'next/navigation'
 import { getAvailableTranslations, getTranslation, translationAlternates } from '@/lib/i18n/content'
@@ -31,6 +34,10 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { path: segments = [] } = await params
   const route = '/' + segments.join('/')
+  if (route === '/rxd' || route === '/rxd-scorecard') {
+    const title = route === '/rxd' ? 'RXD — Diseño de Experiencia Robótica' : 'Evaluación RXD'
+    return { title, description: 'Investigación y evaluación de experiencias humano-robot con evidencias, protocolos y revisión editorial.', alternates: { canonical: `https://therobotage.com/es${route}`, languages: translationAlternates(route) } }
+  }
   if (route === '/robot-literacy') return literacyMetadata({ params: Promise.resolve({ locale: 'es' }) })
   const pageParams = Promise.resolve({ locale: 'es' as const })
   if (route === '/learn') return learnMetadata({ params: pageParams })
@@ -46,7 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!title) return { robots: { index: false, follow: true } }
   const description = article?.data.excerpt || article?.data.description || article?.data.summary || 'Investigación, noticias y perspectivas sobre cómo convivimos y trabajamos con robots.'
   const url = `https://therobotage.com/es${route === '/' ? '' : route}`
-  const image = article?.data.headerImage || article?.data.image
+  const image = imageUrl(String(article?.data.headerImage || article?.data.image || ''))
   return { title, description, alternates: { canonical: url, languages: translationAlternates(route) },
     ...(route === '/search' ? { robots: { index: false, follow: true } } : {}),
     openGraph: { title, description, url, locale: 'es_ES', type: article ? 'article' : 'website', ...(image ? { images: [{ url: image, alt: title }] } : {}) },
@@ -65,6 +72,8 @@ export default async function TranslatedPage({ params, searchParams }: Props) {
   if (route === '/live-robot-lab') return <LiveRobotLab params={pageParams} />
   if (route === '/robot-literacy/partners') return <LiteracyPartners params={pageParams} />
   if (route === '/access') return <Access params={pageParams} />
+  if (route === '/rxd') return <Rxd params={pageParams} />
+  if (route === '/rxd-scorecard') return <RxdScorecard params={pageParams} />
   if (segments[0] === 'learn' && getAvailableTranslations().includes(route)) {
     const params = Promise.resolve({ locale: 'es' as const, credential: segments[1] })
     return segments[2] === 'curriculum' ? <Curriculum params={params} /> : <Credential params={params} />

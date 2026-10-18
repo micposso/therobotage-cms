@@ -14,7 +14,7 @@ type LMSNavProps = {
 }
 
 export default function LMSNav({
-  cohortLabel = 'REP · Cohort 1',
+  cohortLabel = 'Your learning',
   currentWeek = 1,
   totalWeeks = 6,
   userName = '',

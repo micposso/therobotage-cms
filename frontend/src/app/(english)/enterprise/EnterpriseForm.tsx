@@ -1,9 +1,11 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useActionState } from 'react'
+import { sendEnterpriseRequest } from '@/app/actions/sendEnterpriseRequest'
 import styles from './enterprise.module.css'
 
 interface FormPayload {
+  email: string
   name: string
   organization: string
   role: string
@@ -12,6 +14,7 @@ interface FormPayload {
 
 export default function EnterpriseForm() {
   const [payload, setPayload] = useState<FormPayload>({
+    email: '',
     name: '',
     organization: '',
     role: '',
@@ -24,14 +27,12 @@ export default function EnterpriseForm() {
     setPayload((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    console.log(payload)
-    // TODO: wire submission endpoint
-  }
+  const [state, action, pending] = useActionState(sendEnterpriseRequest, { success: false })
+
+  if (state.success) return <p role="status">Thank you. We received your briefing request and will be in touch.</p>
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit} noValidate>
+    <form className={styles.form} action={action} noValidate>
       <div className={styles.fieldGroup}>
         <label htmlFor="name" className={styles.label}>
           Name<span className={styles.required}>*</span>
@@ -93,8 +94,13 @@ export default function EnterpriseForm() {
         />
       </div>
 
-      <button type="submit" className={styles.submitButton}>
-        Request briefing
+      <div className={styles.fieldGroup}>
+        <label htmlFor="enterprise-email" className={styles.label}>Email<span className={styles.required}>*</span></label>
+        <input id="enterprise-email" name="email" type="email" required autoComplete="email" className={styles.input} value={payload.email} onChange={handleChange} />
+      </div>
+      {state.error && <p role="alert">{state.error}</p>}
+      <button disabled={pending} type="submit" className={styles.submitButton}>
+        {pending ? 'Sending...' : 'Request briefing'}
       </button>
     </form>
   )

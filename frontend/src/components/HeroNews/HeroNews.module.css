@@ -41,9 +41,9 @@
 .subtitle {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: var(--text-base);
+  font-size: var(--text-body);
   color: var(--color-text);
-  line-height: 1.7;
+  line-height: var(--leading-body);
   margin-top: var(--space-8);
 }
 

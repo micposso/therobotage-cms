@@ -1,3 +1,5 @@
+@import "../../../packages/ui/src/styles/typography.css";
+
 /* ─── Design Tokens ────────────────────────────────────────────────────────── */
 :root {
   /* Colors */
@@ -41,17 +43,7 @@
   --color-modal-backdrop: rgba(13, 13, 13, 0.72);
 
   /* Typography */
-  --font-display: var(--font-display-source), 'IBM Plex Sans', sans-serif;
-  --font-display-smallcaps: var(--font-display-smallcaps-source), var(--font-display);
-  --font-body: 'IBM Plex Sans', sans-serif;
 
-  --text-xs: 0.875rem;
-  --text-sm: 1rem;
-  --text-base: 1.125rem;
-  --text-md: 1.5rem;
-  --text-lg: 2rem;
-  --text-xl: 3rem;
-  --text-2xl: 7rem;
 
   /* Spacing (8pt scale) */
   --space-1: 0.25rem;
@@ -121,8 +113,8 @@ body {
 body {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: var(--text-base);
-  line-height: 1.7;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
   position: relative;
 }
 
@@ -146,9 +138,10 @@ a {
 
 p {
   font-family: var(--font-body);
-  font-size: var(--text-base);
+  /* Keep every paragraph on the shared body scale, including CSS-module variants. */
+  font-size: var(--text-body, 18px) !important;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: var(--leading-body);
   color: var(--color-text);
 }
 
@@ -190,20 +183,6 @@ nav a[href$="/signin"] {
   display: none;
 }
 
-/* Semantic typography defaults. Component styles use these same scale tokens. */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  line-height: 1.2;
-  overflow-wrap: anywhere;
-}
-h1 { font-size: var(--text-2xl); line-height: 1.05; }
-h2 { font-size: var(--text-xl); }
-h3 { font-size: var(--text-lg); }
-h4 { font-size: var(--text-md); }
-h5 { font-family: var(--font-body); font-size: var(--text-base); font-weight: 500; }
-h6 { font-family: var(--font-body); font-size: var(--text-sm); font-weight: 500; }
-
 button, input, select, textarea {
   font: inherit;
 }
@@ -218,6 +197,5 @@ p, li, dd { overflow-wrap: anywhere; }
 @media (max-width: 767px) {
   :root {
     --container-gutter: var(--space-4);
-    --text-2xl: 4rem;
   }
 }

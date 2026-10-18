@@ -1,0 +1,21 @@
+{
+  "mode": "Built-in image_gen",
+  "assets": [
+    {
+      "name": "robot-literacy",
+      "prompt": "Use case: photorealistic-natural. Asset: square homepage program photograph for The Robot Age. Warm natural window light, muted neutral palette, editorial documentary photography, plausible contemporary robots, human-centered learning, crisp main subject readable at small card size. Compose all important subjects within central 80 percent for cropping. No typography, logos, watermarks, borders, panels or collage. Two adult beginners at a bright community learning table, looking attentively at a compact tabletop robot as an educator explains its camera and sensors. Friendly accessible introduction to understanding robots. Medium-wide scene."
+    },
+    {
+      "name": "live-robot-lab",
+      "prompt": "Use case: photorealistic-natural. Asset: square homepage program photograph for The Robot Age. Warm natural window light, muted neutral palette, editorial documentary photography, plausible contemporary robots, human-centered learning, crisp main subject readable at small card size. Compose all important subjects within central 80 percent for cropping. No typography, logos, watermarks, borders, panels or collage. An adult participant and instructor in a sunlit robotics workshop, interacting hands-on with a small quadruped robot on a demonstration floor. Robot fully visible in foreground, people observing with curiosity, practical live demonstration."
+    },
+    {
+      "name": "rpdp",
+      "prompt": "Use case: photorealistic-natural. Asset: square homepage program photograph for The Robot Age. Warm natural window light, muted neutral palette, editorial documentary photography, plausible contemporary robots, human-centered learning, crisp main subject readable at small card size. Compose all important subjects within central 80 percent for cropping. No typography, logos, watermarks, borders, panels or collage. Two adult product designers in a warm design studio testing a compact service robot prototype at a workbench with paper sketches and simple physical mockups. One observes the robot interaction while the other records notes. Human-centered robot product design, not heavy engineering."
+    },
+    {
+      "name": "rdp",
+      "prompt": "Use case: photorealistic-natural. Asset: square homepage program photograph for The Robot Age. Warm natural window light, muted neutral palette, editorial documentary photography, plausible contemporary robots, human-centered learning, crisp main subject readable at small card size. Compose all important subjects within central 80 percent for cropping. No typography, logos, watermarks, borders, panels or collage. An operations professional with a tablet and a colleague introducing a wheeled autonomous mobile robot carrying totes in a clean modern warehouse aisle. Robot prominent, thoughtful practical deployment planning, daylight and warm neutral industrial textures."
+    }
+  ]
+}

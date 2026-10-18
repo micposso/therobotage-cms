@@ -1,8 +1,9 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
-import Image from 'next/image'
+import Image from '@/components/MediaImage'
 import styles from './RxdDimensionsGrid.module.css'
+import { useCopy } from '@/lib/i18n/useCopy'
 
 interface Dimension {
   number: string
@@ -58,6 +59,7 @@ const DIMENSIONS: Dimension[] = [
 ]
 
 export default function RxdDimensionsGrid() {
+  const { t } = useCopy()
   const [active, setActive] = useState<Dimension | null>(null)
 
   const close = useCallback(() => setActive(null), [])
@@ -85,8 +87,8 @@ export default function RxdDimensionsGrid() {
           >
             <div className={styles.dimensionCardText}>
               <span className={styles.dimensionNumber}>{dim.number}</span>
-              <h2 className={styles.dimensionTitle}>{dim.title}</h2>
-              <p className={styles.dimensionDescription}>{dim.description}</p>
+              <h2 className={styles.dimensionTitle}>{t(dim.title)}</h2>
+              <p className={styles.dimensionDescription}>{t(dim.description)}</p>
             </div>
             <div className={styles.dimensionCardImageWrap}>
               <Image
@@ -124,8 +126,8 @@ export default function RxdDimensionsGrid() {
             </div>
             <div className={styles.modalContent}>
               <span className={styles.modalNumber}>{active.number}</span>
-              <h3 className={styles.modalTitle}>{active.title}</h3>
-              <p className={styles.modalBody}>{active.body}</p>
+              <h3 className={styles.modalTitle}>{t(active.title)}</h3>
+              <p className={styles.modalBody}>{t(active.body)}</p>
             </div>
           </div>
         </div>

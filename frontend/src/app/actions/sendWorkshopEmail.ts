@@ -1,12 +1,14 @@
 'use server'
 
+import { workshopEvent } from '@/lib/events'
+
 import fs from 'fs'
 import { Resend } from 'resend'
 import { emailHtml, workshopWaitlistHtml, escapeHtml } from '@/lib/emailTemplate'
 import { WORKSHOP_HEARD_OPTIONS, WORKSHOP_PROFESSIONS } from '@/lib/events'
 
 const FROM_ADDRESS  = process.env.EMAIL_FROM_HELLO ?? 'onboarding@resend.dev'
-const ADMIN_ADDRESS = 'micposso@gmail.com'
+const ADMIN_ADDRESS = 'mike@therobotage.com'
 const REGISTRY_FILE = '/tmp/rxd-workshop-emails.json'
 const WAITLIST_FILE = '/tmp/rxd-workshop-waitlist.json'
 const MAX_SEATS     = 15
@@ -60,6 +62,7 @@ export async function sendWorkshopEmail(
   prevState: { success: boolean; waitlisted?: boolean; error?: string } | null,
   formData: FormData
 ): Promise<{ success: boolean; waitlisted?: boolean; error?: string }> {
+  if (workshopEvent.registration.availability !== 'open') return { success: false, error: 'Registration for this workshop is closed. Explore current programs at /learn.' }
   const firstName  = (formData.get('firstName')  as string | null)?.trim()
   const lastName   = (formData.get('lastName')   as string | null)?.trim()
   const email      = (formData.get('email')      as string | null)?.trim()

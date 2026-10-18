@@ -221,7 +221,7 @@ export async function sendCredentialIssued({
     subject: 'Your Robot Experience Professional credential has been issued.',
     html: `
       <p>Hi ${name},</p>
-      <p>Congratulations — your REP credential for <strong>${courseSlug}</strong> has been issued.</p>
+      <p>Congratulations — your credential for <strong>${courseSlug}</strong> has been issued.</p>
       ${foundingLine}
       ${publicUrl ? `<p><a href="${publicUrl}">View your credential →</a></p>` : ''}
       ${badgeUrl ? `<p><a href="${badgeUrl}">View your digital badge →</a></p>` : ''}

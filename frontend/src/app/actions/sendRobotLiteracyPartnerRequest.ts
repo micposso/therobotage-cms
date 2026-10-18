@@ -27,7 +27,7 @@ export async function sendRobotLiteracyPartnerRequest(data: FormData): Promise<P
 
     const { error } = await new Resend(process.env.RESEND_API_KEY).emails.send({
       from: process.env.EMAIL_FROM_HELLO ?? 'onboarding@resend.dev',
-      to: 'micposso@gmail.com',
+      to: 'mike@therobotage.com',
       replyTo: String(data.get('email')).trim(),
       subject: 'New Robot Literacy partner inquiry - The Robot Age',
       html: emailHtml(`<h1>Robot Literacy partner inquiry</h1>${fieldContent}${contributionContent}<p>Consent: I agree to be contacted by The Robot Age regarding Robot Literacy partnerships.</p>`),

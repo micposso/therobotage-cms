@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect, useCallback, useActionState } from 'react'
-import Image from 'next/image'
+import Image from '@/components/MediaImage'
 import Link from 'next/link'
 import { sendWhitepaperEmail } from '@/app/actions/sendWhitepaperEmail'
 import styles from './rxd-scorecard.module.css'
@@ -437,7 +437,7 @@ export default function Scorecard() {
     const v = verdictFor(finalAvg)
     return {
       robotName: robotName.trim(),
-      context: context.trim(),
+      context: 'UNREVIEWED PRACTICE — not an index evaluation. ' + context.trim(),
       dims: DIMENSIONS.map((d) => ({ title: d.title, score: scores[d.key] as number, note: notes[d.key] })),
       avg: finalAvg,
       total,
@@ -556,7 +556,7 @@ export default function Scorecard() {
                 ) : (
                   <form action={emailAction} className={styles.leadForm} noValidate>
                     <p className={styles.formEyebrow}>Go deeper</p>
-                    <p className={styles.leadHeading}>Want the full white paper and scoring rubric?</p>
+                    <h3 className={styles.leadHeading}>Want the full white paper and scoring rubric?</h3>
                     <p className={styles.leadSub}>
                       The complete RXD framework: detailed 1&ndash;5 rubrics for every dimension, methodology, and a printable worksheet.
                     </p>
@@ -580,8 +580,8 @@ export default function Scorecard() {
                 )}
               </div>
 
-              <Link href="/learn/rep" className={styles.repCta}>
-                Get the REP credential
+              <Link href="/learn/rpdp#curriculum" className={styles.repCta}>
+                Explore RPDP Curriculum
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -692,10 +692,10 @@ export default function Scorecard() {
             <div className={styles.summaryInner}>
               <p className={styles.summaryEyebrow}>Overall</p>
               <div className={styles.summaryScore}>
-                <span className={styles.summaryAvg}>{avg.toFixed(1)}</span>
+                <span className={styles.summaryAvg}>{complete ? avg.toFixed(1) : '—'}</span>
                 <span className={styles.summaryAvgMax}>/ 5</span>
               </div>
-              <p className={styles.summaryTotal}>{total} / 30 total</p>
+              <p className={styles.summaryTotal}>{complete ? `${total} / 30 · Unreviewed practice` : 'No overall score — incomplete assessment'}</p>
 
               <div className={styles.summaryBars}>
                 {DIMENSIONS.map((d) => {

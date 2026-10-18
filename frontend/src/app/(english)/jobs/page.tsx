@@ -1,3 +1,4 @@
+import { imageUrl } from '@/lib/image-assets'
 import { uiText } from '@/lib/i18n/messages'
 import { localize, contentHref } from '@/lib/i18n/localize'
 import type { Locale } from '@/lib/i18n/routing'
@@ -34,11 +35,11 @@ export const metadata = {
     title: TITLE,
     description: DESCRIPTION,
     url: '/jobs',
-    images: [{ url: '/images/robot.png', alt: 'The Robot Age' }],
+    images: [{ url: imageUrl('/images/robot.png'), alt: 'The Robot Age' }],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/images/robot.png'],
+    images: [imageUrl('/images/robot.png')],
   },
 }
 

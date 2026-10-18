@@ -1,6 +1,6 @@
 'use client'
 
-import Image from 'next/image'
+import Image from '@/components/MediaImage'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import styles from './ArticleCard.module.css'

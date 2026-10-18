@@ -1,0 +1,227 @@
+{
+  "schemaVersion": "1.0",
+  "robot": {
+    "id": "reachy-mini",
+    "manufacturer": "Pollen Robotics / Hugging Face",
+    "model": "Reachy Mini",
+    "category": "Desktop companion",
+    "applications": [
+      "Education",
+      "Research"
+    ],
+    "physicalFunction": "Desktop motion and human interaction",
+    "commerciallyReleased": true,
+    "physical": true,
+    "humanInteraction": "Operators and people sharing the robot’s environment",
+    "ownershipAvailable": true,
+    "availability": "purchase",
+    "deployment": "developer",
+    "prerequisites": [
+      "Assembly and configuration; requirements vary between Lite and Wireless."
+    ],
+    "acquisition": {
+      "channel": "manufacturer",
+      "url": "https://store.pollen-robotics.com/products/reachy-mini-wireless-version",
+      "verifiedAt": "2026-10-15",
+      "evidenceIds": [
+        "purchase",
+        "product"
+      ],
+      "region": "Manufacturer online store; destination restrictions apply",
+      "notes": "Ordering offered; manufacturer states a lead time. This does not mean immediate stock."
+    },
+    "specifications": []
+  },
+  "evaluation": {
+    "id": "reachy-mini-research-migration",
+    "version": "1",
+    "robotId": "reachy-mini",
+    "methodologyVersion": "1.0",
+    "classification": "research",
+    "date": null,
+    "evaluator": null,
+    "firmware": null,
+    "configuration": "Historical configuration not documented",
+    "environment": "Not documented for a controlled assessment",
+    "participants": [],
+    "dimensions": [
+      {
+        "dimension": "signal",
+        "status": "not-assessed",
+        "score": null,
+        "evidenceQuality": null,
+        "method": "research",
+        "protocolId": "RXD-SC-001",
+        "protocolVersion": "1.0-draft",
+        "evidenceIds": [],
+        "observations": [],
+        "limitations": [
+          "No assessment under approved methodology 1.0. Historical ratings are separate."
+        ],
+        "evaluatorNotes": ""
+      },
+      {
+        "dimension": "spatial",
+        "status": "not-assessed",
+        "score": null,
+        "evidenceQuality": null,
+        "method": "research",
+        "protocolId": "RXD-SL-001",
+        "protocolVersion": "1.0-draft",
+        "evidenceIds": [],
+        "observations": [],
+        "limitations": [
+          "No assessment under approved methodology 1.0. Historical ratings are separate."
+        ],
+        "evaluatorNotes": ""
+      },
+      {
+        "dimension": "presence",
+        "status": "not-assessed",
+        "score": null,
+        "evidenceQuality": null,
+        "method": "research",
+        "protocolId": "RXD-PP-001",
+        "protocolVersion": "1.0-draft",
+        "evidenceIds": [],
+        "observations": [],
+        "limitations": [
+          "No assessment under approved methodology 1.0. Historical ratings are separate."
+        ],
+        "evaluatorNotes": ""
+      },
+      {
+        "dimension": "failure",
+        "status": "not-assessed",
+        "score": null,
+        "evidenceQuality": null,
+        "method": "research",
+        "protocolId": "RXD-FT-001",
+        "protocolVersion": "1.0-draft",
+        "evidenceIds": [],
+        "observations": [],
+        "limitations": [
+          "No assessment under approved methodology 1.0. Historical ratings are separate."
+        ],
+        "evaluatorNotes": ""
+      },
+      {
+        "dimension": "fit",
+        "status": "not-assessed",
+        "score": null,
+        "evidenceQuality": null,
+        "method": "research",
+        "protocolId": "RXD-IF-001",
+        "protocolVersion": "1.0-draft",
+        "evidenceIds": [],
+        "observations": [],
+        "limitations": [
+          "No assessment under approved methodology 1.0. Historical ratings are separate."
+        ],
+        "evaluatorNotes": ""
+      },
+      {
+        "dimension": "recovery",
+        "status": "not-assessed",
+        "score": null,
+        "evidenceQuality": null,
+        "method": "research",
+        "protocolId": "RXD-RD-001",
+        "protocolVersion": "1.0-draft",
+        "evidenceIds": [],
+        "observations": [],
+        "limitations": [
+          "No assessment under approved methodology 1.0. Historical ratings are separate."
+        ],
+        "evaluatorNotes": ""
+      }
+    ],
+    "findings": [],
+    "limitations": [
+      "This additive record is a migration draft, not a new evaluation.",
+      "Historical evaluation classification remains pending evidence review."
+    ],
+    "trials": [],
+    "review": {
+      "state": "pending",
+      "reviewer": null,
+      "date": null,
+      "notes": "Human review required before a new evaluation is published."
+    },
+    "aiAssisted": true,
+    "disclosures": {
+      "payment": "Historical disclosure not recorded",
+      "relationships": "Historical disclosure not recorded",
+      "manufacturerParticipation": "Historical disclosure not recorded"
+    }
+  },
+  "evidence": [
+    {
+      "id": "purchase",
+      "title": "Pollen Robotics official store — Reachy Mini Wireless",
+      "url": "https://store.pollen-robotics.com/products/reachy-mini-wireless-version",
+      "publicationDate": null,
+      "accessedAt": "2026-10-15",
+      "provenance": "manufacturer-documentation",
+      "independence": "manufacturer-controlled",
+      "context": "Commercial acquisition check; not performance testing.",
+      "locator": "Product variant and ordering section",
+      "observations": [
+        "Manufacturer offers a physical DIY kit for direct purchase with a stated lead time."
+      ],
+      "limitations": [
+        "Regional shipping, stock and lead times can change. No purchase was made."
+      ],
+      "demonstratesFailure": false,
+      "participantEvidence": false
+    },
+    {
+      "id": "product",
+      "title": "Manufacturer product documentation",
+      "url": "https://pollen-robotics.com/reachy-mini/",
+      "publicationDate": null,
+      "accessedAt": "2026-10-15",
+      "provenance": "manufacturer-documentation",
+      "independence": "manufacturer-controlled",
+      "context": "Product description and prerequisites; claims not independently tested.",
+      "locator": "Product features and configuration information",
+      "observations": [
+        "Desktop platform intended for interaction and experimentation; requires kit assembly."
+      ],
+      "limitations": [
+        "Current specifications may differ from the configuration in the historical review."
+      ],
+      "demonstratesFailure": false,
+      "participantEvidence": false
+    },
+    {
+      "id": "legacy",
+      "title": "Preserved historical Robot Age profile",
+      "url": "https://therobotage.com/robots/reachy-mini",
+      "publicationDate": null,
+      "accessedAt": "2026-10-15",
+      "provenance": "historical-editorial",
+      "independence": "undisclosed",
+      "context": "Editorial observations exist but original observation method is undocumented.",
+      "locator": "Field Observations and historical dimension summaries",
+      "observations": [
+        "Original six dimension summaries and published score retained without recalculation."
+      ],
+      "limitations": [
+        "Original evaluation date, firmware, participant records, source locators and relationship disclosures are not recorded. This is not evidence of new testing."
+      ],
+      "demonstratesFailure": false,
+      "participantEvidence": false
+    }
+  ],
+  "revisions": [
+    {
+      "previousVersion": null,
+      "version": "1",
+      "date": "2026-10-15",
+      "reviewer": null,
+      "description": "Added dated commercial sources and separated historical scores from methodology 1.0.",
+      "reason": "Preserve original publication while introducing evidence and review requirements."
+    }
+  ]
+}

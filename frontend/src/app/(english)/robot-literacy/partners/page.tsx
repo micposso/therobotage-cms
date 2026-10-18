@@ -1,9 +1,10 @@
+import { imageUrl } from '@/lib/image-assets'
 import { pageMetadata } from '@/lib/i18n/page-metadata'
 import { contentHref } from '@/lib/i18n/localize'
 import { uiText } from '@/lib/i18n/messages'
 import type { Locale } from '@/lib/i18n/routing'
 import type { Metadata } from 'next'
-import Image from 'next/image'
+import Image from '@/components/MediaImage'
 import Link from 'next/link'
 import Nav from '@/components/Nav/Nav'
 import Footer from '@/components/Footer/Footer'
@@ -38,21 +39,21 @@ const baseMetadata: Metadata = {
 
 const frameworkAreas = [
   {
-    title: 'INTERPRET',
+    title: 'READ',
     scale: 'Understand robot capability',
-    image: '/images/signal-icon.png',
+    image: imageUrl('/images/signal-icon.png'),
     description: 'Help people understand what robots can perceive, decide, record, communicate, and accomplish - as well as where their limitations begin.',
   },
   {
     title: 'RELATE',
     scale: 'Understand human-robot interaction',
-    image: '/images/heart.png',
+    image: imageUrl('/images/heart.png'),
     description: 'Explore trust, behavior, expectations, human intervention, responsibility, attachment, and communication between people and robots.',
   },
   {
     title: 'COEXIST',
     scale: 'Understand robots in society',
-    image: '/images/human.png',
+    image: imageUrl('/images/human.png'),
     description: 'Study how robots affect workplaces, schools, healthcare, accessibility, privacy, policy, culture, and everyday life.',
   },
 ] as const

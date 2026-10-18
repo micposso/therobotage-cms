@@ -1,4 +1,5 @@
 import 'server-only'
+import { imageUrl } from './image-assets'
 import fs from 'node:fs'
 import path from 'node:path'
 import { mapPublicJobRow, type JobDetail, type PublicJobRow } from './jobs'
@@ -28,7 +29,7 @@ function loadManifest(): [string, string][] {
   manifest = files.flatMap((file) => {
     const base = path.basename(file, path.extname(file))
     if (!base.endsWith(LOGO_SUFFIX) || file === 'placeholder.jpg') return []
-    return [[base.slice(0, -LOGO_SUFFIX.length), `/logos/${file}`]]
+    return [[base.slice(0, -LOGO_SUFFIX.length), imageUrl(`/logos/${file}`)]]
   })
 
   return manifest

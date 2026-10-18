@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import Image from 'next/image'
+import Image from '@/components/MediaImage'
 import { motion, AnimatePresence } from 'framer-motion'
 import styles from './FeaturedArticle.module.css'
 
@@ -96,7 +96,7 @@ export default function FeaturedArticle({ parallaxY }) {
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
                   style={{ objectFit: 'cover' }}
-                  priority
+                  loading="lazy"
                 />
               </motion.div>
             </div>

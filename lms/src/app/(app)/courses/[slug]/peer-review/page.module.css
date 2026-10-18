@@ -16,7 +16,7 @@
 
 .description {
   font-family: var(--font-body);
-  font-size: var(--text-sm);
+  font-size: var(--text-body);
   color: var(--color-text-muted);
   margin: 0;
 }

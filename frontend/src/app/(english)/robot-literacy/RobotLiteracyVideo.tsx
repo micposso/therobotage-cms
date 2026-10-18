@@ -1,4 +1,5 @@
 'use client'
+import { imageUrl } from '@/lib/image-assets'
 
 import { useRef, useState } from 'react'
 import { useLanguage } from '@/components/LanguageSwitcher/LanguageProvider'
@@ -19,7 +20,17 @@ import local from './robot-literacy.module.css'
 const videoSrc = 'https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/videos/robot-literacy/robot-literacy-v1.mp4'
 const posterSrc = '/videos/robot-literacy-poster.png'
 
-export default function RobotLiteracyVideo() {
+export default function RobotLiteracyVideo({
+  src = videoSrc,
+  poster = posterSrc,
+  label = 'Robot Literacy framework video',
+  playLabel = 'Play Robot Literacy framework video',
+}: {
+  src?: string
+  poster?: string
+  label?: string
+  playLabel?: string
+} = {}) {
   const { locale } = useLanguage()
   const { t } = useCopy()
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -36,22 +47,22 @@ export default function RobotLiteracyVideo() {
           ref={videoRef}
           slot="media"
           className={local.literacyVideoMedia}
-          src={videoSrc}
-          poster={posterSrc}
-          preload="none"
+          src={src}
+          poster={poster ? imageUrl(poster) : undefined}
+          preload={poster ? 'none' : 'metadata'}
           playsInline
           onPlay={() => setIsPlaying(true)}
           onPause={() => setIsPlaying(false)}
           onEnded={() => setIsPlaying(false)}
           suppressHydrationWarning
-          aria-label={t('Robot Literacy framework video')}
+          aria-label={t(label)}
         />
         {!isPlaying && (
           <button
             type="button"
             className={local.literacyVideoPlayOverlay}
             onClick={playVideo}
-            aria-label={t('Play Robot Literacy framework video')}
+            aria-label={t(playLabel)}
           >
             <span aria-hidden="true" />
           </button>

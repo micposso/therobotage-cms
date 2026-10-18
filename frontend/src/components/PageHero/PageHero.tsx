@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState, type ReactNode } from 'react'
-import Image from 'next/image'
+import Image from '@/components/MediaImage'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import styles from './PageHero.module.css'
 
@@ -15,6 +15,7 @@ interface PageHeroProps {
   images?: string[]
   roundImage?: boolean
   children?: ReactNode
+  imageContent?: ReactNode
 }
 
 export default function PageHero({
@@ -25,6 +26,7 @@ export default function PageHero({
   images,
   roundImage = false,
   children,
+  imageContent,
 }: PageHeroProps) {
   const suppliedImages = [...new Set((images?.length ? images : [imageSrc]).filter(
     (src): src is string => Boolean(src) && src !== '/images/placeholder.jpg',
@@ -37,10 +39,10 @@ export default function PageHero({
   const currentSrc = slides[index % slides.length]
 
   useEffect(() => {
-    if (reducedMotion || slides.length <= 1) return
+    if (imageContent || reducedMotion || slides.length <= 1) return
     const timer = setInterval(() => setIndex((i) => (i + 1) % slides.length), 3500)
     return () => clearInterval(timer)
-  }, [reducedMotion, slides.length])
+  }, [imageContent, reducedMotion, slides.length])
 
   return (
     <section className={styles.hero}>
@@ -57,7 +59,7 @@ export default function PageHero({
           </div>
           <div className={styles.imageCol}>
             <div className={`${styles.imageWrap}${roundImage ? ` ${styles.imageWrapRound}` : ''}`}>
-              <AnimatePresence initial={false}>
+              {imageContent ?? <AnimatePresence initial={false}>
                 <motion.div
                   key={currentSrc}
                   className={styles.imageSlide}
@@ -75,7 +77,7 @@ export default function PageHero({
                     loading="eager"
                   />
                 </motion.div>
-              </AnimatePresence>
+              </AnimatePresence>}
             </div>
           </div>
         </div>
