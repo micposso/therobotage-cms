@@ -22,5 +22,11 @@
     "sourceHash": "33b367037572d1d88ce46211f845cd457fa528b530ee8d79b578c014211138d7",
     "model": "gpt-4o-mini-tts",
     "voice": "marin"
+  },
+  "who-is-responsible-when-a-robot-crosses-the-line": {
+    "path": "news/who-is-responsible-when-a-robot-crosses-the-line/afabf388512b6e3f-4c5103f7c920.mp3",
+    "sourceHash": "afabf388512b6e3fda97e5db58e9a7e4961b8bc15ad8c221a548de9fdf5e3649",
+    "model": "gpt-4o-mini-tts",
+    "voice": "marin"
   }
 }
