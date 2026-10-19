@@ -237,16 +237,16 @@ export const enterpriseContent = {
   "pricing": {
     "label": "ACADEMY PLANS",
     "title": "Build once. Train across customers.",
-    "intro": "A one-time Academy build, followed by managed delivery and updates. Choose the scale that fits your customer deployments.",
+    "intro": "Robot-specific training, a branded learning portal, and managed onboarding support in one plan. Build your content once, then reuse it across customer deployments.",
     "terms": "USD. Basic and Growth require a 12-month subscription after launch, billed monthly, plus the one-time build fee. Taxes, travel, and out-of-scope work are extra. Paid pilot scope and fees are agreed separately.",
     "scope": "Platform selection, integrations, delivery capacity, and regulated-data requirements are confirmed before contracting. These packages do not include a bespoke LMS or a custom native app.",
     "plans": [
       {
         "name": "Basic",
         "tag": "Launch your first customer Academy",
-        "price": "$1,990 / month",
+        "price": "$1,490 / month",
         "setup": "+ $7,500 one-time build",
-        "total": "First year: $31,380 before extras",
+        "total": "First year: $25,380 before extras",
         "value": "Replace repeated instruction with one reusable onboarding program for your robot.",
         "items": [
           "1 robot product · 3 customer sites",
@@ -263,9 +263,9 @@ export const enterpriseContent = {
       {
         "name": "Growth",
         "tag": "Scale across customer locations",
-        "price": "$4,990 / month",
-        "setup": "+ $20,000 one-time build",
-        "total": "First year: $79,880 before extras",
+        "price": "$3,490 / month",
+        "setup": "+ $15,000 one-time build",
+        "total": "First year: $56,880 before extras",
         "value": "Give each customer a consistent learning experience while your deployment team focuses on rollout.",
         "items": [
           "2 robot products · 15 customer sites",

@@ -1,0 +1,399 @@
+- generic [active] [ref=f2e1]:
+  - navigation [ref=f2e2]:
+    - generic [ref=f2e4]:
+      - link [ref=f2e5] [cursor=pointer]:
+        - /url: /
+        - img "The Robot Age" [ref=f2e6]
+      - list [ref=f2e7]:
+        - listitem [ref=f2e8]:
+          - link "RESEARCH" [ref=f2e9] [cursor=pointer]:
+            - /url: /research
+        - listitem [ref=f2e10]:
+          - link "ROBOTS" [ref=f2e11] [cursor=pointer]:
+            - /url: /robots
+        - listitem [ref=f2e12]:
+          - link "RXD FRAMEWORK" [ref=f2e13] [cursor=pointer]:
+            - /url: /rxd
+        - listitem [ref=f2e14]:
+          - group [ref=f2e15]:
+            - generic "PROGRAMS" [ref=f2e16] [cursor=pointer]
+        - listitem [ref=f2e17]:
+          - link "JOBS" [ref=f2e18] [cursor=pointer]:
+            - /url: /jobs
+        - listitem [ref=f2e19]:
+          - link "ENTERPRISE" [ref=f2e20] [cursor=pointer]:
+            - /url: /enterprise
+      - button "Open search" [ref=f2e22] [cursor=pointer]
+      - generic [ref=f2e26]:
+        - generic [ref=f2e27]: Language
+        - combobox "Language" [ref=f2e32] [cursor=pointer]:
+          - option "English" [selected]: EN
+          - option "Español": ES
+  - main [ref=f2e33]:
+    - link "Skip to content" [ref=f2e34] [cursor=pointer]:
+      - /url: "#enterprise-main"
+    - region [ref=f2e35]:
+      - generic [ref=f2e36]:
+        - paragraph [ref=f2e37]: THE ROBOT AGE / ENTERPRISE
+        - paragraph [ref=f2e38]: Robot Deployment Academy-as-a-Service
+        - heading "You deploy the robots. We prepare the people." [level=1] [ref=f2e39]: You deploy the robots.We prepare the people.
+        - paragraph [ref=f2e40]: Multilingual training. Multicultural workforce readiness. Scalable robot adoption.
+        - paragraph [ref=f2e41]: The Robot Age helps robotics manufacturers, integrators, and deployment providers prepare their customers for working with robots through managed education, onboarding, practical assessments, and adoption programs.
+        - generic [ref=f2e42]:
+          - link "Request an Academy Briefing" [ref=f2e43] [cursor=pointer]:
+            - /url: "#enterprise-briefing"
+            - text: Request an Academy Briefing
+            - generic [aria-hidden] [ref=f2e44]: ↗
+          - link "Explore How It Works" [ref=f2e45] [cursor=pointer]:
+            - /url: "#academy-process"
+            - text: Explore How It Works
+            - generic [aria-hidden] [ref=f2e46]: ↓
+      - figure "Conceptual workplace illustration · AI-generated" [ref=f2e47]:
+        - img "Restaurant employees and a trainer learning to use a wheeled tray service robot before service." [ref=f2e49]
+    - region [ref=f2e51]:
+      - generic [ref=f2e52]:
+        - generic [ref=f2e53]:
+          - generic [ref=f2e54]:
+            - paragraph [ref=f2e55]: THE DEPLOYMENT GAP
+            - heading "Installing a robot is only the beginning." [level=2] [ref=f2e56]
+          - generic [ref=f2e57]:
+            - paragraph [ref=f2e58]: Your team knows how to build, configure, and deploy robots. But every new customer introduces a new workforce, new languages, new workflows, and new operational challenges.
+            - paragraph [ref=f2e59]: As deployments scale, customer education becomes a recurring operational responsibility.
+        - list [ref=f2e60]:
+          - listitem [ref=f2e61]:
+            - generic [ref=f2e62]: "01"
+            - heading "Training doesn't scale automatically" [level=3] [ref=f2e63]
+            - paragraph [ref=f2e64]: Each customer site requires workforce onboarding and practical instruction.
+          - listitem [ref=f2e65]:
+            - generic [ref=f2e66]: "02"
+            - heading "Workforces are not homogeneous" [level=3] [ref=f2e67]
+            - paragraph [ref=f2e68]: Employees may have different languages, cultural expectations, job responsibilities, and levels of familiarity with robots.
+          - listitem [ref=f2e69]:
+            - generic [ref=f2e70]: "03"
+            - heading "Adoption continues after go-live" [level=3] [ref=f2e71]
+            - paragraph [ref=f2e72]: New hires, changing workflows, software updates, and expanding fleets create continuing education needs.
+        - paragraph [ref=f2e73]: You focus on your robots. We help your customers learn how to work with them.
+        - paragraph [ref=f2e74]: We prepare workforces. We do not sell or install robots. Our programs complement the manufacturer's technical training, safety engineering, servicing, and commissioning requirements.
+    - region [ref=f2e75]:
+      - generic [ref=f2e76]:
+        - generic [ref=f2e77]:
+          - generic [ref=f2e78]:
+            - paragraph [ref=f2e79]: ACADEMY-AS-A-SERVICE
+            - heading "Your robotics product. Your customers. Your Academy." [level=2] [ref=f2e80]
+          - generic [ref=f2e81]:
+            - paragraph [ref=f2e82]: Robot Deployment Academy-as-a-Service is a managed education and adoption offering built around your robotics product and the workplaces where it operates.
+            - paragraph [ref=f2e83]: We collaborate with your organization to create reusable learning programs that can be adapted across customers, locations, and workforce groups.
+        - generic [ref=f2e84]:
+          - img "A supervisor explains pedestrian boundaries beside a stationary mobile material-transport robot." [ref=f2e86]
+          - list [ref=f2e87]:
+            - listitem [ref=f2e88]:
+              - generic [ref=f2e89]: "01"
+              - generic [ref=f2e90]:
+                - heading "Deployment Readiness" [level=3] [ref=f2e91]
+                - paragraph [ref=f2e92]: Assess workforce roles, training needs, and operational knowledge gaps.
+            - listitem [ref=f2e93]:
+              - generic [ref=f2e94]: "02"
+              - generic [ref=f2e95]:
+                - heading "Customer Onboarding" [level=3] [ref=f2e96]
+                - paragraph [ref=f2e97]: Prepare frontline employees, supervisors, and customer teams.
+            - listitem [ref=f2e98]:
+              - generic [ref=f2e99]: "03"
+              - generic [ref=f2e100]:
+                - heading "Multilingual Learning" [level=3] [ref=f2e101]
+                - paragraph [ref=f2e102]: Develop localized courses, training materials, and assessments for diverse workforces.
+            - listitem [ref=f2e103]:
+              - generic [ref=f2e104]: "04"
+              - generic [ref=f2e105]:
+                - heading "Competency Assessment" [level=3] [ref=f2e106]
+                - paragraph [ref=f2e107]: Evaluate understanding and practical task proficiency.
+            - listitem [ref=f2e108]:
+              - generic [ref=f2e109]: "05"
+              - generic [ref=f2e110]:
+                - heading "Adoption Management" [level=3] [ref=f2e111]
+                - paragraph [ref=f2e112]: Support communication, workforce confidence, change management, and human-robot interaction.
+            - listitem [ref=f2e113]:
+              - generic [ref=f2e114]: "06"
+              - generic [ref=f2e115]:
+                - heading "Continuous Education" [level=3] [ref=f2e116]
+                - paragraph [ref=f2e117]: Provide refreshers as customers hire employees, update robots, and expand deployments.
+    - region [ref=f2e118]:
+      - generic [ref=f2e119]:
+        - paragraph [ref=f2e120]: OUR SPECIALIZATION
+        - generic [ref=f2e121]:
+          - heading "Robots operate globally. People experience them differently." [level=2] [ref=f2e122]
+          - paragraph [ref=f2e123]: Commercial robots enter workplaces shaped by different languages, cultures, communication styles, and expectations about technology. Successful workforce adoption requires more than translating an instruction manual.
+        - generic [ref=f2e124]:
+          - img "Hotel employees discuss a cleaning robot and training diagrams with an instructor." [ref=f2e126]
+          - generic [ref=f2e127]:
+            - paragraph [ref=f2e128]: The Robot Age specializes in research-informed multicultural human-robot interaction, workforce education, and adoption practices.
+            - paragraph [ref=f2e129]: We investigate how language, workplace culture, communication, trust, and expectations influence how people understand and work alongside robots. We apply these insights to design training programs adapted to diverse workforces.
+            - paragraph [ref=f2e130]: English and Spanish are our initial planned training-delivery languages. Other languages are subject to assessment and project scope.
+        - generic [ref=f2e131]:
+          - article [ref=f2e132]:
+            - heading "Multilingual Courses" [level=3] [ref=f2e133]
+            - paragraph [ref=f2e134]: Develop robot-specific learning experiences, onboarding materials, and assessments in languages appropriate to each deployment.
+          - article [ref=f2e135]:
+            - heading "Culturally Adapted Learning" [level=3] [ref=f2e136]
+            - paragraph [ref=f2e137]: Adapt instructional examples, terminology, and communication methods to the operational and cultural context.
+          - article [ref=f2e138]:
+            - heading "Workforce Research" [level=3] [ref=f2e139]
+            - paragraph [ref=f2e140]: Use interviews, field observations, and structured evaluations to identify barriers to understanding, trust, and adoption.
+          - article [ref=f2e141]:
+            - heading "Inclusive Assessment" [level=3] [ref=f2e142]
+            - paragraph [ref=f2e143]: Evaluate practical learning outcomes across roles and language groups to identify opportunities for improvement.
+        - paragraph [ref=f2e144]: One robotics product. Many languages. Different cultures. A consistent standard of workforce readiness.
+    - region [ref=f2e145]:
+      - generic [ref=f2e146]:
+        - paragraph [ref=f2e147]: THE DELIVERY MODEL
+        - heading "From your first deployment to your next hundred." [level=2] [ref=f2e148]
+        - list [ref=f2e149]:
+          - listitem [ref=f2e150]:
+            - generic [ref=f2e151]:
+              - generic [ref=f2e152]: "01"
+              - generic [aria-hidden] [ref=f2e153]: →
+            - heading "Understand" [level=3] [ref=f2e154]
+            - paragraph [ref=f2e155]: We learn about your robot, its intended environment, operating procedures, customer needs, and workforce profiles.
+          - listitem [ref=f2e156]:
+            - generic [ref=f2e157]:
+              - generic [ref=f2e158]: "02"
+              - generic [aria-hidden] [ref=f2e159]: →
+            - heading "Build" [level=3] [ref=f2e160]
+            - paragraph [ref=f2e161]: We create structured learning pathways, instructional content, role-based exercises, and assessments.
+          - listitem [ref=f2e162]:
+            - generic [ref=f2e163]:
+              - generic [ref=f2e164]: "03"
+              - generic [aria-hidden] [ref=f2e165]: →
+            - heading "Deliver" [level=3] [ref=f2e166]
+            - paragraph [ref=f2e167]: We support customer onboarding through virtual learning, in-person workshops, digital materials, and train-the-trainer programs.
+          - listitem [ref=f2e168]:
+            - generic [ref=f2e169]: "04"
+            - heading "Measure & Improve" [level=3] [ref=f2e171]
+            - paragraph [ref=f2e172]: We review learning outcomes, gather feedback, and refine the program as deployments evolve.
+        - 'figure "The goal: people and robots working confidently alongside one another." [ref=f2e173]':
+          - img "Facilities staff carry out daily work while a floor-cleaning robot follows a clear corridor route." [ref=f2e175]
+    - region [ref=f2e177]:
+      - generic [ref=f2e178]:
+        - paragraph [ref=f2e179]: WHERE ADOPTION HAPPENS
+        - heading "Different workplaces. Different people. One approach to readiness." [level=2] [ref=f2e180]
+        - generic [ref=f2e181]:
+          - article [ref=f2e182]:
+            - img "Restaurant employees and a trainer learning to use a wheeled tray service robot before service." [ref=f2e184]
+            - generic [ref=f2e185]: "01"
+            - heading "Restaurants & Hospitality" [level=3] [ref=f2e186]
+            - paragraph [ref=f2e187]: Train front-of-house, service, facilities, and operations teams to work alongside delivery and service robots.
+          - article [ref=f2e188]:
+            - img "A supervisor explains pedestrian boundaries beside a stationary mobile material-transport robot." [ref=f2e190]
+            - generic [ref=f2e191]: "02"
+            - heading "Manufacturing & Logistics" [level=3] [ref=f2e192]
+            - paragraph [ref=f2e193]: Support workforce orientation, robot interaction procedures, and changing operational workflows.
+          - article [ref=f2e194]:
+            - img "Care-support staff learn how a supply delivery robot moves through a senior living corridor." [ref=f2e196]
+            - generic [ref=f2e197]: "03"
+            - heading "Senior Living & Facilities" [level=3] [ref=f2e198]
+            - paragraph [ref=f2e199]: Help staff understand service robots, their limitations, and appropriate operation in human-centered environments.
+        - paragraph [ref=f2e200]: Illustrative target environments. All imagery on this page is AI-generated and does not document customer engagements.
+    - region [ref=f2e201]:
+      - generic [ref=f2e202]:
+        - generic [ref=f2e203]:
+          - paragraph [ref=f2e204]: OUR PARTNERS
+          - heading "Built for companies bringing robots into the real world." [level=2] [ref=f2e205]
+        - generic [ref=f2e206]:
+          - article [ref=f2e207]:
+            - heading "Robot Manufacturers" [level=3] [ref=f2e208]
+            - paragraph [ref=f2e209]: Extend your customer enablement capabilities without building every training program internally.
+          - article [ref=f2e210]:
+            - heading "Systems Integrators" [level=3] [ref=f2e211]
+            - paragraph [ref=f2e212]: Create a repeatable workforce onboarding process across installations.
+          - article [ref=f2e213]:
+            - heading "Robotics-as-a-Service Providers" [level=3] [ref=f2e214]
+            - paragraph [ref=f2e215]: Support customer learning throughout the service relationship.
+          - article [ref=f2e216]:
+            - heading "Deployment & Distribution Partners" [level=3] [ref=f2e217]
+            - paragraph [ref=f2e218]: Deliver more consistent education and handoff experiences across customers.
+    - region [ref=f2e219]:
+      - generic [ref=f2e220]:
+        - generic [ref=f2e221]:
+          - paragraph [ref=f2e222]: THE ACADEMY PILOT
+          - heading "One robot. One customer. One repeatable program." [level=2] [ref=f2e223]
+          - paragraph [ref=f2e224]: Start with a focused, paid Academy pilot tailored to one robotics product, a defined workforce, and a practical deployment use case.
+          - link "Discuss an Academy Pilot" [ref=f2e225] [cursor=pointer]:
+            - /url: "#enterprise-briefing"
+            - text: Discuss an Academy Pilot
+            - generic [aria-hidden] [ref=f2e226]: ↗
+        - list [ref=f2e227]:
+          - listitem [ref=f2e228]:
+            - generic [aria-hidden] [ref=f2e229]: "01"
+            - text: Workforce learning-needs assessment
+          - listitem [ref=f2e230]:
+            - generic [aria-hidden] [ref=f2e231]: "02"
+            - text: Role-based onboarding plan
+          - listitem [ref=f2e232]:
+            - generic [aria-hidden] [ref=f2e233]: "03"
+            - text: Robot-specific training module
+          - listitem [ref=f2e234]:
+            - generic [aria-hidden] [ref=f2e235]: "04"
+            - text: Guided training session
+          - listitem [ref=f2e236]:
+            - generic [aria-hidden] [ref=f2e237]: "05"
+            - text: Practical competency assessment
+          - listitem [ref=f2e238]:
+            - generic [aria-hidden] [ref=f2e239]: "06"
+            - text: Readiness and learning outcomes report
+          - listitem [ref=f2e240]:
+            - generic [aria-hidden] [ref=f2e241]: "07"
+            - text: Recommendations for scaling
+    - region [ref=f2e242]:
+      - generic [ref=f2e243]:
+        - heading "Part of a broader robotics education ecosystem." [level=2] [ref=f2e244]
+        - generic [ref=f2e245]:
+          - link "Robot Literacy Foundational education about robots and working alongside them." [ref=f2e246] [cursor=pointer]:
+            - /url: /robot-literacy
+            - generic [ref=f2e247]:
+              - strong [ref=f2e248]: Robot Literacy
+              - generic [ref=f2e249]: Foundational education about robots and working alongside them.
+            - generic [aria-hidden] [ref=f2e250]: ↗
+          - link "Live Robot Lab Guided, hands-on experiences with real robots." [ref=f2e251] [cursor=pointer]:
+            - /url: /live-robot-lab
+            - generic [ref=f2e252]:
+              - strong [ref=f2e253]: Live Robot Lab
+              - generic [ref=f2e254]: Guided, hands-on experiences with real robots.
+            - generic [aria-hidden] [ref=f2e255]: ↗
+          - link "Robot Deployment Practitioner (RDP) Professional development for deployment and operations teams." [ref=f2e256] [cursor=pointer]:
+            - /url: /learn/rdp
+            - generic [ref=f2e257]:
+              - strong [ref=f2e258]: Robot Deployment Practitioner (RDP)
+              - generic [ref=f2e259]: Professional development for deployment and operations teams.
+            - generic [aria-hidden] [ref=f2e260]: ↗
+          - link "Product Design for Robots (RPDP) Human-robot experience and robotics product design education." [ref=f2e261] [cursor=pointer]:
+            - /url: /learn/rpdp
+            - generic [ref=f2e262]:
+              - strong [ref=f2e263]: Product Design for Robots (RPDP)
+              - generic [ref=f2e264]: Human-robot experience and robotics product design education.
+            - generic [aria-hidden] [ref=f2e265]: ↗
+    - region [ref=f2e266]:
+      - generic [ref=f2e267]:
+        - generic [ref=f2e268]:
+          - paragraph [ref=f2e269]: LET'S TALK
+          - heading "Let's prepare your next deployment." [level=2] [ref=f2e270]
+          - paragraph [ref=f2e271]: Tell us about your robotics product and deployment goals. We'll discuss how a tailored Academy could support your customer onboarding, workforce education, and adoption requirements.
+          - paragraph [ref=f2e272]: We prepare workforces. We do not sell or install robots. Our programs complement the manufacturer's technical training, safety engineering, servicing, and commissioning requirements.
+        - generic [ref=f2e273]:
+          - paragraph [ref=f2e274]: Required fields are marked *.
+          - generic [aria-hidden] [ref=f2e275]:
+            - text: Leave this field empty
+            - textbox [ref=f2e276]
+          - generic [ref=f2e277]:
+            - generic [ref=f2e278]: Full name *
+            - textbox "Full name" [ref=f2e279]
+          - generic [ref=f2e280]:
+            - generic [ref=f2e281]: Work email *
+            - textbox "Work email" [ref=f2e282]
+          - generic [ref=f2e283]:
+            - generic [ref=f2e284]: Organization *
+            - textbox "Organization" [ref=f2e285]
+          - generic [ref=f2e286]:
+            - generic [ref=f2e287]: Company type *
+            - combobox "Company type" [ref=f2e288]:
+              - option "Select an option" [selected]
+              - option "Robot manufacturer"
+              - option "Systems integrator"
+              - option "Robotics-as-a-Service provider"
+              - option "Distributor / deployment partner"
+              - option "Commercial robot operator"
+              - option "Other"
+          - generic [ref=f2e289]:
+            - generic [ref=f2e290]:
+              - text: Robot or application
+              - generic [ref=f2e291]: (Optional)
+            - textbox "Robot or application(Optional)" [ref=f2e292]
+          - generic [ref=f2e293]:
+            - generic [ref=f2e294]:
+              - text: Deployment stage
+              - generic [ref=f2e295]: (Optional)
+            - combobox "Deployment stage(Optional)" [ref=f2e296]:
+              - option "Select an option" [selected]
+              - option "Planning an initial deployment"
+              - option "First customer deployments"
+              - option "Multiple active customer sites"
+              - option "Scaling across markets"
+          - generic [ref=f2e297]:
+            - generic [ref=f2e298]:
+              - text: Languages or workforce needs
+              - generic [ref=f2e299]: (Optional)
+            - textbox "Languages or workforce needs(Optional)" [ref=f2e300]
+          - generic [ref=f2e301]:
+            - generic [ref=f2e302]:
+              - text: Additional context
+              - generic [ref=f2e303]: (Optional)
+            - textbox "Additional context(Optional)" [ref=f2e304]
+          - paragraph [ref=f2e305]:
+            - text: By submitting, you agree that The Robot Age may contact you about this inquiry. Read our
+            - link "Privacy Policy" [ref=f2e306] [cursor=pointer]:
+              - /url: /privacy
+            - text: .
+          - button "Request Academy Briefing" [ref=f2e307] [cursor=pointer]:
+            - text: Request Academy Briefing
+            - generic [aria-hidden] [ref=f2e308]: ↗
+          - status [ref=f2e309]
+  - contentinfo [ref=f2e310]:
+    - generic [ref=f2e311]:
+      - generic [ref=f2e312]:
+        - generic [ref=f2e313]:
+          - link "The Robot Age" [ref=f2e314] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f2e315]: Preparing people and organizations for a world with robots.
+        - generic [ref=f2e316]:
+          - generic [ref=f2e317]: Pages
+          - navigation [ref=f2e318]:
+            - link "Research" [ref=f2e319] [cursor=pointer]:
+              - /url: /research
+            - link "Academy" [ref=f2e320] [cursor=pointer]:
+              - /url: /learn
+            - link "Jobs" [ref=f2e321] [cursor=pointer]:
+              - /url: /jobs
+            - link "What Robot Are You?" [ref=f2e322] [cursor=pointer]:
+              - /url: /what-robot-are-you
+            - link "RXD Scorecard" [ref=f2e323] [cursor=pointer]:
+              - /url: /rxd-scorecard
+            - link "For Organizations" [ref=f2e324] [cursor=pointer]:
+              - /url: /enterprise
+            - link "Partners" [ref=f2e325] [cursor=pointer]:
+              - /url: /robot-literacy/partners
+            - link "Press" [ref=f2e326] [cursor=pointer]:
+              - /url: /press
+            - link "Connect" [ref=f2e327] [cursor=pointer]:
+              - /url: /connect
+            - link "Summit" [ref=f2e328] [cursor=pointer]:
+              - /url: /summit
+        - generic [ref=f2e329]:
+          - generic [ref=f2e330]: Programs
+          - navigation [ref=f2e331]:
+            - link "Robot Literacy" [ref=f2e332] [cursor=pointer]:
+              - /url: /robot-literacy
+            - link "Live Robot Lab" [ref=f2e333] [cursor=pointer]:
+              - /url: /live-robot-lab
+            - link "Product Design for Robots (RPDP)" [ref=f2e334] [cursor=pointer]:
+              - /url: /learn/rpdp
+            - link "Robot Deployment Practitioner (RDP)" [ref=f2e335] [cursor=pointer]:
+              - /url: /learn/rdp
+        - generic [ref=f2e336]:
+          - generic [ref=f2e337]: Follow
+          - generic [ref=f2e338]:
+            - link "LinkedIn" [ref=f2e339] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/therobotage/
+            - link "Instagram" [ref=f2e345] [cursor=pointer]:
+              - /url: https://www.instagram.com/roboticsliteracy/
+      - generic [ref=f2e352]:
+        - paragraph [ref=f2e354]: © 2026 The Robot Age. All rights reserved.
+        - generic [ref=f2e355]:
+          - link "Privacy Policy" [ref=f2e356] [cursor=pointer]:
+            - /url: /privacy
+          - link "Terms of Use" [ref=f2e357] [cursor=pointer]:
+            - /url: /terms
+          - link "Fair use of AI" [ref=f2e358] [cursor=pointer]:
+            - /url: /ai-statement
+  - complementary "Browser agent activity" [ref=f2e359]:
+    - button "Expand WebMCP browser agent activity" [ref=f2e362] [cursor=pointer]:
+      - generic [ref=f2e363]: WebMCP
+  - button "Open Next.js Dev Tools" [ref=f2e369] [cursor=pointer]
+  - alert [ref=f2e373]

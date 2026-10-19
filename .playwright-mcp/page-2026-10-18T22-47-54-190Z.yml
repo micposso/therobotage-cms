@@ -1,0 +1,379 @@
+- generic [active] [ref=f1e1]:
+  - navigation [ref=f1e2]:
+    - generic [ref=f1e4]:
+      - link [ref=f1e5] [cursor=pointer]:
+        - /url: /es
+        - img "The Robot Age" [ref=f1e6]
+      - generic [ref=f1e7]:
+        - generic [ref=f1e8]: Idioma
+        - combobox "Idioma" [ref=f1e13] [cursor=pointer]:
+          - option "English": EN
+          - option "Español" [selected]: ES
+      - button "Abrir menú" [ref=f1e14] [cursor=pointer]
+  - main [ref=f1e16]:
+    - link "Saltar al contenido" [ref=f1e17] [cursor=pointer]:
+      - /url: "#enterprise-main"
+    - region [ref=f1e18]:
+      - generic [ref=f1e19]:
+        - paragraph [ref=f1e20]: THE ROBOT AGE / EMPRESAS
+        - paragraph [ref=f1e21]: Academia de Despliegue Robótico como Servicio
+        - heading "Ustedes despliegan los robots. Nosotros preparamos a las personas." [level=1] [ref=f1e22]: Ustedes despliegan los robots.Nosotros preparamos a las personas.
+        - paragraph [ref=f1e23]: Formación multilingüe. Preparación de equipos multiculturales. Adopción robótica a escala.
+        - paragraph [ref=f1e24]: The Robot Age ayuda a fabricantes, integradores y proveedores de despliegue robótico a preparar a sus clientes para trabajar con robots mediante formación gestionada, incorporación, evaluaciones prácticas y programas de adopción.
+        - generic [ref=f1e25]:
+          - link "Solicitar una presentación de la Academia" [ref=f1e26] [cursor=pointer]:
+            - /url: "#enterprise-briefing"
+            - text: Solicitar una presentación de la Academia
+            - generic [aria-hidden] [ref=f1e27]: ↗
+          - link "Conocer cómo funciona" [ref=f1e28] [cursor=pointer]:
+            - /url: "#academy-process"
+            - text: Conocer cómo funciona
+            - generic [aria-hidden] [ref=f1e29]: ↓
+      - figure "Ilustración conceptual de un entorno laboral · Generada con IA" [ref=f1e30]:
+        - img "Empleados de restaurante y una formadora aprendiendo a utilizar un robot de bandejas con ruedas antes del servicio." [ref=f1e32]
+    - region [ref=f1e34]:
+      - generic [ref=f1e35]:
+        - generic [ref=f1e36]:
+          - generic [ref=f1e37]:
+            - paragraph [ref=f1e38]: LA BRECHA DEL DESPLIEGUE
+            - heading "Instalar un robot es solo el principio." [level=2] [ref=f1e39]
+          - generic [ref=f1e40]:
+            - paragraph [ref=f1e41]: Su equipo sabe construir, configurar y desplegar robots. Pero cada nuevo cliente trae consigo nuevos trabajadores, idiomas, procesos y retos operativos.
+            - paragraph [ref=f1e42]: A medida que crecen los despliegues, la formación de clientes se convierte en una responsabilidad operativa continua.
+        - list [ref=f1e43]:
+          - listitem [ref=f1e44]:
+            - generic [ref=f1e45]: "01"
+            - heading "La formación no crece por sí sola" [level=3] [ref=f1e46]
+            - paragraph [ref=f1e47]: Cada centro de trabajo requiere incorporación y formación práctica para sus equipos.
+          - listitem [ref=f1e48]:
+            - generic [ref=f1e49]: "02"
+            - heading "Los equipos de trabajo son diversos" [level=3] [ref=f1e50]
+            - paragraph [ref=f1e51]: Los empleados pueden tener distintos idiomas, expectativas culturales, responsabilidades y niveles de familiaridad con los robots.
+          - listitem [ref=f1e52]:
+            - generic [ref=f1e53]: "03"
+            - heading "La adopción continúa tras la puesta en marcha" [level=3] [ref=f1e54]
+            - paragraph [ref=f1e55]: Las nuevas incorporaciones, los cambios de procesos, las actualizaciones de software y la ampliación de flotas requieren formación continua.
+        - paragraph [ref=f1e56]: Ustedes se centran en sus robots. Nosotros ayudamos a sus clientes a aprender a trabajar con ellos.
+        - paragraph [ref=f1e57]: Preparamos a los equipos de trabajo. No vendemos ni instalamos robots. Nuestros programas complementan la formación técnica, la ingeniería de seguridad, el mantenimiento y los requisitos de puesta en marcha del fabricante.
+    - region [ref=f1e58]:
+      - generic [ref=f1e59]:
+        - generic [ref=f1e60]:
+          - generic [ref=f1e61]:
+            - paragraph [ref=f1e62]: ACADEMIA COMO SERVICIO
+            - heading "Su producto robótico. Sus clientes. Su Academia." [level=2] [ref=f1e63]
+          - generic [ref=f1e64]:
+            - paragraph [ref=f1e65]: La Academia de Despliegue Robótico como Servicio es una oferta gestionada de formación y adopción diseñada en torno a su producto robótico y los entornos donde opera.
+            - paragraph [ref=f1e66]: Colaboramos con su organización para crear programas de aprendizaje reutilizables que se adaptan a distintos clientes, ubicaciones y equipos.
+        - generic [ref=f1e67]:
+          - img "Un supervisor explica los límites peatonales junto a un robot móvil de transporte de materiales detenido." [ref=f1e69]
+          - list [ref=f1e70]:
+            - listitem [ref=f1e71]:
+              - generic [ref=f1e72]: "01"
+              - generic [ref=f1e73]:
+                - heading "Preparación para el despliegue" [level=3] [ref=f1e74]
+                - paragraph [ref=f1e75]: Evaluamos roles, necesidades formativas y brechas de conocimiento operativo.
+            - listitem [ref=f1e76]:
+              - generic [ref=f1e77]: "02"
+              - generic [ref=f1e78]:
+                - heading "Incorporación de clientes" [level=3] [ref=f1e79]
+                - paragraph [ref=f1e80]: Preparamos al personal de primera línea, a supervisores y a los equipos del cliente.
+            - listitem [ref=f1e81]:
+              - generic [ref=f1e82]: "03"
+              - generic [ref=f1e83]:
+                - heading "Aprendizaje multilingüe" [level=3] [ref=f1e84]
+                - paragraph [ref=f1e85]: Desarrollamos cursos, materiales y evaluaciones adaptados a distintos idiomas y equipos.
+            - listitem [ref=f1e86]:
+              - generic [ref=f1e87]: "04"
+              - generic [ref=f1e88]:
+                - heading "Evaluación de competencias" [level=3] [ref=f1e89]
+                - paragraph [ref=f1e90]: Evaluamos la comprensión y el dominio práctico de las tareas.
+            - listitem [ref=f1e91]:
+              - generic [ref=f1e92]: "05"
+              - generic [ref=f1e93]:
+                - heading "Gestión de la adopción" [level=3] [ref=f1e94]
+                - paragraph [ref=f1e95]: Apoyamos la comunicación, la confianza, la gestión del cambio y la interacción humano-robot.
+            - listitem [ref=f1e96]:
+              - generic [ref=f1e97]: "06"
+              - generic [ref=f1e98]:
+                - heading "Formación continua" [level=3] [ref=f1e99]
+                - paragraph [ref=f1e100]: Ofrecemos formación de actualización ante nuevas contrataciones, cambios en los robots y ampliaciones del despliegue.
+    - region [ref=f1e101]:
+      - generic [ref=f1e102]:
+        - paragraph [ref=f1e103]: NUESTRA ESPECIALIZACIÓN
+        - generic [ref=f1e104]:
+          - heading "Los robots operan globalmente. Las personas los viven de forma distinta." [level=2] [ref=f1e105]
+          - paragraph [ref=f1e106]: Los robots comerciales llegan a entornos definidos por distintos idiomas, culturas, estilos de comunicación y expectativas tecnológicas. Una buena adopción requiere más que traducir un manual.
+        - generic [ref=f1e107]:
+          - img "Empleados de hotel hablan sobre un robot de limpieza y diagramas formativos con un instructor." [ref=f1e109]
+          - generic [ref=f1e110]:
+            - paragraph [ref=f1e111]: The Robot Age se especializa en interacción humano-robot multicultural, formación de equipos y prácticas de adopción orientadas por la investigación.
+            - paragraph [ref=f1e112]: Investigamos cómo el idioma, la cultura laboral, la comunicación, la confianza y las expectativas influyen en la comprensión de los robots y el trabajo junto a ellos. Aplicamos estos conocimientos al diseño de programas adaptados a equipos diversos.
+            - paragraph [ref=f1e113]: El inglés y el español son los idiomas inicialmente previstos para impartir formación. Otros idiomas están sujetos a evaluación y al alcance del proyecto.
+        - generic [ref=f1e114]:
+          - article [ref=f1e115]:
+            - heading "Cursos multilingües" [level=3] [ref=f1e116]
+            - paragraph [ref=f1e117]: Desarrollamos experiencias de aprendizaje, materiales de incorporación y evaluaciones específicos para cada robot en los idiomas adecuados para el despliegue.
+          - article [ref=f1e118]:
+            - heading "Aprendizaje adaptado culturalmente" [level=3] [ref=f1e119]
+            - paragraph [ref=f1e120]: Adaptamos ejemplos, terminología y métodos de comunicación al contexto operativo y cultural.
+          - article [ref=f1e121]:
+            - heading "Investigación con los equipos" [level=3] [ref=f1e122]
+            - paragraph [ref=f1e123]: Utilizamos entrevistas, observaciones de campo y evaluaciones estructuradas para identificar barreras a la comprensión, la confianza y la adopción.
+          - article [ref=f1e124]:
+            - heading "Evaluación inclusiva" [level=3] [ref=f1e125]
+            - paragraph [ref=f1e126]: Evaluamos resultados prácticos del aprendizaje entre roles y grupos lingüísticos para identificar oportunidades de mejora.
+        - paragraph [ref=f1e127]: Un producto robótico. Muchos idiomas. Diferentes culturas. Un estándar coherente de preparación de los equipos.
+    - region [ref=f1e128]:
+      - generic [ref=f1e129]:
+        - paragraph [ref=f1e130]: EL MODELO DE SERVICIO
+        - heading "Desde su primer despliegue hasta los próximos cien." [level=2] [ref=f1e131]
+        - list [ref=f1e132]:
+          - listitem [ref=f1e133]:
+            - generic [ref=f1e134]:
+              - generic [ref=f1e135]: "01"
+              - generic [aria-hidden] [ref=f1e136]: →
+            - heading "Comprender" [level=3] [ref=f1e137]
+            - paragraph [ref=f1e138]: Conocemos su robot, su entorno previsto, los procedimientos operativos, las necesidades de sus clientes y los perfiles de los equipos.
+          - listitem [ref=f1e139]:
+            - generic [ref=f1e140]:
+              - generic [ref=f1e141]: "02"
+              - generic [aria-hidden] [ref=f1e142]: →
+            - heading "Crear" [level=3] [ref=f1e143]
+            - paragraph [ref=f1e144]: Creamos itinerarios de aprendizaje, contenidos formativos, ejercicios por rol y evaluaciones.
+          - listitem [ref=f1e145]:
+            - generic [ref=f1e146]:
+              - generic [ref=f1e147]: "03"
+              - generic [aria-hidden] [ref=f1e148]: →
+            - heading "Impartir" [level=3] [ref=f1e149]
+            - paragraph [ref=f1e150]: Apoyamos la incorporación mediante aprendizaje virtual, talleres presenciales, materiales digitales y formación de formadores.
+          - listitem [ref=f1e151]:
+            - generic [ref=f1e152]: "04"
+            - heading "Medir y mejorar" [level=3] [ref=f1e154]
+            - paragraph [ref=f1e155]: Revisamos resultados, recogemos opiniones y mejoramos el programa a medida que evolucionan los despliegues.
+        - 'figure "El objetivo: personas y robots trabajando juntos con confianza." [ref=f1e156]':
+          - img "El personal realiza sus tareas diarias mientras un robot de limpieza sigue una ruta despejada por un pasillo." [ref=f1e158]
+    - region [ref=f1e160]:
+      - generic [ref=f1e161]:
+        - paragraph [ref=f1e162]: DONDE OCURRE LA ADOPCIÓN
+        - heading "Distintos entornos. Distintas personas. Un enfoque de preparación." [level=2] [ref=f1e163]
+        - generic [ref=f1e164]:
+          - article [ref=f1e165]:
+            - img "Empleados de restaurante y una formadora aprendiendo a utilizar un robot de bandejas con ruedas antes del servicio." [ref=f1e167]
+            - generic [ref=f1e168]: "01"
+            - heading "Restaurantes y hostelería" [level=3] [ref=f1e169]
+            - paragraph [ref=f1e170]: Formamos a equipos de atención, servicio, instalaciones y operaciones para trabajar con robots de reparto y servicio.
+          - article [ref=f1e171]:
+            - img "Un supervisor explica los límites peatonales junto a un robot móvil de transporte de materiales detenido." [ref=f1e173]
+            - generic [ref=f1e174]: "02"
+            - heading "Manufactura y logística" [level=3] [ref=f1e175]
+            - paragraph [ref=f1e176]: Apoyamos la orientación del personal, los procedimientos de interacción con robots y los cambios de procesos operativos.
+          - article [ref=f1e177]:
+            - img "Personal de apoyo aprende cómo un robot de reparto de suministros se desplaza por una residencia para mayores." [ref=f1e179]
+            - generic [ref=f1e180]: "03"
+            - heading "Residencias para mayores e instalaciones" [level=3] [ref=f1e181]
+            - paragraph [ref=f1e182]: Ayudamos al personal a comprender los robots de servicio, sus limitaciones y su uso adecuado en entornos centrados en las personas.
+        - paragraph [ref=f1e183]: Entornos objetivo ilustrativos. Todas las imágenes de esta página se han generado con IA y no documentan servicios prestados a clientes.
+    - region [ref=f1e184]:
+      - generic [ref=f1e185]:
+        - generic [ref=f1e186]:
+          - paragraph [ref=f1e187]: NUESTROS COLABORADORES
+          - heading "Para empresas que llevan los robots al mundo real." [level=2] [ref=f1e188]
+        - generic [ref=f1e189]:
+          - article [ref=f1e190]:
+            - heading "Fabricantes de robots" [level=3] [ref=f1e191]
+            - paragraph [ref=f1e192]: Amplíen la formación de sus clientes sin desarrollar cada programa internamente.
+          - article [ref=f1e193]:
+            - heading "Integradores de sistemas" [level=3] [ref=f1e194]
+            - paragraph [ref=f1e195]: Creen un proceso repetible de incorporación de equipos en distintas instalaciones.
+          - article [ref=f1e196]:
+            - heading "Proveedores de robótica como servicio" [level=3] [ref=f1e197]
+            - paragraph [ref=f1e198]: Apoyen el aprendizaje de sus clientes durante toda la relación de servicio.
+          - article [ref=f1e199]:
+            - heading "Socios de despliegue y distribución" [level=3] [ref=f1e200]
+            - paragraph [ref=f1e201]: Ofrezcan formación y procesos de entrega más coherentes entre clientes.
+    - region [ref=f1e202]:
+      - generic [ref=f1e203]:
+        - generic [ref=f1e204]:
+          - paragraph [ref=f1e205]: EL PILOTO DE LA ACADEMIA
+          - heading "Un robot. Un cliente. Un programa repetible." [level=2] [ref=f1e206]
+          - paragraph [ref=f1e207]: Comiencen con un piloto de pago de la Academia, centrado en un producto robótico, un equipo definido y un caso práctico de despliegue.
+          - link "Conversar sobre un piloto de la Academia" [ref=f1e208] [cursor=pointer]:
+            - /url: "#enterprise-briefing"
+            - text: Conversar sobre un piloto de la Academia
+            - generic [aria-hidden] [ref=f1e209]: ↗
+        - list [ref=f1e210]:
+          - listitem [ref=f1e211]:
+            - generic [aria-hidden] [ref=f1e212]: "01"
+            - text: Evaluación de las necesidades de aprendizaje del equipo
+          - listitem [ref=f1e213]:
+            - generic [aria-hidden] [ref=f1e214]: "02"
+            - text: Plan de incorporación por roles
+          - listitem [ref=f1e215]:
+            - generic [aria-hidden] [ref=f1e216]: "03"
+            - text: Módulo formativo específico para el robot
+          - listitem [ref=f1e217]:
+            - generic [aria-hidden] [ref=f1e218]: "04"
+            - text: Sesión de formación guiada
+          - listitem [ref=f1e219]:
+            - generic [aria-hidden] [ref=f1e220]: "05"
+            - text: Evaluación práctica de competencias
+          - listitem [ref=f1e221]:
+            - generic [aria-hidden] [ref=f1e222]: "06"
+            - text: Informe de preparación y resultados de aprendizaje
+          - listitem [ref=f1e223]:
+            - generic [aria-hidden] [ref=f1e224]: "07"
+            - text: Recomendaciones para ampliar el programa
+    - region [ref=f1e225]:
+      - generic [ref=f1e226]:
+        - heading "Parte de un ecosistema más amplio de educación robótica." [level=2] [ref=f1e227]
+        - generic [ref=f1e228]:
+          - link "Alfabetización robótica Educación fundamental sobre los robots y el trabajo junto a ellos." [ref=f1e229] [cursor=pointer]:
+            - /url: /es/robot-literacy
+            - generic [ref=f1e230]:
+              - strong [ref=f1e231]: Alfabetización robótica
+              - generic [ref=f1e232]: Educación fundamental sobre los robots y el trabajo junto a ellos.
+            - generic [aria-hidden] [ref=f1e233]: ↗
+          - link "Laboratorio de robots Experiencias prácticas guiadas con robots reales." [ref=f1e234] [cursor=pointer]:
+            - /url: /es/live-robot-lab
+            - generic [ref=f1e235]:
+              - strong [ref=f1e236]: Laboratorio de robots
+              - generic [ref=f1e237]: Experiencias prácticas guiadas con robots reales.
+            - generic [aria-hidden] [ref=f1e238]: ↗
+          - link "Profesional de Despliegue Robótico (RDP) Desarrollo profesional para equipos de despliegue y operaciones." [ref=f1e239] [cursor=pointer]:
+            - /url: /es/learn/rdp
+            - generic [ref=f1e240]:
+              - strong [ref=f1e241]: Profesional de Despliegue Robótico (RDP)
+              - generic [ref=f1e242]: Desarrollo profesional para equipos de despliegue y operaciones.
+            - generic [aria-hidden] [ref=f1e243]: ↗
+          - link "Diseño de Productos para Robots (RPDP) Formación en experiencia humano-robot y diseño de productos robóticos." [ref=f1e244] [cursor=pointer]:
+            - /url: /es/learn/rpdp
+            - generic [ref=f1e245]:
+              - strong [ref=f1e246]: Diseño de Productos para Robots (RPDP)
+              - generic [ref=f1e247]: Formación en experiencia humano-robot y diseño de productos robóticos.
+            - generic [aria-hidden] [ref=f1e248]: ↗
+    - region [ref=f1e249]:
+      - generic [ref=f1e250]:
+        - generic [ref=f1e251]:
+          - paragraph [ref=f1e252]: HABLEMOS
+          - heading "Preparemos su próximo despliegue." [level=2] [ref=f1e253]
+          - paragraph [ref=f1e254]: Cuéntenos sobre su producto robótico y sus objetivos de despliegue. Hablaremos de cómo una Academia a medida puede apoyar la incorporación de clientes, la formación de equipos y sus necesidades de adopción.
+          - paragraph [ref=f1e255]: Preparamos a los equipos de trabajo. No vendemos ni instalamos robots. Nuestros programas complementan la formación técnica, la ingeniería de seguridad, el mantenimiento y los requisitos de puesta en marcha del fabricante.
+        - generic [ref=f1e256]:
+          - paragraph [ref=f1e257]: Los campos obligatorios están marcados con *.
+          - generic [aria-hidden] [ref=f1e258]:
+            - text: Deje este campo vacío
+            - textbox [ref=f1e259]
+          - generic [ref=f1e260]:
+            - generic [ref=f1e261]: Nombre completo *
+            - textbox "Nombre completo" [ref=f1e262]
+          - generic [ref=f1e263]:
+            - generic [ref=f1e264]: Correo electrónico de trabajo *
+            - textbox "Correo electrónico de trabajo" [ref=f1e265]
+          - generic [ref=f1e266]:
+            - generic [ref=f1e267]: Organización *
+            - textbox "Organización" [ref=f1e268]
+          - generic [ref=f1e269]:
+            - generic [ref=f1e270]: Tipo de empresa *
+            - combobox "Tipo de empresa" [ref=f1e271]:
+              - option "Seleccione una opción" [selected]
+              - option "Fabricante de robots"
+              - option "Integrador de sistemas"
+              - option "Proveedor de robótica como servicio"
+              - option "Distribuidor / socio de despliegue"
+              - option "Operador de robots comerciales"
+              - option "Otro"
+          - generic [ref=f1e272]:
+            - generic [ref=f1e273]:
+              - text: Robot o aplicación
+              - generic [ref=f1e274]: (Opcional)
+            - textbox "Robot o aplicación(Opcional)" [ref=f1e275]
+          - generic [ref=f1e276]:
+            - generic [ref=f1e277]:
+              - text: Etapa de despliegue
+              - generic [ref=f1e278]: (Opcional)
+            - combobox "Etapa de despliegue(Opcional)" [ref=f1e279]:
+              - option "Seleccione una opción" [selected]
+              - option "Planificación del primer despliegue"
+              - option "Primeros despliegues en clientes"
+              - option "Varios centros de clientes activos"
+              - option "Expansión a nuevos mercados"
+          - generic [ref=f1e280]:
+            - generic [ref=f1e281]:
+              - text: Idiomas o necesidades del equipo
+              - generic [ref=f1e282]: (Opcional)
+            - textbox "Idiomas o necesidades del equipo(Opcional)" [ref=f1e283]
+          - generic [ref=f1e284]:
+            - generic [ref=f1e285]:
+              - text: Contexto adicional
+              - generic [ref=f1e286]: (Opcional)
+            - textbox "Contexto adicional(Opcional)" [ref=f1e287]
+          - paragraph [ref=f1e288]:
+            - text: Al enviar, acepta que The Robot Age se ponga en contacto con usted sobre esta consulta. Consulte nuestra
+            - link "Política de privacidad" [ref=f1e289] [cursor=pointer]:
+              - /url: /privacy
+            - text: .
+          - button "Solicitar una presentación de la Academia" [ref=f1e290] [cursor=pointer]:
+            - text: Solicitar una presentación de la Academia
+            - generic [aria-hidden] [ref=f1e291]: ↗
+          - status [ref=f1e292]
+  - contentinfo [ref=f1e293]:
+    - generic [ref=f1e294]:
+      - generic [ref=f1e295]:
+        - generic [ref=f1e296]:
+          - link "The Robot Age" [ref=f1e297] [cursor=pointer]:
+            - /url: /es
+          - paragraph [ref=f1e298]: Preparamos a personas y organizaciones para un mundo con robots.
+        - generic [ref=f1e299]:
+          - generic [ref=f1e300]: Páginas
+          - navigation [ref=f1e301]:
+            - link "Investigación" [ref=f1e302] [cursor=pointer]:
+              - /url: /es/research
+            - link "Academia" [ref=f1e303] [cursor=pointer]:
+              - /url: /es/learn
+            - link "Empleos" [ref=f1e304] [cursor=pointer]:
+              - /url: /es/jobs
+            - link "¿Qué robot eres?" [ref=f1e305] [cursor=pointer]:
+              - /url: /what-robot-are-you
+            - link "Evaluación RXD" [ref=f1e306] [cursor=pointer]:
+              - /url: /es/rxd-scorecard
+            - link "Para organizaciones" [ref=f1e307] [cursor=pointer]:
+              - /url: /es/enterprise
+            - link "Colaboradores" [ref=f1e308] [cursor=pointer]:
+              - /url: /es/robot-literacy/partners
+            - link "Prensa" [ref=f1e309] [cursor=pointer]:
+              - /url: /press
+            - link "Contacto" [ref=f1e310] [cursor=pointer]:
+              - /url: /connect
+            - link "Encuentro" [ref=f1e311] [cursor=pointer]:
+              - /url: /summit
+        - generic [ref=f1e312]:
+          - generic [ref=f1e313]: Programas
+          - navigation [ref=f1e314]:
+            - link "Alfabetización robótica" [ref=f1e315] [cursor=pointer]:
+              - /url: /es/robot-literacy
+            - link "Laboratorio de robots" [ref=f1e316] [cursor=pointer]:
+              - /url: /es/live-robot-lab
+            - link "Diseño de Productos para Robots (RPDP)" [ref=f1e317] [cursor=pointer]:
+              - /url: /es/learn/rpdp
+            - link "Profesional de Despliegue Robótico (RDP)" [ref=f1e318] [cursor=pointer]:
+              - /url: /es/learn/rdp
+        - generic [ref=f1e319]:
+          - generic [ref=f1e320]: Síguenos
+          - generic [ref=f1e321]:
+            - link "LinkedIn" [ref=f1e322] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/therobotage/
+            - link "Instagram" [ref=f1e328] [cursor=pointer]:
+              - /url: https://www.instagram.com/roboticsliteracy/
+      - generic [ref=f1e335]:
+        - paragraph [ref=f1e337]: © 2026 The Robot Age. Todos los derechos reservados.
+        - generic [ref=f1e338]:
+          - link "Política de privacidad" [ref=f1e339] [cursor=pointer]:
+            - /url: /privacy
+          - link "Términos de uso" [ref=f1e340] [cursor=pointer]:
+            - /url: /terms
+          - link "Uso responsable de la IA" [ref=f1e341] [cursor=pointer]:
+            - /url: /ai-statement
+  - complementary "Browser agent activity" [ref=f1e342]:
+    - button "Expand WebMCP browser agent activity" [ref=f1e345] [cursor=pointer]:
+      - generic [ref=f1e346]: WebMCP
+  - button "Open Next.js Dev Tools" [ref=f1e352] [cursor=pointer]
