@@ -45,15 +45,14 @@ export default async function EnterprisePage({ params }: Props) {
   const photo = (key: keyof typeof assets, className = '', hero = false, sizes = '(max-width: 700px) 100vw, (max-width: 1100px) 65vw, 850px') =>
     <div className={`${styles.photo} ${className}`}><Image src={assets[key]} alt={t(c.alt[key])} fill sizes={hero ? '(max-width: 900px) 100vw, 52vw' : sizes} priority={hero} /></div>
   const intro = (data: { label: string; title: string; body: string; note?: string }, id: string) =>
-    <div className={styles.introGrid}><div><p className={styles.eyebrow}>{t(data.label)}</p><h2 id={id}>{t(data.title)}</h2></div><div className={styles.prose}><p>{t(data.body)}</p>{data.note && <p>{t(data.note)}</p>}</div></div>
+    <div className={styles.introGrid}><div><p className={styles.eyebrow}>{t(data.label)}</p><h2 id={id} className={styles.gapHeading}>{id === 'gap-title' ? (locale === 'es' ? <><span>¿La formación de clientes</span><span>está frenando su próximo despliegue?</span></> : <><span>Is customer training holding back</span><span>your next deployment?</span></>) : id === 'solution-title' ? (locale === 'es' ? <><span>Su equipo de formación de clientes,</span><span>cuando lo necesite.</span></> : <><span>Your customer training team,</span><span>on demand.</span></>) : t(data.title)}</h2></div><div className={styles.prose}><p>{t(data.body)}</p>{data.note && <p>{t(data.note)}</p>}</div></div>
   return <>
     <Nav pinned />
     <main className={styles.page} lang={locale}>
       <a className={styles.skip} href="#enterprise-main">{t('Skip to content')}</a>
       <div id="enterprise-main" className={styles.brandHero}>
         <PageHero eyebrow={t(c.eyebrow)} title={`${t(c.title[0])} ${t(c.title[1])}`} subtitle={t(c.support)}>
-          <div className={styles.actions}><a className={`${cta.cta} ${styles.button}`} href="#enterprise-briefing">{t(c.cta)} <span aria-hidden="true">↗</span></a><a className={styles.textLink} href="#academy-process">{t(c.explore)} <span aria-hidden="true">↓</span></a></div>
-          <p className={styles.firstStep}>{t(c.focus.firstStep)}</p>
+          <div className={styles.actions}><a className={`${cta.cta} ${styles.button}`} href="#enterprise-briefing">{t(c.cta)} <span aria-hidden="true">↗</span></a><a className={styles.textLink} href="#academy-pricing">{t(c.pricing.nav)} <span aria-hidden="true">↓</span></a></div>
         </PageHero>
       </div>
       <section className={`${styles.section} ${styles.problem}`} aria-labelledby="gap-title"><div className={styles.wrap}>
@@ -71,6 +70,17 @@ export default async function EnterprisePage({ params }: Props) {
         {intro(c.solution, 'solution-title')}
         <div className={styles.solutionGrid}>{photo('multilingual', styles.factoryPhoto)}<ol className={styles.capabilities}>{c.solution.items.map(([title, body], i) => <li key={title}><span className={styles.number}>{number(i)}</span><div><h3>{t(title)}</h3><p>{t(body)}</p></div></li>)}</ol></div>
         <div className={styles.actions}><a className={styles.textLink} href="#academy-pilot">{t(c.focus.pilotCta)} <span aria-hidden="true">↓</span></a></div>
+      </div></section>
+      <section className={styles.section} id="academy-pricing" aria-labelledby="pricing-title"><div className={styles.wrap}>
+        <p className={styles.eyebrow}>{t(c.pricing.label)}</p><h2 id="pricing-title">{t(c.pricing.title)}</h2><p className={styles.pricingIntro}>{t(c.pricing.intro)}</p>
+        <div className={styles.pricingGrid}>{c.pricing.plans.map((plan,i)=><article className={`${literacy.progressionCard} ${styles.pricePlan}`} key={plan.name} aria-labelledby={`plan-${i}`}>
+          <h3 id={`plan-${i}`}>{t(plan.name)}</h3><p>{t(plan.tag)}</p><div className={styles.planPrice}>{t(plan.price)}</div><p className={styles.planSetup}>{t(plan.setup)}</p><p className={styles.planTotal}>{t(plan.total)}</p>
+          <p className={styles.planValue}>{t(plan.value)}</p><ul>{plan.items.map(item=><li key={item}>{t(item)}</li>)}</ul>
+          <a className={`${cta.cta} ${styles.button}`} href="#enterprise-briefing">{t(plan.cta)} <span aria-hidden="true">↗</span></a>
+        </article>)}</div>
+        <p className={styles.pricingTerms}>{t(c.pricing.terms)}</p><p>{t(c.pricing.scope)}</p>
+        <details className={styles.details}><summary>{t(c.pricing.detailsLabel)}</summary><ul className={styles.pricingDetails}>{c.pricing.details.map(item=><li key={item}>{t(item)}</li>)}</ul></details>
+        <details className={styles.details}><summary>{t(c.pricing.industryLabel)}</summary><div className={styles.industryScope}>{c.pricing.industries.map(([title,body])=><article key={title}><h3>{t(title)}</h3><p>{t(body)}</p></article>)}</div><p className={styles.scope}>{t(c.pricing.boundary)}</p></details>
       </div></section>
       <section className={`${styles.section} ${styles.pilot}`} id="academy-pilot" aria-labelledby="pilot-title"><div className={styles.wrap}>
         <p className={styles.eyebrow}>{t(c.pilot.label)}</p><h2 id="pilot-title">{t(c.pilot.title)}</h2><p className={styles.pilotIntro}>{t(c.pilot.body)}</p>

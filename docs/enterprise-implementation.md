@@ -4,6 +4,8 @@ The enterprise page uses the existing PageHero brand-image carousel, navigation,
 
 ## Current page refinement
 
+Pricing is now presented before the pilot: Basic at $1,990/month plus $7,500 build, Growth at $4,990/month plus $20,000 build, and Enterprise by scoped consultation. Annual terms, first-year totals, active learner definitions, service-hour limits, video/content caps, LMS options and mobile limitations are explicit. Expandable industry scope covers construction, healthcare, schools and other public-facing settings. All pricing copy is available in English and Spanish. Each plan links to the existing inquiry form; no checkout or payment collection was added.
+
 The page now has five main sections after the hero: deployment value, six industry use cases, a consolidated Academy delivery model, a measurable paid pilot, and the inquiry form. Repeated audience, capability and process sections have been consolidated. Pilot metrics cover training effort, practical workforce readiness and customer satisfaction without unsupported percentage claims. Industry cards reuse Robot Literacy's existing card styling. The headline has two explicit lines on desktop and wraps naturally on smaller screens.
 
 Industrial, Hospitality, Healthcare, Entertainment, Security and Local Government each have an illustrated use case. The separate humanoid/inspection section was removed; the humanoid appears in Hospitality and municipal quadruped inspection appears in Local Government. Three additional optimized images are saved under the same public image directory and published through R2. English and Spanish copy, image descriptions and CTA text are synchronized. Header and body font sizes use the existing site scale.

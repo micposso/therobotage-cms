@@ -233,5 +233,101 @@ export const enterpriseContent = {
     ],
     "firstStep": "Start with a conversation about your onboarding bottleneck, pilot scope, and cost.",
     "fit": "For robot manufacturers, integrators, distributors, and RaaS teams preparing customer deployments."
+  },
+  "pricing": {
+    "label": "ACADEMY PLANS",
+    "title": "Build once. Train across customers.",
+    "intro": "A one-time Academy build, followed by managed delivery and updates. Choose the scale that fits your customer deployments.",
+    "terms": "USD. Basic and Growth require a 12-month subscription after launch, billed monthly, plus the one-time build fee. Taxes, travel, and out-of-scope work are extra. Paid pilot scope and fees are agreed separately.",
+    "scope": "Platform selection, integrations, delivery capacity, and regulated-data requirements are confirmed before contracting. These packages do not include a bespoke LMS or a custom native app.",
+    "plans": [
+      {
+        "name": "Basic",
+        "tag": "Launch your first customer Academy",
+        "price": "$1,990 / month",
+        "setup": "+ $7,500 one-time build",
+        "total": "First year: $31,380 before extras",
+        "value": "Replace repeated instruction with one reusable onboarding program for your robot.",
+        "items": [
+          "1 robot product · 3 customer sites",
+          "100 monthly active learners",
+          "Branded hosted portal with mobile web access",
+          "2 modules · up to 30 minutes of learning",
+          "Up to 12 finished video minutes",
+          "English or Spanish; operator and supervisor pathways",
+          "Knowledge checks and a practical observation checklist",
+          "4 service hours/month; quarterly results review"
+        ],
+        "cta": "Discuss Basic"
+      },
+      {
+        "name": "Growth",
+        "tag": "Scale across customer locations",
+        "price": "$4,990 / month",
+        "setup": "+ $20,000 one-time build",
+        "total": "First year: $79,880 before extras",
+        "value": "Give each customer a consistent learning experience while your deployment team focuses on rollout.",
+        "items": [
+          "2 robot products · 15 customer sites",
+          "500 monthly active learners",
+          "Branded portal or one compatible LMS delivery route",
+          "6 modules · up to 90 minutes of learning",
+          "Up to 30 finished video minutes",
+          "English and Spanish for included content",
+          "Role- and site-based pathways, practical assessments, supervisor reporting",
+          "10 service hours/month; monthly operating review"
+        ],
+        "cta": "Discuss Growth"
+      },
+      {
+        "name": "Enterprise",
+        "tag": "Coordinate a broader deployment program",
+        "price": "Talk to us",
+        "setup": "Build and service fees scoped to your program",
+        "total": "Custom annual agreement",
+        "value": "Plan education across robot portfolios, markets, and customer systems with an agreed delivery team.",
+        "items": [
+          "Contracted robot, site, and learner allowances",
+          "Multiple portals or customer-LMS delivery",
+          "Personalized onboarding by role, region, and partner",
+          "Agreed content, video, and localization roadmap",
+          "SSO, API, and CRM integrations scoped individually",
+          "Industry specialist review and data requirements scoped separately",
+          "Dedicated service allocation and governance",
+          "Custom app or advanced offline delivery by separate quote"
+        ],
+        "cta": "Talk about Enterprise"
+      }
+    ],
+    "detailsLabel": "Delivery, platform, and service details",
+    "details": [
+      "Personalized launch: discovery, robot-specific learning design, operator and supervisor pathways, portal setup, and a launch workshop. The customer supplies approved procedures, subject-matter access, and usable footage.",
+      "Content limits cover the initial build. Video is part of the learning allowance, not additional content. Two review rounds are included. On-location filming, animation, new modules, and major revisions are quoted separately.",
+      "Monthly service hours cover live delivery, support, reviews, and content updates combined. Additional work requires agreement; service is not unlimited.",
+      "Monthly active learners are unique learners accessing training that month. Archived learners do not count. Additional learner or site blocks are agreed before increasing scope.",
+      "Growth includes a hosted portal or one tested, compatible LMS content-delivery route, such as SCORM after discovery. Customer LMS licenses remain the customer’s responsibility. SSO, automated enrollment, APIs, and CRM data exchange are separately scoped.",
+      "Mobile web access is included. Vendor mobile apps and offline completion depend on the selected platform and content testing. A separately branded native app requires its own build and maintenance agreement."
+    ],
+    "industryLabel": "Industry-specific safety and privacy scope",
+    "industries": [
+      [
+        "Construction and industrial sites",
+        "Site induction, changing work zones, pedestrian routes, stop-work procedures, emergency escalation, and boundaries for authorized maintenance. Safety-critical content requires qualified specialist and customer approval; employer duties and site risk assessments remain with the responsible parties."
+      ],
+      [
+        "Healthcare and senior living",
+        "Train adult staff using fictional scenarios without patient information by default. Include dignity, recording practices, access restrictions, and facility-approved procedures. Any handling of protected health information requires separate platform, contractual, security, and HIPAA applicability review."
+      ],
+      [
+        "Schools and educational settings",
+        "Start with teacher and staff training: supervision, safeguarding, recording, permissions, and retention. Student accounts or student data require a separate scope and review of applicable FERPA, COPPA, and local requirements."
+      ],
+      [
+        "Hospitality, entertainment, security, and government",
+        "Adapt training to crowds, accessible interactions, recording practices, alert review, escalation authority, and public-facing workflows. Jurisdiction-specific and specialist review is scoped separately."
+      ]
+    ],
+    "boundary": "Training supports workforce readiness; it does not certify regulatory compliance, transfer liability, or replace safety engineering, clinical authorization, or legal advice. Specialist review, on-site delivery, additional languages, and regulated-data processing require a separate scope.",
+    "nav": "View Academy pricing"
   }
 } as const

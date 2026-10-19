@@ -21,6 +21,8 @@
 .photo img { object-fit:cover; }
 .introGrid { display:grid; grid-template-columns:1fr 1fr; gap:9%; align-items:end; margin-bottom:54px; }
 .introGrid h2 { max-width:16ch; margin:0; }
+.introGrid .gapHeading { max-width:none; text-wrap:initial; }
+.gapHeading span { display:block; }
 .prose p+p { margin-top:18px; }
 .prose p { color:var(--quiet); }
 .prose { color:var(--quiet); max-width:54ch; }
@@ -185,8 +187,27 @@ textarea.input { min-height:106px; resize:vertical; }
 .measurement { max-width:80ch; }
 .pilot .details { border-color:var(--color-border-light); }
 .pilot .pilotIntro { max-width:72ch; }
+.pricingIntro { max-width:72ch; margin-block:var(--space-6) var(--space-8) !important; }
+.pricingGrid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--space-8); }
+.pricePlan { --panel-accent:var(--color-accent); min-width:0; }
+.pricePlan:nth-child(2) { --panel-accent:var(--color-fourth); }
+.pricePlan:nth-child(3) { --panel-accent:var(--color-tertiary); }
+.pricePlan h3 { margin-bottom:var(--space-3); }
+.planPrice { font-family:var(--font-display); font-size:var(--text-xl); line-height:1.2; margin-top:var(--space-6); }
+.planSetup { margin-top:var(--space-3) !important; }
+.planTotal { color:var(--color-text-muted); margin-top:var(--space-2) !important; }
+.planValue { margin-top:var(--space-6) !important; padding-top:var(--space-6); border-top:1px solid var(--color-border); }
+.pricePlan ul { padding-left:var(--space-5); margin-block:var(--space-6) var(--space-8); }
+.pricePlan li { margin-bottom:var(--space-3); }
+.pricePlan .button { margin-top:auto; width:100%; gap:var(--space-4); }
+.pricingTerms { margin-block:var(--space-8) var(--space-4) !important; }
+.pricingDetails { max-width:90ch; display:grid; gap:var(--space-4); }
+.industryScope { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-8); padding-top:var(--space-6); }
+.industryScope h3 { margin-bottom:var(--space-3); }
+@media (max-width:1000px) { .pricingGrid { grid-template-columns:1fr; } }
 @media (max-width:767px) {
   .scenarioPair { grid-template-columns:1fr; }
   .metrics { grid-template-columns:1fr; }
+  .industryScope { grid-template-columns:1fr; }
 }
 
