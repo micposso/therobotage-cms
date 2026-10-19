@@ -5,48 +5,48 @@ export const enterpriseContent = {
     "You deploy the robots.",
     "We prepare the people."
   ],
-  "support": "Make customer onboarding a path to growth, not a deployment bottleneck. Our managed, multilingual Academy helps your team train more customer sites without repeating the same work.",
+  "support": "Workforce onboarding for commercial robotics deployments. We help robot manufacturers, integrators, and RaaS providers prepare customer teams through role-based training, multilingual learning, and practical readiness assessments. Start with one robot, one customer site, and a measurable paid pilot.",
   "intro": "The Robot Age helps robotics manufacturers, integrators, and deployment providers prepare their customers for working with robots through managed education, onboarding, practical assessments, and adoption programs.",
-  "cta": "Plan your Academy pilot",
+  "cta": "Explore the Founding Pilot",
   "explore": "Explore How It Works",
-  "scope": "We prepare workforces. We do not sell or install robots. Our programs complement the manufacturer's technical training, safety engineering, servicing, and commissioning requirements.",
+  "scope": "The Robot Age prepares people to work with commercial robots. We do not manufacture, sell, install, commission, or certify robots. Our programs complement manufacturer-approved technical instruction, site-specific safety requirements, and the responsibilities of qualified operators, employers, and deployment partners.",
   "problem": {
     "label": "THE DEPLOYMENT GAP",
-    "title": "Is customer training holding back your next deployment?",
-    "body": "When every site depends on your engineers to train its workforce, growth adds work to the same team. A reusable Academy gives customer education its own delivery model.",
+    "title": "Your engineers deploy robots. Who prepares the workforce?",
+    "body": "When every new customer depends on your technical team for repeated instruction, deployment growth creates an onboarding bottleneck. We help turn that repeated effort into a reusable, measurable workforce training program.",
     "items": [
       [
-        "Free deployment capacity",
-        "Move repeatable workforce instruction into a managed Academy so specialists can focus on commissioning and the next customer."
+        "Free specialist capacity",
+        "Move repeatable operator and supervisor instruction into a structured onboarding program so engineers can focus on deployment, commissioning, and complex technical issues."
       ],
       [
-        "Protect rollout margins",
-        "Reuse lessons across sites instead of rebuilding training each time. Compare total onboarding cost per site in the pilot."
+        "Control onboarding costs",
+        "Reuse approved training across customer sites instead of rebuilding instruction for every deployment. Measure specialist hours, training effort, and cost per site."
       ],
       [
         "Support customer expansion",
-        "Give customers a repeatable way to prepare new teams and locations when they expand their robot fleet."
+        "Give customers a consistent way to prepare new employees, shifts, and locations as their robot deployments grow."
       ]
     ],
     "closing": "You focus on your robots. We help your customers learn how to work with them."
   },
   "solution": {
     "label": "ACADEMY-AS-A-SERVICE",
-    "title": "Your customer training team, on demand.",
-    "body": "Robot Deployment Academy-as-a-Service gives manufacturers, integrators, distributors, and RaaS providers a managed onboarding program built around their robot.",
-    "note": "Research-informed learning adapted to workforce languages, roles, and cultural context. English and Spanish are initially planned; other languages depend on scope.",
+    "title": "Your customer training operation. Without building one from scratch.",
+    "body": "Robot Deployment Academy-as-a-Service helps manufacturers, integrators, distributors, and RaaS providers create and operate repeatable workforce onboarding programs around their robot products. We combine approved operating procedures, instructional design, practical assessments, and ongoing learning support. Training can be adapted to workforce roles, languages, and local operating contexts.",
+    "note": "Our research-informed approach also considers how people interpret robot signals, spatial behavior, interaction boundaries, and recovery procedures. English and Spanish program delivery are scoped during discovery, including appropriate content review. Additional languages are available by separate agreement, subject to delivery capacity.",
     "items": [
       [
-        "Build once",
-        "We turn your operating procedures into role-based lessons, practical exercises, and assessments."
+        "Build the program",
+        "We turn your approved procedures and operating workflows into role-based lessons, job aids, knowledge checks, and practical assessments."
       ],
       [
-        "Deliver across customers",
-        "We support workshops, digital learning, and train-the-trainer delivery, adapted to each workforce."
+        "Train across customer sites",
+        "Deliver consistent instruction through digital learning, instructor-supported sessions, or train-the-trainer programs, with multilingual delivery scoped to workforce needs."
       ],
       [
-        "Improve as you scale",
-        "We review learning outcomes and refresh materials for new hires, workflows, and robot updates."
+        "Measure and improve",
+        "Evaluate practical task readiness, identify recurring difficulties, and update learning materials as robot workflows and customer needs evolve."
       ]
     ]
   },
@@ -101,37 +101,38 @@ export const enterpriseContent = {
   },
   "environments": {
     "label": "WHERE ADOPTION HAPPENS",
-    "title": "Different workplaces. Different people. One approach to readiness.",
+    "title": "Different workplaces. Different people. The same readiness challenge.",
+    "body": "Every workplace has its own roles, languages, procedures, and human-robot interactions. We adapt approved training to the people and workflows surrounding each deployment.",
     "items": [
       [
         "Industrial",
-        "Repeatable onboarding for factory, warehouse, and inspection teams—designed to reduce specialist training time at each site."
+        "Prepare warehouse, factory, and inspection teams for approved robot workflows, operating boundaries, and escalation procedures across shifts."
       ],
       [
         "Hospitality",
-        "Train hotel teams to manage robot supply handoffs and exceptions, helping maintain consistent service across shifts."
+        "Help hotel and service teams understand robot handoffs, guest interactions, daily procedures, and exception handling."
       ],
       [
         "Healthcare",
-        "Prepare care-support staff for service robots, with clear task boundaries and escalation procedures that respect care workflows."
+        "Support nonclinical service-robot onboarding with clear responsibilities, interaction boundaries, and human escalation procedures. Clinical and regulated training requirements are separately scoped."
       ],
       [
         "Entertainment",
-        "Prepare museum and attraction staff to guide robot-led visitor interactions and step in when needed, supporting an engaging, well-managed guest experience."
+        "Prepare attraction and museum staff to support robot-led visitor experiences, explain interactions, and intervene when necessary."
       ],
       [
         "Security",
-        "Train campus security teams to review patrol-robot alerts and escalate incidents, with clear human oversight and consistent shift handovers."
+        "Help security teams understand robot patrol workflows, alert interpretation, human oversight, and consistent shift handovers."
       ],
       [
         "Local Government",
-        "Prepare municipal facilities teams for robot-assisted building inspections: follow routes, review findings, and flag maintenance needs through a repeatable workflow."
+        "Support municipal teams adopting inspection and facility-service robots through practical instruction, reporting procedures, and role-based readiness checks."
       ]
     ],
     "note": "Illustrative target environments. All imagery on this page is AI-generated and does not document customer engagements.",
     "titleLines": [
       "Different workplaces. Different people.",
-      "One approach to readiness."
+      "The same readiness challenge."
     ]
   },
   "partners": {
@@ -157,16 +158,23 @@ export const enterpriseContent = {
     ]
   },
   "pilot": {
-    "label": "THE ACADEMY PILOT",
-    "title": "Measure the value before you scale.",
-    "body": "Start with one robot, one customer, and a paid pilot. Agree a baseline, success criteria, and review period before training begins.",
+    "label": "FOUNDING ACADEMY PILOT",
+    "title": "One robot. One customer site. A measurable starting point.",
+    "body": "Before investing in a full Academy, test a repeatable workforce onboarding program with a defined deployment. Our four-week paid pilot helps your team evaluate training effort, employee readiness, and opportunities to standardize customer onboarding. $4,500 fixed pilot fee. Four weeks. One robot product. One customer site. A defined workforce onboarding workflow.",
     "items": [
-      "Learning-needs assessment and onboarding plan",
-      "Robot-specific module and guided training",
-      "Practical assessment and outcomes report",
-      "Recommendations for rollout and refreshers"
+      "One commercially deployed robot model",
+      "One customer site · up to 20 learners · two defined workforce roles",
+      "One 15–20-minute learning module",
+      "One instructor-supported remote session",
+      "One practical observation checklist",
+      "One quick-reference job aid",
+      "Baseline measurement and final evidence-based findings report; this is not a safety certification",
+      "The customer’s authorized technical or onsite representative supports supervised practical activities.",
+      "Customer-approved operating materials and access to relevant subject-matter experts are required. Travel, substantial video production, additional languages, integrations, and out-of-scope work are quoted separately.",
+      "Payment terms: 50% due at signing and 50% at the agreed delivery milestone.",
+      "Apply $2,250 of the pilot fee toward the one-time Academy build fee for an Academy build agreement signed within 60 days of the final pilot report. This is a credit, not a refund or a discount on monthly subscription charges."
     ],
-    "cta": "Plan your Academy pilot"
+    "cta": "Discuss a Founding Pilot"
   },
   "programs": {
     "title": "Part of a broader robotics education ecosystem.",
@@ -195,8 +203,9 @@ export const enterpriseContent = {
   },
   "form": {
     "label": "LET'S TALK",
-    "title": "Where is onboarding slowing you down?",
-    "body": "Tell us who you are. In the first conversation, we’ll identify the training bottleneck, discuss one suitable pilot, and agree what would make it worth scaling."
+    "title": "Is customer onboarding slowing your deployments?",
+    "body": "Tell us about your robot product, customer sites, and current onboarding process. We’ll discuss whether a Founding Academy Pilot could help your team standardize training, measure workforce readiness, and reduce repetitive instruction. Best suited for robot manufacturers, integrators, distributors, and RaaS providers with an active or upcoming commercial deployment.",
+    "cta": "Request a Pilot Conversation"
   },
   "alt": {
     "hero": "Restaurant employees and a trainer learning to use a wheeled tray service robot before service.",
@@ -213,22 +222,22 @@ export const enterpriseContent = {
   "imageNote": "Conceptual workplace illustration · AI-generated",
   "outcome": "The goal: people and robots working confidently alongside one another.",
   "focus": {
-    "areaCta": "Plan your Academy pilot",
-    "pilotCta": "Explore a measurable pilot",
-    "deliverables": "What the pilot includes",
-    "measurement": "Compare results with a comparable cohort or your documented baseline. Set targets together; improvements are measured, not guaranteed.",
+    "areaCta": "Explore the Founding Pilot",
+    "pilotCta": "Explore the Founding Pilot",
+    "deliverables": "Pilot scope, terms, and deliverables",
+    "measurement": "Results depend on the deployment context. Improvements are measured, not guaranteed. Baselines, success criteria, and review methods are agreed before work begins. The final deliverable is an evidence-based findings report, not a safety certification.",
     "metrics": [
       [
         "Training effort",
-        "Staff hours per customer site, multiplied by your hourly staff cost. Compare this with the Academy fee and remaining internal effort."
+        "Compare the engineering and implementation hours required for onboarding against the documented baseline, including any remaining internal effort."
       ],
       [
         "Workforce readiness",
-        "Share of employees who can complete agreed robot tasks without prompting, using the same practical assessment."
+        "Measure the percentage of participating employees who can complete agreed robot-related tasks without prompting using a consistent practical assessment."
       ],
       [
-        "Customer satisfaction",
-        "Customer ratings of onboarding quality and confidence using the robot, collected with the same questions and timing."
+        "Customer confidence",
+        "Collect structured feedback on onboarding clarity, confidence, and areas requiring additional support."
       ]
     ],
     "firstStep": "Start with a conversation about your onboarding bottleneck, pilot scope, and cost.",
@@ -236,18 +245,18 @@ export const enterpriseContent = {
   },
   "pricing": {
     "label": "ACADEMY PLANS",
-    "title": "Build once. Train across customers.",
-    "intro": "Robot-specific training, a branded learning portal, and managed onboarding support in one plan. Build your content once, then reuse it across customer deployments.",
-    "terms": "USD. Basic and Growth require a 12-month subscription after launch, billed monthly, plus the one-time build fee. Taxes, travel, and out-of-scope work are extra. Paid pilot scope and fees are agreed separately.",
+    "title": "Build once. Train across deployments.",
+    "intro": "After your initial pilot, expand into a managed Academy that supports additional customer sites, workforce roles, and robot products. Choose the level of training content, delivery support, and reporting your deployment program requires.",
+    "terms": "USD. Launch and Scale require 12-month subscription terms after launch, billed monthly, plus the one-time build fee. Taxes, travel, and out-of-scope charges are extra. Academy subscriptions are expansion options, not prerequisites for discussing a pilot, and a pilot does not automatically convert to an annual subscription.",
     "scope": "Platform selection, integrations, delivery capacity, and regulated-data requirements are confirmed before contracting. These packages do not include a bespoke LMS or a custom native app.",
     "plans": [
       {
-        "name": "Basic",
-        "tag": "Launch your first customer Academy",
+        "name": "Launch",
+        "tag": "For robotics companies establishing a repeatable customer onboarding program.",
         "price": "$1,490 / month",
         "setup": "+ $7,500 one-time build",
         "total": "First year: $25,380 before extras",
-        "value": "Replace repeated instruction with one reusable onboarding program for your robot.",
+        "value": "Standardize instruction for your first deployments without building a dedicated customer training operation.",
         "items": [
           "1 robot product · 3 customer sites",
           "100 monthly active learners",
@@ -258,15 +267,15 @@ export const enterpriseContent = {
           "Knowledge checks and a practical observation checklist",
           "4 service hours/month; quarterly results review"
         ],
-        "cta": "Discuss Basic"
+        "cta": "Discuss Launch"
       },
       {
-        "name": "Growth",
-        "tag": "Scale across customer locations",
+        "name": "Scale",
+        "tag": "For robotics companies expanding across multiple customers and locations.",
         "price": "$3,490 / month",
         "setup": "+ $15,000 one-time build",
         "total": "First year: $56,880 before extras",
-        "value": "Give each customer a consistent learning experience while your deployment team focuses on rollout.",
+        "value": "Reuse consistent onboarding across deployments while tracking readiness, training activity, and recurring workforce challenges.",
         "items": [
           "2 robot products · 15 customer sites",
           "500 monthly active learners",
@@ -277,26 +286,26 @@ export const enterpriseContent = {
           "Role- and site-based pathways, practical assessments, supervisor reporting",
           "10 service hours/month; monthly operating review"
         ],
-        "cta": "Discuss Growth"
+        "cta": "Discuss Scale"
       },
       {
         "name": "Enterprise",
-        "tag": "Coordinate a broader deployment program",
+        "tag": "For robotics organizations coordinating complex deployment and partner education programs.",
         "price": "Talk to us",
         "setup": "Build and service fees scoped to your program",
         "total": "Custom annual agreement",
-        "value": "Plan education across robot portfolios, markets, and customer systems with an agreed delivery team.",
+        "value": "Plan workforce onboarding across robot portfolios, regions, customer systems, and partner networks with a separately scoped delivery model.",
         "items": [
           "Contracted robot, site, and learner allowances",
           "Multiple portals or customer-LMS delivery",
           "Personalized onboarding by role, region, and partner",
           "Agreed content, video, and localization roadmap",
-          "SSO, API, and CRM integrations scoped individually",
-          "Industry specialist review and data requirements scoped separately",
+          "SSO, API, CRM integrations, and custom development require separate scope and agreement",
+          "Industry specialist reviews and compliance-related requirements require separate scope and agreement",
           "Dedicated service allocation and governance",
           "Custom app or advanced offline delivery by separate quote"
         ],
-        "cta": "Talk about Enterprise"
+        "cta": "Discuss Enterprise"
       }
     ],
     "detailsLabel": "Delivery, platform, and service details",
@@ -305,7 +314,7 @@ export const enterpriseContent = {
       "Content limits cover the initial build. Video is part of the learning allowance, not additional content. Two review rounds are included. On-location filming, animation, new modules, and major revisions are quoted separately.",
       "Monthly service hours cover live delivery, support, reviews, and content updates combined. Additional work requires agreement; service is not unlimited.",
       "Monthly active learners are unique learners accessing training that month. Archived learners do not count. Additional learner or site blocks are agreed before increasing scope.",
-      "Growth includes a hosted portal or one tested, compatible LMS content-delivery route, such as SCORM after discovery. Customer LMS licenses remain the customer’s responsibility. SSO, automated enrollment, APIs, and CRM data exchange are separately scoped.",
+      "Scale includes a hosted portal or one tested, compatible LMS content-delivery route, such as SCORM after discovery. Customer LMS licenses remain the customer’s responsibility. SSO, automated enrollment, APIs, and CRM data exchange are separately scoped.",
       "Mobile web access is included. Vendor mobile apps and offline completion depend on the selected platform and content testing. A separately branded native app requires its own build and maintenance agreement."
     ],
     "industryLabel": "Industry-specific safety and privacy scope",
@@ -328,6 +337,6 @@ export const enterpriseContent = {
       ]
     ],
     "boundary": "Training supports workforce readiness; it does not certify regulatory compliance, transfer liability, or replace safety engineering, clinical authorization, or legal advice. Specialist review, on-site delivery, additional languages, and regulated-data processing require a separate scope.",
-    "nav": "View Academy pricing"
+    "nav": "View Academy Plans"
   }
 } as const

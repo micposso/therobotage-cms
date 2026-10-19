@@ -31,7 +31,7 @@ const assets = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale = 'en' } = await params
   const title = 'Robot Deployment Academy-as-a-Service | The Robot Age'
-  const description = 'Multilingual workforce training, customer onboarding, and robot adoption programs for robotics manufacturers, integrators, and deployment providers.'
+  const description = 'Workforce onboarding for robotics manufacturers, integrators, and RaaS providers. Explore a paid Academy pilot with role-based training, practical assessments, and deployment-readiness measurement.'
   return pageMetadata({
     title: { absolute: title }, description,
     openGraph: { title, description, type: 'website', images: [{ url: imageUrl(assets.hero), alt: c.alt.hero }] },
@@ -45,14 +45,14 @@ export default async function EnterprisePage({ params }: Props) {
   const photo = (key: keyof typeof assets, className = '', hero = false, sizes = '(max-width: 700px) 100vw, (max-width: 1100px) 65vw, 850px') =>
     <div className={`${styles.photo} ${className}`}><Image src={assets[key]} alt={t(c.alt[key])} fill sizes={hero ? '(max-width: 900px) 100vw, 52vw' : sizes} priority={hero} /></div>
   const intro = (data: { label: string; title: string; body: string; note?: string }, id: string) =>
-    <div className={styles.introGrid}><div><p className={styles.eyebrow}>{t(data.label)}</p><h2 id={id} className={styles.gapHeading}>{id === 'gap-title' ? (locale === 'es' ? <><span>¿La formación de clientes</span><span>está frenando su próximo despliegue?</span></> : <><span>Is customer training holding back</span><span>your next deployment?</span></>) : id === 'solution-title' ? (locale === 'es' ? <><span>Su equipo de formación de clientes,</span><span>cuando lo necesite.</span></> : <><span>Your customer training team,</span><span>on demand.</span></>) : t(data.title)}</h2></div><div className={styles.prose}><p>{t(data.body)}</p>{data.note && <p>{t(data.note)}</p>}</div></div>
+    <div className={styles.introGrid}><div><p className={styles.eyebrow}>{t(data.label)}</p><h2 id={id} className={styles.gapHeading}>{id === 'gap-title' ? <><span>{t('Your engineers deploy robots.')}</span><span>{t('Who prepares the workforce?')}</span></> : id === 'solution-title' ? <><span>{t('Your customer training operation.')}</span><span>{t('Without building one from scratch.')}</span></> : t(data.title)}</h2></div><div className={styles.prose}><p>{t(data.body)}</p>{data.note && <p>{t(data.note)}</p>}</div></div>
   return <>
     <Nav pinned />
     <main className={styles.page} lang={locale}>
       <a className={styles.skip} href="#enterprise-main">{t('Skip to content')}</a>
       <div id="enterprise-main" className={styles.brandHero}>
         <PageHero eyebrow={t(c.eyebrow)} title={`${t(c.title[0])} ${t(c.title[1])}`} subtitle={t(c.support)}>
-          <div className={styles.actions}><a className={`${cta.cta} ${styles.button}`} href="#enterprise-briefing">{t(c.cta)} <span aria-hidden="true">↗</span></a><a className={styles.textLink} href="#academy-pricing">{t(c.pricing.nav)} <span aria-hidden="true">↓</span></a></div>
+          <div className={styles.actions}><a className={`${cta.cta} ${styles.button}`} href="#academy-pilot">{t(c.cta)} <span aria-hidden="true">↗</span></a><a className={styles.textLink} href="#academy-pricing">{t(c.pricing.nav)}</a></div>
         </PageHero>
       </div>
       <section className={`${styles.section} ${styles.problem}`} aria-labelledby="gap-title"><div className={styles.wrap}>
@@ -62,8 +62,9 @@ export default async function EnterprisePage({ params }: Props) {
       </div></section>
       <section className={`${styles.section} ${styles.environments}`} aria-labelledby="environments-title"><div className={styles.wrap}>
         <p className={styles.eyebrow}>{t(c.environments.label)}</p><h2 className={styles.environmentsHeading} id="environments-title">{c.environments.titleLines.map(line=><span key={line}>{t(line)}</span>)}</h2>
+        <p className={styles.pricingIntro}>{t(c.environments.body)}</p>
         <div className={styles.environmentGrid}>{c.environments.items.map(([title, body], i) => <article className={literacy.progressionCard} key={title}>{photo((['factory', 'humanoid', 'senior', 'entertainment', 'security', 'government'] as const)[i], '', false, '(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw')}<span className={styles.number}>{number(i)}</span><h3>{t(title)}</h3><p>{t(body)}</p></article>)}</div>
-        <div className={styles.actions}><a className={`${cta.cta} ${styles.button}`} href="#enterprise-briefing">{t(c.focus.areaCta)} <span aria-hidden="true">↗</span></a></div>
+        <div className={styles.actions}><a className={`${cta.cta} ${styles.button}`} href="#academy-pilot">{t(c.focus.areaCta)} <span aria-hidden="true">↗</span></a></div>
         <p className={styles.disclosure}>{t(c.environments.note)}</p>
       </div></section>
       <section className={styles.section} id="academy-process" aria-labelledby="solution-title"><div className={styles.wrap}>
