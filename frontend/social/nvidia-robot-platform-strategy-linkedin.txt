@@ -1,0 +1,9 @@
+NVIDIA's biggest robotics bet may be the infrastructure other robot makers depend on.
+
+At GTC Berlin, Jensen Huang introduced Agile ONE SN, a humanoid reference platform developed with Agile Robots. The 1.4-meter, 40-kilogram robot brings together Jetson Thor computing, Isaac GR00T and dexterous hands. Expected in early 2027, it gives researchers an integrated starting point for developing and validating robotic skills.
+
+For product designers and operations leads, the question extends beyond faster development. Shared tools could reduce duplicated engineering while increasing dependence on one provider's roadmap. And a capable research platform still leaves deployment teams responsible for how a robot communicates intent, handles interruptions and makes failures understandable to the people around it.
+
+As computing and development tools become more reusable, interaction design could become a stronger source of differentiation. Read the full piece on The Robot Age: https://therobotage.com/news/nvidia-robot-platform-strategy
+
+#Robotics #AI #HumanoidRobots #HRI #ProductDesign
