@@ -1,0 +1,9 @@
+Generated using the built-in image_gen tool.
+Saved source: frontend/public/images/news/nvidia-robot-platform-strategy-header.png
+Prompt: Wide 16:9 editorial conceptual illustration for The Robot Age opinion article about NVIDIA providing the computing foundation of robotics. A small unbranded humanoid research robot standing on a physical layered foundation of circuit boards and server modules on a robotics laboratory workbench, with a human engineer's hand adjusting a connector at edge of frame. Show infrastructure as the visual foundation, thoughtful grounded still life, not a depiction of an actual product or event. Refined editorial photography aesthetic, warm muted sand cream, olive, tan gold and deep charcoal, single warm orange cable accent. Natural directional light, shallow depth of field, clear silhouette, generous negative space, realistic materials. No text, no logos, no watermarks, no glowing holograms, no neon.
+
+Body photograph: NVIDIA's October 21, 2026 Berlin keynote coverage.
+Source page: https://blogs.nvidia.com/blog/gtc-berlin-2026-keynote/
+Original image: https://blogs.nvidia.com/wp-content/uploads/2026/10/jhh-keynote-closeup-1920x1080-1-1680x945.jpg
+Saved source: frontend/public/images/news/nvidia-berlin-2026-keynote.jpg
+Both images published and verified using scripts/publish-images.mjs --publish.
