@@ -672,12 +672,6 @@
     "expiresAt": "2026-11-14T00:00:00.000Z"
   },
   {
-    "id": "jobs/product-manager-bear-robotics.md",
-    "route": "/jobs/product-manager-bear-robotics",
-    "sourceHash": "468c8c32f405754ec27802f5ddb741816c13cba7e2e7187a384ec09244f8f09a",
-    "expiresAt": "2026-10-19T00:00:00.000Z"
-  },
-  {
     "id": "jobs/product-manager-cabin-intelligence-applied-intuition.md",
     "route": "/jobs/product-manager-cabin-intelligence-applied-intuition",
     "sourceHash": "ecdd6db496f63b4c2a278584198b78be9185cbb8e22bb439d8400e55ab19d08d",
