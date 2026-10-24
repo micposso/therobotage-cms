@@ -15,7 +15,7 @@ export async function sendEnterpriseRequest(_previous: EnterpriseResult, data: F
       from: process.env.EMAIL_FROM_HELLO ?? 'onboarding@resend.dev',
       to: 'mike@therobotage.com',
       replyTo: values.email,
-      subject: 'New Academy briefing request — The Robot Age',
+      subject: `New enterprise inquiry: ${values.service} — The Robot Age`,
       html: emailHtml(enterpriseFields.map(({ name, label }) =>
         `<p><strong>${escapeHtml(label)}:</strong><br />${escapeHtml(values[name] || 'Not provided').replace(/\n/g, '<br />')}</p>`).join('')),
     })

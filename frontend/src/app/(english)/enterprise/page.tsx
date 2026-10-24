@@ -30,8 +30,8 @@ const assets = {
 }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale = 'en' } = await params
-  const title = 'Robot Deployment Academy-as-a-Service | The Robot Age'
-  const description = 'Workforce onboarding for robotics manufacturers, integrators, and RaaS providers. Explore a paid Academy pilot with role-based training, practical assessments, and deployment-readiness measurement.'
+  const title = 'Robot Deployment & Community Readiness | The Robot Age'
+  const description = 'Vendor-neutral deployment readiness, workforce training, adoption research, and community engagement for robot manufacturers, integrators, RaaS providers, and operators.'
   return pageMetadata({
     title: { absolute: title }, description,
     openGraph: { title, description, type: 'website', images: [{ url: imageUrl(assets.hero), alt: c.alt.hero }] },
@@ -52,9 +52,15 @@ export default async function EnterprisePage({ params }: Props) {
       <a className={styles.skip} href="#enterprise-main">{t('Skip to content')}</a>
       <div id="enterprise-main" className={styles.brandHero}>
         <PageHero eyebrow={t(c.eyebrow)} title={`${t(c.title[0])} ${t(c.title[1])}`} subtitle={t(c.support)}>
-          <div className={styles.actions}><a className={`${cta.cta} ${styles.button}`} href="#academy-pilot">{t(c.cta)} <span aria-hidden="true">↗</span></a><a className={styles.textLink} href="#academy-pricing">{t(c.pricing.nav)}</a></div>
+          <div className={styles.actions}><a className={`${cta.cta} ${styles.button}`} href="#enterprise-services">{t(c.cta)} <span aria-hidden="true">↗</span></a><a className={styles.textLink} href="#academy-pilot">{t(c.heroSecondary)}</a></div>
         </PageHero>
       </div>
+      <section className={styles.section} id="enterprise-services" aria-labelledby="services-title"><div className={styles.wrap}>
+        {intro(c.services, 'services-title')}
+        <div className={styles.services}>{c.services.items.map(service => <article className={literacy.progressionCard} key={service.number}>
+          <span className={styles.number}>{service.number}</span><h3>{t(service.title)}</h3><p><strong>{t(service.value)}</strong></p><p>{t(service.description)}</p><a className={styles.textLink} href={service.href}>{t(service.cta)} <span aria-hidden="true">↓</span></a>
+        </article>)}</div>
+      </div></section>
       <section className={`${styles.section} ${styles.problem}`} aria-labelledby="gap-title"><div className={styles.wrap}>
         {intro(c.problem, 'gap-title')}
         <ol className={`${styles.challengeList} ${literacy.progression}`}>{c.problem.items.map(([title, body], i) => <li key={title}><article className={literacy.progressionCard} aria-labelledby={`challenge-${i}`}><span className={styles.number}>{number(i)}</span><h3 id={`challenge-${i}`}>{t(title)}</h3><p className={literacy.progressionDescription}>{t(body)}</p></article></li>)}</ol>
@@ -64,10 +70,15 @@ export default async function EnterprisePage({ params }: Props) {
         <p className={styles.eyebrow}>{t(c.environments.label)}</p><h2 className={styles.environmentsHeading} id="environments-title">{c.environments.titleLines.map(line=><span key={line}>{t(line)}</span>)}</h2>
         <p className={styles.pricingIntro}>{t(c.environments.body)}</p>
         <div className={styles.environmentGrid}>{c.environments.items.map(([title, body], i) => <article className={literacy.progressionCard} key={title}>{photo((['factory', 'humanoid', 'senior', 'entertainment', 'security', 'government'] as const)[i], '', false, '(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw')}<span className={styles.number}>{number(i)}</span><h3>{t(title)}</h3><p>{t(body)}</p></article>)}</div>
-        <div className={styles.actions}><a className={`${cta.cta} ${styles.button}`} href="#academy-pilot">{t(c.focus.areaCta)} <span aria-hidden="true">↗</span></a></div>
+        <div className={styles.actions}><a className={`${cta.cta} ${styles.button}`} href="#deployment-readiness">{t(c.focus.areaCta)} <span aria-hidden="true">↗</span></a></div>
         <p className={styles.disclosure}>{t(c.environments.note)}</p>
       </div></section>
-      <section className={styles.section} id="academy-process" aria-labelledby="solution-title"><div className={styles.wrap}>
+      <section className={styles.section} id="deployment-readiness" aria-labelledby="readiness-title"><div className={styles.wrap}>
+        {intro(c.readiness, 'readiness-title')}
+        <ol className={styles.capabilities}>{c.readiness.items.map(([title, body], i) => <li key={title}><span className={styles.number}>{number(i)}</span><div><h3>{t(title)}</h3><p>{t(body)}</p></div></li>)}</ol>
+        <div className={styles.actions}><a className={styles.textLink} href="#enterprise-briefing">{t(c.readiness.cta)} <span aria-hidden="true">↗</span></a></div>
+      </div></section>
+      <section className={styles.section} id="academy-service" aria-labelledby="solution-title"><div className={styles.wrap}>
         {intro(c.solution, 'solution-title')}
         <div className={styles.solutionGrid}>{photo('multilingual', styles.factoryPhoto)}<ol className={styles.capabilities}>{c.solution.items.map(([title, body], i) => <li key={title}><span className={styles.number}>{number(i)}</span><div><h3>{t(title)}</h3><p>{t(body)}</p></div></li>)}</ol></div>
         <div className={styles.actions}><a className={styles.textLink} href="#academy-pilot">{t(c.focus.pilotCta)} <span aria-hidden="true">↓</span></a></div>
@@ -89,6 +100,16 @@ export default async function EnterprisePage({ params }: Props) {
         <p className={styles.measurement}>{t(c.focus.measurement)}</p>
         <details className={styles.details}><summary>{t(c.focus.deliverables)}</summary><ul>{c.pilot.items.map(item=><li key={item}>{t(item)}</li>)}</ul></details>
         <div className={styles.actions}><a className={`${cta.cta} ${styles.button}`} href="#enterprise-briefing">{t(c.pilot.cta)} <span aria-hidden="true">↗</span></a></div>
+      </div></section>
+      <section className={styles.section} id="adoption-performance" aria-labelledby="adoption-title"><div className={styles.wrap}>
+        {intro(c.adoption, 'adoption-title')}
+        <div className={styles.solutionGrid}>{photo('adoption', styles.factoryPhoto)}<ol className={styles.capabilities}>{c.adoption.items.map(([title, body], i) => <li key={title}><span className={styles.number}>{number(i)}</span><div><h3>{t(title)}</h3><p>{t(body)}</p></div></li>)}</ol></div>
+        <div className={styles.actions}><a className={`${cta.cta} ${styles.button}`} href="#enterprise-briefing">{t(c.adoption.cta)} <span aria-hidden="true">↗</span></a></div>
+      </div></section>
+      <section className={`${styles.section} ${styles.problem}`} id="community-readiness" aria-labelledby="community-title"><div className={styles.wrap}>
+        {intro(c.community, 'community-title')}
+        <ol className={`${styles.challengeList} ${literacy.progression}`}>{c.community.items.map(([title, body], i) => <li key={title}><article className={literacy.progressionCard} aria-labelledby={`community-area-${i}`}><span className={styles.number}>{number(i)}</span><h3 id={`community-area-${i}`}>{t(title)}</h3><p className={literacy.progressionDescription}>{t(body)}</p></article></li>)}</ol>
+        <p className={styles.scope}>{t(c.community.scope)}</p><div className={styles.actions}><a className={`${cta.cta} ${styles.button}`} href="#enterprise-briefing">{t(c.community.cta)} <span aria-hidden="true">↗</span></a></div>
       </div></section>
       <section className={`${styles.section} ${styles.briefing}`} id="enterprise-briefing" aria-labelledby="briefing-title"><div className={`${styles.wrap} ${styles.formGrid}`}>
         <div><p className={styles.eyebrow}>{t(c.form.label)}</p><h2 id="briefing-title">{t(c.form.title)}</h2><p>{t(c.form.body)}</p><p className={styles.scope}>{t(c.scope)}</p></div><div><EnterpriseForm locale={locale} /><details className={styles.details}><summary>{t(c.programs.title)}</summary><ul>{c.programs.items.map(([title,,href])=><li key={href}><Link href={contentHref(href,locale)}>{t(title)}</Link></li>)}</ul></details></div>
