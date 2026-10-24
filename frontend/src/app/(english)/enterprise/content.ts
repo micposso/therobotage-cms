@@ -3,50 +3,111 @@ export const enterpriseContent = {
   "offer": "Robot Deployment Academy-as-a-Service",
   "title": [
     "You deploy the robots.",
-    "We prepare the people."
+    "We prepare the people and communities."
   ],
-  "support": "Workforce onboarding for commercial robotics deployments. We help robot manufacturers, integrators, and RaaS providers prepare customer teams through role-based training, multilingual learning, and practical readiness assessments. Start with one robot, one customer site, and a measurable paid pilot.",
+  "support": "Successful robot deployment requires more than technology. The Robot Age helps robotics companies prepare workplaces, train employees, measure adoption, and engage the communities where robots operate.",
   "intro": "The Robot Age helps robotics manufacturers, integrators, and deployment providers prepare their customers for working with robots through managed education, onboarding, practical assessments, and adoption programs.",
-  "cta": "Explore the Founding Pilot",
+  "cta": "Explore Our Enterprise Services",
+  "heroSecondary": "Explore the Founding Academy Pilot",
   "explore": "Explore How It Works",
   "scope": "The Robot Age prepares people to work with commercial robots. We do not manufacture, sell, install, commission, or certify robots. Our programs complement manufacturer-approved technical instruction, site-specific safety requirements, and the responsibilities of qualified operators, employers, and deployment partners.",
+  "services": {
+    "label": "OUR ENTERPRISE SERVICES",
+    "title": "From deployment readiness to community acceptance.",
+    "body": "We address the human challenges of commercial robotics before, during, and after deployment. Our services support manufacturers, integrators, and operators introducing robots into workplaces and shared environments.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Robot Deployment Readiness",
+        "value": "Prepare the workplace before the robots arrive.",
+        "description": "Evaluate workflows, employee responsibilities, human-robot interactions, communication, accessibility, and escalation procedures before deployment.",
+        "href": "#deployment-readiness",
+        "cta": "Explore Deployment Readiness"
+      },
+      {
+        "number": "02",
+        "title": "Robot Deployment Academy-as-a-Service",
+        "value": "Prepare the people who will work with robots.",
+        "description": "Turn manufacturer-approved operating procedures into practical, role-based learning, assessments, and ongoing education across customer sites.",
+        "href": "#academy-service",
+        "cta": "Explore Academy-as-a-Service"
+      },
+      {
+        "number": "03",
+        "title": "Robot Adoption & Performance",
+        "value": "Measure what happens after deployment.",
+        "description": "Understand how people interact with robots in real operating environments, identify adoption challenges, and improve human-robot workflows over time.",
+        "href": "#adoption-performance",
+        "cta": "Explore Adoption & Performance"
+      },
+      {
+        "number": "04",
+        "title": "Robot Community Readiness",
+        "value": "Prepare communities for robots entering shared spaces.",
+        "description": "Engage affected people through stakeholder research, public education, multilingual communication, and structured community feedback that informs deployment decisions.",
+        "href": "#community-readiness",
+        "cta": "Explore Community Readiness"
+      }
+    ]
+  },
   "problem": {
     "label": "THE DEPLOYMENT GAP",
     "title": "Your engineers deploy robots. Who prepares the workforce?",
-    "body": "When every new customer depends on your technical team for repeated instruction, deployment growth creates an onboarding bottleneck. We help turn that repeated effort into a reusable, measurable workforce training program.",
+    "body": "A technically successful deployment does not automatically prepare a workplace, its employees, or the surrounding community. Roles, workflows, communication, accessibility, training, and feedback all shape how a robot becomes part of everyday operations.",
     "items": [
       [
-        "Free specialist capacity",
-        "Move repeatable operator and supervisor instruction into a structured onboarding program so engineers can focus on deployment, commissioning, and complex technical issues."
+        "Prepare the environment",
+        "Examine workflows, responsibilities, interaction points, accessibility needs, and escalation procedures before robots enter routine operations."
       ],
       [
-        "Control onboarding costs",
-        "Reuse approved training across customer sites instead of rebuilding instruction for every deployment. Measure specialist hours, training effort, and cost per site."
+        "Prepare the people",
+        "Give operators, supervisors, and customer teams practical, role-based education built from manufacturer-approved procedures."
       ],
       [
-        "Support customer expansion",
-        "Give customers a consistent way to prepare new employees, shifts, and locations as their robot deployments grow."
+        "Learn from real use",
+        "Gather workforce and community feedback after deployment so recurring friction, questions, and recovery challenges can inform decisions."
       ]
     ],
     "closing": "You focus on your robots. We help your customers learn how to work with them."
   },
+  "readiness": {
+    "label": "ROBOT DEPLOYMENT READINESS",
+    "title": "Prepare the workplace before the robots arrive.",
+    "body": "We help organizations evaluate the human and operational conditions surrounding a robot deployment, including workflows, employee responsibilities, human-robot interactions, communication, accessibility, and escalation procedures.",
+    "items": [
+      ["Human-robot interaction assessments", "Review the moments where people encounter, direct, monitor, or recover the robot in real workflows."],
+      ["Workplace and workflow readiness", "Examine how the robot fits into existing spaces, routines, handoffs, and operating constraints."],
+      ["Roles and responsibilities", "Clarify what operators, supervisors, technical teams, and deployment partners are expected to do."],
+      ["Operational communication and escalation", "Define clear communication, issue reporting, and human escalation paths around robot operations."],
+      ["Multilingual and multicultural readiness", "Account for the languages, workplace cultures, and communication practices of the people involved."]
+    ],
+    "cta": "Discuss Deployment Readiness"
+  },
   "solution": {
     "label": "ACADEMY-AS-A-SERVICE",
     "title": "Your customer training operation. Without building one from scratch.",
-    "body": "Robot Deployment Academy-as-a-Service helps manufacturers, integrators, distributors, and RaaS providers create and operate repeatable workforce onboarding programs around their robot products. We combine approved operating procedures, instructional design, practical assessments, and ongoing learning support. Training can be adapted to workforce roles, languages, and local operating contexts.",
+    "body": "We design and manage repeatable workforce training programs for robot manufacturers, integrators, distributors, and RaaS providers. We turn manufacturer-approved operating procedures into practical, role-based learning, assessments, and ongoing education across customer sites.",
     "note": "Our research-informed approach also considers how people interpret robot signals, spatial behavior, interaction boundaries, and recovery procedures. English and Spanish program delivery are scoped during discovery, including appropriate content review. Additional languages are available by separate agreement, subject to delivery capacity.",
     "items": [
       [
-        "Build the program",
-        "We turn your approved procedures and operating workflows into role-based lessons, job aids, knowledge checks, and practical assessments."
+        "Workforce onboarding",
+        "Turn approved procedures and operating workflows into structured lessons, job aids, and knowledge checks for customer teams."
       ],
       [
-        "Train across customer sites",
-        "Deliver consistent instruction through digital learning, instructor-supported sessions, or train-the-trainer programs, with multilingual delivery scoped to workforce needs."
+        "Operator and supervisor training",
+        "Create role-based pathways for the people who operate, monitor, support, and oversee robot workflows."
       ],
       [
-        "Measure and improve",
-        "Evaluate practical task readiness, identify recurring difficulties, and update learning materials as robot workflows and customer needs evolve."
+        "Multilingual learning programs",
+        "Deliver consistent instruction across customer sites, with language and cultural adaptation scoped to workforce needs."
+      ],
+      [
+        "Practical readiness assessments",
+        "Evaluate agreed robot-related tasks with observation checklists and evidence-based readiness findings."
+      ],
+      [
+        "Learning management and reporting",
+        "Manage ongoing education and report on training activity, readiness, and recurring learning needs as deployments evolve."
       ]
     ]
   },
@@ -176,6 +237,33 @@ export const enterpriseContent = {
     ],
     "cta": "Discuss a Founding Pilot"
   },
+  "adoption": {
+    "label": "ROBOT ADOPTION & PERFORMANCE",
+    "title": "Deployment is the beginning. Adoption is the measure.",
+    "body": "A robot can be technically operational without being successfully integrated into everyday work.",
+    "note": "We help robotics companies examine how employees and users interact with deployed robots, identify recurring difficulties, and evaluate opportunities to improve interaction, onboarding, and operational procedures.",
+    "items": [
+      ["Workforce adoption research", "Study how employees understand, use, and adapt to robots in active operating environments."],
+      ["Human-robot interaction observations", "Observe real interactions and workflows without assuming that technical uptime equals successful integration."],
+      ["Operator and supervisor feedback", "Collect structured accounts from the people responsible for daily robot use and oversight."],
+      ["Interaction friction and failure recovery", "Identify recurring difficulties, unclear signals, and the ways people respond when workflows break down."],
+      ["Adoption and experience reporting", "Document evidence and recommend improvements without making unsupported performance or ROI guarantees."]
+    ],
+    "cta": "Discuss Adoption Assessment"
+  },
+  "community": {
+    "label": "ROBOT COMMUNITY READINESS",
+    "title": "Before robots enter a community, the conversation should begin.",
+    "body": "As robots become part of public and shared environments, deployment teams face questions about accessibility, privacy, safety, jobs, and the use of shared spaces.",
+    "note": "The Robot Age helps robotics companies understand community concerns, communicate across languages and cultures, and establish meaningful engagement before and after deployment.",
+    "items": [
+      ["Community Impact Assessment", "Identify affected stakeholders, accessibility concerns, public perceptions, and potential friction before deployment."],
+      ["Public Education & Engagement", "Support community demonstrations, information sessions, multilingual communication, and accessible educational materials that help people understand the robots operating around them."],
+      ["Community Feedback & Monitoring", "Collect structured feedback, document recurring concerns, and recommend improvements to deployment practices based on real community experiences."]
+    ],
+    "scope": "Community Readiness is a custom-scoped consulting service, separate from the Academy subscription and subject to initial customer discovery. Community feedback is intended to inform deployment decisions. This service is not lobbying, legal advice, regulatory approval, permitting, or a guarantee of public acceptance.",
+    "cta": "Discuss Community Readiness"
+  },
   "programs": {
     "title": "Part of a broader robotics education ecosystem.",
     "items": [
@@ -203,9 +291,9 @@ export const enterpriseContent = {
   },
   "form": {
     "label": "LET'S TALK",
-    "title": "Is customer onboarding slowing your deployments?",
-    "body": "Tell us about your robot product, customer sites, and current onboarding process. We’ll discuss whether a Founding Academy Pilot could help your team standardize training, measure workforce readiness, and reduce repetitive instruction. Best suited for robot manufacturers, integrators, distributors, and RaaS providers with an active or upcoming commercial deployment.",
-    "cta": "Request a Pilot Conversation"
+    "title": "Let's prepare your next robot deployment.",
+    "body": "Tell us about your robot, deployment environment, and the people or communities involved. We’ll discuss which services may be appropriate for your needs.",
+    "cta": "Request an Enterprise Conversation"
   },
   "alt": {
     "hero": "Restaurant employees and a trainer learning to use a wheeled tray service robot before service.",
@@ -222,7 +310,7 @@ export const enterpriseContent = {
   "imageNote": "Conceptual workplace illustration · AI-generated",
   "outcome": "The goal: people and robots working confidently alongside one another.",
   "focus": {
-    "areaCta": "Explore the Founding Pilot",
+    "areaCta": "Explore Deployment Readiness",
     "pilotCta": "Explore the Founding Pilot",
     "deliverables": "Pilot scope, terms, and deliverables",
     "measurement": "Results depend on the deployment context. Improvements are measured, not guaranteed. Baselines, success criteria, and review methods are agreed before work begins. The final deliverable is an evidence-based findings report, not a safety certification.",

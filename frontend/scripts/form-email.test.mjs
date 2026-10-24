@@ -30,14 +30,17 @@ test('enterprise validates input, includes every field, and requires provider ac
     delete globalThis.__formEmailPayload
     assert.equal((await sendEnterpriseRequest({ success: false }, data)).success, false)
     assert.equal(globalThis.__formEmailPayload, undefined)
-    for (const [key, value] of Object.entries({ name: '<script>name</script>', email: 'person@example.com', organization: 'Example', companyType: 'Robot manufacturer', robot: 'Warehouse robots' })) data.set(key, value)
+    for (const [key, value] of Object.entries({ name: '<script>name</script>', email: 'person@example.com', organization: 'Example', companyType: 'Robot manufacturer', service: 'Robot Community Readiness', robot: 'Warehouse robots' })) data.set(key, value)
     assert.equal((await sendEnterpriseRequest({ success: false }, data)).success, mode === 'accepted')
     const payload = globalThis.__formEmailPayload
     assert.equal(payload.to, 'mike@therobotage.com')
     assert.equal(payload.replyTo, 'person@example.com')
     assert.ok(payload.html.includes('&lt;script&gt;name&lt;/script&gt;'))
-    for (const value of ['Example', 'Robot manufacturer', 'Warehouse robots']) assert.ok(payload.html.includes(value))
+    for (const value of ['Example', 'Robot manufacturer', 'Robot Community Readiness', 'Warehouse robots']) assert.ok(payload.html.includes(value))
     data.set('email', 'invalid')
+    assert.equal((await sendEnterpriseRequest({ success: false }, data)).success, false)
+    data.set('email', 'person@example.com')
+    data.set('service', 'Unsupported service')
     assert.equal((await sendEnterpriseRequest({ success: false }, data)).success, false)
   }
   delete globalThis.__formEmailPayload

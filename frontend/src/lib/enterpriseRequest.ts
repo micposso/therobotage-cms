@@ -1,10 +1,12 @@
 export const companyTypes = ['Robot manufacturer', 'Systems integrator', 'Robotics-as-a-Service provider', 'Distributor / deployment partner', 'Commercial robot operator', 'Other'] as const
 export const deploymentStages = ['Planning an initial deployment', 'First customer deployments', 'Multiple active customer sites', 'Scaling across markets'] as const
+export const enterpriseServices = ['Robot Deployment Readiness', 'Robot Deployment Academy-as-a-Service', 'Robot Adoption & Performance', 'Robot Community Readiness', 'Multiple Services', 'Not Sure / General Inquiry'] as const
 export const enterpriseFields = [
   { name: 'name', label: 'Full name', required: true, type: 'text', autoComplete: 'name', maxLength: 254 },
   { name: 'email', label: 'Work email', required: true, type: 'email', autoComplete: 'email', maxLength: 254 },
   { name: 'organization', label: 'Organization', required: true, type: 'text', autoComplete: 'organization', maxLength: 254 },
   { name: 'companyType', label: 'Company type', required: true, type: 'select', options: companyTypes, maxLength: 254 },
+  { name: 'service', label: 'Which enterprise service are you interested in?', required: true, type: 'select', options: enterpriseServices, maxLength: 254 },
   { name: 'robot', label: 'Robot or application', required: false, type: 'text', maxLength: 254 },
   { name: 'stage', label: 'Deployment stage', required: false, type: 'select', options: deploymentStages, maxLength: 254 },
   { name: 'languages', label: 'Languages or workforce needs', required: false, type: 'textarea', maxLength: 3000 },

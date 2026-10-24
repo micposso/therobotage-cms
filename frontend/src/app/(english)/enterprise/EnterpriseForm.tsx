@@ -47,7 +47,7 @@ export default function EnterpriseForm({ locale = 'en' }: { locale?: Locale }) {
         {errors[field.name] && <p className={styles.error} id={`${id}-error`}>{t(errors[field.name]!)}</p>}
       </div>
   }
-  if (state.success) return <p ref={successRef} className={styles.success} role="status" tabIndex={-1}>{t('Thank you. Your Academy briefing request has been received. We will be in touch using the email you provided.')}</p>
+  if (state.success) return <p ref={successRef} className={styles.success} role="status" tabIndex={-1}>{t('Thank you. Your enterprise inquiry has been received. We will be in touch using the email you provided.')}</p>
   return <form ref={formRef} className={styles.form} action={action} noValidate aria-busy={pending} onSubmit={(event) => {
     const next = validateEnterpriseRequest(new FormData(event.currentTarget))
     if (Object.keys(next).length) {
@@ -59,7 +59,7 @@ export default function EnterpriseForm({ locale = 'en' }: { locale?: Locale }) {
     <p className={styles.formNote}>{t('Required fields are marked *.')}</p>
     <div className={styles.honeypot} aria-hidden="true"><label htmlFor="enterprise-website">{t('Leave this field empty')}</label><input id="enterprise-website" name="website" tabIndex={-1} autoComplete="off" /></div>
     {enterpriseFields.filter(field => field.required).map(renderField)}
-    <details className={`${styles.details} ${styles.optionalFields}`}><summary>{t('Optional: Tell us your robot type, number of customer sites, workforce languages, and biggest onboarding challenge.')}</summary><div className={styles.optionalFieldsGrid}>{enterpriseFields.filter(field => !field.required).map(renderField)}</div></details>
+    <details className={`${styles.details} ${styles.optionalFields}`}><summary>{t('Optional: Tell us about your robot, deployment stage, language needs, and additional context.')}</summary><div className={styles.optionalFieldsGrid}>{enterpriseFields.filter(field => !field.required).map(renderField)}</div></details>
     <p className={styles.consent}>{t('By submitting, you agree that The Robot Age may contact you about this inquiry. Read our')} <Link href="/privacy">{t('Privacy Policy')}</Link>.</p>
     {(Object.values(errors).some(Boolean) || state.error) && <p className={styles.formError} role="alert">{t(state.error || 'Please check the highlighted fields.')}</p>}
     <button type="submit" disabled={pending} className={`${cta.cta} ${styles.submitButton}`}>{t(pending ? 'Sending your request…' : enterpriseContent.form.cta)} <span aria-hidden="true">↗</span></button>
