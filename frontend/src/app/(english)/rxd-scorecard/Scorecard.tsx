@@ -1,9 +1,9 @@
 'use client'
 
-import { useState, useRef, useEffect, useCallback, useActionState } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import Image from '@/components/MediaImage'
 import Link from 'next/link'
-import { sendWhitepaperEmail } from '@/app/actions/sendWhitepaperEmail'
+import WhitepaperButton from '@/components/WhitepaperModal/WhitepaperButton'
 import styles from './rxd-scorecard.module.css'
 
 /* ─── Framework data ──────────────────────────────────────────────────────── */
@@ -35,7 +35,6 @@ function verdictFor(avg: number): { tier: string; line: string } {
   return { tier: 'Exemplary', line: 'A benchmark other robots should study.' }
 }
 
-const initialEmailState = { success: false, error: undefined as string | undefined }
 
 /* ─── Score selector (accessible radiogroup) ──────────────────────────────── */
 function ScoreSelector({
@@ -420,7 +419,6 @@ export default function Scorecard() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const auditRef = useRef<HTMLDivElement>(null)
 
-  const [emailState, emailAction, emailPending] = useActionState(sendWhitepaperEmail, initialEmailState)
 
   const scoredKeys = DIMENSIONS.filter((d) => scores[d.key] != null)
   const scoredCount = scoredKeys.length
@@ -546,38 +544,10 @@ export default function Scorecard() {
 
               {/* Lead capture — post-value, never gated */}
               <div className={styles.leadCard}>
-                {emailState.success ? (
-                  <div className={styles.leadSuccess}>
-                    <p className={styles.formEyebrow}>On its way</p>
-                    <p className={styles.leadSuccessText}>
-                      Check your inbox for the full RXD white paper and scoring rubric. Look in spam if it is not there in a few minutes.
-                    </p>
-                  </div>
-                ) : (
-                  <form action={emailAction} className={styles.leadForm} noValidate>
-                    <p className={styles.formEyebrow}>Go deeper</p>
-                    <h3 className={styles.leadHeading}>Want the full white paper and scoring rubric?</h3>
-                    <p className={styles.leadSub}>
-                      The complete RXD framework: detailed 1&ndash;5 rubrics for every dimension, methodology, and a printable worksheet.
-                    </p>
-                    <div className={styles.leadFieldRow}>
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        placeholder="you@work.com"
-                        aria-label="Email address"
-                        className={styles.leadInput}
-                      />
-                      <button type="submit" className={styles.leadSubmit} disabled={emailPending}>
-                        {emailPending ? 'Sending…' : 'Send it'}
-                      </button>
-                    </div>
-                    {emailState.error && (
-                      <p className={styles.errorMsg} role="alert">{emailState.error}</p>
-                    )}
-                  </form>
-                )}
+                <p className={styles.formEyebrow}>Go deeper</p>
+                <h3 className={styles.leadHeading}>Want the full white paper and scoring rubric?</h3>
+                <p className={styles.leadSub}>Get the complete RXD framework, methodology, and printable worksheet.</p>
+                <WhitepaperButton className={styles.leadSubmit}>Download the white paper</WhitepaperButton>
               </div>
 
               <Link href="/learn/rpdp#curriculum" className={styles.repCta}>

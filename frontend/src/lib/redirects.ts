@@ -25,8 +25,9 @@ const redirects: Redirect[] = [
   { source: '/hrx', destination: '/rxd', permanent: true },
 
   // ── RXD white paper PDF ──────────────────────────────────────────────────
+  { source: '/pdf/rxd-therobotage-v2.pdf', destination: '/rxd#whitepaper', permanent: false },
   // Old PDF filename — redirect anyone who bookmarked the original link
-  { source: '/pdf/href-therobotage-v2.pdf', destination: '/pdf/rxd-therobotage-v2.pdf', permanent: true },
+  { source: '/pdf/href-therobotage-v2.pdf', destination: '/rxd#whitepaper', permanent: false },
 ]
 
 export default redirects

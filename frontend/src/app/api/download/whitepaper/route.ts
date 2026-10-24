@@ -1,30 +1,28 @@
-import { Resend } from 'resend'
+import { readFile } from 'node:fs/promises'
+import path from 'node:path'
 import { NextResponse } from 'next/server'
+import { hasWhitepaperAccess } from '@/lib/whitepaper-access'
 
 export const dynamic = 'force-dynamic'
+export const runtime = 'nodejs'
 
-// Link previews and availability checks do not count as download requests.
-export async function HEAD(request: Request) {
-  const response = NextResponse.redirect(new URL('/pdf/rxd-therobotage-v2.pdf', request.url), 307)
-  response.headers.set('Cache-Control', 'no-store')
-  return response
-}
-
-export async function GET(request: Request) {
-  // Notify on the site's direct download links as well as emailed download links.
-  // A delivery outage must not prevent readers from accessing the paper.
-  try {
-    const { error } = await new Resend(process.env.RESEND_API_KEY).emails.send({
-      from: process.env.EMAIL_FROM_RESEARCH ?? 'onboarding@resend.dev',
-      to: 'mike@therobotage.com',
-      subject: 'White paper download — Robot Experience Design v2.0',
-      text: `The RXD v2.0 white paper download was requested at ${new Date().toISOString()}.\nThis is an anonymous download; no email address was collected.`,
-    })
-    if (error) console.error('White paper download notification failed:', error)
-  } catch (error) {
-    console.error('White paper download notification failed:', error)
+async function download(request: Request, head = false) {
+  if (!hasWhitepaperAccess(new URL(request.url).searchParams.get('token'))) {
+    const response = NextResponse.redirect(new URL('/rxd#whitepaper', request.url), 307)
+    response.headers.set('Cache-Control', 'private, no-store')
+    return response
   }
-  const response = NextResponse.redirect(new URL('/pdf/rxd-therobotage-v2.pdf', request.url), 307)
-  response.headers.set('Cache-Control', 'no-store')
-  return response
+  const pdf = head ? null : new Uint8Array(await readFile(path.join(process.cwd(), 'private', 'rxd-therobotage-v2.pdf')))
+  return new Response(pdf, {
+    headers: {
+      'Content-Type': 'application/pdf',
+      'Content-Disposition': 'attachment; filename="rxd-therobotage-v2.pdf"',
+      'Cache-Control': 'private, no-store',
+      'Referrer-Policy': 'no-referrer',
+      'X-Robots-Tag': 'noindex, nofollow',
+    },
+  })
 }
+
+export async function GET(request: Request) { return download(request) }
+export async function HEAD(request: Request) { return download(request, true) }
