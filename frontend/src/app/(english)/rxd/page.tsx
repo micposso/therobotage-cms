@@ -1,3 +1,4 @@
+import WhitepaperButton from '@/components/WhitepaperModal/WhitepaperButton'
 import { imageUrl } from '@/lib/image-assets'
 import Image from '@/components/MediaImage'
 import Link from 'next/link'
@@ -53,12 +54,9 @@ export default async function RxdPage({ params }: { params: Promise<{ locale?: L
       <section className={styles.earlyCtaSection}>
         <div className="container-fluid">
           <div className={styles.earlyCtaInner}>
-            <a
-              href="/api/download/whitepaper"
-              target="_blank"
-              rel="noopener noreferrer"
+            <WhitepaperButton
               className={styles.earlyCtaButton}
-            >{t("Download the White Paper (v2.0) →")}</a>
+            >{t("Download the White Paper (v2.0) →")}</WhitepaperButton>
             <span className={styles.earlyCtaMeta}>{t("PDF · Free · CC BY-NC 4.0")}</span>
           </div>
         </div>
@@ -141,12 +139,9 @@ export default async function RxdPage({ params }: { params: Promise<{ locale?: L
               <li>{t("Methodology, research background, and application guidance")}</li>
             </ul>
             <div className={styles.downloadCta}>
-              <a
-                href="/api/download/whitepaper"
-                target="_blank"
-                rel="noopener noreferrer"
+              <WhitepaperButton
                 className={styles.downloadButton}
-              >{t("Download the RXD White Paper (v2.0) →")}</a>
+              >{t("Download the RXD White Paper (v2.0) →")}</WhitepaperButton>
               <p className={styles.downloadSubtext}>{t("PDF, free to download. Licensed CC BY-NC 4.0.")}</p>
             </div>
           </div>

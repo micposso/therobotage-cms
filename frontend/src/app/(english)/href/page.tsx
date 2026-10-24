@@ -1,3 +1,4 @@
+import WhitepaperButton from '@/components/WhitepaperModal/WhitepaperButton'
 import { imageUrl } from '@/lib/image-assets'
 import Nav from '@/components/Nav/Nav'
 import PageHero from '@/components/PageHero/PageHero'
@@ -40,14 +41,11 @@ export default function HrefPage() {
       <section className={styles.earlyCtaSection}>
         <div className="container-fluid">
           <div className={styles.earlyCtaInner}>
-            <a
-              href="/api/download/whitepaper"
-              target="_blank"
-              rel="noopener noreferrer"
+            <WhitepaperButton
               className={styles.earlyCtaButton}
             >
               Download the White Paper (v2.0) &rarr;
-            </a>
+            </WhitepaperButton>
             <span className={styles.earlyCtaMeta}>PDF · Free · CC BY-NC 4.0</span>
           </div>
         </div>
@@ -99,14 +97,11 @@ export default function HrefPage() {
               <li>Methodology, research background, and application guidance</li>
             </ul>
             <div className={styles.downloadCta}>
-              <a
-                href="/api/download/whitepaper"
-                target="_blank"
-                rel="noopener noreferrer"
+              <WhitepaperButton
                 className={styles.downloadButton}
               >
                 Download the HREF White Paper (v2.0) &rarr;
-              </a>
+              </WhitepaperButton>
               <p className={styles.downloadSubtext}>
                 PDF, free to download. Licensed CC BY-NC 4.0.
               </p>

@@ -126,6 +126,12 @@
     "expiresAt": null
   },
   {
+    "id": "news/nvidia-robot-platform-strategy.md",
+    "route": "/news/nvidia-robot-platform-strategy",
+    "sourceHash": "b6bc331b92418c00e9432d5bdda486d1326477437c22484b027c80fd730323c9",
+    "expiresAt": null
+  },
+  {
     "id": "news/robot-com-r-noid-field-experience.md",
     "route": "/news/robot-com-r-noid-field-experience",
     "sourceHash": "41a88d7832e34c41d0f6ef5ee4876b45a07672d0677b4abebfcd84e8ab7c435c",

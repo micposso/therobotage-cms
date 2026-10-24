@@ -2,9 +2,9 @@
 import { useCopy } from '@/lib/i18n/useCopy'
 
 
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import WhitepaperModal from '@/components/WhitepaperModal/WhitepaperModal'
+import WhitepaperButton from '@/components/WhitepaperModal/WhitepaperButton'
 import styles from './FrameworkFeature.module.css'
 
 // ─── Placeholder data ────────────────────────────────────────────────────────
@@ -24,7 +24,6 @@ export default function FrameworkFeature() {
   const { t } = useCopy()
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
-  const [modalOpen, setModalOpen] = useState(false)
 
   return (
     <section className={styles.section} ref={ref} id="ref">
@@ -85,13 +84,8 @@ export default function FrameworkFeature() {
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.45 }}
             >
-              <button
-                className={styles.ctaFilled}
-                onClick={() => setModalOpen(true)}
-              >{t("Download white paper v2.0")}</button>
+              <WhitepaperButton className={styles.ctaFilled}>{t("Download white paper v2.0")}</WhitepaperButton>
             </motion.div>
-
-            <WhitepaperModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
 
             <motion.p
               className={styles.citation}

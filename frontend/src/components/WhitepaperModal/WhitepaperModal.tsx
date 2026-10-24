@@ -73,7 +73,7 @@ export default function WhitepaperModal({ isOpen, onClose }: Props) {
                   We&apos;ve also sent a link to your email.
                 </p>
                 <a
-                  href="/api/download/whitepaper"
+                  href={state.downloadUrl}
                   download
                   className={styles.downloadBtn}
                 >
@@ -120,13 +120,6 @@ export default function WhitepaperModal({ isOpen, onClose }: Props) {
                 <p className={styles.legalNote}>
                   We&apos;ll send you the link and occasional updates from The Robot Age. Unsubscribe anytime.
                 </p>
-
-                <div className={styles.directDownload}>
-                  <a href="/api/download/whitepaper" download className={styles.directDownloadLink}>
-                    Download directly without email
-                  </a>
-                  <span className={styles.directDownloadNote}>CC BY-NC 4.0 — free to use with attribution.</span>
-                </div>
               </>
             )}
           </motion.div>
