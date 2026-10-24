@@ -18,16 +18,14 @@ import styles from './enterprise.module.css'
 type Props = { params: Promise<{ locale?: Locale }> }
 const assets = {
   hero: '/images/enterprise/enterprise-academy-hero.webp',
-  factory: '/images/enterprise/enterprise-factory-training.webp',
-  senior: '/images/enterprise/enterprise-senior-living.webp',
   multilingual: '/images/enterprise/enterprise-multilingual-training.webp',
   adoption: '/images/enterprise/enterprise-adoption-workplace.webp',
-  humanoid: '/images/enterprise/enterprise-humanoid-onboarding.webp',
-  quadruped: '/images/enterprise/enterprise-quadruped-inspection.webp',
-  entertainment: '/images/enterprise/enterprise-entertainment-amusement-park.webp',
-  security: '/images/enterprise/enterprise-security.webp',
-  government: '/images/enterprise/enterprise-local-government.webp',
+  serviceReadiness: '/images/enterprise/enterprise-service-readiness.webp',
+  serviceAcademy: '/images/enterprise/enterprise-service-academy.webp',
+  serviceAdoption: '/images/enterprise/enterprise-service-adoption.webp',
+  serviceCommunity: '/images/enterprise/enterprise-service-community.webp',
 }
+const serviceImages = ['serviceReadiness', 'serviceAcademy', 'serviceAdoption', 'serviceCommunity'] as const
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale = 'en' } = await params
   const title = 'Robot Deployment & Community Readiness | The Robot Age'
@@ -57,8 +55,11 @@ export default async function EnterprisePage({ params }: Props) {
       </div>
       <section className={styles.section} id="enterprise-services" aria-labelledby="services-title"><div className={styles.wrap}>
         {intro(c.services, 'services-title')}
-        <div className={styles.services}>{c.services.items.map(service => <article className={literacy.progressionCard} key={service.number}>
-          <span className={styles.number}>{service.number}</span><h3>{t(service.title)}</h3><p><strong>{t(service.value)}</strong></p><p>{t(service.description)}</p><a className={styles.textLink} href={service.href}>{t(service.cta)} <span aria-hidden="true">↓</span></a>
+        <div className={styles.services}>{c.services.items.map((service, i) => <article className={`${literacy.progressionCard} ${styles.serviceCard}`} key={service.number}>
+          {photo(serviceImages[i], styles.serviceImage, false, '(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 650px')}
+          <div className={styles.serviceCardBody}>
+            <span className={styles.number}>{service.number}</span><h3>{t(service.title)}</h3><p className={styles.serviceValue}><strong>{t(service.value)}</strong></p><p className={styles.serviceDescription}>{t(service.description)}</p><a className={styles.textLink} href={service.href}>{t(service.cta)} <span aria-hidden="true">↓</span></a>
+          </div>
         </article>)}</div>
       </div></section>
       <section className={`${styles.section} ${styles.problem}`} aria-labelledby="gap-title"><div className={styles.wrap}>
@@ -69,7 +70,7 @@ export default async function EnterprisePage({ params }: Props) {
       <section className={`${styles.section} ${styles.environments}`} aria-labelledby="environments-title"><div className={styles.wrap}>
         <p className={styles.eyebrow}>{t(c.environments.label)}</p><h2 className={styles.environmentsHeading} id="environments-title">{c.environments.titleLines.map(line=><span key={line}>{t(line)}</span>)}</h2>
         <p className={styles.pricingIntro}>{t(c.environments.body)}</p>
-        <div className={styles.environmentGrid}>{c.environments.items.map(([title, body], i) => <article className={literacy.progressionCard} key={title}>{photo((['factory', 'humanoid', 'senior', 'entertainment', 'security', 'government'] as const)[i], '', false, '(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw')}<span className={styles.number}>{number(i)}</span><h3>{t(title)}</h3><p>{t(body)}</p></article>)}</div>
+        <div className={styles.environmentGrid}>{c.environments.items.map(([title, body], i) => <article className={literacy.progressionCard} key={title}><span className={styles.number}>{number(i)}</span><h3>{t(title)}</h3><p>{t(body)}</p></article>)}</div>
         <div className={styles.actions}><a className={`${cta.cta} ${styles.button}`} href="#deployment-readiness">{t(c.focus.areaCta)} <span aria-hidden="true">↗</span></a></div>
         <p className={styles.disclosure}>{t(c.environments.note)}</p>
       </div></section>

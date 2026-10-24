@@ -305,7 +305,11 @@ export const enterpriseContent = {
     "quadruped": "Facilities technicians learn to guide a quadruped inspection robot through a basement mechanical room.",
     "entertainment": "Amusement-park staff practice visitor greetings with a humanoid robot dressed in an explorer costume beside a carousel.",
     "security": "A supervisor trains security officers to oversee a wheeled patrol robot at a commercial campus.",
-    "government": "Municipal facilities staff learn an inspection route with a quadruped robot in a building mechanical room."
+    "government": "Municipal facilities staff learn an inspection route with a quadruped robot in a building mechanical room.",
+    "serviceReadiness": "An operations team maps a safe warehouse workflow beside a mobile robot before deployment.",
+    "serviceAcademy": "A nurse supervises as a humanoid service robot assists an older adult in a senior-living lounge.",
+    "serviceAdoption": "A researcher observes a hospitality employee completing a routine handoff with a service robot.",
+    "serviceCommunity": "Residents discuss a public-service robot with a community facilitator in a civic plaza."
   },
   "imageNote": "Conceptual workplace illustration · AI-generated",
   "outcome": "The goal: people and robots working confidently alongside one another.",
