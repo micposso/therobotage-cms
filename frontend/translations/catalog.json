@@ -126,6 +126,12 @@
     "expiresAt": null
   },
   {
+    "id": "news/nvidia-robot-platform-strategy.md",
+    "route": "/news/nvidia-robot-platform-strategy",
+    "sourceHash": "b6bc331b92418c00e9432d5bdda486d1326477437c22484b027c80fd730323c9",
+    "expiresAt": null
+  },
+  {
     "id": "news/robot-com-r-noid-field-experience.md",
     "route": "/news/robot-com-r-noid-field-experience",
     "sourceHash": "41a88d7832e34c41d0f6ef5ee4876b45a07672d0677b4abebfcd84e8ab7c435c",
@@ -312,12 +318,6 @@
     "expiresAt": "2026-11-10T00:00:00.000Z"
   },
   {
-    "id": "jobs/cross-functional-producer-events-applied-intuition.md",
-    "route": "/jobs/cross-functional-producer-events-applied-intuition",
-    "sourceHash": "95056935a9d7a0c40f6c74ca4af3f3c462a2bb8118a8af0e68eaf53f1c110dcd",
-    "expiresAt": "2026-10-23T00:00:00.000Z"
-  },
-  {
     "id": "jobs/customer-technical-program-manager-vehicle-os-applied-intuition.md",
     "route": "/jobs/customer-technical-program-manager-vehicle-os-applied-intuition",
     "sourceHash": "751bf6a1ba9b900bd287491772ad30887f1f05818b05ac170e19de78f8db8434",
@@ -354,12 +354,6 @@
     "expiresAt": "2026-11-21T00:00:00.000Z"
   },
   {
-    "id": "jobs/director-product-compliance-skydio.md",
-    "route": "/jobs/director-product-compliance-skydio",
-    "sourceHash": "adee175181b37c1975e5b807b4ec4b55e7b0e6555780b0b3cfb0202824b70462",
-    "expiresAt": "2026-10-24T00:00:00.000Z"
-  },
-  {
     "id": "jobs/director-product-learning-development-apptronik.md",
     "route": "/jobs/director-product-learning-development-apptronik",
     "sourceHash": "db6f16ace24917ff4a17523c90a753dd950ead8f6b9de8d84536d34e860c213c",
@@ -378,22 +372,10 @@
     "expiresAt": "2026-11-22T00:00:00.000Z"
   },
   {
-    "id": "jobs/director-technical-program-manager-software-collaborative-robotics.md",
-    "route": "/jobs/director-technical-program-manager-software-collaborative-robotics",
-    "sourceHash": "9f16d6ae5979c1599d6d3ff0b2b1f81c94a68aa3fedba3acf655ded6cd11ec93",
-    "expiresAt": "2026-10-20T00:00:00.000Z"
-  },
-  {
     "id": "jobs/field-events-marketing-manager-gecko-robotics.md",
     "route": "/jobs/field-events-marketing-manager-gecko-robotics",
     "sourceHash": "ee72c4e3e2b812ee3638c78612ee953ff4571ed3fb4f4db885b15617630dd5ac",
     "expiresAt": "2026-11-09T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/forward-deployed-transformation-lead-physical-ai-dexterity.md",
-    "route": "/jobs/forward-deployed-transformation-lead-physical-ai-dexterity",
-    "sourceHash": "423d6f8f1a6ac6500120bc51525dd5a85750cfe6fccdded3455b6ed1b4d414d0",
-    "expiresAt": "2026-10-21T00:00:00.000Z"
   },
   {
     "id": "jobs/growth-marketing-manager-web-experience-shield-ai.md",
@@ -438,12 +420,6 @@
     "expiresAt": "2026-11-06T00:00:00.000Z"
   },
   {
-    "id": "jobs/human-robot-interaction-applied-scientist-fauna-ny.md",
-    "route": "/jobs/human-robot-interaction-applied-scientist-fauna-ny",
-    "sourceHash": "f6f1c15daeb6c7b4cc4369e3d08ef68bc506b3659621f5430c4c4698d796d324",
-    "expiresAt": "2026-10-23T00:00:00.000Z"
-  },
-  {
     "id": "jobs/human-robot-interaction-applied-scientist-fauna.md",
     "route": "/jobs/human-robot-interaction-applied-scientist-fauna",
     "sourceHash": "bdeb329bb27fb512c79b4eefb98fc0b64f90f6816be0d5220e520edc999a99d2",
@@ -466,12 +442,6 @@
     "route": "/jobs/industrial-designer-fauna",
     "sourceHash": "6af7678eb740953358375fa4f6782ae2506b37bb11818dd7f003c8c28af31950",
     "expiresAt": "2026-11-07T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/industrial-designer-zipline.md",
-    "route": "/jobs/industrial-designer-zipline",
-    "sourceHash": "d6f0aeb77bd187336693a11a3a12cc2cd6f56c9d356635d55f38ab5d2f9d80d1",
-    "expiresAt": "2026-10-21T00:00:00.000Z"
   },
   {
     "id": "jobs/lead-technical-program-manager-ai-platform-nuro.md",
@@ -564,18 +534,6 @@
     "expiresAt": "2026-11-06T00:00:00.000Z"
   },
   {
-    "id": "jobs/operations-senior-technical-program-manager-apptronik.md",
-    "route": "/jobs/operations-senior-technical-program-manager-apptronik",
-    "sourceHash": "1fb10885e89fea35593aaea21c56d74325c4e325c4337418d0863a0ef37ffb9c",
-    "expiresAt": "2026-10-23T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/partner-marketing-lead-zipline.md",
-    "route": "/jobs/partner-marketing-lead-zipline",
-    "sourceHash": "f612af0e7ab4770b03f4323c29c7975a8fed3d12c4becbc88f18ae07e84ef9f2",
-    "expiresAt": "2026-10-21T00:00:00.000Z"
-  },
-  {
     "id": "jobs/perception-engineer-multimodal-embodied-ai-shield-ai.md",
     "route": "/jobs/perception-engineer-multimodal-embodied-ai-shield-ai",
     "sourceHash": "9624470448c5b44fa7f6c9314fdf4941cc60926abe026fac722e434641706c58",
@@ -598,12 +556,6 @@
     "route": "/jobs/principal-program-manager-customer-success-agility",
     "sourceHash": "d892cf35c4845f33c288d9d024e162380d35245e4a47aeb21e4c8225e96b49d5",
     "expiresAt": "2026-12-05T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/principal-technical-program-manager-agility.md",
-    "route": "/jobs/principal-technical-program-manager-agility",
-    "sourceHash": "b969470d9a189d0e5f777e559916d405aadfe59a3940fb5fb42f62e2949dadc8",
-    "expiresAt": "2026-10-24T00:00:00.000Z"
   },
   {
     "id": "jobs/principal-technical-program-manager-mma-shield-ai.md",
@@ -636,22 +588,10 @@
     "expiresAt": "2026-10-25T00:00:00.000Z"
   },
   {
-    "id": "jobs/product-designer-hmi-applied-intuition.md",
-    "route": "/jobs/product-designer-hmi-applied-intuition",
-    "sourceHash": "3a3be85e705e89048ee40d0ea04f7eeda21f70b72245050ed6964c97ae8efa56",
-    "expiresAt": "2026-10-24T00:00:00.000Z"
-  },
-  {
     "id": "jobs/product-designer-manufacturing-defense-gecko.md",
     "route": "/jobs/product-designer-manufacturing-defense-gecko",
     "sourceHash": "30d71400f4518885ee850c5942dacee546a0b469c396f572dea4b090f1a31adf",
     "expiresAt": "2026-11-21T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/product-designer-treeswift.md",
-    "route": "/jobs/product-designer-treeswift",
-    "sourceHash": "0beb180d760b0dc5d9c1fba6f0c510ed043e7953bf0efe407154c936dea661ca",
-    "expiresAt": "2026-10-23T00:00:00.000Z"
   },
   {
     "id": "jobs/product-lead-marketplace-pricing-zipline.md",
@@ -696,12 +636,6 @@
     "expiresAt": "2026-10-25T00:00:00.000Z"
   },
   {
-    "id": "jobs/product-manager-drone-stack-applied-intuition.md",
-    "route": "/jobs/product-manager-drone-stack-applied-intuition",
-    "sourceHash": "1327c883a45d89891d20b45d2bd28472a06e9fcbc3392f13dbdba12e84815dfa",
-    "expiresAt": "2026-10-24T00:00:00.000Z"
-  },
-  {
     "id": "jobs/product-manager-platform-dana-applied-intuition.md",
     "route": "/jobs/product-manager-platform-dana-applied-intuition",
     "sourceHash": "9e745eb0208ece5ee555827253d0f2c21a0b2a73b79122865851409be48abcfd",
@@ -718,30 +652,6 @@
     "route": "/jobs/product-manager-tech-go-ai-technology-development-team-amazon-robotics",
     "sourceHash": "b557b76637f1e4fd6bbaa65753044093899c56bde2a91b1d7a59e4800c5869a0",
     "expiresAt": "2026-12-06T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/product-manager-technical-commercialization-path-robotics.md",
-    "route": "/jobs/product-manager-technical-commercialization-path-robotics",
-    "sourceHash": "d649a5ce3cadc9a9d7a21e1891c25f08edb478f6d26248d932acff78ded982ae",
-    "expiresAt": "2026-10-23T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/product-manager-vehicle-os-applied-intuition.md",
-    "route": "/jobs/product-manager-vehicle-os-applied-intuition",
-    "sourceHash": "ba30298902c42d517df39694332fab63dd224568b93cab164919f5d33a6e1357",
-    "expiresAt": "2026-10-24T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/product-marketing-manager-defense-applied-intuition.md",
-    "route": "/jobs/product-marketing-manager-defense-applied-intuition",
-    "sourceHash": "2a69d8bc47a728e738e7b96b232546a7a9cb7fc447b4b778e27214e364c968ac",
-    "expiresAt": "2026-10-23T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/product-operations-manager-kodiak.md",
-    "route": "/jobs/product-operations-manager-kodiak",
-    "sourceHash": "f7173f803fa8fa5ce9e42ae80fe79a7940b076967ebf8308910ddb03a66b0351",
-    "expiresAt": "2026-10-24T00:00:00.000Z"
   },
   {
     "id": "jobs/product-quality-manager-apptronik.md",
@@ -772,12 +682,6 @@
     "route": "/jobs/program-manager-fms-shield-ai",
     "sourceHash": "080bd1985827478d2ea0927426473ffd9f042a89985330fdb0d6bd9c9eab9e25",
     "expiresAt": "2026-12-02T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/program-manager-growth-profitability-zipline.md",
-    "route": "/jobs/program-manager-growth-profitability-zipline",
-    "sourceHash": "a32d890b62952e4345c16fdb3ab6a67b874c55a92cb130dc01ff6c1aba4e8f76",
-    "expiresAt": "2026-10-24T00:00:00.000Z"
   },
   {
     "id": "jobs/program-manager-major-deployments-skydio.md",
@@ -1062,12 +966,6 @@
     "expiresAt": "2026-12-01T00:00:00.000Z"
   },
   {
-    "id": "jobs/senior-program-manager-eval-operations-nuro.md",
-    "route": "/jobs/senior-program-manager-eval-operations-nuro",
-    "sourceHash": "557651aab09962ae9ad4870c276b5a3117db51ad79121a6d800647bd251e591b",
-    "expiresAt": "2026-10-21T00:00:00.000Z"
-  },
-  {
     "id": "jobs/senior-program-manager-perception-data-operations-nuro.md",
     "route": "/jobs/senior-program-manager-perception-data-operations-nuro",
     "sourceHash": "d1ccf7232cb75f0f9212825aedf99bc8c248909c69f53ebe87fa52660d19dcf4",
@@ -1134,12 +1032,6 @@
     "expiresAt": "2026-11-22T00:00:00.000Z"
   },
   {
-    "id": "jobs/senior-staff-technical-program-manager-hivemind-catalyst-shield-ai.md",
-    "route": "/jobs/senior-staff-technical-program-manager-hivemind-catalyst-shield-ai",
-    "sourceHash": "87a7539fbdf5118ea4d83d212c7ac3b0f7eb9ecaa2a2d739c7e04c4ed7699852",
-    "expiresAt": "2026-10-20T00:00:00.000Z"
-  },
-  {
     "id": "jobs/senior-staff-technical-program-manager-hivemind-enterprise-shield-ai.md",
     "route": "/jobs/senior-staff-technical-program-manager-hivemind-enterprise-shield-ai",
     "sourceHash": "6eab1b194eaf9d3297d4798469df3db4e3e1bef138009de978b0a87e6cb6d889",
@@ -1158,36 +1050,6 @@
     "expiresAt": "2026-11-07T00:00:00.000Z"
   },
   {
-    "id": "jobs/senior-technical-program-manager-integration-serve-robotics.md",
-    "route": "/jobs/senior-technical-program-manager-integration-serve-robotics",
-    "sourceHash": "895b547a91e6220cd85cc2cc623a926ec868fca2e2b73626f8ea0e33ac5596c0",
-    "expiresAt": "2026-10-20T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/senior-technical-program-manager-operations-agility.md",
-    "route": "/jobs/senior-technical-program-manager-operations-agility",
-    "sourceHash": "185dfb9a4f59186e45163827fdb35297602b5d2fe741f91a9749b8ab974da692",
-    "expiresAt": "2026-10-24T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/senior-technical-program-manager-robot-skills-agility.md",
-    "route": "/jobs/senior-technical-program-manager-robot-skills-agility",
-    "sourceHash": "ce5f5ee28d1cc6442e9ac436226008602762a0765722cfab65446289fbc43378",
-    "expiresAt": "2026-10-21T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/senior-technical-program-manager-robotics-pickle-robot.md",
-    "route": "/jobs/senior-technical-program-manager-robotics-pickle-robot",
-    "sourceHash": "b8f72e2fb44968d8daef1020264677a53301b0605daafefd6078bc46b4e8865f",
-    "expiresAt": "2026-10-20T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/senior-technical-program-manager-software-collaborative-robotics.md",
-    "route": "/jobs/senior-technical-program-manager-software-collaborative-robotics",
-    "sourceHash": "4850baad2333ada1686eb29b7b7021070f15dacae06f75f306607db7323616b6",
-    "expiresAt": "2026-10-20T00:00:00.000Z"
-  },
-  {
     "id": "jobs/senior-video-producer-zipline.md",
     "route": "/jobs/senior-video-producer-zipline",
     "sourceHash": "b8f832cc99d22520b08272281000f8e73e8d23b46bb5af59674e3774a85f79b5",
@@ -1204,12 +1066,6 @@
     "route": "/jobs/sr-deployment-program-manager-robotics-collaborative-robotics",
     "sourceHash": "3d349d656803286eaf8503ddb6ab388d0fcd437ca11ed7ff7f0eed180177114d",
     "expiresAt": "2026-12-04T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/sr-product-manager-assisted-autonomy-kodiak.md",
-    "route": "/jobs/sr-product-manager-assisted-autonomy-kodiak",
-    "sourceHash": "9db0148850e25b668d3fc7c379b1702e1808abb6abfb28e5fd9e2b2cabd573c3",
-    "expiresAt": "2026-10-23T00:00:00.000Z"
   },
   {
     "id": "jobs/staff-ai-research-engineer-agility.md",
@@ -1248,12 +1104,6 @@
     "expiresAt": "2026-11-29T00:00:00.000Z"
   },
   {
-    "id": "jobs/staff-technical-program-manager-ai-perception-apptronik.md",
-    "route": "/jobs/staff-technical-program-manager-ai-perception-apptronik",
-    "sourceHash": "59487896f1507e322ab925cf84a70b05e67f761023bd5079cf588eccaf366a08",
-    "expiresAt": "2026-10-20T00:00:00.000Z"
-  },
-  {
     "id": "jobs/staff-technical-program-manager-ai-resources-boston-dynamics.md",
     "route": "/jobs/staff-technical-program-manager-ai-resources-boston-dynamics",
     "sourceHash": "40af3d7439013574327e152a73748d3611c59fc7e6a4d28662f0026d830ccca2",
@@ -1264,12 +1114,6 @@
     "route": "/jobs/staff-technical-program-manager-air-vehicle-systems-shield-ai",
     "sourceHash": "79061558708de0a49bbb703a562be4b7b6452abc7db9f86a20a9f6583ba5555e",
     "expiresAt": "2026-11-21T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/staff-technical-program-manager-autonomy-serve-robotics.md",
-    "route": "/jobs/staff-technical-program-manager-autonomy-serve-robotics",
-    "sourceHash": "a3f85695c6ea82cbebd97bb7b40f0080fbc28e6dffd3dff545380fba2eb544f7",
-    "expiresAt": "2026-10-20T00:00:00.000Z"
   },
   {
     "id": "jobs/staff-technical-program-manager-software-collaborative-robotics.md",
@@ -1288,12 +1132,6 @@
     "route": "/jobs/staff-ui-designer-shield-ai",
     "sourceHash": "a6b78f21b29002d13a9024854a313f2db3cef80a120b650a58d9101d1de6b493",
     "expiresAt": "2026-11-23T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/staff-video-producer-apptronik.md",
-    "route": "/jobs/staff-video-producer-apptronik",
-    "sourceHash": "dbfcaed2d7edc7b6bcb9069f41a51f46e7239368529eba858f8344285c2eca8e",
-    "expiresAt": "2026-10-24T00:00:00.000Z"
   },
   {
     "id": "jobs/system-designer-applied-intuition.md",
@@ -1324,12 +1162,6 @@
     "route": "/jobs/technical-program-manager-architectural-elements-dexterity",
     "sourceHash": "eb153263a532c6bfa9525b302ca2b8f3bc56e34b5adaa4a1ea75ba4977d38699",
     "expiresAt": "2026-11-11T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/technical-program-manager-bear-robotics.md",
-    "route": "/jobs/technical-program-manager-bear-robotics",
-    "sourceHash": "91660666391d2f58faa5689b3677d2e552c858a4410280886b0bdde0181ceed2",
-    "expiresAt": "2026-10-23T00:00:00.000Z"
   },
   {
     "id": "jobs/technical-program-manager-dana-physical-ai-applied-intuition.md",
@@ -1368,22 +1200,10 @@
     "expiresAt": "2026-11-15T00:00:00.000Z"
   },
   {
-    "id": "jobs/technical-program-manager-mission-autonomy-shield-ai.md",
-    "route": "/jobs/technical-program-manager-mission-autonomy-shield-ai",
-    "sourceHash": "2bbd823fb9fb905ab3c450743d0627f35ec24e7b50353264b12e00c9e65ceb9f",
-    "expiresAt": "2026-10-20T00:00:00.000Z"
-  },
-  {
     "id": "jobs/technical-program-manager-mission-autonomy-x-bat-shield-ai.md",
     "route": "/jobs/technical-program-manager-mission-autonomy-x-bat-shield-ai",
     "sourceHash": "bef1a734459b989a9ff2eeca53a2418f14bf5062be7393b90d25c3355cdd39d9",
     "expiresAt": "2026-11-28T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/technical-program-manager-operations-agility.md",
-    "route": "/jobs/technical-program-manager-operations-agility",
-    "sourceHash": "3775d2671c5a78e003aceed597da6d5a12e2c4539a13240f877a73c191c29379",
-    "expiresAt": "2026-10-24T00:00:00.000Z"
   },
   {
     "id": "jobs/technical-program-manager-trucking-operations-applied-intuition.md",
@@ -1414,18 +1234,6 @@
     "route": "/jobs/test-maintenance-program-manager-zipline",
     "sourceHash": "63be4d579c842dda9ebf85df54b19c69702206a9b987980c9fe1d6b2dbc4612f",
     "expiresAt": "2026-11-10T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/ux-test-engineer-new-grad-applied-intuition.md",
-    "route": "/jobs/ux-test-engineer-new-grad-applied-intuition",
-    "sourceHash": "794a239b633108fcb173aa6bf5c3dea3d158a92d684711a81b3296a1d29d88d0",
-    "expiresAt": "2026-10-24T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/ux-validation-lead-applied-intuition.md",
-    "route": "/jobs/ux-validation-lead-applied-intuition",
-    "sourceHash": "8ab41b0e24f331ca715d92de194160717043bba1add3430c14b0d256ed3be6b2",
-    "expiresAt": "2026-10-24T00:00:00.000Z"
   },
   {
     "id": "jobs/vice-president-embodied-ai-apptronik.md",

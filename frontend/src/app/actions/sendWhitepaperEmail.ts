@@ -2,23 +2,46 @@
 
 import { Resend } from 'resend'
 import { emailHtml } from '@/lib/emailTemplate'
+import { createWhitepaperToken } from '@/lib/whitepaper-access'
 
 const FROM_ADDRESS = process.env.EMAIL_FROM_RESEARCH ?? 'onboarding@resend.dev'
+
+// Contact lookup, creation and delivery share Resend's account rate limit.
+async function withRateLimitRetry<T extends { error: { name: string } | null }>(request: () => Promise<T>): Promise<T> {
+  for (let attempt = 0; ; attempt++) {
+    const result = await request()
+    if (result.error?.name !== 'rate_limit_exceeded' || attempt >= 2) return result
+    await new Promise(resolve => setTimeout(resolve, 1100 * (attempt + 1)))
+  }
+}
 
 export async function sendWhitepaperEmail(
   prevState: { success: boolean; error?: string } | null,
   formData: FormData
-): Promise<{ success: boolean; error?: string }> {
-  const email = (formData.get('email') as string | null)?.trim()
+): Promise<{ success: boolean; error?: string; downloadUrl?: string }> {
+  const value = formData.get('email')
+  const email = typeof value === 'string' ? value.trim().toLowerCase() : ''
 
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  if (!email || email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return { success: false, error: 'Please enter a valid email address.' }
   }
 
   try {
     const resend = new Resend(process.env.RESEND_API_KEY)
-    const WHITEPAPER_URL = `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://therobotage.com'}/api/download/whitepaper`
-    const { error: sendError } = await resend.emails.send({
+    // Preserve existing unsubscribe preferences; create only missing contacts.
+    const existing = await withRateLimitRetry(() => resend.contacts.get({ email }))
+    if (existing.error && existing.error.name !== 'not_found') {
+      return { success: false, error: 'We could not save your signup. Please try again.' }
+    }
+    if (!existing.data) {
+      const saved = await withRateLimitRetry(() => resend.contacts.create({ email, unsubscribed: false }))
+      if (saved.error || !saved.data?.id) {
+        return { success: false, error: 'We could not save your signup. Please try again.' }
+      }
+    }
+    const downloadUrl = `/api/download/whitepaper?token=${createWhitepaperToken()}`
+    const WHITEPAPER_URL = new URL(downloadUrl, process.env.NEXT_PUBLIC_SITE_URL ?? 'https://therobotage.com').toString()
+    const { error: sendError } = await withRateLimitRetry(() => resend.emails.send({
       from: FROM_ADDRESS,
       to: email,
       bcc: 'mike@therobotage.com',
@@ -63,14 +86,14 @@ export async function sendWhitepaperEmail(
           or reply to this email with any questions.
         </p>
       `),
-    })
+    }))
 
     if (sendError) {
       console.error('sendWhitepaperEmail error:', sendError)
       return { success: false, error: 'Something went wrong. Please try again.' }
     }
 
-    return { success: true }
+    return { success: true, downloadUrl }
   } catch (err) {
     console.error('sendWhitepaperEmail exception:', err)
     return { success: false, error: 'Something went wrong. Please try again.' }

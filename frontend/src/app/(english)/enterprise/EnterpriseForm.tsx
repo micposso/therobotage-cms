@@ -59,10 +59,10 @@ export default function EnterpriseForm({ locale = 'en' }: { locale?: Locale }) {
     <p className={styles.formNote}>{t('Required fields are marked *.')}</p>
     <div className={styles.honeypot} aria-hidden="true"><label htmlFor="enterprise-website">{t('Leave this field empty')}</label><input id="enterprise-website" name="website" tabIndex={-1} autoComplete="off" /></div>
     {enterpriseFields.filter(field => field.required).map(renderField)}
-    <details className={`${styles.details} ${styles.optionalFields}`}><summary>{t('Add deployment details (optional)')}</summary><div className={styles.optionalFieldsGrid}>{enterpriseFields.filter(field => !field.required).map(renderField)}</div></details>
+    <details className={`${styles.details} ${styles.optionalFields}`}><summary>{t('Optional: Tell us your robot type, number of customer sites, workforce languages, and biggest onboarding challenge.')}</summary><div className={styles.optionalFieldsGrid}>{enterpriseFields.filter(field => !field.required).map(renderField)}</div></details>
     <p className={styles.consent}>{t('By submitting, you agree that The Robot Age may contact you about this inquiry. Read our')} <Link href="/privacy">{t('Privacy Policy')}</Link>.</p>
     {(Object.values(errors).some(Boolean) || state.error) && <p className={styles.formError} role="alert">{t(state.error || 'Please check the highlighted fields.')}</p>}
-    <button type="submit" disabled={pending} className={`${cta.cta} ${styles.submitButton}`}>{t(pending ? 'Sending your request…' : enterpriseContent.cta)} <span aria-hidden="true">↗</span></button>
+    <button type="submit" disabled={pending} className={`${cta.cta} ${styles.submitButton}`}>{t(pending ? 'Sending your request…' : enterpriseContent.form.cta)} <span aria-hidden="true">↗</span></button>
     <span className={styles.honeypot} role="status">{pending ? t('Sending your request…') : ''}</span>
   </form>
 }

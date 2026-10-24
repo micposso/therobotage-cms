@@ -11,6 +11,7 @@ const noindex = process.env.SITE_NOINDEX === "true";
 const nextConfig: NextConfig = {
   transpilePackages: ['@therobotage/ui'],
   outputFileTracingIncludes: {
+    '/api/download/whitepaper': ['./private/rxd-therobotage-v2.pdf'],
     '/*': ['./translations/**/*.md', './news/*.md', './robots-profiles/*.md', './robots/*.md', './jobs/*.md', './src/content/scores/*.md'],
   },
   async redirects() {

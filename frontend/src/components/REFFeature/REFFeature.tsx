@@ -1,5 +1,6 @@
 'use client'
 
+import WhitepaperButton from '@/components/WhitepaperModal/WhitepaperButton'
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
@@ -22,7 +23,6 @@ const REF = {
     { id: 'recovery-design',      label: 'Recovery Design' },
   ],
   readUrl: '/rxd',
-  downloadUrl: '/api/download/whitepaper',
   citation:
     'Posso, M. (2026). Robot Experience Design (RXD): A framework for evaluating the human side of consumer robotics (White Paper v2.0). The Robot Age. therobotage.com/rxd. CC BY-NC 4.0.',
 }
@@ -81,9 +81,9 @@ export default function REFFeature() {
                       strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </Link>
-                <a href={REF.downloadUrl} className={styles.ctaDownload} download>
+                <WhitepaperButton className={styles.ctaDownload}>
                   Download PDF
-                </a>
+                </WhitepaperButton>
               </motion.div>
 
               <motion.p variants={itemVariants} className={styles.citation}>
