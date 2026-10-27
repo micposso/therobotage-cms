@@ -1,9 +1,9 @@
-The next robot design brief should include an interrupted handover.
+A robot handover needs two acceptance criteria: the component arrives, and the operator understands what happens next.
 
-Agile ONE SN, scheduled for early 2027, brings a reference humanoid together with NVIDIA Isaac GR00T and Jetson Thor. NVIDIA's expanded Isaac tools connect simulation, robot learning and runtime coordination. For product designers working with robotics engineers, that could mean more opportunities to test approach cues, pauses and recovery before committing to a deployment.
+Agile ONE SN, scheduled for early 2027, combines a reference humanoid with NVIDIA Isaac GR00T and Jetson Thor. NVIDIA's expanded Isaac tools connect simulation, robot learning and deployment. A shared testbed could give product designers and robotics engineers more time to turn behavior requirements into repeatable experiments.
 
-The distinction matters: completing a simulated task does not establish that an operator understands the robot. Planned Halos integration does not establish deployment-specific safety certification. Designers still need to define what the robot communicates when it stops, who can intervene and how work resumes.
+Consider an interrupted handover: the operator hesitates, then withdraws a hand. What does the robot do? How does it explain the pause? Who authorizes restart? Simulation can help rehearse physical conditions, but understanding those signals still needs testing with intended operators. Planned Halos integration does not establish deployment-specific safety certification.
 
-Our take at The Robot Age: use time saved on integration to test observable interaction quality. Measure cue comprehension, intervention frequency and recovery time alongside task completion. Read the full piece on The Robot Age: https://therobotage.com/news/nvidia-isaac-robot-experience-design
+The Robot Age's take: pair physical task performance with evidence of human understanding. Measure cue comprehension, interventions and recovery alongside task completion. Read the full piece on The Robot Age: https://therobotage.com/news/nvidia-isaac-robot-experience-design
 
 #Robotics #AI #RobotExperienceDesign #HRI #ProductDesign
