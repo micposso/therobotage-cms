@@ -25,6 +25,12 @@ For a product manager, the useful question is whether a proposed workflow surviv
 
 NVIDIA describes Sereact training goods-handling capabilities for Universal Robots arms and ABB simulating installations before commissioning. Those examples place the announcement in settings product managers already need to understand: workcells, staffing and operational constraints. Simulation offers a way to investigate assumptions earlier. Its economics still depend on model fidelity, computing costs and the engineering effort needed to represent the actual workplace.
 
+## Better tools still need expensive computing
+
+Simulation can be expensive to run on consumer computers. NVIDIA's [Isaac Sim 5.1 requirements](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/requirements.html) list 32 GB of system RAM and a GeForce RTX 4080 with 16 GB of graphics memory as minimum specifications. That is a substantial hardware commitment for a designer using an everyday laptop. NVIDIA also warns that sensor-heavy workflows can run into graphics-memory limits.
+
+The tools are improving the starting experience through reusable assets, integrated workflows and [cloud access options](https://developer.nvidia.com/isaac/sim), but easier setup does not guarantee cheaper computation. Cloud GPUs shift the expense from hardware ownership to usage charges. Product teams should budget for engineering time and compute, begin with a small scene and a specific decision, and expand only when the additional detail answers a useful question.
+
 ## UX designers get a larger interaction surface
 
 For a UX designer, the interface includes the robot's distance, movement, timing and pauses. Return to the counter: an employee reaches for the item just as the robot starts moving. Specify how the robot yields, what signals the pause and what permits a restart. Isaac OS connects sensing, AI and controls at runtime; the design work is deciding which behaviors that machinery should support.
@@ -45,6 +51,7 @@ Start with the moment a person needs the robot to wait, and design what happens 
 
 - NVIDIA, [Isaac platform expansion at GTC Berlin](https://nvidianews.nvidia.com/news/nvidia-advances-isaac-platform-for-general-purpose-robotics-with-new-reference-humanoid-frameworks-simulation-pipelines-and-data), October 21, 2026. Product capabilities, partner applications and availability are company-reported.
 - Agile Robots, [Agile ONE SN reference platform announcement](https://www.agile-robots.com/en/news/detail/agile-robots-launches-agile-one-sn/), October 21, 2026.
+- NVIDIA, [Isaac Sim 5.1 system requirements](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/requirements.html) and [Isaac Sim tools and cloud access](https://developer.nvidia.com/isaac/sim). Hardware figures are version-specific.
 - The Robot Age, [NVIDIA's robot platform strategy](/news/nvidia-robot-platform-strategy), for the broader implications of shared infrastructure and platform dependence.
 
 *Header photo: Jensen Huang at GTC Berlin. Credit: NVIDIA. Reused from our existing [keynote coverage source](https://blogs.nvidia.com/blog/gtc-berlin-2026-keynote/).*
