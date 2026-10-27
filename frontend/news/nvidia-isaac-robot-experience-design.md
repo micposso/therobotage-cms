@@ -25,6 +25,11 @@ For a product manager, the useful question is whether a proposed workflow surviv
 
 NVIDIA describes Sereact training goods-handling capabilities for Universal Robots arms and ABB simulating installations before commissioning. Those examples place the announcement in settings product managers already need to understand: workcells, staffing and operational constraints. Simulation offers a way to investigate assumptions earlier. Its economics still depend on model fidelity, computing costs and the engineering effort needed to represent the actual workplace.
 
+<figure>
+<img src="/images/news/nvidia-isaac-sim-interface.png" alt="NVIDIA Isaac Sim interface showing robots in a virtual lab, an asset browser, and scene and property panels" width="1920" height="1080" loading="lazy" decoding="async" sizes="(max-width: 768px) 100vw, 800px" />
+<figcaption>Inside NVIDIA Isaac Sim: a virtual robot lab alongside the asset browser and scene controls. This documentation screenshot illustrates the simulation workspace, not the proposed returns-counter experiment. Image: NVIDIA, <a href="https://docs.isaacsim.omniverse.nvidia.com/5.1.0/gui/reference_user_interface.html">Isaac Sim user interface reference</a>.</figcaption>
+</figure>
+
 ## Better tools still need expensive computing
 
 Simulation can be expensive to run on consumer computers. NVIDIA's [Isaac Sim 5.1 requirements](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/requirements.html) list 32 GB of system RAM and a GeForce RTX 4080 with 16 GB of graphics memory as minimum specifications. That is a substantial hardware commitment for a designer using an everyday laptop. NVIDIA also warns that sensor-heavy workflows can run into graphics-memory limits.
