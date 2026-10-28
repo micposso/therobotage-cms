@@ -5,6 +5,7 @@ import matter from 'gray-matter'
 import { cache } from 'react'
 import { marked } from 'marked'
 import { imageHtml } from '../image-assets'
+import { getAudioUrl } from '../news'
 import catalog from '../../../translations/catalog.json'
 import { VERSION } from '../../../scripts/translation-core.mjs'
 import { learnRoutes } from './learn-routes'
@@ -17,6 +18,7 @@ export interface TranslatedContent {
   body: string
   html: string
   generatedAt: string
+  audioUrl?: string
 }
 
 export const getTranslatedContent = cache((): TranslatedContent[] => {
@@ -24,9 +26,10 @@ export const getTranslatedContent = cache((): TranslatedContent[] => {
     if (source.expiresAt && new Date(source.expiresAt).getTime() <= Date.now()) return []
     const file = path.join(process.cwd(), 'translations', 'es', source.id)
     if (!fs.existsSync(file)) return []
-    const { data, content } = matter(fs.readFileSync(file, 'utf8'))
+    const raw = fs.readFileSync(file, 'utf8')
+    const { data, content } = matter(raw)
     if (data.translation?.locale !== 'es' || data.translation?.sourceHash !== source.sourceHash || data.translation?.version !== VERSION) return []
-    return [{ id: source.id, route: source.route, data, body: content, html: imageHtml(String(marked.parse(content))), generatedAt: String(data.translation.generatedAt) }]
+    return [{ id: source.id, route: source.route, data, body: content, html: imageHtml(String(marked.parse(content))), generatedAt: String(data.translation.generatedAt), audioUrl: source.id.startsWith('news/') ? getAudioUrl(data.slug, raw, 'es') : undefined }]
   })
 })
 

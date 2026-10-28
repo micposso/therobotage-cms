@@ -45,7 +45,7 @@ export default function NewsArticle({ article, locale = 'en', originalHref }: Pr
             {article.audioUrl && (
               <section className={styles.audioPlayer} aria-label={t("Article narration")}>
                 <p className={styles.audioLabel}>{t("Listen to this article")}</p>
-                <audio controls preload="metadata" src={article.audioUrl} aria-label={`Listen to ${article.title}`}>{t("Your browser does not support audio playback.")}</audio>
+                <audio controls preload="metadata" src={article.audioUrl} aria-label={`${t("Listen to this article")}: ${article.title}`}>{t("Your browser does not support audio playback.")}</audio>
                 <p className={styles.audioDisclosure}>{t("AI-generated narration")}</p>
               </section>
             )}

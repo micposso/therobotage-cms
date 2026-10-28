@@ -1,10 +1,27 @@
 import crypto from 'node:crypto'
 import { marked } from 'marked'
+import matter from 'gray-matter'
 
 export const MAX_INPUT_LENGTH = 3800 // Leave room below the API's 4096-character limit.
 export const AUDIO_MODEL = 'gpt-4o-mini-tts'
 export const AUDIO_VOICE = 'marin'
 export const AUDIO_INSTRUCTIONS = 'Narrate this journalism clearly and naturally. Use a measured, neutral editorial tone. Do not add or change any words.'
+
+export function narrationInstructions(locale = 'en') {
+  if (!['en', 'es'].includes(locale)) throw new Error('Supported audio locales: en, es')
+  return locale === 'es'
+    ? `${AUDIO_INSTRUCTIONS} Speak Spanish with a neutral South American / Latin American accent. Use seseo, not the Castilian Spanish th sound for c or z. Avoid strong regional mannerisms, including Rioplatense sh pronunciation. Preserve the supplied Spanish wording and use clear, natural pacing.`
+    : AUDIO_INSTRUCTIONS
+}
+
+export function translatedNarration(sourceRaw, translatedRaw) {
+  const translated = matter(translatedRaw)
+  if (translated.data.translation?.locale !== 'es' || translated.data.translation?.sourceHash !== sourceHash(sourceRaw)) {
+    throw new Error('Spanish translation is missing or stale; update it before generating narration')
+  }
+  if (translated.data.slug !== matter(sourceRaw).data.slug) throw new Error('Spanish article slug mismatch')
+  return { raw: translatedRaw, data: translated.data, content: translated.content }
+}
 
 export function sourceHash(raw) {
   // Git checkouts use different line endings on Windows and Linux.

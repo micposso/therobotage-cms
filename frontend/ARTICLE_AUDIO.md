@@ -25,6 +25,17 @@ Review the spoken text represented by the dry run and listen to the resulting MP
 
 For a specific article, replace `--latest` with `--slug article-slug`. An edit to the article Markdown changes its source hash; the player disappears until narration is regenerated and the manifest is updated. On failure, the article remains readable without audio.
 
+## Spanish narration
+
+Add `--locale es` to generate from the current file in `translations/es/news/`:
+
+```sh
+npm run audio:dry -- --slug article-slug --locale es --show-text
+npm run audio:publish -- --slug article-slug --locale es --project-ref YOUR_STAGING_PROJECT_REF
+```
+
+Spanish narration uses neutral South American / Latin American delivery with seseo, without Spain-specific pronunciation or strong regional mannerisms. Review the recording for accent and pronunciation before release. The publisher rejects translations that no longer match the English source. Spanish entries use `es/<slug>` in the existing manifest and `news/es/<slug>/` in storage; English paths remain unchanged. Each recording is tied to its own language's source hash. Spanish pages only use matching Spanish audio, never English fallback narration. Both languages retain the staging-only player gate.
+
 ## Verification
 
 1. Run `npm run audio:test`, `npm run typecheck`, and `npm run build` in `frontend/`.
