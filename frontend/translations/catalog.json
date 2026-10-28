@@ -126,6 +126,12 @@
     "expiresAt": null
   },
   {
+    "id": "news/nvidia-isaac-robot-experience-design.md",
+    "route": "/news/nvidia-isaac-robot-experience-design",
+    "sourceHash": "90dd18d8c20d802009f9ee39e774c162eb23c6f12a11a761123748f0ea180e87",
+    "expiresAt": null
+  },
+  {
     "id": "news/nvidia-robot-platform-strategy.md",
     "route": "/news/nvidia-robot-platform-strategy",
     "sourceHash": "b6bc331b92418c00e9432d5bdda486d1326477437c22484b027c80fd730323c9",
@@ -384,22 +390,10 @@
     "expiresAt": "2026-11-23T00:00:00.000Z"
   },
   {
-    "id": "jobs/hardware-product-management-intern-skydio.md",
-    "route": "/jobs/hardware-product-management-intern-skydio",
-    "sourceHash": "9214f007e2a0543175338d88ab32545276184d11ee20f57e91b4f9314b0b5c9a",
-    "expiresAt": "2026-10-26T00:00:00.000Z"
-  },
-  {
     "id": "jobs/hardware-technical-program-manager-product-lines-kodiak.md",
     "route": "/jobs/hardware-technical-program-manager-product-lines-kodiak",
     "sourceHash": "e49f37d4a3cc79c087e97a9263c523dbf16d69da0645d570daeb7ea55affd03e",
     "expiresAt": "2026-11-29T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/head-of-communications-nuro.md",
-    "route": "/jobs/head-of-communications-nuro",
-    "sourceHash": "6237cb3cdaeb93065b5e6ef9b1ea32bf5c5dcd2af38be69a6d0413dd51814651",
-    "expiresAt": "2026-10-25T00:00:00.000Z"
   },
   {
     "id": "jobs/head-of-product-design-shield-ai.md",
@@ -432,12 +426,6 @@
     "expiresAt": "2026-11-02T00:00:00.000Z"
   },
   {
-    "id": "jobs/industrial-designer-applied-intuition.md",
-    "route": "/jobs/industrial-designer-applied-intuition",
-    "sourceHash": "99631fc32b95cf85e7c6f86001050c335f1782e68d80fa91411f1bf907bf3f55",
-    "expiresAt": "2026-10-25T00:00:00.000Z"
-  },
-  {
     "id": "jobs/industrial-designer-fauna.md",
     "route": "/jobs/industrial-designer-fauna",
     "sourceHash": "6af7678eb740953358375fa4f6782ae2506b37bb11818dd7f003c8c28af31950",
@@ -466,18 +454,6 @@
     "route": "/jobs/machine-learning-engineer-robot-learning-path-robotics",
     "sourceHash": "be2f90aa0dd287fcef684d4af3365f9bd343150c87c81c53acbf4a9e492b5130",
     "expiresAt": "2026-11-02T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/machine-learning-research-scientist-behavior-planning-prediction-nuro.md",
-    "route": "/jobs/machine-learning-research-scientist-behavior-planning-prediction-nuro",
-    "sourceHash": "87e27b2b2f661c29faac1ca1811a52e41748982395d95b319e657c37b71ce660",
-    "expiresAt": "2026-10-25T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/machine-learning-research-scientist-generative-modeling-planning-nuro.md",
-    "route": "/jobs/machine-learning-research-scientist-generative-modeling-planning-nuro",
-    "sourceHash": "c88765569ad3c36036fbd150ca3fbc62848b18ac838ccaee3188043af6e2af88",
-    "expiresAt": "2026-10-25T00:00:00.000Z"
   },
   {
     "id": "jobs/manager-data-operations-and-annotations-autonomy-data-zipline.md",
@@ -520,12 +496,6 @@
     "route": "/jobs/marketing-operations-manager-contractor-skydio",
     "sourceHash": "a556995197b4f1011e54d7f52701398f7feeac152db646ff045defd6a6aae3b0",
     "expiresAt": "2026-11-09T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/ml-research-scientist-prediction-smart-agents-nuro.md",
-    "route": "/jobs/ml-research-scientist-prediction-smart-agents-nuro",
-    "sourceHash": "7396eae7fe4eb67480d13235d955f66a4bf4c2153bcc7092ba35d69aeb957ce7",
-    "expiresAt": "2026-10-25T00:00:00.000Z"
   },
   {
     "id": "jobs/new-product-introduction-npi-technical-program-manager-zipline.md",
@@ -582,12 +552,6 @@
     "expiresAt": "2026-11-03T00:00:00.000Z"
   },
   {
-    "id": "jobs/product-designer-defense-developer-tools-applied-intuition.md",
-    "route": "/jobs/product-designer-defense-developer-tools-applied-intuition",
-    "sourceHash": "5b959a34cd8c04b9f94486efe2e2f9e9864b5db11f2642b3d77d5f3aba4b021b",
-    "expiresAt": "2026-10-25T00:00:00.000Z"
-  },
-  {
     "id": "jobs/product-designer-manufacturing-defense-gecko.md",
     "route": "/jobs/product-designer-manufacturing-defense-gecko",
     "sourceHash": "30d71400f4518885ee850c5942dacee546a0b469c396f572dea4b090f1a31adf",
@@ -600,12 +564,6 @@
     "expiresAt": "2026-11-16T00:00:00.000Z"
   },
   {
-    "id": "jobs/product-manager-airspace-platform-zipline.md",
-    "route": "/jobs/product-manager-airspace-platform-zipline",
-    "sourceHash": "6d3cae8c15dadd2c3a40796859fd4b42308b4d126a9d16e8019181a622632ce7",
-    "expiresAt": "2026-10-25T00:00:00.000Z"
-  },
-  {
     "id": "jobs/product-manager-ambi-robotics.md",
     "route": "/jobs/product-manager-ambi-robotics",
     "sourceHash": "61d3c843cfa2c8f9477bb729e58079cfabb078029672d0483d3abee43b55212d",
@@ -616,30 +574,6 @@
     "route": "/jobs/product-manager-cabin-intelligence-applied-intuition",
     "sourceHash": "ecdd6db496f63b4c2a278584198b78be9185cbb8e22bb439d8400e55ab19d08d",
     "expiresAt": "2026-12-08T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/product-manager-dana-physical-ai-applied-intuition.md",
-    "route": "/jobs/product-manager-dana-physical-ai-applied-intuition",
-    "sourceHash": "aa3754b00ea2087f8871cf6c355438e8e5f96c1383e28bbbcc31751b2defad5f",
-    "expiresAt": "2026-10-25T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/product-manager-defenseos-applied-intuition.md",
-    "route": "/jobs/product-manager-defenseos-applied-intuition",
-    "sourceHash": "6dab12a1acce0e6d677bea0f8e677361729274251fed6b8c96bb7f12787057ec",
-    "expiresAt": "2026-10-25T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/product-manager-developer-tooling-applied-intuition.md",
-    "route": "/jobs/product-manager-developer-tooling-applied-intuition",
-    "sourceHash": "7eef26c63e829394ce7039aa2422099ecbdf786b42c9bc26007d45846d8a9a09",
-    "expiresAt": "2026-10-25T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/product-manager-platform-dana-applied-intuition.md",
-    "route": "/jobs/product-manager-platform-dana-applied-intuition",
-    "sourceHash": "9e745eb0208ece5ee555827253d0f2c21a0b2a73b79122865851409be48abcfd",
-    "expiresAt": "2026-10-25T00:00:00.000Z"
   },
   {
     "id": "jobs/product-manager-supply-chain-systems-applied-intuition.md",
@@ -822,12 +756,6 @@
     "expiresAt": "2026-11-17T00:00:00.000Z"
   },
   {
-    "id": "jobs/senior-3d-generalist-product-visualization-skydio.md",
-    "route": "/jobs/senior-3d-generalist-product-visualization-skydio",
-    "sourceHash": "0863dce39fcfa5c2161ac114213244ac739c4520d5be5f2fd822bf5a0b43b542",
-    "expiresAt": "2026-10-26T00:00:00.000Z"
-  },
-  {
     "id": "jobs/senior-ai-research-engineer-agility.md",
     "route": "/jobs/senior-ai-research-engineer-agility",
     "sourceHash": "d67782b4b4dd981618777fcd81a2501aa16617d131812e2216b6a64da6516ae8",
@@ -870,12 +798,6 @@
     "expiresAt": "2026-11-27T00:00:00.000Z"
   },
   {
-    "id": "jobs/senior-industrial-designer-fauna.md",
-    "route": "/jobs/senior-industrial-designer-fauna",
-    "sourceHash": "fedc6f24ea234a2dddad90974e85eda7dda297510318acd60437e870eb244044",
-    "expiresAt": "2026-10-26T00:00:00.000Z"
-  },
-  {
     "id": "jobs/senior-learning-experience-developer-skydio.md",
     "route": "/jobs/senior-learning-experience-developer-skydio",
     "sourceHash": "e9d9c4587e2b054f3f74bc73137e74726fee760a6f249538f0f2913981734290",
@@ -904,12 +826,6 @@
     "route": "/jobs/senior-machine-learning-engineer-tech-lead-robot-learning-loco-manipulation-path-robotics",
     "sourceHash": "32e3141f80f621efd9540873911391251fad2ddfeac8041b7618f65de031fe89",
     "expiresAt": "2026-11-02T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/senior-manager-learning-from-demonstration-agility.md",
-    "route": "/jobs/senior-manager-learning-from-demonstration-agility",
-    "sourceHash": "a9641527b67f09d0d87025b0c14cf1ce8dd2de71948d7942f5239cd048a3cab0",
-    "expiresAt": "2026-10-25T00:00:00.000Z"
   },
   {
     "id": "jobs/senior-ml-engineer-foundation-models-chef-robotics.md",
@@ -1014,18 +930,6 @@
     "expiresAt": "2026-12-08T00:00:00.000Z"
   },
   {
-    "id": "jobs/senior-staff-machine-learning-research-scientist-generative-modeling-planning-nuro.md",
-    "route": "/jobs/senior-staff-machine-learning-research-scientist-generative-modeling-planning-nuro",
-    "sourceHash": "a1cac374e3edff1bb38b9c7f5c355748b7a1669895017d30c0e761be3b6182cb",
-    "expiresAt": "2026-10-25T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/senior-staff-product-manager-stretch-boston-dynamics.md",
-    "route": "/jobs/senior-staff-product-manager-stretch-boston-dynamics",
-    "sourceHash": "7e6039b86de816adf07fb011f59937373257f1609efd01a5c41eeb1566e33d1c",
-    "expiresAt": "2026-10-25T00:00:00.000Z"
-  },
-  {
     "id": "jobs/senior-staff-systems-engineer-autonomy-verification-nuro.md",
     "route": "/jobs/senior-staff-systems-engineer-autonomy-verification-nuro",
     "sourceHash": "23f61728ee6f4b3a46f0272f7ed95c6bf4b1d5ea3aee14d19f3416ac43ff6e36",
@@ -1092,12 +996,6 @@
     "expiresAt": "2026-11-16T00:00:00.000Z"
   },
   {
-    "id": "jobs/staff-product-manager-telecommunications-skydio.md",
-    "route": "/jobs/staff-product-manager-telecommunications-skydio",
-    "sourceHash": "c06cd7254f6cf7dc623fd1a8090f1d26b8cfde16a1e574d0c5540836ae739ace",
-    "expiresAt": "2026-10-26T00:00:00.000Z"
-  },
-  {
     "id": "jobs/staff-research-roboticist-boston-dynamics.md",
     "route": "/jobs/staff-research-roboticist-boston-dynamics",
     "sourceHash": "a5bd29da41ec65e28b334718cee143cff4095c3c7e73eeee5d9d42d9f0529ea4",
@@ -1140,18 +1038,6 @@
     "expiresAt": "2026-10-29T00:00:00.000Z"
   },
   {
-    "id": "jobs/technical-lead-evaluation-infrastructure-nuro.md",
-    "route": "/jobs/technical-lead-evaluation-infrastructure-nuro",
-    "sourceHash": "88602794af59f3e4ef0a6a5a9bbb669f5001597f44dfb23c46eafdfffcc01f16",
-    "expiresAt": "2026-10-25T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/technical-lead-manager-autonomy-evaluation-intelligence-nuro.md",
-    "route": "/jobs/technical-lead-manager-autonomy-evaluation-intelligence-nuro",
-    "sourceHash": "ff3e33e4c03a7750b28f9ba8b34b0e79e98f78fff47deea4d0ae0ebe86c3855a",
-    "expiresAt": "2026-10-25T00:00:00.000Z"
-  },
-  {
     "id": "jobs/technical-lead-manager-risk-aware-planning-nuro.md",
     "route": "/jobs/technical-lead-manager-risk-aware-planning-nuro",
     "sourceHash": "c29f8c1d75ffa2f5b4f233c99665dcffa8da3c4850c25853f35f094399334fe8",
@@ -1174,12 +1060,6 @@
     "route": "/jobs/technical-program-manager-droid-structures-and-mechanisms-zipline",
     "sourceHash": "0b0edbae023c1b0ead9f5d2b8f8c902eeecd18aa462b43cb938a193f6a3ec1ae",
     "expiresAt": "2026-11-06T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/technical-program-manager-flight-systems-platform-zipline.md",
-    "route": "/jobs/technical-program-manager-flight-systems-platform-zipline",
-    "sourceHash": "3b10c2de7b6b9b438f5db920f22a718f995b9a8f068ccbb94a6189cd5779c2b5",
-    "expiresAt": "2026-10-26T00:00:00.000Z"
   },
   {
     "id": "jobs/technical-program-manager-intern-spring-2027-zipline.md",
