@@ -1,7 +1,7 @@
 {
   "published": true,
-  "count": 172,
-  "bytes": 80290073,
+  "count": 175,
+  "bytes": 83723821,
   "assets": {
     "/brand/instructor.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/brand/instructor.4400bfbd66cbf98c.png",
@@ -429,6 +429,12 @@
       "bytes": 1055529,
       "sha256": "80ed09c34ad8dc734dcfe72bedec31fda23e933aeb99f5354edc91b58f9a22b8"
     },
+    "/images/news/nvidia-berlin-2026-keynote.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/nvidia-berlin-2026-keynote.38c796a6acdabb02.jpg",
+      "key": "website/images/news/nvidia-berlin-2026-keynote.38c796a6acdabb02.jpg",
+      "bytes": 81672,
+      "sha256": "38c796a6acdabb02d94231c2c0dea2d610df78d5b73e50ccfbedf1853dacb6d6"
+    },
     "/images/news/nvidia-halos-robot-safety-header.jpg": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/nvidia-halos-robot-safety-header.6e9b18d40ed07820.jpg",
       "key": "website/images/news/nvidia-halos-robot-safety-header.6e9b18d40ed07820.jpg",
@@ -440,6 +446,18 @@
       "key": "website/images/news/nvidia-halos-robot-safety-thumb.6e9b18d40ed07820.jpg",
       "bytes": 101861,
       "sha256": "6e9b18d40ed0782019ee942728ae3d0350ac61a22bad26fd1a48354dc7faa56a"
+    },
+    "/images/news/nvidia-isaac-sim-interface.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/nvidia-isaac-sim-interface.9a287914c60ebab2.png",
+      "key": "website/images/news/nvidia-isaac-sim-interface.9a287914c60ebab2.png",
+      "bytes": 1387463,
+      "sha256": "9a287914c60ebab2c0649434730b417426bf33fecbe7a787fad978511206ccc7"
+    },
+    "/images/news/nvidia-robot-platform-strategy-header.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/nvidia-robot-platform-strategy-header.f9f8e186dac1e108.png",
+      "key": "website/images/news/nvidia-robot-platform-strategy-header.f9f8e186dac1e108.png",
+      "bytes": 1964613,
+      "sha256": "f9f8e186dac1e108e822ef6a41e0565479bf66105b07ff958436a51201617fac"
     },
     "/images/news/reachy-mini-store.jpg": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/reachy-mini-store.b9d039bbb5f32d36.jpg",
