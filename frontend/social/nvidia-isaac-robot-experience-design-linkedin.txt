@@ -1,0 +1,9 @@
+Robot simulation is becoming a place for product decisions.
+
+NVIDIA's expanded Isaac platform brings more than 2,000 simulation-ready assets, robot-learning tools and an integrated humanoid reference platform scheduled for early 2027. The engineering remains demanding. But more reusable infrastructure could make it easier for product managers and UX designers to work with engineers on behavior prototypes before custom hardware is ready.
+
+Consider a robot at a returns counter. A product manager can ask what happens when the bin moves or an operator is delayed. A UX designer can specify how the robot yields, explains a pause and resumes. Simulation helps explore physical behavior; whether an employee understands it still needs testing with intended operators.
+
+The Robot Age's take: start with one task, one operator and three things that can go wrong. Use that brief to decide what to simulate, what to measure and what requires a physical trial. Read the full piece on The Robot Age: https://therobotage.com/news/nvidia-isaac-robot-experience-design
+
+#Robotics #ProductManagement #UXDesign #RobotExperienceDesign #HRI
