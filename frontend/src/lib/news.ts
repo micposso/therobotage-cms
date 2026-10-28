@@ -24,16 +24,19 @@ export interface NewsArticle extends NewsArticleMeta {
 const NEWS_DIR = path.join(process.cwd(), 'news')
 const AUDIO_MANIFEST = path.join(NEWS_DIR, 'audio-manifest.json')
 
-function getAudioUrl(slug: string, raw: string): string | undefined {
+export function getAudioUrl(slug: string, raw: string, locale: 'en' | 'es' = 'en'): string | undefined {
   // The pilot is staging-only. A production rollout can remove this gate later.
   if (process.env.SITE_NOINDEX !== 'true') return undefined
   const baseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
   if (!baseUrl || !fs.existsSync(AUDIO_MANIFEST)) return undefined
   const manifest = JSON.parse(fs.readFileSync(AUDIO_MANIFEST, 'utf8')) as Record<string, { path: string; sourceHash: string }>
-  const entry = manifest[slug]
+  const key = locale === 'en' ? slug : `${locale}/${slug}`
+  const entry = manifest[key]
   // Match the publisher across Windows (CRLF) and deployment (LF) checkouts.
   if (!entry || entry.sourceHash !== createHash('sha256').update(raw.replace(/\r\n/g, '\n')).digest('hex')) return undefined
-  if (!/^news\/[a-z0-9-]+\/[a-f0-9-]+\.mp3$/.test(entry.path)) return undefined
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) return undefined
+  const prefix = `news/${key}/`
+  if (!entry.path.startsWith(prefix) || !/^[a-f0-9-]+\.mp3$/.test(entry.path.slice(prefix.length))) return undefined
   return `${baseUrl.replace(/\/$/, '')}/storage/v1/object/public/article-audio/${entry.path}`
 }
 

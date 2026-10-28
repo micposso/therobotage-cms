@@ -10,7 +10,7 @@ import { spawnSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 import matter from 'gray-matter'
 import { createClient } from '@supabase/supabase-js'
-import { AUDIO_INSTRUCTIONS, AUDIO_MODEL, AUDIO_VOICE, narrationBlocks, narrationChunks, sourceHash } from './article-audio-core.mjs'
+import { AUDIO_MODEL, AUDIO_VOICE, narrationInstructions, translatedNarration, narrationBlocks, narrationChunks, sourceHash } from './article-audio-core.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const newsDir = path.join(root, 'news')
@@ -59,14 +59,14 @@ async function loadManifest() {
   }
 }
 
-async function generatePcm(chunks, key) {
+async function generatePcm(chunks, key, instructions) {
   const pcm = []
   for (let index = 0; index < chunks.length; index++) {
     console.log(`Generating segment ${index + 1}/${chunks.length}`)
     const response = await fetch('https://api.openai.com/v1/audio/speech', {
       method: 'POST',
       headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ model: AUDIO_MODEL, voice: AUDIO_VOICE, instructions: AUDIO_INSTRUCTIONS, input: chunks[index], response_format: 'pcm' }),
+      body: JSON.stringify({ model: AUDIO_MODEL, voice: AUDIO_VOICE, instructions, input: chunks[index], response_format: 'pcm' }),
     })
     if (!response.ok) throw new Error(`OpenAI speech request failed (${response.status}): ${await response.text()}`)
     const bytes = Buffer.from(await response.arrayBuffer())
@@ -97,23 +97,30 @@ async function encodeMp3(pcm) {
 async function main() {
   await loadEnv()
   const dryRun = args.includes('--dry-run')
+  const locale = value('--locale') ?? 'en'
+  const instructions = narrationInstructions(locale)
   const slug = value('--slug')
   if (!slug && !args.includes('--latest')) throw new Error('Specify --slug <slug> or --latest')
   if (slug && args.includes('--latest')) throw new Error('Choose --slug or --latest, not both')
   const all = await articles()
-  const article = slug
+  let article = slug
     ? all.find((entry) => entry.data.slug === slug)
     : all.sort((a, b) => new Date(b.data.date) - new Date(a.data.date))[0]
   if (!article) throw new Error('Article not found')
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(article.data.slug)) throw new Error('Article slug is unsafe for a storage path')
+  if (locale === 'es') {
+    const translatedRaw = await fs.readFile(path.join(root, 'translations/es/news', article.name), 'utf8')
+    article = { ...article, ...translatedNarration(article.raw, translatedRaw) }
+  }
 
   const blocks = narrationBlocks(article.data.title, article.content)
   const chunks = narrationChunks(blocks)
   const hash = sourceHash(article.raw)
-  const settingsHash = sourceHash(`${AUDIO_MODEL}\n${AUDIO_VOICE}\n${AUDIO_INSTRUCTIONS}`).slice(0, 12)
-  const objectPath = `news/${article.data.slug}/${hash.slice(0, 16)}-${settingsHash}.mp3`
+  const settingsHash = sourceHash(`${AUDIO_MODEL}\n${AUDIO_VOICE}\n${instructions}`).slice(0, 12)
+  const manifestKey = locale === 'en' ? article.data.slug : `${locale}/${article.data.slug}`
+  const objectPath = `news/${manifestKey}/${hash.slice(0, 16)}-${settingsHash}.mp3`
   const manifest = await loadManifest()
-  console.log(JSON.stringify({ slug: article.data.slug, title: article.data.title, characters: blocks.join('\n\n').length, segments: chunks.length, sourceHash: hash, objectPath, current: manifest[article.data.slug]?.path === objectPath }, null, 2))
+  console.log(JSON.stringify({ slug: article.data.slug, locale, title: article.data.title, characters: blocks.join('\n\n').length, segments: chunks.length, sourceHash: hash, objectPath, current: manifest[manifestKey]?.path === objectPath }, null, 2))
   if (args.includes('--show-text')) console.log(`\n${blocks.join('\n\n')}\n`)
   if (dryRun) return
 
@@ -135,12 +142,12 @@ async function main() {
 
   const publicUrl = supabase.storage.from(bucket).getPublicUrl(objectPath).data.publicUrl
   let verified = false
-  if (manifest[article.data.slug]?.path === objectPath) {
+  if (manifest[manifestKey]?.path === objectPath) {
     const response = await fetch(publicUrl, { method: 'HEAD' })
     verified = response.ok && response.headers.get('content-type')?.includes('audio/')
   }
   if (!verified) {
-    const pcm = await generatePcm(chunks, process.env.OPENAI_API_KEY)
+    const pcm = await generatePcm(chunks, process.env.OPENAI_API_KEY, instructions)
     const mp3 = await encodeMp3(pcm)
     const { error } = await supabase.storage.from(bucket).upload(objectPath, mp3, { contentType: 'audio/mpeg', cacheControl: '31536000', upsert: false })
     if (error && error.statusCode !== '409') throw error
@@ -150,7 +157,7 @@ async function main() {
   if (check.status !== 206 || !check.headers.get('content-type')?.includes('audio/')) throw new Error(`Uploaded audio did not pass the public playback/range check (${check.status})`)
   await check.arrayBuffer()
 
-  manifest[article.data.slug] = { path: objectPath, sourceHash: hash, model: AUDIO_MODEL, voice: AUDIO_VOICE }
+  manifest[manifestKey] = { path: objectPath, sourceHash: hash, model: AUDIO_MODEL, voice: AUDIO_VOICE }
   const tempManifest = `${manifestPath}.tmp`
   await fs.writeFile(tempManifest, `${JSON.stringify(manifest, null, 2)}\n`)
   await fs.rename(tempManifest, manifestPath)

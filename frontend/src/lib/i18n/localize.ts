@@ -18,7 +18,7 @@ export function localize<T>(value: T, route: string, locale: Locale): T {
   if ('overview' in original) result.overview = entry.body.trim()
   if ('body' in original) result.body = entry.body.trim().split(/\n\s*\n/)
   if ('descriptionHtml' in original) result.descriptionHtml = imageHtml(entry.html)
-  if ('audioUrl' in original) result.audioUrl = undefined
+  if ('audioUrl' in original) result.audioUrl = entry.audioUrl
   return result as T
 }
 

@@ -34,5 +34,11 @@
     "sourceHash": "90dd18d8c20d802009f9ee39e774c162eb23c6f12a11a761123748f0ea180e87",
     "model": "gpt-4o-mini-tts",
     "voice": "marin"
+  },
+  "es/nvidia-isaac-robot-experience-design": {
+    "path": "news/es/nvidia-isaac-robot-experience-design/5fdf54d8f2338504-9e08297e0ae3.mp3",
+    "sourceHash": "5fdf54d8f2338504b56ce3dd9689b8a16252f47eef53fd023ef8808a6aa4fbb1",
+    "model": "gpt-4o-mini-tts",
+    "voice": "marin"
   }
 }
