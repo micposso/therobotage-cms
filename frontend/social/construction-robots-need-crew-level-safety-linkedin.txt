@@ -1,0 +1,9 @@
+Who decides when a construction robot can move again?
+
+FORT Robotics announced approximately $20 million in funding commitments, including financing tied to a proposed business combination. Its wireless safety controls bring a practical question into focus: how do the people around autonomous machines retain effective control?
+
+Human Friendly Robotics provides a separate construction example. Its Tyler flooring robot handles repetitive placement while crews retain preparation, layout, cuts, finishing, and quality control. That division of labor makes supervision, interruptions, and recovery part of the product experience. The sources reviewed do not establish a partnership between the two companies.
+
+For product managers and UX designers, the pilot brief should cover who can stop work, who authorizes restart, what happens when communication fails, and how much assistance the robot requires. Output alone will miss the work that keeps a crew moving. Read the full piece on The Robot Age: https://therobotage.com/news/construction-robots-need-crew-level-safety
+
+#Robotics #ConstructionRobotics #HumanRobotInteraction #ProductDesign #RobotSafety
