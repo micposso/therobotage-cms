@@ -4,8 +4,8 @@ title: "Meta and OpenAI Change the Humanoid Equation."
 category: OPINION
 date: November 2, 2026
 excerpt: "Models and compute give Meta and OpenAI a head start in humanoids. Robot makers still hold something valuable: experience with the physical world."
-headerImage: /images/news/Helix-02.jpeg
-thumbnailImage: /images/news/Helix-02.jpeg
+headerImage: /images/news/meta-openai-humanoid-model-advantage-header.webp
+thumbnailImage: /images/news/meta-openai-humanoid-model-advantage-header.webp
 author: The Robot Age Editorial Team
 ---
 
@@ -13,7 +13,7 @@ Meta and OpenAI could change the economics of humanoid robotics by bringing the 
 
 The attraction is easy to see. A humanoid can fit through a doorway and still have no useful understanding of what someone wants on the other side. Better models could help it interpret a request, recognize an unfamiliar object, and choose a workable sequence of actions. Making those abilities dependable is where the competition gets interesting.
 
-*Header image: Figure humanoid handling packages, from the site's existing Figure imagery. Figure is discussed below as a company developing both hardware and AI; this is not a Meta or OpenAI robot.*
+*Header image: AI-generated editorial illustration of humanoid development alongside computing infrastructure. It depicts a fictional lab and robot, not a Meta or OpenAI product.*
 
 ## The ambitions are clearer than the products
 
