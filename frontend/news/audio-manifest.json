@@ -40,5 +40,17 @@
     "sourceHash": "5fdf54d8f2338504b56ce3dd9689b8a16252f47eef53fd023ef8808a6aa4fbb1",
     "model": "gpt-4o-mini-tts",
     "voice": "marin"
+  },
+  "meta-openai-humanoid-model-advantage": {
+    "path": "news/meta-openai-humanoid-model-advantage/84d0bf508981ef67-4c5103f7c920.mp3",
+    "sourceHash": "84d0bf508981ef67a6ce3a632861786705924e202c9036e86326966d44fd3e45",
+    "model": "gpt-4o-mini-tts",
+    "voice": "marin"
+  },
+  "es/meta-openai-humanoid-model-advantage": {
+    "path": "news/es/meta-openai-humanoid-model-advantage/34f6988458a66b0c-9e08297e0ae3.mp3",
+    "sourceHash": "34f6988458a66b0c4a5612d1062ba4172ce951c8e94e5565c34a78e5d5c1f21e",
+    "model": "gpt-4o-mini-tts",
+    "voice": "marin"
   }
 }

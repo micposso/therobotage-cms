@@ -102,6 +102,12 @@
     "expiresAt": null
   },
   {
+    "id": "news/meta-openai-humanoid-model-advantage.md",
+    "route": "/news/meta-openai-humanoid-model-advantage",
+    "sourceHash": "84d0bf508981ef67a6ce3a632861786705924e202c9036e86326966d44fd3e45",
+    "expiresAt": null
+  },
+  {
     "id": "news/military-field-robots-china-ukraine-west.md",
     "route": "/news/military-field-robots-china-ukraine-west",
     "sourceHash": "f14868e3ea4a3d369c3aea1d0512ffc3cc96a346cf5df96dad5c957df63502ce",
