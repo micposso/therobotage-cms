@@ -1,0 +1,9 @@
+Meta and OpenAI bring a different starting point to humanoid robotics: the infrastructure for learning at scale.
+
+Meta's reported Fourier prototype and OpenAI's stated robotics ambitions matter because model research, compute, and physical feedback could be developed together. Meta's prototype remains a reported development, not a verified consumer launch. OpenAI's ambition is also distinct from a robot customers can buy today.
+
+The hardware-only comparison needs care. Figure develops its own Helix robot AI. Manufacturers can also build valuable knowledge from contact, balance, repairs, and deployment failures. More training compute does not automatically produce a dependable machine.
+
+For product managers and UX designers, ask how a supplier learns from difficult interactions: who handles exceptions, who owns the data, and how behavior updates are tested before workers rely on them. Read the full piece on The Robot Age: https://therobotage.com/news/meta-openai-humanoid-model-advantage
+
+#Robotics #HumanoidRobots #PhysicalAI #ProductDesign #HumanRobotInteraction
