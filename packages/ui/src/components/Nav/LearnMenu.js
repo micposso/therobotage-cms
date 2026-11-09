@@ -20,7 +20,9 @@ export default function LearnMenu({ baseUrl = '', inline = false, triggerClassNa
 
   return <details ref={disclosure} className={`${styles.menu} ${inline ? styles.inline : ''}`}
     onBlur={(event) => {
-      if (!event.currentTarget.contains(event.relatedTarget)) event.currentTarget.open = false
+      // Touch browsers may blur the summary with no next focus target before
+      // dispatching the link click. Outside pointer presses are handled above.
+      if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget)) event.currentTarget.open = false
     }}
     onKeyDown={(event) => {
       if (event.key === 'Escape' && event.currentTarget.open) {
@@ -30,14 +32,11 @@ export default function LearnMenu({ baseUrl = '', inline = false, triggerClassNa
         event.currentTarget.querySelector('summary')?.focus()
       }
     }}
-    onMouseEnter={(event) => {
-      event.currentTarget.open = true
+    onPointerEnter={(event) => {
+      if (!inline && event.pointerType === 'mouse') event.currentTarget.open = true
     }}
-    onMouseLeave={(event) => {
-      event.currentTarget.open = false
-    }}
-    onFocus={(event) => {
-      event.currentTarget.open = true
+    onPointerLeave={(event) => {
+      if (!inline && event.pointerType === 'mouse') event.currentTarget.open = false
     }}>
     <summary className={`${styles.trigger} ${triggerClassName}`}>{translate('PROGRAMS')}</summary>
     <ul className={styles.links}>
