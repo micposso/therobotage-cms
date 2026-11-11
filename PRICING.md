@@ -2,9 +2,9 @@
 
 This is the decision and experiment log for The Robot Age's Academy-as-a-Service pricing. Keep previous entries intact and append each adjustment, including changes to allowances, contract terms, positioning, or build fees. Record corrections explicitly rather than rewriting the historical rationale.
 
-Last updated: **2026-10-18**. Current model: **ACADEMY-002**.
+Last updated: **2026-10-19**. Current model: **ACADEMY-002**.
 
-Status: implemented in the local `/enterprise` page in English and Spanish. Production deployment and customer exposure have not been verified. No A/B test has run or established a winning price.
+Status: **publication verified on 2026-10-19** on the live English and Spanish `/enterprise` pages. Published prices, allowances, and terms match ACADEMY-002 and the local implementation. The original deployment date, deployment commit, customer exposure counts, and commercial results remain unverified. No A/B test has run or established a winning price.
 
 ## Current model — ACADEMY-002
 
@@ -69,6 +69,29 @@ Rationale: software alone is inexpensive relative to a managed service. The offe
 Hypothesis, not a result: a lower first-year commitment and clearer managed-service value will improve qualified sales conversion while maintaining viable delivery economics. Because both prices and copy changed, this revision is not a controlled price-only A/B test.
 
 Validation: targeted lint, TypeScript, and five enterprise tests passed; English desktop/mobile browser checks confirmed updated prices and no horizontal overflow. This validates implementation, not commercial performance. Production deployment, exposure counts, conversion, sales, and actual margins remain unrecorded.
+
+### ACADEMY-002 — Published-page reconciliation — 2026-10-19
+
+This is a publication-status correction, not a new commercial offer or experiment. The previous entries retain their status as known on 2026-10-18. ACADEMY-001's heading “Initial published-page model” describes the initial page implementation; it does not prove those earlier rates were ever live.
+
+Sources checked directly: [English Enterprise page](https://therobotage.com/enterprise) and [Spanish Enterprise page](https://therobotage.com/es/enterprise). Both returned HTTP 200 on 2026-10-19. Directly retrieved page content was used because the search service returned an older cached English page without Academy pricing. Local comparison: English `content.ts`, Spanish `enterprise-es.json`, and the ACADEMY-002 implementation in commit `cd898b9`; this is a source reference, not a verified production deployment SHA.
+
+| Plan | Previous local offer (ACADEMY-001) | Published offer, EN and ES | First-year change | Match to ACADEMY-002 |
+| --- | --- | --- | --- | --- |
+| Basic | $1,990/month + $7,500 build; $31,380 first year | $1,490/month + $7,500 build; $25,380 first year | $6,000 lower (19.1%) | Matches |
+| Growth | $4,990/month + $20,000 build; $79,880 first year | $3,490/month + $15,000 build; $56,880 first year | $23,000 lower (28.8%) | Matches |
+| Enterprise | Custom build and service quote; custom annual agreement | Custom build and service quote; custom annual agreement | Unchanged; no numeric starting price | Matches |
+
+Published scope also matches the current model above: Basic includes 1 robot product, 3 sites, 100 monthly active learners, 2 modules/30 learning minutes, 12 video minutes, one of English or Spanish, and 4 service hours/month. Growth includes 2 products, 15 sites, 500 learners, 6 modules/90 learning minutes, 30 video minutes, English and Spanish, and 10 service hours/month. Portal/LMS options, assessment/reporting, review cadence, two initial review rounds, and separately scoped integrations remain consistent. Both languages retain the 12-month subscription after launch, monthly billing, separate build fee, exclusions, and separately priced paid pilot.
+
+Pricing logic carried into the published offer:
+
+- **Basic lowers the recurring entry barrier:** $500/month less (25.1%), with the $7,500 build unchanged to fund the initial robot-specific content and launch work. Calculation: $1,490 × 12 + $7,500 = $25,380.
+- **Growth lowers both recurring and upfront commitment:** $1,500/month less (30.1%) and $5,000 less for the build (25.0%). Calculation: $3,490 × 12 + $15,000 = $56,880. The $23,000 first-year reduction combines $18,000 in subscription savings and $5,000 in build savings, while preserving bilingual delivery and existing allowances.
+- **The premium pays for a bounded managed service:** robot-specific content, onboarding, and ongoing support accompany the platform. The dated adjacent-provider research below supports that positioning; it does not validate demand or profitability. Lower prices make actual delivery-cost tracking more important because scope was retained.
+- **Enterprise remains scoped:** portfolios, integrations, localization, governance, and delivery requirements vary too much to support an unvalidated public starting price.
+
+Decision: retain ACADEMY-002; no pricing or website code change is needed to reconcile the published offer. Correct the documentation's publication status and preserve the earlier rationale. Publication confirms availability of the offer, not customer exposure, conversion gains, viable margins, or a winning experiment. The older implementation memo's “not deployed” statement is historical and is superseded by this dated production check.
 
 ## Research behind ACADEMY-002
 

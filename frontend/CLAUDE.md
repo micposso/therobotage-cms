@@ -1,6 +1,6 @@
 @AGENTS.md
 
-## Styling
+## Styling 
 
 Per-component CSS files co-located with each component (`ComponentName.module.css`).
 No Tailwind. No CSS-in-JS. Do not add either.
