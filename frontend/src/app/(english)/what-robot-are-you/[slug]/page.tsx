@@ -21,7 +21,7 @@ export async function generateMetadata({
   if (!robot) return { title: 'Robot not found — The Robot Age' }
 
   const title = `You could be the ${robot.name} — What Robot Are You?`
-  const description = `${robot.name} — ${robot.archetype}. ${robot.blurb} Take the 2-minute quiz and find your match.`
+  const description = `${robot.name} — ${robot.archetype}. ${robot.learning.use} Take the 2-minute quiz and find your match.`
   const url = `${SITE_URL}/what-robot-are-you/${slug}`
 
   return {
@@ -56,13 +56,14 @@ export default async function RobotResultPage({
     <>
       <Nav pinned />
 
-      <ResultView
+      <main><ResultView
+        key={robot.slug}
         robot={robot}
-        reason={robot.blurb}
+        reason={`${robot.archetype}. Discover the robot behind the personality, then take the quiz to find your own match.`}
         eyebrow="Meet your possible match"
-        headline={`The ${robot.name}.`}
+        headline={robot.name}
         cardReasonLabel="The short version"
-      />
+      /></main>
 
       <Footer />
     </>

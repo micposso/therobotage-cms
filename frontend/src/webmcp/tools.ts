@@ -41,6 +41,11 @@ function publicEvent(event: (typeof siteEvents)[number]) {
     url: event.url,
     status: event.status,
     registrationAvailability: event.registration.availability,
+    audience: event.audience,
+    access: event.access,
+    series: event.series,
+    sourceUrl: event.sourceUrl,
+    registration: event.registration,
   }
 }
 
@@ -86,7 +91,7 @@ const tools: WebMCP.ModelContextTool[] = [
   {
     name: 'list_events',
     title: 'List The Robot Age events',
-    description: 'Lists the current events and announced upcoming events published by The Robot Age.',
+    description: 'Lists The Robot Age events, including the four Robot Week NYC events, dates, attendance restrictions, and external registration or interest links. Closed events are identified by status.',
     inputSchema: { type: 'object', properties: {}, additionalProperties: false },
     annotations: { readOnlyHint: true },
     execute: toolExecute('list_events', async () => ({
@@ -134,7 +139,7 @@ const tools: WebMCP.ModelContextTool[] = [
   {
     name: 'register_for_event',
     title: 'Register for a The Robot Age event',
-    description: 'Submits the existing validated registration flow for an event when registration is connected.',
+    description: 'Submits the validated registration flow when connected. For Robot Week NYC, returns the external Zoom registration or interest-form link and attendance restrictions without registering the visitor.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -145,7 +150,9 @@ const tools: WebMCP.ModelContextTool[] = [
         profession: { type: 'string', enum: WORKSHOP_PROFESSIONS },
         heard: { type: 'string', enum: WORKSHOP_HEARD_OPTIONS, description: 'How the attendee heard about the event.' },
       },
-      required: ['eventId', 'firstName', 'lastName', 'email', 'profession', 'heard'],
+      // External next steps need only an event ID. The connected workshop action
+      // validates its attendee fields before it can send or persist anything.
+      required: ['eventId'],
       additionalProperties: false,
     },
     annotations: { readOnlyHint: false },
@@ -164,8 +171,13 @@ const tools: WebMCP.ModelContextTool[] = [
         return {
           ok: false,
           eventId: event.id,
+          ...(event.registration.url ? {
+            status: 'external-action-required',
+            registration: event.registration,
+            access: event.access,
+          } : {}),
           error: {
-            code: 'REGISTRATION_UNAVAILABLE',
+            code: event.registration.url ? 'EXTERNAL_REGISTRATION_REQUIRED' : 'REGISTRATION_UNAVAILABLE',
             message: event.registration.note,
           },
         }

@@ -10,7 +10,7 @@ export const siteOverview = {
     { title: 'Robot Deployment Practitioner (RDP)', url: '/learn/rdp' },
     { title: 'Human-robot experience research', url: '/research' },
     { title: 'Robotics news and field signals', url: '/research' },
-    { title: 'Robotics events and workshops', url: '/summit' },
+    { title: 'Robotics events calendar', url: '/calendar' },
   ],
 } as const
 

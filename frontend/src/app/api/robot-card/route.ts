@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
   const resultUrl = `${SITE_URL}/what-robot-are-you/${robot.slug}`
   const name = escapeHtml(robot.name)
   const archetype = escapeHtml(robot.archetype)
-  const blurb = escapeHtml(robot.blurb)
+  const blurb = escapeHtml(robot.learning.use)
 
   try {
     const resend = new Resend(process.env.RESEND_API_KEY)
@@ -71,30 +71,19 @@ export async function POST(req: NextRequest) {
           </tr>
         </table>
 
-        <table cellpadding="0" cellspacing="0" width="100%" style="margin:0 0 32px;border-collapse:collapse;">
-          <tr>
-            <td style="padding:8px 0;border-top:1px solid #e0e0e0;font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#9b5152;width:120px;">Height</td>
-            <td style="padding:8px 0;border-top:1px solid #e0e0e0;font-family:Georgia,serif;font-size:14px;color:#2A2A28;">${escapeHtml(robot.specs.height)}</td>
-          </tr>
-          <tr>
-            <td style="padding:8px 0;border-top:1px solid #e0e0e0;font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#9b5152;">Weight</td>
-            <td style="padding:8px 0;border-top:1px solid #e0e0e0;font-family:Georgia,serif;font-size:14px;color:#2A2A28;">${escapeHtml(robot.specs.weight)}</td>
-          </tr>
-          <tr>
-            <td style="padding:8px 0;border-top:1px solid #e0e0e0;font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#9b5152;">Notable</td>
-            <td style="padding:8px 0;border-top:1px solid #e0e0e0;font-family:Georgia,serif;font-size:14px;color:#2A2A28;">${escapeHtml(robot.specs.notable)}</td>
-          </tr>
-          <tr>
-            <td style="padding:8px 0;border-top:1px solid #e0e0e0;font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#9b5152;">Price</td>
-            <td style="padding:8px 0;border-top:1px solid #e0e0e0;border-bottom:1px solid #e0e0e0;font-family:Georgia,serif;font-size:14px;color:#2A2A28;">${escapeHtml(robot.specs.price)}</td>
-          </tr>
-        </table>
+        <h2 style="font-family:Arial,sans-serif;font-size:18px;color:#0D0D0D;margin:0 0 12px;">What to notice</h2>
+        <p style="font-family:Georgia,serif;font-size:15px;line-height:1.75;color:#2A2A28;margin:0 0 16px;">
+          ${escapeHtml(robot.learning.takeaway)}
+        </p>
+        <p style="font-family:Arial,sans-serif;font-size:13px;line-height:1.6;margin:0 0 24px;">
+          <a href="${escapeHtml(robot.learning.source.url)}" style="color:#9b5152;">${escapeHtml(robot.learning.source.label)}</a>
+        </p>
 
         <p style="font-family:Georgia,serif;font-size:15px;line-height:1.75;color:#2A2A28;margin:0 0 8px;">
-          Want to evaluate robots like this for real? The RXD Scorecard scores any robot interaction across six dimensions of Robot Experience Design.
+          Curious about the world behind the quiz? Learn to read robot demos, understand autonomy, and ask better questions about robots with Robot Literacy.
         </p>
         <p style="font-family:Georgia,serif;font-size:15px;line-height:1.75;color:#2A2A28;margin:0;">
-          <a href="${SITE_URL}/rxd-scorecard" style="color:#9b5152;text-decoration:none;">Try the RXD Scorecard &rarr;</a>
+          <a href="${SITE_URL}/robot-literacy" style="color:#9b5152;text-decoration:none;">Explore Robot Literacy &rarr;</a>
         </p>
       `),
     })

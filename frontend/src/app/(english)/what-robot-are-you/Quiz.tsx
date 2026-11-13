@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo, useRef } from 'react'
+import { useState, useMemo, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Image from '@/components/MediaImage'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
@@ -10,10 +10,12 @@ import ResultView from './ResultView'
 import styles from './what-robot-are-you.module.css'
 
 export default function Quiz() {
-  const [step, setStep] = useState(0) // 0..5 questions, 6 = result
+  const [step, setStep] = useState(0)
   const [answers, setAnswers] = useState<Answers>({})
   const reduce = useReducedMotion()
   const stageRef = useRef<HTMLDivElement>(null)
+  const questionRef = useRef<HTMLHeadingElement>(null)
+  const focusQuestion = useRef(false)
 
   const total = QUESTIONS.length
   const isResult = step >= total
@@ -22,35 +24,35 @@ export default function Quiz() {
   const result = useMemo(() => (isResult ? matchRobot(answers) : null), [isResult, answers])
 
   const choose = (questionId: string, optionId: string) => {
-    const next = { ...answers, [questionId]: optionId }
-    setAnswers(next)
-    // Advance after a short beat so the selection reads before the transition.
-    window.setTimeout(() => {
-      setStep((s) => s + 1)
-      if (stageRef.current) {
-        stageRef.current.scrollIntoView({
-          behavior: reduce ? 'auto' : 'smooth',
-          block: 'start',
-        })
-      }
-    }, 180)
+    setAnswers((previous) => ({ ...previous, [questionId]: optionId }))
   }
 
-  const back = () => setStep((s) => Math.max(0, s - 1))
+  const goTo = (next: number) => {
+    focusQuestion.current = true
+    setStep(next)
+  }
+
+  useEffect(() => {
+    if (!focusQuestion.current || isResult) return
+    questionRef.current?.focus({ preventScroll: true })
+    stageRef.current?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' })
+    focusQuestion.current = false
+  }, [step, isResult, reduce])
 
   const retake = () => {
     setAnswers({})
-    setStep(0)
-    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' })
+    goTo(0)
   }
 
   if (isResult && result) {
     return (
       <>
         <ResultView
+          key={result.robot.slug}
           robot={result.robot}
           reason={result.reason}
           traitWord={result.traitWord}
+          highlights={result.highlights}
           onRetake={retake}
         />
         <AllRobots />
@@ -58,56 +60,73 @@ export default function Quiz() {
     )
   }
 
-  const progress = ((step + 1) / total) * 100
-  const transition = reduce ? { duration: 0 } : { duration: 0.35, ease: [0.16, 1, 0.3, 1] as const }
+  const progress = (step / total) * 100
+  const transition = reduce ? { duration: 0 } : { duration: 0.22, ease: [0.16, 1, 0.3, 1] as const }
 
   return (
     <>
-      <section className={styles.quizSection} ref={stageRef}>
+      <header className={styles.intro}>
+        <div className={styles.introInner}>
+          <div>
+            <span className={styles.introEyebrow}>A little human. A little robot.</span>
+            <h1 className={styles.introTitle}>What robot are you?</h1>
+            <p className={styles.introCopy}>Find your robot counterpart. Discover what it does in the real world.</p>
+            <span className={styles.introMeta}>6 questions · 9 real robots · About 2 minutes · No login</span>
+          </div>
+          <Image src="/images/human.png" alt="" width={192} height={192}
+            sizes="192px" loading="eager" className={styles.introImage} />
+        </div>
+      </header>
+      <section className={styles.quizSection} ref={stageRef} aria-label="Find your robot match">
         <div className="container-fluid">
           <div className={styles.quizStage}>
             {/* Progress */}
             <div className={styles.progressRow}>
-              <div className={styles.progressBar} aria-hidden="true">
+              <div className={styles.progressBar} role="progressbar" aria-label="Quiz progress"
+                aria-valuemin={0} aria-valuemax={total} aria-valuenow={step}
+                aria-valuetext={`${step} of ${total} questions completed`}>
                 <span className={styles.progressFill} style={{ width: `${progress}%` }} />
               </div>
-              <p className={styles.progressLabel} aria-live="polite">
-                Question {step + 1} of {total}
-              </p>
+              <span className={styles.progressLabel} aria-live="polite">Question {step + 1} of {total}</span>
             </div>
 
             {/* Question stage — fixed min-height to avoid layout shift */}
+            <form onSubmit={(event) => {
+              event.preventDefault()
+              if (answers[current.id]) goTo(step + 1)
+            }}>
             <div className={styles.questionWrap}>
-              <AnimatePresence mode="wait">
+              <AnimatePresence initial={false} mode="popLayout">
                 <motion.div
                   key={current.id}
                   initial={reduce ? false : { opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={reduce ? { opacity: 1 } : { opacity: 0, y: -12 }}
+                  exit={{ opacity: 0, pointerEvents: 'none' }}
                   transition={transition}
                 >
-                  <h2 className={styles.question}>{current.prompt}</h2>
-                  <div
+                  <h2 ref={questionRef} id={`question-${current.id}`} tabIndex={-1}
+                    className={styles.question}>{current.prompt}</h2>
+                  <span className={styles.questionHint}>Pick the one that feels most like you.</span>
+                  <fieldset
                     className={styles.options}
-                    role="radiogroup"
-                    aria-label={current.prompt}
+                    aria-labelledby={`question-${current.id}`}
                   >
-                    {current.options.map((opt) => {
+                    {current.options.map((opt, index) => {
                       const selected = answers[current.id] === opt.id
                       return (
-                        <button
+                        <label
                           key={opt.id}
-                          type="button"
-                          role="radio"
-                          aria-checked={selected}
                           className={`${styles.option} ${selected ? styles.optionActive : ''}`}
-                          onClick={() => choose(current.id, opt.id)}
                         >
-                          {opt.label}
-                        </button>
+                          <input type="radio" name={current.id} value={opt.id}
+                            checked={selected} onChange={() => choose(current.id, opt.id)} />
+                          <span className={styles.optionLetter} aria-hidden="true">{String.fromCharCode(65 + index)}</span>
+                          <span>{opt.label}</span>
+                          <span className={styles.optionCheck} aria-hidden="true">{selected ? '✓' : ''}</span>
+                        </label>
                       )
                     })}
-                  </div>
+                  </fieldset>
                 </motion.div>
               </AnimatePresence>
             </div>
@@ -115,15 +134,20 @@ export default function Quiz() {
             {/* Controls */}
             <div className={styles.quizControls}>
               {step > 0 ? (
-                <button type="button" className={styles.backBtn} onClick={back}>
+                <button type="button" className={styles.backBtn} onClick={() => goTo(step - 1)}>
                   ← Back
                 </button>
               ) : (
                 <span />
               )}
-              <Link href="#all-robots" className={styles.skipLink}>
-                Just show me all 9 robots
-              </Link>
+              <button type="submit" className={styles.nextBtn} disabled={!answers[current.id]}>
+                {step === total - 1 ? 'Meet my robot' : 'Next question'} <span aria-hidden="true">→</span>
+              </button>
+            </div>
+            </form>
+            <div className={styles.quizFootnote}>
+              <span>A personality match, just for fun.</span>
+              <Link href="#all-robots" className={styles.skipLink}>Meet all {QUIZ_ROBOTS.length} robots ↓</Link>
             </div>
           </div>
         </div>
@@ -141,7 +165,7 @@ function AllRobots() {
         <p className={styles.galleryEyebrow}>The lineup</p>
         <h2 className={styles.galleryTitle}>The nine robots</h2>
         <p className={styles.gallerySub}>
-          Every match is a real robot with verified specs. Here is the full roster.
+          Different shapes. Different jobs. Explore the illustrated lineup, then meet the real robots.
         </p>
         <div className={styles.galleryGrid}>
           {QUIZ_ROBOTS.map((r) => (
@@ -158,9 +182,10 @@ function AllRobots() {
                   <span className={styles.galleryMaker}>{r.maker}</span>
                 </span>
               </span>
-              <span className={styles.galleryBlurb}>{r.blurb}</span>
+              <span className={styles.galleryCategory}>{r.learning.category}</span>
+              <span className={styles.galleryBlurb}>{r.learning.use}</span>
               <span className={styles.galleryLink}>
-                See card
+                Meet the robot
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path
                     d="M3 8h10M9 4l4 4-4 4"
@@ -174,13 +199,17 @@ function AllRobots() {
             </Link>
           ))}
         </div>
+        <div className={styles.learningCta}>
+          <div><h3>Curious about the world behind the quiz?</h3>
+          <p>Learn to spot the difference between a robot demo, a real deployment, and a promise.</p></div>
+          <Link href="/robot-literacy" className={styles.textBtn}>Explore Robot Literacy →</Link>
+        </div>
       </div>
     </section>
   )
 }
 
-/* Round robot thumbnail. Shows /robots/<slug>.jpg when present; until the real
- * photos are dropped in, falls back to a branded monogram so nothing looks broken. */
+/* Existing photos resolve to verified R2 assets through MediaImage. */
 function GalleryThumb({ robot }: { robot: QuizRobot }) {
   const [failed, setFailed] = useState(false)
   const initials = robot.name
@@ -201,7 +230,7 @@ function GalleryThumb({ robot }: { robot: QuizRobot }) {
           src={robot.photo}
           alt=""
           fill
-          sizes="64px"
+          sizes="(max-width: 599px) 85vw, (max-width: 991px) 40vw, 28vw"
           className={styles.galleryThumbImg}
           onError={() => setFailed(true)}
         />

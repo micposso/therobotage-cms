@@ -23,6 +23,18 @@
   max-width: 1100px;
 }
 
+.compact .inner {
+  grid-template-columns: 1fr;
+}
+
+.compact .title {
+  margin-bottom: var(--space-4);
+}
+
+.compact .subtitle {
+  max-width: 760px;
+}
+
 .imageCol {
   display: flex;
   flex-direction: column;

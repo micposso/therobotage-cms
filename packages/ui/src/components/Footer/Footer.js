@@ -13,6 +13,7 @@ const NAV_LINKS = [
   { label: 'Partners', href: '/robot-literacy/partners' },
   { label: 'Press', href: '/press' },
   { label: 'Connect',       href: '/connect' },
+  { label: 'Events',        href: '/calendar' },
   { label: 'Summit',        href: '/summit' },
 ]
 

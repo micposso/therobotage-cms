@@ -16,6 +16,7 @@ interface PageHeroProps {
   roundImage?: boolean
   children?: ReactNode
   imageContent?: ReactNode
+  compact?: boolean
 }
 
 export default function PageHero({
@@ -27,6 +28,7 @@ export default function PageHero({
   roundImage = false,
   children,
   imageContent,
+  compact = false,
 }: PageHeroProps) {
   const suppliedImages = [...new Set((images?.length ? images : [imageSrc]).filter(
     (src): src is string => Boolean(src) && src !== '/images/placeholder.jpg',
@@ -39,13 +41,13 @@ export default function PageHero({
   const currentSrc = slides[index % slides.length]
 
   useEffect(() => {
-    if (imageContent || reducedMotion || slides.length <= 1) return
+    if (compact || imageContent || reducedMotion || slides.length <= 1) return
     const timer = setInterval(() => setIndex((i) => (i + 1) % slides.length), 3500)
     return () => clearInterval(timer)
-  }, [imageContent, reducedMotion, slides.length])
+  }, [compact, imageContent, reducedMotion, slides.length])
 
   return (
-    <section className={styles.hero}>
+    <section className={`${styles.hero}${compact ? ` ${styles.compact}` : ''}`}>
       <div className="container-fluid">
         <div className={styles.inner}>
           <div className={styles.copy}>
@@ -57,7 +59,7 @@ export default function PageHero({
             <p className={styles.subtitle}>{subtitle}</p>
             {children}
           </div>
-          <div className={styles.imageCol}>
+          {!compact && <div className={styles.imageCol}>
             <div className={`${styles.imageWrap}${roundImage ? ` ${styles.imageWrapRound}` : ''}`}>
               {imageContent ?? <AnimatePresence initial={false}>
                 <motion.div
@@ -79,7 +81,7 @@ export default function PageHero({
                 </motion.div>
               </AnimatePresence>}
             </div>
-          </div>
+          </div>}
         </div>
       </div>
     </section>

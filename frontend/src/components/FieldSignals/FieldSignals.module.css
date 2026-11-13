@@ -69,8 +69,28 @@
 /* ─── Content elements ───────────────────────────────────────────────────── */
 .list {
   list-style: none;
+  padding: 0;
+  margin: 0;
   border-top: 1px solid var(--color-border);
 }
+
+.calendar, .calendar .item {
+  scroll-margin-top: calc(var(--nav-height) + var(--space-6));
+}
+.calendar .header { margin-bottom: var(--space-6); }
+.calendar .itemLink { grid-template-columns: 100px minmax(0, 1fr); }
+.calendar .itemNumber { font-size: var(--text-xl); letter-spacing: 0; line-height: 1.2; }
+.calendar .itemMeta { flex-wrap: wrap; gap: var(--space-2) var(--space-4); }
+.calendar .itemDate { opacity: 1; }
+.calendar .itemBody { align-items: flex-start; min-width: 0; }
+.calendar .itemTitle { max-width: 800px; margin: 0; }
+.calendar .itemExcerpt { display: block; margin: 0; }
+.calendar .itemArrow { display: none; }
+.calendar .indexCta { white-space: normal; min-height: 44px; }
+.access { --text-body: 16px; color: var(--color-accent); font-weight: 500; margin: 0; }
+.note { --text-body: 14px; max-width: 680px; margin: 0; color: var(--color-text-muted); }
+.description { max-width: 760px; margin-bottom: var(--space-8); }
+.indexCta:focus-visible, .itemTitle a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
 
 .item {
   border-bottom: 1px solid var(--color-border);
@@ -162,6 +182,9 @@
 
 /* ─── Responsive ─────────────────────────────────────────────────────────── */
 @media (max-width: 767px) {
+  .calendar .itemLink { grid-template-columns: 64px minmax(0, 1fr); gap: var(--space-4); }
+  .calendar .itemNumber { font-size: 2.5rem; }
+  .calendar .itemExcerpt { display: block; }
   .section {
     padding: var(--space-16) 0;
   }

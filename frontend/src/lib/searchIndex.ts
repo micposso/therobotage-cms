@@ -5,6 +5,7 @@ import { fieldSignals } from './fieldSignals'
 import { certifications } from './certifications'
 import { getAllNewsArticles } from './news'
 import { getJobCards } from './jobsQueries'
+import { robotWeekEvents } from './events'
 
 export interface SearchResult {
   type: 'News' | 'Field Signal' | 'Certification' | 'Research' | 'Page' | 'Job'
@@ -15,6 +16,12 @@ export interface SearchResult {
 }
 
 const STATIC_PAGES: SearchResult[] = [
+  { type: 'Page', title: 'Events calendar · Robot Week NYC', excerpt: 'November 2026, December 2026 and January 2027. Explore the Robot Week NYC program, dates, eligibility and registration links.', url: '/calendar' },
+  ...robotWeekEvents.map((event): SearchResult => ({
+    type: 'Page', title: event.title,
+    excerpt: `Robot Week NYC · November 17–22, 2026. ${event.summary} ${event.access}.`,
+    url: event.url, tag: 'Robot Week NYC',
+  })),
   { type: 'Page', title: 'Live Robot Lab', excerpt: 'Guided, hands-on experiences with real robots for schools, universities, organizations, and events.', url: '/live-robot-lab' },
   {
     type: 'Page',

@@ -1,7 +1,6 @@
 import { ImageResponse } from 'next/og'
-import { readFile } from 'node:fs/promises'
-import { join } from 'node:path'
 import { getQuizRobot, statBars } from '@/lib/quizRobots'
+import { imageUrl } from '@/lib/image-assets'
 
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
@@ -11,7 +10,7 @@ const SAND = '#F5F0E8'
 const INK = '#0D0D0D'
 const MUTED = '#2A2A28'
 const BG = SAND
-const ORANGE = '#e85d24'
+const ORANGE = '#9b5152'
 
 export default async function Image({
   params,
@@ -49,8 +48,9 @@ export default async function Image({
   // Try to embed the robot photo (falls back to a branded tile if missing).
   let imageCss: string | undefined
   try {
-    const abs = join(process.cwd(), 'public', robot.photo)
-    const buf = await readFile(abs)
+    const response = await fetch(imageUrl(robot.photo), { signal: AbortSignal.timeout(5000) })
+    if (!response.ok) throw new Error('Robot image unavailable')
+    const buf = Buffer.from(await response.arrayBuffer())
     const ext = robot.photo.split('.').pop()?.toLowerCase() ?? 'jpg'
     const mime = ext === 'png' ? 'image/png' : 'image/jpeg'
     imageCss = `url(data:${mime};base64,${buf.toString('base64')})`
@@ -127,6 +127,7 @@ export default async function Image({
 
           {/* Stat bars */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12, width: 470 }}>
+            <span style={{ color: MUTED, fontSize: 13, letterSpacing: '0.08em' }}>PERSONALITY MIX · JUST FOR FUN</span>
             {bars.map((bar) => (
               <div key={bar.label} style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
                 <span
@@ -136,7 +137,7 @@ export default async function Image({
                     fontSize: 15,
                     letterSpacing: '0.06em',
                     textTransform: 'uppercase',
-                    width: 150,
+                    width: 175,
                   }}
                 >
                   {bar.label}
@@ -204,6 +205,7 @@ export default async function Image({
         </div>
 
         {/* Right edge accent */}
+        <span style={{ position: 'absolute', right: 70, bottom: 44, color: MUTED, fontSize: 12 }}>QUIZ ARTWORK</span>
         <div
           style={{ position: 'absolute', right: 0, top: 0, width: 4, height: '100%', background: ORANGE }}
         />

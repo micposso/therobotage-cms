@@ -1,8 +1,11 @@
 'use client'
 
-import { useState, useRef, useEffect, useCallback } from 'react'
+import { useState, useRef, useEffect, useCallback, useMemo } from 'react'
 import Link from 'next/link'
+import { getImageProps } from 'next/image'
 import { statBars, type QuizRobot, type StatBar } from '@/lib/quizRobots'
+import { imageUrl } from '@/lib/image-assets'
+import type { MatchHighlight } from '@/lib/matching'
 import styles from './what-robot-are-you.module.css'
 
 /* ─── Shared result view ──────────────────────────────────────────────────────
@@ -14,14 +17,13 @@ import styles from './what-robot-are-you.module.css'
  * the same approach the RXD Scorecard uses.
  */
 
-const UTM = '?utm_source=linkedin&utm_medium=quiz&utm_campaign=what-robot'
-
 interface ResultViewProps {
   robot: QuizRobot
   /** Line under the headline and on the card. Personalized from the quiz; the robot blurb on the [slug] page. */
   reason: string
   /** Single trait adjective for the share caption (e.g. "expressive"). */
   traitWord?: string
+  highlights?: MatchHighlight[]
   /** When provided, Retake resets the quiz in place; otherwise it links to the quiz. */
   onRetake?: () => void
   /** Small eyebrow above the headline. */
@@ -35,7 +37,7 @@ interface ResultViewProps {
 /* ─── Canvas card renderer ────────────────────────────────────────────────── */
 const CARD_W = 1200
 const PAD = 78
-const PHOTO_H = 620
+const PHOTO_H = 500
 
 function cssVar(name: string): string {
   return getComputedStyle(document.documentElement).getPropertyValue(name).trim()
@@ -48,6 +50,7 @@ interface CardData {
   reason: string
   reasonLabel: string
   bars: StatBar[]
+  realWorld: string
   specs: { label: string; value: string }[]
   photo: HTMLImageElement | null
 }
@@ -61,15 +64,16 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
   const ctx = canvas.getContext('2d')
   if (!ctx) return
 
-  const display = cssVar('--font-display') || 'sans-serif'
-  const body = cssVar('--font-body') || 'serif'
+  // Canvas fonts cannot resolve CSS var() references. Read the resolved family.
+  const display = getComputedStyle(document.querySelector('h1, h2') ?? document.body).fontFamily
+  const body = getComputedStyle(document.body).fontFamily
   const C = {
-    bg: cssVar('--color-text-on-sand') || '#F5F0E8',
-    ink: cssVar('--color-text') || '#0D0D0D',
-    inkBody: cssVar('--color-text-muted') || '#2A2A28',
-    accent: cssVar('--res-orange') || '#e85d24',
+    bg: '#F5F0E8',
+    ink: '#0D0D0D',
+    inkBody: '#2A2A28',
+    accent: '#9b5152',
     line: cssVar('--color-border') || 'rgba(13,13,13,0.12)',
-    photoBg: cssVar('--color-text-on-sand') || '#F5F0E8',
+    photoBg: '#F5F0E8',
     track: 'rgba(13,13,13,0.10)',
   }
 
@@ -118,7 +122,7 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
       ctx.globalAlpha = 0.58
       ctx.textAlign = 'right'
       letter('0.12em')
-      ctx.fillText('WHAT ROBOT ARE YOU?', CARD_W - PAD, y + 20)
+      ctx.fillText('THE ROBOT AGE', CARD_W - PAD, y + 20)
       ctx.globalAlpha = 1
       letter('0px')
       ctx.textAlign = 'left'
@@ -175,7 +179,7 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
         ctx.fillStyle = C.inkBody
         ctx.globalAlpha = 0.4
         ctx.textAlign = 'center'
-        ctx.fillText('PHOTO COMING SOON', CARD_W / 2, y + PHOTO_H / 2 + 8)
+        ctx.fillText(data.name.toUpperCase(), CARD_W / 2, y + PHOTO_H / 2 + 8)
         ctx.globalAlpha = 1
         ctx.textAlign = 'left'
         letter('0px')
@@ -186,7 +190,21 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
     }
     y += PHOTO_H + 56
 
-    // Stat bars
+    setFont(400, 20, 'b')
+    if (paint) {
+      ctx.fillStyle = C.inkBody
+      ctx.textAlign = 'right'
+      ctx.fillText('QUIZ ARTWORK', CARD_W - PAD, y - 28)
+      ctx.textAlign = 'left'
+    }
+
+    // Playful tendencies, explicitly separated from the factual specs below.
+    setFont(400, 24, 'b')
+    if (paint) {
+      ctx.fillStyle = C.inkBody
+      ctx.fillText('PERSONALITY MIX · JUST FOR FUN', PAD, y)
+    }
+    y += 48
     data.bars.forEach((bar) => {
       setFont(400, 30, 'b')
       if (paint) {
@@ -232,7 +250,7 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
     y += 16
     setFont(400, 44, 'd')
     letter('-0.01em')
-    const reasonLines = wrap(data.reason, innerW, 3)
+    const reasonLines = wrap(data.reason, innerW)
     for (const ln of reasonLines) {
       y += 54
       if (paint) {
@@ -253,7 +271,17 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
     }
     y += 44
 
-    // Specs (two columns)
+    setFont(400, 24, 'b')
+    if (paint) { ctx.fillStyle = C.accent; ctx.fillText('IN THE REAL WORLD', PAD, y) }
+    y += 18
+    setFont(400, 30, 'b')
+    for (const line of wrap(data.realWorld, innerW)) {
+      y += 40
+      if (paint) { ctx.fillStyle = C.inkBody; ctx.fillText(line, PAD, y) }
+    }
+    y += 50
+
+    // Robot identity (two columns). Volatile specs stay on manufacturer pages.
     const colW = innerW / 2
     for (let i = 0; i < data.specs.length; i += 2) {
       const rowSpecs = [data.specs[i], data.specs[i + 1]].filter(Boolean)
@@ -270,7 +298,7 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
           letter('0px')
         }
         setFont(400, 32, 'd')
-        const valLines = wrap(spec.value, colW - 24, 2)
+        const valLines = wrap(spec.value, colW - 24)
         let vy = y
         for (const ln of valLines) {
           vy += 40
@@ -306,7 +334,7 @@ function renderCard(canvas: HTMLCanvasElement, data: CardData) {
     if (paint) {
       ctx.fillStyle = C.accent
       ctx.textAlign = 'right'
-      ctx.fillText('Evaluate robots like this for real -> RXD', CARD_W - PAD, y)
+      ctx.fillText('therobotage.com/what-robot-are-you', CARD_W - PAD, y)
       ctx.textAlign = 'left'
     }
     y += 14
@@ -333,13 +361,18 @@ export default function ResultView({
   robot,
   reason,
   traitWord,
+  highlights,
   onRetake,
   eyebrow = 'Your match',
   headline,
   cardReasonLabel = 'Why you matched',
 }: ResultViewProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const headingRef = useRef<HTMLHeadingElement>(null)
   const [photo, setPhoto] = useState<HTMLImageElement | null>(null)
+  const [photoReady, setPhotoReady] = useState(false)
+  const [cardReady, setCardReady] = useState(false)
+  const [shareFallback, setShareFallback] = useState('')
   const [copied, setCopied] = useState<'idle' | 'ok' | 'fail'>('idle')
   const [toast, setToast] = useState<string | null>(null)
 
@@ -349,7 +382,13 @@ export default function ResultView({
   const [emailStatus, setEmailStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
   const [emailError, setEmailError] = useState<string | null>(null)
 
-  const bars = statBars(robot.traitVector)
+  const bars = useMemo(() => statBars(robot.traitVector), [robot.traitVector])
+
+  useEffect(() => {
+    if (!onRetake) return
+    headingRef.current?.focus({ preventScroll: true })
+    headingRef.current?.scrollIntoView({ block: 'center' })
+  }, [onRetake])
 
   const buildCardData = useCallback(
     (): CardData => ({
@@ -359,11 +398,10 @@ export default function ResultView({
       reason,
       reasonLabel: cardReasonLabel,
       bars,
+      realWorld: robot.learning.use,
       specs: [
-        { label: 'Height', value: robot.specs.height },
-        { label: 'Weight', value: robot.specs.weight },
-        { label: 'Notable', value: robot.specs.notable },
-        { label: 'Price', value: robot.specs.price },
+        { label: 'Robot type', value: robot.learning.category.split(' · ')[0] },
+        { label: 'Made by', value: robot.maker },
       ],
       photo,
     }),
@@ -374,13 +412,15 @@ export default function ResultView({
   useEffect(() => {
     let cancelled = false
     const img = new window.Image()
+    // The same-origin Next optimizer reads the verified R2 original. R2 does
+    // not expose CORS headers, so drawing its URL directly taints the canvas.
     img.onload = () => {
-      if (!cancelled) setPhoto(img)
+      if (!cancelled) { setPhoto(img); setPhotoReady(true) }
     }
     img.onerror = () => {
-      if (!cancelled) setPhoto(null)
+      if (!cancelled) { setPhoto(null); setPhotoReady(true) }
     }
-    img.src = robot.photo
+    img.src = getImageProps({ src: imageUrl(robot.photo), alt: '', width: 600, height: 600 }).props.src
     return () => {
       cancelled = true
     }
@@ -388,11 +428,12 @@ export default function ResultView({
 
   // Draw whenever inputs change.
   useEffect(() => {
-    if (!canvasRef.current) return
+    if (!canvasRef.current || !photoReady) return
     let cancelled = false
     const draw = () => {
       if (cancelled || !canvasRef.current) return
       renderCard(canvasRef.current, buildCardData())
+      setCardReady(true)
     }
     if (document.fonts && document.fonts.status !== 'loaded') {
       document.fonts.ready.then(draw)
@@ -402,12 +443,12 @@ export default function ResultView({
     return () => {
       cancelled = true
     }
-  }, [buildCardData])
+  }, [buildCardData, photoReady])
 
   const shareUrl = () =>
     typeof window !== 'undefined'
-      ? `${window.location.origin}/what-robot-are-you/${robot.slug}${UTM}`
-      : `https://therobotage.com/what-robot-are-you/${robot.slug}${UTM}`
+      ? `${window.location.origin}/what-robot-are-you/${robot.slug}`
+      : `https://therobotage.com/what-robot-are-you/${robot.slug}`
 
   const caption = () =>
     `I got matched with the ${robot.name} — ${robot.archetype}. Turns out I'm more ${
@@ -421,6 +462,13 @@ export default function ResultView({
 
   const handleShare = async () => {
     const url = shareUrl()
+    // Open synchronously inside the click so clipboard awaits cannot trigger
+    // a popup blocker. This anchor also keeps the destination isolated.
+    const link = document.createElement('a')
+    link.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${url}?utm_source=linkedin&utm_medium=quiz&utm_campaign=what-robot`)}`
+    link.target = '_blank'
+    link.rel = 'noopener noreferrer'
+    link.click()
     try {
       if (navigator.clipboard) {
         await navigator.clipboard.writeText(caption())
@@ -431,20 +479,25 @@ export default function ResultView({
     } catch {
       showToast('Opening LinkedIn — add your own caption.')
     }
-    window.open(
-      `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
-      '_blank',
-      'noopener,noreferrer'
-    )
+  }
+
+  const handleCopyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl())
+      showToast('Result link copied. Send it to someone who gets you.')
+    } catch {
+      setShareFallback(shareUrl())
+      showToast('Select and copy the result link below.')
+    }
   }
 
   const fileName = () => `what-robot-are-you-${robot.slug}.png`
 
   const handleDownload = () => {
     const canvas = canvasRef.current
-    if (!canvas) return
-    canvas.toBlob((blob) => {
-      if (!blob) return
+    if (!canvas || !cardReady) return
+    try { canvas.toBlob((blob) => {
+      if (!blob) { showToast('Your card could not be exported. Please try again.'); return }
       const url = URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
@@ -452,13 +505,15 @@ export default function ResultView({
       document.body.appendChild(a)
       a.click()
       a.remove()
-      URL.revokeObjectURL(url)
-    }, 'image/png')
+      window.setTimeout(() => URL.revokeObjectURL(url), 1000)
+    }, 'image/png') } catch {
+      showToast('Your card could not be exported. You can still copy your result link.')
+    }
   }
 
   const handleCopyImage = async () => {
     const canvas = canvasRef.current
-    if (!canvas) return
+    if (!canvas || !cardReady) return
     try {
       if (!navigator.clipboard || typeof ClipboardItem === 'undefined') throw new Error('unsupported')
       const blob: Blob | null = await new Promise((res) => canvas.toBlob(res, 'image/png'))
@@ -502,30 +557,58 @@ export default function ResultView({
       <div className="container-fluid">
         <div className={styles.resultLayout}>
           {/* Card */}
-          <div className={styles.cardColumn}>
+          <div className={styles.resultSummary}>
             <p className={styles.resultEyebrow}>{eyebrow}</p>
-            <h2 className={styles.resultHeadline}>
-              {headline ?? `You are the ${robot.name}.`}
-            </h2>
+            <h1 ref={headingRef} tabIndex={-1} className={styles.resultHeadline}>
+              {headline ?? `You’re ${robot.name}.`}
+            </h1>
             <p className={styles.resultReason}>{reason}</p>
+            {highlights && highlights.length > 0 && (
+              <ul className={styles.matchDetails} aria-label="Why you matched">
+                {highlights.map((item) => <li key={item.axis}>
+                  <strong>{item.title[0].toUpperCase() + item.title.slice(1)}</strong>
+                  <span>{item.detail}</span>
+                </li>)}
+              </ul>
+            )}
+          </div>
+          <section className={styles.learningPanel} aria-labelledby="real-robot-heading">
+            <span className={styles.galleryCategory}>{robot.learning.category}</span>
+            <h2 id="real-robot-heading">Meet the real robot</h2>
+            <p>{robot.learning.use}</p>
+            <h3>What to notice</h3>
+            <p>{robot.learning.takeaway}</p>
+            <a href={robot.learning.source.url} target="_blank" rel="noopener noreferrer"
+              className={styles.sourceLink}>{robot.learning.source.label} <span aria-hidden="true">↗</span></a>
+            <span className={styles.sourceDate}>Manufacturer source · Reviewed November 12, 2026</span>
+          </section>
+          <div className={styles.cardColumn}>
             <canvas
               ref={canvasRef}
               className={styles.cardCanvas}
               role="img"
               aria-label={cardAltText(robot, reason, bars)}
+              aria-busy={!cardReady}
             />
+            <span className={styles.personalityNote}>Quiz artwork. See the manufacturer for current hardware. The personality mix is just for fun, not a capability rating or RXD score.</span>
           </div>
 
           {/* Actions + capture */}
           <div className={styles.actionsColumn}>
             <div className={styles.actionStack}>
-              <button type="button" className={styles.primaryBtn} onClick={handleShare}>
+              <button type="button" className={styles.primaryBtn} onClick={handleCopyLink}>
+                Copy my result link
+              </button>
+              {shareFallback && <label className={styles.shareFallback}>Your result link
+                <input readOnly value={shareFallback} onFocus={(event) => event.currentTarget.select()} />
+              </label>}
+              <button type="button" className={styles.secondaryBtn} onClick={handleShare}>
                 Share on LinkedIn
               </button>
-              <button type="button" className={styles.secondaryBtn} onClick={handleDownload}>
-                Download PNG
+              <button type="button" className={styles.secondaryBtn} onClick={handleDownload} disabled={!cardReady}>
+                {cardReady ? 'Download my card' : 'Preparing your card…'}
               </button>
-              <button type="button" className={styles.secondaryBtn} onClick={handleCopyImage}>
+              <button type="button" className={styles.secondaryBtn} onClick={handleCopyImage} disabled={!cardReady}>
                 {copied === 'ok'
                   ? 'Copied to clipboard'
                   : copied === 'fail'
@@ -547,20 +630,19 @@ export default function ResultView({
             </div>
 
             {/* Email capture — soft gate, never blocks the result */}
-            <div className={styles.leadCard}>
+            <details className={styles.leadCard}>
+              <summary>Email me a link to this robot</summary>
               {emailStatus === 'sent' ? (
                 <div className={styles.leadSuccess}>
                   <p className={styles.formEyebrow}>On its way</p>
                   <p className={styles.leadSuccessText}>
-                    Check your inbox for your robot card. Look in spam if it is not there in a few minutes.
+                    Check your inbox for a link to your robot. Look in spam if it is not there in a few minutes.
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleEmailSubmit} className={styles.leadForm} noValidate>
-                  <p className={styles.formEyebrow}>Keep your card</p>
-                  <h3 className={styles.leadHeading}>Email me my robot card</h3>
                   <p className={styles.leadSub}>
-                    We&rsquo;ll send this card straight to your inbox so you have it to share later.
+                    Save the robot overview and card link for later.
                   </p>
                   <input
                     type="email"
@@ -599,10 +681,10 @@ export default function ResultView({
                   )}
                 </form>
               )}
-            </div>
+            </details>
 
-            <Link href="/rxd-scorecard" className={styles.rxdCta}>
-              Evaluate robots like this for real — RXD Scorecard
+            <Link href="/robot-literacy" className={styles.rxdCta}>
+              Keep learning with Robot Literacy
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path
                   d="M3 8h10M9 4l4 4-4 4"
@@ -631,5 +713,5 @@ function cardAltText(robot: QuizRobot, reason: string, bars: StatBar[]): string 
   const statText = bars
     .map((b) => `${b.label} ${Math.round(b.value * 100)} percent`)
     .join(', ')
-  return `Robot match card for the ${robot.name} by ${robot.maker}, ${robot.archetype}. ${reason} Stats: ${statText}. Specs: ${robot.specs.height}, ${robot.specs.weight}, ${robot.specs.notable}, ${robot.specs.price}.`
+  return `Robot match card for ${robot.name} by ${robot.maker}, ${robot.archetype}. ${reason} Playful personality mix, not capability ratings: ${statText}. In the real world: ${robot.learning.use}`
 }

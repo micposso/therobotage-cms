@@ -13,7 +13,8 @@ const SUPPRESS_DAYS = 60
 export default function WhitepaperPopup() {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
-  const isEnterprise = englishPath(pathname) === '/enterprise'
+  const path = englishPath(pathname)
+  const suppressTimedPopup = path === '/enterprise' || path === '/what-robot-are-you' || path.startsWith('/what-robot-are-you/')
   const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
 
   useEffect(() => {
@@ -34,8 +35,9 @@ export default function WhitepaperPopup() {
   }, [pathname])
 
   useEffect(() => {
-    // Keep Academy inquiries free from competing timed acquisition prompts.
-    if (isEnterprise) return
+    // Keep inquiries and the quiz free from competing timed prompts.
+    // The explicit whitepaper button and hash still work on these pages.
+    if (suppressTimedPopup) return
     let dismissedAt: string | null = null
     let hasConsent = false
     try { dismissedAt = localStorage.getItem(POPUP_KEY); hasConsent = Boolean(localStorage.getItem(CONSENT_KEY)) } catch { return }
@@ -61,7 +63,7 @@ export default function WhitepaperPopup() {
       window.removeEventListener('tra:consent-saved', startTimer)
       clearTimeout(timer.current)
     }
-  }, [isEnterprise])
+  }, [suppressTimedPopup])
 
   function handleClose() {
     clearTimeout(timer.current)
