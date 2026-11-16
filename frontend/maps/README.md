@@ -1,7 +1,8 @@
 # NYC and metro robotics map
 
-`/robotics-map/nyc-metro` serves the exported map from `public/maps/nyc-metro.html`
+`/metronyc-robotics-map` serves the exported map from `public/maps/nyc-metro.html`
 through a Next.js rewrite. The main `/robotics-map` page links to this regional view.
+The previous `/robotics-map/nyc-metro` URL redirects to the new page.
 
 The map has 48 entries across NYC, Nassau/Suffolk counties, Connecticut, and New
 Jersey. All 18 primary categories and address/coordinate evidence are embedded in
