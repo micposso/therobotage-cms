@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      { source: '/robotics-map/nyc-metro', destination: '/metronyc-robotics-map', permanent: false },
       ...appRedirects,
       ...Object.entries(imageAssets).filter(([source]) => source.startsWith('/')).map(([source, destination]) => ({ source, destination, permanent: false })),
     ]

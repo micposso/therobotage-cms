@@ -1,5 +1,6 @@
 import { uiText } from '@/lib/i18n/messages'
 import Link from 'next/link'
+import MediaImage from '@/components/MediaImage'
 import { contentHref } from '@/lib/i18n/localize'
 import type { NewsArticle as NewsArticleType } from '@/lib/news'
 import ShareButton from './ShareButton'
@@ -19,10 +20,17 @@ export default function NewsArticle({ article, locale = 'en', originalHref }: Pr
     <article className={styles.article}>
 
       {/* ── Header image with overlay ─────────────────────────────────────── */}
-      <div
-        className={styles.hero}
-        style={article.headerImage ? { backgroundImage: `url(${article.headerImage})` } : undefined}
-      >
+      <div className={styles.hero}>
+        {article.headerImage && (
+          <MediaImage
+            src={article.headerImage}
+            alt=""
+            fill
+            sizes="100vw"
+            preload
+            className={styles.heroImage}
+          />
+        )}
         <div className={styles.heroOverlay} />
         <div className={styles.heroContent}>
           <div className={styles.heroCategoryRow}>

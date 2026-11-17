@@ -1,0 +1,104 @@
+- iframe [ref=f6e2]:
+  - generic [ref=f7e2]:
+    - generic [ref=f7e3]:
+      - heading "Robotics around New York" [level=2] [ref=f7e4]
+      - generic [ref=f7e5]: 48 entries · checked November 16, 2026
+    - generic [ref=f7e6]:
+      - generic [ref=f7e7]:
+        - text: Map view
+        - combobox "Map view" [ref=f7e8]:
+          - option "All 48 entries" [selected]
+          - option "New York City · 23"
+          - option "Long Island · 6"
+          - option "Connecticut · 11"
+          - option "New Jersey · 8"
+      - generic [ref=f7e9]:
+        - text: Company or organization
+        - combobox "Company or organization" [ref=f7e10]:
+          - option "All companies" [selected]
+          - option "Aescape"
+          - option "Aniai"
+          - option "Cohesive Robotics"
+          - option "Destro AI"
+          - option "Easy Aerial / EZ Aerial"
+          - option "Fauna Robotics"
+          - option "Hugging Face / LeRobot"
+          - option "Icarus Robotics"
+          - option "Kyber Labs"
+          - option "New York Robotics"
+          - option "Newlab"
+          - option "Norbert Health"
+          - option "Opentrons"
+          - option "Reflex Robotics"
+          - option "RoboBurger"
+          - option "Skyline Robotics"
+          - option "SOMATIC"
+          - option "Sweet Robo"
+          - option "Tangent Robotics"
+          - option "The Robot Age"
+          - option "Tuesday Labs"
+          - option "Ultra Robotics"
+          - option "Viam"
+          - option "Festo — North America HQ"
+          - option "LG Hellmann Corp"
+          - option "Persase"
+          - option "RoboStore / Robo Inc."
+          - option "Standard Bots"
+          - option "ULC Technologies"
+          - option "Aquiline Drones"
+          - option "Arcrite Automation"
+          - option "Conveyco Technologies"
+          - option "Havoc Robotics / NHRL"
+          - option "MOVIA Robotics"
+          - option "Practical Robotic Services"
+          - option "Primordial Labs"
+          - option "Protedyne"
+          - option "Scalable Robotics"
+          - option "ThayerMahan"
+          - option "WITTMANN USA"
+          - option "Fancort Industries"
+          - option "Festo Didactic — New Jersey"
+          - option "Human Friendly Robotics"
+          - option "Ocean Power Technologies"
+          - option "Pinnacle Technologies"
+          - option "RLS Enterprises"
+          - option "Telemetrics / EVS T-Motion"
+          - option "The Knotts Company"
+    - generic [ref=f7e11]:
+      - img "Robotics companies in NYC, Long Island, Connecticut, and New Jersey 48 mapped entries. Numbered circles group nearby companies. All companies and their addresses are accessible using the company selector. Hollow markers indicate approximate area locations." [ref=f7e12]:
+        - generic [aria-hidden] [ref=f7e98]:
+          - generic: Connecticut
+          - generic: New Jersey
+          - generic: Long Island
+          - generic: Fairfield
+          - generic: Mercer
+          - generic: Sussex
+        - generic [ref=f7e99]:
+          - generic "Tuesday Labs, Fauna Robotics, Tangent Robotics, Reflex Robotics, Aescape, SOMATIC, Viam, Opentrons, Cohesive Robotics, Ultra Robotics, Destro AI, Icarus Robotics, Norbert Health, Sweet Robo, Easy Aerial / EZ Aerial, Skyline Robotics, The Robot Age, New York Robotics, Newlab, Kyber Labs, Aniai, RoboBurger, Hugging Face / LeRobot" [ref=f7e100] [cursor=pointer]: "23"
+          - generic "RoboStore / Robo Inc." [ref=f7e103] [cursor=pointer]
+          - generic "Standard Bots, Persase" [ref=f7e106] [cursor=pointer]: "2"
+          - generic "ULC Technologies, Festo — North America HQ, LG Hellmann Corp" [ref=f7e109] [cursor=pointer]: "3"
+          - generic "Human Friendly Robotics" [ref=f7e112] [cursor=pointer]
+          - generic "The Knotts Company" [ref=f7e115] [cursor=pointer]
+          - generic "Fancort Industries" [ref=f7e118] [cursor=pointer]
+          - generic "Telemetrics / EVS T-Motion, Pinnacle Technologies" [ref=f7e121] [cursor=pointer]: "2"
+          - generic "Havoc Robotics / NHRL" [ref=f7e124] [cursor=pointer]
+          - generic "Primordial Labs" [ref=f7e127] [cursor=pointer]
+          - generic "Practical Robotic Services" [ref=f7e130] [cursor=pointer]
+          - generic "MOVIA Robotics, Conveyco Technologies" [ref=f7e133] [cursor=pointer]: "2"
+          - generic "Scalable Robotics, Protedyne, Aquiline Drones" [ref=f7e136] [cursor=pointer]: "3"
+          - generic "ThayerMahan, Arcrite Automation" [ref=f7e139] [cursor=pointer]: "2"
+          - generic "Ocean Power Technologies" [ref=f7e142] [cursor=pointer]
+          - generic "RLS Enterprises" [ref=f7e145] [cursor=pointer]
+          - generic "WITTMANN USA" [ref=f7e148] [cursor=pointer]
+          - generic "Festo Didactic — New Jersey" [ref=f7e151] [cursor=pointer]
+      - generic [ref=f7e154]:
+        - button "Zoom in" [ref=f7e155] [cursor=pointer]: +
+        - button "Zoom out" [ref=f7e156] [cursor=pointer]: −
+    - generic "Location evidence legend" [ref=f7e157]:
+      - generic [ref=f7e158]: Published office / facility
+      - generic [ref=f7e161]: Contact / reported address
+      - generic [ref=f7e164]: Approximate area
+      - generic [ref=f7e167]: Numbers = grouped entries
+    - group [ref=f7e168]:
+      - generic "Sources & scope" [ref=f7e169]

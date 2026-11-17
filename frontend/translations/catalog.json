@@ -168,6 +168,12 @@
     "expiresAt": null
   },
   {
+    "id": "news/runway-video-models-teach-robots.md",
+    "route": "/news/runway-video-models-teach-robots",
+    "sourceHash": "ebeeb9ee0741848fd6c464933e794093ea1cf8d45657e664797aec032c09bd68",
+    "expiresAt": null
+  },
+  {
     "id": "news/shenzhen-robot-fight-league-benchmark.md",
     "route": "/news/shenzhen-robot-fight-league-benchmark",
     "sourceHash": "f91ac72bd9bcb4bbf3c79ccfc4bbd4627e504817343afa232b289e033e319b1a",
@@ -390,28 +396,10 @@
     "expiresAt": "2026-12-01T00:00:00.000Z"
   },
   {
-    "id": "jobs/product-design-engineer-all-levels-skydio.md",
-    "route": "/jobs/product-design-engineer-all-levels-skydio",
-    "sourceHash": "a4faf1965cb4a297eac2843d200abbd29e1338e8bdc721d9ddf4fe01dc6eb61a",
-    "expiresAt": "2026-11-17T00:00:00.000Z"
-  },
-  {
     "id": "jobs/product-designer-manufacturing-defense-gecko.md",
     "route": "/jobs/product-designer-manufacturing-defense-gecko",
     "sourceHash": "30d71400f4518885ee850c5942dacee546a0b469c396f572dea4b090f1a31adf",
     "expiresAt": "2026-11-21T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/product-lead-marketplace-pricing-zipline.md",
-    "route": "/jobs/product-lead-marketplace-pricing-zipline",
-    "sourceHash": "764279b4176d54c10b16bd4d11772cb3e7f7f41fe338b979b432fa7ccb4f0851",
-    "expiresAt": "2026-11-16T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/product-manager-ambi-robotics.md",
-    "route": "/jobs/product-manager-ambi-robotics",
-    "sourceHash": "61d3c843cfa2c8f9477bb729e58079cfabb078029672d0483d3abee43b55212d",
-    "expiresAt": "2026-11-14T00:00:00.000Z"
   },
   {
     "id": "jobs/product-manager-cabin-intelligence-applied-intuition.md",
@@ -480,12 +468,6 @@
     "expiresAt": "2026-11-20T00:00:00.000Z"
   },
   {
-    "id": "jobs/robotics-algorithms-engineer-manipulation-control-path-robotics.md",
-    "route": "/jobs/robotics-algorithms-engineer-manipulation-control-path-robotics",
-    "sourceHash": "7203c4db83d7de9f2ef71e7b3c3dc37f62a61b6544a003c71c7f1d466dfbfcb8",
-    "expiresAt": "2026-11-17T00:00:00.000Z"
-  },
-  {
     "id": "jobs/senior-applied-scientist-foundation-model-amazon-robotics.md",
     "route": "/jobs/senior-applied-scientist-foundation-model-amazon-robotics",
     "sourceHash": "68d58c15bb9812cac675bc63896285e4f3082eb87fd5ca6ef65fdec08fd99c85",
@@ -514,12 +496,6 @@
     "route": "/jobs/senior-machine-learning-engineer-generative-models-applied-intuition",
     "sourceHash": "6ff5cd99afdd826b94679743f4a67707aea671ce32e9eef73b86336042dc8842",
     "expiresAt": "2026-12-05T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/senior-product-manager-perception-world-understanding-skills-agility.md",
-    "route": "/jobs/senior-product-manager-perception-world-understanding-skills-agility",
-    "sourceHash": "190eb53eccae1c43ae0703f322301c818bebdf15c63cbad6ebaaf89783c828f0",
-    "expiresAt": "2026-11-15T00:00:00.000Z"
   },
   {
     "id": "jobs/senior-program-manager-compliance-reporting-nuro.md",
@@ -588,12 +564,6 @@
     "expiresAt": "2026-12-08T00:00:00.000Z"
   },
   {
-    "id": "jobs/staff-ml-research-scientist-boston-dynamics.md",
-    "route": "/jobs/staff-ml-research-scientist-boston-dynamics",
-    "sourceHash": "f89efea850a6c329a0a9ca863cedbc82260d6c54a4407a04b30780b80b8b503b",
-    "expiresAt": "2026-11-16T00:00:00.000Z"
-  },
-  {
     "id": "jobs/staff-research-roboticist-boston-dynamics.md",
     "route": "/jobs/staff-research-roboticist-boston-dynamics",
     "sourceHash": "a5bd29da41ec65e28b334718cee143cff4095c3c7e73eeee5d9d42d9f0529ea4",
@@ -628,12 +598,6 @@
     "route": "/jobs/technical-lead-manager-risk-aware-planning-nuro",
     "sourceHash": "c29f8c1d75ffa2f5b4f233c99665dcffa8da3c4850c25853f35f094399334fe8",
     "expiresAt": "2026-12-01T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/technical-program-manager-maritime-shield-ai.md",
-    "route": "/jobs/technical-program-manager-maritime-shield-ai",
-    "sourceHash": "bc33e59550c5234e462c3ca1de138f77fb473e289dcae3a8262d9ef6c6894353",
-    "expiresAt": "2026-11-15T00:00:00.000Z"
   },
   {
     "id": "jobs/technical-program-manager-mission-autonomy-x-bat-shield-ai.md",

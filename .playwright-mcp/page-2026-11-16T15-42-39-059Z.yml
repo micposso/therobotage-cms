@@ -1,0 +1,136 @@
+- iframe [ref=f8e2]:
+  - generic [ref=f9e2]:
+    - generic [ref=f9e3]:
+      - heading "Robotics around New York" [level=2] [ref=f9e4]
+      - generic [ref=f9e5]: 48 entries · checked November 16, 2026
+    - generic [ref=f9e6]:
+      - generic [ref=f9e7]:
+        - text: Map view
+        - combobox "Map view" [ref=f9e8]:
+          - option "All 48 entries"
+          - option "New York City · 23" [selected]
+          - option "Long Island · 6"
+          - option "Connecticut · 11"
+          - option "New Jersey · 8"
+      - generic [ref=f9e9]:
+        - text: Company or organization
+        - combobox "Company or organization" [ref=f9e10]:
+          - option "All companies"
+          - option "Aescape"
+          - option "Aniai"
+          - option "Cohesive Robotics"
+          - option "Destro AI"
+          - option "Easy Aerial / EZ Aerial"
+          - option "Fauna Robotics"
+          - option "Hugging Face / LeRobot"
+          - option "Icarus Robotics"
+          - option "Kyber Labs"
+          - option "New York Robotics"
+          - option "Newlab"
+          - option "Norbert Health"
+          - option "Opentrons"
+          - option "Reflex Robotics"
+          - option "RoboBurger"
+          - option "Skyline Robotics"
+          - option "SOMATIC"
+          - option "Sweet Robo"
+          - option "Tangent Robotics"
+          - option "The Robot Age" [selected]
+          - option "Tuesday Labs"
+          - option "Ultra Robotics"
+          - option "Viam"
+          - option "Festo — North America HQ"
+          - option "LG Hellmann Corp"
+          - option "Persase"
+          - option "RoboStore / Robo Inc."
+          - option "Standard Bots"
+          - option "ULC Technologies"
+          - option "Aquiline Drones"
+          - option "Arcrite Automation"
+          - option "Conveyco Technologies"
+          - option "Havoc Robotics / NHRL"
+          - option "MOVIA Robotics"
+          - option "Practical Robotic Services"
+          - option "Primordial Labs"
+          - option "Protedyne"
+          - option "Scalable Robotics"
+          - option "ThayerMahan"
+          - option "WITTMANN USA"
+          - option "Fancort Industries"
+          - option "Festo Didactic — New Jersey"
+          - option "Human Friendly Robotics"
+          - option "Ocean Power Technologies"
+          - option "Pinnacle Technologies"
+          - option "RLS Enterprises"
+          - option "Telemetrics / EVS T-Motion"
+          - option "The Knotts Company"
+    - generic [ref=f9e11]:
+      - img "Robotics companies in NYC, Long Island, Connecticut, and New Jersey 48 mapped entries. Numbered circles group nearby companies. All companies and their addresses are accessible using the company selector. Hollow markers indicate approximate area locations." [ref=f9e12]:
+        - generic [aria-hidden] [ref=f9e98]:
+          - generic: Queens
+          - generic: Greenpoint
+          - generic: Williamsburg
+          - generic: Bedford-Stuyvesant (East)
+          - generic: Bushwick (West)
+          - generic: Cypress Hills
+          - generic: Prospect Heights
+          - generic: Ocean Hill
+          - generic: East Village
+          - generic: Astoria (North)-Ditmars-Steinway
+          - generic: Astoria (Central)
+          - generic: Queensbridge-Ravenswood-Dutch Kills
+          - generic: Woodside
+          - generic: East Elmhurst
+          - generic: North Corona
+          - generic: Maspeth
+          - generic: Glendale
+          - generic: Middle Village
+          - generic: College Point
+          - generic: Whitestone-Beechhurst
+          - generic: Bay Terrace-Clearview
+          - generic: Murray Hill-Broadway Flushing
+          - generic: East Flushing
+          - generic: Kew Gardens Hills
+          - generic: Fresh Meadows-Utopia
+          - generic: Kew Gardens
+          - generic: Richmond Hill
+          - generic: South Richmond Hill
+          - generic: Bayside
+          - generic: Jamaica
+          - generic: St. Albans
+          - generic: Hollis
+        - generic [ref=f9e99]:
+          - generic "Tuesday Labs" [ref=f9e100] [cursor=pointer]
+          - generic "Fauna Robotics, Aescape" [ref=f9e103] [cursor=pointer]: "2"
+          - generic "Tangent Robotics" [ref=f9e106] [cursor=pointer]
+          - generic "Reflex Robotics, Icarus Robotics, Norbert Health, Easy Aerial / EZ Aerial, New York Robotics, Newlab, Kyber Labs" [ref=f9e109] [cursor=pointer]: "7"
+          - generic "SOMATIC" [ref=f9e112] [cursor=pointer]
+          - generic "Viam" [ref=f9e115] [cursor=pointer]
+          - generic "Opentrons" [ref=f9e118] [cursor=pointer]
+          - generic "Destro AI" [ref=f9e121] [cursor=pointer]
+          - generic "Skyline Robotics" [ref=f9e124] [cursor=pointer]
+          - generic "The Robot Age" [ref=f9e127] [cursor=pointer]
+          - generic "Aniai" [ref=f9e130] [cursor=pointer]
+          - generic "Hugging Face / LeRobot" [ref=f9e133] [cursor=pointer]
+        - generic [aria-hidden] [ref=f9e136]:
+          - generic: The Robot Age
+      - generic [ref=f9e137]:
+        - button "Zoom in" [ref=f9e138] [cursor=pointer]: +
+        - button "Zoom out" [ref=f9e139] [cursor=pointer]: −
+    - generic "Location evidence legend" [ref=f9e140]:
+      - generic [ref=f9e141]: Published office / facility
+      - generic [ref=f9e144]: Contact / reported address
+      - generic [ref=f9e147]: Approximate area
+      - generic [ref=f9e150]: Numbers = grouped entries
+    - generic [ref=f9e151]:
+      - heading "The Robot Age" [level=3] [ref=f9e152]
+      - generic [ref=f9e153]: Robotics education / HRI · New York City
+      - generic [ref=f9e154]: Elmhurst, Queens, NY — approximate neighborhood marker
+      - generic [ref=f9e155]: Approximate area — not an office address
+      - generic [ref=f9e156]: Neighborhood supplied by the user. This intentionally marks Elmhurst, not an exact office.
+      - link "Organization website; location supplied by user" [ref=f9e158] [cursor=pointer]:
+        - /url: https://therobotage.com/
+      - group [ref=f9e159]:
+        - generic "Marker precision" [ref=f9e160]
+    - group [ref=f9e161]:
+      - generic "Sources & scope" [ref=f9e162]

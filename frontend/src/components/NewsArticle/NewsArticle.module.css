@@ -14,11 +14,13 @@
   min-height: clamp(calc(var(--space-24) * 4), 68svh, calc(var(--space-32) * 6));
   overflow: hidden;
   background-color: var(--color-bg-dark);
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
   display: flex;
   align-items: flex-end;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center;
 }
 
 .heroOverlay {

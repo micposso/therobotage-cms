@@ -31,6 +31,11 @@ export default function RoboticsMapPage() {
             <p className={styles.subtitle}>
               Filter robotics companies by geography, product category, customer sector, maturity, commercial proof, and ecosystem role. The same market-intelligence model powers the public API at <code>/api/robotics-map</code>.
             </p>
+            <p className={styles.subtitle}>
+              <a href="/metronyc-robotics-map" className={styles.regionalLink}>
+                Explore NYC &amp; metro area: 48 entries across 18 categories →
+              </a>
+            </p>
           </header>
           <RoboticsMapExplorer companies={roboticsMapCompanies} facets={roboticsMapFacets} />
         </div>

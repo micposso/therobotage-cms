@@ -1,0 +1,9 @@
+Why would a video-generation company build a robot model? Video already contains the movements, object interactions, and changing scenes that robot learning needs to make sense of.
+
+Runway's Praxis-1 connects predicted video with robot actions. Its open weights and code give researchers a way to run and adapt the model. For designers, educators, and curious observers, the public demonstrations offer a simpler starting point: study the instruction, identify the intended outcome, and check what the robot actually does.
+
+Our new article explains the connection between video and robot control, then proposes practical learning exercises: observing demos, comparing attempts in simulation with technical support, and recognizing the extra requirements of physical hardware. It also explains why responding to a new prompt and learning a lasting new skill are different processes.
+
+Robot literacy grows through specific observations: which object was selected, what changed, and what evidence shows the task is finished. Read the full piece on The Robot Age: https://therobotage.com/news/runway-video-models-teach-robots
+
+#Robotics #AI #RobotLiteracy #RobotLearning #ProductDesign

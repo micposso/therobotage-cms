@@ -1,0 +1,46 @@
+{
+  "checked": "2026-11-16",
+  "article": "runway-video-models-teach-robots",
+  "research": [
+    {
+      "claim": "Weights and inference/fine-tuning code released November 11 under Apache 2.0.",
+      "source": "https://runway.com/news/company-news/praxis-1-is-now-available"
+    },
+    {
+      "claim": "Runway connects large-scale video pretraining to robotics and the cost of collecting robot demonstrations.",
+      "source": "https://runway.com/research/introducing-praxis-1"
+    },
+    {
+      "claim": "Joint video/action prediction, 1.6-second action chunks, instruction/camera/pose inputs; reported limitations include look-alike objects, vague instructions and multi-step prompts.",
+      "source": "https://runway.com/research/praxis-1-video-pretraining-to-robot-control"
+    },
+    {
+      "claim": "Standard quick start uses Python, CUDA and an 80 GB GPU. Quantized variants have separate requirements.",
+      "source": "https://github.com/runwayml/praxis-1-oss"
+    },
+    {
+      "claim": "MuJoCo simulation supports live browser viewing and recorded runs, with software and compute setup required.",
+      "source": "https://github.com/runwayml/praxis-1-oss/blob/main/praxis/sim/README.md"
+    },
+    {
+      "claim": "Fine-tuning is separate from inference; documented recipes distinguish new rig and new task adaptation.",
+      "source": "https://github.com/runwayml/praxis-1-oss/blob/main/praxis/train/README.md"
+    },
+    {
+      "claim": "Base checkpoint lacks robot-specific action heads and cannot run as a policy as supplied.",
+      "source": "https://huggingface.co/runwayml/praxis-1-base"
+    }
+  ],
+  "editorial": "Observation and simulation exercises are original teaching proposals, not experiments performed by The Robot Age. No claim of a no-code public inference demo. No leaderboard leadership claims. Illustrations are identified as imagined AI-generated setups.",
+  "images": {
+    "method": "Built-in image_gen tool",
+    "header": {
+      "path": "frontend/public/images/news/runway-video-models-teach-robots-header.png",
+      "prompt": "Use case: photorealistic-natural. Create a wide 16:9 editorial header image for The Robot Age article about how video prediction becomes robot movement. A generic compact cream and graphite robot arm with a simple two-finger gripper stands on a real oak workbench in a quiet daylight learning studio, reaching toward an olive-green ceramic mug and a shallow sand-colored tray. A modest monitor behind the arm shows three small photographic frames of the same mug being moved onto the tray, without any letters or interface text. This is an illustrative imagined learning setup, not a photo of a named product or actual experiment. Place the arm, mug, and monitor in the upper-right two-thirds; leave the left and lower third calm with soft shadows and generous negative space for a headline to be overlaid by the webpage. Editorial photography, warm muted earth-tone palette: sand cream (#ecd9d2), muted brick red (#9b5152), olive green (#4d6247), tan gold (#b7925b), deep near-black (#0D0D0D), with one small warm orange accent (#e85d24) on the gripper housing. Natural directional light, realistic tactile materials, shallow depth of field, grounded documentary composition. No people, no text, no logos, no watermarks, no glowing holograms, no neon, no humanoid robot, no floating graphics. Landscape output."
+    },
+    "preview": {
+      "path": "frontend/public/images/news/runway-video-models-teach-robots-thumb.png",
+      "prompt": "Use case: photorealistic-natural. Generate a separate wide 16:9 editorial article-card thumbnail for The Robot Age about video models learning robot actions. Tight three-quarter close-up of a generic cream-and-graphite robot arm's two-finger gripper holding an olive-green ceramic mug just above a sand-colored shallow tray on a real oak workbench. The mug and grip are a single striking focal subject, centered with enough breathing room to crop on a small homepage card. In the softly blurred background is a modest computer monitor showing one recognizable image of the same mug already resting on the tray: a visual suggestion of prediction and action, with no letters or UI text. An imagined learning studio, not a named commercial robot or documentary evidence of an actual experiment. Editorial photography, warm muted earth-tone palette: sand cream (#ecd9d2), muted brick red (#9b5152), olive green (#4d6247), tan gold (#b7925b), deep near-black (#0D0D0D), with one small warm orange accent (#e85d24) on the gripper housing. Natural directional light, shallow depth of field, realistic mechanics and tactile ceramic texture, grounded and restrained. No people, no text, no logos, no watermarks, no neon, no holograms, no humanoid robot. A different camera angle from a wide workshop shot; this is a new close composition."
+    }
+  }
+}

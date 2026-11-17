@@ -39,6 +39,12 @@
   color: var(--color-text);
 }
 
+.regionalLink {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 @media (max-width: 767px) {
   .header {
     padding: var(--space-10) 0 var(--space-8);
