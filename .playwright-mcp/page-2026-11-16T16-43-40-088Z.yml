@@ -1,0 +1,393 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "The Robot Age" [ref=e6]
+      - generic [ref=e7]:
+        - generic [ref=e8]: Language
+        - combobox "Language" [ref=e13] [cursor=pointer]:
+          - option "English" [selected]: EN
+          - option "Español": ES
+      - button "Open menu" [ref=e14] [cursor=pointer]
+  - main [ref=e16]:
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - paragraph [ref=e19]: Robotics company atlas
+        - heading "Where the robot economy is taking shape." [level=1] [ref=e20]
+        - paragraph [ref=e21]:
+          - text: Filter robotics companies by geography, product category, customer sector, maturity, commercial proof, and ecosystem role. The same market-intelligence model powers the public API at
+          - code [ref=e22]: /api/robotics-map
+          - text: .
+        - paragraph [ref=e23]:
+          - 'link "Explore NYC & metro area: 48 entries across 18 categories →" [ref=e24] [cursor=pointer]':
+            - /url: /robotics-map/nyc-metro
+      - region "Robotics company map explorer" [ref=e25]:
+        - generic [ref=e26]:
+          - generic [ref=e27]:
+            - generic [ref=e28]: Company, robot, or market
+            - searchbox "Company, robot, or market" [ref=e29]
+          - generic [ref=e30]:
+            - generic [ref=e31]: Region
+            - combobox "Region" [ref=e32]:
+              - option "All" [selected]
+              - option "Asia"
+              - option "Europe"
+              - option "North America"
+          - generic [ref=e33]:
+            - generic [ref=e34]: Location
+            - combobox "Location" [ref=e35]:
+              - option "All" [selected]
+              - option "Canada"
+              - option "China"
+              - option "Germany"
+              - option "Switzerland"
+              - option "United States"
+          - generic [ref=e36]:
+            - generic [ref=e37]: Company type
+            - combobox "Company type" [ref=e38]:
+              - option "All" [selected]
+              - option "Corporate robotics program"
+              - option "Private company"
+              - option "Public company"
+              - option "Subsidiary"
+          - generic [ref=e39]:
+            - generic [ref=e40]: Sector
+            - combobox "Sector" [ref=e41]:
+              - option "All" [selected]
+              - option "Automotive manufacturing"
+              - option "Cognitive robotics"
+              - option "Consumer health"
+              - option "Consumer robotics"
+              - option "Developer robots"
+              - option "Education"
+              - option "Eldercare"
+              - option "Embodied AI"
+              - option "Energy"
+              - option "General-purpose AI"
+              - option "Healthcare"
+              - option "Home robotics"
+              - option "Human-robot collaboration"
+              - option "Humanoids"
+              - option "Industrial automation"
+              - option "Industrial inspection"
+              - option "Industrial pilots"
+              - option "Industrial service"
+              - option "Infrastructure"
+              - option "Logistics"
+              - option "Manufacturing"
+              - option "Open-source AI"
+              - option "Quadrupeds"
+              - option "Rehabilitation"
+              - option "Research platforms"
+              - option "Robot intelligence"
+              - option "Robotics foundation models"
+              - option "Service robotics"
+              - option "Social robotics"
+          - generic [ref=e42]:
+            - generic [ref=e43]: Robot type
+            - combobox "Robot type" [ref=e44]:
+              - option "All" [selected]
+              - option "Android"
+              - option "Autonomous inspection"
+              - option "Bipedal humanoid"
+              - option "Collaborative robot"
+              - option "Companion robot"
+              - option "Desktop social robot"
+              - option "Developer robot"
+              - option "Dexterous manipulation"
+              - option "Embodied AI"
+              - option "Humanoid"
+              - option "Material handling"
+              - option "Mobile manipulation"
+              - option "Mobile manipulator"
+              - option "Mobile robot"
+              - option "Modular actuator platform"
+              - option "Quadruped"
+              - option "Rehabilitation robot"
+              - option "Robotics AI platform"
+              - option "Service robot"
+              - option "Small humanoid"
+              - option "Social robot"
+          - generic [ref=e45]:
+            - generic [ref=e46]: Maturity
+            - combobox "Maturity" [ref=e47]:
+              - option "All" [selected]
+              - option "Acquired"
+              - option "Corporate program"
+              - option "Growth"
+              - option "Public"
+              - option "Startup"
+          - generic [ref=e48]:
+            - generic [ref=e49]: Commercial proof
+            - combobox "Commercial proof" [ref=e50]:
+              - option "All" [selected]
+              - option "Concept"
+              - option "Paid deployment"
+              - option "Public market"
+              - option "Scaled deployment"
+          - generic [ref=e51]:
+            - generic [ref=e52]: Ecosystem role
+            - combobox "Ecosystem role" [ref=e53]:
+              - option "All" [selected]
+              - option "Developer ecosystem"
+              - option "Embodied AI platform"
+              - option "Inspection automation"
+              - option "Robot OEM"
+              - option "Robotics software layer"
+          - generic [ref=e54]:
+            - generic [ref=e55]: Buyer sector
+            - combobox "Buyer sector" [ref=e56]:
+              - option "All" [selected]
+              - option "Automotive manufacturing"
+              - option "Cognitive robotics"
+              - option "Consumer health"
+              - option "Consumer robotics"
+              - option "Developer robots"
+              - option "Education"
+              - option "Eldercare"
+              - option "Embodied AI"
+              - option "Energy"
+              - option "General-purpose AI"
+              - option "Healthcare"
+              - option "Home robotics"
+              - option "Human-robot collaboration"
+              - option "Humanoids"
+              - option "Industrial automation"
+              - option "Industrial inspection"
+              - option "Industrial pilots"
+              - option "Industrial service"
+              - option "Infrastructure"
+              - option "Logistics"
+              - option "Manufacturing"
+              - option "Open-source AI"
+              - option "Quadrupeds"
+              - option "Rehabilitation"
+              - option "Research platforms"
+              - option "Robot intelligence"
+              - option "Robotics foundation models"
+              - option "Service robotics"
+              - option "Social robotics"
+          - generic [ref=e57]:
+            - generic [ref=e58]: Founded
+            - combobox "Founded" [ref=e59]:
+              - option "Any year" [selected]
+              - option "Before 2010"
+              - option "2010-2018"
+              - option "2019+"
+          - button "Reset" [ref=e60] [cursor=pointer]
+        - generic [ref=e61]:
+          - generic [ref=e62]: 17 of 17 companies visible
+          - generic [ref=e63]: 9 with paid or scaled proof
+          - generic [ref=e64]: TBD average Robot Age Signal
+          - link "Open JSON API" [ref=e65] [cursor=pointer]:
+            - /url: /api/robotics-map
+        - generic "Robotics map intelligence summary" [ref=e66]:
+          - generic [ref=e67]:
+            - generic [ref=e68]: Regional density
+            - generic [ref=e69]:
+              - button "12 North America Top TBD" [ref=e70] [cursor=pointer]:
+                - strong [ref=e71]: "12"
+                - generic [ref=e72]: North America
+                - generic [ref=e73]: Top TBD
+              - button "3 Asia Top TBD" [ref=e74] [cursor=pointer]:
+                - strong [ref=e75]: "3"
+                - generic [ref=e76]: Asia
+                - generic [ref=e77]: Top TBD
+              - button "2 Europe Top TBD" [ref=e78] [cursor=pointer]:
+                - strong [ref=e79]: "2"
+                - generic [ref=e80]: Europe
+                - generic [ref=e81]: Top TBD
+          - generic [ref=e82]:
+            - generic [ref=e83]: Robot Age leaderboard
+            - list [ref=e84]:
+              - listitem [ref=e85]:
+                - button "UBTECH Robotics TBD Public market" [ref=e86] [cursor=pointer]:
+                  - generic [ref=e87]: UBTECH Robotics
+                  - strong [ref=e88]: TBD
+                  - generic [ref=e89]: Public market
+              - listitem [ref=e90]:
+                - button "Unitree Robotics TBD Public market" [ref=e91] [cursor=pointer]:
+                  - generic [ref=e92]: Unitree Robotics
+                  - strong [ref=e93]: TBD
+                  - generic [ref=e94]: Public market
+              - listitem [ref=e95]:
+                - button "ANYbotics TBD Scaled deployment" [ref=e96] [cursor=pointer]:
+                  - generic [ref=e97]: ANYbotics
+                  - strong [ref=e98]: TBD
+                  - generic [ref=e99]: Scaled deployment
+              - listitem [ref=e100]:
+                - button "Apptronik TBD Scaled deployment" [ref=e101] [cursor=pointer]:
+                  - generic [ref=e102]: Apptronik
+                  - strong [ref=e103]: TBD
+                  - generic [ref=e104]: Scaled deployment
+              - listitem [ref=e105]:
+                - button "Boston Dynamics TBD Scaled deployment" [ref=e106] [cursor=pointer]:
+                  - generic [ref=e107]: Boston Dynamics
+                  - strong [ref=e108]: TBD
+                  - generic [ref=e109]: Scaled deployment
+              - listitem [ref=e110]:
+                - button "ElliQ / Intuition Robotics TBD Scaled deployment" [ref=e111] [cursor=pointer]:
+                  - generic [ref=e112]: ElliQ / Intuition Robotics
+                  - strong [ref=e113]: TBD
+                  - generic [ref=e114]: Scaled deployment
+        - generic [ref=e115]:
+          - generic [ref=e116]:
+            - generic "Map marker legend" [ref=e117]:
+              - generic [ref=e118]: Scaled/public
+              - generic [ref=e120]: Paid
+              - generic [ref=e122]: Pilot/demo
+            - generic [ref=e124]:
+              - generic:
+                - generic:
+                  - button [ref=e125] [cursor=pointer]
+                  - button [ref=e127] [cursor=pointer]
+                  - button [ref=e129] [cursor=pointer]
+                  - button [ref=e131] [cursor=pointer]
+                  - button [ref=e133] [cursor=pointer]
+                  - button [ref=e135] [cursor=pointer]
+                  - button [ref=e137] [cursor=pointer]
+                  - button [ref=e139] [cursor=pointer]
+                  - button [ref=e141] [cursor=pointer]
+                  - button [ref=e143] [cursor=pointer]
+                  - button [ref=e145] [cursor=pointer]
+                  - button [ref=e147] [cursor=pointer]
+                  - button [ref=e149] [cursor=pointer]
+                  - button [ref=e151] [cursor=pointer]
+                  - button [ref=e153] [cursor=pointer]
+                  - button [ref=e155] [cursor=pointer]
+                  - button [ref=e157] [cursor=pointer]
+              - generic:
+                - generic [ref=e159]:
+                  - button "Zoom in" [ref=e160] [cursor=pointer]: +
+                  - button "Zoom out" [disabled] [ref=e161]: −
+                - generic [ref=e162]:
+                  - link "Leaflet" [ref=e163] [cursor=pointer]:
+                    - /url: https://leafletjs.com
+                  - text: "| ©"
+                  - link "OpenStreetMap" [ref=e168] [cursor=pointer]:
+                    - /url: https://www.openstreetmap.org/copyright
+                  - text: contributors ©
+                  - link "CARTO" [ref=e169] [cursor=pointer]:
+                    - /url: https://carto.com/attributions
+          - complementary [ref=e170]:
+            - generic [ref=e171]:
+              - paragraph [ref=e172]: Salem, Oregon, United States
+              - heading "Agility Robotics" [level=2] [ref=e173]
+              - paragraph [ref=e174]: Announced SPAC deal to list under AGLT
+            - tablist "Company intelligence sections" [ref=e175]:
+              - tab "Overview" [selected] [ref=e176] [cursor=pointer]
+              - tab "Products" [ref=e177] [cursor=pointer]
+              - tab "Deployments" [ref=e178] [cursor=pointer]
+              - tab "Funding" [ref=e179] [cursor=pointer]
+              - tab "Sources" [ref=e180] [cursor=pointer]
+            - generic [ref=e181]:
+              - generic [ref=e182]:
+                - term [ref=e183]: Founded
+                - definition [ref=e184]: "2015"
+              - generic [ref=e185]:
+                - term [ref=e186]: Type
+                - definition [ref=e187]: Private company
+              - generic [ref=e188]:
+                - term [ref=e189]: Robots
+                - definition [ref=e190]: Digit
+              - generic [ref=e191]:
+                - term [ref=e192]: Maturity
+                - definition [ref=e193]: Growth
+              - generic [ref=e194]:
+                - term [ref=e195]: Proof
+                - definition [ref=e196]: Paid deployment
+              - generic [ref=e197]:
+                - term [ref=e198]: Confidence
+                - definition [ref=e199]: Medium
+            - generic [ref=e200]:
+              - generic [ref=e201]: Logistics
+              - generic [ref=e202]: Manufacturing
+              - generic [ref=e203]: Humanoids
+              - generic [ref=e204]: Bipedal humanoid
+              - generic [ref=e205]: Material handling
+              - generic [ref=e206]: Robot OEM
+            - generic [ref=e207]:
+              - generic [ref=e208]:
+                - generic [ref=e209]: TBD
+                - generic [ref=e210]: Robot Age Signal
+              - paragraph [ref=e211]: Score model scaffold. Populate after source-backed research and calibration.
+            - generic [ref=e212]:
+              - heading "Why it matters" [level=3] [ref=e213]
+              - paragraph [ref=e214]: Digit has logged production deployments in logistics and manufacturing sites.
+            - generic [ref=e215]:
+              - heading "Business model" [level=3] [ref=e216]
+              - paragraph [ref=e217]: Enterprise robot sales and fleet deployment for repetitive warehouse and factory work.
+            - generic [ref=e218]:
+              - heading "Buyer sectors" [level=3] [ref=e219]
+              - list [ref=e220]:
+                - listitem [ref=e221]: Logistics
+                - listitem [ref=e222]: Manufacturing
+                - listitem [ref=e223]: Humanoids
+            - generic [ref=e224]:
+              - heading "Opportunities" [level=3] [ref=e225]
+              - list [ref=e226]:
+                - listitem [ref=e227]: "Needs research: strongest target verticals, partnership channels, and near-term market expansion paths."
+            - link "Visit company site" [ref=e228] [cursor=pointer]:
+              - /url: https://agilityrobotics.com
+  - contentinfo [ref=e229]:
+    - generic [ref=e230]:
+      - generic [ref=e231]:
+        - generic [ref=e232]:
+          - link "The Robot Age" [ref=e233] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=e234]: Preparing people and organizations for a world with robots.
+        - generic [ref=e235]:
+          - generic [ref=e236]: Pages
+          - navigation [ref=e237]:
+            - link "Research" [ref=e238] [cursor=pointer]:
+              - /url: /research
+            - link "Academy" [ref=e239] [cursor=pointer]:
+              - /url: /learn
+            - link "Jobs" [ref=e240] [cursor=pointer]:
+              - /url: /jobs
+            - link "What Robot Are You?" [ref=e241] [cursor=pointer]:
+              - /url: /what-robot-are-you
+            - link "RXD Scorecard" [ref=e242] [cursor=pointer]:
+              - /url: /rxd-scorecard
+            - link "For Organizations" [ref=e243] [cursor=pointer]:
+              - /url: /enterprise
+            - link "Partners" [ref=e244] [cursor=pointer]:
+              - /url: /robot-literacy/partners
+            - link "Press" [ref=e245] [cursor=pointer]:
+              - /url: /press
+            - link "Connect" [ref=e246] [cursor=pointer]:
+              - /url: /connect
+            - link "Summit" [ref=e247] [cursor=pointer]:
+              - /url: /summit
+        - generic [ref=e248]:
+          - generic [ref=e249]: Programs
+          - navigation [ref=e250]:
+            - link "Robot Literacy" [ref=e251] [cursor=pointer]:
+              - /url: /robot-literacy
+            - link "Live Robot Lab" [ref=e252] [cursor=pointer]:
+              - /url: /live-robot-lab
+            - link "Product Design for Robots (RPDP)" [ref=e253] [cursor=pointer]:
+              - /url: /learn/rpdp
+            - link "Robot Deployment Practitioner (RDP)" [ref=e254] [cursor=pointer]:
+              - /url: /learn/rdp
+        - generic [ref=e255]:
+          - generic [ref=e256]: Follow
+          - generic [ref=e257]:
+            - link "LinkedIn" [ref=e258] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/therobotage/
+            - link "Instagram" [ref=e264] [cursor=pointer]:
+              - /url: https://www.instagram.com/roboticsliteracy/
+      - generic [ref=e271]:
+        - paragraph [ref=e273]: © 2026 The Robot Age. All rights reserved.
+        - generic [ref=e274]:
+          - link "Privacy Policy" [ref=e275] [cursor=pointer]:
+            - /url: /privacy
+          - link "Terms of Use" [ref=e276] [cursor=pointer]:
+            - /url: /terms
+          - link "Fair use of AI" [ref=e277] [cursor=pointer]:
+            - /url: /ai-statement
+  - complementary "Browser agent activity" [ref=e278]:
+    - button "Expand WebMCP browser agent activity" [ref=e281] [cursor=pointer]:
+      - generic [ref=e282]: WebMCP
+  - alert [ref=e283]
