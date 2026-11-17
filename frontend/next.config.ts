@@ -21,11 +21,6 @@ const nextConfig: NextConfig = {
       ...Object.entries(imageAssets).filter(([source]) => source.startsWith('/')).map(([source, destination]) => ({ source, destination, permanent: false })),
     ]
   },
-  async rewrites() {
-    return [
-      { source: '/metronyc-robotics-map', destination: '/maps/nyc-metro.html' },
-    ]
-  },
   async headers() {
     if (!noindex) return []
     return [
