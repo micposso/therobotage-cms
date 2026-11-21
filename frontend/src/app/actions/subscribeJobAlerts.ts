@@ -3,10 +3,12 @@
 import crypto from 'node:crypto'
 import { headers } from 'next/headers'
 import { Resend } from 'resend'
+import { escapeHtml } from '@/lib/emailTemplate'
 import { getSupabaseJobsService } from '@/lib/supabase/admin'
 import {
   getJobAlertAdminAddress,
   getJobAlertFromAddress,
+  jobAlertSignupReceivedHtml,
   jobAlertUnsubscribeHeaders,
   jobAlertWelcomeHtml,
 } from '@/lib/jobAlertEmail'
@@ -21,7 +23,7 @@ import {
 
 const FROM_ADDRESS = getJobAlertFromAddress()
 const ADMIN_ADDRESS = getJobAlertAdminAddress()
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://therobotage.com'
+const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL?.trim() || 'https://therobotage.com').replace(/\/+$/, '')
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const RATE_LIMIT_PER_HOUR = 3
@@ -46,15 +48,6 @@ function describeFilters(roles: string[], levels: string[], states: string[], re
   return parts.join(' · ')
 }
 
-function escapeHtml(value: string): string {
-  return value
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;')
-}
-
 function manualSignupHtml({
   email,
   filterSummary,
@@ -77,23 +70,15 @@ function manualSignupHtml({
   `
 }
 
-function fallbackConfirmationHtml() {
-  return `
-    <div style="font-family: Arial, sans-serif; line-height: 1.5; color: #111;">
-      <h1 style="font-size: 20px;">We received your robotics job alert signup.</h1>
-      <p>Thanks for signing up. The Robot Age is finishing the job alert system, and we will add you to the weekly robotics jobs list once it is connected.</p>
-      <p>In the meantime, you can browse current roles at <a href="${escapeHtml(SITE_URL)}/jobs">${escapeHtml(SITE_URL)}/jobs</a>.</p>
-    </div>
-  `
-}
-
 async function captureManualSignup({
   email,
   filterSummary,
+  browseUrl,
   source,
 }: {
   email: string
   filterSummary: string
+  browseUrl: string
   source: string | null
 }): Promise<boolean> {
   if (!process.env.RESEND_API_KEY) return false
@@ -116,8 +101,9 @@ async function captureManualSignup({
       const { error } = await resend.emails.send({
         from: FROM_ADDRESS,
         to: email,
-        subject: 'We received your robotics job alert signup',
-        html: fallbackConfirmationHtml(),
+        replyTo: ADMIN_ADDRESS,
+        subject: 'Your job alert request | The Robot Age',
+        html: jobAlertSignupReceivedHtml({ email, filterSummary, browseUrl }),
       })
       if (error) console.error('Job alert fallback confirmation error:', error)
     } catch (error) {
@@ -134,16 +120,16 @@ async function captureManualSignup({
 async function fallbackSuccess(
   email: string,
   filterSummary: string,
+  browseUrl: string,
   source: string | null
 ): Promise<State | null> {
-  const captured = await captureManualSignup({ email, filterSummary, source })
+  const captured = await captureManualSignup({ email, filterSummary, browseUrl, source })
   if (!captured) return null
 
   return {
     success: true,
-    title: 'We received it.',
-    body:
-      'Your signup was captured. We are finishing the alert system and will add you to the weekly robotics jobs list once it is connected.',
+    title: 'We received your signup request.',
+    body: 'Your weekly robotics job alerts are pending. We’ll email you when your subscription is active.',
   }
 }
 
@@ -215,6 +201,12 @@ export async function subscribeJobAlerts(
   const submittedSource = formData.get('source')
   const source = typeof submittedSource === 'string' ? submittedSource.slice(0, 80) : null
   const filterSummary = describeFilters(roleFamilies, seniorities, states, remoteOnly)
+  const params = new URLSearchParams()
+  if (roleFamilies.length) params.set('role', roleFamilies.join(','))
+  if (seniorities.length) params.set('level', seniorities.join(','))
+  if (states.length) params.set('state', states.join(','))
+  if (remoteOnly) params.set('remote', 'remote-us')
+  const browseUrl = `${SITE_URL}/jobs${params.size ? `?${params}` : ''}`
 
   try {
     const db = getSupabaseJobsService()
@@ -271,18 +263,11 @@ export async function subscribeJobAlerts(
 
     if (error || !subscriber) {
       console.error('subscribeJobAlerts upsert error:', error)
-      const fallback = await fallbackSuccess(email, filterSummary, source)
+      const fallback = await fallbackSuccess(email, filterSummary, browseUrl, source)
       if (fallback) return fallback
 
       return { success: false, error: 'Something went wrong. Please try again.' }
     }
-
-    const params = new URLSearchParams()
-    if (roleFamilies.length) params.set('role', roleFamilies.join(','))
-    if (seniorities.length) params.set('level', seniorities.join(','))
-    if (states.length) params.set('state', states.join(','))
-    if (remoteOnly) params.set('remote', 'remote-us')
-    const browseUrl = `${SITE_URL}/jobs${params.toString() ? `?${params}` : ''}`
 
     const sentWelcome = await sendWelcomeEmail({
       email,
@@ -303,7 +288,7 @@ export async function subscribeJobAlerts(
     return { success: true }
   } catch (err) {
     console.error('subscribeJobAlerts error:', err)
-    const fallback = await fallbackSuccess(email, filterSummary, source)
+    const fallback = await fallbackSuccess(email, filterSummary, browseUrl, source)
     if (fallback) return fallback
 
     return { success: false, error: 'Something went wrong. Please try again.' }

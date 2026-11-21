@@ -9,20 +9,29 @@ const token = '69dd298a-eef3-48d5-b86b-191dc3fc0490'
 const origin = 'https://therobotage.com'
 const moduleUrl = (source) => `data:text/javascript;base64,${Buffer.from(source).toString('base64')}`
 
-async function load(path, aliases) {
+async function sourceUrl(path, aliases) {
   let source = ts.transpileModule(await readFile(new URL(`../src/${path}`, import.meta.url), 'utf8'), {
     compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 },
   }).outputText
   for (const [specifier, url] of Object.entries(aliases)) {
     source = source.replace(`'${specifier}'`, JSON.stringify(url))
   }
-  return import(moduleUrl(source))
+  return moduleUrl(source)
 }
+
+const load = async (path, aliases) => import(await sourceUrl(path, aliases))
+const emailTemplate = await testModule(new URL('../src/lib/emailTemplate.ts', import.meta.url))
+const emailRenderer = await sourceUrl('lib/jobAlertEmail.ts', {
+  './emailTemplate': emailTemplate,
+  './jobs': moduleUrl('export const formatLocation = () => "", formatSalary = () => ""'),
+  './jobsTaxonomy': moduleUrl('export const REMOTE_TYPE_LABELS = {}, SENIORITY_LABELS = {}'),
+})
 
 const aliases = {
   'next/server': moduleUrl('export const NextResponse = Response'),
   'next/headers': moduleUrl('export const headers = async () => new Headers()'),
   resend: import.meta.resolve('resend'),
+  '@/lib/emailTemplate': emailTemplate,
   '@/lib/supabase/admin': moduleUrl('export const getSupabaseJobsService = () => globalThis.jobAlertsDb'),
   '@/lib/jobs': moduleUrl('export const mapPublicJobRow = row => row; export const toJobCard = job => job'),
   '@/lib/jobFilters': await testModule(new URL('../src/lib/jobFilters.ts', import.meta.url)),
@@ -31,12 +40,11 @@ const aliases = {
     export const SENIORITY_LABELS = {}, SENIORITY_SLUGS = [], STATE_NAMES = {}, STATE_CODES = ['NY'];
   `),
   '@/lib/jobAlertEmail': moduleUrl(`
+    export { jobAlertSignupReceivedHtml, jobAlertUnsubscribeHeaders, jobAlertWelcomeHtml } from '${emailRenderer}';
     export const getJobAlertFromAddress = () => 'jobs@example.com';
     export const getJobAlertAdminAddress = () => 'admin@example.com';
-    export const jobAlertUnsubscribeHeaders = token => ({ 'List-Unsubscribe': token });
     export const jobAlertDigestSubject = jobs => jobs.map(job => job.slug).join(',');
     export const jobAlertDigestHtml = () => '<p>Digest</p>';
-    export const jobAlertWelcomeHtml = ({ browseUrl }) => browseUrl;
   `),
 }
 
@@ -45,7 +53,13 @@ const { POST: oneClick } = await load('app/api/jobs/alerts/unsubscribe/route.ts'
 const { subscribeJobAlerts } = await load('app/actions/subscribeJobAlerts.ts', aliases)
 
 function mockServices(t, respond) {
-  const env = { ...process.env, CRON_SECRET: 'test-cron', RESEND_API_KEY: 'test-resend', JOB_ALERT_SEND_DAY: '2' }
+  const env = {
+    ...process.env,
+    CRON_SECRET: 'test-cron',
+    RESEND_API_KEY: 'test-resend',
+    JOB_ALERT_SEND_DAY: '2',
+    JOB_ALERT_ADMIN_EMAIL: 'admin@example.com',
+  }
   t.mock.method(console, 'error', () => {})
   t.mock.method(globalThis, 'fetch', async (url, init) => respond(new URL(url), init))
   const previousEnv = process.env
@@ -176,7 +190,40 @@ test('signup saves fast submissions, normalizes email, and sends a welcome messa
   assert.deepEqual(calls.map(([path]) => path), ['/rest/v1/job_alert_subscribers', '/emails'])
   assert.equal(calls[0][1].email, 'person@example.com')
   assert.deepEqual(calls[0][1].role_families, ['product'])
-  assert.equal(calls[1][1].to, 'person@example.com')
+  const welcome = calls[1][1]
+  assert.equal(welcome.to, 'person@example.com')
+  assert.match(welcome.html, /The Robot Age/)
+  assert.match(welcome.html, /Browse robotics jobs/)
+  assert.ok(welcome.html.includes(`/jobs/alerts/unsubscribe?token=${token}"`))
+  assert.match(welcome.html, />\s*Unsubscribe\s*<\/a>/)
+  assert.equal(welcome.headers['List-Unsubscribe-Post'], 'List-Unsubscribe=One-Click')
+})
+
+test('a failed signup sends a branded receipt with a cancellation email link', async (t) => {
+  const mail = []
+  mockServices(t, (url, { body }) => {
+    if (url.pathname === '/rest/v1/job_alert_subscribers') {
+      return Response.json({ message: 'Unavailable' }, { status: 503 })
+    }
+    assert.equal(url.pathname, '/emails')
+    mail.push(JSON.parse(body))
+    return Response.json({ id: 'accepted' })
+  })
+  const form = new FormData()
+  form.set('email', 'person+jobs@example.com')
+  form.set('role_families', 'product')
+  const result = await subscribeJobAlerts(null, form)
+  assert.equal(result.success, true)
+  assert.match(result.body, /pending/)
+  assert.deepEqual(mail.map(({ to }) => to), ['admin@example.com', 'person+jobs@example.com'])
+  const receipt = mail[1]
+  assert.equal(receipt.reply_to, 'admin@example.com')
+  assert.match(receipt.html, /The Robot Age/)
+  assert.match(receipt.html, /Your alert preferences/)
+  assert.match(receipt.html, /href="[^"]*\/jobs\?role=product"/)
+  assert.match(receipt.html, /href="mailto:admin@example\.com\?subject=[^"]+person%2Bjobs%40example\.com/)
+  assert.match(receipt.html, />\s*Cancel signup request\s*<\/a>/)
+  assert.equal(receipt.headers, undefined)
 })
 
 test('one-click unsubscribe requires the form action and retries on database failure', async (t) => {

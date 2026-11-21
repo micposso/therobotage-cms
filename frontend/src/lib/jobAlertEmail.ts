@@ -1,4 +1,4 @@
-import { bulkEmailHtml, escapeHtml } from './emailTemplate'
+import { bulkEmailHtml, emailHtml, escapeHtml } from './emailTemplate'
 import { formatLocation, formatSalary, type JobCard } from './jobs'
 import { REMOTE_TYPE_LABELS, SENIORITY_LABELS } from './jobsTaxonomy'
 
@@ -123,36 +123,86 @@ export function jobAlertDigestHtml(options: {
   })
 }
 
+function jobAlertSignupContent(options: {
+  heading: string
+  message: string
+  filterSummary: string
+  browseUrl: string
+  optOutUrl: string
+  optOutLabel: string
+  optOutNote?: string
+}) {
+  return `
+    <p style="${EYEBROW}margin:0 0 12px;">Robotics jobs</p>
+    <h1 style="${HEADING}font-size:32px;">${options.heading}</h1>
+    <p style="${BODY}margin:0 0 24px;">${options.message}</p>
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 24px;">
+      <tr>
+        <td style="background:#F6F4F2;border-left:3px solid #9b5152;padding:16px 20px;">
+          <p style="${EYEBROW}margin:0 0 6px;">Your alert preferences</p>
+          <p style="${BODY}margin:0;">${escapeHtml(options.filterSummary)}</p>
+        </td>
+      </tr>
+    </table>
+
+    <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 0 20px;">
+      <tr>
+        <td style="background:#9b5152;">
+          <a href="${escapeHtml(options.browseUrl)}"
+             style="display:inline-block;padding:14px 22px;font-family:Arial,sans-serif;font-size:14px;color:#ffffff;text-decoration:none;">
+            Browse robotics jobs &rarr;
+          </a>
+        </td>
+      </tr>
+    </table>
+
+    <table role="presentation" cellpadding="0" cellspacing="0">
+      <tr>
+        <td style="border:1px solid #9b5152;">
+          <a href="${escapeHtml(options.optOutUrl)}"
+             style="display:inline-block;padding:12px 20px;font-family:Arial,sans-serif;font-size:14px;color:#853F40;text-decoration:none;">
+            ${options.optOutLabel}
+          </a>
+        </td>
+      </tr>
+    </table>
+    ${options.optOutNote ? `<p style="${BODY}font-size:13px;margin:8px 0 0;">${options.optOutNote}</p>` : ''}
+  `
+}
+
 export function jobAlertWelcomeHtml(options: {
   filterSummary: string
   browseUrl: string
   unsubscribeToken: string
 }): string {
-  const content = `
-    <h1 style="${HEADING}">Job alerts are on.</h1>
-
-    <p style="${BODY}margin:0 0 16px;">
-      Every Tuesday you will get one email with the robotics roles posted that week that
-      match what you asked for. If nothing matches, we send nothing.
-    </p>
-
-    <p style="${EYEBROW}margin:0 0 10px;">What you asked for</p>
-    <p style="${BODY}margin:0 0 28px;">${escapeHtml(options.filterSummary)}</p>
-
-    <table cellpadding="0" cellspacing="0" style="margin:0 0 8px;">
-      <tr>
-        <td style="background:#9b5152;">
-          <a href="${escapeHtml(options.browseUrl)}"
-             style="display:inline-block;padding:14px 28px;font-family:Arial,sans-serif;font-size:12px;font-weight:500;letter-spacing:0.08em;color:#ffffff;text-decoration:none;">
-            Browse those roles now &rarr;
-          </a>
-        </td>
-      </tr>
-    </table>
-  `
-
+  const optOutUrl = unsubscribeUrl(options.unsubscribeToken)
+  const content = jobAlertSignupContent({
+    ...options,
+    heading: 'Your job alerts are on.',
+    message: 'We’ll email you on Tuesdays when newly posted robotics roles match your preferences.',
+    optOutUrl,
+    optOutLabel: 'Unsubscribe',
+  })
   return bulkEmailHtml(content, {
-    unsubscribeUrl: unsubscribeUrl(options.unsubscribeToken),
+    unsubscribeUrl: optOutUrl,
     reason: 'You are receiving this because you just subscribed to robotics job alerts at therobotage.com.',
   })
+}
+
+export function jobAlertSignupReceivedHtml(options: {
+  email: string
+  filterSummary: string
+  browseUrl: string
+}): string {
+  const subject = encodeURIComponent('Cancel my robotics job alert signup')
+  const body = encodeURIComponent(`Please cancel the job alert signup for ${options.email}.`)
+  return emailHtml(jobAlertSignupContent({
+    ...options,
+    heading: 'We received your signup request.',
+    message: 'Your weekly robotics job alerts are pending. We’ll email you when your subscription is active.',
+    optOutUrl: `mailto:${getJobAlertAdminAddress()}?subject=${subject}&body=${body}`,
+    optOutLabel: 'Cancel signup request',
+    optOutNote: 'Opens an email to The Robot Age to cancel your pending request.',
+  }))
 }
