@@ -1,0 +1,395 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#policy-main"
+  - navigation [ref=e3]:
+    - generic [ref=e5]:
+      - link [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "The Robot Age" [ref=e7]
+      - list [ref=e8]:
+        - listitem [ref=e9]:
+          - link "RESEARCH" [ref=e10] [cursor=pointer]:
+            - /url: /research
+        - listitem [ref=e11]:
+          - link "ROBOTS" [ref=e12] [cursor=pointer]:
+            - /url: /robots
+        - listitem [ref=e13]:
+          - link "RXD FRAMEWORK" [ref=e14] [cursor=pointer]:
+            - /url: /rxd
+        - listitem [ref=e15]:
+          - group [ref=e16]:
+            - generic "PROGRAMS" [ref=e17] [cursor=pointer]
+        - listitem [ref=e18]:
+          - link "JOBS" [ref=e19] [cursor=pointer]:
+            - /url: /jobs
+        - listitem [ref=e20]:
+          - link "ENTERPRISE" [ref=e21] [cursor=pointer]:
+            - /url: /enterprise
+      - button "Open search" [ref=e23] [cursor=pointer]
+      - generic [ref=e27]:
+        - generic [ref=e28]: Language
+        - combobox "Language" [ref=e33] [cursor=pointer]:
+          - option "English" [selected]: EN
+          - option "Español": ES
+  - main [ref=e34]:
+    - generic [ref=e38]:
+      - paragraph [ref=e39]: RESEARCH / ROBOT POLICY WATCH
+      - heading "Robot Policy Watch" [level=1] [ref=e40]
+      - paragraph [ref=e42]: Track legislation, regulations, and safety standards affecting commercial robotics deployment across New York, New Jersey, and Connecticut.
+      - paragraph [ref=e43]: Understand what's changing, who is affected, and what it means for robots operating in buildings, workplaces, and public spaces.
+    - region "Policy directory" [ref=e44]:
+      - heading "Policy directory" [level=2] [ref=e45]
+      - search "Filter policies" [ref=e46]:
+        - generic [ref=e47]:
+          - generic [ref=e48]: Search policies
+          - searchbox "Search policies" [ref=e49]
+        - generic [ref=e50]:
+          - generic [ref=e51]: Jurisdiction
+          - combobox "Jurisdiction" [ref=e52]:
+            - option "All" [selected]
+            - option "New York"
+            - option "New Jersey"
+            - option "Connecticut"
+            - option "Federal"
+        - generic [ref=e53]:
+          - generic [ref=e54]: Status
+          - combobox "Status" [ref=e55]:
+            - option "All" [selected]
+            - option "Proposed"
+            - option "In Committee"
+            - option "Passed Legislature"
+            - option "Signed/Enacted"
+            - option "Effective"
+            - option "Repealed"
+            - option "Guidance"
+        - generic [ref=e56]:
+          - generic [ref=e57]: Category
+          - combobox "Category" [ref=e58]:
+            - option "All" [selected]
+            - option "Delivery Robots"
+            - option "Cleaning Robots"
+            - option "Security Robots"
+            - option "Building Operations"
+            - option "Parking & Mobility"
+            - option "Workplace Safety"
+            - option "Privacy & Surveillance"
+      - generic [ref=e59]:
+        - status [ref=e60]: 11 matching policies
+        - button "Reset Filters" [ref=e61] [cursor=pointer]
+      - list [ref=e62]:
+        - listitem [ref=e63]:
+          - generic [ref=e64]:
+            - generic "New Jersey" [ref=e65]: NJ
+            - generic [ref=e66]: In Committee
+          - heading "Fully autonomous vehicle pilot program" [level=3] [ref=e67]
+          - generic [ref=e68]: NJ A3968
+          - paragraph [ref=e70]: The Assembly committee substitute would establish a pilot for fully autonomous motor vehicles in participating municipalities. It sets out a permit process and conditions for vehicle testing and operation on public roads.
+          - generic [ref=e71]:
+            - generic [ref=e72]:
+              - term [ref=e73]: "Category:"
+              - definition [ref=e74]: Parking & Mobility
+            - generic [ref=e75]:
+              - term [ref=e76]: "Last verified:"
+              - definition [ref=e77]:
+                - time [ref=e78]: Nov 21, 2026
+          - link "View Official Source for Fully autonomous vehicle pilot program at New Jersey Legislature" [ref=e79] [cursor=pointer]:
+            - /url: https://www.njleg.state.nj.us/bill-search/2026/A3968
+            - text: View Official Source
+            - generic [aria-hidden] [ref=e80]: →
+        - listitem [ref=e81]:
+          - generic [ref=e82]:
+            - generic "New York" [ref=e83]: NY
+            - generic [ref=e84]: In Committee
+          - heading "Personal delivery devices" [level=3] [ref=e85]
+          - generic [ref=e86]: NY A10766
+          - paragraph [ref=e88]: The Assembly bill would define powered devices that carry property and may navigate with or without human monitoring. It proposes where they could operate and sets conditions for their equipment, speed, and operators.
+          - generic [ref=e89]:
+            - generic [ref=e90]:
+              - term [ref=e91]: "Category:"
+              - definition [ref=e92]: Delivery Robots
+            - generic [ref=e93]:
+              - term [ref=e94]: "Last verified:"
+              - definition [ref=e95]:
+                - time [ref=e96]: Nov 21, 2026
+          - link "View Official Source for Personal delivery devices at New York State Senate Open Legislation" [ref=e97] [cursor=pointer]:
+            - /url: https://www.nysenate.gov/legislation/bills/2025/A10766
+            - text: View Official Source
+            - generic [aria-hidden] [ref=e98]: →
+        - listitem [ref=e99]:
+          - generic [ref=e100]:
+            - generic "Connecticut" [ref=e101]: CT
+            - generic [ref=e102]: Repealed
+          - heading "Former fully autonomous vehicle testing pilot" [level=3] [ref=e103]
+          - generic [ref=e104]: Conn. Gen. Stat. § 13a-260
+          - paragraph [ref=e106]: Connecticut repealed this statutory pilot effective July 1, 2025. The former provision set conditions for testing level 4 and level 5 vehicles in participating municipalities, including requirements for the operator and vehicle insurance.
+          - generic [ref=e107]:
+            - generic [ref=e108]:
+              - term [ref=e109]: "Category:"
+              - definition [ref=e110]: Parking & Mobility
+            - generic [ref=e111]:
+              - term [ref=e112]: "Last verified:"
+              - definition [ref=e113]:
+                - time [ref=e114]: Nov 21, 2026
+          - link "View Official Source for Former fully autonomous vehicle testing pilot at Connecticut General Assembly" [ref=e115] [cursor=pointer]:
+            - /url: https://prdext2.cga.ct.gov/2026/sup/chap_241.htm#sec_13a-260
+            - text: View Official Source
+            - generic [aria-hidden] [ref=e116]: →
+        - listitem [ref=e117]:
+          - generic [ref=e118]:
+            - generic "New York" [ref=e119]: NY
+            - generic [ref=e120]: Effective
+          - heading "Biometric identifier information in commercial establishments" [level=3] [ref=e121]
+          - generic [ref=e122]:
+            - generic [ref=e123]: NYC Local Law 3 of 2021
+            - generic [ref=e124]: ·New York City
+          - paragraph [ref=e125]: Requires covered stores, food and drink establishments, and entertainment venues to post notices when they collect or handle customer biometric identifiers. It also prohibits selling, trading, or profiting from transactions involving those identifiers.
+          - generic [ref=e126]:
+            - generic [ref=e127]:
+              - term [ref=e128]: "Category:"
+              - definition [ref=e129]: Privacy & Surveillance
+            - generic [ref=e130]:
+              - term [ref=e131]: "Last verified:"
+              - definition [ref=e132]:
+                - time [ref=e133]: Nov 21, 2026
+            - generic [ref=e134]:
+              - term [ref=e135]: "Effective date:"
+              - definition [ref=e136]:
+                - time [ref=e137]: Jul 09, 2021
+          - link "View Official Source for Biometric identifier information in commercial establishments at New York City Council" [ref=e138] [cursor=pointer]:
+            - /url: https://legistar.council.nyc.gov/LegislationDetail.aspx?ID=3704369&GUID=070402C0-43F0-47AE-AA6E-DEF06CDF702A
+            - text: View Official Source
+            - generic [aria-hidden] [ref=e139]: →
+        - listitem [ref=e140]:
+          - generic [ref=e141]:
+            - generic "New York" [ref=e142]: NY
+            - generic [ref=e143]: Guidance
+          - heading "Autonomous vehicle testing permits" [level=3] [ref=e144]
+          - generic [ref=e145]: New York City
+          - paragraph [ref=e147]: NYC DOT explains how to apply to test autonomous vehicles on city streets and highways. The program calls for a state testing permit, a separate city permit, an operator ready to take control, and reporting.
+          - generic [ref=e148]:
+            - generic [ref=e149]:
+              - term [ref=e150]: "Category:"
+              - definition [ref=e151]: Parking & Mobility
+            - generic [ref=e152]:
+              - term [ref=e153]: "Last verified:"
+              - definition [ref=e154]:
+                - time [ref=e155]: Nov 21, 2026
+          - link "View Official Source for Autonomous vehicle testing permits at New York City Department of Transportation" [ref=e156] [cursor=pointer]:
+            - /url: https://www.nyc.gov/html/dot/html/motorist/autonomous-vehicles.shtml
+            - text: View Official Source
+            - generic [aria-hidden] [ref=e157]: →
+        - listitem [ref=e158]:
+          - generic [ref=e159]:
+            - generic "New York" [ref=e160]: NY
+            - generic [ref=e161]: In Committee
+          - heading "Biometric recognition in public accommodations" [level=3] [ref=e162]
+          - generic [ref=e163]:
+            - generic [ref=e164]: NYC Int. 0213-2026
+            - generic [ref=e165]: ·New York City
+          - paragraph [ref=e166]: This City Council proposal would restrict biometric recognition in places of public accommodation and add protections for biometric identifiers. It would also require notice and written consent in advance of covered collections.
+          - generic [ref=e167]:
+            - generic [ref=e168]:
+              - term [ref=e169]: "Category:"
+              - definition [ref=e170]: Privacy & Surveillance
+            - generic [ref=e171]:
+              - term [ref=e172]: "Last verified:"
+              - definition [ref=e173]:
+                - time [ref=e174]: Nov 21, 2026
+          - link "View Official Source for Biometric recognition in public accommodations at New York City Council" [ref=e175] [cursor=pointer]:
+            - /url: https://legistar.council.nyc.gov/LegislationDetail.aspx?ID=7861954&GUID=1D5898C5-53CA-49DA-BA41-84EF0DD03FC3
+            - text: View Official Source
+            - generic [aria-hidden] [ref=e176]: →
+        - listitem [ref=e177]:
+          - generic [ref=e178]:
+            - generic "New Jersey" [ref=e179]: NJ
+            - generic [ref=e180]: Effective
+          - heading "New Jersey Data Privacy Law" [level=3] [ref=e181]
+          - generic [ref=e182]: NJ P.L. 2023, c. 266
+          - paragraph [ref=e184]: Gives New Jersey consumers rights over personal data and establishes duties for covered businesses. It treats biometric identifiers and precise geolocation as sensitive data and generally requires consent before covered controllers process sensitive data.
+          - generic [ref=e185]:
+            - generic [ref=e186]:
+              - term [ref=e187]: "Category:"
+              - definition [ref=e188]: Privacy & Surveillance
+            - generic [ref=e189]:
+              - term [ref=e190]: "Last verified:"
+              - definition [ref=e191]:
+                - time [ref=e192]: Nov 21, 2026
+            - generic [ref=e193]:
+              - term [ref=e194]: "Effective date:"
+              - definition [ref=e195]:
+                - time [ref=e196]: Jan 15, 2025
+          - link "View Official Source for New Jersey Data Privacy Law at New Jersey Legislature" [ref=e197] [cursor=pointer]:
+            - /url: https://pub.njleg.state.nj.us/Bills/2022/PL23/266_.HTM
+            - text: View Official Source
+            - generic [aria-hidden] [ref=e198]: →
+        - listitem [ref=e199]:
+          - generic [ref=e200]:
+            - generic "Connecticut" [ref=e201]: CT
+            - generic [ref=e202]: Effective
+          - heading "Commercial facial recognition requirements" [level=3] [ref=e203]
+          - generic [ref=e204]: CT Public Act 26-64, §§ 17–19
+          - paragraph [ref=e206]: Connecticut added rules for certain commercial uses of facial recognition, including limits on image matching, entrance signage, and a public policy. Public Act 26-100 added an exception for consumers who consent in a commercial transaction.
+          - generic [ref=e207]:
+            - generic [ref=e208]:
+              - term [ref=e209]: "Category:"
+              - definition [ref=e210]: Privacy & Surveillance
+            - generic [ref=e211]:
+              - term [ref=e212]: "Last verified:"
+              - definition [ref=e213]:
+                - time [ref=e214]: Nov 21, 2026
+            - generic [ref=e215]:
+              - term [ref=e216]: "Effective date:"
+              - definition [ref=e217]:
+                - time [ref=e218]: Oct 01, 2026
+          - link "View Official Source for Commercial facial recognition requirements at Connecticut General Assembly" [ref=e219] [cursor=pointer]:
+            - /url: https://prdext2.cga.ct.gov/2026/ACT/PA/PDF/2026PA-00064-R00SB-00004-PA.PDF
+            - text: View Official Source
+            - generic [aria-hidden] [ref=e220]: →
+        - listitem [ref=e221]:
+          - generic [ref=e222]:
+            - generic "Federal" [ref=e223]: FEDERAL
+            - generic [ref=e224]: Guidance
+          - heading "Industrial robot systems and system safety" [level=3] [ref=e225]
+          - generic [ref=e226]: OSHA OTM § IV, Ch. 4
+          - paragraph [ref=e228]: OSHA’s technical manual describes hazards, risk assessment, and safeguarding for industrial robot systems. Its coverage includes collaborative, non-collaborative, and mobile applications, with information for inspectors and others evaluating workplace robot installations.
+          - generic [ref=e229]:
+            - generic [ref=e230]:
+              - term [ref=e231]: "Category:"
+              - definition [ref=e232]: Workplace Safety
+            - generic [ref=e233]:
+              - term [ref=e234]: "Last verified:"
+              - definition [ref=e235]:
+                - time [ref=e236]: Nov 21, 2026
+          - link "View Official Source for Industrial robot systems and system safety at Occupational Safety and Health Administration" [ref=e237] [cursor=pointer]:
+            - /url: https://www.osha.gov/otm/section-4-safety-hazards/chapter-4
+            - text: View Official Source
+            - generic [aria-hidden] [ref=e238]: →
+        - listitem [ref=e239]:
+          - generic [ref=e240]:
+            - generic "Federal" [ref=e241]: FEDERAL
+            - generic [ref=e242]: Effective
+          - heading "General machine guarding requirements" [level=3] [ref=e243]
+          - generic [ref=e244]: 29 CFR § 1910.212
+          - paragraph [ref=e246]: This OSHA standard requires guarding to protect operators and other workers from hazards such as moving parts and points of operation. It also requires machinery designed for a fixed location to be anchored.
+          - generic [ref=e247]:
+            - generic [ref=e248]:
+              - term [ref=e249]: "Category:"
+              - definition [ref=e250]: Workplace Safety
+            - generic [ref=e251]:
+              - term [ref=e252]: "Last verified:"
+              - definition [ref=e253]:
+                - time [ref=e254]: Nov 21, 2026
+          - link "View Official Source for General machine guarding requirements at Electronic Code of Federal Regulations" [ref=e255] [cursor=pointer]:
+            - /url: https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-O/section-1910.212
+            - text: View Official Source
+            - generic [aria-hidden] [ref=e256]: →
+        - listitem [ref=e257]:
+          - generic [ref=e258]:
+            - generic "Federal" [ref=e259]: FEDERAL
+            - generic [ref=e260]: Effective
+          - heading "Control of hazardous energy (lockout/tagout)" [level=3] [ref=e261]
+          - generic [ref=e262]: 29 CFR § 1910.147
+          - paragraph [ref=e264]: This OSHA standard covers servicing or maintenance where unexpected startup or release of stored energy could injure workers. It requires an energy-control program with procedures, training, and periodic inspections, subject to the rule’s scope and exceptions.
+          - generic [ref=e265]:
+            - generic [ref=e266]:
+              - term [ref=e267]: "Category:"
+              - definition [ref=e268]: Workplace Safety
+            - generic [ref=e269]:
+              - term [ref=e270]: "Last verified:"
+              - definition [ref=e271]:
+                - time [ref=e272]: Nov 21, 2026
+          - link "View Official Source for Control of hazardous energy (lockout/tagout) at Electronic Code of Federal Regulations" [ref=e273] [cursor=pointer]:
+            - /url: https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-J/section-1910.147
+            - text: View Official Source
+            - generic [aria-hidden] [ref=e274]: →
+    - region "Stay informed about robotics policy." [ref=e275]:
+      - generic [ref=e276]:
+        - generic [ref=e277]:
+          - heading "Stay informed about robotics policy." [level=2] [ref=e278]
+          - paragraph [ref=e279]: Get updates about legislation, regulations, and safety standards affecting commercial robots across the NY–NJ–CT region.
+          - paragraph [ref=e280]: Policy alerts are coming soon. Contact us to express interest.
+        - link "Get Policy Alerts" [ref=e281] [cursor=pointer]:
+          - /url: /connect
+          - text: Get Policy Alerts
+          - generic [aria-hidden] [ref=e282]: →
+    - region "About Robot Policy Watch" [ref=e283]:
+      - heading "About Robot Policy Watch" [level=2] [ref=e284]
+      - paragraph [ref=e285]: Robot Policy Watch is a research initiative from TheRobotAge that helps organizations and communities follow robotics-related policies and understand their implications for adoption and deployment.
+      - paragraph [ref=e286]: Robot Policy Watch provides general information and research. It does not constitute legal advice. Always consult official sources and qualified professionals when evaluating regulatory obligations.
+      - link "Explore TheRobotAge enterprise services" [ref=e287] [cursor=pointer]:
+        - /url: /enterprise
+        - text: Explore TheRobotAge enterprise services
+        - generic [aria-hidden] [ref=e288]: →
+  - contentinfo [ref=e289]:
+    - generic [ref=e290]:
+      - generic [ref=e291]:
+        - generic [ref=e292]:
+          - link "The Robot Age" [ref=e293] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=e294]: Preparing people and organizations for a world with robots.
+        - generic [ref=e295]:
+          - generic [ref=e296]: Pages
+          - navigation [ref=e297]:
+            - link "Research" [ref=e298] [cursor=pointer]:
+              - /url: /research
+            - link "Academy" [ref=e299] [cursor=pointer]:
+              - /url: /learn
+            - link "Jobs" [ref=e300] [cursor=pointer]:
+              - /url: /jobs
+            - link "What Robot Are You?" [ref=e301] [cursor=pointer]:
+              - /url: /what-robot-are-you
+            - link "RXD Scorecard" [ref=e302] [cursor=pointer]:
+              - /url: /rxd-scorecard
+            - link "For Organizations" [ref=e303] [cursor=pointer]:
+              - /url: /enterprise
+            - link "Partners" [ref=e304] [cursor=pointer]:
+              - /url: /robot-literacy/partners
+            - link "Press" [ref=e305] [cursor=pointer]:
+              - /url: /press
+            - link "Connect" [ref=e306] [cursor=pointer]:
+              - /url: /connect
+            - link "Events" [ref=e307] [cursor=pointer]:
+              - /url: /calendar
+            - link "Summit" [ref=e308] [cursor=pointer]:
+              - /url: /summit
+        - generic [ref=e309]:
+          - generic [ref=e310]: Programs
+          - navigation [ref=e311]:
+            - link "Robot Literacy" [ref=e312] [cursor=pointer]:
+              - /url: /robot-literacy
+            - link "Live Robot Lab" [ref=e313] [cursor=pointer]:
+              - /url: /live-robot-lab
+            - link "Product Design for Robots (RPDP)" [ref=e314] [cursor=pointer]:
+              - /url: /learn/rpdp
+            - link "Robot Deployment Practitioner (RDP)" [ref=e315] [cursor=pointer]:
+              - /url: /learn/rdp
+        - generic [ref=e316]:
+          - generic [ref=e317]: Follow
+          - generic [ref=e318]:
+            - link "LinkedIn" [ref=e319] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/therobotage/
+            - link "Instagram" [ref=e325] [cursor=pointer]:
+              - /url: https://www.instagram.com/roboticsliteracy/
+      - generic [ref=e332]:
+        - paragraph [ref=e334]: © 2026 The Robot Age. All rights reserved.
+        - generic [ref=e335]:
+          - link "Privacy Policy" [ref=e336] [cursor=pointer]:
+            - /url: /privacy
+          - link "Terms of Use" [ref=e337] [cursor=pointer]:
+            - /url: /terms
+          - link "Fair use of AI" [ref=e338] [cursor=pointer]:
+            - /url: /ai-statement
+  - dialog "Cookie preferences" [ref=e339]:
+    - generic [ref=e340]:
+      - paragraph [ref=e341]:
+        - text: We use cookies to understand how visitors use The Robot Age and to improve your experience.
+        - link "Privacy Policy" [ref=e342] [cursor=pointer]:
+          - /url: /privacy
+      - generic [ref=e343]:
+        - button "Manage preferences" [ref=e344] [cursor=pointer]
+        - button "Reject non-essential" [ref=e345] [cursor=pointer]
+        - button "Accept all" [ref=e346] [cursor=pointer]
+  - complementary "Browser agent activity" [ref=e347]:
+    - button "Expand WebMCP browser agent activity" [ref=e350] [cursor=pointer]:
+      - generic [ref=e351]: WebMCP
+  - alert [ref=e352]

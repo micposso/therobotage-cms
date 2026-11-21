@@ -5,6 +5,7 @@ import styles from './Footer.module.css'
 
 const NAV_LINKS = [
   { label: 'Research',      href: '/research' },
+  { label: 'Robot Policy Watch', href: '/policy' },
   { label: 'Academy',       href: '/learn' },
   { label: 'Jobs',          href: '/jobs' },
   { label: 'What Robot Are You?', href: '/what-robot-are-you' },

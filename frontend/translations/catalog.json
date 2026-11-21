@@ -294,12 +294,6 @@
     "expiresAt": "2026-12-07T00:00:00.000Z"
   },
   {
-    "id": "jobs/director-head-of-editorial-content-agility.md",
-    "route": "/jobs/director-head-of-editorial-content-agility",
-    "sourceHash": "08f991f7dcbaf9109071fc0932e905242207e7d7526dc14d001abab9358dc83d",
-    "expiresAt": "2026-11-21T00:00:00.000Z"
-  },
-  {
     "id": "jobs/director-product-management-software-apptronik.md",
     "route": "/jobs/director-product-management-software-apptronik",
     "sourceHash": "70eef7a843af4426cffac1916372d3afe17e62273162fbf0f8f410e79c103d49",
@@ -378,12 +372,6 @@
     "expiresAt": "2026-11-23T00:00:00.000Z"
   },
   {
-    "id": "jobs/principal-product-manager-atlas-logistics-robotics-boston-dynamics.md",
-    "route": "/jobs/principal-product-manager-atlas-logistics-robotics-boston-dynamics",
-    "sourceHash": "43679577081f5a4bde5ff73d6154e460f5f0af4c062565244e51d61e3aaae392",
-    "expiresAt": "2026-11-21T00:00:00.000Z"
-  },
-  {
     "id": "jobs/principal-program-manager-customer-success-agility.md",
     "route": "/jobs/principal-program-manager-customer-success-agility",
     "sourceHash": "d892cf35c4845f33c288d9d024e162380d35245e4a47aeb21e4c8225e96b49d5",
@@ -394,12 +382,6 @@
     "route": "/jobs/principal-technical-program-manager-mma-shield-ai",
     "sourceHash": "29c690ef4895de770f87ec185003a16175cdaf3bb9579d11e19c1d6842a994e6",
     "expiresAt": "2026-12-01T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/product-designer-manufacturing-defense-gecko.md",
-    "route": "/jobs/product-designer-manufacturing-defense-gecko",
-    "sourceHash": "30d71400f4518885ee850c5942dacee546a0b469c396f572dea4b090f1a31adf",
-    "expiresAt": "2026-11-21T00:00:00.000Z"
   },
   {
     "id": "jobs/product-manager-cabin-intelligence-applied-intuition.md",
@@ -460,12 +442,6 @@
     "route": "/jobs/research-scientist-vla-models-atlas-boston-dynamics",
     "sourceHash": "63321fcb3037dae7c2c84152d06dd698f663d8c29ca8c9ece8290faffa03232d",
     "expiresAt": "2026-11-22T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/robot-learning-engineer-manipulation-applied-intuition.md",
-    "route": "/jobs/robot-learning-engineer-manipulation-applied-intuition",
-    "sourceHash": "92123cb33431a9f7e1d810d3b631fdc23213b508a93f3b33abcd81785e24f424",
-    "expiresAt": "2026-11-20T00:00:00.000Z"
   },
   {
     "id": "jobs/senior-applied-scientist-foundation-model-amazon-robotics.md",
@@ -570,18 +546,6 @@
     "expiresAt": "2026-11-29T00:00:00.000Z"
   },
   {
-    "id": "jobs/staff-technical-program-manager-air-vehicle-systems-shield-ai.md",
-    "route": "/jobs/staff-technical-program-manager-air-vehicle-systems-shield-ai",
-    "sourceHash": "79061558708de0a49bbb703a562be4b7b6452abc7db9f86a20a9f6583ba5555e",
-    "expiresAt": "2026-11-21T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/staff-technical-program-manager-software-collaborative-robotics.md",
-    "route": "/jobs/staff-technical-program-manager-software-collaborative-robotics",
-    "sourceHash": "5010a277f15fe355e44834e5db5be9716f5f2daa07f3ff75407a402a86fb61cb",
-    "expiresAt": "2026-11-21T00:00:00.000Z"
-  },
-  {
     "id": "jobs/staff-technical-program-manager-vbat-shield-ai.md",
     "route": "/jobs/staff-technical-program-manager-vbat-shield-ai",
     "sourceHash": "84308a4073bcc8ed549c9edf05d3e46837b5a586a03227354f90ad0e259bb903",
@@ -616,12 +580,6 @@
     "route": "/jobs/technical-program-manager-xbat-shield-ai",
     "sourceHash": "946a8c047c8291c69d16fe957cf4b7cd3e745c349fcafd4ac340a8da7dec68f3",
     "expiresAt": "2026-12-07T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/vice-president-embodied-ai-apptronik.md",
-    "route": "/jobs/vice-president-embodied-ai-apptronik",
-    "sourceHash": "ec9a0f92c41c1d6f1f3ba04bc62c6064d85086f1d62eca7c4c25761a9d1c7977",
-    "expiresAt": "2026-11-20T00:00:00.000Z"
   },
   {
     "id": "scores/reachy-mini.md",
