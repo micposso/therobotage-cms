@@ -6,6 +6,7 @@ import PageHero from '@/components/PageHero/PageHero'
 import { imageUrl } from '@/lib/image-assets'
 import { robotPolicies } from '@/lib/robotPolicyRecords'
 import PolicyDirectory from './PolicyDirectory'
+import PolicyOverview from './PolicyOverview'
 import styles from './policy.module.css'
 
 const title = 'Robot Policy Watch | Robotics Laws & Regulations | TheRobotAge'
@@ -47,7 +48,8 @@ export default function PolicyPage() {
       <Nav pinned />
       <main id="policy-main" tabIndex={-1} className={styles.page}>
         <PageHero
-          compact
+          imageSrc="/images/robot.png"
+          footerContent={<PolicyOverview policies={robotPolicies} />}
           eyebrow="RESEARCH / ROBOT POLICY WATCH"
           title="Robot Policy Watch"
           subtitle="Track legislation, regulations, and safety standards affecting commercial robotics deployment across New York, New Jersey, and Connecticut."

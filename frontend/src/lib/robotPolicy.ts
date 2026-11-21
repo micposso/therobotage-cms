@@ -29,6 +29,16 @@ export type PolicyJurisdiction = keyof typeof policyJurisdictions
 export type PolicyStatus = keyof typeof policyStatuses
 export type PolicyCategory = (typeof policyCategories)[number]
 
+export const policyRobotTypes = {
+  delivery: 'Delivery robots',
+  autonomous_vehicle: 'Autonomous vehicles',
+  industrial: 'Industrial robots',
+  mobile: 'Mobile robots',
+  sensor_equipped: 'Sensor-equipped robots',
+} as const
+
+export type PolicyRobotType = keyof typeof policyRobotTypes
+
 export interface RobotPolicy {
   id: string
   slug: string
@@ -38,6 +48,7 @@ export interface RobotPolicy {
   locality?: string
   status: PolicyStatus
   category: PolicyCategory
+  robotTypes: readonly PolicyRobotType[]
   summary: string
   publishedAt?: string
   updatedAt?: string
@@ -80,6 +91,7 @@ export function filterRobotPolicies(policies: readonly RobotPolicy[], filters: P
       policyJurisdictions[policy.jurisdiction],
       policy.locality,
       policy.category,
+      ...policy.robotTypes.map((type) => policyRobotTypes[type]),
     ].join(' '))
 
     return words.every((word) => searchable.some((term) => term.startsWith(word)))

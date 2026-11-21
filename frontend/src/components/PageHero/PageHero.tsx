@@ -15,6 +15,7 @@ interface PageHeroProps {
   images?: string[]
   roundImage?: boolean
   children?: ReactNode
+  footerContent?: ReactNode
   imageContent?: ReactNode
   compact?: boolean
 }
@@ -27,6 +28,7 @@ export default function PageHero({
   images,
   roundImage = false,
   children,
+  footerContent,
   imageContent,
   compact = false,
 }: PageHeroProps) {
@@ -83,6 +85,7 @@ export default function PageHero({
             </div>
           </div>}
         </div>
+        {footerContent}
       </div>
     </section>
   )

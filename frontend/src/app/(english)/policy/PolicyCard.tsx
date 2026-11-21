@@ -1,4 +1,5 @@
-import { policyJurisdictions, policyStatuses, type RobotPolicy } from '@/lib/robotPolicy'
+import { policyJurisdictions, policyRobotTypes, policyStatuses, type RobotPolicy } from '@/lib/robotPolicy'
+import RobotTypeIcon from './RobotTypeIcon'
 import styles from './policy.module.css'
 
 const dateFormatter = new Intl.DateTimeFormat('en-US', {
@@ -31,6 +32,18 @@ export default function PolicyCard({ policy }: { policy: RobotPolicy }) {
         </div>
       )}
       <p className={styles.cardSummary}>{policy.summary}</p>
+      <div className={styles.robotScope}>
+        <p className={styles.scopeLabel}>Robot relevance <span className={styles.policyType}>{policy.policyType}</span></p>
+        <ul className={styles.robotTypes} aria-label="Relevant robot types">
+          {policy.robotTypes.map((type) => (
+            <li key={type}>
+              <span className={styles.robotIcon}><RobotTypeIcon type={type} /></span>
+              <span>{policyRobotTypes[type]}</span>
+            </li>
+          ))}
+        </ul>
+        <p className={styles.scopeNote}>Applicability depends on use and the policy&apos;s scope.</p>
+      </div>
       <dl className={styles.details}>
         <div><dt>Category</dt><dd>{policy.category}</dd></div>
         <div><dt>Last verified</dt><dd><PolicyDate value={policy.lastVerifiedAt} /></dd></div>

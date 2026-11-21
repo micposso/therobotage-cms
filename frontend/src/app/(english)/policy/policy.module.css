@@ -25,6 +25,86 @@
   color: var(--color-text-muted);
 }
 
+.overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 4fr);
+  column-gap: var(--space-2);
+  margin: var(--space-8) 0 0;
+  padding-block: var(--space-5);
+  border-block: 1px solid var(--color-border-strong);
+}
+
+.overviewMetric {
+  margin: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  padding-inline: var(--space-4);
+  padding-block: var(--space-4);
+  border-left: 1px solid var(--color-border);
+  color: var(--color-tertiary);
+  animation: metricReveal 500ms ease-out both;
+}
+
+.overview > .overviewMetric:first-child { color: var(--color-secondary); }
+.overviewHighlight,
+.jurisdictionGroup {
+  clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+}
+
+.overviewHighlight {
+  border-left: 0;
+  background: color-mix(in srgb, currentColor 9%, var(--color-white));
+}
+
+.jurisdictionGroup {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding-block: var(--space-4);
+  background: color-mix(in srgb, var(--color-tertiary) 9%, var(--color-white));
+}
+
+.jurisdictionGroup .overviewMetric { padding-block: 0; }
+.jurisdictionGroup .overviewMetric:first-child { border-left: 0; }
+.overviewMetric dt { font-size: 0.875rem; line-height: 1.4; }
+.overviewMetric dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+@keyframes metricReveal {
+  from { opacity: 0; transform: translateX(-12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.robotScope {
+  margin-bottom: var(--space-5);
+  padding-block: var(--space-4);
+  border-block: 1px solid var(--color-border);
+}
+
+.scopeLabel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.policyType { color: var(--color-text-muted); font-size: 0.75rem; font-weight: 400; text-transform: capitalize; }
+.robotTypes { display: flex; flex-wrap: wrap; gap: var(--space-3); margin: var(--space-3) 0 0; padding: 0; list-style: none; }
+.robotTypes > li { display: flex; flex: 1 1 120px; align-items: center; gap: var(--space-2); font-size: 0.875rem; }
+.robotIcon { display: grid; width: 48px; height: 48px; flex-shrink: 0; place-items: center; background: var(--color-bg); color: var(--color-tertiary); }
+.scopeNote { margin-top: var(--space-3); color: var(--color-text-muted); font-size: 0.75rem; line-height: 1.5; }
+
 .directory,
 .about {
   padding-block: var(--space-8) var(--space-16);
@@ -260,6 +340,8 @@
 }
 
 @media (max-width: 991px) {
+  .overview { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--space-2); }
+  .jurisdictionGroup { grid-column: 1 / -1; }
   .directory .toolbar,
   .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -272,10 +354,13 @@
 }
 
 @media (max-width: 400px) {
+  .jurisdictionGroup { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--space-4); }
+  .jurisdictionGroup .overviewMetric:nth-child(3) { border-left: 0; }
   .directory .toolbar { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .overviewMetric { animation: none; }
   .card,
   .source span { transition: none; }
   .source:hover span { transform: none; }
