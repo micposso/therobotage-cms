@@ -1,7 +1,7 @@
 'use server'
 
 import { Resend } from 'resend'
-import { getJobAlertFromAddress } from '@/lib/jobAlertEmail'
+import { getJobAlertAdminAddress, getJobAlertFromAddress } from '@/lib/jobAlertEmail'
 import { getSupabaseJobsService } from '@/lib/supabase/admin'
 
 type State = { success: boolean; error?: string }
@@ -12,9 +12,9 @@ export async function unsubscribeJobAlerts(
   prevState: State | null,
   formData: FormData
 ): Promise<State> {
-  const token = (formData.get('token') as string | null)?.trim()
+  const token = formData.get('token')
 
-  if (!token || !UUID_RE.test(token)) {
+  if (typeof token !== 'string' || !UUID_RE.test(token)) {
     return { success: false, error: 'This unsubscribe link is not valid.' }
   }
 
@@ -35,7 +35,8 @@ export async function unsubscribeJobAlerts(
       return { success: false, error: 'Something went wrong. Please try again.' }
     }
 
-    if (subscriber) await notifyPreferenceChange(subscriber.email, 'unsubscribed')
+    if (!subscriber) return { success: false, error: 'This unsubscribe link is not valid.' }
+    await notifyPreferenceChange(subscriber.email, 'unsubscribed')
     return { success: true }
   } catch (err) {
     console.error('unsubscribeJobAlerts error:', err)
@@ -47,9 +48,9 @@ export async function resubscribeJobAlerts(
   prevState: State | null,
   formData: FormData
 ): Promise<State> {
-  const token = (formData.get('token') as string | null)?.trim()
+  const token = formData.get('token')
 
-  if (!token || !UUID_RE.test(token)) {
+  if (typeof token !== 'string' || !UUID_RE.test(token)) {
     return { success: false, error: 'This link is not valid.' }
   }
 
@@ -70,7 +71,8 @@ export async function resubscribeJobAlerts(
       return { success: false, error: 'Something went wrong. Please try again.' }
     }
 
-    if (subscriber) await notifyPreferenceChange(subscriber.email, 'resubscribed')
+    if (!subscriber) return { success: false, error: 'This link is not valid.' }
+    await notifyPreferenceChange(subscriber.email, 'resubscribed')
     return { success: true }
   } catch (err) {
     console.error('resubscribeJobAlerts error:', err)
@@ -83,7 +85,7 @@ async function notifyPreferenceChange(email: string, change: string): Promise<vo
   try {
     const { error } = await new Resend(process.env.RESEND_API_KEY).emails.send({
       from: getJobAlertFromAddress(),
-      to: 'mike@therobotage.com',
+      to: getJobAlertAdminAddress(),
       subject: `Robotics job alerts: ${change}`,
       text: `${email} ${change} to robotics job alerts.`,
     })

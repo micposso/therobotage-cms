@@ -12,6 +12,9 @@ export async function GET(request: Request) {
   const checks = {
     supabaseUrl: Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL),
     supabaseJobsServiceKey: Boolean(process.env.SUPABASE_JOBS_SERVICE_KEY),
+    supabasePublishableKey: Boolean(
+      process.env.SUPABASE_PUBLISHABLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+    ),
     supabaseServiceRoleFallback: Boolean(
       !process.env.SUPABASE_JOBS_SERVICE_KEY && process.env.SUPABASE_SERVICE_ROLE_KEY
     ),
@@ -49,7 +52,7 @@ export async function GET(request: Request) {
   return NextResponse.json({
     ok:
       checks.supabaseUrl &&
-      (checks.supabaseJobsServiceKey || checks.supabaseServiceRoleFallback) &&
+      ((checks.supabaseJobsServiceKey && checks.supabasePublishableKey) || checks.supabaseServiceRoleFallback) &&
       checks.resendApiKey &&
       database.ok,
     checks,

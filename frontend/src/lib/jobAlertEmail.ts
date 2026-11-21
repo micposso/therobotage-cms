@@ -2,7 +2,7 @@ import { bulkEmailHtml, escapeHtml } from './emailTemplate'
 import { formatLocation, formatSalary, type JobCard } from './jobs'
 import { REMOTE_TYPE_LABELS, SENIORITY_LABELS } from './jobsTaxonomy'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://therobotage.com'
+const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL?.trim() || 'https://therobotage.com').replace(/\/+$/, '')
 const VERIFIED_JOBS_FROM_ADDRESS = 'jobs@send.therobotage.com'
 
 const HEADING =
@@ -17,6 +17,10 @@ export function getJobAlertFromAddress(): string {
   return configured
 }
 
+export function getJobAlertAdminAddress(): string {
+  return process.env.JOB_ALERT_ADMIN_EMAIL?.trim() || 'mike@therobotage.com'
+}
+
 export function jobUrl(slug: string, campaign: string): string {
   return `${SITE_URL}/jobs/${slug}?utm_source=digest&utm_medium=email&utm_campaign=${campaign}`
 }
@@ -25,8 +29,11 @@ export function unsubscribeUrl(token: string): string {
   return `${SITE_URL}/jobs/alerts/unsubscribe?token=${token}`
 }
 
-export function oneClickUnsubscribeUrl(token: string): string {
-  return `${SITE_URL}/api/jobs/alerts/unsubscribe?token=${token}`
+export function jobAlertUnsubscribeHeaders(token: string): Record<string, string> {
+  return {
+    'List-Unsubscribe': `<${SITE_URL}/api/jobs/alerts/unsubscribe?token=${token}>`,
+    'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+  }
 }
 
 // A static weekly subject gets threaded and collapsed in Gmail, so the top role is
@@ -84,8 +91,8 @@ export function jobAlertDigestHtml(options: {
     <h1 style="${HEADING}">${headline}</h1>
 
     <p style="${BODY}margin:0 0 8px;">
-      Everything below was posted in the last week and matches the filters you signed up
-      with. Applications go directly to the employer.
+      These recently posted roles match your alert preferences. Applications go directly
+      to the employer.
     </p>
 
     ${jobs.map((job) => jobRow(job, campaign)).join('')}
@@ -135,7 +142,7 @@ export function jobAlertWelcomeHtml(options: {
     <table cellpadding="0" cellspacing="0" style="margin:0 0 8px;">
       <tr>
         <td style="background:#9b5152;">
-          <a href="${options.browseUrl}"
+          <a href="${escapeHtml(options.browseUrl)}"
              style="display:inline-block;padding:14px 28px;font-family:Arial,sans-serif;font-size:12px;font-weight:500;letter-spacing:0.08em;color:#ffffff;text-decoration:none;">
             Browse those roles now &rarr;
           </a>

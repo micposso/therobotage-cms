@@ -76,10 +76,11 @@ Copy `frontend/.env.example` to `frontend/.env.local` and fill in. The job board
 |---|---|---|
 | `NEXT_PUBLIC_SUPABASE_URL` | build **and** runtime | see the build-time warning below |
 | `SUPABASE_PUBLISHABLE_KEY` | build **and** runtime | anon key. No `NEXT_PUBLIC_` prefix: the browser never uses it |
-| `SUPABASE_SERVICE_ROLE_KEY` | runtime + local script | publish script and alert cron only |
+| `SUPABASE_JOBS_SERVICE_KEY` | runtime | scoped JWT for job alerts, paired with the publishable key |
+| `SUPABASE_SERVICE_ROLE_KEY` | local script | publishes jobs to Supabase |
 | `CRON_SECRET` | runtime | guards `/api/cron/job-alerts` and `/api/revalidate-jobs` |
 | `EMAIL_FROM_JOBS` | runtime | needs DKIM/SPF verified in Resend before any digest |
-| `JOB_ALERT_ADMIN_EMAIL` | runtime | BCC on welcome mail |
+| `JOB_ALERT_ADMIN_EMAIL` | runtime | alert reply address, welcome BCC and signup notifications |
 | `JOB_ALERT_SEND_DAY` | runtime | `0`–`6` UTC, default `2` (Tuesday) |
 | `JOB_ALERT_IP_SALT` | runtime | salt for hashing signup IPs |
 | `MAILING_ADDRESS` | runtime | CAN-SPAM footer. Required before the first digest |
@@ -93,7 +94,7 @@ Copy `frontend/.env.example` to `frontend/.env.local` and fill in. The job board
 `.github/workflows/job-alerts.yml` needs:
 
 - `CRON_SECRET` — must match the value on the Railway frontend service
-- `SITE_URL` — e.g. `https://therobotage.com`
+- `SITE_URL` — optional HTTPS origin override. Defaults to `https://therobotage.com`.
 
 ---
 
@@ -291,11 +292,9 @@ Each signup records a `source` (`jobs-index`, `job-detail:<slug>`) for lead attr
 plus declared role/level/state preferences. An empty preference array means "everything",
 which is the default and the highest-converting path.
 
-Abuse protection, in layers: an off-screen honeypot field (not `display:none`, which some
-bots detect), a 2-second time trap, a DB-backed rate limit of 3 signups per hashed IP per
-hour, email format validation, and `citext unique` on email so repeat submissions upsert
-rather than duplicate. Raw IPs are never stored. No CAPTCHA — it would be the first
-third-party script on the site.
+Signup uses an off-screen honeypot, a database-backed limit of three signups per
+hashed IP per hour, and email format validation. The `citext unique` email column
+lets repeat submissions update the existing subscription.
 
 A returning subscriber who previously unsubscribed is reactivated rather than swallowed
 by the unique constraint.
@@ -306,21 +305,17 @@ by the unique constraint.
 curl -H "Authorization: Bearer $CRON_SECRET" https://therobotage.com/api/cron/job-alerts
 ```
 
-Query params: `?dryRun=1` computes everything and sends nothing (this is the test
-harness); `?force=1` bypasses the send-day guard.
+Use `?dryRun=1` to preview matching jobs on any day without sending email or writing
+to Supabase. Use `?force=1` to run delivery outside the usual send day.
 
-Triggered by `.github/workflows/job-alerts.yml` on Tuesdays at 14:00 UTC, with a
-`workflow_dispatch` for manual runs. Railway has no Vercel Cron, and GitHub Actions is
-free, version-controlled, and re-runnable from the Actions tab.
+GitHub Actions triggers delivery on Tuesdays at 14:00 UTC and supports manual runs.
+If you change `JOB_ALERT_SEND_DAY`, update the workflow schedule to match.
 
-**The digest is safe to run more than once.** Three independent mechanisms:
-
-1. A **send-day guard** on `JOB_ALERT_SEND_DAY`, so a daily or mistimed trigger is a no-op.
-2. A **unique `(subscriber_id, job_id)`** constraint on `job_alert_sends`, so no subscriber
-   can receive the same job twice regardless of `last_sent_at` drift or overlapping runs.
-3. **Claim-before-send**: rows are inserted *before* the email goes out. A crash between
-   the two costs one missed job rather than a duplicate email. On a send failure the
-   claims for that batch are released so the next run retries them.
+The digest skips subscribers already sent an email in the current delivery week. It
+emails only jobs claimed by the current run using the unique `(subscriber_id, job_id)`
+constraint. A definite Resend rejection releases that batch's claims for a later run.
+Timeouts and ambiguous provider failures get one retry with the same Resend
+idempotency key. If acceptance is still uncertain, the claims stay in place.
 
 Subscribers with zero matches are **skipped**, not sent an empty digest. Subject lines are
 generated per send (`New robotics jobs: {top title} at {company} + N more`) because a
@@ -336,7 +331,7 @@ depend on its exact output.
 Every digest carries the RFC 8058 headers Gmail and Yahoo require from bulk senders:
 
 ```
-List-Unsubscribe:      <.../api/jobs/alerts/unsubscribe?token=…>, <.../jobs/alerts/unsubscribe?token=…>
+List-Unsubscribe:      <.../api/jobs/alerts/unsubscribe?token=…>
 List-Unsubscribe-Post: List-Unsubscribe=One-Click
 ```
 
@@ -347,7 +342,8 @@ mutating GET silently unsubscribes people who never clicked.
 - `GET /jobs/alerts/unsubscribe?token=` renders a confirmation page. An unknown token
   renders a neutral "this link has expired" — never confirm whether an address is on the
   list.
-- `POST /api/jobs/alerts/unsubscribe?token=` is the one-click endpoint. Always returns 200.
+- `POST /api/jobs/alerts/unsubscribe?token=` accepts the form field
+  `List-Unsubscribe=One-Click` and returns 503 if the opt-out cannot be saved.
 
 **Opt-in model:** v1 is single opt-in, matching the site's four existing Resend forms
 (CAN-SPAM requires opt-out, not opt-in). The `status = 'pending'` value and a
@@ -506,9 +502,10 @@ prerendered route.
 **The whole site's build fails on a Supabase error** — a try/catch guard was removed from
 `generateStaticParams`, `sitemap()`, `/jobs`, or `searchIndex.ts`.
 
-**The digest sent nothing** — check the send-day guard (`JOB_ALERT_SEND_DAY` vs today's UTC
-weekday), then run with `?dryRun=1&force=1` to see the computed plan. Subscribers with no
-new matching jobs are skipped by design.
+**The digest sent nothing** — compare `JOB_ALERT_SEND_DAY` with today's UTC weekday,
+then run with `?dryRun=1` to see the computed plan. Check `jobsInWindow` for live
+listings posted in the last 10 days. Subscribers receive a digest when recent
+listings match their preferences.
 
 **The digest sent duplicates** — this should be impossible; `job_alert_sends` has a unique
 constraint. Check whether rows are being deleted somewhere.

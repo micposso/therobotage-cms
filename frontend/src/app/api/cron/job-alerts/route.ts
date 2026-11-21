@@ -1,14 +1,15 @@
 import { NextResponse } from 'next/server'
 import crypto from 'node:crypto'
 import { Resend } from 'resend'
+import { emptyFilters, matchesFilters } from '@/lib/jobFilters'
 import { getSupabaseJobsService } from '@/lib/supabase/admin'
 import { mapPublicJobRow, toJobCard, type JobCard, type PublicJobRow } from '@/lib/jobs'
 import {
+  getJobAlertAdminAddress,
   getJobAlertFromAddress,
   jobAlertDigestHtml,
   jobAlertDigestSubject,
-  oneClickUnsubscribeUrl,
-  unsubscribeUrl,
+  jobAlertUnsubscribeHeaders,
 } from '@/lib/jobAlertEmail'
 
 // Weekly job-alert digest.
@@ -18,18 +19,15 @@ import {
 // Triggered externally (GitHub Actions schedule / Railway cron), because frontend/
 // deploys to Railway and Vercel Cron is not available. Guard and shape copied from
 // lms/src/app/api/cron/*.
-//
-// Safe to run daily or to re-run after a failure: the send-day guard skips the wrong
-// days, and job_alert_sends has a unique (subscriber_id, job_id) constraint, so no
-// subscriber can ever receive the same job twice.
-
 export const dynamic = 'force-dynamic'
 
-// Window is wider than the weekly cadence so a skipped run still gets covered.
+// Allow some overlap between weekly runs so scheduler delays do not leave gaps.
 const LOOKBACK_DAYS = 10
+const DAY_MS = 24 * 60 * 60 * 1000
 const MAX_JOBS_PER_DIGEST = 12
-const SUBSCRIBER_PAGE_SIZE = 500
-const RESEND_BATCH_SIZE = 100
+const ROW_PAGE_SIZE = 500
+// Keep both the PostgREST URL and the claim response small enough for one request.
+const SUBSCRIBER_PAGE_SIZE = 40
 
 const FROM_ADDRESS = getJobAlertFromAddress()
 
@@ -42,26 +40,46 @@ type Subscriber = {
   remote_only: boolean
   unsubscribe_token: string
   send_count: number
+  last_sent_at: string | null
 }
 
-// An empty preference array means "everything", so a bare email signup still matches.
-function matchesSubscriber(job: JobCard, subscriber: Subscriber): boolean {
-  if (subscriber.remote_only && job.remoteType !== 'remote-us') return false
-  if (subscriber.role_families.length && !subscriber.role_families.includes(job.roleFamily)) return false
-  if (subscriber.seniorities.length && !subscriber.seniorities.includes(job.seniority)) return false
-  if (subscriber.states.length) {
-    // A fully remote role is open to every state, so it matches any state preference.
-    if (job.remoteType !== 'remote-us' && (!job.stateCode || !subscriber.states.includes(job.stateCode))) {
-      return false
-    }
+type SendKey = { subscriber_id: string; job_id: string }
+const sendKey = ({ subscriber_id, job_id }: SendKey) => `${subscriber_id}:${job_id}`
+
+type JobsDb = ReturnType<typeof getSupabaseJobsService>
+
+async function loadCandidates(db: JobsDb, since: string): Promise<JobCard[]> {
+  const candidates: JobCard[] = []
+  for (let from = 0; ; from += ROW_PAGE_SIZE) {
+    const { data, error } = await db
+      .from('public_jobs')
+      .select('*')
+      .gte('posted_at', since)
+      .order('posted_at', { ascending: false })
+      .order('id')
+      .range(from, from + ROW_PAGE_SIZE - 1)
+    if (error) throw error
+    const rows = (data ?? []) as PublicJobRow[]
+    candidates.push(...rows.map((row) => toJobCard(mapPublicJobRow(row))))
+    if (rows.length < ROW_PAGE_SIZE) return candidates
   }
-  return true
 }
 
-function chunk<T>(items: T[], size: number): T[][] {
-  const out: T[][] = []
-  for (let i = 0; i < items.length; i += size) out.push(items.slice(i, i + size))
-  return out
+async function loadSendHistory(db: JobsDb, subscriberIds: string[], since: string): Promise<Set<string>> {
+  const sent = new Set<string>()
+  for (let from = 0; ; from += ROW_PAGE_SIZE) {
+    const { data, error } = await db
+      .from('job_alert_sends')
+      .select('subscriber_id, job_id, jobs!inner()')
+      .in('subscriber_id', subscriberIds)
+      .gte('jobs.posted_at', since)
+      .order('id')
+      .range(from, from + ROW_PAGE_SIZE - 1)
+    if (error) throw error
+    const rows = (data ?? []) as SendKey[]
+    for (const row of rows) sent.add(sendKey(row))
+    if (rows.length < ROW_PAGE_SIZE) return sent
+  }
 }
 
 export async function GET(request: Request) {
@@ -74,37 +92,39 @@ export async function GET(request: Request) {
   const force = url.searchParams.get('force') === '1'
   const dryRun = url.searchParams.get('dryRun') === '1'
 
-  // Day guard. Makes a daily or hourly trigger harmless and a missed week recoverable,
-  // rather than depending on the external scheduler firing exactly once.
-  const sendDay = Number(process.env.JOB_ALERT_SEND_DAY ?? 2)
-  if (!force && new Date().getUTCDay() !== sendDay) {
-    return NextResponse.json({ ok: true, skipped: 'not send day', sendDay })
+  const configuredDay = process.env.JOB_ALERT_SEND_DAY?.trim() || '2'
+  if (!/^[0-6]$/.test(configuredDay)) {
+    return NextResponse.json({ error: 'JOB_ALERT_SEND_DAY must be a UTC weekday (0 to 6)' }, { status: 500 })
+  }
+  const sendDay = Number(configuredDay)
+  const now = new Date()
+  const daysSinceSendDay = (now.getUTCDay() - sendDay + 7) % 7
+  if (!force && !dryRun && daysSinceSendDay !== 0) {
+    return NextResponse.json({ ok: true, skipped: 'not send day', sendDay, failures: [] })
   }
 
-  const db = getSupabaseJobsService()
+  const weekStart = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() - daysSinceSendDay)
+
   const digestId = crypto.randomUUID()
-  const since = new Date(Date.now() - LOOKBACK_DAYS * 24 * 60 * 60 * 1000).toISOString()
+  const since = new Date(now.getTime() - LOOKBACK_DAYS * DAY_MS).toISOString()
 
-  const { data: jobRows, error: jobsError } = await db
-    .from('public_jobs')
-    .select('*')
-    .gte('posted_at', since)
-    .order('posted_at', { ascending: false })
-
-  if (jobsError) {
-    console.error('job-alerts: failed to load jobs', jobsError)
+  let db: JobsDb
+  let candidates: JobCard[]
+  try {
+    db = getSupabaseJobsService()
+    candidates = await loadCandidates(db, since)
+  } catch (error) {
+    console.error('job-alerts: failed to load jobs', error)
     return NextResponse.json({ error: 'Failed to load jobs' }, { status: 500 })
   }
 
-  const candidates: JobCard[] = (jobRows as PublicJobRow[] | null ?? []).map((row) =>
-    toJobCard(mapPublicJobRow(row))
-  )
-
   if (!candidates.length) {
-    return NextResponse.json({ ok: true, digestId, jobsInWindow: 0, digestsSent: 0 })
+    return NextResponse.json({
+      ok: true, digestId, dryRun, jobsInWindow: 0, subscribers: 0, digestsSent: 0,
+      skippedEmpty: 0, failures: [], ...(dryRun && { plan: [] }),
+    })
   }
 
-  const jobIds = candidates.map((job) => job.id)
   if (!dryRun && !process.env.RESEND_API_KEY) {
     return NextResponse.json({ error: 'Resend is not configured' }, { status: 500 })
   }
@@ -116,13 +136,16 @@ export async function GET(request: Request) {
   const failures: string[] = []
   const plan: { email: string; jobs: string[] }[] = []
 
-  for (let page = 0; ; page += 1) {
-    const from = page * SUBSCRIBER_PAGE_SIZE
-    const { data: subscriberRows, error: subscribersError } = await db
+  let lastSubscriberId: string | undefined
+  while (true) {
+    const query = db
       .from('job_alert_subscribers')
-      .select('id, email, role_families, states, seniorities, remote_only, unsubscribe_token, send_count')
+      .select('id, email, role_families, states, seniorities, remote_only, unsubscribe_token, send_count, last_sent_at')
       .eq('status', 'active')
-      .range(from, from + SUBSCRIBER_PAGE_SIZE - 1)
+      .order('id')
+      .limit(SUBSCRIBER_PAGE_SIZE)
+    if (lastSubscriberId) query.gt('id', lastSubscriberId)
+    const { data: subscriberRows, error: subscribersError } = await query
 
     if (subscribersError) {
       console.error('job-alerts: failed to load subscribers', subscribersError)
@@ -131,114 +154,140 @@ export async function GET(request: Request) {
 
     const subscribers = (subscriberRows ?? []) as Subscriber[]
     if (!subscribers.length) break
+    lastSubscriberId = subscribers[subscribers.length - 1].id
     subscribersSeen += subscribers.length
 
-    // One dedupe query per page, never one per subscriber.
-    const { data: sentRows } = await db
-      .from('job_alert_sends')
-      .select('subscriber_id, job_id')
-      .in('subscriber_id', subscribers.map((s) => s.id))
-      .in('job_id', jobIds)
+    const eligible = subscribers.filter((subscriber) =>
+      !subscriber.last_sent_at || Date.parse(subscriber.last_sent_at) < weekStart
+    )
+    if (!eligible.length) continue
 
-    const alreadySent = new Set((sentRows ?? []).map((r) => `${r.subscriber_id}:${r.job_id}`))
-
-    const digests = subscribers
-      .map((subscriber) => {
-        const matches = candidates
-          .filter((job) => matchesSubscriber(job, subscriber))
-          .filter((job) => !alreadySent.has(`${subscriber.id}:${job.id}`))
-          .slice(0, MAX_JOBS_PER_DIGEST)
-        return { subscriber, matches }
-      })
-      .filter(({ matches }) => {
-        // An empty digest is the fastest route to an unsubscribe.
-        if (!matches.length) {
-          skippedEmpty += 1
-          return false
-        }
-        return true
-      })
-
-    if (dryRun) {
-      for (const { subscriber, matches } of digests) {
-        plan.push({ email: subscriber.email, jobs: matches.map((j) => j.slug) })
-      }
-      if (subscribers.length < SUBSCRIBER_PAGE_SIZE) break
+    let alreadySent: Set<string>
+    try {
+      alreadySent = await loadSendHistory(db, eligible.map((subscriber) => subscriber.id), since)
+    } catch (error) {
+      console.error('job-alerts: failed to load send history', error)
+      failures.push('Failed to load send history')
       continue
     }
 
-    for (const batch of chunk(digests, RESEND_BATCH_SIZE)) {
-      // Claim first. A crash between claim and send costs one missed job; claiming after
-      // sending would risk duplicate emails, which is far worse.
-      const claims = batch.flatMap(({ subscriber, matches }) =>
-        matches.map((job) => ({
-          subscriber_id: subscriber.id,
-          job_id: job.id,
-          digest_id: digestId,
-        }))
-      )
-
-      const { error: claimError } = await db
-        .from('job_alert_sends')
-        .upsert(claims, { onConflict: 'subscriber_id,job_id', ignoreDuplicates: true })
-
-      if (claimError) {
-        console.error('job-alerts: failed to claim sends', claimError)
-        failures.push(`claim: ${claimError.message}`)
-        continue
+    const digests = []
+    for (const subscriber of eligible) {
+      const filters = {
+        ...emptyFilters,
+        role: subscriber.role_families,
+        level: subscriber.seniorities,
+        state: subscriber.states,
+        remote: subscriber.remote_only ? ['remote-us'] : [],
       }
-
-      const { error: sendError } = await resend!.batch.send(
-        batch.map(({ subscriber, matches }) => ({
-          from: FROM_ADDRESS,
-          to: subscriber.email,
-          subject: jobAlertDigestSubject(matches),
-          html: jobAlertDigestHtml({
-            jobs: matches,
-            unsubscribeToken: subscriber.unsubscribe_token,
-            campaign: 'job-alerts-weekly',
-          }),
-          // Required by Gmail and Yahoo for bulk senders (RFC 8058). Without these,
-          // deliverability degrades regardless of content quality.
-          headers: {
-            'List-Unsubscribe': `<${oneClickUnsubscribeUrl(subscriber.unsubscribe_token)}>, <${unsubscribeUrl(subscriber.unsubscribe_token)}>`,
-            'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
-          },
-        }))
-      )
-
-      if (sendError) {
-        console.error('job-alerts: batch send failed', sendError)
-        failures.push(`send: ${sendError.message}`)
-        // Release the claims so the next run retries this batch.
-        await db.from('job_alert_sends').delete().eq('digest_id', digestId).in(
-          'subscriber_id',
-          batch.map(({ subscriber }) => subscriber.id)
-        )
-        continue
-      }
-
-      digestsSent += batch.length
-
-      await Promise.all(
-        batch.map(({ subscriber }) =>
-          db
-            .from('job_alert_subscribers')
-            .update({
-              last_sent_at: new Date().toISOString(),
-              send_count: subscriber.send_count + 1,
-              updated_at: new Date().toISOString(),
-            })
-            .eq('id', subscriber.id)
-        )
-      )
+      const matches = candidates.filter((job) =>
+        matchesFilters(job, filters) && !alreadySent.has(`${subscriber.id}:${job.id}`)
+      ).slice(0, MAX_JOBS_PER_DIGEST)
+      if (matches.length) digests.push({ subscriber, matches })
+      else skippedEmpty += 1
     }
 
-    if (subscribers.length < SUBSCRIBER_PAGE_SIZE) break
+    if (!digests.length) continue
+    if (!resend) {
+      for (const { subscriber, matches } of digests) {
+        plan.push({ email: subscriber.email, jobs: matches.map((job) => job.slug) })
+      }
+      continue
+    }
+
+    // A successful upsert can include conflicts from an overlapping invocation.
+    // Only its returned rows belong to this run.
+    const claims = digests.flatMap(({ subscriber, matches }) =>
+      matches.map((job) => ({ subscriber_id: subscriber.id, job_id: job.id, digest_id: digestId }))
+    )
+    const { data: claimedRows, error: claimError } = await db
+      .from('job_alert_sends')
+      .upsert(claims, { onConflict: 'subscriber_id,job_id', ignoreDuplicates: true })
+      .select('subscriber_id, job_id')
+
+    if (claimError) {
+      console.error('job-alerts: failed to claim sends', claimError)
+      failures.push('Failed to claim sends')
+      continue
+    }
+
+    const claimed = new Set(((claimedRows ?? []) as SendKey[]).map(sendKey))
+    const batch = digests.map(({ subscriber, matches }) => ({
+      subscriber,
+      matches: matches.filter((job) => claimed.has(`${subscriber.id}:${job.id}`)),
+    })).filter(({ matches }) => matches.length > 0)
+    if (!batch.length) continue
+
+    const emails = batch.map(({ subscriber, matches }) => ({
+      from: FROM_ADDRESS,
+      to: subscriber.email,
+      replyTo: getJobAlertAdminAddress(),
+      subject: jobAlertDigestSubject(matches),
+      html: jobAlertDigestHtml({
+        jobs: matches,
+        unsubscribeToken: subscriber.unsubscribe_token,
+        campaign: 'job-alerts-weekly',
+      }),
+      headers: jobAlertUnsubscribeHeaders(subscriber.unsubscribe_token),
+    }))
+    const options = { idempotencyKey: `job-alerts/${digestId}/${lastSubscriberId}` }
+    let result = await resend.batch.send(emails, options)
+    const firstError = result.error
+    const acceptanceUnknown = firstError && (
+      firstError.statusCode == null || firstError.statusCode === 408 || firstError.statusCode >= 500
+    )
+    // Resend can accept a request before the connection fails. Retry the exact
+    // batch with the same key so that acceptance can be recovered without a second send.
+    if (acceptanceUnknown) result = await resend.batch.send(emails, options)
+    const { data, error: sendError } = result
+
+    if (sendError) {
+      console.error('job-alerts: batch send failed', sendError)
+      failures.push('Batch send failed')
+      // A timeout or server failure can occur after acceptance. Release claims only
+      // when Resend explicitly rejected the batch so a rerun cannot resend it.
+      if (acceptanceUnknown || sendError.statusCode === 409) continue
+      const { error: releaseError } = await db.from('job_alert_sends')
+        .delete()
+        .eq('digest_id', digestId)
+        .in('subscriber_id', batch.map(({ subscriber }) => subscriber.id))
+      if (releaseError) {
+        console.error('job-alerts: failed to release send claims', releaseError)
+        failures.push('Failed to release send claims')
+      }
+      continue
+    }
+
+    if (data?.data?.length !== batch.length) {
+      console.error('job-alerts: batch response did not confirm every email')
+      failures.push('Batch acceptance could not be verified')
+      continue
+    }
+
+    digestsSent += batch.length
+
+    const sentAt = new Date().toISOString()
+    const updates = await Promise.all(
+      batch.map(({ subscriber }) =>
+        db
+          .from('job_alert_subscribers')
+          .update({
+            last_sent_at: sentAt,
+            send_count: subscriber.send_count + 1,
+            updated_at: sentAt,
+          })
+          .eq('id', subscriber.id)
+      )
+    )
+    for (const { error } of updates) {
+      if (!error) continue
+      console.error('job-alerts: failed to update send statistics', error)
+      failures.push('Failed to update send statistics')
+    }
   }
 
   return NextResponse.json({
-    ok: true,
+    ok: failures.length === 0,
     digestId,
     dryRun,
     jobsInWindow: candidates.length,

@@ -20,11 +20,14 @@ let _client: SupabaseClient | null = null
 export function getSupabaseJobsService(): SupabaseClient {
   if (!_client) {
     const url = process.env.NEXT_PUBLIC_SUPABASE_URL
-    const key = process.env.SUPABASE_JOBS_SERVICE_KEY ?? process.env.SUPABASE_SERVICE_ROLE_KEY
+    const scopedToken = process.env.SUPABASE_JOBS_SERVICE_KEY
+    const key = scopedToken
+      ? process.env.SUPABASE_PUBLISHABLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+      : process.env.SUPABASE_SERVICE_ROLE_KEY
 
     if (!url || !key) {
       throw new Error(
-        'Supabase jobs-service client is not configured. Set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_JOBS_SERVICE_KEY.'
+        'Supabase jobs-service client is not configured. Set NEXT_PUBLIC_SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, and SUPABASE_JOBS_SERVICE_KEY.'
       )
     }
 
@@ -34,9 +37,9 @@ export function getSupabaseJobsService(): SupabaseClient {
       )
     }
 
-    _client = createClient(url, key, {
-      auth: { autoRefreshToken: false, persistSession: false },
-    })
+    _client = createClient(url, key, scopedToken
+      ? { accessToken: async () => scopedToken }
+      : { auth: { autoRefreshToken: false, persistSession: false } })
   }
 
   return _client

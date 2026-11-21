@@ -4,7 +4,12 @@ import crypto from 'node:crypto'
 import { headers } from 'next/headers'
 import { Resend } from 'resend'
 import { getSupabaseJobsService } from '@/lib/supabase/admin'
-import { getJobAlertFromAddress, jobAlertWelcomeHtml } from '@/lib/jobAlertEmail'
+import {
+  getJobAlertAdminAddress,
+  getJobAlertFromAddress,
+  jobAlertUnsubscribeHeaders,
+  jobAlertWelcomeHtml,
+} from '@/lib/jobAlertEmail'
 import {
   ROLE_FAMILY_LABELS,
   ROLE_FAMILY_SLUGS,
@@ -15,13 +20,10 @@ import {
 } from '@/lib/jobsTaxonomy'
 
 const FROM_ADDRESS = getJobAlertFromAddress()
-const ADMIN_ADDRESS = 'mike@therobotage.com'
-const FALLBACK_SIGNUP_RECIPIENT =
-  ADMIN_ADDRESS
+const ADMIN_ADDRESS = getJobAlertAdminAddress()
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://therobotage.com'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-const MIN_FILL_MS = 2000
 const RATE_LIMIT_PER_HOUR = 3
 
 type State = { success: boolean; error?: string; title?: string; body?: string }
@@ -100,7 +102,7 @@ async function captureManualSignup({
     const resend = new Resend(process.env.RESEND_API_KEY)
     const { error: adminError } = await resend.emails.send({
       from: FROM_ADDRESS,
-      to: FALLBACK_SIGNUP_RECIPIENT,
+      to: ADMIN_ADDRESS,
       subject: 'Manual robotics job alert signup',
       html: manualSignupHtml({ email, filterSummary, source }),
     })
@@ -110,15 +112,16 @@ async function captureManualSignup({
       return false
     }
 
-    const { error: confirmError } = await resend.emails.send({
-      from: FROM_ADDRESS,
-      to: email,
-      subject: 'We received your robotics job alert signup',
-      html: fallbackConfirmationHtml(),
-    })
-
-    if (confirmError) {
-      console.error('Job alert fallback confirmation error:', confirmError)
+    try {
+      const { error } = await resend.emails.send({
+        from: FROM_ADDRESS,
+        to: email,
+        subject: 'We received your robotics job alert signup',
+        html: fallbackConfirmationHtml(),
+      })
+      if (error) console.error('Job alert fallback confirmation error:', error)
+    } catch (error) {
+      console.error('Job alert fallback confirmation error:', error)
     }
 
     return true
@@ -165,8 +168,10 @@ async function sendWelcomeEmail({
     const { error: sendError } = await resend.emails.send({
       from: FROM_ADDRESS,
       to: email,
-      ...(ADMIN_ADDRESS && { bcc: ADMIN_ADDRESS }),
+      bcc: ADMIN_ADDRESS,
+      replyTo: ADMIN_ADDRESS,
       subject: 'Your robotics job alerts are on',
+      headers: jobAlertUnsubscribeHeaders(unsubscribeToken),
       html: jobAlertWelcomeHtml({
         filterSummary,
         browseUrl,
@@ -192,18 +197,14 @@ export async function subscribeJobAlerts(
 ): Promise<State> {
   // Honeypot. Bots fill every field they find; a filled value gets a success response so
   // the trap is never revealed.
-  if ((formData.get('company_website') as string | null)?.trim()) {
+  const honeypot = formData.get('company_website')
+  if (typeof honeypot === 'string' && honeypot.trim()) {
     return { success: true }
   }
 
-  // Time trap. A human takes longer than two seconds to read the form and type.
-  const startedAt = Number(formData.get('startedAt'))
-  if (Number.isFinite(startedAt) && Date.now() - startedAt < MIN_FILL_MS) {
-    return { success: true }
-  }
-
-  const email = (formData.get('email') as string | null)?.trim().toLowerCase()
-  if (!email || !EMAIL_RE.test(email)) {
+  const submittedEmail = formData.get('email')
+  const email = typeof submittedEmail === 'string' ? submittedEmail.trim().toLowerCase() : ''
+  if (email.length > 254 || !EMAIL_RE.test(email)) {
     return { success: false, error: 'Please enter a valid email address.' }
   }
 
@@ -211,7 +212,8 @@ export async function subscribeJobAlerts(
   const seniorities = pickAllowed(formData, 'seniorities', SENIORITY_SLUGS)
   const states = pickAllowed(formData, 'states', STATE_CODES)
   const remoteOnly = formData.get('remote_only') === 'on'
-  const source = (formData.get('source') as string | null)?.slice(0, 80) ?? null
+  const submittedSource = formData.get('source')
+  const source = typeof submittedSource === 'string' ? submittedSource.slice(0, 80) : null
   const filterSummary = describeFilters(roleFamilies, seniorities, states, remoteOnly)
 
   try {
@@ -228,11 +230,16 @@ export async function subscribeJobAlerts(
 
     if (ipHash) {
       const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000).toISOString()
-      const { count } = await db
+      const { count, error } = await db
         .from('job_alert_subscribers')
         .select('id', { count: 'exact', head: true })
         .eq('signup_ip_hash', ipHash)
         .gte('created_at', oneHourAgo)
+
+      if (error) {
+        console.error('Job alert signup rate-limit check failed:', error)
+        return { success: false, error: 'Something went wrong. Please try again.' }
+      }
 
       if ((count ?? 0) >= RATE_LIMIT_PER_HOUR) {
         return { success: false, error: 'Too many signups from this connection. Try again later.' }

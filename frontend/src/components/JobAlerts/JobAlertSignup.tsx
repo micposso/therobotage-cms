@@ -1,6 +1,6 @@
 'use client'
 
-import { useActionState, useEffect, useRef } from 'react'
+import { useActionState, useId } from 'react'
 import { subscribeJobAlerts } from '@/app/actions/subscribeJobAlerts'
 import {
   ROLE_FAMILIES,
@@ -20,14 +20,7 @@ const initialState = { success: false, error: undefined as string | undefined }
 
 export default function JobAlertSignup({ source, defaultRoleFamily, defaultState }: Props) {
   const [state, action, pending] = useActionState(subscribeJobAlerts, initialState)
-
-  // Stamped onto the DOM node after mount rather than held in state: the server and the
-  // client then render the same initial value, and there is no cascading re-render. The
-  // action rejects submissions that arrive impossibly fast after this timestamp.
-  const startedAtRef = useRef<HTMLInputElement>(null)
-  useEffect(() => {
-    if (startedAtRef.current) startedAtRef.current.value = String(Date.now())
-  }, [])
+  const honeypotId = useId()
 
   if (state.success) {
     return (
@@ -53,14 +46,13 @@ export default function JobAlertSignup({ source, defaultRoleFamily, defaultState
 
       <form action={action} className={styles.form}>
         <input type="hidden" name="source" value={source} />
-        <input type="hidden" name="startedAt" defaultValue="0" ref={startedAtRef} />
 
         {/* Honeypot. Positioned off-screen rather than display:none, which some bots
             detect and skip. */}
         <div className={styles.honeypot} aria-hidden="true">
-          <label htmlFor="company_website">Company website</label>
+          <label htmlFor={honeypotId}>Company website</label>
           <input
-            id="company_website"
+            id={honeypotId}
             name="company_website"
             type="text"
             tabIndex={-1}
@@ -74,6 +66,7 @@ export default function JobAlertSignup({ source, defaultRoleFamily, defaultState
             type="email"
             name="email"
             required
+            maxLength={254}
             autoComplete="email"
             placeholder="you@example.com"
             className={styles.input}

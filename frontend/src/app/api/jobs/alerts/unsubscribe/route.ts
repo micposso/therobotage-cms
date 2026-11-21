@@ -16,24 +16,32 @@ const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
 export async function POST(request: Request) {
   const token = new URL(request.url).searchParams.get('token')
 
-  // Always 200: a mail provider retrying a failed one-click unsubscribe is worse than
-  // silently ignoring a malformed token, and the response must never reveal whether an
-  // address is on the list.
-  if (!token || !UUID_RE.test(token)) {
-    return new NextResponse(null, { status: 200 })
+  let body: FormData
+  try {
+    body = await request.formData()
+  } catch {
+    return new NextResponse(null, { status: 400 })
   }
+  if (body.get('List-Unsubscribe') !== 'One-Click') return new NextResponse(null, { status: 400 })
+
+  // Return the same response for an unknown token and a successful opt-out.
+  if (!token || !UUID_RE.test(token)) return new NextResponse(null, { status: 200 })
 
   try {
-    await getSupabaseJobsService()
+    const now = new Date().toISOString()
+    const { error } = await getSupabaseJobsService()
       .from('job_alert_subscribers')
       .update({
         status: 'unsubscribed',
-        unsubscribed_at: new Date().toISOString(),
-        updated_at: new Date().toISOString(),
+        unsubscribed_at: now,
+        updated_at: now,
       })
       .eq('unsubscribe_token', token)
+      .neq('status', 'unsubscribed')
+    if (error) throw error
   } catch (error) {
     console.error('one-click unsubscribe error:', error)
+    return new NextResponse(null, { status: 503 })
   }
 
   return new NextResponse(null, { status: 200 })

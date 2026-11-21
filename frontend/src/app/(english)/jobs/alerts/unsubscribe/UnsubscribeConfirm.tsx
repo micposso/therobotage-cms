@@ -8,11 +8,12 @@ import styles from './unsubscribe.module.css'
 type Props = {
   token: string
   maskedEmail: string
+  unsubscribed: boolean
 }
 
 const initialState = { success: false, error: undefined as string | undefined }
 
-export default function UnsubscribeConfirm({ token, maskedEmail }: Props) {
+export default function UnsubscribeConfirm({ token, maskedEmail, unsubscribed }: Props) {
   const [state, action, pending] = useActionState(unsubscribeJobAlerts, initialState)
   const [resubState, resubAction, resubPending] = useActionState(
     resubscribeJobAlerts,
@@ -33,13 +34,12 @@ export default function UnsubscribeConfirm({ token, maskedEmail }: Props) {
     )
   }
 
-  if (state.success) {
+  if (unsubscribed || state.success) {
     return (
       <div>
         <h1 className={styles.headline}>You are unsubscribed.</h1>
         <p className={styles.body}>
-          We will not send any more job alerts to {maskedEmail}. This takes effect
-          immediately.
+          Weekly job alerts for {maskedEmail} have stopped.
         </p>
         <form action={resubAction} className={styles.inlineForm}>
           <input type="hidden" name="token" value={token} />
@@ -47,6 +47,11 @@ export default function UnsubscribeConfirm({ token, maskedEmail }: Props) {
             {resubPending ? 'Working...' : 'Actually, resubscribe me'}
           </button>
         </form>
+        {resubState.error && (
+          <p className={styles.error} role="alert">
+            {resubState.error}
+          </p>
+        )}
         <Link className={styles.link} href="/jobs">
           Back to the job board
         </Link>
@@ -58,7 +63,7 @@ export default function UnsubscribeConfirm({ token, maskedEmail }: Props) {
     <div>
       <h1 className={styles.headline}>Unsubscribe from job alerts?</h1>
       <p className={styles.body}>
-        This stops the weekly robotics job digest to {maskedEmail}. Nothing else changes.
+        This stops the weekly robotics job digest to {maskedEmail}.
       </p>
 
       <form action={action} className={styles.form}>

@@ -27,23 +27,30 @@ function maskEmail(email: string): string {
 export default async function UnsubscribePage({
   searchParams,
 }: {
-  searchParams: Promise<{ token?: string }>
+  searchParams: Promise<{ token?: string | string[] }>
 }) {
   const { token } = await searchParams
 
   let maskedEmail: string | null = null
+  let unsubscribed = false
+  let lookupFailed = false
 
-  if (token && UUID_RE.test(token)) {
+  if (typeof token === 'string' && UUID_RE.test(token)) {
     try {
-      const { data } = await getSupabaseJobsService()
+      const { data, error } = await getSupabaseJobsService()
         .from('job_alert_subscribers')
-        .select('email')
+        .select('email, status')
         .eq('unsubscribe_token', token)
         .maybeSingle()
 
-      if (data?.email) maskedEmail = maskEmail(data.email)
+      if (error) throw error
+      if (data?.email) {
+        maskedEmail = maskEmail(data.email)
+        unsubscribed = data.status === 'unsubscribed'
+      }
     } catch (error) {
       console.error('Failed to resolve unsubscribe token', error)
+      lookupFailed = true
     }
   }
 
@@ -54,15 +61,17 @@ export default async function UnsubscribePage({
         <div className="container-fluid">
           <div className={styles.panel}>
             <p className={styles.eyebrow}>Job alerts</p>
-            {token && maskedEmail ? (
-              <UnsubscribeConfirm token={token} maskedEmail={maskedEmail} />
+            {typeof token === 'string' && maskedEmail ? (
+              <UnsubscribeConfirm token={token} maskedEmail={maskedEmail} unsubscribed={unsubscribed} />
             ) : (
-              // Never confirm whether an address is on the list.
               <>
-                <h1 className={styles.headline}>This link has expired.</h1>
+                <h1 className={styles.headline}>
+                  {lookupFailed ? 'Job alert settings are temporarily unavailable.' : 'This link has expired.'}
+                </h1>
                 <p className={styles.body}>
-                  The unsubscribe link is no longer valid. If you are still receiving
-                  emails, reply to any of them and we will remove you by hand.
+                  {lookupFailed
+                    ? 'Please try again in a few minutes.'
+                    : 'If you are still receiving alerts, reply to one of the emails to ask us to remove your address.'}
                 </p>
               </>
             )}

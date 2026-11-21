@@ -4,13 +4,8 @@ name: Weekly job alerts
 # version-controlled, portable if the host changes, and re-runnable by hand from the
 # Actions tab.
 #
-# The endpoint also guards on JOB_ALERT_SEND_DAY, so an extra or mistimed run is
-# harmless, and job_alert_sends has a unique (subscriber_id, job_id) constraint, so a
-# re-run can never send the same job to the same person twice.
-#
-# Required repository secrets:
-#   CRON_SECRET  - must match the value set on the Railway frontend service
-#   SITE_URL     - e.g. https://therobotage.com
+# CRON_SECRET must match the value on the Railway frontend service.
+# SITE_URL can override the production URL.
 
 on:
   schedule:
@@ -31,6 +26,7 @@ on:
 jobs:
   send:
     runs-on: ubuntu-latest
+    concurrency: weekly-job-alerts
     steps:
       - name: Trigger job alert digest
         env:
@@ -41,21 +37,29 @@ jobs:
         run: |
           set -euo pipefail
 
+          if [ -z "${CRON_SECRET:-}" ]; then
+            echo "::error::Set the CRON_SECRET repository secret."
+            exit 1
+          fi
+
+          SITE_URL="${SITE_URL:-https://therobotage.com}"
+          if [[ ! "$SITE_URL" =~ ^https://[a-zA-Z0-9.-]+/?$ ]]; then
+            echo "::error::SITE_URL must be an HTTPS site origin."
+            exit 1
+          fi
+
           query=""
           [ "${DRY_RUN:-false}" = "true" ] && query="?dryRun=1"
           if [ "${FORCE:-false}" = "true" ]; then
             if [ -n "$query" ]; then query="${query}&force=1"; else query="?force=1"; fi
           fi
 
-          echo "Calling ${SITE_URL}/api/cron/job-alerts${query}"
-          response=$(curl -fsS \
+          response=$(curl -fsS --max-time 300 \
             -H "Authorization: Bearer ${CRON_SECRET}" \
-            "${SITE_URL}/api/cron/job-alerts${query}")
+            "${SITE_URL%/}/api/cron/job-alerts${query}")
 
-          echo "$response"
-          # Fail the run if the endpoint reported failures, so a silent delivery
-          # problem does not look like a green build.
-          echo "$response" | grep -q '"failures":\[\]' || {
+          jq '{ok, skipped, dryRun, jobsInWindow, subscribers, digestsSent, failureCount: (.failures | length)}' <<< "$response"
+          jq -e '.ok == true and (if has("failures") then .failures == [] else .skipped == "not send day" or .jobsInWindow == 0 end)' <<< "$response" > /dev/null || {
             echo "Digest reported failures"
             exit 1
           }
