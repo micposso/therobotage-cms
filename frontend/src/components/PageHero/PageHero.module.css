@@ -99,6 +99,10 @@
   50%  { background: var(--color-text-on-sand); }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .colorSquare { animation: none; background: var(--color-accent); }
+}
+
 .subtitle {
   font-family: var(--font-body);
   font-weight: 400;

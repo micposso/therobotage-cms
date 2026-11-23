@@ -3,11 +3,14 @@ import { contentHref } from '@/lib/i18n/localize'
 import { uiText } from '@/lib/i18n/messages'
 import type { Locale } from '@/lib/i18n/routing'
 import { notFound } from 'next/navigation'
+import { connection } from 'next/server'
 import Link from 'next/link'
 import Nav from '@/components/Nav/Nav'
 import Footer from '@/components/Footer/Footer'
 import { getCertificationBySlug, getAllCertificationSlugs, legacyCredentialSlugs, isLegacyCredential } from '@/lib/certifications'
 import styles from './CredentialPage.module.css'
+import RpdpPage, { rpdpMetadata } from './RpdpPage'
+import { isRpdpPromotionActive, type RpdpQuery } from '@/lib/rpdp-registration'
 
 export async function generateStaticParams() {
   return [...getAllCertificationSlugs(), ...legacyCredentialSlugs].map((credential) => ({ credential }))
@@ -15,6 +18,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ credential: string; locale?: Locale }> }) {
   const { credential, locale = 'en' } = await params
+  if (credential === 'rpdp') return rpdpMetadata(locale)
   const cert = getCertificationBySlug(credential)
   if (isLegacyCredential(credential)) return { title: uiText('Program catalog updated', locale), robots: { index: false, follow: true } }
   if (!cert) return {}
@@ -35,8 +39,15 @@ export async function generateMetadata({ params }: { params: Promise<{ credentia
    }, `/learn/${credential}`, locale)
 }
 
-export default async function CredentialPage({ params }: { params: Promise<{ credential: string; locale?: Locale }> }) {
+export default async function CredentialPage({ params, searchParams }: {
+  params: Promise<{ credential: string; locale?: Locale }>
+  searchParams?: Promise<RpdpQuery>
+}) {
   const { credential, locale = 'en' } = await params
+  if (credential === 'rpdp') {
+    await connection()
+    return <RpdpPage locale={locale} query={await searchParams ?? {}} active={isRpdpPromotionActive()} />
+  }
   const t = (text: string) => uiText(text, locale)
   const resolveHref = (url: string) => contentHref(url, locale)
   const cert = getCertificationBySlug(credential)
@@ -72,8 +83,8 @@ export default async function CredentialPage({ params }: { params: Promise<{ cre
               </div>
               <h1 className={styles.title}>{t(cert.name)}</h1>
               <p className={styles.description}>{t(cert.description)}</p>
-              <Link href={resolveHref(`/learn#${credential === 'rpdp' ? 'founding-cohort-list' : 'rdp-updates'}`)} className={styles.ctaPrimary}>
-                {t(credential === 'rpdp' ? 'Join the RPDP Founding Cohort List' : 'Get RDP Launch Updates')} →
+              <Link href={resolveHref('/learn#rdp-updates')} className={styles.ctaPrimary}>
+                {t('Get RDP Launch Updates')} →
               </Link>
               <p className={styles.frameworkText}>{t('Joining the list does not reserve a seat.')}</p>
             </div>

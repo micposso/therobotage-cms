@@ -20,6 +20,7 @@ import cohort from '@/components/FoundingCohort/FoundingCohort.module.css'
 import credential from './[credential]/CredentialPage.module.css'
 import layout from './learn.module.css'
 import LearnMain from './LearnMain'
+import { rpdpPrices } from '@/lib/rpdp-registration'
 import rpdpFeatureLocal from '../../../../public/images/academy/rpdp-feature.webp'
 const rpdpFeature = imageAsset('/images/academy/rpdp-feature.webp', rpdpFeatureLocal)
 import rpdpProgramLocal from '../../../../public/images/academy/rpdp-program.webp'
@@ -70,6 +71,7 @@ export default async function LearnPage({ params }: { params: Promise<{ locale?:
   const { locale = 'en' } = await params
   const t = (text: string) => uiText(text, locale)
   const href = (url: string) => contentHref(url, locale)
+  const money = new Intl.NumberFormat(locale === 'es' ? 'es-US' : 'en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
   const images = Object.fromEntries([
     { key: 'rpdp-feature', alt: 'Product Design for Robots learning experience', src: rpdpFeature },
     { key: 'rpdp-program', alt: 'Designing human-robot interactions', src: rpdpProgram },
@@ -109,12 +111,12 @@ export default async function LearnPage({ params }: { params: Promise<{ locale?:
           <div className={cohort.right}>
             <dl className={`${cohort.pricing} ${layout.facts}`}>
               {[
-                ['Duration', '5 weeks'], ['Learning', '25 hours'], ['Format', 'Live and self-paced'],
-                ['Student price', '$149'], ['Professional price', '$299'], ['First cohort', 'February 2027'],
+                ['Duration', '8 weeks'], ['Learning', '36 hours'], ['Format', academyPrograms[0].format],
+                ['Planned student price', money.format(rpdpPrices.student)], ['Planned professional price', money.format(rpdpPrices.professional)], ['First cohort', 'February 2027'],
               ].map(([label, value]) => <div key={label}><dt className={cohort.priceMeta}>{t(label)}</dt><dd className={cohort.priceMain}>{t(value)}</dd></div>)}
             </dl>
             <div id="founding-cohort-list" className={cohort.ctaRow}>
-              <AccessForm locale={locale} interest="rpdp" buttonLabel="Join the Founding Cohort List" />
+              <Link href={href('/learn/rpdp#founding-cohort-list')} className={cohort.cta}>{t('Join the Founding Cohort List')}</Link>
               <p className={cohort.availability}>{t('Be notified when enrollment opens. Joining the list does not reserve a seat.')}</p>
             </div>
           </div>

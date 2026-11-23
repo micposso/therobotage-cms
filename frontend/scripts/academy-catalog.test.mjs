@@ -10,6 +10,7 @@ const templateUrl = await testModule(new URL('../src/lib/emailTemplate.ts', impo
 const { parseAcademyInterest } = await import(interestsUrl)
 const { waitlistConfirmationHtml } = await import(templateUrl)
 const moduleUrl = (source) => `data:text/javascript;base64,${Buffer.from(source).toString('base64')}`
+const { foundingPrice, isRpdpPromotionActive, rpdpPrices } = await import(await testModule(new URL('../src/lib/rpdp-registration.ts', import.meta.url)))
 
 test('public catalog contains four offers and only the two current credentials', () => {
   assert.deepEqual(catalog.getAllCertificationSlugs(), ['rpdp', 'rdp'])
@@ -25,6 +26,17 @@ test('interest parser preserves RDP and rejects forged fields without breaking g
   for (const interest of ['rpdp', 'rdp', 'academy']) assert.equal(parseAcademyInterest(interest), interest)
   assert.equal(parseAcademyInterest(null), 'academy')
   for (const invalid of ['rep', 'constructor', '__proto__', '', new Blob(['rdp'])]) assert.equal(parseAcademyInterest(invalid), undefined)
+})
+
+test('RPDP founding pricing and eligibility follow the New York campaign dates', () => {
+  assert.equal(foundingPrice(rpdpPrices.professional), 239.20)
+  assert.equal(foundingPrice(rpdpPrices.student), 119.20)
+  for (const [time, eligible] of [
+    ['2026-11-23T04:59:59.999Z', false],
+    ['2026-11-23T05:00:00.000Z', true],
+    ['2026-12-01T04:59:59.999Z', true],
+    ['2026-12-01T05:00:00.000Z', false],
+  ]) assert.equal(isRpdpPromotionActive(Date.parse(time)), eligible, time)
 })
 
 test('confirmation preserves selected program and locale, escapes input, and never promises a reservation', () => {
@@ -50,7 +62,9 @@ test('interest submission reports provider failure and preserves RDP in the deli
         if (!payload.subject.includes('RDP') || !payload.html.includes('/es/learn/rdp')) throw new Error('Lost program or locale');
         ${mode === 'exception' ? "throw new Error('offline')" : `return { error: ${mode === 'rejected' ? "'rejected'" : 'null'} }`}
       } } }`)
-      const compiled = action.replace("'resend'", JSON.stringify(mock)).replace("'@/lib/emailTemplate'", JSON.stringify(templateUrl)).replace("'@/lib/academyInterest'", JSON.stringify(interestsUrl))
+      const storage = moduleUrl("export function registerRpdp() { throw new Error('Unexpected RPDP write') }")
+      const compiled = action.replace("'resend'", JSON.stringify(mock)).replace("'@/lib/emailTemplate'", JSON.stringify(templateUrl))
+        .replace("'@/lib/academyInterest'", JSON.stringify(interestsUrl)).replace("'@/lib/supabase/academy-interest'", JSON.stringify(storage))
       const { joinWaitlist } = await import(moduleUrl(compiled))
       const data = new FormData()
       data.set('email', 'test@example.org'); data.set('interest', 'rdp'); data.set('locale', 'es')

@@ -13,6 +13,7 @@ import RobotLiteracy, { generateMetadata as literacyMetadata } from '@/app/(engl
 import Learn, { generateMetadata as learnMetadata } from '@/app/(english)/learn/page'
 import Credential, { generateMetadata as credentialMetadata } from '@/app/(english)/learn/[credential]/page'
 import Curriculum, { generateMetadata as curriculumMetadata } from '@/app/(english)/learn/[credential]/curriculum/page'
+import type { RpdpQuery } from '@/lib/rpdp-registration'
 import LiveRobotLab, { generateMetadata as labMetadata } from '@/app/(english)/live-robot-lab/page'
 import LiteracyPartners, { generateMetadata as partnersMetadata } from '@/app/(english)/robot-literacy/partners/page'
 import Access, { generateMetadata as accessMetadata } from '@/app/(english)/access/page'
@@ -23,7 +24,7 @@ import type { Metadata } from 'next'
 import { notFound, redirect } from 'next/navigation'
 import { getAvailableTranslations, getTranslation, translationAlternates } from '@/lib/i18n/content'
 
-type Props = { params: Promise<{ locale: string; path?: string[] }>; searchParams: Promise<{ q?: string }> }
+type Props = { params: Promise<{ locale: string; path?: string[] }>; searchParams: Promise<{ q?: string } & RpdpQuery> }
 export const revalidate = 900
 const fallbackRoutes = new Set(['/learn', '/rxd', '/robot-literacy/partners', '/live-robot-lab', '/enterprise', '/summit', '/connect', '/access', '/privacy', '/terms', '/ai-statement', '/press', '/rxd-scorecard', '/what-robot-are-you', '/rxd-free-workshop', '/href'])
 const indexTitles: Record<string, string> = { '/': 'El mundo de los robots, en español', '/research': 'Investigación y noticias', '/robots': 'Robots', '/jobs': 'Empleos en robótica', '/search': 'Buscar contenido' }
@@ -79,7 +80,7 @@ export default async function TranslatedPage({ params, searchParams }: Props) {
   if (route === '/rxd-scorecard') return <RxdScorecard params={pageParams} />
   if (segments[0] === 'learn' && getAvailableTranslations().includes(route)) {
     const params = Promise.resolve({ locale: 'es' as const, credential: segments[1] })
-    return segments[2] === 'curriculum' ? <Curriculum params={params} /> : <Credential params={params} />
+    return segments[2] === 'curriculum' ? <Curriculum params={params} /> : <Credential params={params} searchParams={searchParams} />
   }
   if (route === '/') return <Home params={pageParams} />
   if (route === '/research') return <Research params={pageParams} />

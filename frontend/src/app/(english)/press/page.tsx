@@ -49,7 +49,7 @@ const PRESS_LINKS = [
   },
   {
     title: 'Product Design for Robots (RPDP)',
-    body: 'A five-week, 25-hour professional program culminating in a Robot Experience Design portfolio project. The first cohort is planned for February 2027.',
+    body: 'An eight-week, 36-hour professional program culminating in a Robotics Product Experience Case Study. The first cohort is planned for February 2027.',
     href: '/learn/rpdp',
     cta: 'View the credential',
   },

@@ -17,6 +17,7 @@ interface PageHeroProps {
   children?: ReactNode
   footerContent?: ReactNode
   imageContent?: ReactNode
+  imageWrapClassName?: string
   compact?: boolean
 }
 
@@ -30,6 +31,7 @@ export default function PageHero({
   children,
   footerContent,
   imageContent,
+  imageWrapClassName,
   compact = false,
 }: PageHeroProps) {
   const suppliedImages = [...new Set((images?.length ? images : [imageSrc]).filter(
@@ -62,7 +64,7 @@ export default function PageHero({
             {children}
           </div>
           {!compact && <div className={styles.imageCol}>
-            <div className={`${styles.imageWrap}${roundImage ? ` ${styles.imageWrapRound}` : ''}`}>
+            <div className={[styles.imageWrap, roundImage && styles.imageWrapRound, imageWrapClassName].filter(Boolean).join(' ')}>
               {imageContent ?? <AnimatePresence initial={false}>
                 <motion.div
                   key={currentSrc}
