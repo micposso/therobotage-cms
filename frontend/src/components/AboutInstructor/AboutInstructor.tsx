@@ -6,7 +6,9 @@ import Image from '@/components/MediaImage'
 import { motion, useInView } from 'framer-motion'
 import styles from './AboutInstructor.module.css'
 
-export default function AboutInstructor() {
+export default function AboutInstructor({ profile }: {
+  profile?: { heading: string; title: string; bio: readonly string[] }
+} = {}) {
   const { t } = useCopy()
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
@@ -23,14 +25,14 @@ export default function AboutInstructor() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <p className={styles.eyebrow}>{t("About the Instructor")}</p>
-            <h2 className={styles.name}>{t("Developed by Michael Posso")}</h2>
-            <p className={styles.titles}>{t("Founder, The Robot Age · Product & Technology Leader · Adjunct Professor")}</p>
-            {[
+            <h2 className={styles.name}>{t(profile?.heading ?? "Developed by Michael Posso")}</h2>
+            <p className={styles.titles}>{t(profile?.title ?? "Founder, The Robot Age · Product & Technology Leader · Adjunct Professor")}</p>
+            {(profile?.bio ?? [
               "Michael Posso is a technology leader, designer, and educator with more than 15 years of experience in digital products, UX engineering, and enterprise technology.",
               "He teaches undergraduate and graduate courses at the Fashion Institute of Technology and New York Institute of Technology and is pursuing a master's degree in Information Design and Technology at SUNY Polytechnic Institute.",
               "Through The Robot Age, he explores how design, technology, and education can help people understand, interact with, and work alongside robots.",
               "His work brings together product design, human-robot interaction, practical robotics experimentation, and professional education.",
-            ].map((paragraph) => <p key={paragraph} className={styles.bio}>{t(paragraph)}</p>)}
+            ]).map((paragraph) => <p key={paragraph} className={styles.bio}>{t(paragraph)}</p>)}
           </motion.div>
 
           <motion.div

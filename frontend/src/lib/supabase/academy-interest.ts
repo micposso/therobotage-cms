@@ -1,7 +1,8 @@
 import 'server-only'
 import { createClient } from '@supabase/supabase-js'
 import { z } from 'zod'
-import { isRpdpPromotionActive, rpdpAudiences, rpdpInterests, rpdpProgram, rpdpSources, utmFields } from '../rpdp-registration'
+import { rpdpProgram } from '@/lib/certifications'
+import { foundingPrice, rpdpAudiences, rpdpCampaign, rpdpInterests, rpdpPrices, rpdpSources, utmFields } from '../rpdp-registration'
 
 const registration = z.object({
   fullName: z.string().trim().min(1).max(254),
@@ -11,7 +12,15 @@ const registration = z.object({
   sourcePage: z.enum(rpdpSources),
 })
 
-export async function registerRpdp(form: FormData, email: string, submittedAt: Date) {
+const recordedOffer = z.object({
+  firstRegistration: z.boolean(),
+  founding: z.boolean(),
+  tuitionMinor: z.number().int().positive().nullable(),
+  currency: z.string().regex(/^[A-Z]{3}$/).nullable(),
+  invitationDays: z.number().int().positive().nullable(),
+})
+
+export async function registerRpdp(form: FormData, email: string) {
   const parsed = registration.safeParse({
     fullName: form.get('name'),
     audience: form.get('audience'),
@@ -33,9 +42,8 @@ export async function registerRpdp(form: FormData, email: string, submittedAt: D
     if (typeof value === 'string' && value.trim()) utm[field] = value.trim().slice(0, 200)
   }
 
-  const promotionalEligibility = isRpdpPromotionActive(submittedAt.getTime())
   const client = createClient(url, key, { accessToken: async () => token })
-  const { data: firstRegistration, error } = await client.rpc('record_academy_interest', {
+  const { data, error } = await client.rpc('record_academy_interest_offer', {
     p_program: rpdpProgram.program,
     p_version: rpdpProgram.version,
     p_cohort: rpdpProgram.cohort,
@@ -46,11 +54,19 @@ export async function registerRpdp(form: FormData, email: string, submittedAt: D
     p_marketing_consent: marketingConsent === 'on',
     p_source_page: sourcePage,
     p_utm: utm,
-    p_submitted_at: submittedAt.toISOString(),
-    p_promo_eligible: promotionalEligibility,
+    p_starts_at: rpdpCampaign.startsAt,
+    p_ends_before: rpdpCampaign.endsBefore,
+    p_founding_offer_id: rpdpCampaign.foundingOfferId,
+    p_standard_offer_id: rpdpCampaign.standardOfferId,
+    p_founding_tuition_minor: foundingPrice(rpdpPrices[audience]),
+    p_standard_tuition_minor: rpdpPrices[audience],
+    p_currency: rpdpCampaign.currency,
+    p_invitation_days: rpdpCampaign.invitationDays,
   })
-  if (error || typeof firstRegistration !== 'boolean') {
+  const saved = recordedOffer.safeParse(data)
+  if (error || !saved.success) {
     throw new Error(`Academy interest write failed (${error?.code ?? 'invalid response'})`)
   }
-  return { firstRegistration, promotionalEligibility }
+  const { firstRegistration, ...quote } = saved.data
+  return { firstRegistration, quote }
 }

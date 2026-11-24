@@ -92,6 +92,7 @@
 }
 
 .module[open] summary::after { transform: rotate(225deg); }
+.faq summary { grid-template-columns: minmax(0, 1fr) auto; }
 .module summary:hover { background: var(--color-border); }
 .moduleBody { padding: 0 var(--space-2) var(--space-4); }
 .moduleBody dl { display: grid; gap: var(--space-3); margin: 0; }

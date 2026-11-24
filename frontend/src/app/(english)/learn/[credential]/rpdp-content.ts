@@ -1,7 +1,6 @@
 export const rpdpCopy = {
-  title: 'Design products for a world with robots.',
-  intro: 'Robots are entering workplaces, buildings, and public spaces. Learn to design how people interact with them through an eight-week program combining UX, product strategy, human-robot interaction, inclusive design, regulation, and simulation.',
-  outcome: 'Graduate with a portfolio-ready robotics product experience case study.',
+  title: 'Design how people interact with robots.',
+  intro: 'An eight-week live online program for designers, researchers, and product professionals. Develop, prototype, and evaluate a robotics product experience through human-robot interaction, inclusive design, product strategy, and failure and recovery design.',
   whyTitle: 'Robotics needs product designers.',
   why: 'Hardware and AI give robots capabilities. Product design makes those capabilities understandable, accessible, and useful in the places where people encounter robots.',
   whyItems: [
@@ -14,17 +13,16 @@ export const rpdpCopy = {
     'Product adoption and real-world usability'
   ],
   audienceTitle: 'Who should enroll?',
-  audienceIntro: 'Bring your experience in design, research, or product to robotics. No prior robotics engineering or coding background is required.',
-  audiences: [
-    'UX/UI Designers',
-    'Product Designers',
-    'Product Managers',
-    'UX Researchers',
-    'Interaction Designers',
-    'Service Designers',
-    'Accessibility Specialists',
-    'Design Students'
-  ],
+  experience: 'Basic familiarity with design, research, or product work is helpful. The program introduces robotics concepts and builds on existing UX fundamentals.',
+  instructor: {
+    heading: 'Michael Posso',
+    title: 'Founder, TheRobotAge',
+    bio: [
+      'Michael Posso is a product engineer, designer, and educator with more than 10 years of teaching experience. He has taught UX, web development, and technology courses at FIT and New York Institute of Technology. His work connects product design, accessibility, AI, and human-robot interaction.',
+    ],
+  },
+  feedback: 'Michael Posso teaches the live sessions, provides three asynchronous individual milestone reviews around Weeks {weeks}, and assesses the final project in Week {final}.',
+  delivery: 'Participation, recording, and makeup details will be provided before paid enrollment.',
   skillsTitle: 'What you will learn',
   skills: [
     [
@@ -65,7 +63,7 @@ export const rpdpCopy = {
     ]
   ],
   capstoneTitle: 'Build a robotics product experience for your portfolio.',
-  capstone: 'Throughout the eight-week program, participants design, prototype, and evaluate a robotics product experience for a realistic use case.',
+  capstone: 'Choose one scoped project from the application areas below. Build one connected case study around a primary robot task, a defined environment, and a specific audience.',
   tracks: [
     [
       'Social Robotics and Companionship',
@@ -93,8 +91,16 @@ export const rpdpCopy = {
     'Usability evaluation with RXD Scorecard',
     'Final portfolio case study and presentation'
   ],
-  capstoneRequirements: 'Your prototype must demonstrate a primary task, communicate the robot’s state or intent, and show how it responds to an unexpected condition. In your case study, distinguish simulated behavior and observed usability findings from questions that need real-world testing.',
+  capstoneRequirements: 'Show how the robot communicates its state and intent, offers an inclusive interaction alternative, and handles a failure or interruption. Include a handoff to a person where appropriate. Evaluate the design in a controlled setting and document what you revised.',
+  example: {
+    label: 'Illustrative instructor-created project',
+    title: 'Designing a reception robot interaction',
+    description: 'A reception robot helps visitors find a destination. Design how it greets visitors, explains what it can do, offers a language choice, responds when it does not understand, and hands off to a person.',
+    contents: ['An interaction flow', 'A behavior specification', 'A prototype', 'An evaluation plan', 'An RXD-based review'],
+  },
   hardware: 'You can complete the project without building, buying, or programming a physical robot.',
+  prototype: 'Projects can be completed using Figma, storyboards, or a facilitated Wizard-of-Oz prototype, where a person simulates the robot’s responses.',
+  simulator: 'Browser simulation is also an option. The provider, account requirements, and any mandatory costs will be confirmed before paid enrollment.',
   careerTitle: 'Where can robotics product design take you?',
   careers: [
     [
@@ -124,8 +130,16 @@ export const rpdpCopy = {
   assessment: [
     'Product discovery and strategy',
     'Robot interaction and inclusive design',
-    'Prototype and simulation-based evaluation',
+    'Prototype and evaluation',
     'Regulation, risk, and recovery design',
     'Portfolio case study and presentation'
+  ],
+  completion: [
+    'Submit all required capstone components.',
+    'Achieve at least 75/100 overall.',
+    'Demonstrate the primary task, state and intent communication, an inclusive alternative, and failure and recovery behavior.',
+    'Document relevant risks, assumptions, and evaluation limitations.',
+    'Clearly distinguish simulated behavior from observed findings.',
+    'One resubmission is permitted within 14 days of receiving final assessment feedback.',
   ],
 } as const

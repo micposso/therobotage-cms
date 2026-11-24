@@ -1,17 +1,36 @@
+export const rpdpProgram = {
+  name: 'Robotics Product Design Practitioner',
+  program: 'RPDP',
+  version: '1.0',
+  cohort: '2027-02',
+  targetStart: 'February 2027',
+  weeks: 8,
+  weeklyLiveHours: 2.5,
+  weeklyIndependentHours: 2,
+  format: 'Live online',
+  capacity: 16,
+  studentPlaces: 4,
+  milestoneWeeks: [2, 4, 6],
+} as const
+
+export const rpdpLiveHours = rpdpProgram.weeks * rpdpProgram.weeklyLiveHours
+export const rpdpIndependentHours = rpdpProgram.weeks * rpdpProgram.weeklyIndependentHours
+export const rpdpLearningHours = rpdpLiveHours + rpdpIndependentHours
+
 export const rpdpModules = [
   {
     title: 'Robotics Products and Human-Robot Interaction',
     description: 'Identify a robotics product opportunity grounded in user needs and the capabilities of the robot.',
     topics: 'Robot categories, embodied AI, human-robot interaction, user needs, capabilities and limitations, stakeholder mapping, and product discovery.',
     tools: 'FigJam, TheRobotAge RXD Framework, and browser simulation where available.',
-    deliverable: 'Product opportunity brief, stakeholder map, and chosen capstone scenario.',
+    deliverable: 'Product opportunity brief, success criteria, stakeholder map, and chosen capstone scenario.',
   },
   {
     title: 'Robot Behavior, Personality, and Communication',
     description: 'Specify how a robot communicates its intent, state, and limitations.',
     topics: 'Voice, tone, gestures, gaze, movement, multimodal communication, anthropomorphism, trust, and behavioral consistency.',
     tools: 'Figma, FigJam, storyboards, and optional ElevenLabs voice prototyping.',
-    deliverable: 'Robot behavior specification and communication storyboard.',
+    deliverable: 'Draft robot behavior specification and initial interaction storyboard or prototype.',
   },
   {
     title: 'Physical, Digital, and Spatial Interaction Design',
@@ -25,7 +44,7 @@ export const rpdpModules = [
     description: 'Design accessible interactions and offer alternatives for people with different needs.',
     topics: 'Ability, age, language, culture, technology familiarity, multilingual interfaces, and cognitive, sensory, and physical accessibility.',
     tools: 'Figma, accessibility checklists, and multilingual prototypes.',
-    deliverable: 'Inclusive design specification with alternative pathways for two user groups.',
+    deliverable: 'Inclusive design specification and an accessible alternative integrated into the capstone.',
   },
   {
     title: 'Robotics Regulation, Ethics, Privacy, and Safety',
@@ -39,18 +58,18 @@ export const rpdpModules = [
     description: 'Design what a robot communicates and does when an interaction goes off course.',
     topics: 'Errors, uncertainty, interruption, connectivity loss, human escalation, and service recovery.',
     tools: 'Figma, FigJam, storyboards, and failure-state templates.',
-    deliverable: 'Failure and recovery flow covering at least two scenarios.',
+    deliverable: 'Failure and recovery flow integrated into the capstone, covering at least two scenarios.',
   },
   {
     title: 'Robotics Prototyping, Simulation, and Evaluation',
-    description: 'Prototype and evaluate interactions in simulation or a controlled setting.',
+    description: 'Evaluate and refine your prototype in simulation or a controlled setting.',
     topics: 'Browser simulation, Wizard-of-Oz prototypes, behavioral testing, usability research, task success, comprehension, trust, and RXD evaluation.',
     tools: 'Browser-based robotics simulation, Figma, usability testing templates, and the RXD Scorecard.',
-    deliverable: 'Interaction prototype, formative testing findings, and RXD evaluation.',
+    deliverable: 'Revised interaction prototype, formative findings, and RXD review.',
   },
   {
     title: 'Robotics Product Strategy and Portfolio Presentation',
-    description: 'Turn research and interaction decisions into a product plan and present the evidence in a case study.',
+    description: 'Explain your product rationale and present the case study for final assessment.',
     topics: 'Product requirements, MVP priorities, value propositions, adoption, success metrics, and portfolio presentations.',
     tools: 'Figma Slides or equivalent, product requirements templates, and the RXD Scorecard.',
     deliverable: 'Final Robotics Product Experience Case Study and live presentation.',
@@ -80,13 +99,13 @@ export interface Certification {
 
 export const academyPrograms = [
   {
-    abbr: 'RPDP', slug: 'rpdp', name: 'Robotics Product Design Practitioner',
+    abbr: rpdpProgram.program, slug: 'rpdp', name: rpdpProgram.name,
     title: 'Product Design for Robots', status: 'Coming Soon' as const,
-    description: 'Explore RPDP, an eight-week, 36-hour live online program in human-robot interaction, inclusive design, simulation, and product strategy. Join the February 2027 cohort interest list.',
-    audience: 'Product designers, UX/UI professionals, design students, UX researchers, and product managers.',
-    overview: 'An eight-week professional program for people bringing design, research, or product experience into robotics. Design how robots communicate, interact in shared spaces, and recover when something goes wrong.',
+    description: 'Build a reviewed robotics product design case study through live instruction, individual feedback, inclusive design, and failure and recovery design.',
+    audience: 'Working UX and product designers, interaction designers, and UX researchers. Product managers and design students are also eligible.',
+    overview: 'Complete a reviewed robotics product design case study for your portfolio.',
     topics: 'Human-robot interaction, robot behavior, inclusive design, regulation and safety, failure recovery, simulation, RXD evaluation, and product strategy.',
-    format: 'Live online', duration: '8 weeks · 36 hours · February 2027',
+    format: rpdpProgram.format, duration: `${rpdpProgram.weeks} weeks · ${rpdpLearningHours} hours · ${rpdpProgram.targetStart}`,
     capstone: 'Robotics Product Experience Case Study',
     modules: rpdpModules,
     outcomes: ['Robotics Product Experience Case Study'],

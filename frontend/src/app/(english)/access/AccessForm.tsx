@@ -5,28 +5,28 @@ import { joinWaitlist } from '@/app/actions/joinWaitlist'
 import { uiText } from '@/lib/i18n/messages'
 import type { Locale } from '@/lib/i18n/routing'
 import { trackRpdp } from '@/lib/rpdp-analytics'
-import { utmFields, type RpdpQuery } from '@/lib/rpdp-registration'
+import { rpdpConfirmation, utmFields, type RpdpQuery } from '@/lib/rpdp-registration'
 import styles from './access.module.css'
 
-type Props = { locale: Locale; buttonLabel?: string } & (
+type Props = { locale: Locale; buttonLabel?: string; describedBy?: string } & (
   | { interest?: 'academy' | 'rdp'; rpdp?: never }
   | { interest: 'rpdp'; rpdp: { source: string; query: RpdpQuery } }
 )
 
-export default function AccessForm({ locale, interest = 'academy', buttonLabel = 'Get Academy Updates', rpdp }: Props) {
+export default function AccessForm({ locale, interest = 'academy', buttonLabel = 'Get Academy Updates', describedBy, rpdp }: Props) {
   const [state, action, pending] = useActionState(joinWaitlist, { success: false })
   const started = useRef(false)
   const t = (text: string) => uiText(text, locale)
 
   useEffect(() => {
-    if (!rpdp) return
+    if (interest !== 'rpdp') return
     if (state.error) trackRpdp(locale, { event: 'rpdp_interest_form_error' })
     if (state.success) {
-      const promotional_eligibility = state.promotionalEligibility === true
+      const promotional_eligibility = state.quote?.founding === true
       trackRpdp(locale, { event: 'rpdp_interest_form_success', promotional_eligibility })
       trackRpdp(locale, { event: 'rpdp_promotional_eligibility', promotional_eligibility })
     }
-  }, [locale, rpdp, state])
+  }, [locale, interest, state])
 
   if (state.success && !rpdp) return <p role="status">{t("You're on the list. Check your inbox for confirmation. Joining does not reserve a seat.")}</p>
 
@@ -37,7 +37,7 @@ export default function AccessForm({ locale, interest = 'academy', buttonLabel =
     placeholder={rpdp ? undefined : t('Your email')} className={styles.input} maxLength={254} />
 
   const form = !state.success && <form action={action} className={styles.form}
-    aria-describedby={rpdp ? 'rpdp-form-note' : undefined}
+    aria-describedby={describedBy}
     onSubmit={rpdp ? event => {
       event.preventDefault()
       if (pending) return
@@ -95,9 +95,7 @@ export default function AccessForm({ locale, interest = 'academy', buttonLabel =
     {form}
     <div role="alert" className={styles.feedback}>{state.error && t(state.error)}</div>
     <div role="status" className={styles.feedback}>
-      {state.success && t(state.promotionalEligibility
-        ? "You're on the RPDP interest list and qualified for the founding offer."
-        : "You're on the RPDP interest list. We'll contact you when enrollment opens.")}
+      {state.success && state.quote && rpdpConfirmation(state.quote, locale, t).map(line => <p key={line}>{line}</p>)}
     </div>
   </>
 }

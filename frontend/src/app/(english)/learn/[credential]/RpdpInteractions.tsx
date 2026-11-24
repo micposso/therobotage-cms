@@ -3,16 +3,16 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Locale } from '@/lib/i18n/routing'
 import { trackRpdp } from '@/lib/rpdp-analytics'
-import cohort from '@/components/FoundingCohort/FoundingCohort.module.css'
+import { RpdpSignupLink, rpdpSignup } from './RpdpOffer'
 import styles from './RpdpPage.module.css'
 
-export default function RpdpInteractions({ locale, signupLabel }: { locale: Locale; signupLabel: string }) {
+export default function RpdpInteractions({ locale }: { locale: Locale }) {
   const [showSignup, setShowSignup] = useState(false)
   const trackedView = useRef(false)
 
   useEffect(() => {
     const page = document.getElementById('rpdp-program')
-    const signup = document.getElementById('founding-cohort-list')
+    const signup = document.getElementById(rpdpSignup)
     if (!page || !signup) return
 
     if (!trackedView.current) {
@@ -52,6 +52,6 @@ export default function RpdpInteractions({ locale, signupLabel }: { locale: Loca
   }, [locale])
 
   return <div className={styles.mobileSignup} data-visible={showSignup}>
-    <a className={cohort.cta} href="#founding-cohort-list" data-rpdp-cta="mobile">{signupLabel}</a>
+    <RpdpSignupLink locale={locale} placement="mobile" />
   </div>
 }

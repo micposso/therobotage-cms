@@ -1,4 +1,6 @@
 import { academyInterests, type AcademyInterest } from './academyInterest'
+import { uiText } from './i18n/messages'
+import { rpdpConfirmation, type RpdpQuote } from './rpdp-registration'
 export function emailHtml(content: string): string {
   return `<!DOCTYPE html>
 <html lang="en">
@@ -116,14 +118,17 @@ export function workshopWaitlistHtml(firstName: string): string {
   `)
 }
 
-export function waitlistConfirmationHtml(interest: AcademyInterest = 'academy', locale: 'en' | 'es' = 'en', name = ''): string {
+export function waitlistConfirmationHtml(interest: AcademyInterest = 'academy', locale: 'en' | 'es' = 'en', name = '', quote?: RpdpQuote): string {
   const label = academyInterests[interest][locale]
   const title = locale === 'es' ? 'Gracias por tu interés en The Robot Age Academy' : 'Thanks for your interest in The Robot Age Academy'
   const note = locale === 'es'
     ? 'Recibirás novedades del programa. Inscribirte en esta lista no reserva una plaza ni confirma una matrícula.'
     : 'You will receive program updates. Joining this list does not reserve a seat or confirm enrollment.'
   const url = `https://therobotage.com${locale === 'es' ? '/es' : ''}/learn${interest === 'academy' ? '' : `/${interest}`}`
-  return emailHtml(`<h1>${title}</h1><p>${escapeHtml(label)}</p><p>${note}</p>${name ? `<p>${escapeHtml(name)}</p>` : ''}<p><a href="${url}">${locale === 'es' ? 'Explorar el programa' : 'Explore the program'}</a></p>`)
+  const details = interest === 'rpdp' && quote
+    ? rpdpConfirmation(quote, locale, text => uiText(text, locale)).map(line => `<p>${escapeHtml(line)}</p>`).join('')
+    : `<p>${note}</p>`
+  return emailHtml(`<h1>${title}</h1><p>${escapeHtml(label)}</p>${details}${name ? `<p>${escapeHtml(name)}</p>` : ''}<p><a href="${url}">${locale === 'es' ? 'Explorar el programa' : 'Explore the program'}</a></p>`)
 }
 
 export function escapeHtml(str: string): string {

@@ -4,16 +4,15 @@ import Nav from '@/components/Nav/Nav'
 import Footer from '@/components/Footer/Footer'
 import PageHero from '@/components/PageHero/PageHero'
 import Image from '@/components/MediaImage'
-import { academyPrograms, rpdpModules } from '@/lib/certifications'
+import { academyPrograms, rpdpIndependentHours, rpdpLearningHours, rpdpLiveHours, rpdpModules, rpdpProgram } from '@/lib/certifications'
 import { imageAsset, imageUrl } from '@/lib/image-assets'
 import { contentHref } from '@/lib/i18n/localize'
 import { uiText } from '@/lib/i18n/messages'
 import { pageMetadata } from '@/lib/i18n/page-metadata'
 import type { Locale } from '@/lib/i18n/routing'
-import { foundingPrice, rpdpCampaign, rpdpPrices, rpdpProgram, type RpdpQuery } from '@/lib/rpdp-registration'
+import { rpdpInvitation, type RpdpQuery } from '@/lib/rpdp-registration'
+import AboutInstructor from '@/components/AboutInstructor/AboutInstructor'
 import { siteOverview } from '@/lib/site'
-import AccessForm from '../../access/AccessForm'
-import cohort from '@/components/FoundingCohort/FoundingCohort.module.css'
 import certification from '@/components/Certification/Certification.module.css'
 import hero from '@/components/PageHero/PageHero.module.css'
 import academy from '../learn.module.css'
@@ -21,16 +20,13 @@ import credential from './CredentialPage.module.css'
 import styles from './RpdpPage.module.css'
 import { rpdpCopy as copy } from './rpdp-content'
 import RpdpInteractions from './RpdpInteractions'
+import { RpdpOfferFaqCopy, RpdpOfferPanel, RpdpOfferState, RpdpSignupLink } from './RpdpOffer'
 import featureImage from '../../../../../public/images/academy/rpdp-feature.webp'
 
 const program = academyPrograms[0]
 const bannerPath = '/images/academy/rpdp-feature.webp'
 const route = '/learn/rpdp'
-const signup = 'founding-cohort-list'
-const signupLabel = 'Join the Founding Cohort List'
-const weeklyTime = '2.5 hours live + 2 hours independent = 4.5 hours'
 const assessmentWeights = [20, 25, 25, 15, 15]
-const audienceLabels = { professional: 'Professional', student: 'Student' } as const
 const tools = [
   ['Figma and FigJam'],
   ['TheRobotAge RXD Framework', '/rxd'],
@@ -42,7 +38,7 @@ const tools = [
 ] as const
 
 export function rpdpMetadata(locale: Locale) {
-  const title = 'Robotics Product Design Practitioner (RPDP) | TheRobotAge Academy'
+  const title = `${rpdpProgram.name} (${rpdpProgram.program}) | TheRobotAge Academy`
   const description = program.description
   const image = imageUrl(bannerPath)
   return pageMetadata({
@@ -76,90 +72,79 @@ export default function RpdpPage({ locale, query, active }: { locale: Locale; qu
   const t = (text: string) => uiText(text, locale)
   const href = (path: string) => contentHref(path, locale)
   const intlLocale = locale === 'es' ? 'es-US' : 'en-US'
-  const money = new Intl.NumberFormat(intlLocale, { style: 'currency', currency: 'USD' })
-  const wholeDollars = new Intl.NumberFormat(intlLocale, { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
   const percent = new Intl.NumberFormat(intlLocale, { style: 'percent' })
-  const deadline = new Intl.DateTimeFormat(intlLocale, {
-    dateStyle: 'long', timeStyle: 'short', timeZone: rpdpCampaign.timeZone,
-  }).format(new Date(Date.parse(rpdpCampaign.endsBefore) - 60_000))
-  const prices = Object.entries(rpdpPrices).map(([audience, planned]) => ({
-    audience: t(audienceLabels[audience as keyof typeof audienceLabels]),
-    planned: wholeDollars.format(planned),
-    founding: money.format(foundingPrice(planned)),
-  }))
+  const weeklyTime = t('One {live}-hour live session and about {independent} hours of independent work each week.')
+    .replace('{live}', new Intl.NumberFormat(intlLocale).format(rpdpProgram.weeklyLiveHours))
+    .replace('{independent}', String(rpdpProgram.weeklyIndependentHours))
+  const feedback = t(copy.feedback)
+    .replace('{weeks}', new Intl.ListFormat(intlLocale).format(rpdpProgram.milestoneWeeks.map(String)))
+    .replace('{final}', String(rpdpProgram.weeks))
   const course = {
     '@context': 'https://schema.org',
     '@type': 'Course',
-    name: `${t(program.name)} (RPDP)`,
+    name: `${t(program.name)} (${rpdpProgram.program})`,
     courseCode: `${rpdpProgram.program} v${rpdpProgram.version}`,
     url: new URL(href(route), siteOverview.url).href,
-    description: [
-      t(program.description),
-      ...prices.map(price => `${price.audience} — ${t('Planned price')} ${price.planned}.${active ? ` ${t('Founding offer')} ${price.founding}.` : ''}`),
-    ].join(' '),
+    description: t(program.description),
     provider: { '@type': 'Organization', name: 'TheRobotAge', url: siteOverview.url },
     educationalCredentialAwarded: t('RPDP educational completion credential'),
-    timeRequired: 'PT36H',
+    timeRequired: `PT${rpdpLearningHours}H`,
     hasCourseInstance: {
       '@type': 'CourseInstance',
-      name: t('February 2027 Founding Cohort'),
-      courseMode: t('Live online'),
-      duration: 'P8W',
-      courseWorkload: t(weeklyTime),
+      name: t(rpdpProgram.targetStart),
+      courseMode: t(rpdpProgram.format),
+      duration: `P${rpdpProgram.weeks}W`,
+      courseWorkload: weeklyTime,
     },
   }
 
   return <>
     <Nav pinned />
     <main id="rpdp-program" className={styles.page}>
+      <RpdpOfferState active={active}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(course).replace(/</g, '\\u003c') }} />
-      <PageHero eyebrow={t('THEROBOTAGE ACADEMY / RPDP v1.0')} title={t(copy.title)} subtitle={t(copy.intro)}
+      <PageHero eyebrow={t(`THEROBOTAGE ACADEMY / ${rpdpProgram.program} v${rpdpProgram.version}`)} title={t(copy.title)} subtitle={t(copy.intro)}
         imageWrapClassName={styles.heroImage}
         imageContent={<Image src={imageAsset(bannerPath, featureImage)} alt="" fill sizes="(max-width: 767px) 90vw, 456px"
           className={hero.image} placeholder="blur" loading="eager" />}>
         <div className={styles.heroDetails}>
-          <p className={credential.overviewText}>{t(copy.outcome)}</p>
+          <p className={credential.overviewText}>{t(program.overview)}</p>
           <ul className={`${credential.pills} ${styles.badges}`}>
-            {['8 weeks', '36 hours', program.format, 'February 2027', 'No robotics programming required', 'Portfolio capstone'].map(item =>
+            {[`${rpdpProgram.weeks} weeks`, `${rpdpLearningHours} hours`, program.format, rpdpProgram.targetStart, 'No robotics programming required', 'Portfolio capstone'].map(item =>
               <li key={item} className={credential.pill}>{t(item)}</li>)}
           </ul>
           <div className={certification.courseCardBottom}>
-            <a className={cohort.cta} href={`#${signup}`} data-rpdp-cta="hero">{t(signupLabel)}</a>
+            <RpdpSignupLink locale={locale} placement="hero" />
             <a className={certification.headerCta} href="#curriculum">{t('Explore Curriculum')}</a>
           </div>
         </div>
       </PageHero>
 
       <div className={`${academy.container} ${styles.columns}`}>
-        <aside id={signup} tabIndex={-1} aria-labelledby="rpdp-signup-title" className={styles.signup}>
-          <h2 id="rpdp-signup-title" className={certification.courseTitle}>{t('Join the RPDP Founding Cohort.')}</h2>
-          {active && <p className={styles.promotion}>{t('Black Friday founding offer')} · {percent.format(rpdpCampaign.discount / 100)} {t('off')}</p>}
-          <dl className={`${cohort.pricing} ${styles.prices}`}>
-            {prices.map(price => <div key={price.audience}>
-              <dt>{price.audience}</dt>
-              <dd className={cohort.priceMeta}>{t('Planned price')} {price.planned}</dd>
-              {active && <dd className={cohort.priceMeta}>{t('Founding offer')} <strong>{price.founding}</strong></dd>}
-            </div>)}
-          </dl>
-          {active && <p className={styles.formNote}>{t('Offer deadline')} <time dateTime={new Date(Date.parse(rpdpCampaign.endsBefore) - 60_000).toISOString()}>{deadline}</time> ({t('New York time')}).</p>}
-          <AccessForm locale={locale} interest="rpdp" buttonLabel={signupLabel} rpdp={{ source: href(route), query }} />
-          <p id="rpdp-form-note" className={styles.formNote}>{t('No payment required. Joining does not reserve a seat.')}</p>
-        </aside>
+        <RpdpOfferPanel locale={locale} source={href(route)} query={query} />
 
         <div className={styles.content}>
+          <Section title={t(copy.audienceTitle)}>
+            <p className={credential.overviewText}>{t(program.audience)}</p>
+            <p className={credential.overviewText}>{t(copy.experience)}</p>
+          </Section>
+          <Section title={t('How the program works')}>
+            <p className={credential.overviewText}>{t('RPDP is an assessed certificate program. You develop one case study throughout the program.')}</p>
+            <p className={credential.overviewText}>{weeklyTime}</p>
+            <p className={credential.overviewText}>{feedback}</p>
+            <p className={credential.overviewText}>{t(copy.delivery)}</p>
+          </Section>
+          <AboutInstructor profile={copy.instructor} />
           <Section title={t(copy.whyTitle)}>
             <p className={credential.overviewText}>{t(copy.why)}</p>
             <TextList items={copy.whyItems} locale={locale} />
           </Section>
-          <Section title={t(copy.audienceTitle)}>
-            <p className={credential.overviewText}>{t(copy.audienceIntro)}</p>
-            <ul className={`${credential.pills} ${styles.badges}`}>
-              {copy.audiences.map(item => <li key={item} className={credential.pill}>{t(item)}</li>)}
-            </ul>
-          </Section>
           <Section title={t(copy.skillsTitle)}><FeatureGrid items={copy.skills} locale={locale} /></Section>
           <Section title={t('Eight-week curriculum')} id="curriculum">
-            <p className={credential.overviewText}>{t('36 learning hours · 20 hours of live instruction · 16 hours of independent study')}</p>
+            <p className={credential.overviewText}>{t('{total} learning hours · {live} hours of live instruction · {independent} hours of independent study')
+              .replace('{total}', String(rpdpLearningHours))
+              .replace('{live}', String(rpdpLiveHours))
+              .replace('{independent}', String(rpdpIndependentHours))}</p>
             <div className={credential.moduleList}>
               {rpdpModules.map(module => <details key={module.number} data-rpdp-week={module.number} className={styles.module}>
                 <summary>
@@ -186,6 +171,12 @@ export default function RpdpPage({ locale, query, active }: { locale: Locale; qu
             <TextList items={copy.finalDeliverables} locale={locale} />
             <p className={credential.overviewText}>{t(copy.capstoneRequirements)}</p>
             <p className={credential.overviewText}>{t(copy.hardware)}</p>
+            <article className={`${academy.stack} ${styles.feature} ${styles.subheading}`}>
+              <p className={certification.eyebrow}>{t(copy.example.label)}</p>
+              <h3 className={certification.courseTitle}>{t(copy.example.title)}</h3>
+              <p className={credential.overviewText}>{t(copy.example.description)}</p>
+              <TextList items={copy.example.contents} locale={locale} />
+            </article>
           </Section>
           <Section title={t('Tools and technology')}>
             <ul className={styles.list}>
@@ -193,7 +184,8 @@ export default function RpdpPage({ locale, query, active }: { locale: Locale; qu
                 {url ? <Link className={certification.headerCta} href={href(url)}>{t(name)}</Link> : t(name)}
               </li>)}
             </ul>
-            <p className={credential.overviewText}>{t('The simulator provider and specific account requirements will be announced before enrollment.')}</p>
+            <p className={credential.overviewText}>{t(copy.prototype)}</p>
+            <p className={credential.overviewText}>{t(copy.simulator)}</p>
           </Section>
           <Section title={t(copy.careerTitle)}><FeatureGrid items={copy.careers} locale={locale} /></Section>
           <Section title={t(copy.credentialTitle)}>
@@ -204,12 +196,32 @@ export default function RpdpPage({ locale, query, active }: { locale: Locale; qu
                 <dt>{t(criterion)}</dt><dd>{percent.format(assessmentWeights[index] / 100)}</dd>
               </div>)}
             </dl>
+            <h3 className={`${certification.courseTitle} ${styles.subheading}`}>{t('Completion requirements')}</h3>
+            <TextList items={copy.completion} locale={locale} />
             <p className={credential.overviewText}>{t(copy.disclaimer)}</p>
+          </Section>
+          <Section title={t('Frequently asked questions')}>
+            {([
+              ['Who is the program designed for?', `${t(program.audience)} ${t(copy.experience)}`],
+              ['Do I need robotics or programming experience?', t('No prior robotics or programming experience is required.')],
+              ['Do I need to own a robot?', t(copy.hardware)],
+              ['What will I produce?', t(program.overview)],
+              ['How much time should I plan each week?', weeklyTime],
+              ['What individual feedback is included?', feedback],
+              ['What does joining the founding list secure?', <RpdpOfferFaqCopy key="offer" locale={locale} part="answer" />],
+              ['When will the schedule and tool requirements be confirmed?', t(rpdpInvitation)],
+              ['What credential will I receive?', t(copy.credential)],
+            ] as const).map(([question, answer]) => <details key={question} className={`${styles.module} ${styles.faq}`}>
+              <summary><span className={credential.moduleTitle}>{question === 'What does joining the founding list secure?'
+                ? <RpdpOfferFaqCopy locale={locale} part="question" /> : t(question)}</span></summary>
+              <div className={styles.moduleBody}><p>{answer}</p></div>
+            </details>)}
           </Section>
           <Link className={credential.backLink} href={href('/learn')}>{t('← Back to Academy')}</Link>
         </div>
       </div>
-      <RpdpInteractions locale={locale} signupLabel={t('Join the cohort list')} />
+      <RpdpInteractions locale={locale} />
+      </RpdpOfferState>
     </main>
     <Footer />
   </>

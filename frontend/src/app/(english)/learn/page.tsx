@@ -8,7 +8,7 @@ import { pageMetadata } from '@/lib/i18n/page-metadata'
 import { contentHref } from '@/lib/i18n/localize'
 import { uiText } from '@/lib/i18n/messages'
 import type { Locale } from '@/lib/i18n/routing'
-import { academyPrograms } from '@/lib/certifications'
+import { academyPrograms, rpdpLearningHours, rpdpProgram } from '@/lib/certifications'
 import Nav from '@/components/Nav/Nav'
 import PageHero from '@/components/PageHero/PageHero'
 import AboutInstructor from '@/components/AboutInstructor/AboutInstructor'
@@ -20,11 +20,11 @@ import cohort from '@/components/FoundingCohort/FoundingCohort.module.css'
 import credential from './[credential]/CredentialPage.module.css'
 import layout from './learn.module.css'
 import LearnMain from './LearnMain'
-import { rpdpPrices } from '@/lib/rpdp-registration'
+import { formatRpdpTuition, rpdpPrices } from '@/lib/rpdp-registration'
 import rpdpFeatureLocal from '../../../../public/images/academy/rpdp-feature.webp'
 const rpdpFeature = imageAsset('/images/academy/rpdp-feature.webp', rpdpFeatureLocal)
 import rpdpProgramLocal from '../../../../public/images/academy/rpdp-program.webp'
-const rpdpProgram = imageAsset('/images/academy/rpdp-program.webp', rpdpProgramLocal)
+const rpdpProgramImage = imageAsset('/images/academy/rpdp-program.webp', rpdpProgramLocal)
 import rdpProgramLocal from '../../../../public/images/academy/rdp-program.webp'
 const rdpProgram = imageAsset('/images/academy/rdp-program.webp', rdpProgramLocal)
 import designGapLocal from '../../../../public/images/academy/design-gap.webp'
@@ -71,10 +71,9 @@ export default async function LearnPage({ params }: { params: Promise<{ locale?:
   const { locale = 'en' } = await params
   const t = (text: string) => uiText(text, locale)
   const href = (url: string) => contentHref(url, locale)
-  const money = new Intl.NumberFormat(locale === 'es' ? 'es-US' : 'en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
   const images = Object.fromEntries([
     { key: 'rpdp-feature', alt: 'Product Design for Robots learning experience', src: rpdpFeature },
-    { key: 'rpdp-program', alt: 'Designing human-robot interactions', src: rpdpProgram },
+    { key: 'rpdp-program', alt: 'Designing human-robot interactions', src: rpdpProgramImage },
     { key: 'rdp-program', alt: 'Preparing teams for commercial robot deployment', src: rdpProgram },
     { key: 'design-gap', alt: 'Two students working on a bipedal humanoid robot', src: designGap },
     { key: 'deployment-gap', alt: 'Preparing people and organizations for robotics', src: deploymentGap },
@@ -105,18 +104,19 @@ export default async function LearnPage({ params }: { params: Promise<{ locale?:
           <div data-parallax className={layout.image}>{images['rpdp-feature']}</div>
           <div className={layout.featureDetails}>
           <div className={cohort.ctaRow}>
-            <p className={cohort.body}>{t('Our first Product Design for Robots cohort is planned for February 2027.')}</p>
+            <p className={cohort.body}>{t('Target start')}: {t(rpdpProgram.targetStart)}</p>
             <p className={cohort.body}>{t(academyPrograms[0].overview)}</p>
           </div>
           <div className={cohort.right}>
             <dl className={`${cohort.pricing} ${layout.facts}`}>
               {[
-                ['Duration', '8 weeks'], ['Learning', '36 hours'], ['Format', academyPrograms[0].format],
-                ['Planned student price', money.format(rpdpPrices.student)], ['Planned professional price', money.format(rpdpPrices.professional)], ['First cohort', 'February 2027'],
+                ['Duration', `${rpdpProgram.weeks} weeks`], ['Learning', `${rpdpLearningHours} hours`], ['Format', rpdpProgram.format],
+                ['Planned standard student tuition', formatRpdpTuition(rpdpPrices.student, locale)],
+                ['Planned standard professional tuition', formatRpdpTuition(rpdpPrices.professional, locale)],
               ].map(([label, value]) => <div key={label}><dt className={cohort.priceMeta}>{t(label)}</dt><dd className={cohort.priceMain}>{t(value)}</dd></div>)}
             </dl>
             <div id="founding-cohort-list" className={cohort.ctaRow}>
-              <Link href={href('/learn/rpdp#founding-cohort-list')} className={cohort.cta}>{t('Join the Founding Cohort List')}</Link>
+              <Link href={href('/learn/rpdp#founding-cohort-list')} prefetch={false} className={cohort.cta}>{t('Explore RPDP and join the list')}</Link>
               <p className={cohort.availability}>{t('Be notified when enrollment opens. Joining the list does not reserve a seat.')}</p>
             </div>
           </div>
