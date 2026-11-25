@@ -4,6 +4,23 @@ const verifiedOn = '2026-11-21'
 
 const policies: RobotPolicy[] = [
   {
+    id: 'ny-s9408a-2025',
+    slug: 'ny-ai-chatbot-toys',
+    title: 'Five-year moratorium on AI chatbot toys',
+    identifier: 'NY S9408A / A11144B (2026, Ch. 416)',
+    jurisdiction: 'NY',
+    status: 'enacted',
+    category: 'Consumer Product Safety',
+    robotTypes: ['sensor_equipped'],
+    summary: 'Starting February 22, 2027, New York prohibits making, exchanging, distributing, selling, or holding for sale children’s toys with an embedded or integrated AI companion. The restriction lasts five years and covers robotic toys that meet that definition.',
+    updatedAt: '2026-11-24',
+    effectiveAt: '2027-02-22',
+    lastVerifiedAt: '2026-11-25',
+    sourceName: 'New York State Senate',
+    sourceUrl: 'https://www.nysenate.gov/legislation/bills/2025/S9408/amendment/A',
+    policyType: 'legislation',
+  },
+  {
     id: 'nyc-biometric-identifier-information',
     slug: 'nyc-biometric-identifier-information',
     title: 'Biometric identifier information in commercial establishments',

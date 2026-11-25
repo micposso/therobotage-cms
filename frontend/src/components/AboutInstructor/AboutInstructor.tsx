@@ -1,13 +1,15 @@
 'use client'
 import { useCopy } from '@/lib/i18n/useCopy'
 
-import { useRef } from 'react'
+import { useRef, type ReactNode } from 'react'
 import Image from '@/components/MediaImage'
 import { motion, useInView } from 'framer-motion'
 import styles from './AboutInstructor.module.css'
 
-export default function AboutInstructor({ profile }: {
+export default function AboutInstructor({ profile, compact = false, children }: {
   profile?: { heading: string; title: string; bio: readonly string[] }
+  compact?: boolean
+  children?: ReactNode
 } = {}) {
   const { t } = useCopy()
   const ref = useRef(null)
@@ -16,7 +18,7 @@ export default function AboutInstructor({ profile }: {
   return (
     <section className={styles.section} ref={ref}>
       <div className="container-fluid">
-        <div className={styles.inner}>
+        <div className={`${styles.inner}${compact ? ` ${styles.compact}` : ''}`}>
 
           <motion.div
             className={styles.content}
@@ -33,6 +35,7 @@ export default function AboutInstructor({ profile }: {
               "Through The Robot Age, he explores how design, technology, and education can help people understand, interact with, and work alongside robots.",
               "His work brings together product design, human-robot interaction, practical robotics experimentation, and professional education.",
             ]).map((paragraph) => <p key={paragraph} className={styles.bio}>{t(paragraph)}</p>)}
+            {children && <div className={styles.links}>{children}</div>}
           </motion.div>
 
           <motion.div
@@ -42,7 +45,7 @@ export default function AboutInstructor({ profile }: {
             transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
           >
             <div className={styles.imageWrap}>
-              <Image src="/brand/instructor.png" alt={t("Michael Posso")} fill sizes="(max-width: 424px) calc(100vw - 64px), 360px" className={styles.image} />
+              <Image src="/brand/instructor.png" alt={t("Michael Posso")} fill sizes={compact ? '180px' : '(max-width: 424px) calc(100vw - 64px), 360px'} className={styles.image} />
             </div>
           </motion.div>
 

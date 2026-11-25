@@ -9,6 +9,7 @@ import Jobs from '@/app/(english)/jobs/page'
 import Robots from '@/app/(english)/robots/page'
 import Research from '@/app/(english)/research/page'
 import Home from '@/app/(english)/page'
+import MichaelPosso, { generateMetadata as michaelMetadata } from '@/app/(english)/michael-posso/page'
 import RobotLiteracy, { generateMetadata as literacyMetadata } from '@/app/(english)/robot-literacy/page'
 import Learn, { generateMetadata as learnMetadata } from '@/app/(english)/learn/page'
 import Credential, { generateMetadata as credentialMetadata } from '@/app/(english)/learn/[credential]/page'
@@ -43,6 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (route === '/robot-literacy') return literacyMetadata({ params: Promise.resolve({ locale: 'es' }) })
   const pageParams = Promise.resolve({ locale: 'es' as const })
   if (route === '/learn') return learnMetadata({ params: pageParams })
+  if (route === '/michael-posso') return michaelMetadata({ params: pageParams })
   if (route === '/live-robot-lab') return labMetadata({ params: pageParams })
   if (route === '/robot-literacy/partners') return partnersMetadata({ params: pageParams })
   if (route === '/access') return accessMetadata({ params: pageParams })
@@ -72,6 +74,7 @@ export default async function TranslatedPage({ params, searchParams }: Props) {
   const pageParams = Promise.resolve({ locale: 'es' as const })
   if (route === '/robot-literacy') return <RobotLiteracy params={pageParams} />
   if (route === '/learn') return <Learn params={pageParams} />
+  if (route === '/michael-posso') return <MichaelPosso params={pageParams} />
   if (route === '/live-robot-lab') return <LiveRobotLab params={pageParams} />
   if (route === '/robot-literacy/partners') return <LiteracyPartners params={pageParams} />
   if (route === '/access') return <Access params={pageParams} />

@@ -6,12 +6,14 @@ import PageHero from '@/components/PageHero/PageHero'
 import Image from '@/components/MediaImage'
 import { academyPrograms, rpdpIndependentHours, rpdpLearningHours, rpdpLiveHours, rpdpModules, rpdpProgram } from '@/lib/certifications'
 import { imageAsset, imageUrl } from '@/lib/image-assets'
+import { getHomeHeroImages } from '@/lib/home-hero-images'
 import { contentHref } from '@/lib/i18n/localize'
 import { uiText } from '@/lib/i18n/messages'
 import { pageMetadata } from '@/lib/i18n/page-metadata'
 import type { Locale } from '@/lib/i18n/routing'
 import { rpdpInvitation, type RpdpQuery } from '@/lib/rpdp-registration'
 import AboutInstructor from '@/components/AboutInstructor/AboutInstructor'
+import { michaelBioPath, michaelLinkedIn } from '@/lib/michael-posso'
 import { siteOverview } from '@/lib/site'
 import certification from '@/components/Certification/Certification.module.css'
 import hero from '@/components/PageHero/PageHero.module.css'
@@ -26,6 +28,7 @@ import storyboardPhoto from '../../../../../public/images/academy/rpdp-storyboar
 
 const program = academyPrograms[0]
 const bannerPath = '/images/academy/rpdp-doorway.webp'
+const heroSizes = '(max-width: 767px) 95vw, (max-width: 1599px) 40vw, 640px'
 const doorwayAlt = 'A designer crouches beside an open door to watch a wheeled service robot carrying a coffee carafe clear the door frame.'
 const route = '/learn/rpdp'
 const assessmentWeights = [20, 25, 25, 15, 15]
@@ -106,8 +109,9 @@ export default function RpdpPage({ locale, query, active }: { locale: Locale; qu
       <RpdpOfferState active={active}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(course).replace(/</g, '\\u003c') }} />
       <PageHero eyebrow={t(`THEROBOTAGE ACADEMY / ${rpdpProgram.program} v${rpdpProgram.version}`)} title={t(copy.title)} subtitle={t(copy.intro)}
-        imageWrapClassName={styles.heroImage}
-        imageContent={<Image src={imageAsset(bannerPath, doorwayPhoto)} alt={t(doorwayAlt)} fill sizes="(max-width: 767px) 90vw, 456px"
+        images={[imageUrl(bannerPath), ...getHomeHeroImages()]} imageSizes={heroSizes}
+        imageWrapClassName={`${certification.trackImage} ${styles.heroImage}`}
+        firstSlideContent={<Image src={imageAsset(bannerPath, doorwayPhoto)} alt={t(doorwayAlt)} fill sizes={heroSizes}
           className={hero.image} placeholder="blur" loading="eager" fetchPriority="high" />}>
         <div className={styles.heroDetails}>
           <p className={credential.overviewText}>{t(program.overview)}</p>
@@ -136,11 +140,6 @@ export default function RpdpPage({ locale, query, active }: { locale: Locale; qu
             <p className={credential.overviewText}>{feedback}</p>
             <p className={credential.overviewText}>{t(copy.delivery)}</p>
           </Section>
-          <AboutInstructor profile={copy.instructor} />
-          <Section title={t(copy.whyTitle)}>
-            <p className={credential.overviewText}>{t(copy.why)}</p>
-            <TextList items={copy.whyItems} locale={locale} />
-          </Section>
           <Section title={t(copy.skillsTitle)}><FeatureGrid items={copy.skills} locale={locale} /></Section>
           <Section title={t('Eight-week curriculum')} id="curriculum">
             <p className={credential.overviewText}>{t('{total} learning hours · {live} hours of live instruction · {independent} hours of independent study')
@@ -150,7 +149,7 @@ export default function RpdpPage({ locale, query, active }: { locale: Locale; qu
             <div className={credential.moduleList}>
               {rpdpModules.map(module => <details key={module.number} data-rpdp-week={module.number} className={styles.module}>
                 <summary>
-                  <span className={credential.moduleNumber}>{t('Week')} {module.number}</span>
+                  <span className={`${credential.moduleNumber} ${styles.weekLabel}`}>{t('Week')} {module.number}</span>
                   <span className={credential.moduleTitle}>{t(module.title)}</span>
                 </summary>
                 <div className={styles.moduleBody}>
@@ -179,12 +178,6 @@ export default function RpdpPage({ locale, query, active }: { locale: Locale; qu
             <TextList items={copy.finalDeliverables} locale={locale} />
             <p className={credential.overviewText}>{t(copy.capstoneRequirements)}</p>
             <p className={credential.overviewText}>{t(copy.hardware)}</p>
-            <article className={`${academy.stack} ${styles.feature} ${styles.subheading}`}>
-              <p className={certification.eyebrow}>{t(copy.example.label)}</p>
-              <h3 className={certification.courseTitle}>{t(copy.example.title)}</h3>
-              <p className={credential.overviewText}>{t(copy.example.description)}</p>
-              <TextList items={copy.example.contents} locale={locale} />
-            </article>
           </Section>
           <Section title={t('Tools and technology')}>
             <ul className={styles.list}>
@@ -208,6 +201,10 @@ export default function RpdpPage({ locale, query, active }: { locale: Locale; qu
             <TextList items={copy.completion} locale={locale} />
             <p className={credential.overviewText}>{t(copy.disclaimer)}</p>
           </Section>
+          <AboutInstructor profile={copy.instructor} compact>
+            <Link href={href(michaelBioPath)} className={certification.headerCta}>{t('Read Michael’s full bio')}</Link>
+            <a href={michaelLinkedIn} className={certification.headerCta}>{t('Michael on LinkedIn')}</a>
+          </AboutInstructor>
           <Section title={t('Frequently asked questions')}>
             {([
               ['Who is the program designed for?', `${t(program.audience)} ${t(copy.experience)}`],
@@ -222,7 +219,7 @@ export default function RpdpPage({ locale, query, active }: { locale: Locale; qu
             ] as const).map(([question, answer]) => <details key={question} className={`${styles.module} ${styles.faq}`}>
               <summary><span className={credential.moduleTitle}>{question === 'What does joining the founding list secure?'
                 ? <RpdpOfferFaqCopy locale={locale} part="question" /> : t(question)}</span></summary>
-              <div className={styles.moduleBody}><p>{answer}</p></div>
+              <div className={styles.moduleBody}>{typeof answer === 'string' ? <p>{answer}</p> : answer}</div>
             </details>)}
           </Section>
           <Link className={credential.backLink} href={href('/learn')}>{t('← Back to Academy')}</Link>

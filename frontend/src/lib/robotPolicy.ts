@@ -16,6 +16,7 @@ export const policyStatuses = {
 } as const
 
 export const policyCategories = [
+  'Consumer Product Safety',
   'Delivery Robots',
   'Cleaning Robots',
   'Security Robots',

@@ -300,40 +300,10 @@
     "expiresAt": "2026-12-08T00:00:00.000Z"
   },
   {
-    "id": "jobs/director-product-quality-agility.md",
-    "route": "/jobs/director-product-quality-agility",
-    "sourceHash": "0f92648ca84eca24d945c25babfd662569683b38a83768375a5249340066a87e",
-    "expiresAt": "2026-11-22T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/growth-marketing-manager-web-experience-shield-ai.md",
-    "route": "/jobs/growth-marketing-manager-web-experience-shield-ai",
-    "sourceHash": "03cffc9d6afdde75b30208fe86caa9900c4b0a44c38023d9076a0f3c64a1abc4",
-    "expiresAt": "2026-11-23T00:00:00.000Z"
-  },
-  {
     "id": "jobs/hardware-technical-program-manager-product-lines-kodiak.md",
     "route": "/jobs/hardware-technical-program-manager-product-lines-kodiak",
     "sourceHash": "e49f37d4a3cc79c087e97a9263c523dbf16d69da0645d570daeb7ea55affd03e",
     "expiresAt": "2026-11-29T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/head-of-product-design-shield-ai.md",
-    "route": "/jobs/head-of-product-design-shield-ai",
-    "sourceHash": "fce7ac75b012d5f9fbadf8fdd855c783b35fb0afe5d11044d465e9292aa711f7",
-    "expiresAt": "2026-11-25T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/lead-technical-program-manager-ai-platform-nuro.md",
-    "route": "/jobs/lead-technical-program-manager-ai-platform-nuro",
-    "sourceHash": "bb0897857461e65e9456b0eeb38e7adc1aab643cd7902d9fdc147f03c0078688",
-    "expiresAt": "2026-11-24T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/marketing-manager-audience-growth-shield-ai.md",
-    "route": "/jobs/marketing-manager-audience-growth-shield-ai",
-    "sourceHash": "347a88bcb402dceed99b109a0f239e5fae11a4fe891b43c5c28faab6928e0c39",
-    "expiresAt": "2026-11-23T00:00:00.000Z"
   },
   {
     "id": "jobs/marketing-manager-dfw-zipline.md",
@@ -366,12 +336,6 @@
     "expiresAt": "2026-12-02T00:00:00.000Z"
   },
   {
-    "id": "jobs/presentation-designer-shield-ai.md",
-    "route": "/jobs/presentation-designer-shield-ai",
-    "sourceHash": "b87e74342f4faf8b2de176b0827a4d11dbbb0724bc31560ba22ce87e05d9fe48",
-    "expiresAt": "2026-11-23T00:00:00.000Z"
-  },
-  {
     "id": "jobs/principal-program-manager-customer-success-agility.md",
     "route": "/jobs/principal-program-manager-customer-success-agility",
     "sourceHash": "d892cf35c4845f33c288d9d024e162380d35245e4a47aeb21e4c8225e96b49d5",
@@ -396,24 +360,6 @@
     "expiresAt": "2026-12-06T00:00:00.000Z"
   },
   {
-    "id": "jobs/product-quality-manager-apptronik.md",
-    "route": "/jobs/product-quality-manager-apptronik",
-    "sourceHash": "578ee2c0e7f137299bf84f62b80ec828534bb6d3785484ded750cfdb6960e685",
-    "expiresAt": "2026-11-22T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/product-strategy-operations-associate-kodiak.md",
-    "route": "/jobs/product-strategy-operations-associate-kodiak",
-    "sourceHash": "86d5e0035330cbbe5d6a2579434266946209558483a95c4a013b07d441fecfb2",
-    "expiresAt": "2026-11-22T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/program-manager-defense-scale-manufacturing-graymatter-robotics.md",
-    "route": "/jobs/program-manager-defense-scale-manufacturing-graymatter-robotics",
-    "sourceHash": "970cc45b30d21788c743710790aad166d3621d5ead5bc1248f17d0f49bd14765",
-    "expiresAt": "2026-11-24T00:00:00.000Z"
-  },
-  {
     "id": "jobs/program-manager-dfr-new-jersey-skydio.md",
     "route": "/jobs/program-manager-dfr-new-jersey-skydio",
     "sourceHash": "1eb6f17c2aead03a0dd8d1c1fada25a14885967dbce53458f77a5ee121160b3b",
@@ -430,18 +376,6 @@
     "route": "/jobs/r-d-product-manager-boston-dynamics",
     "sourceHash": "9c73cad38790202f2b40ab45c9a8afa0bffae242b7beb83243217b4de9ee98a0",
     "expiresAt": "2026-11-27T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/research-scientist-mobile-manipulation-robotics-amazon-robotics.md",
-    "route": "/jobs/research-scientist-mobile-manipulation-robotics-amazon-robotics",
-    "sourceHash": "ed3aed6db41c5d1876aa046ada00473c60e85d90749bccacf8892dab569a9476",
-    "expiresAt": "2026-11-23T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/research-scientist-vla-models-atlas-boston-dynamics.md",
-    "route": "/jobs/research-scientist-vla-models-atlas-boston-dynamics",
-    "sourceHash": "63321fcb3037dae7c2c84152d06dd698f663d8c29ca8c9ece8290faffa03232d",
-    "expiresAt": "2026-11-22T00:00:00.000Z"
   },
   {
     "id": "jobs/senior-applied-scientist-foundation-model-amazon-robotics.md",
@@ -486,12 +420,6 @@
     "expiresAt": "2026-12-05T00:00:00.000Z"
   },
   {
-    "id": "jobs/senior-staff-designer-shield-ai.md",
-    "route": "/jobs/senior-staff-designer-shield-ai",
-    "sourceHash": "28c0639ed422d1cabd2ced94a0950dab6115aabe12f1489202ad694fd4cbddfb",
-    "expiresAt": "2026-11-23T00:00:00.000Z"
-  },
-  {
     "id": "jobs/senior-staff-engineer-machine-learning-online-mapping-nuro.md",
     "route": "/jobs/senior-staff-engineer-machine-learning-online-mapping-nuro",
     "sourceHash": "df253af3c1a268092dcbb5f76917cc47aef663064336e44321fbfb05b76838de",
@@ -502,24 +430,6 @@
     "route": "/jobs/senior-staff-machine-learning-engineer-sensor-simulation-nuro",
     "sourceHash": "5743d3c6ee5a27c058493cec57c573aec9b4e0597863353ca22cf5fa409ec68b",
     "expiresAt": "2026-12-08T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/senior-staff-systems-engineer-autonomy-verification-nuro.md",
-    "route": "/jobs/senior-staff-systems-engineer-autonomy-verification-nuro",
-    "sourceHash": "23f61728ee6f4b3a46f0272f7ed95c6bf4b1d5ea3aee14d19f3416ac43ff6e36",
-    "expiresAt": "2026-11-22T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/senior-staff-technical-program-manager-hivemind-enterprise-shield-ai.md",
-    "route": "/jobs/senior-staff-technical-program-manager-hivemind-enterprise-shield-ai",
-    "sourceHash": "6eab1b194eaf9d3297d4798469df3db4e3e1bef138009de978b0a87e6cb6d889",
-    "expiresAt": "2026-11-24T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/senior-systems-test-engineer-autonomy-behavior-nuro.md",
-    "route": "/jobs/senior-systems-test-engineer-autonomy-behavior-nuro",
-    "sourceHash": "a116741efab3f69a32463a70043b117eabc83ad2ff1650b773f19bce18b1a21e",
-    "expiresAt": "2026-11-22T00:00:00.000Z"
   },
   {
     "id": "jobs/sr-deployment-program-manager-robotics-collaborative-robotics.md",
@@ -544,18 +454,6 @@
     "route": "/jobs/staff-research-roboticist-boston-dynamics",
     "sourceHash": "a5bd29da41ec65e28b334718cee143cff4095c3c7e73eeee5d9d42d9f0529ea4",
     "expiresAt": "2026-11-29T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/staff-technical-program-manager-vbat-shield-ai.md",
-    "route": "/jobs/staff-technical-program-manager-vbat-shield-ai",
-    "sourceHash": "84308a4073bcc8ed549c9edf05d3e46837b5a586a03227354f90ad0e259bb903",
-    "expiresAt": "2026-11-25T00:00:00.000Z"
-  },
-  {
-    "id": "jobs/staff-ui-designer-shield-ai.md",
-    "route": "/jobs/staff-ui-designer-shield-ai",
-    "sourceHash": "a6b78f21b29002d13a9024854a313f2db3cef80a120b650a58d9101d1de6b493",
-    "expiresAt": "2026-11-23T00:00:00.000Z"
   },
   {
     "id": "jobs/technical-lead-manager-risk-aware-planning-nuro.md",

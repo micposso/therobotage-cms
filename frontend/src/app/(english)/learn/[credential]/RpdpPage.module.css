@@ -1,8 +1,16 @@
 .heroDetails { margin-top: var(--space-6); }
 
+.heroDetails > p { margin-bottom: var(--space-6); }
+
 .badges {
   list-style: none;
   padding: 0;
+}
+
+.badges > li {
+  background-color: var(--color-tertiary);
+  border-color: var(--color-tertiary);
+  color: #fff;
 }
 
 .columns {
@@ -18,9 +26,6 @@
   --text-body: var(--text-sm);
   position: sticky;
   top: calc(var(--nav-height) + var(--space-4));
-  max-height: calc(100dvh - var(--nav-height) - 2 * var(--space-4));
-  scrollbar-width: thin;
-  overflow-y: auto;
   padding: var(--space-5);
   border: 1px solid var(--color-border-strong);
   border-top: 3px solid var(--color-accent);
@@ -29,6 +34,9 @@
 }
 
 .signup form { gap: var(--space-3); }
+@media (max-height: 900px) {
+  .signup { position: static; }
+}
 .signup form label { color: var(--color-text); }
 .signup form input:not([type='checkbox']), .signup form select { padding-block: var(--space-2); }
 .signup form button { margin-top: 0; padding-inline: var(--space-4); }
@@ -51,6 +59,8 @@
 .content > section:first-child { padding-top: 0; border-top: 0; }
 .content > section > :last-child { margin-bottom: 0; }
 .content :where(p, li, dd) { line-height: var(--leading-body); }
+.content p:not(:last-child) { margin-bottom: var(--space-4); }
+.module .weekLabel { color: var(--color-accent); }
 .list { display: grid; gap: var(--space-2); padding-inline-start: var(--space-6); }
 
 .features {
@@ -140,6 +150,11 @@
   .mobileSignup a { padding: var(--space-2) var(--space-4); text-align: center; }
 }
 
-.page .heroImage { aspect-ratio: 4 / 3; }
+.page .heroImage {
+  width: min(100%, 640px);
+  aspect-ratio: 4 / 3;
+  margin-bottom: 0;
+}
+.page .heroImage img { object-fit: contain; }
 .capstoneIntro { margin-bottom: var(--space-8); }
 .capstonePhoto { display: block; width: 100%; height: auto; }

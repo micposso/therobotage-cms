@@ -6,7 +6,7 @@ import { uiText } from '@/lib/i18n/messages'
 import type { Locale } from '@/lib/i18n/routing'
 import {
   formatRpdpTuition, foundingPrice, isRpdpPromotionActive, rpdpAudiences, rpdpCampaign,
-  rpdpInvitation, rpdpInvitationWindow, rpdpNoSeat, rpdpPrices, type RpdpQuery,
+  rpdpInvitationWindow, rpdpNoSeat, rpdpPrices, type RpdpQuery,
 } from '@/lib/rpdp-registration'
 import AccessForm from '../../access/AccessForm'
 import cohort from '@/components/FoundingCohort/FoundingCohort.module.css'
@@ -57,16 +57,7 @@ export function RpdpOfferPanel({ locale, source, query }: { locale: Locale; sour
   const t = (text: string) => uiText(text, locale)
   const intlLocale = locale === 'es' ? 'es-US' : 'en-US'
   const discount = new Intl.NumberFormat(intlLocale, { style: 'percent' }).format(rpdpCampaign.discount / 100)
-  const finalMinute = Date.parse(rpdpCampaign.endsBefore) - 60_000
-  const date = new Intl.DateTimeFormat(intlLocale, { dateStyle: 'long', timeZone: rpdpCampaign.timeZone }).format(finalMinute)
-  const time = new Intl.DateTimeFormat(intlLocale, { timeStyle: 'short', timeZone: rpdpCampaign.timeZone })
-    .format(finalMinute).replace('PM', 'p.m.')
   const label = active ? foundingLabel : generalLabel
-  const terms = t(rpdpInvitationWindow).replace('{days}', String(rpdpCampaign.invitationDays))
-  const facts = t('Paid cohort: maximum {capacity} participants, with up to {places} student-rate places. Includes {reviews} individual milestone reviews and final project assessment.')
-    .replace('{capacity}', String(rpdpProgram.capacity))
-    .replace('{reviews}', String(rpdpProgram.milestoneWeeks.length))
-    .replace('{places}', String(rpdpProgram.studentPlaces))
 
   return <aside id={rpdpSignup} tabIndex={-1} aria-labelledby="rpdp-signup-title" className={styles.signup}>
     <h2 id="rpdp-signup-title" className={certification.courseTitle}>{t(label)}</h2>
@@ -79,15 +70,7 @@ export function RpdpOfferPanel({ locale, source, query }: { locale: Locale; sour
         <dd className={cohort.priceMeta}>{t('Planned standard tuition')} {formatRpdpTuition(rpdpPrices[audience], locale)}</dd>
       </div>)}
     </dl>
-    <p className={styles.formNote}>{facts}</p>
-    {active && <p id="rpdp-founding-terms" className={styles.formNote}>
-      {t('Join by {date}, at {time} New York time to preserve the founding tuition for the {cohort} cohort.')
-        .replace('{date}', date).replace('{time}', time).replace('{cohort}', t(rpdpProgram.targetStart))} {terms}
-    </p>}
-    <p id="rpdp-form-note" className={styles.formNote}>{t(rpdpNoSeat)}</p>
-    <AccessForm locale={locale} interest="rpdp" buttonLabel={label} rpdp={{ source, query }}
-      describedBy={active ? 'rpdp-form-note rpdp-founding-terms' : 'rpdp-form-note'} />
-    <p className={styles.formNote}>{t(rpdpInvitation)}</p>
+    <AccessForm locale={locale} interest="rpdp" buttonLabel={label} rpdp={{ source, query }} />
   </aside>
 }
 
@@ -95,7 +78,19 @@ export function RpdpOfferFaqCopy({ locale, part }: { locale: Locale; part: 'ques
   const active = useContext(OfferActive)
   const t = (text: string) => uiText(text, locale)
   if (part === 'question') return t(active ? 'What does joining the founding list secure?' : 'What does joining the list secure?')
-  return active
-    ? t(rpdpInvitationWindow).replace('{days}', String(rpdpCampaign.invitationDays))
-    : t('We’ll use your registration to share enrollment details for the February cohort.')
+  const intlLocale = locale === 'es' ? 'es-US' : 'en-US'
+  const finalMinute = Date.parse(rpdpCampaign.endsBefore) - 60_000
+  const date = new Intl.DateTimeFormat(intlLocale, { dateStyle: 'long', timeZone: rpdpCampaign.timeZone }).format(finalMinute)
+  const time = new Intl.DateTimeFormat(intlLocale, { timeStyle: 'short', timeZone: rpdpCampaign.timeZone })
+    .format(finalMinute).replace('PM', 'p.m.')
+  const terms = t(rpdpInvitationWindow).replace('{days}', String(rpdpCampaign.invitationDays))
+  const facts = t('Paid cohort: maximum {capacity} participants, with up to {places} student-rate places. Includes {reviews} individual milestone reviews and final project assessment.')
+    .replace('{capacity}', String(rpdpProgram.capacity))
+    .replace('{reviews}', String(rpdpProgram.milestoneWeeks.length))
+    .replace('{places}', String(rpdpProgram.studentPlaces))
+
+  const deadline = t('Join by {date}, at {time} New York time to preserve the founding tuition for the {cohort} cohort.')
+    .replace('{date}', date).replace('{time}', time).replace('{cohort}', t(rpdpProgram.targetStart))
+  const registration = active ? `${deadline} ${terms}` : t('We’ll use your registration to share enrollment details for the February cohort.')
+  return <><p>{registration}</p><p>{t(rpdpNoSeat)}</p><p>{facts}</p></>
 }

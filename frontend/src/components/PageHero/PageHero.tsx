@@ -13,6 +13,8 @@ interface PageHeroProps {
   subtitle: string
   imageSrc?: string
   images?: string[]
+  firstSlideContent?: ReactNode
+  imageSizes?: string
   roundImage?: boolean
   children?: ReactNode
   footerContent?: ReactNode
@@ -27,6 +29,8 @@ export default function PageHero({
   subtitle,
   imageSrc,
   images,
+  firstSlideContent,
+  imageSizes = '(max-width: 767px) 90vw, 456px',
   roundImage = false,
   children,
   footerContent,
@@ -74,14 +78,14 @@ export default function PageHero({
                   exit={{ opacity: 0 }}
                   transition={{ duration: reducedMotion ? 0 : 0.8 }}
                 >
-                  <Image
+                  {index === 0 && firstSlideContent ? firstSlideContent : <Image
                     src={currentSrc}
                     alt=""
                     fill
-                    sizes="(max-width: 767px) 90vw, 456px"
+                    sizes={imageSizes}
                     className={styles.image}
                     loading="eager"
-                  />
+                  />}
                 </motion.div>
               </AnimatePresence>}
             </div>

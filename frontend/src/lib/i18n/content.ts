@@ -34,7 +34,7 @@ export const getTranslatedContent = cache((): TranslatedContent[] => {
 })
 
 export function getAvailableTranslations(): string[] {
-  return ['/', '/research', '/robots', '/jobs', '/search', '/rxd', '/rxd-scorecard', '/enterprise', ...learnRoutes, ...getTranslatedContent().map((entry) => entry.route).filter(Boolean)]
+  return ['/', '/research', '/robots', '/jobs', '/search', '/rxd', '/rxd-scorecard', '/enterprise', '/michael-posso', ...learnRoutes, ...getTranslatedContent().map((entry) => entry.route).filter(Boolean)]
 }
 
 export function getTranslation(route: string) {

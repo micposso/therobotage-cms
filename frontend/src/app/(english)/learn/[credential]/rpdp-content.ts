@@ -1,17 +1,6 @@
 export const rpdpCopy = {
   title: 'Design how people interact with robots.',
   intro: 'An eight-week live online program for designers, researchers, and product professionals. Develop, prototype, and evaluate a robotics product experience through human-robot interaction, inclusive design, product strategy, and failure and recovery design.',
-  whyTitle: 'Robotics needs product designers.',
-  why: 'Hardware and AI give robots capabilities. Product design makes those capabilities understandable, accessible, and useful in the places where people encounter robots.',
-  whyItems: [
-    'Human expectations',
-    'Robot behavior and communication',
-    'Physical environments',
-    'Accessible interactions',
-    'Safety and regulatory constraints',
-    'Recovery and human intervention',
-    'Product adoption and real-world usability'
-  ],
   audienceTitle: 'Who should enroll?',
   experience: 'Basic familiarity with design, research, or product work is helpful. The program introduces robotics concepts and builds on existing UX fundamentals.',
   instructor: {
@@ -92,12 +81,6 @@ export const rpdpCopy = {
     'Final portfolio case study and presentation'
   ],
   capstoneRequirements: 'Show how the robot communicates its state and intent, offers an inclusive interaction alternative, and handles a failure or interruption. Include a handoff to a person where appropriate. Evaluate the design in a controlled setting and document what you revised.',
-  example: {
-    label: 'Illustrative instructor-created project',
-    title: 'Designing a reception robot interaction',
-    description: 'A reception robot helps visitors find a destination. Design how it greets visitors, explains what it can do, offers a language choice, responds when it does not understand, and hands off to a person.',
-    contents: ['An interaction flow', 'A behavior specification', 'A prototype', 'An evaluation plan', 'An RXD-based review'],
-  },
   hardware: 'You can complete the project without building, buying, or programming a physical robot.',
   prototype: 'Projects can be completed using Figma, storyboards, or a facilitated Wizard-of-Oz prototype, where a person simulates the robot’s responses.',
   simulator: 'Browser simulation is also an option. The provider, account requirements, and any mandatory costs will be confirmed before paid enrollment.',

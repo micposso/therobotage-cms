@@ -13,3 +13,7 @@
 - Canonical types and validation live in `frontend/src/lib/rxd/schema.ts`; generate the skill JSON schemas from that source. Never maintain competing schemas.
 - All current protocols are drafts. Do not generate or publish new real RXD scores until human-approved protocols and scoring anchors exist. Preserve historical profile and score markdown.
 - Research outputs belong in versioned `output/<robot-id>/v<version>/` drafts. The skill never publishes automatically.
+
+# Regional AI policy
+
+- For New York, Connecticut, and New Jersey AI policy research and cards on `/policy`, use `tri-state-ai-policy/SKILL.md`.
