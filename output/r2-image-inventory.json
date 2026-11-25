@@ -1,7 +1,7 @@
 {
   "published": true,
-  "count": 175,
-  "bytes": 83723821,
+  "count": 286,
+  "bytes": 87531261,
   "assets": {
     "/brand/instructor.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/brand/instructor.4400bfbd66cbf98c.png",
@@ -63,6 +63,12 @@
       "bytes": 149534,
       "sha256": "b4401bf8374b2501d131edab3c2d23ead4ed463ed46bd8505b407bab02a80eb0"
     },
+    "/images/academy/rpdp-doorway.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/academy/rpdp-doorway.e1141b19eb6b3147.webp",
+      "key": "website/images/academy/rpdp-doorway.e1141b19eb6b3147.webp",
+      "bytes": 124494,
+      "sha256": "e1141b19eb6b314734b912f1cfaa2567bcccdebc4371c8e29441e0c60c72fe68"
+    },
     "/images/academy/rpdp-feature.webp": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/academy/rpdp-feature.34320bf8f907129a.webp",
       "key": "website/images/academy/rpdp-feature.34320bf8f907129a.webp",
@@ -74,6 +80,12 @@
       "key": "website/images/academy/rpdp-program.5b823fdd4b273b7f.webp",
       "bytes": 155634,
       "sha256": "5b823fdd4b273b7f05f5b43857ed0da5e7bc85ce3f4b2f15eae2c2cbd5337060"
+    },
+    "/images/academy/rpdp-storyboard.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/academy/rpdp-storyboard.69824aa7be32646e.webp",
+      "key": "website/images/academy/rpdp-storyboard.69824aa7be32646e.webp",
+      "bytes": 124664,
+      "sha256": "69824aa7be32646e3c2535c80cfb9c0510015f883ca9fd47992ab67aa390263a"
     },
     "/images/enterprise/enterprise-academy-hero.webp": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/enterprise/enterprise-academy-hero.c86f307c8a17bf28.webp",
@@ -140,6 +152,30 @@
       "key": "website/images/enterprise/enterprise-senior-living.1df6dc0a03b3fa4e.webp",
       "bytes": 146322,
       "sha256": "1df6dc0a03b3fa4e2912d63c75303e370a7dad0aa61c80ae79c0d952527dde6f"
+    },
+    "/images/enterprise/enterprise-service-academy.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/enterprise/enterprise-service-academy.627a28fdbae36b07.webp",
+      "key": "website/images/enterprise/enterprise-service-academy.627a28fdbae36b07.webp",
+      "bytes": 143344,
+      "sha256": "627a28fdbae36b0763afc674616a87989f97876c4bc3764f83bf64c7716f13f7"
+    },
+    "/images/enterprise/enterprise-service-adoption.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/enterprise/enterprise-service-adoption.aef9996364975432.webp",
+      "key": "website/images/enterprise/enterprise-service-adoption.aef9996364975432.webp",
+      "bytes": 145830,
+      "sha256": "aef9996364975432fdee31bfd3e52eb44b6b99e75f3413ea1784dd76b6c1fb97"
+    },
+    "/images/enterprise/enterprise-service-community.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/enterprise/enterprise-service-community.1f1149195caef68a.webp",
+      "key": "website/images/enterprise/enterprise-service-community.1f1149195caef68a.webp",
+      "bytes": 208578,
+      "sha256": "1f1149195caef68a144c90fff25ee94e91c5a600bb8f17b0c4d8dfd893c599d8"
+    },
+    "/images/enterprise/enterprise-service-readiness.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/enterprise/enterprise-service-readiness.e7788be602fff154.webp",
+      "key": "website/images/enterprise/enterprise-service-readiness.e7788be602fff154.webp",
+      "bytes": 151620,
+      "sha256": "e7788be602fff154ec70ac227c21439d1f9e4db658209437cafb80bf322b880f"
     },
     "/images/enterprise/hotel-team.webp": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/enterprise/hotel-team.0f94632adfb77b1f.webp",
@@ -285,6 +321,12 @@
       "bytes": 738715,
       "sha256": "9f305694b38d0e533caacee5f0f92251109e6fd9ba9fa3fca10d0afaf7e37374"
     },
+    "/images/news/construction-robot-safety-tyler.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/construction-robot-safety-tyler.d55e4c6dd40655c7.webp",
+      "key": "website/images/news/construction-robot-safety-tyler.d55e4c6dd40655c7.webp",
+      "bytes": 298752,
+      "sha256": "d55e4c6dd40655c759fa790224a42baa06aa226f11df11994a3b14bb6edc709b"
+    },
     "/images/news/digit-5-humanoid-form-trust-header.jpg": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/digit-5-humanoid-form-trust-header.b07561f48b9a65e8.jpg",
       "key": "website/images/news/digit-5-humanoid-form-trust-header.b07561f48b9a65e8.jpg",
@@ -380,6 +422,12 @@
       "key": "website/images/news/massachusetts-first-robot-weapons-law-thumb.db24fe1123e20a32.jpg",
       "bytes": 218386,
       "sha256": "db24fe1123e20a32c1d53a74b0456509ea77e38c77b26fef5cc50b4754a46a9d"
+    },
+    "/images/news/meta-openai-humanoid-model-advantage-header.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/meta-openai-humanoid-model-advantage-header.e26df918c8bdda42.webp",
+      "key": "website/images/news/meta-openai-humanoid-model-advantage-header.e26df918c8bdda42.webp",
+      "bytes": 181760,
+      "sha256": "e26df918c8bdda42df2abb243d885df7739457c4467cb973ad7b0c42e14f28c8"
     },
     "/images/news/microduck-open-robotics-platform.webp": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/microduck-open-robotics-platform.8519b3e1b075d942.webp",
@@ -530,6 +578,18 @@
       "key": "website/images/news/robots-threat-pet-shape-bias-thumb.220e2d1c863f99d7.png",
       "bytes": 2201957,
       "sha256": "220e2d1c863f99d76e7b9808d765c2eedddfbe6b67253e2c12e9b6eaa1cb6e0b"
+    },
+    "/images/news/runway-video-models-teach-robots-header.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/runway-video-models-teach-robots-header.609557233cf19d85.png",
+      "key": "website/images/news/runway-video-models-teach-robots-header.609557233cf19d85.png",
+      "bytes": 2036148,
+      "sha256": "609557233cf19d85e9afbb89fd8dbc4df0ceeab1fbe585be8acf69fadd038b23"
+    },
+    "/images/news/runway-video-models-teach-robots-thumb.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/runway-video-models-teach-robots-thumb.d61cb3611f6379d1.png",
+      "key": "website/images/news/runway-video-models-teach-robots-thumb.d61cb3611f6379d1.png",
+      "bytes": 1984961,
+      "sha256": "d61cb3611f6379d14f7c0795114ddd8172565f440fc83312e76849cd2bb13d12"
     },
     "/images/news/shenzhen-robot-fight-league-benchmark-header.jpg": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/shenzhen-robot-fight-league-benchmark-header.d1fc0ba6f246b5ef.jpg",
@@ -729,12 +789,6 @@
       "bytes": 1132841,
       "sha256": "7e9ed7e20cb8bee168afa6036eb4f9e9441fb9f8b0252331a51d1a59d942a110"
     },
-    "/images/robot-accountability-urban-controller.png": {
-      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/robot-accountability-urban-controller.d960bf947bf97b8d.png",
-      "key": "website/images/robot-accountability-urban-controller.d960bf947bf97b8d.png",
-      "bytes": 2183082,
-      "sha256": "d960bf947bf97b8d421ba06430e2cfc12172bdfffb6e725db103808f1538f30e"
-    },
     "/images/robot-literacy/organizations.webp": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/robot-literacy/organizations.c1657efba200f615.webp",
       "key": "website/images/robot-literacy/organizations.c1657efba200f615.webp",
@@ -752,6 +806,12 @@
       "key": "website/images/robot-literacy/society.6b6772c0057fdb59.webp",
       "bytes": 218650,
       "sha256": "6b6772c0057fdb5941a8991a93f454e5384009da227fb68c6273efb8047875a6"
+    },
+    "/images/robot-policy-watch-social.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/robot-policy-watch-social.99a182ef9e696470.jpg",
+      "key": "website/images/robot-policy-watch-social.99a182ef9e696470.jpg",
+      "bytes": 62632,
+      "sha256": "99a182ef9e6964704ed5dd809586f772d73ec54a8743f4772467ad2277b289a3"
     },
     "/images/robot.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/robot.40d69f52071ff7eb.png",
@@ -831,6 +891,12 @@
       "bytes": 1723645,
       "sha256": "9f3106784c6d7df1cc25dec673356d718920060bcc3cd0dbe68ea415bbb209f1"
     },
+    "/logos/aescape.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/aescape.74a76d9604b36e67.png",
+      "key": "website/logos/aescape.74a76d9604b36e67.png",
+      "bytes": 1451,
+      "sha256": "74a76d9604b36e67da8f7bfe985f5d83d872b83d187454cd2cb7317de68541a8"
+    },
     "/logos/agility-logo.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/agility-logo.724733ebf161de84.png",
       "key": "website/logos/agility-logo.724733ebf161de84.png",
@@ -855,6 +921,12 @@
       "bytes": 1493,
       "sha256": "93ae76728808a7ac698b23b6623c61fd2e4e78572f98a5f42acbead7feac74f0"
     },
+    "/logos/aniai.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/aniai.f086793424cd2450.png",
+      "key": "website/logos/aniai.f086793424cd2450.png",
+      "bytes": 937,
+      "sha256": "f086793424cd2450045de29f5ed266c426de62e71a4a7025455adf7d1714cafd"
+    },
     "/logos/applied-intuition-logo.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/applied-intuition-logo.26cf46590cf74930.png",
       "key": "website/logos/applied-intuition-logo.26cf46590cf74930.png",
@@ -866,6 +938,18 @@
       "key": "website/logos/apptronik-logo.e2aa5bc84a6cdf8b.png",
       "bytes": 8289,
       "sha256": "e2aa5bc84a6cdf8b8d2e334b47d7e4305ef73f743943a438f704860ce839c4ab"
+    },
+    "/logos/aquiline.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/aquiline.d2d92f1b9ee32a9c.png",
+      "key": "website/logos/aquiline.d2d92f1b9ee32a9c.png",
+      "bytes": 1225,
+      "sha256": "d2d92f1b9ee32a9cf5185c8214eabc83c549b5cf95fdc4f9883a449528f4c0e1"
+    },
+    "/logos/arcrite.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/arcrite.fc3571307c5bde11.png",
+      "key": "website/logos/arcrite.fc3571307c5bde11.png",
+      "bytes": 1753,
+      "sha256": "fc3571307c5bde11b5ad4d8c212c6630e50eab6892308aa912356e2a82125bc8"
     },
     "/logos/bear-robotics-logo.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/bear-robotics-logo.a28f9fcefec68326.png",
@@ -885,11 +969,29 @@
       "bytes": 861,
       "sha256": "10d9b4c503e38a509af85c8dc268285e4f575dbec21661a1eeba287570990b26"
     },
+    "/logos/cohesive.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/cohesive.65d9f0f6710d79b3.png",
+      "key": "website/logos/cohesive.65d9f0f6710d79b3.png",
+      "bytes": 1507,
+      "sha256": "65d9f0f6710d79b38d5382eee404894de4712d70408a25b17c5947b9fcede67e"
+    },
     "/logos/collaborative-robotics-logo.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/collaborative-robotics-logo.8ff022551fb7f28b.png",
       "key": "website/logos/collaborative-robotics-logo.8ff022551fb7f28b.png",
       "bytes": 2220,
       "sha256": "8ff022551fb7f28b8eb6999992fe6245c2950c24775a8a63e8d9720c0b287d58"
+    },
+    "/logos/conveyco.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/conveyco.c472e9cce83a1935.png",
+      "key": "website/logos/conveyco.c472e9cce83a1935.png",
+      "bytes": 2212,
+      "sha256": "c472e9cce83a1935d1fa4a883e197fbdb4cf04653b183b1aadae5ebf98fb6fee"
+    },
+    "/logos/destro.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/destro.3c8d2f884a73649c.png",
+      "key": "website/logos/destro.3c8d2f884a73649c.png",
+      "bytes": 847,
+      "sha256": "3c8d2f884a73649caae563a5590f606170e2fd628e57ecca384d7e77089e59e6"
     },
     "/logos/dexterity-logo.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/dexterity-logo.cad65f5e7fc5c115.png",
@@ -903,11 +1005,41 @@
       "bytes": 2130,
       "sha256": "416fda5fef737ea8fe1d70979d78cb8ade7f3441fe2db23b2807d93130ebf694"
     },
+    "/logos/easy.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/easy.3936c9990c6d18c7.png",
+      "key": "website/logos/easy.3936c9990c6d18c7.png",
+      "bytes": 1092,
+      "sha256": "3936c9990c6d18c7e58ffe557980bb81acd243abbf38c1f6d37d78bab28021f6"
+    },
+    "/logos/fancort.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/fancort.38c0a72847868852.png",
+      "key": "website/logos/fancort.38c0a72847868852.png",
+      "bytes": 1546,
+      "sha256": "38c0a7284786885208068b071d3f08f5529f8f4ec402485435e2cb859ef293f0"
+    },
     "/logos/fauna-robotics-logo.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/fauna-robotics-logo.9fec9602f67bdc54.png",
       "key": "website/logos/fauna-robotics-logo.9fec9602f67bdc54.png",
       "bytes": 4360,
       "sha256": "9fec9602f67bdc5413faa5e16e6df091cacc9c0d9f142422aa2b26702aebb517"
+    },
+    "/logos/fauna.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/fauna.7b30669fa6f6bb53.png",
+      "key": "website/logos/fauna.7b30669fa6f6bb53.png",
+      "bytes": 1524,
+      "sha256": "7b30669fa6f6bb538d4d840e1953d953563eaef28794c919b3712bb4540a1d57"
+    },
+    "/logos/festo-didactic.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/festo-didactic.af3b926c96d91d4f.png",
+      "key": "website/logos/festo-didactic.af3b926c96d91d4f.png",
+      "bytes": 525,
+      "sha256": "af3b926c96d91d4f32ef2f5e79020f8ffd3e0558e631caf5082f74906f2186bc"
+    },
+    "/logos/festo.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/festo.af3b926c96d91d4f.png",
+      "key": "website/logos/festo.af3b926c96d91d4f.png",
+      "bytes": 525,
+      "sha256": "af3b926c96d91d4f32ef2f5e79020f8ffd3e0558e631caf5082f74906f2186bc"
     },
     "/logos/figure-ai-logo.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/figure-ai-logo.852543cac2846bdd.png",
@@ -927,11 +1059,47 @@
       "bytes": 25684,
       "sha256": "9ea19cc60b8d9123ba7e861672a35bfc3fe0bb5d1d0a0dffc2399468326c86a8"
     },
+    "/logos/havoc.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/havoc.c2d4820254d11cc1.png",
+      "key": "website/logos/havoc.c2d4820254d11cc1.png",
+      "bytes": 1525,
+      "sha256": "c2d4820254d11cc1e54ee531c03afc60683d73320e88428eccb533712616e4ad"
+    },
+    "/logos/hellmann.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/hellmann.7c648c743879c114.png",
+      "key": "website/logos/hellmann.7c648c743879c114.png",
+      "bytes": 1557,
+      "sha256": "7c648c743879c1141c84d77cd8678f2651ea323a84bde00078ae5189494a7ef4"
+    },
+    "/logos/hfr.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/hfr.7752427c97c3cda1.png",
+      "key": "website/logos/hfr.7752427c97c3cda1.png",
+      "bytes": 1754,
+      "sha256": "7752427c97c3cda11dc5c4d83146c6bf0bacee8902dbbe65e61ce4cabda9e905"
+    },
+    "/logos/huggingface.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/huggingface.6f88e61a306072dd.png",
+      "key": "website/logos/huggingface.6f88e61a306072dd.png",
+      "bytes": 1475,
+      "sha256": "6f88e61a306072dd95cb2478f5c1a03a4084f442a110258028ca837fe6ce1af3"
+    },
+    "/logos/icarus.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/icarus.487cc3d12bf2cb1c.png",
+      "key": "website/logos/icarus.487cc3d12bf2cb1c.png",
+      "bytes": 1148,
+      "sha256": "487cc3d12bf2cb1c45725b83bad225e33487b5bdf4d70cc90b6cbd1b9eb950a1"
+    },
     "/logos/intrinsic-logo.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/intrinsic-logo.982822101995f901.png",
       "key": "website/logos/intrinsic-logo.982822101995f901.png",
       "bytes": 485,
       "sha256": "982822101995f90198663e4907d6e86f7bcacf154e8f24bbd116959a8bac3a92"
+    },
+    "/logos/knotts.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/knotts.71bf436b63c7c354.png",
+      "key": "website/logos/knotts.71bf436b63c7c354.png",
+      "bytes": 1213,
+      "sha256": "71bf436b63c7c354dd0f462bfc1cf5f993ff802bab23cb68be98134bffa1d5fa"
     },
     "/logos/kodiak-logo.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/kodiak-logo.0e6be83f58d595ae.png",
@@ -939,11 +1107,371 @@
       "bytes": 1126,
       "sha256": "0e6be83f58d595ae9a9730a4f241512421d38dc06d04b2c244058ee25cf1ef5f"
     },
+    "/logos/kyber.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/kyber.117d606ea5c3f4c4.png",
+      "key": "website/logos/kyber.117d606ea5c3f4c4.png",
+      "bytes": 1404,
+      "sha256": "117d606ea5c3f4c44cdeaeec06c986acf24dac159fb1cd08ba28b9ce9e158e32"
+    },
+    "/logos/movia.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/movia.2a1971b75d5cc8d0.png",
+      "key": "website/logos/movia.2a1971b75d5cc8d0.png",
+      "bytes": 1450,
+      "sha256": "2a1971b75d5cc8d0980c87204cc49ea48291e00ee0c82a4f00715d4eba8510fd"
+    },
+    "/logos/newlab.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/newlab.dab243f19906856b.png",
+      "key": "website/logos/newlab.dab243f19906856b.png",
+      "bytes": 1141,
+      "sha256": "dab243f19906856ba46e61bfe561d93676791b252fc7272544b8788e141a1027"
+    },
+    "/logos/norbert.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/norbert.1bc5f1f4f3c8f14a.png",
+      "key": "website/logos/norbert.1bc5f1f4f3c8f14a.png",
+      "bytes": 4774,
+      "sha256": "1bc5f1f4f3c8f14adb713dc363633777913662eb6060ae60e6c820fe13075fc6"
+    },
     "/logos/nuro-logo.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/nuro-logo.a6245e2c90811071.png",
       "key": "website/logos/nuro-logo.a6245e2c90811071.png",
       "bytes": 968,
       "sha256": "a6245e2c90811071abcbe4b93536850b2053488c1afb7ac08575f974e9f0a735"
+    },
+    "/logos/nyrobotics.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/nyrobotics.07f0e172ed157850.png",
+      "key": "website/logos/nyrobotics.07f0e172ed157850.png",
+      "bytes": 1598,
+      "sha256": "07f0e172ed1578507039f1296e295b592e8ffc2ea2dc6055fc6b0df2df594751"
+    },
+    "/logos/opentrons.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/opentrons.bd4b2873fbfec5e9.png",
+      "key": "website/logos/opentrons.bd4b2873fbfec5e9.png",
+      "bytes": 2380,
+      "sha256": "bd4b2873fbfec5e96c16742e4b2cf41e6e23522c21cdba7f86fa2e6ddb218279"
+    },
+    "/logos/opt.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/opt.e2d31d45a024acd7.png",
+      "key": "website/logos/opt.e2d31d45a024acd7.png",
+      "bytes": 1554,
+      "sha256": "e2d31d45a024acd78d96b562a098c7ee4c1cf136079cb565988892a5a0fca0cf"
+    },
+    "/logos/originals/aescape.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/aescape.00b603485e5fbcbc.png",
+      "key": "website/logos/originals/aescape.00b603485e5fbcbc.png",
+      "bytes": 3974,
+      "sha256": "00b603485e5fbcbcc832dc528fd1b588d0ee015d56143ae9495dffe96d0acf24"
+    },
+    "/logos/originals/aniai.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/aniai.3142948586f7cd39.webp",
+      "key": "website/logos/originals/aniai.3142948586f7cd39.webp",
+      "bytes": 3440,
+      "sha256": "3142948586f7cd390b3435ced42aecf1d3fee16b7b39b68249015cbed7c9fe46"
+    },
+    "/logos/originals/aquiline.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/aquiline.5c7a33d41170e0ac.png",
+      "key": "website/logos/originals/aquiline.5c7a33d41170e0ac.png",
+      "bytes": 4258,
+      "sha256": "5c7a33d41170e0ac69bf224b04c3225b7869bb5e40bbaf198ee679bc3e7d5a95"
+    },
+    "/logos/originals/arcrite.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/arcrite.a6221349c2a667ae.png",
+      "key": "website/logos/originals/arcrite.a6221349c2a667ae.png",
+      "bytes": 8026,
+      "sha256": "a6221349c2a667aec9b3b96f6b93a6e06b9b206598bf36bed041924aa00063fd"
+    },
+    "/logos/originals/cohesive.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/cohesive.2c138c8fce222a0c.jpg",
+      "key": "website/logos/originals/cohesive.2c138c8fce222a0c.jpg",
+      "bytes": 4941,
+      "sha256": "2c138c8fce222a0c61dfcdfe48764d2de6ac776cb14fe0e3cccb42109de374e0"
+    },
+    "/logos/originals/conveyco.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/conveyco.ccc4efb0a58b2756.webp",
+      "key": "website/logos/originals/conveyco.ccc4efb0a58b2756.webp",
+      "bytes": 10540,
+      "sha256": "ccc4efb0a58b2756f9ac773ec358a71f6c898666c92e8dd1040b1e0b198ff065"
+    },
+    "/logos/originals/destro.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/destro.8ca4d6b6f76f9a7a.png",
+      "key": "website/logos/originals/destro.8ca4d6b6f76f9a7a.png",
+      "bytes": 6833,
+      "sha256": "8ca4d6b6f76f9a7a0ba32f6123725d64a299879a3b5d6e0d62310b2cacfff3ac"
+    },
+    "/logos/originals/easy.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/easy.a16eedaef22b741e.png",
+      "key": "website/logos/originals/easy.a16eedaef22b741e.png",
+      "bytes": 3339,
+      "sha256": "a16eedaef22b741e23cf2b4e022db9305e5d2fc1192ca163e3160255393018a3"
+    },
+    "/logos/originals/fancort.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/fancort.12587f297cc84fae.png",
+      "key": "website/logos/originals/fancort.12587f297cc84fae.png",
+      "bytes": 1239,
+      "sha256": "12587f297cc84faec291d04e1f1370ee911bdd5f973f4eb2e26d4c3f2e0bc1a3"
+    },
+    "/logos/originals/fauna.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/fauna.c2b4d70f2ea8fcff.png",
+      "key": "website/logos/originals/fauna.c2b4d70f2ea8fcff.png",
+      "bytes": 4242,
+      "sha256": "c2b4d70f2ea8fcff13e7668b11e0148dbb149907666cb1f9ddd80d6e77d26e49"
+    },
+    "/logos/originals/festo-didactic.svg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/festo-didactic.3eeaa21cf313497e.svg",
+      "key": "website/logos/originals/festo-didactic.3eeaa21cf313497e.svg",
+      "bytes": 4458,
+      "sha256": "3eeaa21cf313497e57149e4155e72c1110b5c7e1469bd552c54a1608debe1b0e"
+    },
+    "/logos/originals/festo.svg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/festo.3eeaa21cf313497e.svg",
+      "key": "website/logos/originals/festo.3eeaa21cf313497e.svg",
+      "bytes": 4458,
+      "sha256": "3eeaa21cf313497e57149e4155e72c1110b5c7e1469bd552c54a1608debe1b0e"
+    },
+    "/logos/originals/havoc.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/havoc.8ef9bbfe3382a3e6.png",
+      "key": "website/logos/originals/havoc.8ef9bbfe3382a3e6.png",
+      "bytes": 3938,
+      "sha256": "8ef9bbfe3382a3e6a5ce8ea9b7e223a7e6ac2f9caf5beb8f7564ca2c621cb4a0"
+    },
+    "/logos/originals/hellmann.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/hellmann.4e6684c3bcdc9d20.png",
+      "key": "website/logos/originals/hellmann.4e6684c3bcdc9d20.png",
+      "bytes": 29830,
+      "sha256": "4e6684c3bcdc9d20c658e59d81ba1cb8d2bd8ffd14e24cf9a0dc38aeb01c760f"
+    },
+    "/logos/originals/hfr.ico": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/hfr.f1f9efb4fdaf9a7f.ico",
+      "key": "website/logos/originals/hfr.f1f9efb4fdaf9a7f.ico",
+      "bytes": 15406,
+      "sha256": "f1f9efb4fdaf9a7ffc0c743b7c49d0c3e392518d3ed2b237002ab55e97ee303d"
+    },
+    "/logos/originals/hfr.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/hfr.294584fd3cce844a.png",
+      "key": "website/logos/originals/hfr.294584fd3cce844a.png",
+      "bytes": 1239,
+      "sha256": "294584fd3cce844a56ffab2cec2b4d8aae423a4bcdb4952fc3aff6a3b0d47461"
+    },
+    "/logos/originals/huggingface.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/huggingface.fb8c20f280a92561.png",
+      "key": "website/logos/originals/huggingface.fb8c20f280a92561.png",
+      "bytes": 53887,
+      "sha256": "fb8c20f280a92561cffa138636190824bffa4ca8ca8f30edd8fcedfd4fa6c122"
+    },
+    "/logos/originals/icarus.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/icarus.d191d1368035da0c.png",
+      "key": "website/logos/originals/icarus.d191d1368035da0c.png",
+      "bytes": 6390,
+      "sha256": "d191d1368035da0c04d4bb87e07c422fc8828f2ed4e6b986640952e5699d01fd"
+    },
+    "/logos/originals/knotts.svg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/knotts.40f9f952918ffaa8.svg",
+      "key": "website/logos/originals/knotts.40f9f952918ffaa8.svg",
+      "bytes": 376,
+      "sha256": "40f9f952918ffaa8ae3068c7f607653c0df33c7c07faac9278944a9a2cd0e603"
+    },
+    "/logos/originals/kyber.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/kyber.b9a09678837990c3.png",
+      "key": "website/logos/originals/kyber.b9a09678837990c3.png",
+      "bytes": 11093,
+      "sha256": "b9a09678837990c349fa751622821f798e568c0d8529aac124705b21670b25d5"
+    },
+    "/logos/originals/movia.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/movia.c08b390cd64fbe74.png",
+      "key": "website/logos/originals/movia.c08b390cd64fbe74.png",
+      "bytes": 5300,
+      "sha256": "c08b390cd64fbe7462a8d1c3c36d4e6424875770382d3299339b108fc0dfbb5b"
+    },
+    "/logos/originals/newlab.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/newlab.f765da9f25fbd537.png",
+      "key": "website/logos/originals/newlab.f765da9f25fbd537.png",
+      "bytes": 2105,
+      "sha256": "f765da9f25fbd5373dd8c57b8f903ef215a7cd24a25535f515c564caf8bfee4b"
+    },
+    "/logos/originals/norbert.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/norbert.c704dbbd34a60ea3.png",
+      "key": "website/logos/originals/norbert.c704dbbd34a60ea3.png",
+      "bytes": 46403,
+      "sha256": "c704dbbd34a60ea30608509c704f8ebb50c3d26a49b26840cabd7e00bc025e22"
+    },
+    "/logos/originals/nyrobotics.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/nyrobotics.fa957333ff892370.png",
+      "key": "website/logos/originals/nyrobotics.fa957333ff892370.png",
+      "bytes": 8090,
+      "sha256": "fa957333ff8923708ce846d67475703a88b2fbd133879d4b4c9f87d4fafe3e39"
+    },
+    "/logos/originals/opentrons.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/opentrons.c190ad4ebb06667c.png",
+      "key": "website/logos/originals/opentrons.c190ad4ebb06667c.png",
+      "bytes": 3562,
+      "sha256": "c190ad4ebb06667c6baad34b6fc909503cd17f56e7ddfe9d82998fe828fe82e4"
+    },
+    "/logos/originals/opt.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/opt.5d68d324cbe20698.png",
+      "key": "website/logos/originals/opt.5d68d324cbe20698.png",
+      "bytes": 6600,
+      "sha256": "5d68d324cbe20698c6690e6eb714dea1e91bb72d7c8439e6a621010fc4ae38cb"
+    },
+    "/logos/originals/persase.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/persase.149c028ff450e4e7.png",
+      "key": "website/logos/originals/persase.149c028ff450e4e7.png",
+      "bytes": 3555,
+      "sha256": "149c028ff450e4e71cd5f9da039f24bdde5e9e9b37dcc1527f27eb2e76a4356b"
+    },
+    "/logos/originals/pinnacle.ico": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/pinnacle.0d75fa1c9f78745b.ico",
+      "key": "website/logos/originals/pinnacle.0d75fa1c9f78745b.ico",
+      "bytes": 6518,
+      "sha256": "0d75fa1c9f78745b408f55992519c9bd64dfdd5c1b456c5f48b5dc7c43184a8a"
+    },
+    "/logos/originals/pinnacle.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/pinnacle.13fbceb57ea9ba2f.webp",
+      "key": "website/logos/originals/pinnacle.13fbceb57ea9ba2f.webp",
+      "bytes": 31534,
+      "sha256": "13fbceb57ea9ba2f1ef341db491defd58114d2d200752c50f058dde31daa2c5b"
+    },
+    "/logos/originals/primordial.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/primordial.b360730384575bb6.webp",
+      "key": "website/logos/originals/primordial.b360730384575bb6.webp",
+      "bytes": 7694,
+      "sha256": "b360730384575bb6ed3fd55e0f61ed72a1734ebbe89391c60c98229180e5b085"
+    },
+    "/logos/originals/protedyne.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/protedyne.14e8e25e4a4fd7fe.png",
+      "key": "website/logos/originals/protedyne.14e8e25e4a4fd7fe.png",
+      "bytes": 9776,
+      "sha256": "14e8e25e4a4fd7fe5b4bcbc3680fa4fa96e55e1f6d9648892a4fc318ed616322"
+    },
+    "/logos/originals/prs.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/prs.b1215b2f2a7fcf72.png",
+      "key": "website/logos/originals/prs.b1215b2f2a7fcf72.png",
+      "bytes": 8618,
+      "sha256": "b1215b2f2a7fcf725996b15d8c7d8175c01b692b3b072cd8dd00f997aa58a29d"
+    },
+    "/logos/originals/reflex.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/reflex.5d4a1db3022dfe22.png",
+      "key": "website/logos/originals/reflex.5d4a1db3022dfe22.png",
+      "bytes": 28516,
+      "sha256": "5d4a1db3022dfe22cfb526c132b23601a33c38f8ebfe96ed07bed2d960a781ef"
+    },
+    "/logos/originals/rls.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/rls.7d27fed756a8b96a.png",
+      "key": "website/logos/originals/rls.7d27fed756a8b96a.png",
+      "bytes": 3213,
+      "sha256": "7d27fed756a8b96a4ad02b3c8f68777077128539c4f92166dcaf889ce7bbf521"
+    },
+    "/logos/originals/roboburger.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/roboburger.6dd5ffe5d8353001.png",
+      "key": "website/logos/originals/roboburger.6dd5ffe5d8353001.png",
+      "bytes": 3647,
+      "sha256": "6dd5ffe5d835300191feaca9ebd48a5a254268b7fb88591b306a7a7c510f2ff0"
+    },
+    "/logos/originals/robostore.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/robostore.b615c79456c18787.png",
+      "key": "website/logos/originals/robostore.b615c79456c18787.png",
+      "bytes": 3589,
+      "sha256": "b615c79456c187871872bc42c00a5c836a19d0e4c7fba97a5437b0584f141739"
+    },
+    "/logos/originals/robotage.ico": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/robotage.d079b1140f88bb59.ico",
+      "key": "website/logos/originals/robotage.d079b1140f88bb59.ico",
+      "bytes": 15406,
+      "sha256": "d079b1140f88bb599e5d6c9f56b8ca49af395e831fc760d8ef1f4edb27478b05"
+    },
+    "/logos/originals/robotage.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/robotage.2a68885b1b51b8c7.png",
+      "key": "website/logos/originals/robotage.2a68885b1b51b8c7.png",
+      "bytes": 3555,
+      "sha256": "2a68885b1b51b8c727c6aff924a7a4de99b1f365d5fff68b89680e80fa4b1f65"
+    },
+    "/logos/originals/scalable.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/scalable.7abaf680431b70bb.png",
+      "key": "website/logos/originals/scalable.7abaf680431b70bb.png",
+      "bytes": 5314,
+      "sha256": "7abaf680431b70bb7af0f1327a7c22cf03cb1fbc3dd6dee84507d3270574e923"
+    },
+    "/logos/originals/skyline.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/skyline.e9acb52faa9afc40.jpg",
+      "key": "website/logos/originals/skyline.e9acb52faa9afc40.jpg",
+      "bytes": 2086,
+      "sha256": "e9acb52faa9afc40a1f442da2d66e23d92f9afb96c340a83d0eb52dd3ef43e82"
+    },
+    "/logos/originals/somatic.svg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/somatic.4eb27388422b31c9.svg",
+      "key": "website/logos/originals/somatic.4eb27388422b31c9.svg",
+      "bytes": 1962,
+      "sha256": "4eb27388422b31c9eec286bdd09e51302b2569236e9f21ec6a0d48b9aadebcbb"
+    },
+    "/logos/originals/standard.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/standard.c37e758d36d6caf0.png",
+      "key": "website/logos/originals/standard.c37e758d36d6caf0.png",
+      "bytes": 11894,
+      "sha256": "c37e758d36d6caf0dd50e674df1d06078912632fcb164a1b19c2ef05ba00c135"
+    },
+    "/logos/originals/sweet.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/sweet.4d0ded97c8466c8c.png",
+      "key": "website/logos/originals/sweet.4d0ded97c8466c8c.png",
+      "bytes": 12729,
+      "sha256": "4d0ded97c8466c8c41905c537b678b32c9beaadec8c3bc7a32582eddeb6bf5ed"
+    },
+    "/logos/originals/tangent.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/tangent.8099c386d02992fb.png",
+      "key": "website/logos/originals/tangent.8099c386d02992fb.png",
+      "bytes": 6779,
+      "sha256": "8099c386d02992fb1b6c868e7030e7a49b49a4887de19ff2db8978e01cb2191b"
+    },
+    "/logos/originals/telemetrics.ico": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/telemetrics.5f97f120f0304ac3.ico",
+      "key": "website/logos/originals/telemetrics.5f97f120f0304ac3.ico",
+      "bytes": 318,
+      "sha256": "5f97f120f0304ac3dd6d8726b7d086ab15ab347b82ad01257f293fc348867f1e"
+    },
+    "/logos/originals/telemetrics.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/telemetrics.c73dce9e561b759a.png",
+      "key": "website/logos/originals/telemetrics.c73dce9e561b759a.png",
+      "bytes": 97,
+      "sha256": "c73dce9e561b759a57598d748f03a819602f19f305916f670e76f7ec2b646182"
+    },
+    "/logos/originals/thayer.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/thayer.614831f32bd8ba68.png",
+      "key": "website/logos/originals/thayer.614831f32bd8ba68.png",
+      "bytes": 5037,
+      "sha256": "614831f32bd8ba683fdb50f549e6d5aa95d7857ef51fb2e8b677b80fa9931fd7"
+    },
+    "/logos/originals/tuesday.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/tuesday.1a11f11bf1e70188.png",
+      "key": "website/logos/originals/tuesday.1a11f11bf1e70188.png",
+      "bytes": 5956,
+      "sha256": "1a11f11bf1e70188a534feede099bbebddb8e1c2f9eb89edec78f2cda322c074"
+    },
+    "/logos/originals/ulc.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/ulc.26d2dce4ada7bfd4.jpg",
+      "key": "website/logos/originals/ulc.26d2dce4ada7bfd4.jpg",
+      "bytes": 5733,
+      "sha256": "26d2dce4ada7bfd40fea140da12972b0fd7501e5968058dc06ab5431da58df39"
+    },
+    "/logos/originals/ultra.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/ultra.1d744c2aecd6c8a5.png",
+      "key": "website/logos/originals/ultra.1d744c2aecd6c8a5.png",
+      "bytes": 385,
+      "sha256": "1d744c2aecd6c8a5b01d7a7a2891fcbbd70aca89c4e1062c274121c79bb7f636"
+    },
+    "/logos/originals/viam.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/viam.1c80ec7b89667e4e.png",
+      "key": "website/logos/originals/viam.1c80ec7b89667e4e.png",
+      "bytes": 3553,
+      "sha256": "1c80ec7b89667e4e28cad76e7cc062c40ac928a5fce7c18afdb7078f44943995"
+    },
+    "/logos/originals/wittmann.ico": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/wittmann.61fec16a75559f55.ico",
+      "key": "website/logos/originals/wittmann.61fec16a75559f55.ico",
+      "bytes": 1406,
+      "sha256": "61fec16a75559f55f84fb80635421360b6fda06a97f0e499eab873b8caf715d4"
+    },
+    "/logos/originals/wittmann.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/originals/wittmann.9006a1f078a3add5.png",
+      "key": "website/logos/originals/wittmann.9006a1f078a3add5.png",
+      "bytes": 577,
+      "sha256": "9006a1f078a3add51549b92ec7ab87d0be2f29adec9a2120cafc234437133d0d"
     },
     "/logos/path-robotics-logo.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/path-robotics-logo.dade3cc29a15407a.png",
@@ -951,17 +1479,83 @@
       "bytes": 1355,
       "sha256": "dade3cc29a15407aad84bcc92891302ed5907699800c00203e6793a237f9ff80"
     },
+    "/logos/persase.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/persase.2fe1ac67d9b5e728.png",
+      "key": "website/logos/persase.2fe1ac67d9b5e728.png",
+      "bytes": 1577,
+      "sha256": "2fe1ac67d9b5e7281d3cf8c01c98599eebd77296cae92ca53755e234cec47fb0"
+    },
     "/logos/pickle-robot-logo.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/pickle-robot-logo.f7b2015ee80eef01.png",
       "key": "website/logos/pickle-robot-logo.f7b2015ee80eef01.png",
       "bytes": 717,
       "sha256": "f7b2015ee80eef01932a30e47eb92bc391fa608416e26d9c65d9a76463773aba"
     },
+    "/logos/pinnacle.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/pinnacle.6fa4c5d626ee0ba6.png",
+      "key": "website/logos/pinnacle.6fa4c5d626ee0ba6.png",
+      "bytes": 870,
+      "sha256": "6fa4c5d626ee0ba630674ff29c19b748ccaadda5b92e62d019a12fd0d8a13a4f"
+    },
     "/logos/placeholder.jpg": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/placeholder.20b275bfe80b6056.jpg",
       "key": "website/logos/placeholder.20b275bfe80b6056.jpg",
       "bytes": 240073,
       "sha256": "20b275bfe80b60560f23c3adf453cc4188ce9dfd2dc03e727397a09becdf20c6"
+    },
+    "/logos/primordial.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/primordial.1a17d5b79f2c8b6e.png",
+      "key": "website/logos/primordial.1a17d5b79f2c8b6e.png",
+      "bytes": 1700,
+      "sha256": "1a17d5b79f2c8b6e5858e40625b66c4e63c46aa6ffbc7a2f47fa0f8a3b725cfb"
+    },
+    "/logos/protedyne.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/protedyne.2bb91f27415f0484.png",
+      "key": "website/logos/protedyne.2bb91f27415f0484.png",
+      "bytes": 3035,
+      "sha256": "2bb91f27415f0484cb6832aeb49aa163991d91928635ddfafbb67335a409134d"
+    },
+    "/logos/prs.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/prs.a1b68e6619038145.png",
+      "key": "website/logos/prs.a1b68e6619038145.png",
+      "bytes": 1787,
+      "sha256": "a1b68e661903814515e4f3f4101387fdb7a9db9b81fc1d0097d6bc57d858cc0f"
+    },
+    "/logos/reflex.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/reflex.9bbe7ad4d7607b01.png",
+      "key": "website/logos/reflex.9bbe7ad4d7607b01.png",
+      "bytes": 2131,
+      "sha256": "9bbe7ad4d7607b0182537ed49d17584841c226c05e8ec50511fc5fdc768f11a0"
+    },
+    "/logos/rls.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/rls.f86e5b9b1f828f11.png",
+      "key": "website/logos/rls.f86e5b9b1f828f11.png",
+      "bytes": 2028,
+      "sha256": "f86e5b9b1f828f1113a77750b3137aa56a9ba99a7fc4d224814e67fb1b69ea2e"
+    },
+    "/logos/roboburger.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/roboburger.4dd0784322180835.png",
+      "key": "website/logos/roboburger.4dd0784322180835.png",
+      "bytes": 2885,
+      "sha256": "4dd07843221808353805921daa63974342e438baea9b4126a482bb10b79f47ff"
+    },
+    "/logos/robostore.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/robostore.4cce569175dcedab.png",
+      "key": "website/logos/robostore.4cce569175dcedab.png",
+      "bytes": 1575,
+      "sha256": "4cce569175dcedab95875cf3aa08345a335f2e4cc717c0ed581952ce8e5a4660"
+    },
+    "/logos/robotage.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/robotage.4acfc42a8fffc9ec.png",
+      "key": "website/logos/robotage.4acfc42a8fffc9ec.png",
+      "bytes": 3493,
+      "sha256": "4acfc42a8fffc9ecf5a0cc726909a4490ccc8fc5be70e443f3890e699a68de1f"
+    },
+    "/logos/scalable.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/scalable.b79c5a57af9bc6a3.png",
+      "key": "website/logos/scalable.b79c5a57af9bc6a3.png",
+      "bytes": 2011,
+      "sha256": "b79c5a57af9bc6a3f54b59f734729f4ec820cc30949dd9c48a72765fcf165723"
     },
     "/logos/serve-robotics-logo.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/serve-robotics-logo.cb968d53681d4bf5.png",
@@ -981,11 +1575,83 @@
       "bytes": 991,
       "sha256": "85515e4641d83d91565679557393cfccb0c8882d41958c369aa1bba3cc7e8150"
     },
+    "/logos/skyline.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/skyline.c917a2ce8745481b.png",
+      "key": "website/logos/skyline.c917a2ce8745481b.png",
+      "bytes": 636,
+      "sha256": "c917a2ce8745481b7ecb4a2517feefef88a58189dac0d282cde47039ed6048dd"
+    },
+    "/logos/somatic.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/somatic.42dd3fdb5e9b3ac5.png",
+      "key": "website/logos/somatic.42dd3fdb5e9b3ac5.png",
+      "bytes": 1148,
+      "sha256": "42dd3fdb5e9b3ac5413f0e18d94fa1995b0ea91cb7b25f73764e2fd6d5675353"
+    },
+    "/logos/standard.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/standard.d8d98c048665f81b.png",
+      "key": "website/logos/standard.d8d98c048665f81b.png",
+      "bytes": 1258,
+      "sha256": "d8d98c048665f81bf9aa3e5be76de5b34488185f9c697615000cab1e6b72b067"
+    },
+    "/logos/sweet.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/sweet.883cb80ac44f4b20.png",
+      "key": "website/logos/sweet.883cb80ac44f4b20.png",
+      "bytes": 2111,
+      "sha256": "883cb80ac44f4b20f61efcf9ba870fa9067923c60a3ff28eae9055a21c2e7841"
+    },
+    "/logos/tangent.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/tangent.3f4e628a0211c569.png",
+      "key": "website/logos/tangent.3f4e628a0211c569.png",
+      "bytes": 2067,
+      "sha256": "3f4e628a0211c569b4615c652dd946997c1ba89c90192c5ce023c065f06d6e40"
+    },
+    "/logos/telemetrics.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/telemetrics.19b228f4ca734318.png",
+      "key": "website/logos/telemetrics.19b228f4ca734318.png",
+      "bytes": 313,
+      "sha256": "19b228f4ca734318a416f94385255ba41449f9ad3d3eed9bc858930e9ea5ea1f"
+    },
+    "/logos/thayer.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/thayer.ed09500079e25e0c.png",
+      "key": "website/logos/thayer.ed09500079e25e0c.png",
+      "bytes": 2644,
+      "sha256": "ed09500079e25e0c765560a84e357b07a781c7f9f219c9e7e66861a9022fde9b"
+    },
     "/logos/treeswift-logo.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/treeswift-logo.a0b077583968b2f5.png",
       "key": "website/logos/treeswift-logo.a0b077583968b2f5.png",
       "bytes": 2669,
       "sha256": "a0b077583968b2f57f5220f6ed6f8c4af1397aba0c7515f391c9cb24d767eb62"
+    },
+    "/logos/tuesday.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/tuesday.c93183d379d3d35c.png",
+      "key": "website/logos/tuesday.c93183d379d3d35c.png",
+      "bytes": 1971,
+      "sha256": "c93183d379d3d35c31856fa7376c59445ae1512f9422b9bcb02ca07d98488c63"
+    },
+    "/logos/ulc.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/ulc.cb2ec78e2e037707.png",
+      "key": "website/logos/ulc.cb2ec78e2e037707.png",
+      "bytes": 5356,
+      "sha256": "cb2ec78e2e03770778fd282f9c7a41a5803036e35b90078df2e213753152d980"
+    },
+    "/logos/ultra.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/ultra.895546c7e5838a59.png",
+      "key": "website/logos/ultra.895546c7e5838a59.png",
+      "bytes": 1144,
+      "sha256": "895546c7e5838a593ebeb46c96f79371b9e7e4f12d11a7c56b75ae1bacf723e7"
+    },
+    "/logos/viam.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/viam.22cdbe9b77da7ab0.png",
+      "key": "website/logos/viam.22cdbe9b77da7ab0.png",
+      "bytes": 909,
+      "sha256": "22cdbe9b77da7ab031faa031cdd2f58baf797495efab95ba1a88c29b7668cbc6"
+    },
+    "/logos/wittmann.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/wittmann.db91ab020d9fa504.png",
+      "key": "website/logos/wittmann.db91ab020d9fa504.png",
+      "bytes": 3559,
+      "sha256": "db91ab020d9fa50429e460e61007053422799dd3c80f554ef6de37876bad74c3"
     },
     "/logos/zipline-logo.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/zipline-logo.0304043f7ca70afc.png",

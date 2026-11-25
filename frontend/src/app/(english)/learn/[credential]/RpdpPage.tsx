@@ -21,10 +21,12 @@ import styles from './RpdpPage.module.css'
 import { rpdpCopy as copy } from './rpdp-content'
 import RpdpInteractions from './RpdpInteractions'
 import { RpdpOfferFaqCopy, RpdpOfferPanel, RpdpOfferState, RpdpSignupLink } from './RpdpOffer'
-import featureImage from '../../../../../public/images/academy/rpdp-feature.webp'
+import doorwayPhoto from '../../../../../public/images/academy/rpdp-doorway.webp'
+import storyboardPhoto from '../../../../../public/images/academy/rpdp-storyboard.webp'
 
 const program = academyPrograms[0]
-const bannerPath = '/images/academy/rpdp-feature.webp'
+const bannerPath = '/images/academy/rpdp-doorway.webp'
+const doorwayAlt = 'A designer crouches beside an open door to watch a wheeled service robot carrying a coffee carafe clear the door frame.'
 const route = '/learn/rpdp'
 const assessmentWeights = [20, 25, 25, 15, 15]
 const tools = [
@@ -43,7 +45,7 @@ export function rpdpMetadata(locale: Locale) {
   const image = imageUrl(bannerPath)
   return pageMetadata({
     title: { absolute: title }, description,
-    openGraph: { title, description, images: [{ url: image, alt: 'Product Design for Robots learning experience' }] },
+    openGraph: { title, description, images: [{ url: image, alt: uiText(doorwayAlt, locale) }] },
     twitter: { card: 'summary_large_image', title, description, images: [image] },
   }, route, locale)
 }
@@ -105,8 +107,8 @@ export default function RpdpPage({ locale, query, active }: { locale: Locale; qu
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(course).replace(/</g, '\\u003c') }} />
       <PageHero eyebrow={t(`THEROBOTAGE ACADEMY / ${rpdpProgram.program} v${rpdpProgram.version}`)} title={t(copy.title)} subtitle={t(copy.intro)}
         imageWrapClassName={styles.heroImage}
-        imageContent={<Image src={imageAsset(bannerPath, featureImage)} alt="" fill sizes="(max-width: 767px) 90vw, 456px"
-          className={hero.image} placeholder="blur" loading="eager" />}>
+        imageContent={<Image src={imageAsset(bannerPath, doorwayPhoto)} alt={t(doorwayAlt)} fill sizes="(max-width: 767px) 90vw, 456px"
+          className={hero.image} placeholder="blur" loading="eager" fetchPriority="high" />}>
         <div className={styles.heroDetails}>
           <p className={credential.overviewText}>{t(program.overview)}</p>
           <ul className={`${credential.pills} ${styles.badges}`}>
@@ -165,7 +167,13 @@ export default function RpdpPage({ locale, query, active }: { locale: Locale; qu
             <a className={certification.headerCta} href="#capstone" data-rpdp-capstone>{t('Explore the capstone')}</a>
           </Section>
           <Section title={t(copy.capstoneTitle)} id="capstone">
-            <p className={credential.overviewText}>{t(copy.capstone)}</p>
+            <div className={`${academy.editorial} ${styles.capstoneIntro}`}>
+              <p className={credential.overviewText}>{t(copy.capstone)}</p>
+              <Image src={imageAsset('/images/academy/rpdp-storyboard.webp', storyboardPhoto)}
+                alt={t('A designer reviews three sketches of a delivery robot approaching a crate, stopping, and flashing an amber light as a person reaches for the crate.')}
+                className={styles.capstonePhoto} placeholder="blur" loading="lazy"
+                sizes="(max-width: 767px) 92vw, (max-width: 991px) 38vw, 390px" />
+            </div>
             <FeatureGrid items={copy.tracks} locale={locale} />
             <h3 className={`${certification.courseTitle} ${styles.subheading}`}>{t('Final deliverables')}</h3>
             <TextList items={copy.finalDeliverables} locale={locale} />

@@ -126,7 +126,6 @@
 @media (max-width: 767px) {
   .features { grid-template-columns: minmax(0, 1fr); }
   .columns { padding-block: var(--space-8); }
-  .heroImage { aspect-ratio: 16 / 9; }
   .page :is(a, summary) { scroll-margin-bottom: calc(5rem + env(safe-area-inset-bottom)); }
   .mobileSignup[data-visible='true'] {
     position: sticky;
@@ -140,3 +139,7 @@
   }
   .mobileSignup a { padding: var(--space-2) var(--space-4); text-align: center; }
 }
+
+.page .heroImage { aspect-ratio: 4 / 3; }
+.capstoneIntro { margin-bottom: var(--space-8); }
+.capstonePhoto { display: block; width: 100%; height: auto; }
