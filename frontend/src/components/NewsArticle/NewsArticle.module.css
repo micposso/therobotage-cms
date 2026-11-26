@@ -207,7 +207,7 @@
 }
 
 .markdown > :global(p:first-child) {
-  font-size: var(--text-md);
+  --text-body: var(--text-md);
   font-weight: 400;
   line-height: 1.6;
 }

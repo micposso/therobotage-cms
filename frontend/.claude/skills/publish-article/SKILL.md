@@ -1,6 +1,7 @@
 ---
 name: publish-article
-description: End-to-end article publishing for The Robot Age, in one skill. Give it a research subject and it researches the topic, writes the article, generates the header + thumbnail images with the Black Forest Labs (FLUX) API, and writes a LinkedIn promo post — saving every artifact in the right place. Use when the user gives a topic and wants the full article produced and promoted — e.g. "publish an article about warehouse robots", "research and write a piece on the new HRI study then promote it", "run the full pipeline for X". Also handles single steps: regenerating images or writing the LinkedIn post for an existing article.
+description: >-
+  End-to-end article publishing for The Robot Age, in one skill. Give it a research subject and it researches the topic, writes the article, generates the header + thumbnail images with the Black Forest Labs (FLUX) API, and writes a LinkedIn promo post — saving every artifact in the right place. Use when the user gives a topic and wants the full article produced and promoted — e.g. "publish an article about warehouse robots", "research and write a piece on the new HRI study then promote it", "run the full pipeline for X". Also handles single steps: regenerating images or writing the LinkedIn post for an existing article.
 ---
 
 # Publish article
@@ -40,6 +41,7 @@ Draft the full article following the voice guide. Key rules:
 
 ### Structure
 - **Opening paragraph:** state the thesis in the first sentence. No build-up, no "In today's world". The first sentence carries the core claim.
+  Place the opening paragraph immediately after the frontmatter as a standalone Markdown paragraph. The article page displays this lead in larger type. Leave a blank line before the next paragraph.
 - **Body:** 4–6 paragraphs, ~30–50 words each, each opening with its own sub-claim. Use `##` subheadings for OPINION and longer RESEARCH pieces; omit for short NEWS items.
 - **Closing:** a single sentence that reframes the thesis or implies a practical next step. No "Conclusion" heading.
 
