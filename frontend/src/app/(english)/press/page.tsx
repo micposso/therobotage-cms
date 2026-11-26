@@ -27,7 +27,7 @@ const FACTS = [
   ['Focus', 'Robotics literacy and human-robot experience'],
   ['Audience', 'Designers, product teams, strategists, operations leaders, and educators'],
   ['Based in', 'New York'],
-  ['Professional credentials', 'RPDP — Robotics Product Design Practitioner; RDP — Robot Deployment Practitioner'],
+  ['Professional credentials', 'RPDP — Robot Product Design Practitioner; RDP — Robot Deployment Practitioner'],
   ['Research framework', 'Robot Experience Design (RXD)'],
 ]
 

@@ -2,7 +2,9 @@ export const rpdpCopy = {
   title: 'Design how people interact with robots.',
   intro: 'An eight-week assessed certificate program from TheRobotAge. Design, prototype, and test how a robot communicates with people and helps them recover when something goes wrong.',
   audienceTitle: 'Who should enroll?',
+  audienceRoles: ['UX designers', 'Product designers', 'Interaction designers', 'UX researchers', 'Product managers', 'Design students'],
   experience: 'Basic familiarity with design, research, or product work is helpful. The program introduces robotics concepts and builds on existing UX fundamentals.',
+  programApproach: 'Over eight weeks, you’ll choose one task for a robot and design how it shows people what it will do next, when it needs help, and how they can take over. You’ll test those interactions in a prototype and use what you learn to build a portfolio case study.',
   instructor: {
     heading: 'Michael Posso',
     title: 'Founder, TheRobotAge',
@@ -109,7 +111,7 @@ export const rpdpCopy = {
     ]
   ],
   credentialTitle: 'What will you earn?',
-  credential: 'Participants who meet the program requirements earn the Robotics Product Design Practitioner (RPDP) certificate from TheRobotAge.',
+  credential: 'Participants who meet the program requirements earn the Robot Product Design Practitioner (RPDP) certificate from TheRobotAge.',
   disclaimer: 'Credentials recognize completion of educational requirements. They are not government licenses, regulated safety certifications, accredited academic degrees, or authorization to operate robots.',
   assessment: [
     'Product discovery and strategy',

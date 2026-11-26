@@ -13,6 +13,17 @@
   color: #fff;
 }
 
+@media (hover: hover) {
+  .badges > li:hover {
+    background-color: #354531;
+    border-color: #354531;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .badges > li { transition: background-color 150ms ease, border-color 150ms ease; }
+}
+
 .columns {
   display: grid;
   grid-template-columns: minmax(300px, 330px) minmax(0, 1fr);
@@ -103,12 +114,28 @@
   background-color: var(--color-primary);
 }
 .deliverables h3 { margin: 0; }
+@media (min-width: 768px) {
+  .deliverableColumns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: var(--space-8);
+    margin-top: var(--space-4);
+  }
+  .deliverableColumns > .caretList { margin: 0; }
+}
 .caretList {
   display: grid;
   gap: var(--space-2);
   margin-block: var(--space-4) var(--space-6);
   padding: 0;
   list-style: none;
+}
+.page [id="tools-and-technology"] .caretList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(3, auto);
+  grid-auto-flow: column;
 }
 .caretList li {
   display: grid;
@@ -220,6 +247,21 @@
   gap: var(--space-2);
   margin: 0 0 var(--space-6);
 }
+.page [id="why-robotics-now"] > .sectionColumns { grid-template-columns: minmax(0, 1fr); }
+.page [id="why-robotics-now"] .curriculumHours { border-block-start: 0; }
+@media (min-width: 768px) {
+  .marketCopy { column-count: 2; column-gap: var(--space-8); column-fill: balance; }
+  .marketCopy p { break-inside: auto; orphans: 2; widows: 2; }
+}
+.metricAccessible {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.marketClosing { margin-top: var(--space-4); color: var(--color-accent); }
 .sectionHeading h2 { margin: 0; }
 .sectionHeading p { margin: var(--space-4) 0 0; }
 .sectionColumns .features { grid-template-columns: minmax(0, 1fr); }

@@ -1,5 +1,5 @@
 export const rpdpProgram = {
-  name: 'Robotics Product Design Practitioner',
+  name: 'Robot Product Design Practitioner',
   program: 'RPDP',
   version: '1.0',
   cohort: '2027-02',

@@ -2,7 +2,7 @@ import type { RpdpQuote } from './rpdp-registration'
 
 export const academyInterests = {
   academy: { en: 'The Robot Age Academy updates', es: 'Novedades de The Robot Age Academy' },
-  rpdp: { en: 'Robotics Product Design Practitioner (RPDP) founding cohort list', es: 'Lista de interés de la primera cohorte de RPDP (Diseño de productos robóticos)' },
+  rpdp: { en: 'Robot Product Design Practitioner (RPDP) founding cohort list', es: 'Lista de interés de la primera cohorte de RPDP (Diseño de productos robóticos)' },
   rdp: { en: 'Robot Deployment Practitioner (RDP) launch updates', es: 'Novedades del lanzamiento de Robot Deployment Practitioner (RDP)' },
 } as const
 

@@ -35,7 +35,7 @@ export default async function MichaelPosso({ params }: Props) {
           <h2 className={prose.heading}>{t('Design and robotics')}</h2>
           <div className={prose.prose}>
             <p>{t('Michael brings more than 15 years of experience in digital products, UX engineering, and enterprise technology to robotics. His work asks how people can tell what a robot intends to do, when to trust it, and how to step in when it needs help.')}</p>
-            <p>{t('At TheRobotAge, he connects those questions to practical design work. In the Robotics Product Design Practitioner program, he teaches live sessions, reviews individual project milestones, and assesses each final portfolio case study.')}</p>
+            <p>{t('At TheRobotAge, he connects those questions to practical design work. In the Robot Product Design Practitioner program, he teaches live sessions, reviews individual project milestones, and assesses each final portfolio case study.')}</p>
           </div>
         </section>
         <section className={academy.section}>

@@ -20,7 +20,7 @@ import credential from './CredentialPage.module.css'
 import styles from './RpdpPage.module.css'
 import policy from '../../policy/policy.module.css'
 import { rpdpCopy as copy } from './rpdp-content'
-import RpdpInteractions from './RpdpInteractions'
+import RpdpInteractions, { AnimatedMetric } from './RpdpInteractions'
 import { RpdpOfferFaqCopy, RpdpOfferPanel, RpdpOfferState, RpdpSignupLink } from './RpdpOffer'
 import learningPhoto from '../../../../../public/images/academy/rpdp-feature.webp'
 import storyboardPhoto from '../../../../../public/images/academy/rpdp-storyboard.webp'
@@ -40,7 +40,7 @@ const route = '/learn/rpdp'
 const assessmentWeights = [20, 25, 25, 15, 15]
 const toolLogos = [
   ['OpenAI', 'openai.png'],
-  ['NVIDIA', 'nvidia.png'],
+  ['NVIDIA Isaac Sim', 'nvidia.png'],
   ['Figma', 'figma.png'],
   ['ElevenLabs', 'elevenlabs-wordmark.svg'],
   ['MuJoCo', 'mujoco.png'],
@@ -59,16 +59,16 @@ export function rpdpMetadata(locale: Locale) {
 }
 
 function Section({ title, id, intro, headingList, image, children }: {
-  title: string; id?: string; intro?: string | string[]; headingList?: ReactNode; image?: ReactNode; children: ReactNode
+  title: ReactNode; id?: string; intro?: string | string[]; headingList?: ReactNode; image?: ReactNode; children: ReactNode
 }) {
   return <section id={id} className={academy.section}>
     <div className={styles.sectionColumns}>
       <header className={styles.sectionHeading}>
         <h2 className={certification.headline}>{title}</h2>
-        {headingList}
         {intro && (Array.isArray(intro) ? intro : [intro]).map(paragraph =>
           <p key={paragraph} className={credential.overviewText}>{paragraph}</p>
         )}
+        {headingList}
       </header>
       <div>{image ?? children}</div>
     </div>
@@ -83,6 +83,12 @@ function FeatureGrid({ items, locale }: { items: readonly (readonly [string, str
       <p className={certification.trackDescription}>{uiText(body, locale)}</p>
     </article>)}
   </div>
+}
+
+function emphasizeText(text: string) {
+  return text.split('**').map((part, index) =>
+    index % 2 === 1 ? <strong key={index}>{part}</strong> : part
+  )
 }
 
 function Caret() {
@@ -157,9 +163,30 @@ export default function RpdpPage({ locale, query, active }: { locale: Locale; qu
         <RpdpOfferPanel locale={locale} source={href(route)} query={query} />
 
         <div className={styles.content}>
-          <Section title={t(copy.audienceTitle)}>
-            <p className={credential.overviewText}><strong>{t(program.audience)}</strong></p>
+          <Section title={t('Why learn product design for robots now?')} id="why-robotics-now">
+            <div className={`${policy.overview} ${styles.curriculumHours}`}>
+              {([
+                ['U.S. robotics and physical AI companies', '281+', 'https://roboticsmap.ai/country/united-states'],
+                ['Raised by robotics and physical AI startups in Q2 2026', '$18.6B', 'https://pitchbook.com/news/reports/q2-2026-robotics-physical-ai-report-the-money-is-in-the-motion'],
+                ['Job and internship postings on RoboticsCareer.org in 2025', '1,500+', 'https://www.sme.org/globalassets/fusion/events/tux-recap/presentations/2025/growing-an-advanced-manufacturing-workforce-with-manufacturingusa-institutes.pdf'],
+                ['“US humanoid robot production could hit 400,000 by 2030” — Reuters on J.P. Morgan', '400,000', 'https://www.investing.com/news/stock-market-news/us-humanoid-robot-production-could-hit-400000-by-2030-as-deployment-ramps-jp-morgan-says-5020778'],
+              ] as const).map(([label, value, source]) => (
+                <dl key={label} className={`${policy.overviewMetric} ${policy.overviewHighlight}`}>
+                  <dt><a href={source}>{t(label)}</a></dt>
+                  <dd><AnimatedMetric value={t(value)} locale={locale} /></dd>
+                </dl>
+              ))}
+            </div>
+            <div className={styles.marketCopy}>
+              <p className={credential.overviewText}>{emphasizeText(t('If you work in **UX, research, or product management**, robotics is a field where you can apply the skills you already have. Alongside mechanical and software engineers, robotics teams need researchers who understand how people work, designers who make a robot’s actions easy to interpret, and product managers who decide which tasks a robot should handle and when a person should take over.'))}</p>
+              <p className={credential.overviewText}>{emphasizeText(t('In the U.S. alone, **at least 282 companies** work in robotics and physical AI, from designing hospital delivery robots to training robots for factory tasks and deploying fleets in warehouses. Worldwide, startups in the field raised **$18.6 billion** in the second quarter of 2026.'))}</p>
+              <p className={credential.overviewText}>{t('In TheRobotAge’s eight-week Robotics Product Design Practitioner (RPDP) program, you’ll design and test how people interact with a robot and turn that work into a portfolio case study.')}</p>
+              <p className={styles.marketClosing}><strong>{t('The opportunity to break into this emerging industry is now.')}</strong></p>
+            </div>
+          </Section>
+          <Section title={t(copy.audienceTitle)} headingList={<TextList items={copy.audienceRoles} locale={locale} />}>
             <p className={credential.overviewText}>{t(copy.experience)}</p>
+            <p className={credential.overviewText}>{t(copy.programApproach)}</p>
           </Section>
           <Section title={t('How the program works')}>
             <ul className={styles.caretList} role="list">
@@ -184,7 +211,7 @@ export default function RpdpPage({ locale, query, active }: { locale: Locale; qu
                 ['Hours of live instruction', rpdpLiveHours],
                 ['Hours of independent study', rpdpIndependentHours],
               ] as const).map(([label, hours]) => <dl key={label} className={`${policy.overviewMetric} ${policy.overviewHighlight}`}>
-                <dt>{t(label)}</dt><dd>{hours}</dd>
+                <dt>{t(label)}</dt><dd><AnimatedMetric value={String(hours)} locale={locale} /></dd>
               </dl>)}
             </div>
             <div className={credential.moduleList}>
@@ -209,7 +236,7 @@ export default function RpdpPage({ locale, query, active }: { locale: Locale; qu
             </div>
             <a className={certification.headerCta} href="#capstone" data-rpdp-capstone>{t('Explore the capstone')}</a>
           </Section>
-          <Section title={t(copy.capstoneTitle)} id="capstone" intro={t(copy.capstone)}
+          <Section title={locale === 'en' ? <>Build a robotics<br />{' '}product experience for your portfolio.</> : t(copy.capstoneTitle)} id="capstone" intro={t(copy.capstone)}
             image={
               <Image src={imageAsset('/images/academy/rpdp-storyboard.webp', storyboardPhoto)}
                 alt={t('A designer reviews three sketches of a delivery robot approaching a crate, stopping, and flashing an amber light as a person reaches for the crate.')}
@@ -219,16 +246,24 @@ export default function RpdpPage({ locale, query, active }: { locale: Locale; qu
             <FeatureGrid items={copy.tracks} locale={locale} />
             <section className={styles.deliverables} aria-labelledby="final-deliverables">
               <h3 id="final-deliverables" className={certification.courseTitle}>{t('Final deliverables')}</h3>
-              <TextList items={copy.finalDeliverables} locale={locale} />
-              <p className={credential.overviewText}>{t(copy.capstoneRequirements)}</p>
-              <p className={credential.overviewText}>{t(copy.hardware)}</p>
+              <div className={styles.deliverableColumns}>
+                <TextList items={copy.finalDeliverables} locale={locale} />
+                <div>
+                  <p className={credential.overviewText}><strong>{t(copy.capstoneRequirements)}</strong></p>
+                  <p className={credential.overviewText}><strong>{t(copy.hardware)}</strong></p>
+                </div>
+              </div>
             </section>
           </Section>
           <Section id="tools-and-technology" title={t('Tools and technology')} headingList={<TextList items={toolLogos.map(([name]) => name)} locale={locale} />} intro={[t(copy.prototype), t(copy.simulator)]}>
             <ul className={styles.toolGrid} role="list">
               {toolLogos.map(([name, file]) => (
                 <li key={name} className={styles.toolLogo}>
-                  <Image src={`/logos/${file}`} alt={name} title={name} className={name === 'ElevenLabs' ? styles.wordmark : undefined} width={name === 'ElevenLabs' ? 694 : 48} height={name === 'ElevenLabs' ? 90 : 48} sizes={name === 'ElevenLabs' ? '84px' : '48px'} />
+                  <Image src={`/logos/${file}`} alt={name} title={name} unoptimized
+                    className={name === 'ElevenLabs' ? styles.wordmark : undefined}
+                    width={name === 'ElevenLabs' ? 694 : 48}
+                    height={name === 'ElevenLabs' ? 90 : 48}
+                    sizes={name === 'ElevenLabs' ? '84px' : '48px'} />
                 </li>
               ))}
             </ul>

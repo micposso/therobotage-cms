@@ -6,6 +6,46 @@ import { trackRpdp } from '@/lib/rpdp-analytics'
 import { RpdpSignupLink, rpdpSignup } from './RpdpOffer'
 import styles from './RpdpPage.module.css'
 
+export function AnimatedMetric({ value, locale }: { value: string; locale: Locale }) {
+  const ref = useRef<HTMLSpanElement>(null)
+  const [display, setDisplay] = useState<string | null>(null)
+
+  useEffect(() => {
+    setDisplay(null)
+    const element = ref.current
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)')
+    if (!element || motion.matches || !('IntersectionObserver' in window)) return
+
+    const number = value.match(/[\d][\d.,]*/)?.[0]
+    if (!number) return
+    const target = Number(number.replace(locale === 'es' ? /\./g : /,/g, '').replace(',', '.'))
+    const decimals = Number.isInteger(target) ? 0 : 1
+    const formatter = new Intl.NumberFormat(locale === 'es' ? 'es-ES' : 'en-US', {
+      minimumFractionDigits: decimals, maximumFractionDigits: decimals, useGrouping: true,
+    })
+    let frame = 0
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return
+      observer.disconnect()
+      const start = performance.now()
+      function tick(now: number) {
+        const progress = Math.min(1, (now - start) / 1000)
+        if (progress >= 1 || motion.matches) {
+          setDisplay(null)
+          return
+        }
+        setDisplay(value.replace(number!, formatter.format(target * (1 - (1 - progress) ** 3))))
+        frame = requestAnimationFrame(tick)
+      }
+      frame = requestAnimationFrame(tick)
+    })
+    observer.observe(element)
+    return () => { observer.disconnect(); cancelAnimationFrame(frame) }
+  }, [value, locale])
+
+  return <span ref={ref}><span className={styles.metricAccessible}>{value}</span><span aria-hidden="true">{display ?? value}</span></span>
+}
+
 export default function RpdpInteractions({ locale }: { locale: Locale }) {
   const [showSignup, setShowSignup] = useState(false)
   const trackedView = useRef(false)

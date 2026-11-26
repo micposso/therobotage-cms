@@ -6,7 +6,7 @@ Canonical website: https://therobotage.com
 ## Current programs
 - Robot Literacy: READ, RELATE, COEXIST. Foundational understanding and responsible interaction. https://therobotage.com/robot-literacy
 - Live Robot Lab: guided, in-person experiences with Reachy Mini and Unitree Go2 Pro for schools, universities, organizations, and events. Initially NYC metropolitan area. https://therobotage.com/live-robot-lab
-- Product Design for Robots (RPDP — Robotics Product Design Practitioner): 5 weeks, 25 hours, live and self-paced; first cohort planned February 2027; student $149, professional $299. Capstone: Robot Experience Design portfolio project. https://therobotage.com/learn/rpdp
+- Product Design for Robots (RPDP — Robot Product Design Practitioner): 5 weeks, 25 hours, live and self-paced; first cohort planned February 2027; student $149, professional $299. Capstone: Robot Experience Design portfolio project. https://therobotage.com/learn/rpdp
 - Robot Deployment Practitioner (RDP): 4 weeks, 24 hours; commercial launch planned January 2027. Capstone: Robot Deployment Readiness Plan. https://therobotage.com/learn/rdp
 
 ## Status and actions
