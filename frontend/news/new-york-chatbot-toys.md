@@ -1,6 +1,6 @@
 ---
 slug: new-york-chatbot-toys
-title: "Let the kid say thank you. Ask what the toy says back."
+title: "New York is right to ban AI chatbot toys for kids"
 category: OPINION
 date: November 26, 2026
 excerpt: New York’s five-year pause on chatbot toys puts a question to toy designers. What does the bear owe the child who trusts it?
