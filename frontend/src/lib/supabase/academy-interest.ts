@@ -31,9 +31,11 @@ export async function registerRpdp(form: FormData, email: string) {
   if (!parsed.success) return { error: 'Please check your name and selections and try again.' } as const
 
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const key = process.env.SUPABASE_PUBLISHABLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
   const token = process.env.SUPABASE_ACADEMY_INTEREST_SERVICE_KEY
-  if (!url || !key || !token) throw new Error('Academy interest storage is not configured')
+  const key = token
+    ? process.env.SUPABASE_PUBLISHABLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+    : process.env.SUPABASE_SERVICE_ROLE_KEY
+  if (!url || !key) throw new Error('Academy interest storage is not configured')
 
   const { fullName, audience, primaryInterest, marketingConsent, sourcePage } = parsed.data
   const utm: Record<string, string> = {}
@@ -42,7 +44,9 @@ export async function registerRpdp(form: FormData, email: string) {
     if (typeof value === 'string' && value.trim()) utm[field] = value.trim().slice(0, 200)
   }
 
-  const client = createClient(url, key, { accessToken: async () => token })
+  const client = createClient(url, key, token
+    ? { accessToken: async () => token }
+    : { auth: { persistSession: false, autoRefreshToken: false } })
   const { data, error } = await client.rpc('record_academy_interest_offer', {
     p_program: rpdpProgram.program,
     p_version: rpdpProgram.version,
