@@ -8,7 +8,7 @@ import styles from './PageHero.module.css'
 const DEFAULT_IMAGES = ['/images/robot.png', '/images/human.png', '/images/hand.png']
 
 interface PageHeroProps {
-  eyebrow: string
+  eyebrow: ReactNode
   title: ReactNode
   subtitle: string
   imageSrc?: string

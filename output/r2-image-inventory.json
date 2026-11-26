@@ -1,7 +1,7 @@
 {
   "published": true,
-  "count": 287,
-  "bytes": 87688589,
+  "count": 293,
+  "bytes": 87699413,
   "assets": {
     "/brand/instructor.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/brand/instructor.4400bfbd66cbf98c.png",
@@ -963,6 +963,12 @@
       "bytes": 2768,
       "sha256": "a28f9fcefec683260f0d6508a92a9786ec512ea4fb6c8468b8bb17cea09cb309"
     },
+    "/logos/blender.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/blender.39b32f2d40451eb4.png",
+      "key": "website/logos/blender.39b32f2d40451eb4.png",
+      "bytes": 1406,
+      "sha256": "39b32f2d40451eb40890d79b505c389e8ba63c17be0205d85983fa2e915c4636"
+    },
     "/logos/boston-dynamics-logo.jpg": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/boston-dynamics-logo.8645f487e718f1c0.jpg",
       "key": "website/logos/boston-dynamics-logo.8645f487e718f1c0.jpg",
@@ -1017,6 +1023,12 @@
       "bytes": 1092,
       "sha256": "3936c9990c6d18c7e58ffe557980bb81acd243abbf38c1f6d37d78bab28021f6"
     },
+    "/logos/elevenlabs.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/elevenlabs.199f98823d466cb2.png",
+      "key": "website/logos/elevenlabs.199f98823d466cb2.png",
+      "bytes": 170,
+      "sha256": "199f98823d466cb217323e29a4caca4e5d7b346ed564902b27f96e1c2bd92ebc"
+    },
     "/logos/fancort.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/fancort.38c0a72847868852.png",
       "key": "website/logos/fancort.38c0a72847868852.png",
@@ -1046,6 +1058,12 @@
       "key": "website/logos/festo.af3b926c96d91d4f.png",
       "bytes": 525,
       "sha256": "af3b926c96d91d4f32ef2f5e79020f8ffd3e0558e631caf5082f74906f2186bc"
+    },
+    "/logos/figma.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/figma.f072e59a9c0fc36b.png",
+      "key": "website/logos/figma.f072e59a9c0fc36b.png",
+      "bytes": 1002,
+      "sha256": "f072e59a9c0fc36b5005ed541c0eb7d2f94ad9f3ef8204f8fe62f55cd01eaa98"
     },
     "/logos/figure-ai-logo.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/figure-ai-logo.852543cac2846bdd.png",
@@ -1125,6 +1143,12 @@
       "bytes": 1450,
       "sha256": "2a1971b75d5cc8d0980c87204cc49ea48291e00ee0c82a4f00715d4eba8510fd"
     },
+    "/logos/mujoco.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/mujoco.1ecf34ea606834b3.png",
+      "key": "website/logos/mujoco.1ecf34ea606834b3.png",
+      "bytes": 4810,
+      "sha256": "1ecf34ea606834b32932aad084fdc7b28d6b247ea5f88b3a9fe6e3c08ab4b75d"
+    },
     "/logos/newlab.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/newlab.dab243f19906856b.png",
       "key": "website/logos/newlab.dab243f19906856b.png",
@@ -1143,11 +1167,23 @@
       "bytes": 968,
       "sha256": "a6245e2c90811071abcbe4b93536850b2053488c1afb7ac08575f974e9f0a735"
     },
+    "/logos/nvidia.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/nvidia.24c21375cca347d2.png",
+      "key": "website/logos/nvidia.24c21375cca347d2.png",
+      "bytes": 1607,
+      "sha256": "24c21375cca347d2f3e86b9bd27d7fdf4774ca7bd5d59482251723cb6dea82b0"
+    },
     "/logos/nyrobotics.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/nyrobotics.07f0e172ed157850.png",
       "key": "website/logos/nyrobotics.07f0e172ed157850.png",
       "bytes": 1598,
       "sha256": "07f0e172ed1578507039f1296e295b592e8ffc2ea2dc6055fc6b0df2df594751"
+    },
+    "/logos/openai.png": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/openai.8dba942326ba6368.png",
+      "key": "website/logos/openai.8dba942326ba6368.png",
+      "bytes": 1829,
+      "sha256": "8dba942326ba6368c2670603c0ef1d2087fc2bf3ed992fed9d57b2ea69907ddf"
     },
     "/logos/opentrons.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/opentrons.bd4b2873fbfec5e9.png",

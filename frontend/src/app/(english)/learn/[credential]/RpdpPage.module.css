@@ -210,6 +210,8 @@
   list-style: none;
 }
 .toolGrid li { aspect-ratio: 1; background: var(--color-white); color: var(--color-text); }
+.toolLogo { display: grid; place-items: center; }
+.toolLogo img { width: min(60%, 48px); height: auto; }
 .toolGrid :is(a, svg) { display: block; width: 100%; height: 100%; color: inherit; }
 .toolGrid a:hover { color: var(--color-accent); }
 .sectionColumns:not(:last-child) { margin-bottom: var(--space-8); }

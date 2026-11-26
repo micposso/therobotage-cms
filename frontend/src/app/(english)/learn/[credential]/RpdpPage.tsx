@@ -1,4 +1,4 @@
-﻿import type { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import Link from 'next/link'
 import Nav from '@/components/Nav/Nav'
 import Footer from '@/components/Footer/Footer'
@@ -27,25 +27,32 @@ import storyboardPhoto from '../../../../../public/images/academy/rpdp-storyboar
 
 const program = academyPrograms[0]
 const sectionPhotoSizes = '(max-width: 767px) 92vw, (max-width: 991px) 33vw, (max-width: 1440px) calc(35vw - 140px), 364px'
-const bannerPath = '/images/academy/rpdp-doorway.webp'
+const bannerPath = '/images/academy/rpdp-humanoid-inspection.webp'
 const heroImages = [
   bannerPath,
-  '/images/academy/rpdp-humanoid-inspection.webp',
+  '/images/academy/rpdp-doorway.webp',
   '/images/academy/rpdp-feature.webp',
   '/images/academy/rpdp-program.webp',
   '/images/academy/rpdp-storyboard.webp',
 ].map(path => imageUrl(path))
-const doorwayAlt = 'A designer crouches beside an open door to watch a wheeled service robot carrying a coffee carafe clear the door frame.'
+const bannerAlt = 'A designer inspects a humanoid robot’s wrist as the robot looks toward him.'
 const route = '/learn/rpdp'
 const assessmentWeights = [20, 25, 25, 15, 15]
+const toolLogos = [
+  ['OpenAI', 'openai'],
+  ['NVIDIA', 'nvidia'],
+  ['Figma', 'figma'],
+  ['ElevenLabs', 'elevenlabs'],
+  ['MuJoCo', 'mujoco'],
+  ['Blender', 'blender'],
+] as const
+
 const tools = [
-  ['Figma', <g stroke="none"><path fill="#f24e1e" d="M12 3H9a3 3 0 0 0 0 6h3z"/><path fill="#ff7262" d="M12 3h3a3 3 0 0 1 0 6h-3z"/><path fill="#a259ff" d="M12 9H9a3 3 0 0 0 0 6h3z"/><circle fill="#1abcfe" cx="15" cy="12" r="3"/><path fill="#0acf83" d="M12 15H9a3 3 0 1 0 3 3z"/></g>],
   ['FigJam', <path d="M4 4h16v10l-6 6H4z M14 20v-6h6 M7 9q2-4 4 0t4 0"/>],
   ['TheRobotAge RXD Framework', <path d="m12 3 9 5-9 5-9-5z M3 12l9 5 9-5 M3 16l9 5 9-5"/>, '/rxd'],
   ['TheRobotAge RXD Scorecard', <path d="M5 3h14v18H5z M8 8l1 1 2-3 M13 8h3 M8 15l1 1 2-3 M13 15h3"/>, '/rxd-scorecard'],
   ['TheRobotAge Robot Policy Watch', <path d="m3 8 9-5 9 5z M6 11v6 M10 11v6 M14 11v6 M18 11v6 M3 20h18"/>, '/policy'],
   ['Browser-based robotics simulation', <path d="M2 4h20v16H2z M2 8h20 M8 12h8v5H8z M12 10v2 M10 14h.1 M14 14h.1"/>],
-  ['Optional ElevenLabs voice prototyping', <path d="M8 4v16 M15 4v16" strokeWidth="3.5"/>],
   ['NIST AI RMF', <path d="m12 2 8 3v6q0 7-8 11-8-4-8-11V5z M8 11l3 3 5-6"/>, 'https://www.nist.gov/itl/ai-risk-management-framework'],
   ['Accessibility resources', <><circle cx="12" cy="5" r="2"/><path d="m4 9 8 2 8-2 M12 11v3 M12 14l-5 7 M12 14l5 7"/></>],
 ] as const
@@ -56,7 +63,7 @@ export function rpdpMetadata(locale: Locale) {
   const image = imageUrl(bannerPath)
   return pageMetadata({
     title: { absolute: title }, description,
-    openGraph: { title, description, images: [{ url: image, alt: uiText(doorwayAlt, locale) }] },
+    openGraph: { title, description, images: [{ url: image, alt: uiText(bannerAlt, locale) }] },
     twitter: { card: 'summary_large_image', title, description, images: [image] },
   }, route, locale)
 }
@@ -137,10 +144,10 @@ export default function RpdpPage({ locale, query, active }: { locale: Locale; qu
     <main id="rpdp-program" className={styles.page}>
       <RpdpOfferState active={active}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(course).replace(/</g, '\\u003c') }} />
-      <PageHero eyebrow={`${t(rpdpProgram.name)} (${rpdpProgram.program})`}
+      <PageHero eyebrow={<><strong>{t(rpdpProgram.name)}</strong> ({rpdpProgram.program})</>}
         title={locale === 'en' ? <>Design how people<br />{' '}interact with robots.</> : t(copy.title)}
         subtitle={t(copy.intro)}
-        images={heroImages} backgroundSlides={{ firstSlideAlt: t(doorwayAlt) }}
+        images={heroImages} backgroundSlides={{ firstSlideAlt: t(bannerAlt) }}
         imageWrapClassName={`${certification.trackImage} ${styles.heroImage}`}>
         <div className={styles.heroDetails}>
           <p className={credential.overviewText}>{t(program.overview)}</p>
@@ -228,6 +235,11 @@ export default function RpdpPage({ locale, query, active }: { locale: Locale; qu
           </Section>
           <Section id="tools-and-technology" title={t('Tools and technology')} intro={[t(copy.prototype), t(copy.simulator)]}>
             <ul className={styles.toolGrid} role="list">
+              {toolLogos.map(([name, file]) => (
+                <li key={name} className={styles.toolLogo}>
+                  <Image src={`/logos/${file}.png`} alt={name} title={name} width={48} height={48} sizes="(max-width: 320px) 15vw, 48px" />
+                </li>
+              ))}
               {tools.map(([name, symbol, url]) => {
                 const label = t(name)
                 const icon = <svg viewBox="-6 -6 36 36" role="img" aria-label={label} fill="none"
