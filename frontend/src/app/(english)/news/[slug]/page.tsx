@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const article = localize(getNewsArticleBySlug(slug), `/news/${slug}`, locale)
   if (!article) return {}
 
-  const ogImage = article.headerImage || null
+  const ogImage = article.socialImage || article.headerImage || null
 
   return {
     title: `${article.title} — The Robot Age`,

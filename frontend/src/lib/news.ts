@@ -13,6 +13,7 @@ export interface NewsArticleMeta {
   excerpt: string
   headerImage: string
   thumbnailImage: string
+  socialImage?: string
   author?: string
 }
 
@@ -58,6 +59,7 @@ function parseFrontmatter(file: string): NewsArticleMeta {
     excerpt: (data.excerpt ?? '') as string,
     headerImage: imageUrl((data.headerImage ?? '') as string),
     thumbnailImage: imageUrl((data.thumbnailImage ?? '') as string),
+    socialImage: data.socialImage ? imageUrl(data.socialImage) : undefined,
     author: data.author as string | undefined,
   }
 }

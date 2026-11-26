@@ -1,7 +1,7 @@
 {
   "published": true,
-  "count": 295,
-  "bytes": 87814252,
+  "count": 298,
+  "bytes": 88348060,
   "assets": {
     "/brand/instructor.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/brand/instructor.4400bfbd66cbf98c.png",
@@ -488,6 +488,24 @@
       "key": "website/images/news/nasa-robots.80ed09c34ad8dc73.png",
       "bytes": 1055529,
       "sha256": "80ed09c34ad8dc734dcfe72bedec31fda23e933aeb99f5354edc91b58f9a22b8"
+    },
+    "/images/news/new-york-chatbot-toys-header.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/new-york-chatbot-toys-header.01b0530f364da27b.jpg",
+      "key": "website/images/news/new-york-chatbot-toys-header.01b0530f364da27b.jpg",
+      "bytes": 324092,
+      "sha256": "01b0530f364da27b9b838fb5e980078ba6a43eee92cd07469393f90b339fa5f8"
+    },
+    "/images/news/new-york-chatbot-toys-social.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/new-york-chatbot-toys-social.05fa88c1645fc4e9.jpg",
+      "key": "website/images/news/new-york-chatbot-toys-social.05fa88c1645fc4e9.jpg",
+      "bytes": 110550,
+      "sha256": "05fa88c1645fc4e9a5136c24f3904a6a98c9a27123d5a5aa9ec2dd578c1d88aa"
+    },
+    "/images/news/new-york-chatbot-toys-thumb.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/new-york-chatbot-toys-thumb.124717bc4abcbc97.jpg",
+      "key": "website/images/news/new-york-chatbot-toys-thumb.124717bc4abcbc97.jpg",
+      "bytes": 99166,
+      "sha256": "124717bc4abcbc97399ea4d5f0984b42d194091ba7460bc7198e58cec43245cd"
     },
     "/images/news/nvidia-berlin-2026-keynote.jpg": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/news/nvidia-berlin-2026-keynote.38c796a6acdabb02.jpg",
