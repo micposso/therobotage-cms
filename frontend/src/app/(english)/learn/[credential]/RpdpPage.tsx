@@ -39,22 +39,12 @@ const bannerAlt = 'A designer inspects a humanoid robot’s wrist as the robot l
 const route = '/learn/rpdp'
 const assessmentWeights = [20, 25, 25, 15, 15]
 const toolLogos = [
-  ['OpenAI', 'openai'],
-  ['NVIDIA', 'nvidia'],
-  ['Figma', 'figma'],
-  ['ElevenLabs', 'elevenlabs'],
-  ['MuJoCo', 'mujoco'],
-  ['Blender', 'blender'],
-] as const
-
-const tools = [
-  ['FigJam', <path d="M4 4h16v10l-6 6H4z M14 20v-6h6 M7 9q2-4 4 0t4 0"/>],
-  ['TheRobotAge RXD Framework', <path d="m12 3 9 5-9 5-9-5z M3 12l9 5 9-5 M3 16l9 5 9-5"/>, '/rxd'],
-  ['TheRobotAge RXD Scorecard', <path d="M5 3h14v18H5z M8 8l1 1 2-3 M13 8h3 M8 15l1 1 2-3 M13 15h3"/>, '/rxd-scorecard'],
-  ['TheRobotAge Robot Policy Watch', <path d="m3 8 9-5 9 5z M6 11v6 M10 11v6 M14 11v6 M18 11v6 M3 20h18"/>, '/policy'],
-  ['Browser-based robotics simulation', <path d="M2 4h20v16H2z M2 8h20 M8 12h8v5H8z M12 10v2 M10 14h.1 M14 14h.1"/>],
-  ['NIST AI RMF', <path d="m12 2 8 3v6q0 7-8 11-8-4-8-11V5z M8 11l3 3 5-6"/>, 'https://www.nist.gov/itl/ai-risk-management-framework'],
-  ['Accessibility resources', <><circle cx="12" cy="5" r="2"/><path d="m4 9 8 2 8-2 M12 11v3 M12 14l-5 7 M12 14l5 7"/></>],
+  ['OpenAI', 'openai.png'],
+  ['NVIDIA', 'nvidia.png'],
+  ['Figma', 'figma.png'],
+  ['ElevenLabs', 'elevenlabs-wordmark.svg'],
+  ['MuJoCo', 'mujoco.png'],
+  ['Blender', 'blender.png'],
 ] as const
 
 export function rpdpMetadata(locale: Locale) {
@@ -68,13 +58,14 @@ export function rpdpMetadata(locale: Locale) {
   }, route, locale)
 }
 
-function Section({ title, id, intro, image, children }: {
-  title: string; id?: string; intro?: string | string[]; image?: ReactNode; children: ReactNode
+function Section({ title, id, intro, headingList, image, children }: {
+  title: string; id?: string; intro?: string | string[]; headingList?: ReactNode; image?: ReactNode; children: ReactNode
 }) {
   return <section id={id} className={academy.section}>
     <div className={styles.sectionColumns}>
       <header className={styles.sectionHeading}>
         <h2 className={certification.headline}>{title}</h2>
+        {headingList}
         {intro && (Array.isArray(intro) ? intro : [intro]).map(paragraph =>
           <p key={paragraph} className={credential.overviewText}>{paragraph}</p>
         )}
@@ -233,21 +224,13 @@ export default function RpdpPage({ locale, query, active }: { locale: Locale; qu
               <p className={credential.overviewText}>{t(copy.hardware)}</p>
             </section>
           </Section>
-          <Section id="tools-and-technology" title={t('Tools and technology')} intro={[t(copy.prototype), t(copy.simulator)]}>
+          <Section id="tools-and-technology" title={t('Tools and technology')} headingList={<TextList items={toolLogos.map(([name]) => name)} locale={locale} />} intro={[t(copy.prototype), t(copy.simulator)]}>
             <ul className={styles.toolGrid} role="list">
               {toolLogos.map(([name, file]) => (
                 <li key={name} className={styles.toolLogo}>
-                  <Image src={`/logos/${file}.png`} alt={name} title={name} width={48} height={48} sizes="(max-width: 320px) 15vw, 48px" />
+                  <Image src={`/logos/${file}`} alt={name} title={name} className={name === 'ElevenLabs' ? styles.wordmark : undefined} width={name === 'ElevenLabs' ? 694 : 48} height={name === 'ElevenLabs' ? 90 : 48} sizes={name === 'ElevenLabs' ? '84px' : '48px'} />
                 </li>
               ))}
-              {tools.map(([name, symbol, url]) => {
-                const label = t(name)
-                const icon = <svg viewBox="-6 -6 36 36" role="img" aria-label={label} fill="none"
-                  stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-                  <title>{label}</title>{symbol}
-                </svg>
-                return <li key={name}>{url ? <Link href={href(url)} aria-label={label}>{icon}</Link> : icon}</li>
-              })}
             </ul>
           </Section>
           <Section id="career-paths" title={t(copy.careerTitle)}>

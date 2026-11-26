@@ -1,7 +1,7 @@
 {
   "published": true,
-  "count": 293,
-  "bytes": 87699413,
+  "count": 294,
+  "bytes": 87702859,
   "assets": {
     "/brand/instructor.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/brand/instructor.4400bfbd66cbf98c.png",
@@ -1022,6 +1022,12 @@
       "key": "website/logos/easy.3936c9990c6d18c7.png",
       "bytes": 1092,
       "sha256": "3936c9990c6d18c7e58ffe557980bb81acd243abbf38c1f6d37d78bab28021f6"
+    },
+    "/logos/elevenlabs-wordmark.svg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/elevenlabs-wordmark.7a41b7f26b6286f6.svg",
+      "key": "website/logos/elevenlabs-wordmark.7a41b7f26b6286f6.svg",
+      "bytes": 3446,
+      "sha256": "7a41b7f26b6286f607d34c80a658ef06e5cb6c094a1b087b563c8508e15f2178"
     },
     "/logos/elevenlabs.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/elevenlabs.199f98823d466cb2.png",
