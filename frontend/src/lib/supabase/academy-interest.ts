@@ -2,7 +2,7 @@ import 'server-only'
 import { createClient } from '@supabase/supabase-js'
 import { z } from 'zod'
 import { rpdpProgram } from '@/lib/certifications'
-import { foundingPrice, rpdpAudiences, rpdpCampaign, rpdpInterests, rpdpPrices, rpdpSources, utmFields } from '../rpdp-registration'
+import { rpdpFoundingPrices, rpdpAudiences, rpdpCampaign, rpdpInterests, rpdpPrices, rpdpSources, utmFields } from '../rpdp-registration'
 
 const registration = z.object({
   fullName: z.string().trim().min(1).max(254),
@@ -58,7 +58,7 @@ export async function registerRpdp(form: FormData, email: string) {
     p_ends_before: rpdpCampaign.endsBefore,
     p_founding_offer_id: rpdpCampaign.foundingOfferId,
     p_standard_offer_id: rpdpCampaign.standardOfferId,
-    p_founding_tuition_minor: foundingPrice(rpdpPrices[audience]),
+    p_founding_tuition_minor: rpdpFoundingPrices[audience],
     p_standard_tuition_minor: rpdpPrices[audience],
     p_currency: rpdpCampaign.currency,
     p_invitation_days: rpdpCampaign.invitationDays,

@@ -12,7 +12,7 @@ const { parseAcademyInterest } = await import(interestsUrl)
 const { waitlistConfirmationHtml } = await import(templateUrl)
 const moduleUrl = (source) => `data:text/javascript;base64,${Buffer.from(source).toString('base64')}`
 const offerUrl = await testModule(new URL('../src/lib/rpdp-registration.ts', import.meta.url))
-const { foundingPrice, isRpdpPromotionActive, rpdpPrices, rpdpConfirmation } = await import(offerUrl)
+const { rpdpFoundingPrices, isRpdpPromotionActive, rpdpPrices, rpdpConfirmation } = await import(offerUrl)
 
 test('public catalog contains four offers and only the two current credentials', () => {
   assert.deepEqual(catalog.getAllCertificationSlugs(), ['rpdp', 'rdp'])
@@ -31,9 +31,9 @@ test('interest parser preserves RDP and rejects forged fields without breaking g
 })
 
 test('RPDP founding pricing and eligibility follow the New York campaign dates', () => {
-  assert.deepEqual(rpdpPrices, { professional: 50_000, student: 25_000 })
-  assert.equal(foundingPrice(rpdpPrices.professional), 40_000)
-  assert.equal(foundingPrice(rpdpPrices.student), 20_000)
+  assert.deepEqual(rpdpPrices, { professional: 49_900, student: 25_000 })
+  assert.equal(rpdpFoundingPrices.professional, 39_900)
+  assert.equal(rpdpFoundingPrices.student, 19_900)
   assert.equal(catalog.rpdpProgram.weeks, 8)
   assert.equal(catalog.rpdpLiveHours, 20)
   assert.equal(catalog.rpdpIndependentHours, 16)
@@ -86,7 +86,7 @@ test('RPDP storage derives prices from the validated audience and ignores browse
   assert.equal(saved.quote.tuitionMinor, 20_000)
   const { call } = await import(supabase)
   assert.equal(call.name, 'record_academy_interest_offer')
-  assert.equal(call.args.p_founding_tuition_minor, 20_000)
+  assert.equal(call.args.p_founding_tuition_minor, 19_900)
   assert.equal(call.args.p_standard_tuition_minor, 25_000)
   assert.equal(call.args.p_ends_before, '2026-12-01T05:00:00Z')
   assert.equal(call.args.p_email, 'mock@example.org')

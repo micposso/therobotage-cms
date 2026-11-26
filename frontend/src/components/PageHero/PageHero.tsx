@@ -9,11 +9,12 @@ const DEFAULT_IMAGES = ['/images/robot.png', '/images/human.png', '/images/hand.
 
 interface PageHeroProps {
   eyebrow: string
-  title: string
+  title: ReactNode
   subtitle: string
   imageSrc?: string
   images?: string[]
   firstSlideContent?: ReactNode
+  backgroundSlides?: { firstSlideAlt: string }
   imageSizes?: string
   roundImage?: boolean
   children?: ReactNode
@@ -30,6 +31,7 @@ export default function PageHero({
   imageSrc,
   images,
   firstSlideContent,
+  backgroundSlides,
   imageSizes = '(max-width: 767px) 90vw, 456px',
   roundImage = false,
   children,
@@ -73,19 +75,27 @@ export default function PageHero({
                 <motion.div
                   key={currentSrc}
                   className={styles.imageSlide}
+                  style={backgroundSlides && {
+                    backgroundImage: `url("${currentSrc}")`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                  }}
+                  role={backgroundSlides && index === 0 ? 'img' : undefined}
+                  aria-label={index === 0 ? backgroundSlides?.firstSlideAlt : undefined}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: reducedMotion ? 0 : 0.8 }}
                 >
-                  {index === 0 && firstSlideContent ? firstSlideContent : <Image
+                  {!backgroundSlides && (index === 0 && firstSlideContent ? firstSlideContent : <Image
                     src={currentSrc}
                     alt=""
                     fill
                     sizes={imageSizes}
                     className={styles.image}
                     loading="eager"
-                  />}
+                  />)}
                 </motion.div>
               </AnimatePresence>}
             </div>

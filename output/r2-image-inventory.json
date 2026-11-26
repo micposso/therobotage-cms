@@ -1,7 +1,7 @@
 {
   "published": true,
-  "count": 286,
-  "bytes": 87531261,
+  "count": 287,
+  "bytes": 87688589,
   "assets": {
     "/brand/instructor.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/brand/instructor.4400bfbd66cbf98c.png",
@@ -74,6 +74,12 @@
       "key": "website/images/academy/rpdp-feature.34320bf8f907129a.webp",
       "bytes": 122616,
       "sha256": "34320bf8f907129a87be852c678ec3b4d3234542b1c30370b390712e1c937e54"
+    },
+    "/images/academy/rpdp-humanoid-inspection.webp": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/academy/rpdp-humanoid-inspection.5ae9ed4e24f8cdb2.webp",
+      "key": "website/images/academy/rpdp-humanoid-inspection.5ae9ed4e24f8cdb2.webp",
+      "bytes": 157328,
+      "sha256": "5ae9ed4e24f8cdb2cc4e6a62f90953738979338896209ca906145ad582904290"
     },
     "/images/academy/rpdp-program.webp": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/academy/rpdp-program.5b823fdd4b273b7f.webp",

@@ -5,7 +5,7 @@ import { rpdpProgram } from '@/lib/certifications'
 import { uiText } from '@/lib/i18n/messages'
 import type { Locale } from '@/lib/i18n/routing'
 import {
-  formatRpdpTuition, foundingPrice, isRpdpPromotionActive, rpdpAudiences, rpdpCampaign,
+  formatRpdpTuition, rpdpFoundingPrices, isRpdpPromotionActive, rpdpAudiences, rpdpCampaign,
   rpdpInvitationWindow, rpdpNoSeat, rpdpPrices, type RpdpQuery,
 } from '@/lib/rpdp-registration'
 import AccessForm from '../../access/AccessForm'
@@ -65,11 +65,12 @@ export function RpdpOfferPanel({ locale, source, query }: { locale: Locale; sour
     {active && <p className={styles.promotion}>{t('Save {discount} on founding tuition').replace('{discount}', discount)}</p>}
     <dl className={`${cohort.pricing} ${styles.prices}`}>
       {rpdpAudiences.map(audience => <div key={audience}>
-        <dt>{t(audience === 'professional' ? 'Professional' : 'Student')}</dt>
-        {active && <dd className={cohort.priceMeta}>{t('Founding tuition')} <strong>{formatRpdpTuition(foundingPrice(rpdpPrices[audience]), locale)}</strong></dd>}
-        <dd className={cohort.priceMeta}>{t('Planned standard tuition')} {formatRpdpTuition(rpdpPrices[audience], locale)}</dd>
+        <dt><strong>{t(audience === 'professional' ? 'Professional' : 'Student')}{audience === 'student' && '*'}</strong></dt>
+        {active && <dd className={cohort.priceMeta}>{t('Founding tuition')} <strong>{formatRpdpTuition(rpdpFoundingPrices[audience], locale)}</strong></dd>}
+        <dd className={cohort.priceMeta}>{t('Planned standard tuition')} <span className={styles.standardPrice}>{formatRpdpTuition(rpdpPrices[audience], locale)}</span></dd>
       </div>)}
     </dl>
+    <p className={`${styles.formNote} ${styles.enrollmentFootnote}`}>* {t('Proof of enrollment required.')}</p>
     <AccessForm locale={locale} interest="rpdp" buttonLabel={label} rpdp={{ source, query }} />
   </aside>
 }

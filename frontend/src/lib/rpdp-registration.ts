@@ -9,7 +9,7 @@ export const rpdpCampaign = {
   currency: 'USD',
 } as const
 
-export const rpdpPrices = { professional: 50_000, student: 25_000 } as const
+export const rpdpPrices = { professional: 49_900, student: 25_000 } as const
 export const rpdpAudiences = ['professional', 'student'] as const
 export const rpdpInterests = ['design', 'product', 'research', 'other'] as const
 export const rpdpSources = ['/learn/rpdp', '/es/learn/rpdp'] as const
@@ -51,6 +51,4 @@ export function isRpdpPromotionActive(timestamp = Date.now()) {
   return timestamp >= Date.parse(rpdpCampaign.startsAt) && timestamp < Date.parse(rpdpCampaign.endsBefore)
 }
 
-export function foundingPrice(plannedMinor: number) {
-  return Math.round(plannedMinor * (100 - rpdpCampaign.discount) / 100)
-}
+export const rpdpFoundingPrices = { professional: 39_900, student: 19_900 } as const

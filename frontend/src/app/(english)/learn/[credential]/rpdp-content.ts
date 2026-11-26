@@ -1,6 +1,6 @@
 export const rpdpCopy = {
   title: 'Design how people interact with robots.',
-  intro: 'An eight-week live online program for designers, researchers, and product professionals. Develop, prototype, and evaluate a robotics product experience through human-robot interaction, inclusive design, product strategy, and failure and recovery design.',
+  intro: 'An eight-week assessed certificate program from TheRobotAge. Design, prototype, and test how a robot communicates with people and helps them recover when something goes wrong.',
   audienceTitle: 'Who should enroll?',
   experience: 'Basic familiarity with design, research, or product work is helpful. The program introduces robotics concepts and builds on existing UX fundamentals.',
   instructor: {
@@ -13,6 +13,7 @@ export const rpdpCopy = {
   feedback: 'Michael Posso teaches the live sessions, provides three asynchronous individual milestone reviews around Weeks {weeks}, and assesses the final project in Week {final}.',
   delivery: 'Participation, recording, and makeup details will be provided before paid enrollment.',
   skillsTitle: 'What you will learn',
+  skillsIntro: 'How can someone tell what a robot will do next? You’ll prototype the movements, signals, and feedback that make its behavior clear, then test how people respond when an interaction goes wrong.',
   skills: [
     [
       'Human-robot interaction fundamentals',
@@ -108,7 +109,7 @@ export const rpdpCopy = {
     ]
   ],
   credentialTitle: 'What will you earn?',
-  credential: 'Participants who meet the educational and assessment requirements receive an RPDP educational completion credential issued by TheRobotAge.',
+  credential: 'Participants who meet the program requirements earn the Robotics Product Design Practitioner (RPDP) certificate from TheRobotAge.',
   disclaimer: 'Credentials recognize completion of educational requirements. They are not government licenses, regulated safety certifications, accredited academic degrees, or authorization to operate robots.',
   assessment: [
     'Product discovery and strategy',
