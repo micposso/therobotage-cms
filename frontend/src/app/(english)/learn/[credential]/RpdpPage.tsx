@@ -49,11 +49,15 @@ const toolLogos = [
 
 export function rpdpMetadata(locale: Locale) {
   const title = `${rpdpProgram.name} (${rpdpProgram.program}) | TheRobotAge Academy`
-  const description = program.description
-  const image = imageUrl(bannerPath)
+  const description = 'An eight-week assessed certificate program. Design and test how people interact with a robot, then turn your work into a portfolio case study.'
+  const image = {
+    url: imageUrl('/images/academy/rpdp-designers-social.jpg'),
+    width: 1200, height: 630, type: 'image/jpeg',
+    alt: 'Two product designers review robot interaction sketches beside a prototype.',
+  }
   return pageMetadata({
     title: { absolute: title }, description,
-    openGraph: { title, description, images: [{ url: image, alt: uiText(bannerAlt, locale) }] },
+    openGraph: { title, description, images: [image] },
     twitter: { card: 'summary_large_image', title, description, images: [image] },
   }, route, locale)
 }

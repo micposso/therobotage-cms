@@ -1,7 +1,7 @@
 {
   "published": true,
-  "count": 294,
-  "bytes": 87702859,
+  "count": 295,
+  "bytes": 87814252,
   "assets": {
     "/brand/instructor.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/brand/instructor.4400bfbd66cbf98c.png",
@@ -62,6 +62,12 @@
       "key": "website/images/academy/rdp-program.b4401bf8374b2501.webp",
       "bytes": 149534,
       "sha256": "b4401bf8374b2501d131edab3c2d23ead4ed463ed46bd8505b407bab02a80eb0"
+    },
+    "/images/academy/rpdp-designers-social.jpg": {
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/academy/rpdp-designers-social.c4174acfe3ad5db6.jpg",
+      "key": "website/images/academy/rpdp-designers-social.c4174acfe3ad5db6.jpg",
+      "bytes": 111379,
+      "sha256": "c4174acfe3ad5db6843ba7c1b26f6360893ac4cd08dbc13f0d5a875a5ef812b7"
     },
     "/images/academy/rpdp-doorway.webp": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/images/academy/rpdp-doorway.e1141b19eb6b3147.webp",
@@ -1024,10 +1030,10 @@
       "sha256": "3936c9990c6d18c7e58ffe557980bb81acd243abbf38c1f6d37d78bab28021f6"
     },
     "/logos/elevenlabs-wordmark.svg": {
-      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/elevenlabs-wordmark.7a41b7f26b6286f6.svg",
-      "key": "website/logos/elevenlabs-wordmark.7a41b7f26b6286f6.svg",
-      "bytes": 3446,
-      "sha256": "7a41b7f26b6286f607d34c80a658ef06e5cb6c094a1b087b563c8508e15f2178"
+      "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/elevenlabs-wordmark.75896ebc244678aa.svg",
+      "key": "website/logos/elevenlabs-wordmark.75896ebc244678aa.svg",
+      "bytes": 3460,
+      "sha256": "75896ebc244678aafbbecbaa4b7c8e9955c1d679d7e139f85b513594464885d4"
     },
     "/logos/elevenlabs.png": {
       "url": "https://pub-93a78e4e984347e295330026d04baaaa.r2.dev/website/logos/elevenlabs.199f98823d466cb2.png",
