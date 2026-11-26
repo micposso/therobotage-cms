@@ -41,7 +41,7 @@ Draft the full article following the voice guide. Key rules:
 
 ### Structure
 - **Opening paragraph:** state the thesis in the first sentence. No build-up, no "In today's world". The first sentence carries the core claim.
-  Place the opening paragraph immediately after the frontmatter as a standalone Markdown paragraph. The article page displays this lead in larger type. Leave a blank line before the next paragraph.
+  Place the opening paragraph immediately after the frontmatter as a standalone Markdown paragraph, then leave a blank line. The approved lead size is **21px at the default text scale (1.3125rem)**, with 18px body text. The shared article stylesheet applies these sizes automatically.
 - **Body:** 4–6 paragraphs, ~30–50 words each, each opening with its own sub-claim. Use `##` subheadings for OPINION and longer RESEARCH pieces; omit for short NEWS items.
 - **Closing:** a single sentence that reframes the thesis or implies a practical next step. No "Conclusion" heading.
 
