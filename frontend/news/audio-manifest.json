@@ -52,5 +52,11 @@
     "sourceHash": "34f6988458a66b0c4a5612d1062ba4172ce951c8e94e5565c34a78e5d5c1f21e",
     "model": "gpt-4o-mini-tts",
     "voice": "marin"
+  },
+  "new-york-chatbot-toys": {
+    "path": "news/new-york-chatbot-toys/ca5bd258a4a249f3-4c5103f7c920.mp3",
+    "sourceHash": "ca5bd258a4a249f373596c6dba8ab68d8c05e4ad7772a2fe99b7e00482802b05",
+    "model": "gpt-4o-mini-tts",
+    "voice": "marin"
   }
 }
